@@ -1,6 +1,16 @@
-# Hugo theme Hermit
+# Hugo theme Hermit - V2
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/01a2e2de-d57d-4d89-8322-95685000e60f/deploy-status)](https://app.netlify.com/sites/hugo-theme-hermit/deploys)
+Demo - To be added
+
+I am using Hermit theme for my own personal blog; and I am sad to see that that Hermit is not maintained by original author. I will try to keep soul of the theme as-it-is. Feel free to :
+- suggest changes
+- report bugs to be squashed
+- make this theme great again
+
+Please be kind. This is my first venture. I will try my personal best to not let down.
+And I will try to read through OG repo issues and fix them in coming weeks.
+
+---
 
 Hermit is a minimal and fast theme for Hugo. It's built for bloggers who want a simple and focused website.
 
@@ -15,8 +25,6 @@ Hermit is a minimal and fast theme for Hugo. It's built for bloggers who want a 
 * Extremely lightweight and load fast. No third party framework, no unnecessary code.
 * All code fields feature syntax highlighting and a code-copy function
 * Responsive & Retina Ready. Scales gracefully from a big screen all the way down to the smallest mobile phone. Assets in vector format ensures that it looks sharp on high-resolution screens.
-
-**[Theme Demo](https://hugo-theme-hermit.netlify.com/)** (uses contents and config from the `exampleSite` folder)
 
 ![](https://github.com/Track3/hermit/raw/master/images/hermit.png)
 
