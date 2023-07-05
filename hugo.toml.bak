@@ -1,23 +1,5 @@
 baseURL = "https://example.com" # baseURL - The absolute URL (protocol, host, path, and trailing slash) of your published site
 
-
-#[languages]
-#  [languages.en]
-#    title = 'My blog'
-#    weight = 1
-#    [languages.en.params]
-#      linkedin = 'https://linkedin.com/whoever'
-#  [languages.fr]
-#    title = 'Mon blogue'
-#    weight = 2
-#    [languages.fr.params]
-#      linkedin = 'https://linkedin.com/fr/whoever'
-#  [languages.it]
-#    title = 'Il mio blog'
-#    weight = 3
-#    [languages.fr.params]
-#      linkedin = 'https://linkedin.com/fr/whoever'
-
 # languageCode - A language tag as defined by RFC 5646. This value is used to populate:
 #   The <language> element in the internal RSS template
 #   The lang attribute of the <html> element in the internal alias template
@@ -25,7 +7,6 @@ languageCode = "en-us"
 
 # defaultContentLanguage - Content without language indicator will default to this language.
 defaultContentLanguage = "en"
-
 
 # title - Site title
 title = "Hugo Hermit"
@@ -77,7 +58,7 @@ enableEmoji = true
   homeSubtitle = "A minimal and fast theme for Hugo."
 
   # Below Allows homeSubtitle to be shown with printer animation effect. Refer Line 911 in style.scss
-  #homeSubtitlePrinter = true
+  homeSubtitlePrinter = true
 
   footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   # bgImg = ""  # Homepage background-image URL
@@ -120,3 +101,23 @@ enableEmoji = true
     name = "About"
     url = "about-hugo/"
     weight = 20
+
+[languages]
+  [languages.en]
+    title = 'My blog'
+    weight = 1
+    [languages.en.params]
+      linkedin = 'https://linkedin.com/whoever'
+  [languages.fr]
+    title = 'Mon blogue'
+    weight = 2
+    [languages.fr.params]
+      linkedin = 'https://linkedin.com/fr/whoever'
+      [languages.fr.params.navigation]
+        help = 'Aide'
+  [languages.pt-pt]
+    title = 'O meu blog'
+    weight = 3
+[params]
+  [params.navigation]
+    help = 'Help'
