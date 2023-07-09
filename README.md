@@ -1,16 +1,16 @@
 # Hugo theme Hermit - V2
 
-Demo - To be added
+### Why Am I maintaing a fork?
 
-I am using Hermit theme for my own personal blog; and I am sad to see that that Hermit is not maintained by original author. I will try to keep soul of the theme as-it-is. Feel free to :
-- suggest changes
-- report bugs to be squashed
-- make this theme great again
+Initially, when I started my Blog journey, I was enthralled by this very theme and I am using it since. However, original developer has ceased maintaining the theme and it is riddled with many bugs. Hence, I have taken upon myself to maintain this theme.
 
-Please be kind. This is my first venture. I will try my personal best to not let down.
-And I will try to read through OG repo issues and fix them in coming weeks.
+I fully intend to keep the essence of the theme as-it-is and only add minor updates and squash bugs which may arise.
 
+> Let's make __Hermit__ great again
+
+DEMO : 
 ---
+# Original README follows below
 
 Hermit is a minimal and fast theme for Hugo. It's built for bloggers who want a simple and focused website.
 
@@ -77,7 +77,7 @@ The following icons are supported, please make sure the `name` filed is exactly 
 | `stackoverflow` | `telegram`  | `twitter`    | `youtube` |
 | `shutterstock`  | `freepik`   | `adobestock` | `123rf`   |
 | `dreamstime`    | `dribbble`  | `behance`    | `paypal`  |
-| `twitch`        | `qq`        |              |           |
+| `twitch`        | `qq`        | `mastodon`   |           |
 
 If that's not enough, you can see [Overriding templates](#overriding-templates) section.
 
