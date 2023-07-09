@@ -1,4 +1,4 @@
-baseURL = "https://example.com" # baseURL - The absolute URL (protocol, host, path, and trailing slash) of your published site
+baseURL = "https://1bl4z3r.github.io/hermit-V2/" # baseURL - The absolute URL (protocol, host, path, and trailing slash) of your published site
 
 
 #[languages]
@@ -77,7 +77,7 @@ enableEmoji = true
   homeSubtitle = "A minimal and fast theme for Hugo."
 
   # Below Allows homeSubtitle to be shown with printer animation effect. Refer Line 911 in style.scss
-  #homeSubtitlePrinter = true
+  homeSubtitlePrinter = true
 
   footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   # bgImg = ""  # Homepage background-image URL
