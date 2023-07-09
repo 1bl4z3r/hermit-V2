@@ -28,7 +28,7 @@ defaultContentLanguage = "en"
 
 
 # title - Site title
-title = "Hugo Hermit"
+title = "Hugo Hermit - V2"
 
 # enableGitInfo - Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.
 #enableGitInfo = true
@@ -52,7 +52,7 @@ enableEmoji = true
 # disqusShortname = "yourdiscussshortname"
 
 [author]
-  name = "John Doe"
+  name = "1BL4Z3R"
 
 [blackfriday]
   # hrefTargetBlank = true
