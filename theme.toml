@@ -3,7 +3,7 @@ license = "MIT"
 licenselink = "https://github.com/Track3/hermit/blob/master/LICENSE"
 description = "A minimal and fast hugo theme for bloggers."
 homepage = "https://github.com/1bl4z3r/hermit-V2"
-demosite = "https://gohugo.io"
+demosite = "https://1bl4z3r.github.io/hermit-V2/"
 tags = ["blog", "minimal", "dark", "responsive", fast]
 features = [
   "single column",
