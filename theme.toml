@@ -1,18 +1,24 @@
-name = "Hermit"
+name = "Hermit-V2"
 license = "MIT"
 licenselink = "https://github.com/Track3/hermit/blob/master/LICENSE"
 description = "A minimal and fast hugo theme for bloggers."
-homepage = "https://github.com/Track3/hermit"
-tags = ["blog", "minimal", "dark", "responsive"]
+homepage = "https://github.com/1bl4z3r/hermit-V2"
+demosite = "https://gohugo.io"
+tags = ["blog", "minimal", "dark", "responsive", fast]
 features = [
   "single column",
   "featured image",
   "social icons",
   "google analytics",
-  "disqus"
+  "disqus",
+  "customizable"
 ]
 min_version = 0.43
 
 [author]
+  name = "1BL4Z3R"
+  homepage = "https://1bl4z3r.cyou"
+[original]
   name = "Track3"
   homepage = "https://www.xxxlbox.com"
+  repo = "https://github.com/Track3/hermit"
