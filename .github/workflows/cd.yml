@@ -2,12 +2,13 @@ name: Build and Deploy Hugo Site
 on:
   push:
     branches:
-      - main
+      - deploy
   pull_request:
     branches:
-      - main
+      - deploy
 jobs:
   build-and-deploy-site:
+    name: Build and Deploy Hugo
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -30,10 +31,10 @@ jobs:
         with:
           directory: "./public"
           arguments: --only-4xx --check-favicon --check-html --assume-extension --empty-alt-ignore --disable-external
-        continue-on-error: true
+        continue-on-error: false
 
       - name: Deploy to GitHub Pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/deploy'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

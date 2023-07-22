@@ -1,6 +1,6 @@
 # Hugo theme Hermit - V2
 
-### Why Am I maintaing a fork?
+### Why Am I maintaining a fork?
 
 Initially, when I started my Blog journey, I was enthralled by this very theme and I am using it since. However, original developer has ceased maintaining the theme and it is riddled with many bugs. Hence, I have taken upon myself to maintain this theme.
 
@@ -9,6 +9,7 @@ I fully intend to keep the essence of the theme as-it-is and only add minor upda
 > Let's make __Hermit__ great again
 
 DEMO : [Hermit-V2](https://1bl4z3r.github.io/hermit-V2/)
+GoHugo Theme : [https://themes.gohugo.io/themes/hermit-v2/](https://themes.gohugo.io/themes/hermit-v2/)
 ---
 # Original README follows below
 
