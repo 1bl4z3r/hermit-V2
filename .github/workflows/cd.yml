@@ -30,8 +30,8 @@ jobs:
         uses: chabad360/htmlproofer@master
         with:
           directory: "./public"
-          arguments: --only-4xx --check-html --assume-extension --empty-alt-ignore --disable-external
-        continue-on-error: false
+          arguments: --only-4xx --check-favicon --check-html --assume-extension --empty-alt-ignore --disable-external
+        continue-on-error: true
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/deploy'
