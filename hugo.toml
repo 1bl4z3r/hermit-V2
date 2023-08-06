@@ -95,6 +95,7 @@ enableEmoji = true
   # Add custom css
   # customCSS = ["css/foo.css", "css/bar.css"]
 
+  scrollToTop = true # To enable Scroll to Top button Sitewide
   # Social Icons
   # Check https://github.com/Track3/hermit#social-icons for more info.
   [[params.social]]

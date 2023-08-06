@@ -100,3 +100,15 @@ if (header !== null) {
     }
   }, 250));
 }
+// Scroll to Top button Toggle
+//
+const scroll = document.querySelector(".scroll-up"), rootElement = document.documentElement;
+
+function handleScroll() {
+  if (rootElement.scrollTop / (rootElement.scrollHeight - rootElement.clientHeight) > 0.4) {
+    scroll.classList.remove("hide");scroll.classList.add("show");
+  } else {
+    scroll.classList.add("hide");scroll.classList.remove("show");
+  }
+}
+document.addEventListener("scroll", handleScroll);

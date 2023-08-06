@@ -30,7 +30,7 @@
 	{{ block "header" . -}}{{ end -}}
 	{{ block "main" . -}}{{ end -}}
 	{{ block "footer" . -}}{{ end }}
-
+	{{ partial "scroll-to-top.html" . }}
 	{{ $main := resources.Get "js/main.js" -}}
 	{{ if .Site.Params.code_copy_button | default true -}}
 		{{ $codeCopy := resources.Get "js/code-copy.js" -}}
