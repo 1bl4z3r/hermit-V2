@@ -100,7 +100,7 @@ if (header !== null) {
     }
   }, 250));
 }
-// Scroll Up Button Toggle
+// Scroll to Top button Toggle
 //
 const scroll = document.querySelector(".scroll-up"), rootElement = document.documentElement;
 

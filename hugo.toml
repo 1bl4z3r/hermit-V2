@@ -33,6 +33,7 @@ title = "Hugo Hermit - V2"
 # enableGitInfo - Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.
 #enableGitInfo = true
 
+
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
 
@@ -81,21 +82,20 @@ enableEmoji = true
   footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   # bgImg = ""  # Homepage background-image URL
 
+  # Prefix of link to the git commit detail page. GitInfo must be enabled.
+  # gitUrl = "https://github.com/username/repository/commit/"
+
   # Toggling this option needs to rebuild SCSS, requires Hugo extended version
   justifyContent = false  # Set "text-align: justify" to `.content`.
 
-  # Add a related content section to all single posts page
-  relatedPosts = false
+  relatedPosts = false  # Add a related content section to all single posts page
 
-  # Turn on/off the code-copy-button for code-fields
-  code_copy_button = true
+  code_copy_button = true # Turn on/off the code-copy-button for code-fields
   
   # Add custom css
   # customCSS = ["css/foo.css", "css/bar.css"]
 
-  # Add Scroll-To-Top functtionality (Can be enabled/disabled per page or per article basis)
-  scrollToTop = true
-
+  scrollToTop = true # To enable Scroll to Top button Sitewide
   # Social Icons
   # Check https://github.com/Track3/hermit#social-icons for more info.
   [[params.social]]
