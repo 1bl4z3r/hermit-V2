@@ -9,6 +9,7 @@ I fully intend to keep the essence of the theme as-it-is and only add minor upda
 > Let's make __Hermit__ great again
 
 DEMO : [Hermit-V2](https://1bl4z3r.github.io/hermit-V2/)
+
 GoHugo Theme : [https://themes.gohugo.io/themes/hermit-v2/](https://themes.gohugo.io/themes/hermit-v2/)
 ---
 # Original README follows below
