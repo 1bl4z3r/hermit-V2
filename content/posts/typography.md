@@ -8,7 +8,7 @@ description : 'Integer lobortis vulputate mauris quis maximus. Vestibulum ac ero
 tags: 
   - Demo
   - Typography
-Lastmod : 2023-07-22T15:36:33+05:30
+Lastmod : 2023-08-15T15:36:33+05:30
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -59,7 +59,7 @@ Lists:
      + [x] something is DONE.
      + [ ] something is NOT DONE.
 
-Syntax Highlighting:
+Syntax Highlighting with backticks:
 
 ```javascript
 var num1, num2, sum
@@ -68,5 +68,86 @@ num2 = prompt("Enter second number")
 sum = parseInt(num1) + parseInt(num2) // "+" means "add"
 alert("Sum = " + sum)  // "+" means combine into a string
 ```
+
+Syntax Highlighting with [`highlight` shortcode](https://gohugo.io/content-management/syntax-highlighting/)
+
+
+{{< highlight css "linenos=table,linenostart=5" >}}
+/* LineHighlight */ .chroma .hl { display: block; width: 100%;background-color: #55595ebb }
+{{< /highlight >}}
+
+Change Highlight color in `_syntax.scss` Line 5
+
+{{< highlight css "linenos=table,hl_lines=5 23-33,linenostart=1" >}}
+
+html {
+  background: $light-grey;
+  line-height: 1.6;
+  letter-spacing: .06em;
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  color: $text;
+  font-family: $fonts;
+}
+
+pre,
+code,
+pre tt {
+  font-family: $code-fonts;
+}
+
+pre {
+  padding: .7em 1.1em;
+  overflow: auto;
+  font-size: .9em;
+  line-height: 1.5;
+  letter-spacing: normal;
+  white-space: pre;
+  color: #eee;
+  background: $midnightblue;
+  border-radius: 4px;
+  // -webkit-overflow-scrolling: touch;
+
+  code {
+    padding: 0;
+    margin: 0;
+    background: $midnightblue;
+  }
+}
+
+code {
+  color: #eee;
+  background: $highlight-grey;
+  border-radius: 3px;
+  padding: 0 3px;
+  margin: 0 4px;
+  word-wrap: break-word;
+  letter-spacing: normal;
+}
+
+blockquote {
+  border-left: .25em solid;
+  margin: 1em;
+  padding: 0 1em;
+  font-style: italic;
+
+  cite {
+    font-weight: bold;
+    font-style: normal;
+
+    &::before {
+      content: "—— ";
+    }
+  }
+}
+
+{{< /highlight >}}
+
 
 [^1]: From https://en.wikipedia.org/wiki/Apple

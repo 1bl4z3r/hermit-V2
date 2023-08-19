@@ -1,6 +1,6 @@
 # Hugo theme Hermit - V2
 
-### Why Am I maintaing a fork?
+### Why Am I maintaining a fork?
 
 Initially, when I started my Blog journey, I was enthralled by this very theme and I am using it since. However, original developer has ceased maintaining the theme and it is riddled with many bugs. Hence, I have taken upon myself to maintain this theme.
 
@@ -11,7 +11,21 @@ I fully intend to keep the essence of the theme as-it-is and only add minor upda
 DEMO : [Hermit-V2](https://1bl4z3r.github.io/hermit-V2/)
 
 GoHugo Theme Page : [https://themes.gohugo.io/themes/hermit-v2/](https://themes.gohugo.io/themes/hermit-v2/)
----
+
+### Installation
+
+Run this command from the root of your Hugo directory:
+
+```bash
+git clone https://github.com/1bl4z3r/hermit-V2 themes/hermit-v2
+```
+
+Or, if your Hugo site is already in git, you can include this repository as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). This makes it easier to update this theme. For this you need to run:
+
+```bash
+git submodule add https://github.com/1bl4z3r/hermit-V2 themes/hermit-v2
+```
+
 # Original README follows below
 
 Hermit is a minimal and fast theme for Hugo. It's built for bloggers who want a simple and focused website.

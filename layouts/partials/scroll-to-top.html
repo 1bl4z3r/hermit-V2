@@ -3,4 +3,7 @@
 <noscript>
     <a href="#" class="scroll-up show">{{ partial "svg.html" (dict "context" . "name" "scrollup") }}</a>
 </noscript>
+{{ $scrollwatcher := resources.Get "js/scrollwatcher.js" -}}
+{{ $script := $scrollwatcher | minify | fingerprint -}}
+<script async src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
 {{ end }}
