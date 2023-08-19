@@ -19,14 +19,4 @@ jobs:
         env:
           key: staging
           branches: main
-          files: 
-jobs:
-  Copy To Main:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Copy To Branches Action
-        uses: planetoftheweb/copy-to-branches@v1
-        env:
-          key: staging
-          branches: main
           files: ./archetypes/default.md ./archetypes/posts.md ./assets/js/code-copy.js ./assets/js/main.js ./assets/js/mathjax/mathjax-assistant.js ./assets/js/mathjax/mathjax-full@3_es5_tex-mml-svg.min.js ./assets/js/scrollwatcher.js ./assets/scss/style.scss ./assets/scss/_animate.scss ./assets/scss/_mathjax.scss ./assets/scss/_normalize.scss ./assets/scss/_predefined.scss ./assets/scss/_scroll.scss ./assets/scss/_syntax.scss ./hugo.toml ./i18n/en.toml ./i18n/fr.toml ./i18n/it.toml ./i18n/zh-hans.toml ./images/hermit.png ./images/screenshot.png ./images/tn.png ./layouts/404.html ./layouts/index.html ./layouts/partials/analytics.html ./layouts/partials/comments.html ./layouts/partials/favicons.html ./layouts/partials/footer.html ./layouts/partials/header.html ./layouts/partials/mathjax.html ./layouts/partials/menu.html ./layouts/partials/related-posts.html ./layouts/partials/scroll-to-top.html ./layouts/partials/social-icons.html ./layouts/partials/structured-data.html ./layouts/partials/svg.html ./layouts/posts/rss.xml ./layouts/posts/single.html ./layouts/shortcodes/figure.html ./layouts/_default/baseof.html ./layouts/_default/list.html ./layouts/_default/single.html ./LICENSE ./README.md ./theme.toml
