@@ -16,10 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           submodules: true
           fetch-depth: 0
+      - name: Copy Files
         env:
           SRC_FOLDER_PATH: '.'
           TARGET_BRANCH: 'main'
