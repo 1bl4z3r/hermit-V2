@@ -1,4 +1,143 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Hugo Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/posts/</link><description>Recent content in Posts on Hugo Hermit - V2</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 06 Aug 2023 16:07:33 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/posts/the-new-scroll/</guid><description>This article explains how to use Scroll Up A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.</description><content type="html"><![CDATA[<h2 id="this-article-explains-how-to-use-scroll-up">This article explains how to use Scroll Up</h2>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Hugo Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/posts/</link><description>Recent content in Posts on Hugo Hermit - V2</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 18 Aug 2023 14:07:33 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/posts/mathjax-support/</guid><description>Beautiful and accessible math in all browsers A JavaScript display engine for mathematics that works in all browsers.
+Configuration Mathjax support is implemented via partials. Please find partial in /layouts/partials/mathjax.html
+1 2 3 4 5 6 7 {{ if or (.Site.Params.global_mathjax) (.Params.mathjax) }} &amp;lt;script type=&amp;#34;text/javascript&amp;#34; async src=&amp;#34;https://polyfill.io/v3/polyfill.min.js?features=es6&amp;#34; crossorigin=&amp;#34;anonymous&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; {{ $mathjaxf := resources.Get &amp;#34;js/mathjax/mathjax-full@3_es5_tex-mml-svg.min.js&amp;#34;}} {{ $mathjaxa := resources.Get &amp;#34;js/mathjax/mathjax-assistant.js&amp;#34;}} {{ $mathjaxscript := slice $mathjaxa $mathjaxf | resources.Concat &amp;#34;js/mathjaxs.js&amp;#34; | minify | fingerprint -}} &amp;lt;script type=&amp;#34;text/javascript&amp;#34; id=&amp;#34;MathJax-script&amp;#34; async src=&amp;#34;{{ $mathjaxscript.</description><content type="html"><![CDATA[<h1 id="beautiful-and-accessible-math-in-all-browsers">Beautiful and accessible math in all browsers</h1>
+<p>A JavaScript display engine for mathematics that works in all browsers.</p>
+<h2 id="configuration">Configuration</h2>
+<p>Mathjax support is implemented via partials. Please find partial in <code>/layouts/partials/mathjax.html</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{ if or (.Site.Params.global_mathjax) (.Params.mathjax) }}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">async</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://polyfill.io/v3/polyfill.min.js?features=es6&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ $mathjaxf := resources.Get &#34;js/mathjax/mathjax-full@3_es5_tex-mml-svg.min.js&#34;}}
+</span></span><span class="line"><span class="cl">    {{ $mathjaxa := resources.Get &#34;js/mathjax/mathjax-assistant.js&#34;}}
+</span></span><span class="line"><span class="cl">    {{ $mathjaxscript := slice $mathjaxa $mathjaxf | resources.Concat &#34;js/mathjaxs.js&#34; | minify | fingerprint -}}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;MathJax-script&#34;</span> <span class="na">async</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ $mathjaxscript.Permalink }}&#34;</span> <span class="err">{{</span> <span class="na">printf</span> <span class="err">&#34;</span><span class="na">integrity</span><span class="o">=</span><span class="s">%q&#34;</span> <span class="err">$</span><span class="na">mathjaxscript</span><span class="err">.</span><span class="na">Data</span><span class="err">.</span><span class="na">Integrity</span> <span class="err">|</span> <span class="na">safeHTMLAttr</span> <span class="err">}}</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{ end }}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>I have given a simple style for mathjax components. You may find in <code>/assets/scss/_mathjax.scss</code>. You may extend this stylesheet according to your liking.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nc">.has-jax</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="na">-webkit-font-smoothing</span><span class="o">:</span> <span class="n">antialiased</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">background</span><span class="o">:</span> <span class="ni">inherit</span> <span class="k">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">border</span><span class="o">:</span> <span class="ni">none</span> <span class="k">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">font-size</span><span class="o">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Finally, Javacript. Mathjax has two JS.</p>
+<ul>
+<li><code>/assets/js/mathjax/mathjax-full@3_es5_tex-mml-svg.min.js</code> (This is the main library downloaded from <a href="https://cdn.jsdelivr.net/npm/mathjax-full@3/es5/tex-mml-svg.js">jsDelivr</a>)</li>
+<li><code>/assets/js/mathjax/mathjax-assistant.js</code> (You may extend this according to your liking)</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">MathJax</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">tex</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span> <span class="s1">&#39;$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;\\(&#39;</span><span class="p">,</span> <span class="s1">&#39;\\)&#39;</span><span class="p">]],</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">displayMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;$$&#39;</span><span class="p">,</span><span class="s1">&#39;$$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;\\[&#39;</span><span class="p">,</span> <span class="s1">&#39;\\]&#39;</span><span class="p">]],</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">processEnvironments</span><span class="o">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">skipHtmlTags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;noscript&#39;</span><span class="p">,</span> <span class="s1">&#39;style&#39;</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">,</span> <span class="s1">&#39;pre&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">enableMenu</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&#34;mjx-container&#34;</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">x</span><span class="p">.</span><span class="nx">parentElement</span><span class="p">.</span><span class="nx">classList</span> <span class="o">+=</span> <span class="s1">&#39;has-jax&#39;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>You can invoke partial in following ways:</p>
+<ol>
+<li>If you want global Mathjax support (for technical blog): set <code>global_mathjax</code> to true in hugo.toml</li>
+<li>If you want mathjax support in individual articles : add <code>mathjax : true</code> to Frontmatter</li>
+</ol>
+<p>I have consciously decoupled main javascript from Mathjax javascript, so that you may visualize if there is any load latency, given mathjax JS is huge. I have minified it, but still if you get any better optimizations, let me know.</p>
+<blockquote>
+<p>The MathJax library version (at the time of publising this article) is : 3.2.2.</p>
+<blockquote>
+<p>It includes components : tex-mml-svg.</p>
+</blockquote>
+</blockquote>
+<h3 id="the-quadratic-formula">The Quadratic Formula</h3>
+<p>$$
+x = {-b \pm \sqrt{b^2-4ac} \over 2a}
+$$</p>
+<h3 id="cauchys-integral-formula">Cauchy&rsquo;s Integral Formula</h3>
+<p>$$
+f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz
+$$</p>
+<h3 id="gauss-divergence-theorem">Gauss&rsquo; Divergence Theorem</h3>
+<p>$$
+\int_D ({\nabla\cdot} F)dV=\int_{\partial D} F\cdot ndS
+$$</p>
+<h3 id="curl-of-a-vector-field">Curl of a Vector Field</h3>
+<p>$$
+\vec{\nabla} \times \vec{F} =
+\left( \frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z} \right) \mathbf{i}
++ \left( \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x} \right) \mathbf{j}
++ \left( \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} \right) \mathbf{k}
+$$</p>
+<h3 id="standard-deviation">Standard Deviation</h3>
+<p>$$
+\sigma = \sqrt{ \frac{1}{N} \sum_{i=1}^N (x_i -\mu)^2}
+$$</p>
+<h3 id="definition-of-christoffel-symbols">Definition of Christoffel Symbols</h3>
+<p>$$
+(\nabla_X Y)^k = X^i (\nabla_i Y)^k =
+X^i \left( \frac{\partial Y^k}{\partial x^i} + \Gamma_{im}^k Y^m \right)
+$$</p>
+<h3 id="inline">Inline</h3>
+<p>When $a \ne 0$, there are two solutions to (ax^2 + bx + c = 0) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+<h3 id="a-complex-equation">A complex equation</h3>
+<p>\begin{equation}
+S (ω)=1.466, H_s^2 ,  \frac{ω_0^5}{ω^6 }  , e^[-3^ { ω/(ω_0  )]^2}
+\end{equation}</p>
+<h3 id="another-equation">Another equation</h3>
+<p>$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$</p>
+]]></content></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/posts/the-new-scroll/</guid><description>This article explains how to use Scroll Up A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.</description><content type="html"><![CDATA[<h2 id="this-article-explains-how-to-use-scroll-up">This article explains how to use Scroll Up</h2>
 <p>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.</p>
 <h3 id="step-1">Step 1</h3>
 <p>Set <code>scrollToTop</code> to true in <code>hugo.toml</code></p>
@@ -14,19 +153,64 @@
 <h2 id="icon">Icon</h2>
 <p>Icon is located in <code>layouts/partials/svg.html</code> under scrollup.
 Icon svg code is as follows:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-svg" data-lang="svg"><span class="line"><span class="cl"><span class="nt">&lt;svg</span> <span class="na">fill=</span><span class="s">&#34;#3B3E48&#34;</span> <span class="na">width=</span><span class="s">&#34;64px&#34;</span> <span class="na">height=</span><span class="s">&#34;64px&#34;</span> <span class="na">viewBox=</span><span class="s">&#34;-2.4 -2.4 28.80 28.80&#34;</span> <span class="na">id=</span><span class="s">&#34;up-circle&#34;</span> <span class="na">data-name=</span><span class="s">&#34;Flat Color&#34;</span> <span class="na">xmlns=</span><span class="s">&#34;http://www.w3.org/2000/svg&#34;</span> <span class="na">class=</span><span class="s">&#34;icon flat-color&#34;</span> <span class="na">stroke=</span><span class="s">&#34;#3B3E48&#34;</span> <span class="na">stroke-width=</span><span class="s">&#34;0.00024000000000000003&#34;</span><span class="nt">&gt;&lt;g</span> <span class="na">id=</span><span class="s">&#34;SVGRepo_bgCarrier&#34;</span> <span class="na">stroke-width=</span><span class="s">&#34;0&#34;</span><span class="nt">&gt;&lt;/g&gt;&lt;g</span> <span class="na">id=</span><span class="s">&#34;SVGRepo_tracerCarrier&#34;</span> <span class="na">stroke-linecap=</span><span class="s">&#34;round&#34;</span> <span class="na">stroke-linejoin=</span><span class="s">&#34;round&#34;</span> <span class="na">stroke=</span><span class="s">&#34;#CCCCCC&#34;</span> <span class="na">stroke-width=</span><span class="s">&#34;0.9600000000000002&#34;</span><span class="nt">&gt;&lt;circle</span> <span class="na">id=</span><span class="s">&#34;primary&#34;</span> <span class="na">cx=</span><span class="s">&#34;12&#34;</span> <span class="na">cy=</span><span class="s">&#34;12&#34;</span> <span class="na">r=</span><span class="s">&#34;10&#34;</span> <span class="na">style=</span><span class="s">&#34;fill: #3B3E48;&#34;</span><span class="nt">&gt;&lt;/circle&gt;&lt;path</span> <span class="na">id=</span><span class="s">&#34;secondary&#34;</span> <span class="na">d=</span><span class="s">&#34;M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z&#34;</span> <span class="na">style=</span><span class="s">&#34;fill: #018574;&#34;</span><span class="nt">&gt;&lt;/path&gt;&lt;/g&gt;&lt;g</span> <span class="na">id=</span><span class="s">&#34;SVGRepo_iconCarrier&#34;</span><span class="nt">&gt;&lt;circle</span> <span class="na">id=</span><span class="s">&#34;primary&#34;</span> <span class="na">cx=</span><span class="s">&#34;12&#34;</span> <span class="na">cy=</span><span class="s">&#34;12&#34;</span> <span class="na">r=</span><span class="s">&#34;10&#34;</span> <span class="na">style=</span><span class="s">&#34;fill: #3B3E48;&#34;</span><span class="nt">&gt;&lt;/circle&gt;&lt;path</span> <span class="na">id=</span><span class="s">&#34;secondary&#34;</span> <span class="na">d=</span><span class="s">&#34;M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z&#34;</span> <span class="na">style=</span><span class="s">&#34;fill: #018574;&#34;</span><span class="nt">&gt;&lt;/path&gt;&lt;/g&gt;&lt;/svg&gt;</span>
-</span></span></code></pre></div><h2 id="html">HTML</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#34;#3B3E48&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;64px&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;64px&#34;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&#34;-2.4 -2.4 28.80 28.80&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;up-circle&#34;</span> <span class="na">data-name</span><span class="o">=</span><span class="s">&#34;Flat Color&#34;</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&#34;http://www.w3.org/2000/svg&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icon flat-color&#34;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&#34;#3B3E48&#34;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&#34;0.00024000000000000003&#34;</span><span class="p">&gt;&lt;</span><span class="nt">g</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;SVGRepo_bgCarrier&#34;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&#34;0&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">g</span><span class="p">&gt;&lt;</span><span class="nt">g</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;SVGRepo_tracerCarrier&#34;</span> <span class="na">stroke-linecap</span><span class="o">=</span><span class="s">&#34;round&#34;</span> <span class="na">stroke-linejoin</span><span class="o">=</span><span class="s">&#34;round&#34;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&#34;#CCCCCC&#34;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&#34;0.9600000000000002&#34;</span><span class="p">&gt;&lt;</span><span class="nt">circle</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;primary&#34;</span> <span class="na">cx</span><span class="o">=</span><span class="s">&#34;12&#34;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&#34;12&#34;</span> <span class="na">r</span><span class="o">=</span><span class="s">&#34;10&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;fill: #3B3E48;&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">circle</span><span class="p">&gt;&lt;</span><span class="nt">path</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;secondary&#34;</span> <span class="na">d</span><span class="o">=</span><span class="s">&#34;M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;fill: #018574;&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">path</span><span class="p">&gt;&lt;/</span><span class="nt">g</span><span class="p">&gt;&lt;</span><span class="nt">g</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;SVGRepo_iconCarrier&#34;</span><span class="p">&gt;&lt;</span><span class="nt">circle</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;primary&#34;</span> <span class="na">cx</span><span class="o">=</span><span class="s">&#34;12&#34;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&#34;12&#34;</span> <span class="na">r</span><span class="o">=</span><span class="s">&#34;10&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;fill: #3B3E48;&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">circle</span><span class="p">&gt;&lt;</span><span class="nt">path</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;secondary&#34;</span> <span class="na">d</span><span class="o">=</span><span class="s">&#34;M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;fill: #018574;&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">path</span><span class="p">&gt;&lt;/</span><span class="nt">g</span><span class="p">&gt;&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="html">HTML</h2>
 <p>This is implemented as a partial located in <code>layouts/partials/scroll-to-top.html</code>.
 Partial is injected in <code>layouts/_default/baseof.html</code></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{</span> <span class="k">if</span> <span class="nf">and</span> <span class="p">(.</span><span class="nx">Site</span><span class="p">.</span><span class="nx">Params</span><span class="p">.</span><span class="nx">scrollToTop</span><span class="p">)</span> <span class="p">(.</span><span class="nx">Params</span><span class="p">.</span><span class="nx">scrolltotop</span><span class="p">)</span> <span class="p">}}</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{</span> <span class="k">if</span> <span class="nf">and</span> <span class="p">(.</span><span class="nx">Site</span><span class="p">.</span><span class="nx">Params</span><span class="p">.</span><span class="nx">scrollToTop</span><span class="p">)</span> <span class="p">(.</span><span class="nx">Params</span><span class="p">.</span><span class="nx">scrolltotop</span><span class="p">)</span> <span class="p">}}</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="p">=</span><span class="s">&#34;#&#34;</span> <span class="nx">class</span><span class="p">=</span><span class="s">&#34;scroll-up&#34;</span><span class="p">&gt;{{</span> <span class="nx">partial</span> <span class="s">&#34;svg.html&#34;</span> <span class="p">(</span><span class="nx">dict</span> <span class="s">&#34;context&#34;</span> <span class="p">.</span> <span class="s">&#34;name&#34;</span> <span class="s">&#34;scrollup&#34;</span><span class="p">)</span> <span class="p">}}&lt;</span><span class="o">/</span><span class="nx">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nx">noscript</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="p">=</span><span class="s">&#34;#&#34;</span> <span class="nx">class</span><span class="p">=</span><span class="s">&#34;scroll-up show&#34;</span><span class="p">&gt;{{</span> <span class="nx">partial</span> <span class="s">&#34;svg.html&#34;</span> <span class="p">(</span><span class="nx">dict</span> <span class="s">&#34;context&#34;</span> <span class="p">.</span> <span class="s">&#34;name&#34;</span> <span class="s">&#34;scrollup&#34;</span><span class="p">)</span> <span class="p">}}&lt;</span><span class="o">/</span><span class="nx">a</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="o">/</span><span class="nx">noscript</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">{{</span> <span class="nx">end</span> <span class="p">}}</span>
-</span></span></code></pre></div><h2 id="css">CSS</h2>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span> <span class="err">$</span><span class="nx">scrollwatcher</span> <span class="o">:=</span> <span class="nx">resources</span><span class="p">.</span><span class="nx">Get</span> <span class="s">&#34;js/scrollwatcher.js&#34;</span> <span class="o">-</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span> <span class="err">$</span><span class="nx">script</span> <span class="o">:=</span> <span class="err">$</span><span class="nx">scrollwatcher</span> <span class="p">|</span> <span class="nx">minify</span> <span class="p">|</span> <span class="nx">fingerprint</span> <span class="o">-</span><span class="p">}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="p">=</span><span class="s">&#34;{{ $script.Permalink }}&#34;</span> <span class="p">{{</span> <span class="nx">printf</span> <span class="s">&#34;integrity=%q&#34;</span> <span class="err">$</span><span class="nx">script</span><span class="p">.</span><span class="nx">Data</span><span class="p">.</span><span class="nx">Integrity</span> <span class="p">|</span> <span class="nx">safeHTMLAttr</span> <span class="p">}}</span> <span class="nx">crossorigin</span><span class="p">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;&lt;</span><span class="o">/</span><span class="nx">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span> <span class="nx">end</span> <span class="p">}}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="css">CSS</h2>
 <p>Located in <code>assets/scss/_scroll.scss</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nc">.scroll-up</span><span class="p">{</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nc">.scroll-up</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="na">position</span><span class="o">:</span> <span class="ni">fixed</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="na">bottom</span><span class="o">:</span> <span class="mi">10</span><span class="kt">%</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="na">right</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
@@ -41,24 +225,20 @@ Partial is injected in <code>layouts/_default/baseof.html</code></p>
 </span></span><span class="line"><span class="cl"><span class="nc">.show</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="na">opacity</span><span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="na">transform</span><span class="o">:</span> <span class="nf">translateY</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span></code></pre></div><h2 id="javascript">JavaScript</h2>
-<p>Located in last section (Line 103) in <code>assets/js/main.js</code></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JavaScript" data-lang="JavaScript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">scroll</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&#34;.scroll-up&#34;</span><span class="p">);</span> <span class="c1">//Get Document for scroll button
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">rootElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">;</span> <span class="c1">//Root Document
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">handleScroll</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">rootElement</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">/</span> <span class="p">(</span><span class="nx">rootElement</span><span class="p">.</span><span class="nx">scrollHeight</span> <span class="o">-</span> <span class="nx">rootElement</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.4</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">//If user has scrolled 40% of the page, show the scroll up button
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">scroll</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&#34;hide&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">scroll</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&#34;show&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">scroll</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&#34;hide&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">scroll</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&#34;show&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;scroll&#34;</span><span class="p">,</span> <span class="nx">handleScroll</span><span class="p">);</span> <span class="c1">// Observe Scroll event
-</span></span></span></code></pre></div>]]></content></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/posts/typography/</link><pubDate>Sat, 22 Jul 2023 14:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/posts/typography/</guid><description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="javascript">JavaScript</h2>
+<p>Located in <code>assets/js/scrollwatcher.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">scroll</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&#34;.scroll-up&#34;</span><span class="p">),</span><span class="nx">rootElement</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">;</span><span class="kd">function</span> <span class="nx">handleScroll</span><span class="p">(){</span><span class="nx">rootElement</span><span class="p">.</span><span class="nx">scrollTop</span><span class="o">/</span><span class="p">(</span><span class="nx">rootElement</span><span class="p">.</span><span class="nx">scrollHeight</span><span class="o">-</span><span class="nx">rootElement</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">)</span><span class="o">&gt;</span><span class="p">.</span><span class="mi">4</span><span class="o">?</span><span class="p">(</span><span class="nx">scroll</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&#34;hide&#34;</span><span class="p">),</span><span class="nx">scroll</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&#34;show&#34;</span><span class="p">))</span><span class="o">:</span><span class="p">(</span><span class="nx">scroll</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&#34;hide&#34;</span><span class="p">),</span><span class="nx">scroll</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&#34;show&#34;</span><span class="p">))}</span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;scroll&#34;</span><span class="p">,</span><span class="nx">handleScroll</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+]]></content></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/posts/typography/</link><pubDate>Sat, 22 Jul 2023 14:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/posts/typography/</guid><description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 An apple is a sweet, edible fruit produced by an apple tree (Malus pumila).</description><content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <blockquote>
 <p>An apple is a sweet, edible fruit produced by an apple tree (Malus pumila). Apple trees are cultivated worldwide, and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today. Apples have been grown for thousands of years in Asia and Europe, and were brought to North America by European colonists. Apples have religious and mythological significance in many cultures, including Norse, Greek and European Christian traditions.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
@@ -121,13 +301,161 @@ An apple is a sweet, edible fruit produced by an apple tree (Malus pumila).</des
 </ul>
 </li>
 </ol>
-<p>Syntax Highlighting:</p>
+<p>Syntax Highlighting with backticks:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">,</span> <span class="nx">sum</span>
 </span></span><span class="line"><span class="cl"><span class="nx">num1</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="s2">&#34;Enter first number&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nx">num2</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="s2">&#34;Enter second number&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nx">sum</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">num1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">num2</span><span class="p">)</span> <span class="c1">// &#34;+&#34; means &#34;add&#34;
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;Sum = &#34;</span> <span class="o">+</span> <span class="nx">sum</span><span class="p">)</span>  <span class="c1">// &#34;+&#34; means combine into a string
-</span></span></span></code></pre></div><div class="footnotes" role="doc-endnotes">
+</span></span></span></code></pre></div><p>Syntax Highlighting with <a href="https://gohugo.io/content-management/syntax-highlighting/"><code>highlight</code> shortcode</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* LineHighlight */</span> <span class="p">.</span><span class="nc">chroma</span> <span class="p">.</span><span class="nc">hl</span> <span class="p">{</span> <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span> <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="k">background-color</span><span class="p">:</span> <span class="mh">#55595e</span><span class="n">bb</span> <span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Change Highlight color in <code>_syntax.scss</code> Line 5</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="hl"><span class="lnt"> 5
+</span></span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="hl"><span class="lnt">23
+</span></span><span class="hl"><span class="lnt">24
+</span></span><span class="hl"><span class="lnt">25
+</span></span><span class="hl"><span class="lnt">26
+</span></span><span class="hl"><span class="lnt">27
+</span></span><span class="hl"><span class="lnt">28
+</span></span><span class="hl"><span class="lnt">29
+</span></span><span class="hl"><span class="lnt">30
+</span></span><span class="hl"><span class="lnt">31
+</span></span><span class="hl"><span class="lnt">32
+</span></span><span class="hl"><span class="lnt">33
+</span></span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">html</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="err">$</span><span class="n">light-grey</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">line-height</span><span class="p">:</span> <span class="mf">1.6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">letter-spacing</span><span class="p">:</span> <span class="mf">.06</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl">  <span class="n">scroll-behavior</span><span class="p">:</span> <span class="kc">smooth</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">body</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="nt">button</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="nt">input</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="nt">select</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="nt">textarea</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="err">$</span><span class="kc">text</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">font-family</span><span class="p">:</span> <span class="err">$</span><span class="n">fonts</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">pre</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="nt">code</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="nt">pre</span> <span class="nt">tt</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">font-family</span><span class="p">:</span> <span class="err">$</span><span class="n">code-fonts</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line hl"><span class="cl"><span class="nt">pre</span> <span class="p">{</span>
+</span></span><span class="line hl"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mf">.7</span><span class="kt">em</span> <span class="mf">1.1</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl">  <span class="k">overflow</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl">  <span class="k">font-size</span><span class="p">:</span> <span class="mf">.9</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl">  <span class="k">line-height</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl">  <span class="k">letter-spacing</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl">  <span class="k">white-space</span><span class="p">:</span> <span class="kc">pre</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="mh">#eee</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="err">$</span><span class="kc">midnightblue</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl">  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line hl"><span class="cl">  <span class="err">//</span> <span class="kp">-webkit-</span><span class="n">overflow-scrolling</span><span class="p">:</span> <span class="n">touch</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="err">code</span> <span class="err">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="err">$</span><span class="kc">midnightblue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="err">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">code</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="mh">#eee</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="err">$</span><span class="n">highlight-grey</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">word-wrap</span><span class="p">:</span> <span class="kc">break-word</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">letter-spacing</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">blockquote</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-left</span><span class="p">:</span> <span class="mf">.25</span><span class="kt">em</span> <span class="kc">solid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">font-style</span><span class="p">:</span> <span class="kc">italic</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="err">cite</span> <span class="err">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-style</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="err">&amp;::before</span> <span class="err">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">content</span><span class="p">:</span> <span class="s2">&#34;—— &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="err">}</span>
+</span></span><span class="line"><span class="cl"><span class="err">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
