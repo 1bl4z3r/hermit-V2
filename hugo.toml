@@ -96,6 +96,11 @@ enableEmoji = true
   # customCSS = ["css/foo.css", "css/bar.css"]
 
   scrollToTop = true # To enable Scroll to Top button Sitewide
+
+  # Enable global_mathjax to true, if you want MathJax support sitewide (if you have technical page)
+  # You can enable Per-Page MathJax support by adding `mathjax : true` in Page frontmatter
+  global_mathjax = false
+
   # Social Icons
   # Check https://github.com/Track3/hermit#social-icons for more info.
   [[params.social]]
