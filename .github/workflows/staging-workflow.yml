@@ -2,6 +2,12 @@
 # Trigger on every commit to staging
 name: Copy Contents to main branch
 on:
+  push:
+    branches:
+      - staging
+  pull_request:
+    branches:
+      - staging
   workflow_dispatch:
 
 jobs:
