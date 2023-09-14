@@ -76,9 +76,6 @@ enableEmoji = true
 
   homeSubtitle = "A minimal and fast theme for Hugo."
 
-  # Below Allows homeSubtitle to be shown with printer animation effect. Refer Line 911 in style.scss
-  homeSubtitlePrinter = true
-
   footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   # bgImg = ""  # Homepage background-image URL
 
@@ -95,14 +92,27 @@ enableEmoji = true
   # Add custom css
   # customCSS = ["css/foo.css", "css/bar.css"]
 
-  scrollToTop = true # To enable Scroll to Top button Sitewide
+  # Social Icons
+  # Check https://github.com/Track3/hermit#social-icons for more info.
+
+  # ---------------------------------------------------
+  # Hugo - V2 specific configurations
+  # ---------------------------------------------------
+
+  # Below Allows homeSubtitle to be shown with printer animation effect. Refer Line 911 in style.scss
+  homeSubtitlePrinter = true
+
+  # To enable Scroll to Top button Sitewide
+  scrollToTop = true 
 
   # Enable global_mathjax to true, if you want MathJax support sitewide (if you have technical page)
   # You can enable Per-Page MathJax support by adding `mathjax : true` in Page frontmatter
   global_mathjax = false
 
-  # Social Icons
-  # Check https://github.com/Track3/hermit#social-icons for more info.
+  # ---------------------------------------------------
+  # Hugo - V2 specific configurations end
+  # ---------------------------------------------------
+
   [[params.social]]
     name = "twitter"
     url = "https://twitter.com/"
