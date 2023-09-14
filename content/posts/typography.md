@@ -19,10 +19,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Inline styles：
 
-**strong**, *emphasis*, ***strong and emphasis***,`code`, <u>underline</u>, ~~strikethrough~~, :joy:🤣, $\LaTeX$, X^2^, H~2~O, ==highlight==, [Link](https://example.com), and image:
+**strong**, *emphasis*, ***strong and emphasis***,`code`, <u>underline</u>, ~~strikethrough~~, :joy:🤣, $\LaTeX$[^2], ==highlight==, [Link](https://example.com), and image:
 
 ![img](https://picsum.photos/600/400/?random)
 
+
+[^2]: LaTeX is supported by Mathjax, explained [in this article]({{< relref "mathjax-support.md" >}})
 ---
 
 Headings:
