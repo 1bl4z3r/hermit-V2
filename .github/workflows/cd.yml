@@ -2,10 +2,10 @@ name: Build and Deploy Hugo Site
 on:
   push:
     branches:
-      - deploy
+      - staging
   pull_request:
     branches:
-      - deploy
+      - staging
 jobs:
   build-and-deploy-site:
     name: Build and Deploy Hugo
@@ -34,7 +34,7 @@ jobs:
         continue-on-error: true
 
       - name: Deploy to GitHub Pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/deploy'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/staging'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

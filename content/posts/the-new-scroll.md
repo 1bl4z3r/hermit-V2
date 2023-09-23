@@ -8,7 +8,6 @@ description : 'A button to return to the top of the page allows the user to quic
 tags: 
   - Demo
   - Typography
-author : 1bl4z3r
 scrolltotop : true
 toc : true
 ---

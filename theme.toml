@@ -1,10 +1,10 @@
 name = "Hermit-V2"
 license = "MIT"
-licenselink = "https://github.com/Track3/hermit/blob/master/LICENSE"
+licenselink = "https://github.com/1bl4z3r/hermit-V2/blob/main/LICENSE"
 description = "A minimal and fast hugo theme for bloggers."
 homepage = "https://github.com/1bl4z3r/hermit-V2"
 demosite = "https://1bl4z3r.github.io/hermit-V2/"
-tags = ["blog", "minimal", "dark", "responsive", fast]
+tags = ["blog", "minimal", "dark", "responsive", "fast"]
 features = [
   "single column",
   "featured image",
