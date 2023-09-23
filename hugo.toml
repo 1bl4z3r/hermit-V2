@@ -1,34 +1,34 @@
 baseURL = "https://1bl4z3r.github.io/hermit-V2/" # baseURL - The absolute URL (protocol, host, path, and trailing slash) of your published site
 
 
-#[languages]
-#  [languages.en]
-#    title = 'My blog'
-#    weight = 1
-#    [languages.en.params]
-#      linkedin = 'https://linkedin.com/whoever'
-#  [languages.fr]
-#    title = 'Mon blogue'
-#    weight = 2
-#    [languages.fr.params]
-#      linkedin = 'https://linkedin.com/fr/whoever'
-#  [languages.it]
-#    title = 'Il mio blog'
-#    weight = 3
-#    [languages.fr.params]
-#      linkedin = 'https://linkedin.com/fr/whoever'
+# defaultContentLanguage - Content without language indicator will default to this language.
+defaultContentLanguage = "en"
 
+[languages]
+  [languages.en]
+    title = 'Hugo Hermit - V2'
+    [languages.en.params]
+      homeSubtitle = "A minimal and fast theme for Hugo."
+    weight = 1
+  [languages.fr]
+    title = 'Hugo Hermit - V2 (FR)'
+    [languages.fr.params]
+      homeSubtitle = "Un thème minimal et rapide pour Hugo."
+    weight = 2
+  [languages.it]
+    title = 'Hugo Hermit - V2 (IT)'
+    [languages.it.params]
+      homeSubtitle = "Un tema minimale e veloce per Hugo."
+    weight = 3
+
+defaultContentLanguageInSubdir = true
 # languageCode - A language tag as defined by RFC 5646. This value is used to populate:
 #   The <language> element in the internal RSS template
 #   The lang attribute of the <html> element in the internal alias template
 languageCode = "en-us"
 
-# defaultContentLanguage - Content without language indicator will default to this language.
-defaultContentLanguage = "en"
-
-
 # title - Site title
-title = "Hugo Hermit - V2"
+# title = "Hugo Hermit - V2"
 
 # enableGitInfo - Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.
 #enableGitInfo = true
@@ -53,6 +53,7 @@ enableEmoji = true
 
 [author]
   name = "1BL4Z3R"
+  about = "about-hugo"
 
 [blackfriday]
   # hrefTargetBlank = true
@@ -74,9 +75,9 @@ enableEmoji = true
   # images = [""]
   themeColor = "#494f5c"
 
-  homeSubtitle = "A minimal and fast theme for Hugo."
+  #homeSubtitle = "A minimal and fast theme for Hugo."
 
-  footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+  footerCopyright = ' <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   # bgImg = ""  # Homepage background-image URL
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
@@ -85,7 +86,7 @@ enableEmoji = true
   # Toggling this option needs to rebuild SCSS, requires Hugo extended version
   justifyContent = false  # Set "text-align: justify" to `.content`.
 
-  relatedPosts = false  # Add a related content section to all single posts page
+  relatedPosts = true  # Add a related content section to all single posts page
 
   code_copy_button = true # Turn on/off the code-copy-button for code-fields
   
@@ -108,6 +109,12 @@ enableEmoji = true
   # Enable global_mathjax to true, if you want MathJax support sitewide (if you have technical page)
   # You can enable Per-Page MathJax support by adding `mathjax : true` in Page frontmatter
   global_mathjax = false
+
+  # Toggle Reading time for articles
+  readTime = true
+
+  # Specify Separator between wordCount and readTime
+  readTimeSeparator = "\u002F||\u005C Reading Time:"
 
   # ---------------------------------------------------
   # Hugo - V2 specific configurations end
