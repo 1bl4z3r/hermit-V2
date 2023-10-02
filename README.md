@@ -93,7 +93,7 @@ The following icons are supported, please make sure the `name` filed is exactly 
 | `stackoverflow` | `telegram`  | `twitter`    | `youtube` |
 | `shutterstock`  | `freepik`   | `adobestock` | `123rf`   |
 | `dreamstime`    | `dribbble`  | `behance`    | `paypal`  |
-| `twitch`        | `qq`        | `mastodon`   |           |
+| `twitch`        | `qq`        | `mastodon`   | `discord` |
 
 If that's not enough, you can see [Overriding templates](#overriding-templates) section.
 
