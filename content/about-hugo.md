@@ -1,6 +1,8 @@
 +++
 title = "About Hugo"
 date = "2014-04-09"
+custom_css = ["css/foo.css","css/bar.css"]
+custom_js = ["js/custom-about.js"]
 +++
 
 Hugo is the **world’s fastest framework for building websites**. It is written in Go.

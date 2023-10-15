@@ -6,19 +6,19 @@ defaultContentLanguage = "en"
 
 [languages]
   [languages.en]
-    title = 'Hugo Hermit - V2'
+    title = 'Hermit - V2'
     [languages.en.params]
-      homeSubtitle = "A minimal and fast theme for Hugo."
+      homeSubtitle = "Continuing Hermit's legacy to be minimal and fast theme"
     weight = 1
   [languages.fr]
-    title = 'Hugo Hermit - V2 (FR)'
+    title = 'Hermit - V2 (FR)'
     [languages.fr.params]
-      homeSubtitle = "Un thème minimal et rapide pour Hugo."
+      homeSubtitle = "Poursuivre l'héritage d'Hermit avec un thème minimal et rapide"
     weight = 2
   [languages.it]
-    title = 'Hugo Hermit - V2 (IT)'
+    title = 'Hermit - V2 (IT)'
     [languages.it.params]
-      homeSubtitle = "Un tema minimale e veloce per Hugo."
+      homeSubtitle = "Continuare l'eredità di Hermit di essere un tema minimale e veloce"
     weight = 3
 
 defaultContentLanguageInSubdir = true
@@ -27,12 +27,10 @@ defaultContentLanguageInSubdir = true
 #   The lang attribute of the <html> element in the internal alias template
 languageCode = "en-us"
 
-# title - Site title
-# title = "Hugo Hermit - V2"
+# title = "Hermit - V2"
 
 # enableGitInfo - Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.
 #enableGitInfo = true
-
 
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
@@ -75,7 +73,7 @@ enableEmoji = true
   # images = [""]
   themeColor = "#494f5c"
 
-  #homeSubtitle = "A minimal and fast theme for Hugo."
+  #homeSubtitle = "Continuing Hermit's legacy to be minimal and fast theme"
 
   footerCopyright = ' <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   # bgImg = ""  # Homepage background-image URL

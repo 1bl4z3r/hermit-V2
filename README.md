@@ -1,7 +1,5 @@
 # Hugo theme Hermit - V2
 
-### Why Am I maintaining a fork?
-
 Initially, when I started my Blog journey, I was enthralled by this very theme and I am using it since. However, original developer has ceased maintaining the theme and it is riddled with many bugs. Hence, I have taken upon myself to maintain this theme.
 
 I fully intend to keep the essence of the theme as-it-is and only add minor updates and squash bugs which may arise.
@@ -26,7 +24,23 @@ Or, if your Hugo site is already in git, you can include this repository as a [g
 git submodule add https://github.com/1bl4z3r/hermit-V2 themes/hermit-v2
 ```
 
-# Original README follows below
+### Custom CSS and JS
+
+I have found that there are some requirement where custom CSS and JS should be supplied to a page to make it work. This custom files are not required for whole of the site, but is restricted to a page or few particular pages. E.g. If you make contact form.
+
+To provision for the same, I have added custom css and js. Please add this to page frontmatter as required.
+
+```
+custom_css = ["css/foo.css","css/bar.css"]
+custom_js = ["js/custom-about.js"]
+```
+
+The files itself will reside in `static/css` for CSS files and `static/js` for JS files. Refer to [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging) to have a feel on how [this](https://github.com/1bl4z3r/hermit-V2/blob/staging/content/about-hugo.md) is implemented.
+
+
+---
+
+# Original README
 
 Hermit is a minimal and fast theme for Hugo. It's built for bloggers who want a simple and focused website.
 
