@@ -44,7 +44,7 @@ The files itself will reside in `static/css` for CSS files and `static/js` for J
 
 Hermit is a minimal and fast theme for Hugo. It's built for bloggers who want a simple and focused website.
 
-![](https://github.com/Track3/hermit/raw/master/images/screenshot.png)
+![](https://github.com/1bl4z3r/hermit-V2/blob/main/images/screenshot.png)
 
 ## Features
 
@@ -56,7 +56,7 @@ Hermit is a minimal and fast theme for Hugo. It's built for bloggers who want a 
 * All code fields feature syntax highlighting and a code-copy function
 * Responsive & Retina Ready. Scales gracefully from a big screen all the way down to the smallest mobile phone. Assets in vector format ensures that it looks sharp on high-resolution screens.
 
-![](https://github.com/Track3/hermit/raw/master/images/hermit.png)
+![](https://github.com/1bl4z3r/hermit-V2/blob/main/images/hermit.png)
 
 ## Getting started
 
