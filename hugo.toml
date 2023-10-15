@@ -89,9 +89,6 @@ enableEmoji = true
   relatedPosts = true  # Add a related content section to all single posts page
 
   code_copy_button = true # Turn on/off the code-copy-button for code-fields
-  
-  # Add custom css
-  # customCSS = ["css/foo.css", "css/bar.css"]
 
   # Social Icons
   # Check https://github.com/Track3/hermit#social-icons for more info.

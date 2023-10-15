@@ -121,13 +121,6 @@ If you prefer to use different analytics system other than google analytics, the
 
 If you'd like to customize theme color or fonts, you can simply override `assets/scss/_predefined.scss`, by simply copy it to site's root (keep the same relative path) then edit those variables. But keep in mind, you'll need **Hugo extended version** which has the ability to rebuild SCSS. You don't have to use extended version in production but in this case it's necessary to make sure the `resources` folder is committed and "up to date" (by running `hugo` or `hugo server` locally using the extended version). But anyway, always use the extended version if you can.
 
-For adding other custom CSS to the theme, you can assign an array of references in `config.toml` like following:
-```
-[params]
-  customCSS = ["css/foo.css", "css/bar.css"]
-```
-You may reference as many stylesheets as you want. Their paths need to be relative to the `static` folder or it can be a full URL for external resources.
-
 #### Code injection
 
 You can inject any html code to every page's document head or right above the closing body tag. This makes it easier to add any html meta data, custom css/js, dns-prefetch etc. To do this you simply need to create a file at site's `layouts/partials/extra-head.html` or `layouts/partials/extra-foot.html`, code inside will be injected to every page.
