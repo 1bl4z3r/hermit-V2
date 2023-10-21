@@ -2,6 +2,7 @@
 <html lang="{{.Site.LanguageCode}}">
 
 <head>
+	{{- partial "analytics.html" . }}
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -44,7 +45,6 @@
     <script type="text/javascript" src="{{ . | absURL }}"></script>
 	{{- end }}
 	{{ partial "mathjax.html" . }}
-	{{- partial "analytics.html" . }}
 	{{- if templates.Exists "partials/extra-foot.html" -}}
 	{{ partial "extra-foot.html" . }}
 	{{- end }}
