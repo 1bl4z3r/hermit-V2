@@ -120,8 +120,8 @@ enableEmoji = true
     url = "https://twitter.com/"
 
   [[params.social]]
-    name = "instagram"
-    url = "https://instagram.com/"
+    name = "x"
+    url = "https://twitter.com/"
 
   [[params.social]]
     name = "github"
