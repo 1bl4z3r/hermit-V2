@@ -37,6 +37,9 @@ custom_js = ["js/custom-about.js"]
 
 The files itself will reside in `static/css` for CSS files and `static/js` for JS files. Refer to [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging) to have a feel on how [this](https://github.com/1bl4z3r/hermit-V2/blob/staging/content/about-hugo.md) is implemented.
 
+### Demo
+
+Demo page [https://1bl4z3r.github.io/hermit-V2/](https://1bl4z3r.github.io/hermit-V2/), which is both demo as well as documentation for the theme, is located in [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging)
 
 ---
 

@@ -45,7 +45,6 @@ pre tt {
 
 pre {
   padding: .7em 1.1em;
-  overflow: auto;
   font-size: .9em;
   line-height: 1.5;
   letter-spacing: normal;
@@ -58,7 +57,7 @@ pre {
   code {
     padding: 0;
     margin: 0;
-    background: $midnightblue;
+    background: #272822;
   }
 }
 
@@ -163,8 +162,9 @@ table {
     position: relative;
 }
 
+.highlight div,
 .highlight pre {
-    padding-right: 75px;
+  overflow-x: auto;
 }
 
 .highlight-copy-btn {

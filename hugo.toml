@@ -125,7 +125,7 @@ enableEmoji = true
 
   [[params.social]]
     name = "github"
-    url = "https://github.com/"
+    url = "https://github.com/1bl4z3r/hermit-V2/tree/staging"
 
 [menu]
 
