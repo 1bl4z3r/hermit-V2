@@ -51,8 +51,7 @@ pre {
   white-space: pre;
   color: #eee;
   background: $midnightblue;
-  border-radius: 4px;
-  // -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
 
   code {
     padding: 0;
@@ -165,6 +164,8 @@ table {
 .highlight div,
 .highlight pre {
   overflow-x: auto;
+  border-radius: 4px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .highlight-copy-btn {
