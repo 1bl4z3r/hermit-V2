@@ -44,6 +44,7 @@ Demo page [https://1bl4z3r.github.io/hermit-V2/](https://1bl4z3r.github.io/hermi
 ### Configuration Guide
 
 Configuration Guide is present in [Explaining Configs](https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/)
+
 ---
 
 # Original README
