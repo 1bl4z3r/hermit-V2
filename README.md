@@ -41,6 +41,9 @@ The files itself will reside in `static/css` for CSS files and `static/js` for J
 
 Demo page [https://1bl4z3r.github.io/hermit-V2/](https://1bl4z3r.github.io/hermit-V2/), which is both demo as well as documentation for the theme, is located in [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging)
 
+### Configuration Guide
+
+Configuration Guide is present in [Explaining Configs](https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/)
 ---
 
 # Original README
