@@ -13,7 +13,12 @@ features = [
   "disqus",
   "customizable"
 ]
-min_version = 0.43
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = '0.43'
+
 
 [author]
   name = "1BL4Z3R"
