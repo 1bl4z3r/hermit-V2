@@ -1,8 +1,6 @@
-baseURL = "https://1bl4z3r.github.io/hermit-V2/" # baseURL - The absolute URL (protocol, host, path, and trailing slash) of your published site
-
-
-# defaultContentLanguage - Content without language indicator will default to this language.
+baseURL = "https://1bl4z3r.github.io/hermit-V2/"
 defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
 
 [languages]
   [languages.en]
@@ -20,30 +18,19 @@ defaultContentLanguage = "en"
     [languages.it.params]
       homeSubtitle = "Continuare l'eredità di Hermit di essere un tema minimale e veloce"
     weight = 3
-
-defaultContentLanguageInSubdir = true
-# languageCode - A language tag as defined by RFC 5646. This value is used to populate:
-#   The <language> element in the internal RSS template
-#   The lang attribute of the <html> element in the internal alias template
+ 
 languageCode = "en-us"
 
 # title = "Hermit - V2"
-
-# enableGitInfo - Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.
 #enableGitInfo = true
 
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
-
-# If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.
 #hasCJKLanguage = true
 
-# Maximum number of items in the RSS feed.
 rssLimit = 10
 
-copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
-
-# Shorthand emojis in content files - https://gohugo.io/functions/emojify/
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
 enableEmoji = true
 
 # googleAnalytics = "UA-123-45"
@@ -74,46 +61,20 @@ enableEmoji = true
   themeColor = "#494f5c"
 
   #homeSubtitle = "Continuing Hermit's legacy to be minimal and fast theme"
-
   footerCopyright = ' <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-  # bgImg = ""  # Homepage background-image URL
-
-  # Prefix of link to the git commit detail page. GitInfo must be enabled.
+  # bgImg = ""
   # gitUrl = "https://github.com/username/repository/commit/"
 
-  # Toggling this option needs to rebuild SCSS, requires Hugo extended version
-  justifyContent = false  # Set "text-align: justify" to `.content`.
+  justifyContent = true
 
-  relatedPosts = true  # Add a related content section to all single posts page
+  relatedPosts = true
+  code_copy_button = true
 
-  code_copy_button = true # Turn on/off the code-copy-button for code-fields
-
-  # Social Icons
-  # Check https://github.com/Track3/hermit#social-icons for more info.
-
-  # ---------------------------------------------------
-  # Hugo - V2 specific configurations
-  # ---------------------------------------------------
-
-  # Below Allows homeSubtitle to be shown with printer animation effect. Refer Line 911 in style.scss
   homeSubtitlePrinter = true
-
-  # To enable Scroll to Top button Sitewide
   scrollToTop = true 
-
-  # Enable global_mathjax to true, if you want MathJax support sitewide (if you have technical page)
-  # You can enable Per-Page MathJax support by adding `mathjax : true` in Page frontmatter
   global_mathjax = false
-
-  # Toggle Reading time for articles
   readTime = true
-
-  # Specify Separator between wordCount and readTime
   readTimeSeparator = "\u002F||\u005C Reading Time:"
-
-  # ---------------------------------------------------
-  # Hugo - V2 specific configurations end
-  # ---------------------------------------------------
 
   [[params.social]]
     name = "twitter"
