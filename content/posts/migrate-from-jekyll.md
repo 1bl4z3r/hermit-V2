@@ -29,17 +29,21 @@ The default is for Jekyll to publish to `_site` and for Hugo to publish to `publ
 
 1. Change your submodule to point to map `gh-pages` to public instead of `_site` (recommended).
 
-        git submodule deinit _site
-        git rm _site
-        git submodule add -b gh-pages git@github.com:your-username/your-repo.git public
-
+```sh
+git submodule deinit _site
+git rm _site
+git submodule add -b gh-pages git@github.com:your-username/your-repo.git public
+```
 2. Or, change the Hugo configuration to use `_site` instead of `public`.
 
-        {
-            ..
-            "publishdir": "_site",
-            ..
-        }
+```json
+  {
+      ..
+      "publishdir": "_site",
+      ..
+  }
+```
+
 
 ## Convert Jekyll templates to Hugo templates
 That's the bulk of the work right here. The documentation is your friend. You should refer to [Jekyll's template documentation](http://jekyllrb.com/docs/templates/) if you need to refresh your memory on how you built your blog and [Hugo's template](/layout/templates/) to learn Hugo's way.
@@ -54,6 +58,7 @@ As an example, I was using a custom [`image_tag`](https://github.com/alexandre-n
 
 Jekyll's plugin:
 
+```ruby
     module Jekyll
       class ImageTag < Liquid::Tag
         @url = nil
@@ -107,9 +112,11 @@ Jekyll's plugin:
       end
     end
     Liquid::Template.register_tag('image', Jekyll::ImageTag)
+```
 
 is written as this Hugo shortcode:
 
+```go
     <!-- image -->
     <figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
         {{ with .Get "link"}}<a href="{{.}}">{{ end }}
@@ -128,15 +135,23 @@ is written as this Hugo shortcode:
         {{ end }}
     </figure>
     <!-- image -->
+```
+
 
 ### Usage
 I simply changed:
 
+```go
     {% image full http://farm5.staticflickr.com/4136/4829260124_57712e570a_o_d.jpg "One of my favorite touristy-type photos. I secretly waited for the good light while we were "having fun" and took this. Only regret: a stupid pole in the top-left corner of the frame I had to clumsily get rid of at post-processing." ->http://www.flickr.com/photos/alexnormand/4829260124/in/set-72157624547713078/ %}
+```
+
 
 to this (this example uses a slightly extended version named `fig`, different than the built-in `figure`):
 
+```go
     {{%/* fig class="full" src="http://farm5.staticflickr.com/4136/4829260124_57712e570a_o_d.jpg" title="One of my favorite touristy-type photos. I secretly waited for the good light while we were having fun and took this. Only regret: a stupid pole in the top-left corner of the frame I had to clumsily get rid of at post-processing." link="http://www.flickr.com/photos/alexnormand/4829260124/in/set-72157624547713078/" */%}}
+```
+
 
 As a bonus, the shortcode named parameters are, arguably, more readable.
 

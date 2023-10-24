@@ -1,6 +1,6 @@
 ---
 title: "Admonition Shortcode"
-slug : 'admonition-shortcode'
+slug : "admonition-shortcode"
 date: 2023-10-20T20:06:06+05:30
 draft: false
 featuredImg: ""
