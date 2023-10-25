@@ -22,7 +22,7 @@ defaultContentLanguageInSubdir = true
 languageCode = "en-us"
 
 # title = "Hermit - V2"
-#enableGitInfo = true
+# enableGitInfo = true
 
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
@@ -63,7 +63,7 @@ enableEmoji = true
   #homeSubtitle = "Continuing Hermit's legacy to be minimal and fast theme"
   footerCopyright = ' <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   # bgImg = ""
-  # gitUrl = "https://github.com/username/repository/commit/"
+  # gitUrl = "https://github.com/1bl4z3r/hermit-V2/tree/staging"
 
   justifyContent = true
 
