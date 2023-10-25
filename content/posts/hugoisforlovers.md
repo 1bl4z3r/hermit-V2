@@ -8,6 +8,7 @@ tags = [
 ]
 date = "2014-04-02"
 toc = true
+IgnoreLastmod = true
 +++
 
 ## Step 1. Install Hugo

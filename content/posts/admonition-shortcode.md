@@ -12,6 +12,7 @@ author : 1bl4z3r
 scrolltotop : true
 toc : true
 mathjax : false
+IgnoreLastmod : true
 ---
 
 The `admonition` shortcode supports **8** types of banners to help you put a notice on your page.

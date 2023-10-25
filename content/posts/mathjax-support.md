@@ -12,6 +12,7 @@ author : 1bl4z3r
 scrolltotop : false
 toc : true
 mathjax : true
+IgnoreLastmod : true
 ---
 
 # Beautiful and accessible math in all browsers
