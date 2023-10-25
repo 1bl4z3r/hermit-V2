@@ -53,7 +53,7 @@
 						{{- else if not (eq .Lastmod .Date ) -}}
 							&nbsp;[Modified : {{ dateFormat .Site.Params.dateformNumTime .Lastmod.Local -}}]
 						{{- else -}}
-							{{ errorf ".Lastmod is not found in Page Frontmatter or .Lastmod is same as .Date" }}
+							{{ errorf "Lastmod is not found in Page Frontmatter or Lastmod is same as Date" }}
 						{{- end -}}
 					{{- end -}}
 				</p>
