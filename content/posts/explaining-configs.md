@@ -9,6 +9,8 @@ tags:
   - Demo
 scrolltotop : true
 toc : true
+IgnoreLastmod : false
+Lastmod : 2023-10-25T01:30:30+05:30
 ---
 
 ## Configuation in `hugo.toml`
@@ -31,10 +33,10 @@ toc : true
 - `enableEmoji` : Enables shorthand emojis in content files. [Info](https://gohugo.io/functions/emojify/)
 - `googleAnalytics` : Enter Google Analytics UA code to invoke inbuilt Google Analytics.
 - `disqusShortname` : To enable Disqus.
-- [author]
+- `[author]`
 	- `name` : Name of Site-wide or default author.
 	- `about` : Name of the about page of the Site-wide or default author.
-- [params]
+- `[params]`
 	- `dateform` / `dateformShort` / `dateformNum` / `dateformNumTime` : Used to render properly formatted date & time. Change this if you know what you are doing.
 	- `description` : Put in default description for meta description.
 	- `images` : Put in if you want a background image.
@@ -51,10 +53,10 @@ toc : true
 	- `global_mathjax` : Enable global_mathjax to true, if you want MathJax support sitewide (if you have technical page)
 	- `readTime` : Toggle Reading time for articles.
 	- `readTimeSeparator` : Specifies Separator between wordCount and readTime.
-	-   [params.social] Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
-		    - `name` : Name of the social page.
-		    - `url` : URL of your account.
-	- [menu] - Display menu items in Homepage as well as in menubar. To make more menu items, use [[menu.main]]
+	-  `[params.social]` Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
+		- `name` : Name of the social page.
+		- `url` : URL of your account.
+	- `[menu]` - Display menu items in Homepage as well as in menubar. To make more menu items, use [[menu.main]]
 
 ## Configuration in page Frontmatter
   
@@ -76,12 +78,18 @@ toc : true
 - `toc` : Enables Table of Contents.
 - `custom_css` : Allows to supply custom CSS by placing the css files in `/static/css/`. CSS will be invoked for that page only.
 - `custom_js` : Allows to supply custom CSS by placing the css files in `/static/js/`. JS will be invoked for that page only.
+- `IgnoreLastmod` : REQUIRED. This enables Last modification date of the given Page.
+- `Lastmod` : REQUIRED (If IgnoreLastmod=false). Enter Last modified date of the Page.
 
 ## Special Caveats
 
-### Known Issues
+### Last Modified Date
 
-There is a [known issue](https://github.com/1bl4z3r/hermit-V2/issues/30) where if `enableGitInfo` is enabled and `gitUrl` is supplied, `.Lastmod` is automatically populated and henceforth Modified section is shown in the pages. This is because `enableGitInfo` automatically uses `.Lastmod` variable to display if page has been modified or not.
+If `IgnoreLastmod` is not provided or `IgnoreLastmod=false`, then:
+- If `enableGitInfo = true`, then Git Hash will be shown in `[...]` after Date.
+- If `enableGitInfo = false`, then:
+	- If `Lastmod` is not provided or `Lastmod` has same value as `Date`, error will be thrown.
+	- If `Lastmod` is provided or `Lastmod` is different from `Date`, value of `Lastmod` will be displayed in `[...]` after Date.
 
 ### LaTeX
 
