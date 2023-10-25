@@ -46,14 +46,14 @@ The element in the internal RSS template The lang attribute of the element in th
 <p><code>disqusShortname</code> : To enable Disqus.</p>
 </li>
 <li>
-<p>[author]</p>
+<p><code>[author]</code></p>
 <ul>
 <li><code>name</code> : Name of Site-wide or default author.</li>
 <li><code>about</code> : Name of the about page of the Site-wide or default author.</li>
 </ul>
 </li>
 <li>
-<p>[params]</p>
+<p><code>[params]</code></p>
 <ul>
 <li><code>dateform</code> / <code>dateformShort</code> / <code>dateformNum</code> / <code>dateformNumTime</code> : Used to render properly formatted date &amp; time. Change this if you know what you are doing.</li>
 <li><code>description</code> : Put in default description for meta description.</li>
@@ -71,10 +71,13 @@ The element in the internal RSS template The lang attribute of the element in th
 <li><code>global_mathjax</code> : Enable global_mathjax to true, if you want MathJax support sitewide (if you have technical page)</li>
 <li><code>readTime</code> : Toggle Reading time for articles.</li>
 <li><code>readTimeSeparator</code> : Specifies Separator between wordCount and readTime.</li>
-<li>[params.social] Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
-- <code>name</code> : Name of the social page.
-- <code>url</code> : URL of your account.</li>
-<li>[menu] - Display menu items in Homepage as well as in menubar. To make more menu items, use [[menu.main]]</li>
+<li><code>[params.social]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
+<ul>
+<li><code>name</code> : Name of the social page.</li>
+<li><code>url</code> : URL of your account.</li>
+</ul>
+</li>
+<li><code>[menu]</code> - Display menu items in Homepage as well as in menubar. To make more menu items, use [[menu.main]]</li>
 </ul>
 </li>
 </ul>
@@ -98,10 +101,21 @@ The element in the internal RSS template The lang attribute of the element in th
 <li><code>toc</code> : Enables Table of Contents.</li>
 <li><code>custom_css</code> : Allows to supply custom CSS by placing the css files in <code>/static/css/</code>. CSS will be invoked for that page only.</li>
 <li><code>custom_js</code> : Allows to supply custom CSS by placing the css files in <code>/static/js/</code>. JS will be invoked for that page only.</li>
+<li><code>IgnoreLastmod</code> : REQUIRED. This enables Last modification date of the given Page.</li>
+<li><code>Lastmod</code> : REQUIRED (If IgnoreLastmod=false). Enter Last modified date of the Page.</li>
 </ul>
 <h2 id="special-caveats">Special Caveats</h2>
-<h3 id="known-issues">Known Issues</h3>
-<p>There is a <a href="https://github.com/1bl4z3r/hermit-V2/issues/30">known issue</a> where if <code>enableGitInfo</code> is enabled and <code>gitUrl</code> is supplied, <code>.Lastmod</code> is automatically populated and henceforth Modified section is shown in the pages. This is because <code>enableGitInfo</code> automatically uses <code>.Lastmod</code> variable to display if page has been modified or not.</p>
+<h3 id="last-modified-date">Last Modified Date</h3>
+<p>If <code>IgnoreLastmod</code> is not provided or <code>IgnoreLastmod=false</code>, then:</p>
+<ul>
+<li>If <code>enableGitInfo = true</code>, then Git Hash will be shown in <code>[...]</code> after Date.</li>
+<li>If <code>enableGitInfo = false</code>, then:
+<ul>
+<li>If <code>Lastmod</code> is not provided or <code>Lastmod</code> has same value as <code>Date</code>, error will be thrown.</li>
+<li>If <code>Lastmod</code> is provided or <code>Lastmod</code> is different from <code>Date</code>, value of <code>Lastmod</code> will be displayed in <code>[...]</code> after Date.</li>
+</ul>
+</li>
+</ul>
 <h3 id="latex">LaTeX</h3>
 <p>LaTeX is implemented through Mathjax.</p>
 <ul>
