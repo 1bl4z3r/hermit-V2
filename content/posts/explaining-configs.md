@@ -9,8 +9,8 @@ tags:
   - Demo
 scrolltotop : true
 toc : true
-IgnoreLastmod : false
-Lastmod : 2023-10-25T01:30:30+05:30
+ShowLastmod : true
+Lastmod : 2023-10-25T13:30:30+05:30
 ---
 
 ## Configuation in `hugo.toml`
@@ -78,18 +78,20 @@ Lastmod : 2023-10-25T01:30:30+05:30
 - `toc` : Enables Table of Contents.
 - `custom_css` : Allows to supply custom CSS by placing the css files in `/static/css/`. CSS will be invoked for that page only.
 - `custom_js` : Allows to supply custom CSS by placing the css files in `/static/js/`. JS will be invoked for that page only.
-- `IgnoreLastmod` : REQUIRED. This enables Last modification date of the given Page.
-- `Lastmod` : REQUIRED (If IgnoreLastmod=false). Enter Last modified date of the Page.
+- `ShowLastmod` :This enables Last modification date of the given Page.
+- `Lastmod` : REQUIRED (If `ShowLastmod=true`). Enter Last modified date of the Page.
 
 ## Special Caveats
 
 ### Last Modified Date
 
-If `IgnoreLastmod` is not provided or `IgnoreLastmod=false`, then:
+If `ShowLastmod:true` :
 - If `enableGitInfo = true`, then Git Hash will be shown in `[...]` after Date.
 - If `enableGitInfo = false`, then:
 	- If `Lastmod` is not provided or `Lastmod` has same value as `Date`, error will be thrown.
 	- If `Lastmod` is provided or `Lastmod` is different from `Date`, value of `Lastmod` will be displayed in `[...]` after Date.
+
+If `ShowLastmod` is not provided. User response defaults to false. It is equivalent to providing `ShowLastmod:false`.
 
 ### LaTeX
 

@@ -3,7 +3,6 @@ author: "Michael Henderson"
 authorLink: michael-henderson
 date: 2014-09-28
 title: Creating a New Theme
-IgnoreLastmod : true
 ---
 
 ## Introduction

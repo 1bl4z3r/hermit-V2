@@ -10,7 +10,6 @@ tags:
   - Typography
 scrolltotop : true
 toc : true
-IgnoreLastmod : true
 ---
 
 ## This article explains how to use Scroll Up
