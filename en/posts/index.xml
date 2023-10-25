@@ -101,12 +101,12 @@ The element in the internal RSS template The lang attribute of the element in th
 <li><code>toc</code> : Enables Table of Contents.</li>
 <li><code>custom_css</code> : Allows to supply custom CSS by placing the css files in <code>/static/css/</code>. CSS will be invoked for that page only.</li>
 <li><code>custom_js</code> : Allows to supply custom CSS by placing the css files in <code>/static/js/</code>. JS will be invoked for that page only.</li>
-<li><code>IgnoreLastmod</code> : REQUIRED. This enables Last modification date of the given Page.</li>
-<li><code>Lastmod</code> : REQUIRED (If IgnoreLastmod=false). Enter Last modified date of the Page.</li>
+<li><code>ShowLastmod</code> :This enables Last modification date of the given Page.</li>
+<li><code>Lastmod</code> : REQUIRED (If <code>ShowLastmod=true</code>). Enter Last modified date of the Page.</li>
 </ul>
 <h2 id="special-caveats">Special Caveats</h2>
 <h3 id="last-modified-date">Last Modified Date</h3>
-<p>If <code>IgnoreLastmod</code> is not provided or <code>IgnoreLastmod=false</code>, then:</p>
+<p>If <code>ShowLastmod:true</code> :</p>
 <ul>
 <li>If <code>enableGitInfo = true</code>, then Git Hash will be shown in <code>[...]</code> after Date.</li>
 <li>If <code>enableGitInfo = false</code>, then:
@@ -116,6 +116,7 @@ The element in the internal RSS template The lang attribute of the element in th
 </ul>
 </li>
 </ul>
+<p>If <code>ShowLastmod</code> is not provided. User response defaults to false. It is equivalent to providing <code>ShowLastmod:false</code>.</p>
 <h3 id="latex">LaTeX</h3>
 <p>LaTeX is implemented through Mathjax.</p>
 <ul>
