@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/</link><description>Recent content in Posts on Hermit - V2</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 22 Oct 2023 20:06:06 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Sun, 22 Oct 2023 20:06:06 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>Configuation in hugo.toml hugo.toml represents Global configuration for Hermit - V2. It is indicative on the changes to make the theme tailored to your personal preferences.
-baseURL : The absolute URL (protocol, host, path, and trailing slash) of your published site. Required :- YES
-languageCode - A language tag as defined by RFC 5646. This value is used to populate:
+baseURL : The absolute URL (protocol, host, path, and trailing slash) of your published site.
+languageCode : A language tag as defined by RFC 5646. This value is used to populate:
 The element in the internal RSS template The lang attribute of the element in the internal alias template title - Title of the Site</description><content type="html"><![CDATA[<h2 id="configuation-in-hugotoml">Configuation in <code>hugo.toml</code></h2>
 <p><code>hugo.toml</code> represents Global configuration for Hermit - V2. It is indicative on the changes to make the theme tailored to your personal preferences.</p>
-<p><code>baseURL</code> : The absolute URL (protocol, host, path, and trailing slash) of your published site. Required :- YES</p>
+<p><code>baseURL</code> : The absolute URL (protocol, host, path, and trailing slash) of your published site.</p>
 <ul>
 <li>
-<p><code>languageCode</code> - A language tag as defined by RFC 5646. This value is used to populate:</p>
+<p><code>languageCode</code> : A language tag as defined by RFC 5646. This value is used to populate:</p>
 <ul>
 <li>The <!-- raw HTML omitted --> element in the internal RSS template</li>
 <li>The lang attribute of the <!-- raw HTML omitted --> element in the internal alias template</li>
@@ -16,25 +16,25 @@ The element in the internal RSS template The lang attribute of the element in th
 <p><code>title</code> - Title of the Site</p>
 </li>
 <li>
-<p><code>enableGitInfo</code> - Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.</p>
+<p><code>enableGitInfo</code> : Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.</p>
 <blockquote>
-<p>Sideeffect : Affects <code>.Lastmod</code> parameter in Pages</p>
+<p>Side-effect : Affects <code>.Lastmod</code> parameter in Pages</p>
 </blockquote>
 </li>
 <li>
-<p><code>hasCJKLanguage</code> - If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.</p>
+<p><code>hasCJKLanguage</code> : If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.</p>
 </li>
 <li>
-<p><code>pygmentsCodefences</code> -Set to true to enable syntax highlighting in code fences with a language tag in markdown.</p>
+<p><code>pygmentsCodefences</code> : Set to true to enable syntax highlighting in code fences with a language tag in markdown.</p>
 </li>
 <li>
-<p><code>pygmentsUseClasses</code> - Set to <code>true</code> to use CSS classes to format your highlighted code.</p>
+<p><code>pygmentsUseClasses</code> : Set to <code>true</code> to use CSS classes to format your highlighted code.</p>
 </li>
 <li>
-<p><code>rssLimit</code> - Maximum number of items in the RSS feed.</p>
+<p><code>rssLimit</code> : Maximum number of items in the RSS feed.</p>
 </li>
 <li>
-<p><code>copyright</code> - This message is only used by the RSS template.</p>
+<p><code>copyright</code> : This message is only used by the RSS template.</p>
 </li>
 <li>
 <p><code>enableEmoji</code> : Enables shorthand emojis in content files. <a href="https://gohugo.io/functions/emojify/">Info</a></p>
@@ -71,13 +71,14 @@ The element in the internal RSS template The lang attribute of the element in th
 <li><code>global_mathjax</code> : Enable global_mathjax to true, if you want MathJax support sitewide (if you have technical page)</li>
 <li><code>readTime</code> : Toggle Reading time for articles.</li>
 <li><code>readTimeSeparator</code> : Specifies Separator between wordCount and readTime.</li>
+<li><code>legacyLayout</code> : Enable legacy layout (where post info is below content)</li>
 <li><code>[params.social]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
 <ul>
 <li><code>name</code> : Name of the social page.</li>
 <li><code>url</code> : URL of your account.</li>
 </ul>
 </li>
-<li><code>[menu]</code> - Display menu items in Homepage as well as in menubar. To make more menu items, use [[menu.main]]</li>
+<li><code>[menu]</code> : Display menu items in Homepage as well as in menubar. To make more menu items, use [[menu.main]]</li>
 </ul>
 </li>
 </ul>
@@ -101,7 +102,7 @@ The element in the internal RSS template The lang attribute of the element in th
 <li><code>toc</code> : Enables Table of Contents.</li>
 <li><code>custom_css</code> : Allows to supply custom CSS by placing the css files in <code>/static/css/</code>. CSS will be invoked for that page only.</li>
 <li><code>custom_js</code> : Allows to supply custom CSS by placing the css files in <code>/static/js/</code>. JS will be invoked for that page only.</li>
-<li><code>ShowLastmod</code> :This enables Last modification date of the given Page.</li>
+<li><code>ShowLastmod</code> : This enables Last modification date of the given Page.</li>
 <li><code>Lastmod</code> : REQUIRED (If <code>ShowLastmod=true</code>). Enter Last modified date of the Page.</li>
 </ul>
 <h2 id="special-caveats">Special Caveats</h2>
