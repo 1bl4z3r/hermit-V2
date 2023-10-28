@@ -74,7 +74,8 @@ enableEmoji = true
   scrollToTop = true 
   global_mathjax = false
   readTime = true
-  readTimeSeparator = "\u002F||\u005C Reading Time:"
+  readTimeSeparator = "\u2026 \u23F2 Reading Time:"
+  # legacyLayout = false
 
   [[params.social]]
     name = "twitter"
