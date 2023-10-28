@@ -10,26 +10,26 @@ tags:
 scrolltotop : true
 toc : true
 ShowLastmod : true
-Lastmod : 2023-10-25T13:30:30+05:30
+Lastmod : 2023-10-28T20:30:30+05:30
 ---
 
 ## Configuation in `hugo.toml`
 
 `hugo.toml` represents Global configuration for Hermit - V2. It is indicative on the changes to make the theme tailored to your personal preferences.
 
-`baseURL` : The absolute URL (protocol, host, path, and trailing slash) of your published site. Required :- YES
-- `languageCode` - A language tag as defined by RFC 5646. This value is used to populate:
+`baseURL` : The absolute URL (protocol, host, path, and trailing slash) of your published site.
+- `languageCode` : A language tag as defined by RFC 5646. This value is used to populate:
 	- The <language> element in the internal RSS template
 	- The lang attribute of the <html> element in the internal alias template
 - `title` - Title of the Site
-- `enableGitInfo` - Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.
-  > Sideeffect : Affects `.Lastmod` parameter in Pages
+- `enableGitInfo` : Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.
+  > Side-effect : Affects `.Lastmod` parameter in Pages
 
-- `hasCJKLanguage` - If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.
-- `pygmentsCodefences` -Set to true to enable syntax highlighting in code fences with a language tag in markdown.
-- `pygmentsUseClasses` - Set to `true` to use CSS classes to format your highlighted code.
-- `rssLimit` - Maximum number of items in the RSS feed.
-- `copyright` - This message is only used by the RSS template.
+- `hasCJKLanguage` : If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.
+- `pygmentsCodefences` : Set to true to enable syntax highlighting in code fences with a language tag in markdown.
+- `pygmentsUseClasses` : Set to `true` to use CSS classes to format your highlighted code.
+- `rssLimit` : Maximum number of items in the RSS feed.
+- `copyright` : This message is only used by the RSS template.
 - `enableEmoji` : Enables shorthand emojis in content files. [Info](https://gohugo.io/functions/emojify/)
 - `googleAnalytics` : Enter Google Analytics UA code to invoke inbuilt Google Analytics.
 - `disqusShortname` : To enable Disqus.
@@ -53,10 +53,11 @@ Lastmod : 2023-10-25T13:30:30+05:30
 	- `global_mathjax` : Enable global_mathjax to true, if you want MathJax support sitewide (if you have technical page)
 	- `readTime` : Toggle Reading time for articles.
 	- `readTimeSeparator` : Specifies Separator between wordCount and readTime.
+	- `legacyLayout` : Enable legacy layout (where post info is below content)
 	-  `[params.social]` Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
 		- `name` : Name of the social page.
 		- `url` : URL of your account.
-	- `[menu]` - Display menu items in Homepage as well as in menubar. To make more menu items, use [[menu.main]]
+	- `[menu]` : Display menu items in Homepage as well as in menubar. To make more menu items, use [[menu.main]]
 
 ## Configuration in page Frontmatter
   
@@ -78,7 +79,7 @@ Lastmod : 2023-10-25T13:30:30+05:30
 - `toc` : Enables Table of Contents.
 - `custom_css` : Allows to supply custom CSS by placing the css files in `/static/css/`. CSS will be invoked for that page only.
 - `custom_js` : Allows to supply custom CSS by placing the css files in `/static/js/`. JS will be invoked for that page only.
-- `ShowLastmod` :This enables Last modification date of the given Page.
+- `ShowLastmod` : This enables Last modification date of the given Page.
 - `Lastmod` : REQUIRED (If `ShowLastmod=true`). Enter Last modified date of the Page.
 
 ## Special Caveats
