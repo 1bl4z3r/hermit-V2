@@ -29,9 +29,8 @@
 			{{- if .Site.Params.relatedPosts }}
 			{{- partial "related-posts.html" . -}}
 			{{- end }}
-			<hr class="art-end">
-			<footer class="post-info">{{- partial "posts_single_info.html" . -}}</footer>
 			<hr class="post-end">
+			<footer class="post-info">{{- partial "posts_single_info.html" . -}}</footer>		
 		</article>
 		{{- else -}}
 		<article class="thin">
@@ -47,7 +46,6 @@
 			{{- if .Site.Params.relatedPosts }}
 			{{- partial "related-posts.html" . -}}
 			{{- end }}
-			<hr class="art-end">
 		</article>
 		{{- end -}}
 		{{- if .Params.toc }}
