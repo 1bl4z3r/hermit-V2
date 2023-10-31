@@ -77,15 +77,15 @@ enableEmoji = true
   readTimeSeparator = "\u2026 \u23F2 Reading Time:"
   # legacyLayout = false
 
-  [[params.social]]
-    name = "twitter"
-    url = "https://twitter.com/"
+  [[params.socialLinks]]
+    name = "mastodon"
+    url = "https://joinmastodon.org/"
 
-  [[params.social]]
+  [[params.socialLinks]]
     name = "x"
     url = "https://twitter.com/"
 
-  [[params.social]]
+  [[params.socialLinks]]
     name = "github"
     url = "https://github.com/1bl4z3r/hermit-V2/tree/staging"
 
