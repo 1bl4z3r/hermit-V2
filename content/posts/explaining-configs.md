@@ -54,7 +54,7 @@ Lastmod : 2023-10-28T20:30:30+05:30
 	- `readTime` : Toggle Reading time for articles.
 	- `readTimeSeparator` : Specifies Separator between wordCount and readTime.
 	- `legacyLayout` : Enable legacy layout (where post info is below content)
-	-  `[params.social]` Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
+	-  `[params.socialLinks]` Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
 		- `name` : Name of the social page.
 		- `url` : URL of your account.
 	- `[menu]` : Display menu items in Homepage as well as in menubar. To make more menu items, use [[menu.main]]
