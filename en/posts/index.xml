@@ -72,7 +72,7 @@ The element in the internal RSS template The lang attribute of the element in th
 <li><code>readTime</code> : Toggle Reading time for articles.</li>
 <li><code>readTimeSeparator</code> : Specifies Separator between wordCount and readTime.</li>
 <li><code>legacyLayout</code> : Enable legacy layout (where post info is below content)</li>
-<li><code>[params.social]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
+<li><code>[params.socialLinks]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
 <ul>
 <li><code>name</code> : Name of the social page.</li>
 <li><code>url</code> : URL of your account.</li>
