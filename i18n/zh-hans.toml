@@ -34,5 +34,8 @@ other = "旧"
 [menu]
 other = "菜单"
 
+[share]
+other = "分享"
+
 [featuredImage]
 other = "特色图片"

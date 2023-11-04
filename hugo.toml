@@ -65,7 +65,7 @@ enableEmoji = true
   # bgImg = ""
   # gitUrl = "https://github.com/1bl4z3r/hermit-V2/tree/staging"
 
-  justifyContent = true
+  justifyContent = false
 
   relatedPosts = true
   code_copy_button = true
@@ -76,6 +76,7 @@ enableEmoji = true
   readTime = true
   readTimeSeparator = "\u2026 \u23F2 Reading Time:"
   # legacyLayout = false
+  shareSocial = true
 
   [[params.socialLinks]]
     name = "mastodon"

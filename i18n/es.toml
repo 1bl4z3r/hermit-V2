@@ -34,5 +34,8 @@ other = "Previo"
 [menu]
 other = "Menú"
 
+[share]
+other = "Cuota"
+
 [featuredImage]
 other = "Imagen Presentada"

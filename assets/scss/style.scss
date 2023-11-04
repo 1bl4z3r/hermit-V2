@@ -5,6 +5,7 @@
 @import "_scroll.scss";
 @import "_admonition.scss";
 @import "_mathjax.scss";
+@import "_socialshare.scss";
 
 /* Webkit Scrollbar Customize */
 ::-webkit-scrollbar {
@@ -299,7 +300,7 @@ table {
 #mobile-menu {
   position: fixed;
   bottom: 4.8em;
-  right: 1.5em;
+  right: 4.5em;
   display: none;
   padding: .6em 1.8em;
   z-index: 1;
@@ -904,7 +905,7 @@ a.footnote-ref {
   }
 
   #mobile-menu {
-    right: 1.2em;
+    right: 4.2em;
   }
   #home-subtitle {
     font-size: 0.5em;
