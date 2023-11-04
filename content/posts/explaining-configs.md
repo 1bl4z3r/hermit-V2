@@ -53,7 +53,8 @@ Lastmod : 2023-10-28T20:30:30+05:30
 	- `global_mathjax` : Enable global_mathjax to true, if you want MathJax support sitewide (if you have technical page)
 	- `readTime` : Toggle Reading time for articles.
 	- `readTimeSeparator` : Specifies Separator between wordCount and readTime.
-	- `legacyLayout` : Enable legacy layout (where post info is below content)
+	- `legacyLayout` : Enables legacy layout (where post info is below content)
+	- `shareSocial` : Enables Social sharing links to share pages to social media.
 	-  `[params.socialLinks]` Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
 		- `name` : Name of the social page.
 		- `url` : URL of your account.

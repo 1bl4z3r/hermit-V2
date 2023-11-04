@@ -31,5 +31,8 @@ other = "Precedente"
 [menu]
 other = "Menu"
 
+[share]
+other = "Condividere"
+
 [featuredImage]
 other = "Immagine in primo piano"

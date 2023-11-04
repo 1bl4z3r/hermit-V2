@@ -34,5 +34,8 @@ other = "Older"
 [menu]
 other = "Menu"
 
+[share]
+other = "Share"
+
 [featuredImage]
 other = "Featured Image"

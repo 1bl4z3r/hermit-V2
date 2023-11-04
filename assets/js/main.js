@@ -1,7 +1,3 @@
-/**
- * Utils
- */
-
 // Throttle
 //
 const throttle = (callback, limit) => {
@@ -63,6 +59,23 @@ const toggleMobileMenu = () => {
   }
 }
 
+// Social Share Toggle
+//
+let shareMenuVisible = false;
+const shareMobileMenu = () => {
+  let shareMenu = document.getElementById('share-links');
+  if (shareMenuVisible == false) {
+    shareMenu.style.animationName = 'bounceInRight';
+    shareMenu.style.webkitAnimationName = 'bounceInRight';
+    shareMenu.style.display = 'block';
+    shareMenuVisible = true;
+  } else {
+    shareMenu.style.animationName = 'bounceOutRight';
+    shareMenu.style.webkitAnimationName = 'bounceOutRight'
+    shareMenuVisible = false;
+  }
+}
+
 // Featured Image Toggle
 //
 const showImg = () => {
@@ -82,6 +95,7 @@ const toggleToc = () => {
 
 if (header !== null) {
   listen('#menu-btn', "click", toggleMobileMenu);
+  listen('#share-btn', "click", shareMobileMenu);
   listen('#toc-btn', "click", toggleToc);
   listen('#img-btn', "click", showImg);
   listen('.bg-img', "click", hideImg);
@@ -97,6 +111,9 @@ if (header !== null) {
 
     if (mobileMenuVisible == true) {
       toggleMobileMenu();
+    }
+    if (shareMenuVisible == true) {
+      shareMobileMenu();
     }
   }, 250));
 }
