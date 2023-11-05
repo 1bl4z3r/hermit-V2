@@ -3,7 +3,8 @@
 <div id="share-links" class="animated fast">
     {{ $title := .Title }}
     {{ $url := printf "%s" .Permalink }}
-    {{ $body := print $title ", by " .Site.Title "\n" .Params.description "\n\n" $url "\n" }}
+    {{ $author := (.Params.author | default .Site.Params.author.name) }}
+    {{ $summary := print $title ", by " $author "\n\n" .Params.description "\n" }}
     <ul>
         <li>
             <a href="https://twitter.com/intent/tweet?hashtags=hermit2&amp;url={{ .Permalink }}&amp;text={{ .Title }}" target="_blank" rel="noopener" aria-label="Share on X">{{- partial "svg.html" (dict "context" . "name" "x") -}}</a>
@@ -15,7 +16,7 @@
             <a href="mailto:?subject={{ .Title }}&amp;body={{ .Permalink }}" target="_self" rel="noopener" aria-label="Share on Email">{{- partial "svg.html" (dict "context" . "name" "email") -}}</a>
         </li>
         <li>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink }}&amp;title={{ .Title }}&amp;summary={{ $body }}&amp;source={{.Site.BaseURL}}" target="_blank" rel="noopener" aria-label="Share on LinkedIn">{{- partial "svg.html" (dict "context" . "name" "linkedin") -}}</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $url }}&amp;source={{ .Site.BaseURL }}&amp;title={{ $title }}&amp;summary={{ $summary }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn">{{- partial "svg.html" (dict "context" . "name" "linkedin") -}}</a>
         </li>
     </ul>
 </div>
