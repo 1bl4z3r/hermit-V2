@@ -46,7 +46,7 @@ The element in the internal RSS template The lang attribute of the element in th
 <p><code>disqusShortname</code> : To enable Disqus.</p>
 </li>
 <li>
-<p><code>[author]</code></p>
+<p><code>[params.author]</code></p>
 <ul>
 <li><code>name</code> : Name of Site-wide or default author.</li>
 <li><code>about</code> : Name of the about page of the Site-wide or default author.</li>
