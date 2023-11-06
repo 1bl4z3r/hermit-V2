@@ -36,14 +36,15 @@
 	{{ else -}}
 		{{ $script := $main | minify | fingerprint -}}
 		<script async src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
-	{{ end }}
-	{{ range .Params.custom_js -}}
-    <script type="text/javascript" src="{{ . | absURL }}"></script>
-	{{- end }}
+	{{- end -}}
+	{{- if and (not (eq .Site.Params.shareSocial nil)) (.Site.Params.shareSocial) -}}
+	{{ $linkShareJS := resources.Get "js/link-share.js" -}}
+	{{ $linkshare := $linkShareJS | minify | fingerprint -}}
+	<script async src="{{ $linkshare.Permalink }}" {{ printf "integrity=%q" $linkshare.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
+	{{- end -}}
+	{{ range .Params.custom_js -}}<script type="text/javascript" src="{{ . | absURL }}"></script>{{- end }}
 	{{ partial "mathjax.html" . }}
-	{{- if templates.Exists "partials/extra-foot.html" -}}
-	{{ partial "extra-foot.html" . }}
-	{{- end }}
+	{{- if templates.Exists "partials/extra-foot.html" -}}{{ partial "extra-foot.html" . }}{{- end }}
 </body>
 
 </html>

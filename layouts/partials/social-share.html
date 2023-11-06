@@ -18,5 +18,8 @@
         <li>
             <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $url }}&amp;source={{ .Site.BaseURL }}&amp;title={{ $title }}&amp;summary={{ $summary }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn">{{- partial "svg.html" (dict "context" . "name" "linkedin") -}}</a>
         </li>
+        <li>
+            <a href="#" onclick="linkShare({{ $title }},{{ $url }},{{ $summary }}); return false;" target="_self" rel="noopener" aria-label="Copy Link">{{- partial "svg.html" (dict "context" . "name" "share_2") -}}</a>
+        </li>
     </ul>
 </div>
