@@ -25,7 +25,7 @@ jobs:
           SRC_FOLDER_PATH: '.'
           TARGET_BRANCH: 'main'
         run: |
-          files=$(find $SRC_FOLDER_PATH -type f|grep -v 'resources\|git\|static\|content') # get the file list
+          files=$(find $SRC_FOLDER_PATH -type f|grep -v 'resources\|git\|static\|content\|public\|hugo.toml$') # get the file list
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
           git fetch                         # fetch branches
