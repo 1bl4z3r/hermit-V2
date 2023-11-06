@@ -38,8 +38,7 @@
 		<script async src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
 	{{- end -}}
 	{{- if and (not (eq .Site.Params.shareSocial nil)) (.Site.Params.shareSocial) -}}
-	{{ $linkShareJS := resources.Get "js/link-share.js" -}}
-	{{ $linkshare := $linkShareJS | minify | fingerprint -}}
+	{{ $linkshare := resources.Get "js/link-share.js" | fingerprint -}}
 	<script async src="{{ $linkshare.Permalink }}" {{ printf "integrity=%q" $linkshare.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
 	{{- end -}}
 	{{ range .Params.custom_js -}}<script type="text/javascript" src="{{ . | absURL }}"></script>{{- end }}
