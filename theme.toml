@@ -4,7 +4,7 @@ licenselink = "https://github.com/1bl4z3r/hermit-V2/blob/main/LICENSE"
 description = "Continuing Hermit's legacy to be minimal and fast theme"
 homepage = "https://github.com/1bl4z3r/hermit-V2"
 demosite = "https://1bl4z3r.github.io/hermit-V2/"
-tags = ["blog", "minimal", "dark", "responsive", "fast"]
+tags = ["blog", "minimal", "dark", "responsive", "landing", "dark mode"]
 features = [
   "single column",
   "featured image",

@@ -2,7 +2,7 @@
 
 > OG : [Hermit Theme](https://github.com/Track3/hermit) by [Track3](https://github.com/Track3)
 
-Hermit-V2 is a minimal and fast theme for Hugo, built for bloggers who want a simple and focused website. This is a maintained fork of [Hermit](https://github.com/Track3/hermit), which iterates over the original work to have a almost-stable experience with ug fixes and new features.
+Hermit-V2 is a minimal and fast theme for Hugo, built for bloggers who want a simple and focused website. This is a maintained fork of [Hermit](https://github.com/Track3/hermit), which iterates over the original work to have a almost-stable experience with bug fixes and new features.
 
 ![](https://github.com/1bl4z3r/hermit-V2/blob/main/images/screenshot.png)
 
