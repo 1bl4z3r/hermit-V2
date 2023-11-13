@@ -16,6 +16,9 @@ The element in the internal RSS template The lang attribute of the element in th
 <p><code>title</code> - Title of the Site</p>
 </li>
 <li>
+<p><code>theme</code> - Sets all layouts to be from the instaled theme (Use &ldquo;hermit-v2&rdquo; to adapt hermit-v2&rsquo;s theme)</p>
+</li>
+<li>
 <p><code>enableGitInfo</code> : Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.</p>
 <blockquote>
 <p>Side-effect : Affects <code>.Lastmod</code> parameter in Pages</p>
