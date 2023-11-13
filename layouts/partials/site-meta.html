@@ -10,11 +10,3 @@
 <link rel="manifest" href="{{"site.webmanifest" | relURL}}">
 <meta name="msapplication-TileImage" content="{{"mstile-144x144.png" | relURL}}">
 <link rel="shortcut icon" href="{{"favicon.ico" | relURL}}">
-{{ $author := (.Params.author | default .Site.Params.author.name) -}}
-<meta name="author" content="{{ $author }}">
-{{ with .Site.Params.themeColor -}}
-<meta name="theme-color" content="{{.}}">
-<meta name="msapplication-TileColor" content="{{.}}">
-<link rel="mask-icon" href="{{"safari-pinned-tab.svg" | relURL}}" color="{{.}}">
-{{- end -}}
-{{- with .Params.description -}}<meta name="description" content="{{.}}">{{- end -}}

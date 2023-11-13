@@ -3,6 +3,14 @@
 <head>
 {{- partial "analytics.html" . -}}
 {{- partial "site-meta.html" -}}
+{{ $author := (.Params.author | default .Site.Params.author.name) -}}
+<meta name="author" content="{{ $author }}">
+{{ with .Site.Params.themeColor -}}
+<meta name="theme-color" content="{{.}}">
+<meta name="msapplication-TileColor" content="{{.}}">
+<link rel="mask-icon" href="{{"safari-pinned-tab.svg" | relURL}}" color="{{.}}">
+{{- end -}}
+{{- with .Page.Params.description | default .Site.Params.description -}}<meta name="description" content="{{.}}">{{- end -}}
 {{- partial "structured-data.html" . -}}
 <title>{{.Title}}</title>
 {{ range .AlternativeOutputFormats -}}
