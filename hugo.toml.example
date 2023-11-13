@@ -7,6 +7,7 @@
 baseURL = "CHANGE BASE URL"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
+#theme = "hermit-v2"
 
 #[languages]
 #  [languages.en]
