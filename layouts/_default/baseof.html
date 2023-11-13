@@ -2,21 +2,8 @@
 <html lang="{{.Site.LanguageCode}}">
 <head>
 {{- partial "analytics.html" . -}}
-<meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="robots" content="index, follow">
-<meta name="revisit-after" content="15 days">
-{{ $author := (.Params.author | default .Site.Params.author.name) -}}
-<meta name="author" content="{{ $author }}">
-{{ with .Site.Params.themeColor -}}
-<meta name="theme-color" content="{{.}}">
-<meta name="msapplication-TileColor" content="{{.}}">
-{{- end -}}
-{{- with .Params.description -}}<meta name="description" content="{{.}}">{{- end -}}
+{{- partial "site-meta.html" -}}
 {{- partial "structured-data.html" . -}}
-{{- partial "favicons.html" -}}
 <title>{{.Title}}</title>
 {{ range .AlternativeOutputFormats -}}
 {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Title | safeHTML }}
