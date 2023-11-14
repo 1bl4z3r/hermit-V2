@@ -920,7 +920,7 @@ a.footnote-ref {
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto 1.5em auto; /* Gives that scrolling effect as the typing happens */
     // letter-spacing: .100em; /* Adjust as needed */
-      animation: typing 5s steps({{ strings.RuneCount .Site.Params.homeSubtitle }}, end),blink-caret .75s step-end infinite;
+    animation: typing 5s steps({{ strings.RuneCount .Site.Params.homeSubtitle }}, end),blink-caret .75s linear 5.1s infinite;
   }
 
   /* The typing effect */
