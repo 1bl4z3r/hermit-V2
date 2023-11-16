@@ -24,6 +24,13 @@ Inline styles：
 
 ![img](https://picsum.photos/600/400/?random)
 
+Images can also be implemented via figure shortcode. It extends in-built hugo shortcode to convert images to webp format.
+
+```go
+{ {< figure src="images/928-600x400.jpg" alt="A WEBP converted image" caption="A WEBP converted image" class="webp" loading="lazy" >} }
+```
+
+{{< figure src="images/928-600x400.jpg" alt="A WEBP converted image" caption="A WEBP converted image" class="webp" loading="lazy" >}}
 
 [^2]: LaTeX is supported by Mathjax, explained [in this article]({{< relref "mathjax-support.md" >}})
 ---
@@ -73,6 +80,14 @@ alert("Sum = " + sum)  // "+" means combine into a string
 ```
 
 Syntax Highlighting with [`highlight` shortcode](https://gohugo.io/content-management/syntax-highlighting/)
+
+
+```go
+{{/*< highlight css "linenos=table,linenostart=5" >*/}}
+/* LineHighlight */ .chroma .hl { display: block; width: 100%;background-color: #55595ebb }
+{{/*< /highlight >*/}}
+```
+
 
 
 {{< highlight css "linenos=table,linenostart=5" >}}

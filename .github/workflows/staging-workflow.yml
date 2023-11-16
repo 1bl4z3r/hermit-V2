@@ -25,12 +25,12 @@ jobs:
           SRC_FOLDER_PATH: '.'
           TARGET_BRANCH: 'main'
         run: |
-          files=$(find $SRC_FOLDER_PATH -type f|grep -v 'resources\|git\|static\|content\|public\|hugo.toml$') # get the file list
+          files=$(find $SRC_FOLDER_PATH -type f|grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|928-600x400.jpg') # get the file list
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
           git fetch                         # fetch branches
           git checkout $TARGET_BRANCH       # checkout to your branch
           git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
           git add -A
-          git diff-index --quiet HEAD ||  git commit -am "Theme Files Update"  # commit to the repository (ignore if no modification)
+          git diff-index --quiet HEAD ||  git commit -am "Hermit-V2 Theme Update"  # commit to the repository (ignore if no modification)
           git push origin $TARGET_BRANCH # push to remote branch
