@@ -60,7 +60,7 @@ The element in the internal RSS template The lang attribute of the element in th
 <ul>
 <li><code>dateform</code> / <code>dateformShort</code> / <code>dateformNum</code> / <code>dateformNumTime</code> : Used to render properly formatted date &amp; time. Change this if you know what you are doing.</li>
 <li><code>description</code> : Put in default description for meta description.</li>
-<li><code>images</code> : Put in if you want a background image.</li>
+<li><code>images</code> : Used to display image for site, when sharing the page as link to social media (like Twitter)</li>
 <li><code>themeColor</code>: Populates theme-color meta. Make sure to keep <code>$theme</code> in <code>_predefined.scss</code> and this same for better color consistency.</li>
 <li><code>homeSubtitle</code> : Displays subtitle in Homepage.</li>
 <li><code>footerCopyright</code> : Custom copyright for footer.</li>
@@ -128,8 +128,6 @@ The element in the internal RSS template The lang attribute of the element in th
 <li>If you are using this theme as a proper  mathematical blog, enable <code>global_mathjax</code> to true in hugo.toml. It will enable Mathjax support site wide.</li>
 <li>Since Mathjax is a heavy script (&gt;1 MB), it is not ideal to run Mathjax site wide, especially if you are in the above cohort. However, if you want to use mathematical formulas, you can set <code>mathjax : true</code> in Page frontmatter. It will enable mathjax for only that page only.</li>
 </ul>
-<h3 id="depreciation-of-images">Depreciation of <code>images</code></h3>
-<p><code>images</code> (in hugo.toml) is depreciated and will be removed in future versions. It is an attempt to reduce unnecessary bloat and make the theme as minimal as possible. Please refrain from using this. If you really need this feature, open an <a href="https://github.com/1bl4z3r/hermit-V2/issues">issue in GitHub</a>.</p>
 <h3 id="enable-scrolltotop-button">Enable ScrolltoTop button</h3>
 <p>To enable scroll to top, <strong>you must enable <code>scrollToTop</code> in hugo.toml and <code>scrolltotop</code> in Page Frontmatter</strong>. This is to prevent scroll to top button from showing if the page has very less content. If you feel that for the content, you need scroll to top button, follow below steps:</p>
 <ol>
