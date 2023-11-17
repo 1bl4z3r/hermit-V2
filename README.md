@@ -56,14 +56,14 @@ Site Configuration is done through `hugo.toml` or `hugo.yaml` file in root direc
 
 I have found that there are some requirement where custom CSS and JS should be supplied to a page to make it work. This custom files are not required for whole of the site, but is restricted to a page or few particular pages. E.g. If you make contact form.
 
-To provision for the same, I have added custom css and js. Please add this to page frontmatter as required.
+To make use of custom CSS and JS, add the below section to page frontmatter. If there is any folder structure, that should be mentioned as well.
 
 ```
-custom_css = ["css/foo.css","css/bar.css"]
-custom_js = ["js/custom-about.js"]
+custom_css = ["custom_css/foo.css","custom_css/bar.css"]
+custom_js = ["custom_js/custom-about.js"]
 ```
 
-The files itself will reside in `static/css` for CSS files and `static/js` for JS files. Refer to [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging) to have a feel on how [this](https://github.com/1bl4z3r/hermit-V2/blob/staging/content/about-hugo.md) is implemented.
+The files itself will reside in `assets` directory. Refer to [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging) to have a feel on how [this](https://github.com/1bl4z3r/hermit-V2/blob/staging/content/about-hugo.md) is implemented.
 
 ### Favicon
 

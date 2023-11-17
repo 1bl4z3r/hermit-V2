@@ -40,7 +40,7 @@ Lastmod : 2023-10-28T20:30:30+05:30
 - `[params]`
 	- `dateform` / `dateformShort` / `dateformNum` / `dateformNumTime` : Used to render properly formatted date & time. Change this if you know what you are doing.
 	- `description` : Put in default description for meta description.
-	- `images` : Put in if you want a background image.
+	- `images` : Used to display image for site, when sharing the page as link to social media (like Twitter)
 	- `themeColor`: Populates theme-color meta. Make sure to keep `$theme` in `_predefined.scss` and this same for better color consistency.
 	- `homeSubtitle` : Displays subtitle in Homepage.
 	- `footerCopyright` : Custom copyright for footer.
@@ -101,10 +101,6 @@ If `ShowLastmod` is not provided. User response defaults to false. It is equival
 LaTeX is implemented through Mathjax. 
   - If you are using this theme as a proper  mathematical blog, enable `global_mathjax` to true in hugo.toml. It will enable Mathjax support site wide.
   - Since Mathjax is a heavy script (>1 MB), it is not ideal to run Mathjax site wide, especially if you are in the above cohort. However, if you want to use mathematical formulas, you can set `mathjax : true` in Page frontmatter. It will enable mathjax for only that page only.
-
-### Depreciation of `images`
-
-`images` (in hugo.toml) is depreciated and will be removed in future versions. It is an attempt to reduce unnecessary bloat and make the theme as minimal as possible. Please refrain from using this. If you really need this feature, open an [issue in GitHub](https://github.com/1bl4z3r/hermit-V2/issues).
 
 ### Enable ScrolltoTop button
 
