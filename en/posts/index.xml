@@ -76,6 +76,7 @@ The element in the internal RSS template The lang attribute of the element in th
 <li><code>readTimeSeparator</code> : Specifies Separator between wordCount and readTime.</li>
 <li><code>legacyLayout</code> : Enables legacy layout (where post info is below content)</li>
 <li><code>shareSocial</code> : Enables Social sharing links to share pages to social media.</li>
+<li><code>googleTagManager</code> : Enables scripts for <a href="https://tagmanager.google.com/">Google Tag Manager</a></li>
 <li><code>[params.socialLinks]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
 <ul>
 <li><code>name</code> : Name of the social page.</li>
