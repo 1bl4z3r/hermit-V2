@@ -56,6 +56,7 @@ Lastmod : 2023-10-28T20:30:30+05:30
 	- `readTimeSeparator` : Specifies Separator between wordCount and readTime.
 	- `legacyLayout` : Enables legacy layout (where post info is below content)
 	- `shareSocial` : Enables Social sharing links to share pages to social media.
+	- `googleTagManager` : Enables scripts for [Google Tag Manager](https://tagmanager.google.com/)
 	-  `[params.socialLinks]` Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
 		- `name` : Name of the social page.
 		- `url` : URL of your account.

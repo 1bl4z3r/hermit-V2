@@ -77,6 +77,7 @@ enableEmoji = true
   readTimeSeparator = "\u2026 \u23F2 Reading Time:"
   # legacyLayout = false
   shareSocial = true
+  # googleTagManager = "GTM-XXXXXXXX"
 
   [[params.socialLinks]]
     name = "mastodon"
