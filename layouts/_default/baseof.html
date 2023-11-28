@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{.Site.LanguageCode}}">
 <head>
+{{- if .Site.Params.googleTagManager -}}{{- partial "googleTagManager_head.html" . -}}{{- end -}}
 {{- partial "analytics.html" . -}}
 {{- partial "site-meta.html" -}}
 {{ $author := (.Params.author | default .Site.Params.author.name) -}}
@@ -25,29 +26,30 @@
 {{- block "head" . -}}{{- end -}}
 {{- if templates.Exists "partials/extra-head.html" -}}{{- partial "extra-head.html" . -}}{{- end -}}</head>
 <body id="page">
-	{{- block "header" . -}}{{ end -}}
-	{{- block "main" . -}}{{ end -}}
-	{{- block "footer" . -}}{{ end }}
-	{{- partial "scroll-to-top.html" . }}
-	{{- $main := resources.Get "js/main.js" -}}
-	{{- if .Site.Params.code_copy_button | default true -}}
-		{{ $codeCopy := resources.Get "js/code-copy.js" -}}
-		{{ $script := slice $main $codeCopy | resources.Concat "js/bundle.js" | minify | fingerprint -}}
-		<script async src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
-	{{- else -}}
-		{{ $script := $main | minify | fingerprint -}}
-		<script async src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
-	{{- end -}}
-	{{- if and (not (eq .Site.Params.shareSocial nil)) (.Site.Params.shareSocial) -}}
-	{{ $linkshare := resources.Get "js/link-share.js" | minify | fingerprint -}}
-	<script async src="{{ $linkshare.Permalink }}" {{ printf "integrity=%q" $linkshare.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
-	{{- end -}}
-	{{- range .Params.custom_js -}}
-	{{ $c_js := resources.Get . | minify | fingerprint -}}
-	<script defer src="{{ $c_js.Permalink }}" {{ printf "integrity=%q" $c_js.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
-	{{- end }}
-	{{- partial "mathjax.html" . -}}
-	{{- if templates.Exists "partials/extra-foot.html" -}}{{- partial "extra-foot.html" . -}}{{- end }}
+{{- if .Site.Params.googleTagManager -}}{{- partial "googleTagManager_body.html" . -}}{{- end -}}
+{{- block "header" . -}}{{ end -}}
+{{- block "main" . -}}{{ end -}}
+{{- block "footer" . -}}{{ end }}
+{{- partial "scroll-to-top.html" . }}
+{{- $main := resources.Get "js/main.js" -}}
+{{- if .Site.Params.code_copy_button | default true -}}
+	{{ $codeCopy := resources.Get "js/code-copy.js" -}}
+	{{ $script := slice $main $codeCopy | resources.Concat "js/bundle.js" | minify | fingerprint -}}
+	<script async src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
+{{- else -}}
+	{{ $script := $main | minify | fingerprint -}}
+	<script async src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
+{{- end -}}
+{{- if and (not (eq .Site.Params.shareSocial nil)) (.Site.Params.shareSocial) -}}
+{{ $linkshare := resources.Get "js/link-share.js" | minify | fingerprint -}}
+<script async src="{{ $linkshare.Permalink }}" {{ printf "integrity=%q" $linkshare.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
+{{- end -}}
+{{- range .Params.custom_js -}}
+{{ $c_js := resources.Get . | minify | fingerprint -}}
+<script defer src="{{ $c_js.Permalink }}" {{ printf "integrity=%q" $c_js.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
+{{- end }}
+{{- partial "mathjax.html" . -}}
+{{- if templates.Exists "partials/extra-foot.html" -}}{{- partial "extra-foot.html" . -}}{{- end }}
 </body>
 
 </html>

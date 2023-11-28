@@ -83,7 +83,8 @@ enableEmoji = true
   readTimeSeparator = "CHANGE ME READ TIME"
   # legacyLayout = false
   shareSocial = true
-
+  # googleTagManager = "GTM-XXXXXXXX"
+  
   [[params.socialLinks]]
     name = "mastodon"
     url = "https://joinmastodon.org/"
