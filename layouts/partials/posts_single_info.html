@@ -1,0 +1,20 @@
+{{- with .Params.description }}<p>{{.}}</p>{{- end }}
+{{- if and .Params.author .Params.authorLink}}{{ $relreflink := relref . .Params.authorLink }}<p>{{ partial "svg.html" (dict "context" . "name" "author") }}<a href="{{ $relreflink }}" target="_blank">{{ .Params.author }}</a></p>
+{{- else if .Params.author }}{{ $relreflink := relref . .Site.Params.author.about }}<p>{{ partial "svg.html" (dict "context" . "name" "author") }}<a href="{{ $relreflink }}" target="_blank">{{ .Params.author }}</a></p>
+{{- else }}{{ $relreflink := relref . .Site.Params.author.about }}<p>{{ partial "svg.html" (dict "context" . "name" "author") }}<a href="{{ $relreflink }}" target="_blank">{{ .Site.Params.author.name }}</a></p>
+{{- end }}
+{{- with .Params.tags }}
+<p>{{- partial "svg.html" (dict "context" . "name" "posts_single_tags") -}}{{- range . -}}<span class="tag"><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{.}}</a></span>{{- end }}</p>
+{{- end }}
+<p>{{- partial "svg.html" (dict "context" . "name" "posts_single_wordcount") }}{{ i18n "wordCount" . -}} {{- partial "readTime.html" . -}}</p>
+<p>{{- partial "svg.html" (dict "context" . "name" "posts_single_date") }}{{ dateFormat .Site.Params.dateformNumTime .Date.Local -}}
+    {{- if and (not (eq .Page.Params.ShowLastmod nil)) (.Page.Params.ShowLastmod) -}}
+    {{- if and .GitInfo .Site.Params.gitUrl -}}
+        [{{- partial "svg.html" (dict "context" . "name" "posts_single_git_commit") -}}<a href="{{ .Site.Params.gitUrl -}}{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{ .GitInfo.AbbreviatedHash -}}</a> @ {{ dateFormat .Site.Params.dateformNum .GitInfo.AuthorDate.Local -}}]
+    {{- else if not (eq .Lastmod .Date ) -}}
+        &nbsp;[Modified : {{ dateFormat .Site.Params.dateformNumTime .Lastmod.Local -}}]
+    {{- else -}}
+        {{ errorf "Lastmod is not found in Page Frontmatter or Lastmod is same as Date" }}
+    {{- end -}}
+    {{- end -}}
+</p>

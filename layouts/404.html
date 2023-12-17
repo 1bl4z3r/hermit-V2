@@ -1,0 +1,13 @@
+{{ define "main" }}
+	<div id="spotlight" class="error-404 animated fadeIn">
+		<p class="img-404">{{- partial "svg.html" (dict "context" . "name" "404-lighthouse") -}}</p>
+		<div class="banner-404">
+			<h1>404</h1>
+			<p>{{ i18n "notFound" }}</p>
+			<p class="btn-404">
+				<a href="{{.Site.BaseURL}}">{{- partial "svg.html" (dict "context" . "name" "404-home") -}}{{ i18n "home" }}</a>
+				<a href="{{ "posts" | absLangURL }}">{{- partial "svg.html" (dict "context" . "name" "404-archive") -}}{{ i18n "archives" }}</a>
+			</p>
+		</div>
+	</div>
+{{ end }}

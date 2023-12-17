@@ -1,0 +1,7 @@
+{{ if or (.Site.Params.global_mathjax) (.Params.mathjax) }}
+    <script type="text/javascript" async src="https://polyfill.io/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script>
+    {{ $mathjaxf := resources.Get "js/mathjax/mathjax-full@3_es5_tex-mml-svg.min.js"}}
+    {{ $mathjaxa := resources.Get "js/mathjax/mathjax-assistant.js"}}
+    {{ $mathjaxscript := slice $mathjaxa $mathjaxf | resources.Concat "js/mathjaxs.js" | minify | fingerprint -}}
+    <script type="text/javascript" id="MathJax-script" async src="{{ $mathjaxscript.Permalink }}" {{ printf "integrity=%q" $mathjaxscript.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
+{{ end }}

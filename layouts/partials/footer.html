@@ -1,0 +1,12 @@
+<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+	<p>
+		&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author.name }}</a>
+		&#183; {{ .Site.Params.footerCopyright | safeHTML }}
+		&#183; Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+		&#183; Theme <a href="https://github.com/1bl4z3r/hermit-V2" target="_blank" rel="noopener">Hermit-V2</a>
+		{{/*{{- with (not (in (.Site.Language.Get "disableKinds") "RSS")) }}*/}}
+		&#183; <a href="{{ "posts/index.xml" | absLangURL }}" target="_blank" title="rss">{{ partial "svg.html" (dict "context" . "name" "rss") }}</a>
+		{{/*{{ end }}*/}}
+	</p>
+
+</footer>

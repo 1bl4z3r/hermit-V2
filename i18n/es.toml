@@ -1,0 +1,41 @@
+# Translations for Spanish
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# 404.html
+#
+[notFound]
+other = "Oops, esta página no fue encontrada…"
+
+[home]
+other = "Inicio"
+
+[archives]
+other = "Archivos"
+
+# posts/single.html
+#
+[seeAlso]
+other = "Vea también"
+
+[wordCount]
+other = "{{ .WordCount }} Palabras"
+
+[tableOfContents]
+other = "Tabla de Contenido"
+
+[newer]
+other = "Siguiente"
+
+[older]
+other = "Previo"
+
+# partials/header.html
+#
+[menu]
+other = "Menú"
+
+[share]
+other = "Cuota"
+
+[featuredImage]
+other = "Imagen Presentada"

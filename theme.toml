@@ -1,0 +1,29 @@
+name = "Hermit-V2"
+license = "MIT"
+licenselink = "https://github.com/1bl4z3r/hermit-V2/blob/main/LICENSE"
+description = "Continuing Hermit's legacy to be minimal and fast theme"
+homepage = "https://github.com/1bl4z3r/hermit-V2"
+demosite = "https://1bl4z3r.github.io/hermit-V2/"
+tags = ["blog", "minimal", "dark", "responsive", "landing", "dark mode"]
+features = [
+  "single column",
+  "featured image",
+  "social icons",
+  "google analytics",
+  "disqus",
+  "customizable"
+]
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = '0.43'
+
+
+[author]
+  name = "1BL4Z3R"
+  homepage = "https://1bl4z3r.cyou"
+[original]
+  name = "Track3"
+  homepage = "https://www.xxxlbox.com"
+  repo = "https://github.com/Track3/hermit"
