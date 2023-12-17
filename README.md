@@ -31,7 +31,12 @@ git clone https://github.com/1bl4z3r/hermit-V2 themes/hermit-v2
 Or, if your Hugo site is already in git, you can include this repository as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). This makes it easier to update this theme. For this you need to run:
 
 ```bash
-git submodule add https://github.com/1bl4z3r/hermit-V2 themes/hermit-v2
+git submodule add -b main https://github.com/1bl4z3r/hermit-V2 themes/hermit-v2
+```
+
+To update submodule and to have latest version of the theme with your project, run
+```bash
+git submodule update --remote
 ```
 
 ## GOOD-TO-KNOW LIST
