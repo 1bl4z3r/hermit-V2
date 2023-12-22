@@ -39,7 +39,7 @@ To update submodule and to have latest version of the theme with your project, r
 git submodule update --remote
 ```
 
-## GOOD-TO-KNOW LIST
+## First Use Knowledge
 
 ### Features Inherited from Original Theme
 
@@ -96,6 +96,7 @@ The following icons are supported, please make sure the `name` filed is exactly 
 | `shutterstock`  | `freepik`   | `adobestock` | `123rf`   |
 | `dreamstime`    | `dribbble`  | `behance`    | `paypal`  |
 | `twitch`        | `qq`        | `mastodon`   | `discord` |
+| `etsy`          | `tiktok`    |              |           |
 
 If that's not enough, you can see [Overriding templates](#overriding-templates) section.
 
