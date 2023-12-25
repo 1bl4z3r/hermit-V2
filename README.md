@@ -96,7 +96,7 @@ The following icons are supported, please make sure the `name` filed is exactly 
 | `shutterstock`  | `freepik`   | `adobestock` | `123rf`   |
 | `dreamstime`    | `dribbble`  | `behance`    | `paypal`  |
 | `twitch`        | `qq`        | `mastodon`   | `discord` |
-| `etsy`          | `tiktok`    |              |           |
+| `etsy`          | `tiktok`    |  `medium`    |           |
 
 If that's not enough, you can see [Overriding templates](#overriding-templates) section.
 
