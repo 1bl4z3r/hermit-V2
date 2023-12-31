@@ -678,7 +678,14 @@ a.footnote-ref {
     margin-right: .5em;
 
     &::before {
-      content: "#"
+      {{- with .Site.Params.tagSymbol | default "#" -}}content: "{{ . }}"{{- end -}}
+    }
+  }
+  .category {
+    margin-right: .5em;
+
+    &::before {
+      {{- with .Site.Params.categorySymbol | default "⊲" -}}content: "{{ . }}"{{- end -}}
     }
   }
 }

@@ -6,6 +6,9 @@
 {{- with .Params.tags }}
 <p>{{- partial "svg.html" (dict "context" . "name" "posts_single_tags") -}}{{- range . -}}<span class="tag"><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{.}}</a></span>{{- end }}</p>
 {{- end }}
+{{- with .Params.categories }}
+<p>{{- partial "svg.html" (dict "context" . "name" "posts_single_categories") -}}{{- range . -}}<span class="category"><a href="{{ "categories/" | absLangURL }}{{ . | urlize }}">{{.}}</a></span>{{- end }}</p>
+{{- end }}
 <p>{{- partial "svg.html" (dict "context" . "name" "posts_single_wordcount") }}{{ i18n "wordCount" . -}} {{- partial "readTime.html" . -}}</p>
 <p>{{- partial "svg.html" (dict "context" . "name" "posts_single_date") }}{{ dateFormat .Site.Params.dateformNumTime .Date.Local -}}
     {{- if and (not (eq .Page.Params.ShowLastmod nil)) (.Page.Params.ShowLastmod) -}}
