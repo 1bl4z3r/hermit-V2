@@ -37,6 +37,9 @@ Lastmod : 2023-10-28T20:30:30+05:30
 - `[params.author]`
 	- `name` : Name of Site-wide or default author.
 	- `about` : Name of the about page of the Site-wide or default author.
+- `[taxonomies]`
+	- `tag = "tags"` : Allows to specify taxonomy to be shown as tags
+	- `category = "categories"` : Allows to specify taxonomy to be shown as categories. This is disabled by default
 - `[params]`
 	- `dateform` / `dateformShort` / `dateformNum` / `dateformNumTime` : Used to render properly formatted date & time. Change this if you know what you are doing.
 	- `description` : Put in default description for meta description.
@@ -57,6 +60,8 @@ Lastmod : 2023-10-28T20:30:30+05:30
 	- `legacyLayout` : Enables legacy layout (where post info is below content)
 	- `shareSocial` : Enables Social sharing links to share pages to social media.
 	- `googleTagManager` : Enables scripts for [Google Tag Manager](https://tagmanager.google.com/)
+	- `tagSymbol` : Specify a symbol for Tags. Default is `#`
+	- `categorySymbol` : Specify a symbol for Categories. Default is `⊲`
 	-  `[params.socialLinks]` Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
 		- `name` : Name of the social page.
 		- `url` : URL of your account.
@@ -75,6 +80,7 @@ Lastmod : 2023-10-28T20:30:30+05:30
 - `featuredImg` : To have a unique image for the page. Shown as background image. Can be toggled to fullscreen with special button in menu.
 - `description` : Description for the Page.
 - `tags` : Allows to define tags.
+- `categories` : Allows to define categories.
 - `author` : Allows to specify page author.
 - `authorLink` : Allows to supply separate author bio.
 - `scrolltotop` : Toggles scroll to top button for that particular page.

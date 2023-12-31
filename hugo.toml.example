@@ -55,6 +55,7 @@ enableEmoji = true
 [taxonomies]
   tag = "tags"
   # Categories are disabled by default.
+  # category = "categories"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -84,6 +85,8 @@ enableEmoji = true
   # legacyLayout = false
   shareSocial = true
   # googleTagManager = "GTM-XXXXXXXX"
+  # tagSymbol = "#"
+  # categorySymbol = "⊲"
   
   [[params.socialLinks]]
     name = "mastodon"
