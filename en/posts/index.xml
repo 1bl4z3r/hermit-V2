@@ -56,6 +56,13 @@ The element in the internal RSS template The lang attribute of the element in th
 </ul>
 </li>
 <li>
+<p><code>[taxonomies]</code></p>
+<ul>
+<li><code>tag = &quot;tags&quot;</code> : Allows to specify taxonomy to be shown as tags</li>
+<li><code>category = &quot;categories&quot;</code> : Allows to specify taxonomy to be shown as categories. This is disabled by default</li>
+</ul>
+</li>
+<li>
 <p><code>[params]</code></p>
 <ul>
 <li><code>dateform</code> / <code>dateformShort</code> / <code>dateformNum</code> / <code>dateformNumTime</code> : Used to render properly formatted date &amp; time. Change this if you know what you are doing.</li>
@@ -77,6 +84,8 @@ The element in the internal RSS template The lang attribute of the element in th
 <li><code>legacyLayout</code> : Enables legacy layout (where post info is below content)</li>
 <li><code>shareSocial</code> : Enables Social sharing links to share pages to social media.</li>
 <li><code>googleTagManager</code> : Enables scripts for <a href="https://tagmanager.google.com/">Google Tag Manager</a></li>
+<li><code>tagSymbol</code> : Specify a symbol for Tags. Default is <code>#</code></li>
+<li><code>categorySymbol</code> : Specify a symbol for Categories. Default is <code>⊲</code></li>
 <li><code>[params.socialLinks]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
 <ul>
 <li><code>name</code> : Name of the social page.</li>
@@ -100,6 +109,7 @@ The element in the internal RSS template The lang attribute of the element in th
 <li><code>featuredImg</code> : To have a unique image for the page. Shown as background image. Can be toggled to fullscreen with special button in menu.</li>
 <li><code>description</code> : Description for the Page.</li>
 <li><code>tags</code> : Allows to define tags.</li>
+<li><code>categories</code> : Allows to define categories.</li>
 <li><code>author</code> : Allows to specify page author.</li>
 <li><code>authorLink</code> : Allows to supply separate author bio.</li>
 <li><code>scrolltotop</code> : Toggles scroll to top button for that particular page.</li>
