@@ -6,6 +6,9 @@
 @import "_admonition.scss";
 @import "_mathjax.scss";
 @import "_socialshare.scss";
+{{ if (where (readDir "assets/scss") "Name" "userstyles.scss") }}
+@import "userstyles.scss";
+{{ end }}
 
 /* Webkit Scrollbar Customize */
 ::-webkit-scrollbar {

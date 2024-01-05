@@ -1,5 +1,4 @@
 // Colors
-//
 $theme: #018574;
 $text: #e8eef2;
 $light-grey: #494f5c;
@@ -9,12 +8,10 @@ $midnightblue: #2c3e50;
 $typewriter: hsl(172, 100%, 36%);
 
 // Fonts
-//
 $fonts: "Trebuchet MS", Verdana, "Verdana Ref", "Segoe UI", Candara, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 $code-fonts: Consolas, "Andale Mono WT", "Andale Mono", Menlo, Monaco, "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, "YaHei Consolas Hybrid", monospace, "Segoe UI Emoji", "PingFang SC", "Microsoft YaHei";
 
 //Admonition
-//
 $admonition-background: (
   'note': rgba(68, 138, 255, 0.1),
   'info': rgba(0, 184, 212, 0.1),
@@ -24,7 +21,7 @@ $admonition-background: (
   'failure': rgba(255, 82, 82, 0.1),
   'danger': rgba(255, 23, 68, 0.1),
   'bug': rgba(245, 0, 87, 0.1),
-) !default;
+  ) !default;
 
 $admonition-color: (
   'note': #448aff,
@@ -35,10 +32,9 @@ $admonition-color: (
   'failure': #ff5252,
   'danger': #ff1744,
   'bug': #f50057,
-) !default;
+  ) !default;
 
 // Mixins
-//
 @mixin dimmed {
   opacity: .6;
 }
