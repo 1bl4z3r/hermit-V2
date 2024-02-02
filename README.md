@@ -132,6 +132,12 @@ You'll need **Hugo extended version**, which has the ability to rebuild SCSS. Yo
 
 You can inject any HTML code to every page's document head or right above the closing body tag. This makes it easier to add any HTML metadata, custom css/js, DNS-prefetch etc. To do this you simply need to create a file at site's `layouts/partials/extra-head.html` or `layouts/partials/extra-foot.html`, code inside will be injected to every page.
 
+### Mathematics in Markdown
+
+With release of Hugo [v0.122.0](https://github.com/gohugoio/hugo/releases/tag/v0.122.0), Latex is supported natively. This means we can forgo mathjax, thereby reducing the overall footprint of the theme. Keep tuned to this section for more.
+
+Link : [https://gohugo.io/content-management/mathematics/](https://gohugo.io/content-management/mathematics/)
+
 ## Acknowledgments
 
 * [normalize.css](https://necolas.github.io/normalize.css/) - [MIT](https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
