@@ -1,0 +1,41 @@
+# Translations for German
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# 404.html
+#
+[notFound]
+other = "Seite nicht gefunden…"
+
+[home]
+other = "Startseite"
+
+[archives]
+other = "Archive"
+
+# posts/single.html
+#
+[seeAlso]
+other = "Siehe auch"
+
+[wordCount]
+other = "{{ .WordCount }} Wörter"
+
+[tableOfContents]
+other = "Inhalt"
+
+[newer]
+other = "Neuer"
+
+[older]
+other = "Älter"
+
+# partials/header.html
+#
+[menu]
+other = "Menü"
+
+[share]
+other = "Teilen"
+
+[featuredImage]
+other = "Ausgewähltes Bild"
