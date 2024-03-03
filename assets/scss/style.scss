@@ -4,11 +4,19 @@
 @import "animate.scss";
 @import "_scroll.scss";
 @import "_admonition.scss";
-@import "_mathjax.scss";
 @import "_socialshare.scss";
 {{ if (fileExists "assets/scss/userstyles.scss") }}
 @import "userstyles.scss";
 {{ end }}
+
+/* text selection */
+::-moz-selection {
+  background: $highlight-grey;
+}
+
+::selection {
+  background: $highlight-grey;
+}
 
 /* Webkit Scrollbar Customize */
 ::-webkit-scrollbar {
@@ -60,13 +68,14 @@ pre {
   code {
     padding: 0;
     margin: 0;
-    background: #272822;
+    color: #eee;
+    background: transparent;
   }
 }
 
 code {
-  color: #eee;
-  background: $highlight-grey;
+  color: hsl(0, 1%, 67%);
+  background: $dark-grey;
   border-radius: 3px;
   padding: 0 3px;
   margin: 0 4px;
@@ -463,7 +472,6 @@ p.img-404 {
     @include dimmed;
 
     &:hover {
-      text-decoration: underline;
       cursor: pointer;
     }
   }
@@ -490,6 +498,36 @@ p.img-404 {
     flex-shrink: 0;
     margin-left: 1em;
     @include dimmed;
+  }
+  .post-description {
+    font-size:x-small;
+    flex-shrink: 0;
+    @include dimmed;
+  }
+}
+
+.pinned-posts-group {
+  display: flex;
+  margin-bottom: 1.9em;
+  line-height: normal;
+  border-bottom: 2px $highlight-grey solid;
+
+  .pinned-posts-list {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pinned-post-item {
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+    padding: 12px 0;
+
+    a {
+      padding-left: 12px;
+    }
   }
 }
 

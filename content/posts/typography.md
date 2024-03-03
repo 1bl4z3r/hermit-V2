@@ -8,7 +8,7 @@ description : 'Integer lobortis vulputate mauris quis maximus. Vestibulum ac ero
 tags: 
   - Demo
   - Typography
-
+pin: true
 Lastmod : 2023-08-15T15:36:33+05:30
 ---
 
@@ -68,6 +68,14 @@ Lists:
    + sub-unordered list item 2.
      + [x] something is DONE.
      + [ ] something is NOT DONE.
+
+Syntax Highlighting without backticks:
+
+    var num1, num2, sum
+    num1 = prompt("Enter first number")
+    num2 = prompt("Enter second number")
+    sum = parseInt(num1) + parseInt(num2) // "+" means "add"
+    alert("Sum = " + sum)  // "+" means combine into a string
 
 Syntax Highlighting with backticks:
 

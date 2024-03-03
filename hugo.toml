@@ -36,6 +36,13 @@ enableEmoji = true
 # googleAnalytics = "UA-123-45"
 # disqusShortname = "yourdiscussshortname"
 
+[frontmatter]
+date = ["lastmod", "date", "publishDate"]
+lastmod = ["date", "lastmod", ":git", "publishDate"]
+publishDate = ["publishDate", "date"]
+expiryDate = ["expiryDate"]
+
+
 [params.author]
   name = "1BL4Z3R"
   about = "about-hugo"
@@ -49,6 +56,16 @@ enableEmoji = true
   tag = "tags"
   # Categories are disabled by default.
   # category = "categories"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -81,6 +98,10 @@ enableEmoji = true
   # googleTagManager = "GTM-XXXXXXXX"
   # tagSymbol = "#"
   # categorySymbol = "⊲"
+  pinned = "Pinned Posts"
+  # pinnedSVGname = "pin"
+  descriptionInPosts = true
+  # initialPublish = "Initally Posted on: "
 
 
   [[params.socialLinks]]

@@ -7,10 +7,11 @@ featuredImg: ""
 description : "The Hitchhiker's Guide to Hermit - V2 Configuration"
 tags: 
   - Demo
+pin: true
 scrolltotop : true
 toc : true
 ShowLastmod : true
-Lastmod : 2023-10-28T20:30:30+05:30
+Lastmod : 2024-03-03T20:30:30+05:30
 ---
 
 ## Configuation in `hugo.toml`
@@ -62,6 +63,10 @@ Lastmod : 2023-10-28T20:30:30+05:30
 	- `googleTagManager` : Enables scripts for [Google Tag Manager](https://tagmanager.google.com/)
 	- `tagSymbol` : Specify a symbol for Tags. Default is `#`
 	- `categorySymbol` : Specify a symbol for Categories. Default is `⊲`
+	- `pinned` : Display the name of 'Pinned Posts'. If none provided, pinned posts section would be hidden
+	- `pinnedSVGname` : Specify what icon should be displayed before a pinned post. The icon must be present in `svg.html`
+	- `descriptionInPosts` : Toggle to show/hide posts' description in list view
+	- `initialPublish` : Show what should be shown in section of Initial Published. Defaults to "Initial Published on : "
 	-  `[params.socialLinks]` Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
 		- `name` : Name of the social page.
 		- `url` : URL of your account.
@@ -90,6 +95,7 @@ Lastmod : 2023-10-28T20:30:30+05:30
 - `custom_js` : Allows to supply custom CSS by placing the css files in `/static/js/`. JS will be invoked for that page only.
 - `ShowLastmod` : This enables Last modification date of the given Page.
 - `Lastmod` : REQUIRED (If `ShowLastmod=true`). Enter Last modified date of the Page.
+- `pin` : Specify if the post should be shown as pinned
 
 ## Special Caveats
 
