@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/</link><description>Recent content in Posts on Hermit - V2</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 22 Oct 2023 20:06:06 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Sun, 22 Oct 2023 20:06:06 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>Configuation in hugo.toml hugo.toml represents Global configuration for Hermit - V2. It is indicative on the changes to make the theme tailored to your personal preferences.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/</link><description>Recent content in Posts on Hermit - V2</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 03 Mar 2024 20:30:30 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Sun, 03 Mar 2024 20:30:30 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>Configuation in hugo.toml hugo.toml represents Global configuration for Hermit - V2. It is indicative on the changes to make the theme tailored to your personal preferences.
 baseURL : The absolute URL (protocol, host, path, and trailing slash) of your published site.
 languageCode : A language tag as defined by RFC 5646. This value is used to populate:
 The element in the internal RSS template The lang attribute of the element in the internal alias template title - Title of the Site</description><content type="html"><![CDATA[<h2 id="configuation-in-hugotoml">Configuation in <code>hugo.toml</code></h2>
@@ -86,6 +86,10 @@ The element in the internal RSS template The lang attribute of the element in th
 <li><code>googleTagManager</code> : Enables scripts for <a href="https://tagmanager.google.com/">Google Tag Manager</a></li>
 <li><code>tagSymbol</code> : Specify a symbol for Tags. Default is <code>#</code></li>
 <li><code>categorySymbol</code> : Specify a symbol for Categories. Default is <code>⊲</code></li>
+<li><code>pinned</code> : Display the name of &lsquo;Pinned Posts&rsquo;. If none provided, pinned posts section would be hidden</li>
+<li><code>pinnedSVGname</code> : Specify what icon should be displayed before a pinned post. The icon must be present in <code>svg.html</code></li>
+<li><code>descriptionInPosts</code> : Toggle to show/hide posts&rsquo; description in list view</li>
+<li><code>initialPublish</code> : Show what should be shown in section of Initial Published. Defaults to &ldquo;Initial Published on : &quot;</li>
 <li><code>[params.socialLinks]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
 <ul>
 <li><code>name</code> : Name of the social page.</li>
@@ -119,6 +123,7 @@ The element in the internal RSS template The lang attribute of the element in th
 <li><code>custom_js</code> : Allows to supply custom CSS by placing the css files in <code>/static/js/</code>. JS will be invoked for that page only.</li>
 <li><code>ShowLastmod</code> : This enables Last modification date of the given Page.</li>
 <li><code>Lastmod</code> : REQUIRED (If <code>ShowLastmod=true</code>). Enter Last modified date of the Page.</li>
+<li><code>pin</code> : Specify if the post should be shown as pinned</li>
 </ul>
 <h2 id="special-caveats">Special Caveats</h2>
 <h3 id="last-modified-date">Last Modified Date</h3>
@@ -1244,12 +1249,11 @@ This is a note A note banner This is an info A info banner Tip A tip banner Succ
 <p>Quis varius quam quisque id diam vel quam. Arcu bibendum at varius vel pharetra vel turpis nunc eget. Amet dictum sit amet justo. Sed euismod nisi porta lorem mollis aliquam ut porttitor. Elit at imperdiet dui accumsan sit. Duis ultricies lacus sed turpis tincidunt id aliquet. Sed id semper risus in hendrerit gravida. At urna condimentum mattis pellentesque id. Ultrices in iaculis nunc sed augue lacus viverra vitae congue. In arcu cursus euismod quis. Ut consequat semper viverra nam libero justo laoreet sit amet. Purus in massa tempor nec feugiat nisl pretium fusce id. Dignissim sodales ut eu sem integer vitae justo eget. Ac auctor augue mauris augue neque gravida in fermentum et. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus.</p>
 <p>Tortor consequat id porta nibh venenatis. Non consectetur a erat nam at lectus urna. Vulputate eu scelerisque felis imperdiet proin fermentum. Eget dolor morbi non arcu. Proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Interdum velit euismod in pellentesque massa. Enim ut sem viverra aliquet eget sit amet. Iaculis eu non diam phasellus vestibulum lorem sed risus ultricies. Pharetra diam sit amet nisl suscipit adipiscing. Amet risus nullam eget felis eget. Viverra aliquet eget sit amet tellus cras. Ridiculus mus mauris vitae ultricies leo integer malesuada. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. Pretium fusce id velit ut tortor pretium. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Netus et malesuada fames ac turpis egestas. Ut tortor pretium viverra suspendisse potenti nullam ac tortor. Venenatis tellus in metus vulputate eu. In eu mi bibendum neque.</p>
 <p>Sem et tortor consequat id porta nibh venenatis. Sodales ut etiam sit amet nisl purus. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Laoreet id donec ultrices tincidunt. In arcu cursus euismod quis viverra nibh cras pulvinar mattis. Risus pretium quam vulputate dignissim suspendisse in est. A arcu cursus vitae congue mauris rhoncus aenean vel. Quis viverra nibh cras pulvinar mattis nunc sed. Turpis massa tincidunt dui ut ornare lectus sit amet est. Facilisis leo vel fringilla est ullamcorper eget.</p>
-]]></content></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>Beautiful and accessible math in all browsers A JavaScript display engine for mathematics that works in all browsers.
-Configuration Mathjax support is implemented via partials. Please find partial in /layouts/partials/mathjax.html
-1 2 3 4 5 6 7 {{ if or (.Site.Params.global_mathjax) (.Params.mathjax) }} &amp;lt;script type=&amp;#34;text/javascript&amp;#34; async src=&amp;#34;https://polyfill.io/v3/polyfill.min.js?features=es6&amp;#34; crossorigin=&amp;#34;anonymous&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; {{ $mathjaxf := resources.Get &amp;#34;js/mathjax/mathjax-full@3_es5_tex-mml-svg.min.js&amp;#34;}} {{ $mathjaxa := resources.Get &amp;#34;js/mathjax/mathjax-assistant.js&amp;#34;}} {{ $mathjaxscript := slice $mathjaxa $mathjaxf | resources.Concat &amp;#34;js/mathjaxs.js&amp;#34; | minify | fingerprint -}} &amp;lt;script type=&amp;#34;text/javascript&amp;#34; id=&amp;#34;MathJax-script&amp;#34; async src=&amp;#34;{{ $mathjaxscript.</description><content type="html"><![CDATA[<h1 id="beautiful-and-accessible-math-in-all-browsers">Beautiful and accessible math in all browsers</h1>
-<p>A JavaScript display engine for mathematics that works in all browsers.</p>
+]]></content></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>\(LaTeX\) support for hermit-V2 Configuration Put the following in hugo.toml
+1 2 3 4 5 6 7 8 [markup] [markup.goldmark] [markup.goldmark.extensions] [markup.goldmark.extensions.passthrough] enable = true [markup.goldmark.extensions.passthrough.delimiters] block = [[&amp;#39;\[&amp;#39;, &amp;#39;\]&amp;#39;], [&amp;#39;$$&amp;#39;, &amp;#39;$$&amp;#39;]] inline = [[&amp;#39;\(&amp;#39;, &amp;#39;\)&amp;#39;]] Mathjax support is implemented via partials. Please find partial in /layouts/partials/mathjax.html
+1 2 3 4 5 6 {{ if or (.Site.Params.global_mathjax) (.Params.mathjax) }} &amp;lt;script id=&amp;#34;MathJax-script&amp;#34; async src=&amp;#34;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; {{ $mathjaxa := resources.Get &amp;#34;js/mathjax/mathjax-assistant.js&amp;#34;}} {{ $mathjaxscript := slice $mathjaxa | resources.</description><content type="html"><![CDATA[<h1 id="latex-support-for-hermit-v2">\(LaTeX\) support for hermit-V2</h1>
 <h2 id="configuration">Configuration</h2>
-<p>Mathjax support is implemented via partials. Please find partial in <code>/layouts/partials/mathjax.html</code></p>
+<p>Put the following in <code>hugo.toml</code></p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -1259,18 +1263,20 @@ Configuration Mathjax support is implemented via partials. Please find partial i
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ if or (.Site.Params.global_mathjax) (.Params.mathjax) }}
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://polyfill.io/v3/polyfill.min.js?features=es6&#34;</span> <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>    {{ $mathjaxf := resources.Get &#34;js/mathjax/mathjax-full@3_es5_tex-mml-svg.min.js&#34;}}
-</span></span><span style="display:flex;"><span>    {{ $mathjaxa := resources.Get &#34;js/mathjax/mathjax-assistant.js&#34;}}
-</span></span><span style="display:flex;"><span>    {{ $mathjaxscript := slice $mathjaxa $mathjaxf | resources.Concat &#34;js/mathjaxs.js&#34; | minify | fingerprint -}}
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MathJax-script&#34;</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $mathjaxscript.Permalink }}&#34;</span> <span style="color:#960050;background-color:#1e0010">{{</span> <span style="color:#a6e22e">printf</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">%q&#34;</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">mathjaxscript</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Data</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Integrity</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">safeHTMLAttr</span> <span style="color:#960050;background-color:#1e0010">}}</span> <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>{{ end }}</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>]
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>]
+</span></span><span style="display:flex;"><span>      [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">passthrough</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">passthrough</span>.<span style="color:#a6e22e">delimiters</span>]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">block</span> = [[<span style="color:#e6db74">&#39;\[&#39;</span>, <span style="color:#e6db74">&#39;\]&#39;</span>], [<span style="color:#e6db74">&#39;$$&#39;</span>, <span style="color:#e6db74">&#39;$$&#39;</span>]]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">inline</span> = [[<span style="color:#e6db74">&#39;\(&#39;</span>, <span style="color:#e6db74">&#39;\)&#39;</span>]]</span></span></code></pre></td></tr></table>
 </div>
 </div>
-<p>I have given a simple style for mathjax components. You may find in <code>/assets/scss/_mathjax.scss</code>. You may extend this stylesheet according to your liking.</p>
+<p>Mathjax support is implemented via partials. Please find partial in <code>/layouts/partials/mathjax.html</code></p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -1281,17 +1287,17 @@ Configuration Mathjax support is implemented via partials. Please find partial i
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#a6e22e">.has-jax</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">-webkit-font-smoothing</span><span style="color:#f92672">:</span> antialiased;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">background</span><span style="color:#f92672">:</span> inherit <span style="color:#66d9ef">!important</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">border</span><span style="color:#f92672">:</span> none <span style="color:#66d9ef">!important</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">font-size</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ if or (.Site.Params.global_mathjax) (.Params.mathjax) }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MathJax-script&#34;</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>{{ $mathjaxa := resources.Get &#34;js/mathjax/mathjax-assistant.js&#34;}}
+</span></span><span style="display:flex;"><span>{{ $mathjaxscript := slice $mathjaxa | resources.Concat &#34;js/mathjaxs.js&#34; | minify | fingerprint -}}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MathJax-script&#34;</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $mathjaxscript.Permalink }}&#34;</span> <span style="color:#960050;background-color:#1e0010">{{</span> <span style="color:#a6e22e">printf</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">%q&#34;</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">mathjaxscript</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Data</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Integrity</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">safeHTMLAttr</span> <span style="color:#960050;background-color:#1e0010">}}</span> <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}</span></span></code></pre></td></tr></table>
 </div>
 </div>
 <p>Finally, Javacript. Mathjax has two JS.</p>
 <ul>
-<li><code>/assets/js/mathjax/mathjax-full@3_es5_tex-mml-svg.min.js</code> (This is the main library downloaded from <a href="https://cdn.jsdelivr.net/npm/mathjax-full@3/es5/tex-mml-svg.js">jsDelivr</a>)</li>
+<li><code>mathjax@3/es5/tex-chtml.js</code> (This is the main library downloaded from <a href="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">jsDelivr</a>)</li>
 <li><code>/assets/js/mathjax/mathjax-assistant.js</code> (You may extend this according to your liking)</li>
 </ul>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -1308,30 +1314,20 @@ Configuration Mathjax support is implemented via partials. Please find partial i
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">MathJax</span> <span style="color:#f92672">=</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tex</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">inlineMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$&#39;</span>, <span style="color:#e6db74">&#39;$&#39;</span>], [<span style="color:#e6db74">&#39;\\(&#39;</span>, <span style="color:#e6db74">&#39;\\)&#39;</span>]],
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">displayMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$$&#39;</span>,<span style="color:#e6db74">&#39;$$&#39;</span>], [<span style="color:#e6db74">&#39;\\[&#39;</span>, <span style="color:#e6db74">&#39;\\]&#39;</span>]],
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">processEscapes</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">processEnvironments</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>  },
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">options</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">skipHtmlTags</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;script&#39;</span>, <span style="color:#e6db74">&#39;noscript&#39;</span>, <span style="color:#e6db74">&#39;style&#39;</span>, <span style="color:#e6db74">&#39;textarea&#39;</span>, <span style="color:#e6db74">&#39;pre&#39;</span>],
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">enableMenu</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;load&#39;</span>, (<span style="color:#a6e22e">event</span>) =&gt; {
-</span></span><span style="display:flex;"><span>      document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;mjx-container&#34;</span>).<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">x</span>.<span style="color:#a6e22e">parentElement</span>.<span style="color:#a6e22e">classList</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;has-jax&#39;</span>})
-</span></span><span style="display:flex;"><span>    });</span></span></code></pre></td></tr></table>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">displayMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;\\[&#39;</span>, <span style="color:#e6db74">&#39;\\]&#39;</span>], [<span style="color:#e6db74">&#39;$$&#39;</span>, <span style="color:#e6db74">&#39;$$&#39;</span>]],
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">inlineMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;\\(&#39;</span>, <span style="color:#e6db74">&#39;\\)&#39;</span>]]
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// processEscapes: true,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#75715e">// processEnvironments: true,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// options: {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">//     skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">//     enableMenu: false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};</span></span></code></pre></td></tr></table>
 </div>
 </div>
 <p>You can invoke partial in following ways:</p>
@@ -1339,152 +1335,57 @@ Configuration Mathjax support is implemented via partials. Please find partial i
 <li>If you want global Mathjax support (for technical blog): set <code>global_mathjax</code> to true in hugo.toml</li>
 <li>If you want mathjax support in individual articles : add <code>mathjax : true</code> to Frontmatter</li>
 </ol>
-<p>I have consciously decoupled main javascript from Mathjax javascript, so that you may visualize if there is any load latency, given mathjax JS is huge. I have minified it, but still if you get any better optimizations, let me know.</p>
-<blockquote>
-<p>The MathJax library version (at the time of publising this article) is : 3.2.2.</p>
-<blockquote>
-<p>It includes components : tex-mml-svg.</p>
-</blockquote>
-</blockquote>
-<h3 id="the-quadratic-formula">The Quadratic Formula</h3>
-<p>$$
+<h3 id="latex-in-action">\(LaTeX\) in action</h3>
+<p>This is an inline \(a^*=x-b^*\) equation.</p>
+<p>These are block equations:</p>
+\[a^*=x-b^*\]
+\[ a^*=x-b^* \]
+\[
+a^*=x-b^*
+\]
+<p>These are block equations using alternate delimiters:</p>
+$$a^*=x-b^*$$
+$$ a^*=x-b^* $$
+$$
+a^*=x-b^*
+$$
+\[
+\begin{aligned}
+KL(\hat{y} || y) &= \sum_{c=1}^{M}\hat{y}_c \log{\frac{\hat{y}_c}{y_c}} \\
+JS(\hat{y} || y) &= \frac{1}{2}(KL(y||\frac{y+\hat{y}}{2}) + KL(\hat{y}||\frac{y+\hat{y}}{2}))
+\end{aligned}
+\]
+$$C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K}$$
+$$
 x = {-b \pm \sqrt{b^2-4ac} \over 2a}
-$$</p>
-<h3 id="cauchys-integral-formula">Cauchy&rsquo;s Integral Formula</h3>
-<p>$$
+$$
+$$
 f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz
-$$</p>
-<h3 id="gauss-divergence-theorem">Gauss&rsquo; Divergence Theorem</h3>
-<p>$$
+$$
+$$
 \int_D ({\nabla\cdot} F)dV=\int_{\partial D} F\cdot ndS
-$$</p>
-<h3 id="curl-of-a-vector-field">Curl of a Vector Field</h3>
-<p>$$
+$$
+$$
 \vec{\nabla} \times \vec{F} =
-\left( \frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z} \right) \mathbf{i}
-+ \left( \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x} \right) \mathbf{j}
-+ \left( \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} \right) \mathbf{k}
-$$</p>
-<h3 id="standard-deviation">Standard Deviation</h3>
-<p>$$
+            \left( \frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z} \right) \mathbf{i}
+          + \left( \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x} \right) \mathbf{j}
+          + \left( \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} \right) \mathbf{k}
+$$
+$$
 \sigma = \sqrt{ \frac{1}{N} \sum_{i=1}^N (x_i -\mu)^2}
-$$</p>
-<h3 id="definition-of-christoffel-symbols">Definition of Christoffel Symbols</h3>
-<p>$$
+$$
+$$
 (\nabla_X Y)^k = X^i (\nabla_i Y)^k =
-X^i \left( \frac{\partial Y^k}{\partial x^i} + \Gamma_{im}^k Y^m \right)
-$$</p>
-<h3 id="inline">Inline</h3>
-<p>When $a \ne 0$, there are two solutions to (ax^2 + bx + c = 0) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
-<h3 id="a-complex-equation">A complex equation</h3>
+           X^i \left( \frac{\partial Y^k}{\partial x^i} + \Gamma_{im}^k Y^m \right)
+$$
+<p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+</p>
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 <p>\begin{equation}
 S (ω)=1.466, H_s^2 ,  \frac{ω_0^5}{ω^6 }  , e^[-3^ { ω/(ω_0  )]^2}
 \end{equation}</p>
-<h3 id="another-equation">Another equation</h3>
-<p>$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$</p>
-]]></content></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</guid><description>This article explains how to use Scroll Up A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.</description><content type="html"><![CDATA[<h2 id="this-article-explains-how-to-use-scroll-up">This article explains how to use Scroll Up</h2>
-<p>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.</p>
-<h3 id="step-1">Step 1</h3>
-<p>Set <code>scrollToTop</code> to true in <code>hugo.toml</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">scrollToTop</span> = <span style="color:#66d9ef">true</span>
-</span></span></code></pre></div><h3 id="step-2">Step 2</h3>
-<p>Enable <code>scrolltotop</code> to <code>true</code> in article front matter.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">scrolltotop </span>: <span style="color:#66d9ef">true</span>
-</span></span></code></pre></div><blockquote>
-<p>Some pages/articles do not require scroll up button (if there is less content)</p>
-</blockquote>
-<h2 id="anti-js-crowd">Anti-JS crowd</h2>
-<p>The button will work as intended if JS is disabled, but it will not hide/show on scroll position. So, if you have decided to disable JS on client, you will be struck with an floating icon.</p>
-<h2 id="icon">Icon</h2>
-<p>Icon is located in <code>layouts/partials/svg.html</code> under scrollup.
-Icon svg code is as follows:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">fill</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#3B3E48&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;64px&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;64px&#34;</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-2.4 -2.4 28.80 28.80&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;up-circle&#34;</span> <span style="color:#a6e22e">data-name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Flat Color&#34;</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon flat-color&#34;</span> <span style="color:#a6e22e">stroke</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#3B3E48&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.00024000000000000003&#34;</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_bgCarrier&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_tracerCarrier&#34;</span> <span style="color:#a6e22e">stroke-linecap</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;round&#34;</span> <span style="color:#a6e22e">stroke-linejoin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;round&#34;</span> <span style="color:#a6e22e">stroke</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#CCCCCC&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.9600000000000002&#34;</span>&gt;&lt;<span style="color:#f92672">circle</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span> <span style="color:#a6e22e">cx</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">cy</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">r</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #3B3E48;&#34;</span>&gt;&lt;/<span style="color:#f92672">circle</span>&gt;&lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #018574;&#34;</span>&gt;&lt;/<span style="color:#f92672">path</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_iconCarrier&#34;</span>&gt;&lt;<span style="color:#f92672">circle</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span> <span style="color:#a6e22e">cx</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">cy</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">r</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #3B3E48;&#34;</span>&gt;&lt;/<span style="color:#f92672">circle</span>&gt;&lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #018574;&#34;</span>&gt;&lt;/<span style="color:#f92672">path</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;/<span style="color:#f92672">svg</span>&gt;</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="html">HTML</h2>
-<p>This is implemented as a partial located in <code>layouts/partials/scroll-to-top.html</code>.
-Partial is injected in <code>layouts/_default/baseof.html</code></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{ <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">and</span> (.<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">scrollToTop</span>) (.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">scrolltotop</span>) }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span>=<span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;scroll-up&#34;</span>&gt;{{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;svg.html&#34;</span> (<span style="color:#a6e22e">dict</span> <span style="color:#e6db74">&#34;context&#34;</span> . <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#e6db74">&#34;scrollup&#34;</span>) }}&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">a</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">noscript</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span>=<span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;scroll-up show&#34;</span>&gt;{{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;svg.html&#34;</span> (<span style="color:#a6e22e">dict</span> <span style="color:#e6db74">&#34;context&#34;</span> . <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#e6db74">&#34;scrollup&#34;</span>) }}&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">a</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">noscript</span>&gt;
-</span></span><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">scrollwatcher</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">resources</span>.<span style="color:#a6e22e">Get</span> <span style="color:#e6db74">&#34;js/scrollwatcher.js&#34;</span> <span style="color:#f92672">-</span>}}
-</span></span><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">script</span> <span style="color:#f92672">:=</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">scrollwatcher</span> | <span style="color:#a6e22e">minify</span> | <span style="color:#a6e22e">fingerprint</span> <span style="color:#f92672">-</span>}}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;{{ $script.Permalink }}&#34;</span> {{ <span style="color:#a6e22e">printf</span> <span style="color:#e6db74">&#34;integrity=%q&#34;</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">Data</span>.<span style="color:#a6e22e">Integrity</span> | <span style="color:#a6e22e">safeHTMLAttr</span> }} <span style="color:#a6e22e">crossorigin</span>=<span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">script</span>&gt;
-</span></span><span style="display:flex;"><span>{{ <span style="color:#a6e22e">end</span> }}</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="css">CSS</h2>
-<p>Located in <code>assets/scss/_scroll.scss</code>.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#a6e22e">.scroll-up</span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> fixed;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">bottom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">right</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">z-index</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transition</span><span style="color:#f92672">:</span> all <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.5</span><span style="color:#66d9ef">s</span> ease;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.hide</span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transform</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">translateY</span>(<span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.show</span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transform</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">translateY</span>(<span style="color:#ae81ff">0</span>);
-</span></span><span style="display:flex;"><span>  }</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="javascript">JavaScript</h2>
-<p>Located in <code>assets/js/scrollwatcher.js</code></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scroll</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;.scroll-up&#34;</span>),<span style="color:#a6e22e">rootElement</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">documentElement</span>;<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleScroll</span>(){<span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">scrollTop</span><span style="color:#f92672">/</span>(<span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">scrollHeight</span><span style="color:#f92672">-</span><span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">clientHeight</span>)<span style="color:#f92672">&gt;</span>.<span style="color:#ae81ff">4</span><span style="color:#f92672">?</span>(<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;hide&#34;</span>),<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;show&#34;</span>))<span style="color:#f92672">:</span>(<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;hide&#34;</span>),<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;show&#34;</span>))}document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>,<span style="color:#a6e22e">handleScroll</span>);</span></span></code></pre></td></tr></table>
-</div>
-</div>
-]]></content></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Sat, 22 Jul 2023 14:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+]]></content></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Tue, 15 Aug 2023 15:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 An apple is a sweet, edible fruit produced by an apple tree (Malus pumila).</description><content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <blockquote>
 <p>An apple is a sweet, edible fruit produced by an apple tree (Malus pumila). Apple trees are cultivated worldwide, and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today. Apples have been grown for thousands of years in Asia and Europe, and were brought to North America by European colonists. Apples have religious and mythological significance in many cultures, including Norse, Greek and European Christian traditions.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
@@ -1492,7 +1393,7 @@ An apple is a sweet, edible fruit produced by an apple tree (Malus pumila).</des
 <hr>
 <p>Inline styles：</p>
 <p><strong>strong</strong>, <em>emphasis</em>, <em><strong>strong and emphasis</strong></em>,<code>code</code>, <!-- raw HTML omitted -->underline<!-- raw HTML omitted -->, <del>strikethrough</del>, :joy:🤣, $\LaTeX$<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, ==highlight==, <a href="https://example.com">Link</a>, and image:</p>
-<p><img src="https://picsum.photos/600/400/?random" alt="img"></p>
+<p><img alt="img" src="https://picsum.photos/600/400/?random"></p>
 <p>Images can also be implemented via figure shortcode. It extends in-built hugo shortcode to convert images to webp format.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{ {&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/928-600x400.jpg&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;webp&#34;</span> <span style="color:#a6e22e">loading</span>=<span style="color:#e6db74">&#34;lazy&#34;</span> &gt;} }
 </span></span></code></pre></div>
@@ -1557,6 +1458,13 @@ An apple is a sweet, edible fruit produced by an apple tree (Malus pumila).</des
 </ul>
 </li>
 </ol>
+<p>Syntax Highlighting without backticks:</p>
+<pre><code>var num1, num2, sum
+num1 = prompt(&quot;Enter first number&quot;)
+num2 = prompt(&quot;Enter second number&quot;)
+sum = parseInt(num1) + parseInt(num2) // &quot;+&quot; means &quot;add&quot;
+alert(&quot;Sum = &quot; + sum)  // &quot;+&quot; means combine into a string
+</code></pre>
 <p>Syntax Highlighting with backticks:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num1</span>, <span style="color:#a6e22e">num2</span>, <span style="color:#a6e22e">sum</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">num1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">prompt</span>(<span style="color:#e6db74">&#34;Enter first number&#34;</span>)
@@ -1724,6 +1632,107 @@ An apple is a sweet, edible fruit produced by an apple tree (Malus pumila).</des
 <p>LaTeX is supported by Mathjax, explained <a href="/hermit-V2/en/posts/mathjax-support/">in this article</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
+</div>
+]]></content></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</guid><description>This article explains how to use Scroll Up A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.</description><content type="html"><![CDATA[<h2 id="this-article-explains-how-to-use-scroll-up">This article explains how to use Scroll Up</h2>
+<p>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.</p>
+<h3 id="step-1">Step 1</h3>
+<p>Set <code>scrollToTop</code> to true in <code>hugo.toml</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">scrollToTop</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><h3 id="step-2">Step 2</h3>
+<p>Enable <code>scrolltotop</code> to <code>true</code> in article front matter.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">scrolltotop </span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><blockquote>
+<p>Some pages/articles do not require scroll up button (if there is less content)</p>
+</blockquote>
+<h2 id="anti-js-crowd">Anti-JS crowd</h2>
+<p>The button will work as intended if JS is disabled, but it will not hide/show on scroll position. So, if you have decided to disable JS on client, you will be struck with an floating icon.</p>
+<h2 id="icon">Icon</h2>
+<p>Icon is located in <code>layouts/partials/svg.html</code> under scrollup.
+Icon svg code is as follows:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">fill</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#3B3E48&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;64px&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;64px&#34;</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-2.4 -2.4 28.80 28.80&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;up-circle&#34;</span> <span style="color:#a6e22e">data-name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Flat Color&#34;</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon flat-color&#34;</span> <span style="color:#a6e22e">stroke</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#3B3E48&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.00024000000000000003&#34;</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_bgCarrier&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_tracerCarrier&#34;</span> <span style="color:#a6e22e">stroke-linecap</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;round&#34;</span> <span style="color:#a6e22e">stroke-linejoin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;round&#34;</span> <span style="color:#a6e22e">stroke</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#CCCCCC&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.9600000000000002&#34;</span>&gt;&lt;<span style="color:#f92672">circle</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span> <span style="color:#a6e22e">cx</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">cy</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">r</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #3B3E48;&#34;</span>&gt;&lt;/<span style="color:#f92672">circle</span>&gt;&lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #018574;&#34;</span>&gt;&lt;/<span style="color:#f92672">path</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_iconCarrier&#34;</span>&gt;&lt;<span style="color:#f92672">circle</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span> <span style="color:#a6e22e">cx</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">cy</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">r</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #3B3E48;&#34;</span>&gt;&lt;/<span style="color:#f92672">circle</span>&gt;&lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #018574;&#34;</span>&gt;&lt;/<span style="color:#f92672">path</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;/<span style="color:#f92672">svg</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="html">HTML</h2>
+<p>This is implemented as a partial located in <code>layouts/partials/scroll-to-top.html</code>.
+Partial is injected in <code>layouts/_default/baseof.html</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{ <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">and</span> (.<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">scrollToTop</span>) (.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">scrolltotop</span>) }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span>=<span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;scroll-up&#34;</span>&gt;{{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;svg.html&#34;</span> (<span style="color:#a6e22e">dict</span> <span style="color:#e6db74">&#34;context&#34;</span> . <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#e6db74">&#34;scrollup&#34;</span>) }}&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">noscript</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span>=<span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;scroll-up show&#34;</span>&gt;{{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;svg.html&#34;</span> (<span style="color:#a6e22e">dict</span> <span style="color:#e6db74">&#34;context&#34;</span> . <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#e6db74">&#34;scrollup&#34;</span>) }}&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">noscript</span>&gt;
+</span></span><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">scrollwatcher</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">resources</span>.<span style="color:#a6e22e">Get</span> <span style="color:#e6db74">&#34;js/scrollwatcher.js&#34;</span> <span style="color:#f92672">-</span>}}
+</span></span><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">script</span> <span style="color:#f92672">:=</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">scrollwatcher</span> | <span style="color:#a6e22e">minify</span> | <span style="color:#a6e22e">fingerprint</span> <span style="color:#f92672">-</span>}}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;{{ $script.Permalink }}&#34;</span> {{ <span style="color:#a6e22e">printf</span> <span style="color:#e6db74">&#34;integrity=%q&#34;</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">Data</span>.<span style="color:#a6e22e">Integrity</span> | <span style="color:#a6e22e">safeHTMLAttr</span> }} <span style="color:#a6e22e">crossorigin</span>=<span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">script</span>&gt;
+</span></span><span style="display:flex;"><span>{{ <span style="color:#a6e22e">end</span> }}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="css">CSS</h2>
+<p>Located in <code>assets/scss/_scroll.scss</code>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#a6e22e">.scroll-up</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> fixed;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">bottom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">right</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">z-index</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transition</span><span style="color:#f92672">:</span> all <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.5</span><span style="color:#66d9ef">s</span> ease;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.hide</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transform</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">translateY</span>(<span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.show</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transform</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">translateY</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>  }</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="javascript">JavaScript</h2>
+<p>Located in <code>assets/js/scrollwatcher.js</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scroll</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;.scroll-up&#34;</span>),<span style="color:#a6e22e">rootElement</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">documentElement</span>;<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleScroll</span>(){<span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">scrollTop</span><span style="color:#f92672">/</span>(<span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">scrollHeight</span><span style="color:#f92672">-</span><span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">clientHeight</span>)<span style="color:#f92672">&gt;</span>.<span style="color:#ae81ff">4</span><span style="color:#f92672">?</span>(<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;hide&#34;</span>),<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;show&#34;</span>))<span style="color:#f92672">:</span>(<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;hide&#34;</span>),<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;show&#34;</span>))}document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>,<span style="color:#a6e22e">handleScroll</span>);</span></span></code></pre></td></tr></table>
+</div>
 </div>
 ]]></content></item><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Mon, 24 Dec 2018 12:29:41 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>Hugo has figure shortcode built in, so you can easily add figcaptions or hyperlink rel attributes to images. Documentations can be found here:
 https://gohugo.io/content-management/shortcodes/#figure
