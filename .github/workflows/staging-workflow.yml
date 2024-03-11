@@ -32,5 +32,5 @@ jobs:
           git checkout $TARGET_BRANCH       # checkout to your branch
           git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
           git add -A
-          git diff-index --quiet HEAD ||  git commit -asm "${{ github.event.head_commit.message }}"  # commit to the repository (ignore if no modification)
+          git diff-index --quiet HEAD ||  git commit -am "${{ github.event.head_commit.message }}"  # commit to the repository (ignore if no modification)
           git push origin $TARGET_BRANCH # push to remote branch
