@@ -63,6 +63,7 @@ pre {
   white-space: pre;
   color: #eee;
   background: $midnightblue;
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 
   code {
