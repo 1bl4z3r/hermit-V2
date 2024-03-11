@@ -11,7 +11,7 @@
 		</div>
 		{{- end }}
 
-		{{- if and (ge (len (where .Site.Pages ".Params.pin" true)) 1) (.Site.Params.pinned) -}}
+		{{- if and (ge (len (where .Site.Pages ".Params.pin" true)) 1) (.Site.Params.pinned) (ne .Kind "taxonomy") -}}
 		<h2>{{- .Site.Params.pinned -}}</h2>
 		{{$pin_name := .Site.Params.pinnedSVGname | default "pin" }}
 		<div class="pinned-posts-group">
