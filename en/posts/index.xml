@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/</link><description>Recent content in Posts on Hermit - V2</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 03 Mar 2024 20:30:30 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Sun, 03 Mar 2024 20:30:30 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>The Hitchhiker's Guide to Hermit - V2 Configuration</description><content type="html"><![CDATA[<h2 id="configuation-in-hugotoml">Configuation in <code>hugo.toml</code></h2>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/</link><description>Recent content in Posts on Hermit - V2</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 12 Mar 2024 20:30:30 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Tue, 12 Mar 2024 20:30:30 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>The Hitchhiker's Guide to Hermit - V2 Configuration</description><content type="html"><![CDATA[<h2 id="configuation-in-hugotoml">Configuation in <code>hugo.toml</code></h2>
 <p><code>hugo.toml</code> represents Global configuration for Hermit - V2. It is indicative on the changes to make the theme tailored to your personal preferences.</p>
 <p><code>baseURL</code> : The absolute URL (protocol, host, path, and trailing slash) of your published site.</p>
 <ul>
@@ -40,10 +40,11 @@
 <p><code>enableEmoji</code> : Enables shorthand emojis in content files. <a href="https://gohugo.io/functions/emojify/">Info</a></p>
 </li>
 <li>
-<p><code>googleAnalytics</code> : Enter Google Analytics UA code to invoke inbuilt Google Analytics.</p>
-</li>
-<li>
-<p><code>disqusShortname</code> : To enable Disqus.</p>
+<p><code>[services]</code></p>
+<ul>
+<li><code>[services.disqus] shortname</code> : To enable Disqus.</li>
+<li><code>[services.googleAnalytics] id</code> : Enter Google Analytics UA code to invoke inbuilt Google Analytics.</li>
+</ul>
 </li>
 <li>
 <p><code>[params.author]</code></p>
