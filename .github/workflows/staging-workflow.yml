@@ -1,6 +1,6 @@
 # Main Workflow
 # Trigger on every commit to staging
-name: Copy Contents to main branch
+name: Action on push to staging
 on:
   push:
     branches:
@@ -57,8 +57,8 @@ jobs:
         uses: chabad360/htmlproofer@master
         with:
           directory: "./public"
-          arguments: --only-4xx --check-favicon --check-html --assume-extension --empty-alt-ignore --disable-external
-        continue-on-error: true
+          # arguments: --only-4xx --check-favicon --check-html --assume-extension --empty-alt-ignore --disable-external
+        continue-on-error: false
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/staging'
