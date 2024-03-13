@@ -34,3 +34,36 @@ jobs:
           git add -A
           git diff-index --quiet HEAD ||  git commit -asm "${{ github.event.head_commit.message }}"  # commit to the repository (ignore if no modification)
           git push origin $TARGET_BRANCH # push to remote branch
+  build-and-deploy-site:
+    name: Build and Deploy Hugo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build site with Hugo
+        run: hugo --minify
+
+      - name: Check HTML
+        uses: chabad360/htmlproofer@master
+        with:
+          directory: "./public"
+          arguments: --only-4xx --check-favicon --check-html --assume-extension --empty-alt-ignore --disable-external
+        continue-on-error: true
+
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/staging'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
