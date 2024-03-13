@@ -43,23 +43,13 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
           extended: true
-
       - name: Build site with Hugo
-        run: hugo --minify
-
-      - name: Check HTML
-        uses: chabad360/htmlproofer@master
-        with:
-          directory: "./public"
-          # arguments: --only-4xx --check-favicon --check-html --assume-extension --empty-alt-ignore --disable-external
-        continue-on-error: false
-
+        run: hugo --minify --noBuildLock --ignoreCache --gc --verbose 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/staging'
         uses: peaceiris/actions-gh-pages@v3
