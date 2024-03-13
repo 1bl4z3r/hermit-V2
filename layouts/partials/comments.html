@@ -1,3 +1,4 @@
-{{- if .Site.DisqusShortname }}
+{{- if (or Site.Config.Services.Disqus.Shortname .Site.DisqusShortname) -}} 
 {{ template "_internal/disqus.html" . }}
-{{- end }}
+{{- end -}}
+

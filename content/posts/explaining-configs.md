@@ -11,7 +11,7 @@ pin: true
 scrolltotop : true
 toc : true
 ShowLastmod : true
-Lastmod : 2024-03-03T20:30:30+05:30
+Lastmod : 2024-03-12T20:30:30+05:30
 ---
 
 ## Configuation in `hugo.toml`
@@ -33,8 +33,9 @@ Lastmod : 2024-03-03T20:30:30+05:30
 - `rssLimit` : Maximum number of items in the RSS feed.
 - `copyright` : This message is only used by the RSS template.
 - `enableEmoji` : Enables shorthand emojis in content files. [Info](https://gohugo.io/functions/emojify/)
-- `googleAnalytics` : Enter Google Analytics UA code to invoke inbuilt Google Analytics.
-- `disqusShortname` : To enable Disqus.
+- `[services]`
+	- `[services.disqus] shortname` : To enable Disqus.
+	- `[services.googleAnalytics] id` : Enter Google Analytics UA code to invoke inbuilt Google Analytics.
 - `[params.author]`
 	- `name` : Name of Site-wide or default author.
 	- `about` : Name of the about page of the Site-wide or default author.

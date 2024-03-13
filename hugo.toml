@@ -33,8 +33,12 @@ rssLimit = 10
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
 enableEmoji = true
 
-# googleAnalytics = "UA-123-45"
-# disqusShortname = "yourdiscussshortname"
+#[services]
+#  [services.disqus]
+#    shortname = ''
+#  [services.googleAnalytics]
+#    id = ''
+
 
 [frontmatter]
 date = ["lastmod", "date", "publishDate"]
