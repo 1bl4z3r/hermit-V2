@@ -40,8 +40,11 @@ rssLimit = 10
 copyright = "CHANGE ME"
 enableEmoji = true
 
-# googleAnalytics = "UA-123-45"
-# disqusShortname = "CHANGE ME"
+#[services]
+#  [services.disqus]
+#    shortname = ''
+#  [services.googleAnalytics]
+#    id = ''
 
 [frontmatter]
 date = ["date", "publishDate", "lastmod"]
