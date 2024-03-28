@@ -55,6 +55,7 @@ const toggleMobileMenu = () => {
   } else {
     mobileMenu.style.animationName = 'bounceOutRight';
     mobileMenu.style.webkitAnimationName = 'bounceOutRight'
+    mobileMenu.style.display = 'none';
     mobileMenuVisible = false;
   }
 }
@@ -100,7 +101,7 @@ if (header !== null) {
   listen('#img-btn', "click", showImg);
   listen('.bg-img', "click", hideImg);
 
-  document.querySelectorAll('.post-year').forEach((ele)=> {
+  document.querySelectorAll('.post-year').forEach((ele) => {
     ele.addEventListener('click', () => {
       window.location.hash = '#' + ele.id;
     });
