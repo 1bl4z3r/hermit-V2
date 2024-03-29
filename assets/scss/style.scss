@@ -2,9 +2,9 @@
 @import "normalize.scss";
 @import "syntax.scss";
 @import "animate.scss";
-@import "_scroll.scss";
-@import "_admonition.scss";
-@import "_socialshare.scss";
+@import "scroll.scss";
+@import "admonition.scss";
+@import "socialshare.scss";
 {{ if (fileExists "assets/scss/userstyles.scss") }}
 @import "userstyles.scss";
 {{ end }}
