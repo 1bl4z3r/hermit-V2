@@ -54,7 +54,7 @@ const toggleMobileMenu = () => {
     mobileMenuVisible = true;
   } else {
     mobileMenu.style.animationName = 'bounceOutRight';
-    mobileMenu.style.webkitAnimationName = 'bounceOutRight'
+    mobileMenu.style.webkitAnimationName = 'bounceOutRight';
     mobileMenu.style.display = 'none';
     mobileMenuVisible = false;
   }
@@ -72,7 +72,8 @@ const shareMobileMenu = () => {
     shareMenuVisible = true;
   } else {
     shareMenu.style.animationName = 'bounceOutRight';
-    shareMenu.style.webkitAnimationName = 'bounceOutRight'
+    shareMenu.style.webkitAnimationName = 'bounceOutRight';
+    shareMenu.style.display = 'none';
     shareMenuVisible = false;
   }
 }
