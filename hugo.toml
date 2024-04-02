@@ -2,6 +2,14 @@ baseURL = "https://1bl4z3r.github.io/hermit-V2/"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
+# [outputs]
+#   home = ['html', 'rss']
+#   page = ['html']
+#   rss = ['rss']
+#   section = ['html', 'rss']
+#   taxonomy = ['html', 'rss']
+#   term = ['html', 'rss']
+
 [languages]
   [languages.en]
     title = 'Hermit - V2'
