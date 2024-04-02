@@ -41,7 +41,7 @@ git submodule update --remote
 
 Below page has an extensive list of user submitted sites/pages using hermit-V2.
 
-Page in question: [Sites-using-hermit‐V2](https://github.com/1bl4z3r/hermit-V2/wiki/Sites-using-hermit‐V2)
+Page in question: [Sites-using-hermit‐V2](https://github.com/1bl4z3r/hermit-V2/wiki)
 
 ## First Use Knowledge
 
