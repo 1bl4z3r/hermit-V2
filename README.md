@@ -2,7 +2,7 @@
 
 hermit-V2 is a minimal and fast theme for Hugo, built for bloggers who want a simple and focused website. This is a maintained fork of [Hermit](https://github.com/Track3/hermit), which iterates over the original work to have production-ready experience with bug fixes and new features.
 
-![](https://github.com/1bl4z3r/hermit-V2/blob/main/images/screenshot.png)
+![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/staging/images/screenshot.png)
 
 ### History
 
@@ -55,7 +55,7 @@ Page in question: [Sites-using-hermit‐V2](https://github.com/1bl4z3r/hermit-V2
 * All code fields feature syntax highlighting and a code-copy function
 * Responsive & Retina Ready. Scales gracefully from a big screen all the way down to the smallest mobile phone. Assets in vector format ensures that it looks sharp on high-resolution screens.
 
-![](https://github.com/1bl4z3r/hermit-V2/blob/main/images/hermit.png)
+![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/staging/images/hermit.png)
 
 ### Configuration
 
