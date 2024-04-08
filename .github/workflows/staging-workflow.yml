@@ -25,7 +25,7 @@ jobs:
           SRC_FOLDER_PATH: '.'
           TARGET_BRANCH: 'main'
         run: |
-          files=$(find $SRC_FOLDER_PATH -type f|grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|928-600x400.jpg') # get the file list
+          files=$(find $SRC_FOLDER_PATH -type f|grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|928-600x400.jpg\|images/screenshot.png\|images/hermit.webp\|hugo_build.lock') # get the file list
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
           git fetch                         # fetch branches
@@ -34,6 +34,39 @@ jobs:
           git add -A
           git diff-index --quiet HEAD ||  git commit -asm "${{ github.event.head_commit.message }}"  # commit to the repository (ignore if no modification)
           git push origin $TARGET_BRANCH # push to remote branch
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - language: javascript-typescript
+          build-mode: none
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: ${{ matrix.language }}
+        build-mode: ${{ matrix.build-mode }}
+    - if: matrix.build-mode == 'manual'
+      run: |
+        echo 'If you are using a "manual" build mode for one or more of the' \
+          'languages you are analyzing, replace this with the commands to build' \
+          'your code, for example:'
+        echo '  make bootstrap'
+        echo '  make release'
+        exit 1
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+      with:
+        category: "/language:${{matrix.language}}"
   build-and-deploy-site:
     name: Build and Deploy Hugo
     runs-on: ubuntu-latest
