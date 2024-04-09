@@ -7,9 +7,13 @@
 <link rel="author" href="{{"humans.txt" | relURL}}">
 <link rel="apple-touch-icon" sizes="180x180" href="{{"apple-touch-icon.png" | relURL}}">
 {{- if (fileExists "static/favicon.ico") -}}
-<link rel="icon" href="{{"favicon.ico" | relURL}}" type="image/x-icon" sizes="any">
+<link rel="icon" href="{{"favicon.ico" | relURL}}" type="image/x-icon">
 {{- end -}}
-{{- if (fileExists "static/favicon.svg") -}}
+{{ $favicon := "images/favicon.svg" }}
+{{- if (fileExists (printf "assets/%s" $favicon)) -}}
+{{- $svg_fav := resources.Get $favicon | minify -}}
+<link rel="icon" href="{{ $svg_fav.Permalink }}" type="image/svg+xml">
+{{- else if (fileExists "static/favicon.svg") -}}
 <link rel="icon" href="{{"favicon.svg" | relURL}}" type="image/svg+xml">
 {{- end -}}
 <link rel="icon" type="image/png" sizes="32x32" href="{{"favicon-32x32.png" | relURL}}">
