@@ -2,7 +2,7 @@
 
 hermit-V2 is a minimal and fast theme for Hugo, built for bloggers who want a simple and focused website. This is a maintained fork of [Hermit](https://github.com/Track3/hermit), which iterates over the original work to have production-ready experience with bug fixes and new features.
 
-![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/staging/images/screenshot.gif)
+![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/staging/images/screenshot.png)
 
 ### History
 
@@ -13,6 +13,8 @@ When I had switched from Jekyll to Hugo, I was in a need of a theme. I was enthr
 ## Demo
 
 Demo page [https://1bl4z3r.github.io/hermit-V2](https://1bl4z3r.github.io/hermit-V2), which is both demo and documentation for the theme, is located in [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging)
+
+![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/staging/images/screenshot.gif)
 
 ## Configuration Guide
 
