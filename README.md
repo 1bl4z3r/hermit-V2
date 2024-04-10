@@ -90,6 +90,8 @@ Use [RealFaviconGenerator](https://realfavicongenerator.net/) to generate these 
 * safari-pinned-tab.svg
 * site.webmanifest
 
+If your favicon source is in the svg format, save it as `assets/images/favicon.svg` to enable svg favicon for supported browsers.
+
 ### Social icons
 
 The following icons are supported, please make sure the `name` filed is exactly one of these:
