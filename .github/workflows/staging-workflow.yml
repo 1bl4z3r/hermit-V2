@@ -82,7 +82,7 @@ jobs:
           hugo-version: 'latest'
           extended: true
       - name: Build site with Hugo
-        run: hugo --minify --noBuildLock --ignoreCache --gc --verbose 
+        run: hugo --minify --noBuildLock --ignoreCache --gc --verbose && cp public/en/404.html public/404.html
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/staging'
         uses: peaceiris/actions-gh-pages@v4
