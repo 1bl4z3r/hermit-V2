@@ -90,6 +90,13 @@ Use [RealFaviconGenerator](https://realfavicongenerator.net/) to generate these 
 * safari-pinned-tab.svg
 * site.webmanifest
 
+#### SVG Favicons
+
+If your favicon is in SVG format, there are two ways to implement the same in this theme.
+
+* If you are looking for a clean directory structure, place your favicon as `favicon.svg` in `static` directory. **In this mode, favicon will not be minified by Hugo**
+* If you want your generated site to be as light as possible, place your favicon as `favicon.svg` in `assets/images`. **In this mode, favicon will be minified by Hugo**
+
 ### Social icons
 
 The following icons are supported, please make sure the `name` filed is exactly one of these:
