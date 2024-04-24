@@ -14,7 +14,7 @@ When I had switched from Jekyll to Hugo, I was in a need of a theme. I was enthr
 
 Demo page [https://1bl4z3r.github.io/hermit-V2](https://1bl4z3r.github.io/hermit-V2), which is both demo and documentation for the theme, is located in [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging)
 
-![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/main/images/screenshot.gif)
+![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/staging/images/screenshot.gif)
 
 ## Configuration Guide
 
@@ -57,7 +57,7 @@ Page in question: [Sites-using-hermit‐V2](https://github.com/1bl4z3r/hermit-V2
 * All code fields feature syntax highlighting and a code-copy function
 * Responsive & Retina Ready. Scales gracefully from a big screen all the way down to the smallest mobile phone. Assets in vector format ensures that it looks sharp on high-resolution screens.
 
-![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/main/images/hermit.webp)
+![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/staging/images/hermit.webp)
 
 ### Configuration
 
