@@ -46,9 +46,7 @@ __Sites using hermit-V2__ is a user contributed list of all the blogs/pages that
 - Help new and aspiring bloggers/webmasters to get inspiration from
 - Create a sense of community
 
-You can find currently listed sites from [Sites-using-hermit‐V2](https://github.com/1bl4z3r/hermit-V2/wiki#sites-using-hermit-v2)
-
-You can add your site by raising an [Issue for the same](https://github.com/1bl4z3r/hermit-V2/issues/new?assignees=1bl4z3r&labels=hermit-V2+sites&projects=&template=add-remove-sites-using-hermit-v2.md&title=Add+to+Sites+using+hermit-V2).
+You can find currently listed sites from [Sites-using-hermit‐V2](https://github.com/1bl4z3r/hermit-V2/wiki#sites-using-hermit-v2) and you can add your site by raising an [issue for the same](https://github.com/1bl4z3r/hermit-V2/issues/new?assignees=1bl4z3r&labels=hermit-V2+sites&projects=&template=add-remove-sites-using-hermit-v2.md&title=Add+to+Sites+using+hermit-V2).
 
 ## First Use Knowledge
 
