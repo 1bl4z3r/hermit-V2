@@ -56,7 +56,7 @@ expiryDate = ["expiryDate"]
 
 
 [params.author]
-  name = "1BL4Z3R"
+  name = "BLZR"
   about = "about-hugo"
 
 [blackfriday]
@@ -114,6 +114,8 @@ expiryDate = ["expiryDate"]
   # pinnedSVGname = "pin"
   descriptionInPosts = true
   # initialPublish = "Initally Posted on: "
+  human = ["single","posts"]
+
 
 
   [[params.socialLinks]]

@@ -102,7 +102,7 @@ If your favicon is in SVG format, there are two ways to implement the same in th
 
 ### Social icons
 
-The following icons are supported, please make sure the `name` filed is exactly one of these:
+The following icons are supported, please make sure the `name` field is exactly one of these:
 
 | name            |             |              |           |
 | --------------- | ----------- | ------------ | --------- |

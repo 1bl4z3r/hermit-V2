@@ -8,7 +8,7 @@ description : 'This explains admonition shortcode implementation'
 tags: 
   - Demo
   - Typography
-author : 1bl4z3r
+author : blzr
 scrolltotop : true
 toc : true
 mathjax : false

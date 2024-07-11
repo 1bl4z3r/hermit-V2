@@ -8,7 +8,7 @@ description : 'This page demos MathJax support, nothing else'
 tags: 
   - Demo
   - Typography
-author : 1bl4z3r
+author : blzr
 scrolltotop : false
 toc : true
 mathjax : true

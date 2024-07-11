@@ -112,6 +112,7 @@ expiryDate = ["expiryDate"]
   # pinnedSVGname = "pin"
   # descriptionInPosts= true
   # initialPublish = "Initally Posted on: "
+  # human = ["single","posts"]
   
   [[params.socialLinks]]
     name = "mastodon"
