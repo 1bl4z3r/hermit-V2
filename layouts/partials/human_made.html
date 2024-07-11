@@ -1,0 +1,7 @@
+{{- if (and (in .Site.Params.human "single") (ne .Type "posts")) -}}
+<div class="human single"><a href="https://humanmademark.com/" target="_blank" rel="external noreferrer noopener"><abbr title="I don't hate AIs; but I love humans!">{{- partial "svg.html" (dict "context" . "name" "human-made") -}}</abbr></a></div>
+{{- end -}}
+{{- if (and (in .Site.Params.human "posts") (eq .Type "posts")) -}}
+<div class="human posts"><a href="https://humanmademark.com/" target="_blank" rel="external noreferrer noopener"><abbr title="I don't hate AIs; but I love humans!">{{- partial "svg.html" (dict "context" . "name" "human-made") -}}</abbr></a></div>
+
+{{- end -}}

@@ -961,6 +961,11 @@ a.footnote-ref {
   }
 }
 
+.human{
+  display: flex;
+  justify-content: flex-end;
+}
+
 // If homeSubtitlePrinter is true
 {{ if .Site.Params.homeSubtitlePrinter }}
   #home-subtitle{
