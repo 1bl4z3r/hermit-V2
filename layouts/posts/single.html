@@ -51,19 +51,19 @@
 		{{- end -}}
 		{{- if .Params.toc }}
 		<aside id="toc">
-			<div class="toc-title">{{ i18n "tableOfContents" }}</div>
+			<div class="toc-title">{{- if fileExists "i18n" -}} {{ i18n "tableOfContents" }} {{- else -}} Table of Contents {{- end -}}</div>
 			{{ .TableOfContents }}
 		</aside>
 		{{- end }}
 		<div class="post-nav thin">
 			{{- with .NextInSection }}
 			<a class="next-post" href="{{ .Permalink }}">
-				<span class="post-nav-label">{{- partial "svg.html" (dict "context" . "name" "next") -}}&nbsp;{{ i18n "newer" }}</span><br><span>{{ .Title }}</span>
+				<span class="post-nav-label">{{- partial "svg.html" (dict "context" . "name" "next") -}}&nbsp;{{- if fileExists "i18n" -}} {{ i18n "newer" }} {{- else -}} Newer {{- end -}}</span><br><span>{{ .Title }}</span>
 			</a>
 			{{- end }}
 			{{- with .PrevInSection }}
 			<a class="prev-post" href="{{ .Permalink }}">
-				<span class="post-nav-label">{{ i18n "older" }}&nbsp;{{- partial "svg.html" (dict "context" . "name" "previous") -}}</span><br><span>{{ .Title }}</span>
+				<span class="post-nav-label">{{- if fileExists "i18n" -}} {{ i18n "older" }} {{- else -}} Older {{- end -}}&nbsp;{{- partial "svg.html" (dict "context" . "name" "previous") -}}</span><br><span>{{ .Title }}</span>
 			</a>
 			{{- end }}
 		</div>

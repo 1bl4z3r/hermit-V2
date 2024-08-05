@@ -29,6 +29,9 @@ other = "Neuer"
 [older]
 other = "Älter"
 
+[humanMade]
+other = "Ich hasse KIs nicht, aber ich liebe Menschen!"
+
 # partials/header.html
 #
 [menu]

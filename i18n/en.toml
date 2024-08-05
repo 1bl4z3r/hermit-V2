@@ -29,6 +29,9 @@ other = "Newer"
 [older]
 other = "Older"
 
+[humanMade]
+other = "I don't hate AIs; but I love humans!"
+
 # partials/header.html
 #
 [menu]

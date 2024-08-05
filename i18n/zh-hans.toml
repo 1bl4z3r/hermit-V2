@@ -29,6 +29,9 @@ other = "新"
 [older]
 other = "旧"
 
+[humanMade]
+other = "我并不讨厌人工智能；但我喜欢人类！"
+
 # partials/header.html
 #
 [menu]
