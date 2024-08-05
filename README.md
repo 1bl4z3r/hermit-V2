@@ -152,6 +152,14 @@ You can inject any HTML code to every page's document head or right above the cl
 
 LaTeX is supported by this theme through Mathjax. Please check [explaining-configs](https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/) to learn more.
 
+### Translations
+
+This theme is made specifically with translation in mind. Translations of few languages (English, Spanish, French, Italian, German and Chinese Simplified) are provided in [Staging branch](https://github.com/1bl4z3r/hermit-V2/tree/staging/i18n). However, this theme can work without Translation if your content is **English only**. To have translation of your language :
+
+1. Create translation tables in the i18n directory, naming each file according to RFC 5646. E.g. `i18n/<2-2 Language Code>.toml`. To find your Language code, visit [https://gist.github.com/msikma/8912e62ed866778ff8cd](https://gist.github.com/msikma/8912e62ed866778ff8cd) to get an idea for the code. See [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging) to see how this is implemented.
+2. Copy [English Translation key](https://github.com/1bl4z3r/hermit-V2/blob/staging/i18n/en.toml) and edit to your language. Edit the section `other = "<In your Language>"`.
+
+
 ## Acknowledgments
 
 * [normalize.css](https://necolas.github.io/normalize.css/) - [MIT](https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
