@@ -1333,54 +1333,38 @@
 <h3 id="latex-in-action">\(LaTeX\) in action</h3>
 <p>This is an inline \(a^*=x-b^*\) equation.</p>
 <p>These are block equations:</p>
-\[a^*=x-b^*\]
-\[ a^*=x-b^* \]
-\[
+\[a^*=x-b^*\]\[ a^*=x-b^* \]\[
 a^*=x-b^*
-\]
-<p>These are block equations using alternate delimiters:</p>
-$$a^*=x-b^*$$
-$$ a^*=x-b^* $$
-$$
+\]<p>These are block equations using alternate delimiters:</p>
+$$a^*=x-b^*$$$$ a^*=x-b^* $$$$
 a^*=x-b^*
-$$
-\[
+$$\[
 \begin{aligned}
 KL(\hat{y} || y) &= \sum_{c=1}^{M}\hat{y}_c \log{\frac{\hat{y}_c}{y_c}} \\
 JS(\hat{y} || y) &= \frac{1}{2}(KL(y||\frac{y+\hat{y}}{2}) + KL(\hat{y}||\frac{y+\hat{y}}{2}))
 \end{aligned}
-\]
-$$C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K}$$
-$$
+\]$$C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K}$$$$
 x = {-b \pm \sqrt{b^2-4ac} \over 2a}
-$$
-$$
+$$$$
 f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz
-$$
-$$
+$$$$
 \int_D ({\nabla\cdot} F)dV=\int_{\partial D} F\cdot ndS
-$$
-$$
+$$$$
 \vec{\nabla} \times \vec{F} =
             \left( \frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z} \right) \mathbf{i}
           + \left( \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x} \right) \mathbf{j}
           + \left( \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} \right) \mathbf{k}
-$$
-$$
+$$$$
 \sigma = \sqrt{ \frac{1}{N} \sum_{i=1}^N (x_i -\mu)^2}
-$$
-$$
+$$$$
 (\nabla_X Y)^k = X^i (\nabla_i Y)^k =
            X^i \left( \frac{\partial Y^k}{\partial x^i} + \Gamma_{im}^k Y^m \right)
-$$
-<p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$<p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
 </p>
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
-<p>\begin{equation}
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$<p>\begin{equation}
 S (ω)=1.466, H_s^2 ,  \frac{ω_0^5}{ω^6 }  , e^[-3^ { ω/(ω_0  )]^2}
 \end{equation}</p>
-$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
-]]></content></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Tue, 15 Aug 2023 15:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>Integer lobortis vulputate mauris quis maximus. Vestibulum ac eros porttitor, auctor sem sed, tincidunt nulla. In sit amet tincidunt ex.</description><content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Tue, 15 Aug 2023 15:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>Integer lobortis vulputate mauris quis maximus. Vestibulum ac eros porttitor, auctor sem sed, tincidunt nulla. In sit amet tincidunt ex.</description><content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <blockquote>
 <p>An apple is a sweet, edible fruit produced by an apple tree (Malus pumila). Apple trees are cultivated worldwide, and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today. Apples have been grown for thousands of years in Asia and Europe, and were brought to North America by European colonists. Apples have religious and mythological significance in many cultures, including Norse, Greek and European Christian traditions.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 </blockquote>
