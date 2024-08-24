@@ -1,11 +1,8 @@
 @import "predefined.scss";
-@import "colors.scss";
-@import "fonts.scss";
 @import "normalize.scss";
 @import "syntax.scss";
 @import "animate.scss";
 @import "scroll.scss";
-@import "admonition.scss";
 @import "socialshare.scss";
 {{ if (fileExists "assets/scss/userstyles.scss") }}
 @import "userstyles.scss";

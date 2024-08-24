@@ -1,18 +1,5 @@
-// Mixins
-@mixin dimmed {
-  opacity: .6;
-}
-
-@mixin aTag {
-  a {
-    word-wrap: break-word;
-    border: none;
-    box-shadow: inset 0 -4px 0 $theme;
-    transition-property: box-shadow;
-    transition-duration: .1s;
-
-    &:hover {
-      box-shadow: inset 0 -1em 0 $theme;
-    }
-  }
-}
+@import "colors";
+@import "fonts";
+@import "admonition";
+@import "variables";
+@import "mixins";
