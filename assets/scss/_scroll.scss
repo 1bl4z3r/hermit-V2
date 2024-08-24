@@ -1,4 +1,18 @@
-.scroll-up{
+.scroll-up {
+    .scroll {
+        #st-ring {
+            stroke: $stt-stroke;
+        }
+
+        #st-circle {
+            fill: $stt-circle;
+        }
+
+        #st-arrow {
+            fill: $stt-arrow;
+        }
+    }
+
     position: fixed;
     bottom: 10%;
     right: 2%;
@@ -6,11 +20,13 @@
     opacity: 0;
     transition: all 0.5s ease;
 }
-.hide{
+
+.hide {
     opacity: 0;
     transform: translateY(20px);
 }
-.show{
+
+.show {
     opacity: 1;
     transform: translateY(0);
-  }
+}
