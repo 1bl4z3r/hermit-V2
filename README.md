@@ -145,6 +145,19 @@ If that's not enough, you can see [Extend functionality](#extend-functionality) 
 * Keep your regular pages in the `content` folder. To create a new page, run `hugo new page-title.md`
 * Keep your blog posts in the `content/posts` folder. To create a new post, run `hugo new posts/post-title.md`
 
+### Overriding templates
+
+In Hugo, layouts can live in either the project’s (root) or the themes’ layout folders, any template inside the root layout folder will override theme's layout that relative to it, for example: `layouts/_default/baseof.html` will override `themes/hermit-V2/layouts/_default/baseof.html`. So, you can easily customize the theme without edit it directly, which makes updating the theme easier. Here are some common customizations:
+
+### Customize social icons
+You can modify or add any SVG icons in site's `layouts/partials/svg.html`.
+
+### Customize comment system
+We only have built-in support for Disqus at the moment, if that doesn't fit your needs, you can just add HTML to site's `layouts/partials/comments.html`.
+
+### Add custom analytics
+If you prefer to use different analytics system other than Google Analytics, then add them inside `layouts/partials/analytics.html`.
+
 ### Customize CSS
 
 1. **Change predefined colors/effects** - If you'd like to customize theme color or fonts, you can simply override `assets/scss/_predefined.scss`, by simply copy it to site's root (keep the same relative path) then edit those variables.
