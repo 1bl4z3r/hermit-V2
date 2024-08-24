@@ -68,7 +68,7 @@ Lastmod : 2024-03-12T20:30:30+05:30
 	- `pinnedSVGname` : Specify what icon should be displayed before a pinned post. The icon must be present in `svg.html`
 	- `descriptionInPosts` : Toggle to show/hide posts' description in list view
 	- `initialPublish` : Show what should be shown in section of Initial Published. Defaults to "Initial Published on : "
-	- `human` : Shows a badge 'HumanMadeMark' on Posts and/or Single pages. Configurable by specifying where badge is to be shown
+	- `human` : Shows a badge 'BrainMade' on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: [brainmade.org](brainmade.org)
 	-  `[params.socialLinks]` Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
 		- `name` : Name of the social page.
 		- `url` : URL of your account.
