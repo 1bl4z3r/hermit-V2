@@ -124,7 +124,7 @@ If that's not enough, you can see [Overriding templates](#overriding-templates) 
 
 ### Overriding templates
 
-In Hugo, layouts can live in either the project’s (root) or the themes’ layout folders, any template inside the root layout folder will override theme's layout that relative to it, for example: `layouts/_default/baseof.html` will override `themes/hermit/layouts/_default/baseof.html`. So, you can easily customize the theme without edit it directly, which makes updating the theme easier. Here are some common customizations:
+In Hugo, layouts can live in either the project’s (root) or the themes’ layout folders, any template inside the root layout folder will override theme's layout that relative to it, for example: `layouts/_default/baseof.html` will override `themes/hermit-V2/layouts/_default/baseof.html`. So, you can easily customize the theme without edit it directly, which makes updating the theme easier. Here are some common customizations:
 
 ### Customize social icons
 You can modify or add any SVG icons in site's `layouts/partials/svg.html`.
