@@ -1,26 +1,29 @@
-# hermit-V2 -: The Minimal Hugo Theme
+# Hermit-V2 _- The Minimal Hugo Theme_
 
 hermit-V2 is a minimal and fast theme for Hugo, built for bloggers who want a simple and focused website. This is a maintained fork of [Hermit](https://github.com/Track3/hermit), which iterates over the original work to have production-ready experience with bug fixes and new features.
 
 ![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/main/images/screenshot.jpg)
 
-### History
+## First Impression
 
-When I had switched from Jekyll to Hugo, I was in a need of a theme. I was enthralled by this very theme, and I am using it since in my own personal blog. However, it looks like [OP]((https://github.com/Track3)) has stopped maintaining this theme and as a result, it is riddled with bugs and code breaks. Hence, I have taken upon myself to maintain this theme.The intention of this project is to keep the essence of the theme as-it-is and only add minor updates and squash bugs which may arise.
+Check out Hermit-V2 : [https://1bl4z3r.github.io/hermit-V2](https://1bl4z3r.github.io/hermit-V2)
+This demo also acts as an documentation for the theme, utilizing its powerful features.
 
-> GoHugo Theme Page : [https://themes.gohugo.io/themes/hermit-v2/](https://themes.gohugo.io/themes/hermit-v2/)
-
-## Demo
-
-Demo page [https://1bl4z3r.github.io/hermit-V2](https://1bl4z3r.github.io/hermit-V2), which is both demo and documentation for the theme, is located in [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging)
+The source for the site is located in [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging)
 
 ![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/staging/images/screenshot.gif)
 
-## Configuration Guide
+### Initial Information
 
-Configuration Guide is present in [Explaining Configs](https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/)
+Original theme for Hermit-v2 is, you gussed it, is [Hermit](https://github.com/Track3/hermit). However, it seems [Track3](https://github.com/Track3) isn't maintaining this anymore, which resulted in de-listing from [GoHugo Themes](https://themes.gohugo.io/themes/hermit-v2/) and totally breaks in newer Hugo versions.
 
-## Installation
+Goal of this project is to keep the essence of theme as-is. We will not diverge too much from the original and keep it as minimal as possible, but include all the tools for you to extend, customize and use this theme as you deem fit.
+
+### Configuration
+
+Site Configuration is done through `hugo.toml` or `hugo.yaml` file in root directory of your Hugo Site. To aid you, there is a [hugo.toml.example](https://github.com/1bl4z3r/hermit-V2/blob/main/hugo.toml.example) file located in theme folder. See this configuration for the staging branch [here](https://github.com/1bl4z3r/hermit-V2/blob/staging/hugo.toml). See what each configuration does [here](https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs).
+
+### Installation
 
 Run this command from the root of your Hugo directory:
 
@@ -39,14 +42,14 @@ To update submodule and to have the latest version of the theme with your projec
 git submodule update --remote
 ```
 
-## Sites using hermit-V2
+### Sites using hermit-V2
 
 __Sites using hermit-V2__ is a user contributed list of all the blogs/pages that is using hermit-V2 in some capacity. It could be any component of the theme from landing page or a partial to full fledged use of the theme. The objective of this section is to :
 
 - Help new and aspiring bloggers/webmasters to get inspiration from
 - Create a sense of community
 
-You can find currently listed sites from [Sites-using-hermit‐V2](https://github.com/1bl4z3r/hermit-V2/wiki#sites-using-hermit-v2) and you can add your site by raising an [issue for the same](https://github.com/1bl4z3r/hermit-V2/issues/new?assignees=1bl4z3r&labels=hermit-V2+sites&projects=&template=add-remove-sites-using-hermit-v2.md&title=Add+to+Sites+using+hermit-V2).
+You can find currently listed sites from [Sites-using-hermit‐V2](https://github.com/1bl4z3r/hermit-V2/wiki#sites-using-hermit-v2) and you can add your site by raising an [issue](https://github.com/1bl4z3r/hermit-V2/issues/new?assignees=1bl4z3r&labels=hermit-V2+sites&projects=&template=add-remove-sites-using-hermit-v2.md&title=Add+to+Sites+using+hermit-V2).
 
 ## First Use Knowledge
 
@@ -62,13 +65,9 @@ You can find currently listed sites from [Sites-using-hermit‐V2](https://githu
 
 ![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/staging/images/hermit.webp)
 
-### Configuration
-
-Site Configuration is done through `hugo.toml` or `hugo.yaml` file in root directory of your Hugo Site. To aid you, there is a [hugo.toml.example](https://github.com/1bl4z3r/hermit-V2/blob/main/hugo.toml.example) file located in theme folder. See this configuration in action [here](https://github.com/1bl4z3r/hermit-V2/blob/staging/hugo.toml). See what each configuration does [here](https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/#configuation-in-hugotoml).
-
 ### Custom CSS and JS
 
-I have found that there are some requirements where custom CSS and JS should be supplied to a page to make it work. This custom files are not required for the whole of the site, but is restricted to a page or few particular pages. E.g. If you make contact form.
+if you feel there is a need to have your own CSS and JS to be added, there is a provision for the same. These custom files should be designed to for a page or few particular pages. E.g. If you make contact form.
 
 To make use of custom CSS and JS, add the below section to page frontmatter. If there is any folder structure, that should be mentioned as well.
 
@@ -78,6 +77,30 @@ custom_js = ["custom_js/custom-about.js"]
 ```
 
 The files itself will reside in `assets` directory. Refer to [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging) to have a feel on how [this](https://github.com/1bl4z3r/hermit-V2/blob/staging/content/about-hugo.md) is implemented.
+
+### Custom styles
+
+If, for some reason, you want to apply style for the whole theme, which should be seperate from core theme styles, you can add _userstyles.scss_ in `assets/scss/`. If the file exists, it will be imported during build process.
+
+### Customize theme
+
+This theme allows to be customized. To customize, copy the respective scss file from the theme to site's `assets/scss/` and edit them to your liking.
+
+* To customize theme, Scroll to Top button and Admonition colors, copy [__colors.scss_](https://github.com/1bl4z3r/hermit-V2/blob/staging/assets/scss/_colors.scss)
+* To customize theme fonts, copy [__fonts.scss_](https://github.com/1bl4z3r/hermit-V2/blob/staging/assets/scss/_fonts.scss)
+
+### Extend functionality
+
+Functionality can be extended via layouts.
+
+Layouts can live in either the project’s (root) or the themes’ layout folders, any template inside the root layout folder will override theme's layout that relative to it, for example: `layouts/_default/baseof.html` will override `themes/hermit/layouts/_default/baseof.html`. So, you can easily customize the theme without edit it directly, which makes updating the theme easier.
+
+Copy files as required to site's `layouts/partials/` and edit them to fit your needs.
+
+* To add or modify SVG images used in the theme, copy [_svg.html_](https://github.com/1bl4z3r/hermit-V2/blob/staging/layouts/partials/svg.html)
+* To add or modify comment system (default is Disqus), copy [_comments.html_](https://github.com/1bl4z3r/hermit-V2/blob/staging/layouts/partials/comments.html)
+* To add or modify custom analytics(default is Google Analytics), copy [_analytics.html_](https://github.com/1bl4z3r/hermit-V2/blob/staging/layouts/partials/analytics.html)
+* To inject HTML code to every page's document head or right above the closing body tag ( this makes it easy to add any HTML metadata, custom css/js, DNS-prefetch etc.), create a file at site's _extra-head.html_ or _extra-foot.html_
 
 ### Favicon
 
@@ -115,25 +138,12 @@ The following icons are supported, please make sure the `name` field is exactly 
 | `etsy`          | `tiktok`    | `imgur`      | `bluesky` |
 | `medium`        | `medium old`|              |           |
 
-If that's not enough, you can see [Overriding templates](#overriding-templates) section.
+If that's not enough, you can see [Extend functionality](#extend-functionality) section.
 
 ### Manage content
 
 * Keep your regular pages in the `content` folder. To create a new page, run `hugo new page-title.md`
 * Keep your blog posts in the `content/posts` folder. To create a new post, run `hugo new posts/post-title.md`
-
-### Overriding templates
-
-In Hugo, layouts can live in either the project’s (root) or the themes’ layout folders, any template inside the root layout folder will override theme's layout that relative to it, for example: `layouts/_default/baseof.html` will override `themes/hermit/layouts/_default/baseof.html`. So, you can easily customize the theme without edit it directly, which makes updating the theme easier. Here are some common customizations:
-
-### Customize social icons
-You can modify or add any SVG icons in site's `layouts/partials/svg.html`.
-
-### Customize comment system
-We only have built-in support for Disqus at the moment, if that doesn't fit your needs, you can just add HTML to site's `layouts/partials/comments.html`.
-
-### Add custom analytics
-If you prefer to use different analytics system other than Google Analytics, then add them inside `layouts/partials/analytics.html`.
 
 ### Customize CSS
 
@@ -143,10 +153,6 @@ If you prefer to use different analytics system other than Google Analytics, the
 3. **Change css styling sitewide** - If you are unhappy with how the theme looks and feels and want to change some (or all) of it to make it truly your own, you can do so by adding `assets/scss/userstyles.scss` to your site's root and modify Stylesheets to your liking.
 
 You'll need **Hugo extended version**, which has the ability to rebuild SCSS. You don't have to use extended version in production, but in this case it's necessary to make sure the `resources` folder is committed and "up to date" (by running `hugo` or `hugo server` locally using the extended version). But anyway, always use the extended version if you can.
-
-### Code injection
-
-You can inject any HTML code to every page's document head or right above the closing body tag. This makes it easier to add any HTML metadata, custom css/js, DNS-prefetch etc. To do this you simply need to create a file at site's `layouts/partials/extra-head.html` or `layouts/partials/extra-foot.html`, code inside will be injected to every page.
 
 ### LaTeX in Markdown
 
@@ -166,4 +172,5 @@ This theme is made specifically with translation in mind. Translations of few la
 * [animate.css](https://daneden.github.io/animate.css/) - [MIT](https://github.com/daneden/animate.css/blob/master/LICENSE)
 * [feather](https://feathericons.com/) - [MIT](https://github.com/feathericons/feather/blob/master/LICENSE)
 * [code-copy.js](assets/js/code-copy.js) - [Tom Spencer](https://www.fiznool.com/blog/2018/09/14/adding-click-to-copy-buttons-to-a-hugo-powered-blog/)
-* [Everyone, who has submitted a PR](https://github.com/1bl4z3r/hermit-V2/pulls?q=is%3Apr+is%3Aclosed)
+* [Everyone, who has raised an issue](https://github.com/1bl4z3r/hermit-V2/issues?q=)
+* [Everyone, who has submitted a PR](https://github.com/1bl4z3r/hermit-V2/pulls?q=)
