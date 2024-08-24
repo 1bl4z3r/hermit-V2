@@ -1,14 +1,13 @@
 // Default Colors
-$theme: hsl(172, 99%, 26%);
-$text: hsl(204, 28%, 93%);
-$light-grey: #494f5c;
-$dark-grey: #3B3E48;
-$highlight-grey: #7d828a;
-$midnightblue: #2c3e50;
-$typewriter: hsl(172, 100%, 36%);
+$theme: hsl(172, 99%, 26%) !default;
+$text: hsl(204, 28%, 93%) !default;
+$light-grey: #494f5c !default;
+$dark-grey: #3b3e48 !default;
+$highlight-grey: #7d828a !default;
+$midnightblue: #2c3e50 !default;
+$typewriter: hsl(172, 100%, 36%) !default;
 
 // Scroll to Top Default colors
-
-$stt-stroke:#CCC;
-$stt-circle:#3b3e48;
-$stt-arrow:#018574;
+$stt-stroke: #ccc !default;
+$stt-circle: #3b3e48 !default;
+$stt-arrow: #018574 !default;
