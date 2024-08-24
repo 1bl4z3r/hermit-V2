@@ -1,3 +1,27 @@
+//Admonition colors
+$admonition-background: (
+  'note': rgba(68, 138, 255, 0.1),
+  'info': rgba(0, 184, 212, 0.1),
+  'tip': rgba(0, 191, 165, 0.1),
+  'success': rgba(0, 200, 83, 0.1),
+  'warning': rgba(255, 145, 0, 0.1),
+  'failure': rgba(255, 82, 82, 0.1),
+  'danger': rgba(255, 23, 68, 0.1),
+  'bug': rgba(245, 0, 87, 0.1),
+  ) !default;
+
+$admonition-color: (
+  'note': #448aff,
+  'info': #00b8d4,
+  'tip': #00bfa5,
+  'success': #00c853,
+  'warning': #ff9100,
+  'failure': #ff5252,
+  'danger': #ff1744,
+  'bug': #f50057,
+  ) !default;
+
+// Admonition styling
 .admonition{
     position: relative;
     margin: 1rem 0 1.5rem 0;
