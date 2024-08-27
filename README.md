@@ -93,7 +93,7 @@ This theme allows to be customized. To customize, copy the respective scss file 
 
 Functionality can be extended via layouts.
 
-Layouts can live in either the project’s (root) or the themes’ layout folders, any template inside the root layout folder will override theme's layout that relative to it, for example: `layouts/_default/baseof.html` will override `themes/hermit/layouts/_default/baseof.html`. So, you can easily customize the theme without edit it directly, which makes updating the theme easier.
+Layouts can live in either the project’s (root) or the themes’ layout folders, any template inside the root layout folder will override theme's layout that relative to it, for example: `layouts/_default/baseof.html` will override `themes/hermit-V2/layouts/_default/baseof.html`. So, you can easily customize the theme without edit it directly, which makes updating the theme easier.
 
 Copy files as required to site's `layouts/partials/` and edit them to fit your needs.
 
