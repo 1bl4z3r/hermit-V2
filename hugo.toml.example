@@ -116,7 +116,8 @@ expiryDate = ["expiryDate"]
   # noIndex = false
   # denyRobots = "noindex, nofollow, noarchive"
   # allowRobots = "index, follow"
-  # noIndex = false
+  # siteNoIndex = false
+  # noIndexPages = ["404 Page not found"]
 
   
   [[params.socialLinks]]
