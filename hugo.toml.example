@@ -113,6 +113,12 @@ expiryDate = ["expiryDate"]
   # descriptionInPosts= true
   # initialPublish = "Initally Posted on: "
   # human = ["single","posts"]
+  # revisitAfter = "15 days"
+  # noIndex = false
+  # denyRobots = "noindex, nofollow, noarchive"
+  # allowRobots = "index, follow"
+  # noIndex = false
+
   
   [[params.socialLinks]]
     name = "mastodon"
