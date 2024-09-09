@@ -89,6 +89,7 @@
 <li><code>descriptionInPosts</code> : Toggle to show/hide posts&rsquo; description in list view</li>
 <li><code>initialPublish</code> : Show what should be shown in section of Initial Published. Defaults to &ldquo;Initial Published on : &quot;</li>
 <li><code>human</code> : Shows a badge &lsquo;BrainMade&rsquo; on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: <a href="brainmade.org">brainmade.org</a></li>
+<li><code>noIndex</code> : When set to true, the page has <strong>noindex, nofollow, noarchive</strong> added to robots meta tag. Else, robots tag will have <strong>index, follow</strong></li>
 <li><code>[params.socialLinks]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
 <ul>
 <li><code>name</code> : Name of the social page.</li>
@@ -123,6 +124,9 @@
 <li><code>ShowLastmod</code> : This enables Last modification date of the given Page.</li>
 <li><code>Lastmod</code> : REQUIRED (If <code>ShowLastmod=true</code>). Enter Last modified date of the Page.</li>
 <li><code>pin</code> : Specify if the post should be shown as pinned</li>
+<li><code>denyRobots</code> : Specify what directives to follow when denying crawlers. Default is <strong>noindex, nofollow, noarchive</strong></li>
+<li><code>allowRobots</code> : Specify what directives to follow when allowing crawlers. Default is <strong>index, follow</strong></li>
+<li><code>noIndex</code> : When set to true, whole site will have <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code>) added to robots meta tag. Else, robots tag will have <em><strong>index, follow</strong></em> (unless specified by <code>allowRobots</code>) applied to whole site</li>
 </ul>
 <h2 id="special-caveats">Special Caveats</h2>
 <h3 id="last-modified-date">Last Modified Date</h3>
@@ -1392,30 +1396,30 @@ $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content></item><item><title>T
 <h6 id="heading-6">Heading 6</h6>
 <p>Table:</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:left">Left-Aligned</th>
-<th style="text-align:center">Center Aligned</th>
-<th style="text-align:right">Right Aligned</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">col 3 is</td>
-<td style="text-align:center">some wordy text</td>
-<td style="text-align:right">$1600</td>
-</tr>
-<tr>
-<td style="text-align:left">col 2 is</td>
-<td style="text-align:center">centered</td>
-<td style="text-align:right">$12</td>
-</tr>
-<tr>
-<td style="text-align:left">zebra stripes</td>
-<td style="text-align:center">are neat</td>
-<td style="text-align:right">$1</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left">Left-Aligned</th>
+          <th style="text-align: center">Center Aligned</th>
+          <th style="text-align: right">Right Aligned</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">col 3 is</td>
+          <td style="text-align: center">some wordy text</td>
+          <td style="text-align: right">$1600</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">col 2 is</td>
+          <td style="text-align: center">centered</td>
+          <td style="text-align: right">$12</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">zebra stripes</td>
+          <td style="text-align: center">are neat</td>
+          <td style="text-align: right">$1</td>
+      </tr>
+  </tbody>
 </table>
 <p>Lists:</p>
 <ul>
