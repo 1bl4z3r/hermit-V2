@@ -69,7 +69,7 @@ Lastmod : 2024-03-12T20:30:30+05:30
 	- `descriptionInPosts` : Toggle to show/hide posts' description in list view
 	- `initialPublish` : Show what should be shown in section of Initial Published. Defaults to "Initial Published on : "
 	- `human` : Shows a badge 'BrainMade' on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: [brainmade.org](brainmade.org)
-	- `noIndex` : When set to true, the page has **noindex, nofollow, noarchive** added to robots meta tag. Else, robots tag will have **index, follow**
+	- `noIndex` : When set to true, the page has ___noindex, nofollow, noarchive___ (unless specified by `denyRobots` added to robots meta tag. Else, robots tag will have ___index, follow___ (unless specified by `allowRobots`) 
 	-  `[params.socialLinks]` Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
 		- `name` : Name of the social page.
 		- `url` : URL of your account.
