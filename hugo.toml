@@ -115,8 +115,9 @@ expiryDate = ["expiryDate"]
   descriptionInPosts = true
   # initialPublish = "Initally Posted on: "
   human = ["single","posts"]
-
-
+  # denyRobots = "noindex, nofollow, noarchive"
+  # allowRobots = "index, follow"
+  # noIndex = false
 
   [[params.socialLinks]]
     name = "github"
