@@ -15,56 +15,107 @@
 
  &lt;aside class="admonition note">
  &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2">&lt;path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">&lt;/path>&lt;/svg>&lt;/div>&lt;b>This is a note&lt;/b>
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+ stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+ class="feather feather-edit-2">
+ &lt;path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">&lt;/path>
+ &lt;/svg>&lt;/div>&lt;b>This is a note&lt;/b>
  &lt;/div>
  &lt;div class="admonition-content">A &lt;strong>note&lt;/strong> banner&lt;/div>
  &lt;/aside>
 
  &lt;aside class="admonition info">
  &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info">&lt;circle cx="12" cy="12" r="10">&lt;/circle>&lt;line x1="12" y1="16" x2="12" y2="12">&lt;/line>&lt;line x1="12" y1="8" x2="12.01" y2="8">&lt;/line>&lt;/svg>&lt;/div>&lt;b>This is an info&lt;/b>
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+ stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+ class="feather feather-info">
+ &lt;circle cx="12" cy="12" r="10">&lt;/circle>
+ &lt;line x1="12" y1="16" x2="12" y2="12">&lt;/line>
+ &lt;line x1="12" y1="8" x2="12.01" y2="8">&lt;/line>
+ &lt;/svg>&lt;/div>&lt;b>This is an info&lt;/b>
  &lt;/div>
  &lt;div class="admonition-content">A &lt;strong>info&lt;/strong> banner&lt;/div>
  &lt;/aside>
 
  &lt;aside class="admonition tip">
  &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">&lt;circle cx="12" cy="12" r="5">&lt;/circle>&lt;line x1="12" y1="1" x2="12" y2="3">&lt;/line>&lt;line x1="12" y1="21" x2="12" y2="23">&lt;/line>&lt;line x1="4.22" y1="4.22" x2="5.64" y2="5.64">&lt;/line>&lt;line x1="18.36" y1="18.36" x2="19.78" y2="19.78">&lt;/line>&lt;line x1="1" y1="12" x2="3" y2="12">&lt;/line>&lt;line x1="21" y1="12" x2="23" y2="12">&lt;/line>&lt;line x1="4.22" y1="19.78" x2="5.64" y2="18.36">&lt;/line>&lt;line x1="18.36" y1="5.64" x2="19.78" y2="4.22">&lt;/line>&lt;/svg>&lt;/div>&lt;b>Tip&lt;/b>
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+ stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+ class="feather feather-sun">
+ &lt;circle cx="12" cy="12" r="5">&lt;/circle>
+ &lt;line x1="12" y1="1" x2="12" y2="3">&lt;/line>
+ &lt;line x1="12" y1="21" x2="12" y2="23">&lt;/line>
+ &lt;line x1="4.22" y1="4.22" x2="5.64" y2="5.64">&lt;/line>
+ &lt;line x1="18.36" y1="18.36" x2="19.78" y2="19.78">&lt;/line>
+ &lt;line x1="1" y1="12" x2="3" y2="12">&lt;/line>
+ &lt;line x1="21" y1="12" x2="23" y2="12">&lt;/line>
+ &lt;line x1="4.22" y1="19.78" x2="5.64" y2="18.36">&lt;/line>
+ &lt;line x1="18.36" y1="5.64" x2="19.78" y2="4.22">&lt;/line>
+ &lt;/svg>&lt;/div>&lt;b>Tip&lt;/b>
  &lt;/div>
  &lt;div class="admonition-content">A &lt;strong>tip&lt;/strong> banner&lt;/div>
  &lt;/aside>
 
  &lt;aside class="admonition success">
  &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">&lt;path d="M22 11.08V12a10 10 0 1 1-5.93-9.14">&lt;/path>&lt;polyline points="22 4 12 14.01 9 11.01">&lt;/polyline>&lt;/svg>&lt;/div>&lt;b>Success&lt;/b>
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+ stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+ class="feather feather-check-circle">
+ &lt;path d="M22 11.08V12a10 10 0 1 1-5.93-9.14">&lt;/path>
+ &lt;polyline points="22 4 12 14.01 9 11.01">&lt;/polyline>
+ &lt;/svg>&lt;/div>&lt;b>Success&lt;/b>
  &lt;/div>
  &lt;div class="admonition-content">A &lt;strong>success&lt;/strong> banner&lt;/div>
  &lt;/aside>
 
  &lt;aside class="admonition warning">
  &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle">&lt;circle cx="12" cy="12" r="10">&lt;/circle>&lt;line x1="12" y1="8" x2="12" y2="12">&lt;/line>&lt;line x1="12" y1="16" x2="12.01" y2="16">&lt;/line>&lt;/svg>&lt;/div>&lt;b>Warning&lt;/b>
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+ stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+ class="feather feather-alert-circle">
+ &lt;circle cx="12" cy="12" r="10">&lt;/circle>
+ &lt;line x1="12" y1="8" x2="12" y2="12">&lt;/line>
+ &lt;line x1="12" y1="16" x2="12.01" y2="16">&lt;/line>
+ &lt;/svg>&lt;/div>&lt;b>Warning&lt;/b>
  &lt;/div>
  &lt;div class="admonition-content">A &lt;strong>warning&lt;/strong> banner&lt;/div>
  &lt;/aside>
 
  &lt;aside class="admonition failure">
  &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">&lt;circle cx="12" cy="12" r="10">&lt;/circle>&lt;line x1="15" y1="9" x2="9" y2="15">&lt;/line>&lt;line x1="9" y1="9" x2="15" y2="15">&lt;/line>&lt;/svg>&lt;/div>&lt;b>Failure&lt;/b>
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+ stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+ class="feather feather-x-circle">
+ &lt;circle cx="12" cy="12" r="10">&lt;/circle>
+ &lt;line x1="15" y1="9" x2="9" y2="15">&lt;/line>
+ &lt;line x1="9" y1="9" x2="15" y2="15">&lt;/line>
+ &lt;/svg>&lt;/div>&lt;b>Failure&lt;/b>
  &lt;/div>
  &lt;div class="admonition-content">A &lt;strong>failure&lt;/strong> banner&lt;/div>
  &lt;/aside>
 
  &lt;aside class="admonition danger">
  &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle">&lt;path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">&lt;/path>&lt;line x1="12" y1="9" x2="12" y2="13">&lt;/line>&lt;line x1="12" y1="17" x2="12.01" y2="17">&lt;/line>&lt;/svg>&lt;/div>&lt;b>Danger&lt;/b>
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+ stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+ class="feather feather-alert-triangle">
+ &lt;path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">&lt;/path>
+ &lt;line x1="12" y1="9" x2="12" y2="13">&lt;/line>
+ &lt;line x1="12" y1="17" x2="12.01" y2="17">&lt;/line>
+ &lt;/svg>&lt;/div>&lt;b>Danger&lt;/b>
  &lt;/div>
  &lt;div class="admonition-content">A &lt;strong>danger&lt;/strong> banner&lt;/div>
  &lt;/aside>
 
  &lt;aside class="admonition bug">
  &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">&lt;polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2">&lt;/polygon>&lt;line x1="12" y1="8" x2="12" y2="12">&lt;/line>&lt;line x1="12" y1="16" x2="12.01" y2="16">&lt;/line>&lt;/svg>&lt;/div>&lt;b>Bug&lt;/b>
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+ stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+ class="feather feather-alert-octagon">
+ &lt;polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2">&lt;/polygon>
+ &lt;line x1="12" y1="8" x2="12" y2="12">&lt;/line>
+ &lt;line x1="12" y1="16" x2="12.01" y2="16">&lt;/line>
+ &lt;/svg>&lt;/div>&lt;b>Bug&lt;/b>
  &lt;/div>
  &lt;div class="admonition-content">A &lt;strong>bug&lt;/strong> banner&lt;/div>
  &lt;/aside>
