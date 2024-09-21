@@ -5,4 +5,12 @@ appropriate version for your OS and architecture.&lt;/p>
 &lt;p>More complete instructions are available at &lt;a href="https://gohugo.io/getting-started/installing/">Install Hugo&lt;/a>&lt;/p>
 &lt;h2 id="step-2-build-the-docs">Step 2. Build the Docs&lt;/h2>
 &lt;p>Hugo has its own example site which happens to also be the documentation site
-you are reading right now.&lt;/p></description></item></channel></rss>
+you are reading right now.&lt;/p>
+&lt;p>Follow the following steps:&lt;/p>
+&lt;ol>
+&lt;li>Clone the &lt;a href="http://github.com/spf13/hugo">Hugo repository&lt;/a>&lt;/li>
+&lt;li>Go into the repo&lt;/li>
+&lt;li>Run hugo in server mode and build the docs&lt;/li>
+&lt;li>Open your browser to http://localhost:1313&lt;/li>
+&lt;/ol>
+&lt;p>Corresponding pseudo commands:&lt;/p></description></item></channel></rss>

@@ -15,7 +15,60 @@
 
  &lt;aside class="admonition note">
  &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2">&lt;path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">&lt;/pa</description></item><item><title>Long Article</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/long-article/</link><pubDate>Fri, 22 Sep 2023 22:00:01 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/long-article/</guid><description>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac tortor vitae purus faucibus. Pretium quam vulputate dignissim suspendisse in est ante in nibh. Ipsum dolor sit amet consectetur. Proin sagittis nisl rhoncus mattis rhoncus urna neque. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Vel pharetra vel turpis nunc eget lorem dolor sed. Nulla aliquet porttitor lacus luctus. Consequat nisl vel pretium lectus quam id leo in vitae. Diam volutpat commodo sed egestas egestas fringilla phasellus. Turpis in eu mi bibendum neque egestas congue quisque egestas. In iaculis nunc sed augue lacus. Pellentesque pulvinar pellentesque habitant morbi. Egestas congue quisque egestas diam in arcu cursus. Sed tempus urna et pharetra pharetra massa massa. At lectus urna duis convallis. Dignissim sodales ut eu sem integer vitae. Sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sodales neque sodales ut etiam sit amet nisl.&lt;/p></description></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>&lt;h1 id="latex-support-for-hermit-v2">\(LaTeX\) support for hermit-V2&lt;/h1>
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2">&lt;path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">&lt;/path>&lt;/svg>&lt;/div>&lt;b>This is a note&lt;/b>
+ &lt;/div>
+ &lt;div class="admonition-content">A &lt;strong>note&lt;/strong> banner&lt;/div>
+ &lt;/aside>
+
+ &lt;aside class="admonition info">
+ &lt;div class="admonition-title">
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info">&lt;circle cx="12" cy="12" r="10">&lt;/circle>&lt;line x1="12" y1="16" x2="12" y2="12">&lt;/line>&lt;line x1="12" y1="8" x2="12.01" y2="8">&lt;/line>&lt;/svg>&lt;/div>&lt;b>This is an info&lt;/b>
+ &lt;/div>
+ &lt;div class="admonition-content">A &lt;strong>info&lt;/strong> banner&lt;/div>
+ &lt;/aside>
+
+ &lt;aside class="admonition tip">
+ &lt;div class="admonition-title">
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">&lt;circle cx="12" cy="12" r="5">&lt;/circle>&lt;line x1="12" y1="1" x2="12" y2="3">&lt;/line>&lt;line x1="12" y1="21" x2="12" y2="23">&lt;/line>&lt;line x1="4.22" y1="4.22" x2="5.64" y2="5.64">&lt;/line>&lt;line x1="18.36" y1="18.36" x2="19.78" y2="19.78">&lt;/line>&lt;line x1="1" y1="12" x2="3" y2="12">&lt;/line>&lt;line x1="21" y1="12" x2="23" y2="12">&lt;/line>&lt;line x1="4.22" y1="19.78" x2="5.64" y2="18.36">&lt;/line>&lt;line x1="18.36" y1="5.64" x2="19.78" y2="4.22">&lt;/line>&lt;/svg>&lt;/div>&lt;b>Tip&lt;/b>
+ &lt;/div>
+ &lt;div class="admonition-content">A &lt;strong>tip&lt;/strong> banner&lt;/div>
+ &lt;/aside>
+
+ &lt;aside class="admonition success">
+ &lt;div class="admonition-title">
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">&lt;path d="M22 11.08V12a10 10 0 1 1-5.93-9.14">&lt;/path>&lt;polyline points="22 4 12 14.01 9 11.01">&lt;/polyline>&lt;/svg>&lt;/div>&lt;b>Success&lt;/b>
+ &lt;/div>
+ &lt;div class="admonition-content">A &lt;strong>success&lt;/strong> banner&lt;/div>
+ &lt;/aside>
+
+ &lt;aside class="admonition warning">
+ &lt;div class="admonition-title">
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle">&lt;circle cx="12" cy="12" r="10">&lt;/circle>&lt;line x1="12" y1="8" x2="12" y2="12">&lt;/line>&lt;line x1="12" y1="16" x2="12.01" y2="16">&lt;/line>&lt;/svg>&lt;/div>&lt;b>Warning&lt;/b>
+ &lt;/div>
+ &lt;div class="admonition-content">A &lt;strong>warning&lt;/strong> banner&lt;/div>
+ &lt;/aside>
+
+ &lt;aside class="admonition failure">
+ &lt;div class="admonition-title">
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">&lt;circle cx="12" cy="12" r="10">&lt;/circle>&lt;line x1="15" y1="9" x2="9" y2="15">&lt;/line>&lt;line x1="9" y1="9" x2="15" y2="15">&lt;/line>&lt;/svg>&lt;/div>&lt;b>Failure&lt;/b>
+ &lt;/div>
+ &lt;div class="admonition-content">A &lt;strong>failure&lt;/strong> banner&lt;/div>
+ &lt;/aside>
+
+ &lt;aside class="admonition danger">
+ &lt;div class="admonition-title">
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle">&lt;path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">&lt;/path>&lt;line x1="12" y1="9" x2="12" y2="13">&lt;/line>&lt;line x1="12" y1="17" x2="12.01" y2="17">&lt;/line>&lt;/svg>&lt;/div>&lt;b>Danger&lt;/b>
+ &lt;/div>
+ &lt;div class="admonition-content">A &lt;strong>danger&lt;/strong> banner&lt;/div>
+ &lt;/aside>
+
+ &lt;aside class="admonition bug">
+ &lt;div class="admonition-title">
+ &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">&lt;polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2">&lt;/polygon>&lt;line x1="12" y1="8" x2="12" y2="12">&lt;/line>&lt;line x1="12" y1="16" x2="12.01" y2="16">&lt;/line>&lt;/svg>&lt;/div>&lt;b>Bug&lt;/b>
+ &lt;/div>
+ &lt;div class="admonition-content">A &lt;strong>bug&lt;/strong> banner&lt;/div>
+ &lt;/aside>
+&lt;p>The &lt;code>admonition&lt;/code> shortcode has the following named parameters:&lt;/p></description></item><item><title>Long Article</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/long-article/</link><pubDate>Fri, 22 Sep 2023 22:00:01 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/long-article/</guid><description>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac tortor vitae purus faucibus. Pretium quam vulputate dignissim suspendisse in est ante in nibh. Ipsum dolor sit amet consectetur. Proin sagittis nisl rhoncus mattis rhoncus urna neque. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Vel pharetra vel turpis nunc eget lorem dolor sed. Nulla aliquet porttitor lacus luctus. Consequat nisl vel pretium lectus quam id leo in vitae. Diam volutpat commodo sed egestas egestas fringilla phasellus. Turpis in eu mi bibendum neque egestas congue quisque egestas. In iaculis nunc sed augue lacus. Pellentesque pulvinar pellentesque habitant morbi. Egestas congue quisque egestas diam in arcu cursus. Sed tempus urna et pharetra pharetra massa massa. At lectus urna duis convallis. Dignissim sodales ut eu sem integer vitae. Sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sodales neque sodales ut etiam sit amet nisl.&lt;/p></description></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>&lt;h1 id="latex-support-for-hermit-v2">\(LaTeX\) support for hermit-V2&lt;/h1>
 &lt;h2 id="configuration">Configuration&lt;/h2>
 &lt;p>Put the following in &lt;code>hugo.toml&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -37,7 +90,10 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">enable&lt;/span> = &lt;span style="color:#66d9ef">true&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#a6e22e">markup&lt;/span>.&lt;span style="color:#a6e22e">goldmark&lt;/span>.&lt;span style="color:#a6e22e">extensions&lt;/span>.&lt;span style="color:#a6e22e">passthrough&lt;/span>.&lt;span style="color:#a6e22e">delimiters&lt;/span>]
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">block&lt;/span> = [[&lt;span style="color:#e6db74">&amp;#39;\[&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;\]&amp;#39;&lt;/span>], [&lt;span style="color:#e6db74">&amp;#39;$$&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;$$&amp;#39;&lt;/span>]]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">inline&lt;/span> = [[&lt;span style="color:#e6db74">&amp;#39;\(&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;\)&amp;#39;&lt;/span>]]&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Sat, 22 Jul 2023 14:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">inline&lt;/span> = [[&lt;span style="color:#e6db74">&amp;#39;\(&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;\)&amp;#39;&lt;/span>]]&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;p>Mathjax support is implemented via partials. Please find partial in &lt;code>/layouts/partials/mathjax.html&lt;/code>&lt;/p></description></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Sat, 22 Jul 2023 14:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>
 &lt;blockquote>
 &lt;p>An apple is a sweet, edible fruit produced by an apple tree (Malus pumila). Apple trees are cultivated worldwide, and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today. Apples have been grown for thousands of years in Asia and Europe, and were brought to North America by European colonists. Apples have religious and mythological significance in many cultures, including Norse, Greek and European Christian traditions.&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/p></description></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</guid><description>&lt;h2 id="this-article-explains-how-to-use-scroll-up">This article explains how to use Scroll Up&lt;/h2>
 &lt;p>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.&lt;/p></description></item><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Mon, 24 Dec 2018 12:29:41 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>&lt;p>Hugo has &lt;code>figure&lt;/code> shortcode built in, so you can easily add figcaptions or hyperlink rel attributes to images. Documentations can be found here:&lt;/p>
