@@ -127,16 +127,16 @@ If your favicon is in SVG format, there are two ways to implement the same in th
 
 The following icons are supported, please make sure the `name` field is exactly one of these:
 
-| name            |             |              |           |
-| --------------- | ----------- | ------------ | --------- |
-| `email`         | `codepen`   | `facebook`   | `github`  |
-| `gitlab`        | `instagram` | `linkedin`   | `slack`   |
-| `stackoverflow` | `telegram`  | `twitter`    | `youtube` |
-| `shutterstock`  | `freepik`   | `adobestock` | `123rf`   |
-| `dreamstime`    | `dribbble`  | `behance`    | `paypal`  |
-| `twitch`        | `qq`        | `mastodon`   | `discord` |
-| `etsy`          | `tiktok`    | `imgur`      | `bluesky` |
-| `medium`        | `medium old`|              |           |
+| name              |              |                |                 |              |
+|-------------------|--------------|----------------|-----------------|--------------|
+| `email`           | `codepen`    | `facebook`     | `github`        | `gitlab`     |
+| `instagram`       | `linkedin`   | `slack`        | `stackoverflow` | `telegram`   |
+| `twitter (Now X)` | `youtube`    | `shutterstock` | `freepik`       | `adobestock` |
+| `dreamstime`      | `dribbble`   | `behance`      | `123rf`         | `paypal`     |
+| `twitch`          | `qq`         | `mastodon`     | `discord`       | `matrix`     |
+| `etsy`            | `tiktok`     | `imgur`        | `bluesky`       | `xmpp`       |
+| `medium`          | `medium old` | `pixelfed`     |                 |              |
+
 
 If that's not enough, you can see [Extend functionality](#extend-functionality) section.
 
