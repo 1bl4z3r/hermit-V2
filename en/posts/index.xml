@@ -90,6 +90,7 @@
 <li><code>initialPublish</code> : Show what should be shown in section of Initial Published. Defaults to &ldquo;Initial Published on : &quot;</li>
 <li><code>human</code> : Shows a badge &lsquo;BrainMade&rsquo; on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: <a href="brainmade.org">brainmade.org</a></li>
 <li><code>noIndex</code> : When set to true, the page has <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code> added to robots meta tag. Else, robots tag will have <em><strong>index, follow</strong></em> (unless specified by <code>allowRobots</code>)</li>
+<li><code>footerHideThemeName</code> : When set to true, links to Hugo and Hermit-V2 would be removed from footer section</li>
 <li><code>[params.socialLinks]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
 <ul>
 <li><code>name</code> : Name of the social page.</li>
