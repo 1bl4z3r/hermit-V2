@@ -15,7 +15,7 @@ other = "Archivi"
 # posts/single.html
 #
 [wordCount]
-other = "{{ .WordCount }} Parole"
+other = "Parole"
 
 [tableOfContents]
 other = "Sommario"

@@ -18,7 +18,7 @@ other = "Archives"
 other = "Voir également"
 
 [wordCount]
-other = "{{ .WordCount }} mots"
+other = "mots"
 
 [tableOfContents]
 other = "Sommaire"
