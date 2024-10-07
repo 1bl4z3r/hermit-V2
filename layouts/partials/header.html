@@ -1,4 +1,4 @@
-	<header id="site-header" class="animated slideInUp">
+	<header id="site-header" {{- if .Site.Params.usesAnimation }} class="animated slideInUp" {{- end -}}>
 		<div class="hdr-wrapper section-inner">
 			<div class="hdr-left">
 				<div class="site-branding">
@@ -21,7 +21,7 @@
 			</div>
 		</div>
 	</header>
-	<div id="mobile-menu" class="animated fast">
+	<div id="mobile-menu" {{- if ne false .Site.Params.usesAnimation }} class="animated fast" {{- end -}}>
 		<ul>
 			{{- range .Site.Menus.main }}
 			<li><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
