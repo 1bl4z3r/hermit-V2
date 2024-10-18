@@ -46,6 +46,12 @@
 <script defer src="{{ $c_js.Permalink }}" {{ printf "integrity=%q" $c_js.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
 {{- end }}
 {{- partial "mathjax.html" . -}}
+{{ if .Page.Store.Get "hasMermaid" }}
+    <script defer type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true,theme: 'dark' });
+    </script>
+{{ end }}
 {{- if templates.Exists "partials/extra-foot.html" -}}{{- partial "extra-foot.html" . -}}{{- end }}
 </body>
 
