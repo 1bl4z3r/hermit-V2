@@ -91,6 +91,7 @@
 <li><code>human</code> : Shows a badge &lsquo;BrainMade&rsquo; on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: <a href="brainmade.org">brainmade.org</a></li>
 <li><code>noIndex</code> : When set to true, the page has <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code> added to robots meta tag. Else, robots tag will have <em><strong>index, follow</strong></em> (unless specified by <code>allowRobots</code>)</li>
 <li><code>footerHideThemeName</code> : When set to true, links to Hugo and Hermit-V2 would be removed from footer section</li>
+<li><code>usesAnimation</code> : When set to false, animations are disabled site-wide</li>
 <li><code>[params.socialLinks]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
 <ul>
 <li><code>name</code> : Name of the social page.</li>
@@ -1658,7 +1659,24 @@ print(sorted_dt)
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
-<div class="footnotes" role="doc-endnotes">
+<p>Mermaid support</p>
+<pre class="mermaid">  flowchart TD
+    A["Cron Job Starts at 9 AM"] --> B["Loop Through Each Newspaper"]
+    B --> C["Get Newspaper URL and Upload Image"]
+    C --> D["Convert Image to Base64 & Calculate Hash"]
+    D --> E["Analyze Image Using LLM"]
+    E -- If Success --> F["Save Newspaper Data"]
+    F --> G["Perform Google Search for Headlines"] & I["Check If Newspaper Already Exists"]
+    G --> H["Store Headline Search Results in Database"]
+    I -- If Exists --> J["Compare Hash and Update If Needed"]
+    I -- If New --> K["Create New Newspaper Entry"]
+    J --> L["Update Existing Entry in Database"]
+    K --> M["Save New Entry to Database"]
+    L --> N["Save or Update Search Results"]
+    M --> N
+    N --> O["End of Newspaper Process"]
+    O -- If All Newspapers Processed --> P["Cron Job Complete"]
+</pre><div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
