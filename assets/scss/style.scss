@@ -64,7 +64,9 @@ pre {
   background: $midnightblue;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-
+  &.mermaid {
+    background: $codebackground;
+  }
   code {
     padding: 0;
     margin: 0;

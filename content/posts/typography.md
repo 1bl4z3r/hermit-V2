@@ -173,5 +173,25 @@ blockquote {
 
 {{< /highlight >}}
 
+Mermaid support
+
+```mermaid
+  flowchart TD
+    A["Cron Job Starts at 9 AM"] --> B["Loop Through Each Newspaper"]
+    B --> C["Get Newspaper URL and Upload Image"]
+    C --> D["Convert Image to Base64 & Calculate Hash"]
+    D --> E["Analyze Image Using LLM"]
+    E -- If Success --> F["Save Newspaper Data"]
+    F --> G["Perform Google Search for Headlines"] & I["Check If Newspaper Already Exists"]
+    G --> H["Store Headline Search Results in Database"]
+    I -- If Exists --> J["Compare Hash and Update If Needed"]
+    I -- If New --> K["Create New Newspaper Entry"]
+    J --> L["Update Existing Entry in Database"]
+    K --> M["Save New Entry to Database"]
+    L --> N["Save or Update Search Results"]
+    M --> N
+    N --> O["End of Newspaper Process"]
+    O -- If All Newspapers Processed --> P["Cron Job Complete"]
+```
 
 [^1]: From https://en.wikipedia.org/wiki/Apple

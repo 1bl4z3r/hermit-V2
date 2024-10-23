@@ -1,6 +1,6 @@
 <button id="share-btn" class="hdr-btn" title="{{i18n "share"}}">{{- partial "svg.html" (dict "context" . "name" "share") -}}</button>
  
-<div id="share-links" class="animated fast">
+<div id="share-links" {{- if ne false .Site.Params.usesAnimation }} class="animated fast" {{- end -}}>
     {{ $title := .Title }}
     {{ $url := printf "%s" .Permalink }}
     {{ $author := (.Params.author | default .Site.Params.author.name) }}

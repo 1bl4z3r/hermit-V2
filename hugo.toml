@@ -120,6 +120,7 @@ expiryDate = ["expiryDate"]
   # siteNoIndex = false
   # noIndexPages = ["404 Page not found"]
   # footerHideThemeName = false
+  # usesAnimation = true
 
   [[params.socialLinks]]
     name = "github"
