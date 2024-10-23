@@ -1,7 +1,9 @@
 @import "predefined.scss";
 @import "normalize.scss";
 @import "syntax.scss";
+{{ if ne false .Site.Params.usesAnimation }}
 @import "animate.scss";
+{{ end }}
 @import "scroll.scss";
 @import "socialshare.scss";
 {{ if (fileExists "assets/scss/userstyles.scss") }}
