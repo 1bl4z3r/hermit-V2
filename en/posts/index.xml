@@ -1803,6 +1803,7 @@ Partial is injected in <code>layouts/_default/baseof.html</code></p>
 <li>Convert WEBP Images on the fly to JPG and serve WEBP images with JPG as a fallback.</li>
 <li>If <code>src</code> contains a link (starting with http/https), it will be parsed accordingly.</li>
 <li>1-to-1 feature set compatiblity if you are using figure shortcode or <code>![]()</code>.</li>
+<li>To use relative paths images need to be put in a folder &ldquo;assets&rdquo; in the root of the folder. see [Hugo docs] for more details.</li>
 </ul>
 <p>Here&rsquo;s some examples, please be aware that these styles only take effect when the page width is over 1300px.</p>
 
@@ -1824,6 +1825,15 @@ Partial is injected in <code>layouts/_default/baseof.html</code></p>
 <figure class="right" ><img src="https://placehold.co/400x280"alt="image"/><figcaption>
         <p>figure-right</p>
       </figcaption></figure>
+<p>Pellentesque eu consequat nunc. Vivamus eu eros ut nulla dapibus molestie in id tortor. Cras viverra ligula erat, tincidunt hendrerit diam blandit nec. Cras id urna vel dolor dictum mattis. Vestibulum congue erat ac eros molestie accumsan. Maecenas lorem nibh, maximus vel justo eget, facilisis egestas lectus. Mauris eu est ut odio blandit consequat id feugiat eros. Fusce id suscipit mi, et lacinia lectus. Mauris a arcu placerat dolor iaculis feugiat nec non mi. Ut porttitor elit tortor, eget tempus velit mollis eu. Aliquam sem nulla, dictum cursus mauris ac, semper ullamcorper leo.</p>
+
+<figure><picture>
+          <source srcset="/hermit-V2/images/928-600x400_hu12676991745684503517.webp" type="image/webp">
+          <source srcset="/hermit-V2/images/928-600x400_hu14429143669893479017.jpg" type="image/jpeg">
+          <img src="/hermit-V2/images/928-600x400_hu12676991745684503517.webp"alt="image"  width="600"  height="400" />
+        </picture><figcaption>
+            <p>relative file path</p>
+          </figcaption></figure>
 <p>Pellentesque eu consequat nunc. Vivamus eu eros ut nulla dapibus molestie in id tortor. Cras viverra ligula erat, tincidunt hendrerit diam blandit nec. Cras id urna vel dolor dictum mattis. Vestibulum congue erat ac eros molestie accumsan. Maecenas lorem nibh, maximus vel justo eget, facilisis egestas lectus. Mauris eu est ut odio blandit consequat id feugiat eros. Fusce id suscipit mi, et lacinia lectus. Mauris a arcu placerat dolor iaculis feugiat nec non mi. Ut porttitor elit tortor, eget tempus velit mollis eu. Aliquam sem nulla, dictum cursus mauris ac, semper ullamcorper leo.</p>
 <p>Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Aliquam tempor vehicula faucibus. Phasellus consequat aliquam odio. Morbi a ex vitae sapien porta auctor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet nulla arcu. Praesent ut tortor purus. Praesent id eros diam. Pellentesque vitae dolor at nibh ultrices accumsan eu id urna. Aliquam finibus interdum orci in varius. Pellentesque a enim condimentum, condimentum felis id, vehicula augue. Vivamus cursus commodo eros nec lacinia.</p>
 ]]></content></item><item><title>Post With Featured Image</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</link><pubDate>Mon, 01 Oct 2018 16:15:09 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</guid><description>%!s(&lt;nil>)</description><content type="html"><![CDATA[<p>Just define the image URL in the content’s front matter, the featured image will be displayed as the background.</p>
