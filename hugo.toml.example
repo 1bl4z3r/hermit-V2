@@ -119,8 +119,7 @@ expiryDate = ["expiryDate"]
   # allowRobots = "index, follow"
   # siteNoIndex = false
   # noIndexPages = ["404 Page not found"]
-  # usesAnimation = true # Defaults to true
-
+  # usesAnimation = true
   
   [[params.socialLinks]]
     name = "mastodon"

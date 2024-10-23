@@ -1,9 +1,7 @@
 @import "predefined.scss";
 @import "normalize.scss";
 @import "syntax.scss";
-{{ if ne false .Site.Params.usesAnimation }}
 @import "animate.scss";
-{{ end }}
 @import "scroll.scss";
 @import "socialshare.scss";
 {{ if (fileExists "assets/scss/userstyles.scss") }}
@@ -66,7 +64,9 @@ pre {
   background: $midnightblue;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-
+  &.mermaid {
+    background: $codebackground;
+  }
   code {
     padding: 0;
     margin: 0;
