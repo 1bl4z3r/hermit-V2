@@ -135,7 +135,7 @@ The following icons are supported, please make sure the `name` field is exactly 
 | `dreamstime`      | `dribbble`   | `behance`      | `123rf`         | `paypal`     |
 | `twitch`          | `qq`         | `mastodon`     | `discord`       | `matrix`     |
 | `etsy`            | `tiktok`     | `imgur`        | `bluesky`       | `xmpp`       |
-| `medium`          | `medium old` | `pixelfed`     |                 |              |
+| `medium`          | `medium old` | `pixelfed`     | `ko-fi`         |              |
 
 
 If that's not enough, you can see [Extend functionality](#extend-functionality) section.
