@@ -14,7 +14,7 @@
 				<button id="toc-btn" class="hdr-btn desktop-only-ib" title="{{i18n "tableOfContents"}}">{{- partial "svg.html" (dict "context" . "name" "toc") -}}</button>
 				{{- end -}}
 				{{- with .Site.Params.socialLinks -}}
-				<span class="hdr-social hide-in-mobile">{{- partialCached "social-icons.html" . -}}</span>
+				<span class="hdr-links hide-in-mobile">{{- partialCached "social-icons.html" . -}}</span>
 				{{- end -}}
 				{{- if and (not (eq .Site.Params.shareSocial nil)) (.Site.Params.shareSocial) (templates.Exists "partials/social-share.html") -}}{{- partial "social-share.html" . -}}{{- end -}}
 				<button id="menu-btn" class="hdr-btn" title="{{i18n "menu"}}">{{- partial "svg.html" (dict "context" . "name" "menuBtn") -}}</button>
