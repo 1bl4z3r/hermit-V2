@@ -43,13 +43,13 @@
         "@type": "Person",
         "name": {{ .Params.author }},
         "url": {{ (ref . .Params.authorLink) | default (ref . .Site.Params.author.about) }}
-    }
+    },
     {{ else }}
     "author":{
         "@type": "Person",
         "name": {{ site.Params.author.name }},
         "url": {{ ref . .Site.Params.author.about }}
-    }
+    },
     {{ end -}}
     "mainEntityOfPage": {
       "@type": "WebPage",
