@@ -38,19 +38,15 @@
     {{ end -}}
     "datePublished": {{ .PublishDate }},
     "dateModified": {{ .Lastmod }},
-    {{- if .Params.author }}
     "author":{
         "@type": "Person",
-        "name": {{ .Params.author }},
-        "url": {{ (ref . .Params.authorLink) | default (ref . .Site.Params.author.about) }}
-    },
-    {{ else }}
-    "author":{
-        "@type": "Person",
-        "name": {{ site.Params.author.name }},
+        "name": {{ .Params.author | default .Site.Params.author.name }},
+        {{- if .Params.authorLink }}
+        "url": {{ ref . .Params.authorLink }}
+        {{ else if .Site.Params.author.about }}
         "url": {{ ref . .Site.Params.author.about }}
+        {{ end -}}
     },
-    {{ end -}}
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": {{ .Permalink | safeHTML }}
