@@ -20,8 +20,8 @@ Lastmod : 2024-03-12T20:30:30+05:30
 
 `baseURL` : The absolute URL (protocol, host, path, and trailing slash) of your published site.
 - `languageCode` : A language tag as defined by RFC 5646. This value is used to populate:
-	- The <language> element in the internal RSS template
-	- The lang attribute of the <html> element in the internal alias template
+	- The `<language>` element in the internal RSS template
+	- The lang attribute of the `<html>` element in the internal alias template
 - `title` - Title of the Site
 - `theme` - Sets all layouts to be from the instaled theme (Use "hermit-v2" to adapt hermit-v2's theme)
 - `enableGitInfo` : Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.

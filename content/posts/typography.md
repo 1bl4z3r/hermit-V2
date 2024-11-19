@@ -20,7 +20,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Inline styles：
 
-**strong**, *emphasis*, ***strong and emphasis***,`code`, <u>underline</u>, ~~strikethrough~~, :joy:🤣, $\LaTeX$[^2], ==highlight==, [Link](https://example.com), and image:
+**strong**, *emphasis*, ***strong and emphasis***,`code`, <ins>underline</ins>[^2], ~~strikethrough~~, :joy:🤣, $\LaTeX$[^3], ==highlight==, [Link](https://example.com), and image:
 
 ![img](https://picsum.photos/600/400/?random)
 
@@ -31,8 +31,6 @@ Images can also be implemented via figure shortcode. It extends in-built hugo sh
 ```
 
 {{< figure src="images/928-600x400.jpg" alt="A WEBP converted image" caption="A WEBP converted image" class="webp" loading="lazy" >}}
-
-[^2]: LaTeX is supported by Mathjax, explained [in this article]({{< relref "mathjax-support.md" >}})
 ---
 
 Headings:
@@ -195,3 +193,5 @@ Mermaid support
 ```
 
 [^1]: From https://en.wikipedia.org/wiki/Apple
+[^2]: Hugo's default renderer (Goldmark) cannot render HTML tags by default and Markdown doesn't have underlines. To use HTML tags, use `[markup.goldmark.renderer] unsafe = true` in `hugo.toml`. Find it in [Staging Branch](https://github.com/1bl4z3r/hermit-V2/blob/5f0abfda179c86f39effbc36b291a53632c4caa8/hugo.toml#L74-L75)
+[^3]: LaTeX is supported by Mathjax, explained [in this article]({{< relref "mathjax-support.md" >}})
