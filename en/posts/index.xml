@@ -5,8 +5,8 @@
 <li>
 <p><code>languageCode</code> : A language tag as defined by RFC 5646. This value is used to populate:</p>
 <ul>
-<li>The <!-- raw HTML omitted --> element in the internal RSS template</li>
-<li>The lang attribute of the <!-- raw HTML omitted --> element in the internal alias template</li>
+<li>The <code>&lt;language&gt;</code> element in the internal RSS template</li>
+<li>The lang attribute of the <code>&lt;html&gt;</code> element in the internal alias template</li>
 </ul>
 </li>
 <li>
@@ -1421,9 +1421,7 @@ $$$$
 $$$$
 (\nabla_X Y)^k = X^i (\nabla_i Y)^k =
            X^i \left( \frac{\partial Y^k}{\partial x^i} + \Gamma_{im}^k Y^m \right)
-$$<p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-</p>
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$<p>\begin{equation}
+$$$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$<p>\begin{equation}
 S (ω)=1.466, H_s^2 ,  \frac{ω_0^5}{ω^6 }  , e^[-3^ { ω/(ω_0  )]^2}
 \end{equation}</p>
 $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Tue, 15 Aug 2023 15:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>Integer lobortis vulputate mauris quis maximus. Vestibulum ac eros porttitor, auctor sem sed, tincidunt nulla. In sit amet tincidunt ex.</description><content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -1432,19 +1430,18 @@ $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content></item><item><title>T
 </blockquote>
 <hr>
 <p>Inline styles：</p>
-<p><strong>strong</strong>, <em>emphasis</em>, <em><strong>strong and emphasis</strong></em>,<code>code</code>, <!-- raw HTML omitted -->underline<!-- raw HTML omitted -->, <del>strikethrough</del>, :joy:🤣, $\LaTeX$<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, ==highlight==, <a href="https://example.com">Link</a>, and image:</p>
+<p><strong>strong</strong>, <em>emphasis</em>, <em><strong>strong and emphasis</strong></em>,<code>code</code>, <ins>underline</ins><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, <del>strikethrough</del>, :joy:🤣, $\LaTeX$<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, ==highlight==, <a href="https://example.com">Link</a>, and image:</p>
 <p><img alt="img" src="https://picsum.photos/600/400/?random"></p>
 <p>Images can also be implemented via figure shortcode. It extends in-built hugo shortcode to convert images to webp format.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{ {&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/928-600x400.jpg&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;webp&#34;</span> <span style="color:#a6e22e">loading</span>=<span style="color:#e6db74">&#34;lazy&#34;</span> &gt;} }
-</span></span></code></pre></div>
+</span></span></code></pre></div><h2 id="hahahugoshortcode14s0hbhb">
 <figure class="webp" ><picture>
           <source srcset="/hermit-V2/images/928-600x400_hu12676991745684503517.webp" type="image/webp">
           <source srcset="/hermit-V2/images/928-600x400_hu14429143669893479017.jpg" type="image/jpeg">
           <img src="/hermit-V2/images/928-600x400_hu12676991745684503517.webp"alt="A WEBP converted image"  width="600"  height="400"  loading="lazy" />
         </picture><figcaption>
             <p>A WEBP converted image</p>
-          </figcaption></figure>
-<hr>
+          </figcaption></figure></h2>
 <p>Headings:</p>
 <h1 id="heading-1">Heading 1</h1>
 <h2 id="heading-2">Heading 2</h2>
@@ -1684,7 +1681,10 @@ print(sorted_dt)
 <p>From <a href="https://en.wikipedia.org/wiki/Apple">https://en.wikipedia.org/wiki/Apple</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>LaTeX is supported by Mathjax, explained <a href="/hermit-V2/en/posts/mathjax-support/">in this article</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Hugo&rsquo;s default renderer (Goldmark) cannot render HTML tags by default and Markdown doesn&rsquo;t have underlines. To use HTML tags, use <code>[markup.goldmark.renderer] unsafe = true</code> in <code>hugo.toml</code>. Find it in <a href="https://github.com/1bl4z3r/hermit-V2/blob/5f0abfda179c86f39effbc36b291a53632c4caa8/hugo.toml#L74-L75">Staging Branch</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>LaTeX is supported by Mathjax, explained <a href="/hermit-V2/en/posts/mathjax-support/">in this article</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>

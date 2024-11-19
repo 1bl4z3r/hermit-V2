@@ -5,8 +5,8 @@
 &lt;li>
 &lt;p>&lt;code>languageCode&lt;/code> : A language tag as defined by RFC 5646. This value is used to populate:&lt;/p>
 &lt;ul>
-&lt;li>The &lt;!-- raw HTML omitted --> element in the internal RSS template&lt;/li>
-&lt;li>The lang attribute of the &lt;!-- raw HTML omitted --> element in the internal alias template&lt;/li>
+&lt;li>The &lt;code>&amp;lt;language&amp;gt;&lt;/code> element in the internal RSS template&lt;/li>
+&lt;li>The lang attribute of the &lt;code>&amp;lt;html&amp;gt;&lt;/code> element in the internal alias template&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
