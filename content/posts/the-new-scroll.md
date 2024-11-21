@@ -66,7 +66,7 @@ Partial is injected in `layouts/_default/baseof.html`
 
 ## CSS
 
-Located in `assets/scss/_scroll.scss`.
+Located in `assets/scss/_scrolltotop.scss`.
 
 {{< highlight scss "linenos=table,linenostart=1" >}}
 .scroll-up{

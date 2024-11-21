@@ -4,7 +4,7 @@
 {{ if ne false .Site.Params.usesAnimation }}
 @import "animate.scss";
 {{ end }}
-@import "scroll.scss";
+@import "scrolltotop.scss";
 @import "socialshare.scss";
 {{ if (fileExists "assets/scss/userstyles.scss") }}
 @import "userstyles.scss";
@@ -27,7 +27,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: $pagescrollbar-thumb;
 
   &:hover {
     background: $text;
@@ -251,6 +251,7 @@ table {
   box-shadow: -1px -2px 3px rgba(0, 0, 0, 0.45);
   background-color: $dark-grey;
   animation-duration: .3s;
+  animation-fill-mode: forwards;
 }
 
 .hdr-wrapper {
@@ -755,11 +756,35 @@ a.footnote-ref {
 
   ul {
     padding-left: 1em;
+    padding-right: 1em;
     margin: 0;
+  }
+
+  /* scrollbar customization for ToC */
+  /* Width */
+  &>::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Track */
+  &>::-webkit-scrollbar-track {
+    background: darken($pagescrollbar-thumb, 10%);
+  }
+
+  /* Handle */
+  &>::-webkit-scrollbar-thumb {
+    background: $midnightblue ;
+  }
+
+  /* Handle on hover */
+  &>::-webkit-scrollbar-thumb:hover {
+    background: lighten($midnightblue, 10%);
   }
 
   &>ul {
     list-style-type: none;
+    overflow-y: auto;
+    height: calc(100vh - 300px);
 
     ul ul {
       font-size: .9em;
