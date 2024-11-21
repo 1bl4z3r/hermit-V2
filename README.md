@@ -1,10 +1,11 @@
 # Hermit-V2 _- The Minimal Hugo Theme_
 
-hermit-V2 is a minimal and fast theme for Hugo, built for bloggers who want a simple and focused website. This is a maintained fork of [Hermit](https://github.com/Track3/hermit), which iterates over the original work to have production-ready experience with bug fixes and new features.
+Hermit-V2 is a minimal and fast theme for Hugo, built for bloggers who want a simple and focused website. This is a maintained fork of [Hermit](https://github.com/Track3/hermit), which iterates over the original work to have production-ready experience with bug fixes and new features.
 
 ![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/main/images/screenshot.jpg)
 
-## First Impression
+
+## First Impression & Demo
 
 Check out Hermit-V2 : [https://1bl4z3r.github.io/hermit-V2](https://1bl4z3r.github.io/hermit-V2)
 This demo also acts as an documentation for the theme, utilizing its powerful features.
@@ -41,15 +42,6 @@ To update submodule and to have the latest version of the theme with your projec
 ```bash
 git submodule update --remote
 ```
-
-### Sites using hermit-V2
-
-__Sites using hermit-V2__ is a user contributed list of all the blogs/pages that is using hermit-V2 in some capacity. It could be any component of the theme from landing page or a partial to full fledged use of the theme. The objective of this section is to :
-
-- Help new and aspiring bloggers/webmasters to get inspiration from
-- Create a sense of community
-
-You can find currently listed sites from [Sites-using-hermit‐V2](https://github.com/1bl4z3r/hermit-V2/wiki#sites-using-hermit-v2) and you can add your site by raising an [issue](https://github.com/1bl4z3r/hermit-V2/issues/new?assignees=1bl4z3r&labels=hermit-V2+sites&projects=&template=add-remove-sites-using-hermit-v2.md&title=Add+to+Sites+using+hermit-V2).
 
 ## First Use Knowledge
 
@@ -165,6 +157,17 @@ This theme is made specifically with translation in mind. Translations of few la
 1. Create translation tables in the i18n directory, naming each file according to RFC 5646. E.g. `i18n/<2-2 Language Code>.toml`. To find your Language code, visit [https://gist.github.com/msikma/8912e62ed866778ff8cd](https://gist.github.com/msikma/8912e62ed866778ff8cd) to get an idea for the code. See [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging) to see how this is implemented.
 2. Copy [English Translation key](https://github.com/1bl4z3r/hermit-V2/blob/staging/i18n/en.toml) and edit to your language. Edit the section `other = "<In your Language>"`.
 
+### Sites using hermit-V2
+
+__Sites using hermit-V2__ is a user contributed list of all the blogs/pages that is using hermit-V2 in some capacity. It could be any component of the theme from landing page or a partial to full fledged use of the theme. The objective of this section is to :
+
+- Help new and aspiring bloggers/webmasters to get inspiration from
+- Create a sense of community
+
+You can find currently listed sites from [Sites-using-hermit‐V2 (https://github.com/1bl4z3r/hermit-V2/wiki#sites-using-hermit-v2)](https://github.com/1bl4z3r/hermit-V2/wiki#sites-using-hermit-v2) and you can add your site by raising an [issue](https://github.com/1bl4z3r/hermit-V2/issues/new?assignees=1bl4z3r&labels=hermit-V2+sites&projects=&template=add-remove-sites-using-hermit-v2.md&title=Add+to+Sites+using+hermit-V2).
+
+## Share your thoughts
+Share your thoughts on how to make this theme more suited for you. It could be a general feedback or something that couldn't be classified as an Issue. You can share it in Discussions : [https://github.com/1bl4z3r/hermit-V2/discussions](https://github.com/1bl4z3r/hermit-V2/discussions)
 
 ## Acknowledgments
 
