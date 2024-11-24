@@ -1,5 +1,5 @@
 {{ range . }}
-  <a href="{{ .url | safeURL }}" target="_blank" rel="noopener" title="{{ .name | humanize }}">
+  <a href="{{ .url | relURL }}" target="_self" title="{{ .name | humanize }}">
     {{- if .logo }}
       <!-- Custom logo rendering if provided -->
       <img src="{{ .logo | absURL }}" alt="{{ .name | humanize }}" class="social-logo">
