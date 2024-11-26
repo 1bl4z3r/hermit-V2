@@ -1,12 +1,7 @@
-{{- range .Site.Menus.main -}}
-	{{- if .HasChildren -}}
-		<a href="{{ .URL | absLangURL }}" class="has-children">{{ .Name }}</a>
-		<span class="sub-menu">
-		{{- range .Children -}}
-			<a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
-		{{- end -}}
-		</span>
-	{{- else -}}
-		<a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
-	{{- end -}}
-{{- end -}}
+{{- range .Site.Menus.main }}
+  <a href="{{ .URL | absLangURL }}" style="display: inline-flex; align-items: center;">
+    {{- if .Params.logo }}
+      <img src="{{ .Params.logo | absURL }}" alt="{{ .Name }} logo" style="width: 64px; height: 64px; margin-right: 10px; margin-left: 10px">
+    {{- end }}
+  </a>
+{{- end }}
