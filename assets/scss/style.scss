@@ -938,7 +938,11 @@ a.footnote-ref {
     max-width: 300px;
   }
 }
-
+@media (min-width: 761px) {
+  #mobile-menu {
+    display: none !important;
+  }
+}
 @media (max-width: 760px) {
 
   .hide-in-mobile,
