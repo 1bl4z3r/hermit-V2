@@ -66,7 +66,7 @@
 <li><code>dateform</code> / <code>dateformShort</code> / <code>dateformNum</code> / <code>dateformNumTime</code> : Used to render properly formatted date &amp; time. Change this if you know what you are doing.</li>
 <li><code>description</code> : Put in default description for meta description.</li>
 <li><code>images</code> : Used to display image for site, when sharing the page as link to social media (like Twitter)</li>
-<li><code>themeColor</code>: Populates theme-color meta. Make sure to keep <code>$theme</code> in <code>_predefined.scss</code> and this same for better color consistency.</li>
+<li><code>themeColor</code>: Populates theme-color meta. Make sure to keep <code>$theme</code> in <code>_colors.scss</code> and this same for better color consistency.</li>
 <li><code>homeSubtitle</code> : Displays subtitle in Homepage.</li>
 <li><code>footerCopyright</code> : Custom copyright for footer.</li>
 <li><code>bgImg</code> : Homepage background-image URL.</li>
@@ -471,7 +471,7 @@ $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content></item><item><title>T
 <p><img alt="img" src="https://picsum.photos/600/400/?random"></p>
 <p>Images can also be implemented via figure shortcode. It extends in-built hugo shortcode to convert images to webp format.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{ {&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/928-600x400.jpg&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;webp&#34;</span> <span style="color:#a6e22e">loading</span>=<span style="color:#e6db74">&#34;lazy&#34;</span> &gt;} }
-</span></span></code></pre></div><h2 id="hahahugoshortcode13s0hbhb">
+</span></span></code></pre></div><h2 id="hahahugoshortcode14s0hbhb">
 <figure class="webp" ><picture>
           <source srcset="/hermit-V2/images/928-600x400_hu12676991745684503517.webp" type="image/webp">
           <source srcset="/hermit-V2/images/928-600x400_hu14429143669893479017.jpg" type="image/jpeg">
