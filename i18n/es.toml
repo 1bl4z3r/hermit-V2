@@ -1,0 +1,44 @@
+# Translations for Spanish
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# 404.html
+#
+[notFound]
+other = "Oops, esta página no fue encontrada…"
+
+[home]
+other = "Inicio"
+
+[archives]
+other = "Archivos"
+
+# posts/single.html
+#
+[seeAlso]
+other = "Vea también"
+
+[wordCount]
+other = "Palabras"
+
+[tableOfContents]
+other = "Tabla de Contenido"
+
+[newer]
+other = "Siguiente"
+
+[older]
+other = "Previo"
+
+[humanMade]
+other = "No odio a las IA; ¡pero amo a los humanos!"
+
+# partials/header.html
+#
+[menu]
+other = "Menú"
+
+[share]
+other = "Cuota"
+
+[featuredImage]
+other = "Imagen Presentada"

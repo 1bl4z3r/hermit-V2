@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Image on Hermit - V2</title>
+    <link>http://localhost:1313/hermit-V2/en/tags/image/</link>
+    <description>Recent content in Image on Hermit - V2</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 24 Dec 2018 12:29:41 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/hermit-V2/en/tags/image/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The &#34;figure&#34; Shortcode</title>
+      <link>http://localhost:1313/hermit-V2/en/posts/the-figure-shortcode/</link>
+      <pubDate>Mon, 24 Dec 2018 12:29:41 +0800</pubDate>
+      <guid>http://localhost:1313/hermit-V2/en/posts/the-figure-shortcode/</guid>
+      <description>&lt;p&gt;Hugo has &lt;code&gt;figure&lt;/code&gt; shortcode built in, so you can easily add figcaptions or hyperlink rel attributes to images. Documentations can be found here:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#figure&#34;&gt;https://gohugo.io/content-management/shortcodes/#figure&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;This theme has 3 CSS classes made for figure elements:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;big&lt;/code&gt;: images will break the width limit of main content area.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;left&lt;/code&gt;: images will float to the left.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;right&lt;/code&gt;: images will float to the right.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;If a figure has no class set, the image will behave just like a normal markdown image: &lt;code&gt;![]()&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Post With Featured Image</title>
+      <link>http://localhost:1313/hermit-V2/en/posts/post-with-featured-image/</link>
+      <pubDate>Mon, 01 Oct 2018 16:15:09 +0800</pubDate>
+      <guid>http://localhost:1313/hermit-V2/en/posts/post-with-featured-image/</guid>
+      <description>&lt;p&gt;Just define the image URL in the content’s front matter, the featured image will be displayed as the background.&lt;/p&gt;&#xA;&lt;p&gt;For example:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;images&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;https://picsum.photos/1024/768/?random&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is an array, you can set multiple urls, only the first url will be used. These images is also used in &lt;a href=&#34;https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html&#34;&gt;Twitter Cards&lt;/a&gt; and the &lt;a href=&#34;http://ogp.me/&#34;&gt;Open Graph&lt;/a&gt; metadata.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

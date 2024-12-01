@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>http://localhost:1313/hermit-V2/en/sitemap.xml</loc>
+    
+      <lastmod>2023-10-22T20:06:06+05:30</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://localhost:1313/hermit-V2/fr/sitemap.xml</loc>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://localhost:1313/hermit-V2/it/sitemap.xml</loc>
+    
+  </sitemap>
+  
+</sitemapindex>

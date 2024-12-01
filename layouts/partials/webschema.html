@@ -1,0 +1,65 @@
+{{- if .IsHome -}}
+<script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "WebSite",
+    "name" : {{ site.Title }},
+    "description": {{ site.Params.description | plainify | truncate 180 | safeHTML }},
+    "logo": {{ site.Params.assets.favicon | default "favicon.ico" | absURL }},
+    "url" : {{ site.Home.Permalink }}
+}
+</script>
+{{- else if .IsPage }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ .Title | plainify}},
+    "name": "{{ .Title | plainify }}",
+    "description": {{ with .Description | plainify }}{{ . }}{{ else }}{{ .Summary | plainify  }}{{ end -}},
+    "keywords": [
+        {{- if .Params.keywords -}}
+            {{ range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}
+        {{- else -}}
+            {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}
+        {{- end -}}
+    ],
+    "articleBody": {{ .Content | safeJS | htmlUnescape | plainify }},
+    "wordCount" : "{{ .WordCount }}",
+    "inLanguage": {{ .Language.Lang | default "en-us" }},
+    {{ if .Params.featuredImg -}}
+        "image":{{ .Params.featuredImg | absURL }},
+    {{- else if .Params.images -}}
+        {{- with .Params.images -}}
+            {{- range first 1 . -}}
+                "image":{{. | absURL}},
+            {{- end -}}
+        {{- end }}
+    {{ end -}}
+    "datePublished": {{ .PublishDate }},
+    "dateModified": {{ .Lastmod }},
+    "author":{
+        "@type": "Person",
+        "name": {{ .Params.author | default .Site.Params.author.name }},
+        {{- if .Params.authorLink }}
+        "url": {{ ref . .Params.authorLink }}
+        {{ else if .Site.Params.author.about }}
+        "url": {{ ref . .Site.Params.author.about }}
+        {{ end -}}
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": {{ .Permalink | safeHTML }}
+    },
+    "publisher": {
+      "@type": "{{- ( site.Params.schema.publisherType | default "Organization") | title -}}",
+      "name": {{ site.Title }},
+      "description": {{ site.Params.description | plainify | truncate 180 | safeHTML }},
+      "logo": {
+        "@type": "ImageObject",
+        "url": {{ site.Params.assets.favicon | default "favicon.ico" | absURL }}
+      }
+    }
+}
+</script>
+{{- end -}}

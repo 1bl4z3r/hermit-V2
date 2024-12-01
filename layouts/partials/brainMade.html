@@ -1,0 +1,6 @@
+{{- if (and (in .Site.Params.human "single") (ne .Type "posts")) -}}
+<div class="human single"><a href="https://brainmade.org/" target="_blank" rel="external noreferrer noopener"><abbr title="{{- if fileExists "i18n" -}} {{ i18n "humanMade" }} {{- else -}} I don't hate AIs; but I love humans! {{- end -}}">{{- partial "svg.html" (dict "context" . "name" "brainMade") -}}</abbr></a></div>
+{{- end -}}
+{{- if (and (in .Site.Params.human "posts") (eq .Type "posts")) -}}
+<div class="human posts"><a href="https://brainmade.org/" target="_blank" rel="external noreferrer noopener"><abbr title="{{- if fileExists "i18n" -}} {{ i18n "humanMade" }} {{- else -}} I don't hate AIs; but I love humans! {{- end -}}">{{- partial "svg.html" (dict "context" . "name" "brainMade") -}}</abbr></a></div>
+{{- end -}}

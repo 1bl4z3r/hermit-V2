@@ -1,0 +1,44 @@
+# Translations for English
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# 404.html
+#
+[notFound]
+other = "Oops, page not found…"
+
+[home]
+other = "Home"
+
+[archives]
+other = "Archives"
+
+# posts/single.html
+#
+[seeAlso]
+other = "See Also"
+
+[wordCount]
+other = "Words"
+
+[tableOfContents]
+other = "Table of Contents"
+
+[newer]
+other = "Newer"
+
+[older]
+other = "Older"
+
+[humanMade]
+other = "I don't hate AIs; but I love humans!"
+
+# partials/header.html
+#
+[menu]
+other = "Menu"
+
+[share]
+other = "Share"
+
+[featuredImage]
+other = "Featured Image"

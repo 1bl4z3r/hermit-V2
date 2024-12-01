@@ -1,0 +1,29 @@
+{{- $inner := .Inner | .Page.RenderString -}}
+
+{{- if .IsNamedParams -}}
+    {{- $type := .Get "type" | default "note" -}}
+    {{ $admonition_name := print "admonition_" $type }}
+    <aside class="admonition {{ $type }}">
+        <div class="admonition-title">
+            <div class="icon">
+                {{- partial "svg.html" (dict "context" . "name" $admonition_name) -}}
+            </div><b>{{- .Get "title" | default (T $type) | strings.FirstUpper -}}</b>
+        </div>
+        <div class="admonition-content">
+            {{- $inner -}}
+        </div>
+    </aside>
+{{- else -}}
+    {{- $type := .Get 0 | default "note" -}}
+    {{ $admonition_name := print "admonition_" $type }}
+    <aside class="admonition {{ $type }}">
+        <div class="admonition-title">
+            <div class="icon">
+                {{- partial "svg.html" (dict "context" . "name" $admonition_name) -}}
+            </div><b>{{- .Get 1 | default ($type) | strings.FirstUpper -}}</b>
+        </div>
+        <div class="admonition-content">
+            {{- $inner -}}
+        </div>
+    </aside>
+{{- end -}}

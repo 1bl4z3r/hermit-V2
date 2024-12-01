@@ -1,0 +1,14 @@
+<footer id="site-footer" class="section-inner thin {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster {{- end -}}">
+	<p>
+		&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author.name }}</a>
+		&#183; {{ .Site.Params.footerCopyright | safeHTML }}
+		{{- if not .Site.Params.footerHideThemeName -}}
+			&#183; Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+			&#183; Theme <a href="https://github.com/1bl4z3r/hermit-V2" target="_blank" rel="noopener">Hermit-V2</a>
+		{{- end -}}
+		{{- with .OutputFormats.Get "RSS" }}
+		&#183; <a href="{{ "posts/index.xml" | absLangURL }}" target="_blank" title="rss">{{- partial "svg.html" (dict "context" . "name" "rss") -}}</a>
+		{{- end -}}
+	</p>
+
+</footer>

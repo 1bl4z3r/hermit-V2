@@ -1,0 +1,10 @@
+{{- if .Site.Params.readTime }}
+    {{ .Site.Params.readTimeSeparator }}
+    {{ $rT := mul (div (.WordCount) 220.0) 60 }}
+    {{ $rTH := math.Floor (div $rT 3600) }}
+    {{ $rTM := math.Floor (div (mod $rT 3600) 60) }}
+    {{ $rTS := mod (mod $rT 3600) 60 }}
+    {{- if gt $rTH 0 }}{{ $rTH }}{{- cond (gt $rTH 1) " Hours" " Hour" -}}{{- end -}}
+    {{- if gt $rTM 0 }}{{- cond (gt $rTH 0) ", " "" -}}{{ $rTM }}{{- cond (gt $rTM 1) " Minutes" " Minute" -}}{{- end -}}
+    {{- if gt $rTS 0 }}{{- cond (gt $rTM 0) ", " "" -}}{{ $rTS }}{{- cond (gt $rTS 1) " Seconds" " Second" -}}{{- end -}}
+{{- end }}
