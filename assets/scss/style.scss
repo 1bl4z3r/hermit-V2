@@ -1,4 +1,7 @@
-@import "predefined.scss";
+@import "colors";
+@import "fonts";
+@import "admonition";
+@import "mixins";
 @import "normalize.scss";
 @import "syntax.scss";
 {{ if ne false .Site.Params.usesAnimation }}
@@ -6,17 +9,46 @@
 {{ end }}
 @import "scrolltotop.scss";
 @import "socialshare.scss";
-{{ if (fileExists "assets/scss/userstyles.scss") }}
+{{- if (fileExists "assets/scss/userstyles.scss") }}
 @import "userstyles.scss";
-{{ end }}
+{{ end -}}
+
+// Default Theme Color (themeColor) taken from hugo.toml
+// If themeColor is not present, it will fallback to declarations in _colors.scss
+{{- with .Site.Params.themeColor }}
+$aTag-mixin-a-box-shadow: {{.}};
+$aTag-mixin-a-hover-box-shadow: {{.}};
+$content-anchor-hover: {{.}};
+$footnote-ref-hover-background-color: {{.}};
+$post-description-a-hover-border-bottom: {{.}};
+$tableofcontents-a-hover-border-bottom: {{.}};
+$scrolltotop-arrow: {{.}};
+{{ end -}}
+
+// Scroll to Top color defination
+.scroll-up {
+  .scroll {
+    #st-ring {
+      stroke: $scrolltotop-ring;
+    }
+
+    #st-circle {
+      fill: $scrolltotop-circle;
+    }
+
+    #st-arrow {
+      fill: $scrolltotop-arrow;
+    }
+  }
+}
 
 /* text selection */
 ::-moz-selection {
-  background: $highlight-grey;
+  background: $text-select-color;
 }
 
 ::selection {
-  background: $highlight-grey;
+  background: $text-select-color;
 }
 
 /* Webkit Scrollbar Customize */
@@ -30,12 +62,12 @@
   background: $pagescrollbar-thumb;
 
   &:hover {
-    background: $text;
+    background: $pagescrollbar-thumb-hover;
   }
 }
 
 html {
-  background: $light-grey;
+  background: $html-background;
   line-height: 1.6;
   letter-spacing: .06em;
   scroll-behavior: smooth;
@@ -45,8 +77,15 @@ body,
 button,
 input,
 select,
+textarea,
+a {
+  color: $text-color;
+}
+body,
+button,
+input,
+select,
 textarea {
-  color: $text;
   font-family: $fonts;
 }
 
@@ -79,7 +118,7 @@ pre {
 
 code {
   color: hsl(0, 1%, 67%);
-  background: $dark-grey;
+  background: $code-background;
   border-radius: 3px;
   padding: 0 3px;
   margin: 0 4px;
@@ -104,7 +143,6 @@ blockquote {
 }
 
 a {
-  color: $text;
   text-decoration: none;
   border: none;
   transition-property: color;
@@ -249,7 +287,7 @@ table {
   width: 100%;
   box-sizing: border-box;
   box-shadow: -1px -2px 3px rgba(0, 0, 0, 0.45);
-  background-color: $dark-grey;
+  background-color: $site-header-background;
   animation-duration: .3s;
   animation-fill-mode: forwards;
 }
@@ -274,7 +312,7 @@ table {
 
     .has-children {
       padding-right: .5em;
-      border-right: 2px solid $highlight-grey;
+      border-right: 2px solid $site-nav-children-border-right;
     }
 
     .sub-menu > a{
@@ -323,7 +361,7 @@ table {
   z-index: 1;
   box-sizing: border-box;
   box-shadow: -1px -2px 3px 0px rgba(0, 0, 0, 0.45);
-  background-color: $dark-grey;
+  background-color: $mobile-menu-background;
 
   ul {
     list-style: none;
@@ -390,7 +428,7 @@ p.img-404 {
 
     a {
       display: inline-block;
-      border: 2px solid $text;
+      border: 2px solid $btn-404-a-border;
       border-radius: 5px;
       padding: 5px;
       transition-property: color, border-color;
@@ -489,7 +527,7 @@ p.img-404 {
   }
 
   .post-item {
-    border-bottom: 1px $highlight-grey dashed;
+    border-bottom: 1px $post-item-border-bottom dashed;
 
     a {
       display: flex;
@@ -515,7 +553,7 @@ p.img-404 {
   display: flex;
   margin-bottom: 1.9em;
   line-height: normal;
-  border-bottom: 2px $highlight-grey solid;
+  border-bottom: 2px $pinned-posts-group-border-bottom solid;
 
   .pinned-posts-list {
     flex-grow: 1;
@@ -562,7 +600,7 @@ p.img-404 {
   margin-top: 1.2em;
   line-height: normal;
 
-  .post-meta {
+  .post-date {
     font-size: .9em;
     letter-spacing: normal;
     @include dimmed;
@@ -641,7 +679,7 @@ hr.post-end {
     opacity: .8;
     &:hover {
       background: none;
-      color: $theme;
+      color: $content-anchor-hover;
       opacity: 1;
     }
 
@@ -698,12 +736,12 @@ a.footnote-ref {
 
   &:hover{
     box-shadow: none;
-    background-color: $theme;
+    background-color: $footnote-ref-hover-background-color;
     transition-property: background-color;
   }
 }
 
-.post-info {
+.post-description {
   font-size: .8rem;
   line-height: normal;
   @include dimmed;
@@ -713,7 +751,7 @@ a.footnote-ref {
   }
 
   a:hover {
-    border-bottom: 1px solid $theme;
+    border-bottom: 1px solid $post-description-a-hover-border-bottom;
   }
 
   svg {
@@ -792,7 +830,7 @@ a.footnote-ref {
   }
 
   a:hover {
-    border-bottom: $theme 1px solid;
+    border-bottom: $tableofcontents-a-hover-border-bottom 1px solid;
   }
 }
 
