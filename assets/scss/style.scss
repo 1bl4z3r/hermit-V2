@@ -13,9 +13,9 @@
 @import "userstyles.scss";
 {{ end -}}
 
-// Default Theme Color (themeColor) taken from hugo.toml
-// If themeColor is not present, it will fallback to declarations in _colors.scss
-{{- with .Site.Params.themeColor }}
+// Default Accent Color (accentColor) taken from hugo.toml
+// If accentColor is not present, it will fallback to declarations in _colors.scss
+{{- with .Site.Params.accentColor }}
 $aTag-mixin-a-box-shadow: {{.}};
 $aTag-mixin-a-hover-box-shadow: {{.}};
 $content-anchor-hover: {{.}};

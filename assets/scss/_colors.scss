@@ -28,9 +28,6 @@ $admonition-background-opacity : 0.1;
 // Default dimmed value
 $dimmed-opacity: 0.6 !default;
 
-// Theme color (keep it same as )
-$codebackground: #272822 !default;
-
 // Background color
 $html-background: $davys-grey !default;
 
@@ -43,16 +40,16 @@ $post-item-border-bottom: $css-grey !default;
 // Pinned posts group seperator in list view
 $pinned-posts-group-border-bottom: $css-grey !default;
 
-// Elements of the site which are expected to follow theme color
-// `themeColor` in hugo.toml will have higher precedence than these declarations
+// Elements of the site which are expected to follow accent color
+// In this current form, `accentColor` in hugo.toml will have higher precedence than these declarations
 $aTag-mixin-a-box-shadow: $pine-green !default;
 $aTag-mixin-a-hover-box-shadow: $pine-green !default;
 $content-anchor-hover: $pine-green !default;
-$footnote-ref-hover-background: $pine-green !default;
 $post-description-a-hover-border-bottom: $pine-green !default;
 $tableofcontents-a-hover-border-bottom: $pine-green !default;
 $scrolltotop-arrow: $pine-green !default;
-$typewriter: pine-green !default;
+$typewriter: $pine-green !default;
+$footnote-ref-hover-background: $pine-green !default;
 
 // Footnote
 $footnote-ref-background: $japanese-indigo !default;
