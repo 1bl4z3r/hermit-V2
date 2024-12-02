@@ -19,10 +19,11 @@
 $aTag-mixin-a-box-shadow: {{.}};
 $aTag-mixin-a-hover-box-shadow: {{.}};
 $content-anchor-hover: {{.}};
-$footnote-ref-hover-background-color: {{.}};
+$footnote-ref-hover-background: {{.}};
 $post-description-a-hover-border-bottom: {{.}};
 $tableofcontents-a-hover-border-bottom: {{.}};
 $scrolltotop-arrow: {{.}};
+$typewriter: {{.}};
 {{ end -}}
 
 // Scroll to Top color defination
@@ -44,18 +45,18 @@ $scrolltotop-arrow: {{.}};
 
 /* text selection */
 ::-moz-selection {
-  background: $text-select-color;
+  background: $text-select;
 }
 
 ::selection {
-  background: $text-select-color;
+  background: $text-select;
 }
 
 /* Webkit Scrollbar Customize */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
-  background: $midnightblue;
+  background: $pagescrollbar-background;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -79,7 +80,7 @@ input,
 select,
 textarea,
 a {
-  color: $text-color;
+  color: $text;
 }
 body,
 button,
@@ -101,17 +102,17 @@ pre {
   line-height: 1.5;
   letter-spacing: normal;
   white-space: pre;
-  color: #eee;
-  background: $midnightblue;
+  color: $pre-code;
+  background: $pre-background;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   &.mermaid {
-    background: $codebackground;
+    background: $mermaid-background;
   }
   code {
     padding: 0;
     margin: 0;
-    color: #eee;
+    color: $pre-code;
     background: transparent;
   }
 }
@@ -150,8 +151,8 @@ a {
   transition-timing-function: ease-out;
 
   &:hover {
-    color: #fff;
-    text-shadow: 0 0 1px #fff;
+    color: $a-hover;
+    text-shadow: 0 0 1px $a-hover;
   }
 }
 
@@ -232,15 +233,15 @@ table {
     padding: 1px;
     font-size: 0.7em;
     line-height: 1.8;
-    color: #fff;
-    background-color: #777;
+    color: $highlight-copy-btn;
+    background-color: $highlight-copy-btn-background;
     opacity: 0.6;
     min-width: 55px;
     text-align: center;
 }
 
 .highlight-copy-btn:hover {
-    background-color: #666;
+    background-color: $highlight-copy-btn-hover;
 }
 
 // Accessibility
@@ -259,12 +260,12 @@ table {
 }
 
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
+	background-color: $screen-reader-text-background;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	clip-path: none;
-	color: #21759b;
+	color: $screen-reader-text;
 	display: block;
 	font-size: 0.875rem;
 	font-weight: bold;
@@ -438,7 +439,7 @@ p.img-404 {
       }
 
       &:hover {
-        border-color: #fff;
+        border-color: $btn-404-a-hover;
       }
 
       svg {
@@ -732,11 +733,11 @@ a.footnote-ref {
   text-decoration: none;
   padding: 2px;
   border-radius: 2px;
-  background-color: $midnightblue;
+  background-color: $footnote-ref-background;
 
   &:hover{
     box-shadow: none;
-    background-color: $footnote-ref-hover-background-color;
+    background-color: $footnote-ref-hover-background;
     transition-property: background-color;
   }
 }
@@ -806,17 +807,17 @@ a.footnote-ref {
 
   /* Track */
   &>::-webkit-scrollbar-track {
-    background: darken($pagescrollbar-thumb, 10%);
+    background: $tableofcontents-scrollbar-track;
   }
 
   /* Handle */
   &>::-webkit-scrollbar-thumb {
-    background: $midnightblue ;
+    background: $tableofcontents-scrollbar-thumb ;
   }
 
   /* Handle on hover */
   &>::-webkit-scrollbar-thumb:hover {
-    background: lighten($midnightblue, 10%);
+    background: $tableofcontents-scrollbar-thumb-hover;
   }
 
   &>ul {
@@ -1037,7 +1038,7 @@ a.footnote-ref {
 }
 
 // If homeSubtitlePrinter is true
-{{ if .Site.Params.homeSubtitlePrinter }}
+{{- if .Site.Params.homeSubtitlePrinter }}
   #home-subtitle{
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .5em solid $typewriter; /* The typwriter cursor */
@@ -1058,4 +1059,4 @@ a.footnote-ref {
     from, to { border-color: transparent }
     50% { border-color: $typewriter}
   }
-{{ end }}
+{{ end -}}
