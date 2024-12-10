@@ -1,12 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Image on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/image/</link><description>Recent content in Image on Hermit - V2</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 24 Dec 2018 12:29:41 +0800</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/image/index.xml" rel="self" type="application/rss+xml"/><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Mon, 24 Dec 2018 12:29:41 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>&lt;p>Hugo has &lt;code>figure&lt;/code> shortcode built in, so you can easily add figcaptions or hyperlink rel attributes to images. Documentations can be found here:&lt;/p>
-&lt;p>&lt;a href="https://gohugo.io/content-management/shortcodes/#figure">https://gohugo.io/content-management/shortcodes/#figure&lt;/a>&lt;/p>
-&lt;p>This theme has 3 CSS classes made for figure elements:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Image on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/image/</link><description>Recent content in Image on Hermit - V2</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 24 Dec 2018 12:29:41 +0800</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/image/index.xml" rel="self" type="application/rss+xml"/><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Mon, 24 Dec 2018 12:29:41 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>&lt;p>Hugo has &lt;code>figure&lt;/code> shortcode built in, so you can easily add captions or hyperlink rel attributes to images. Documentations can be found &lt;a href="https://gohugo.io/content-management/shortcodes/#figure">here&lt;/a>.&lt;/p>
+&lt;p>This theme extends upon &lt;a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/shortcodes/figure.html">default figure shortcode&lt;/a> to implement following features :&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>big&lt;/code>: images will break the width limit of main content area.&lt;/li>
-&lt;li>&lt;code>left&lt;/code>: images will float to the left.&lt;/li>
-&lt;li>&lt;code>right&lt;/code>: images will float to the right.&lt;/li>
+&lt;li>Follow latest standard to display WEBP image and fallback to JPG if browser cannot render WEBP.
+&lt;ul>
+&lt;li>If provided with an image resource, it can convert to WEBP and JPG image&lt;/li>
+&lt;li>Both WEBP and JPG are placed in &lt;a href="https://www.w3schools.com/tags/tag_picture.asp">picture tag&lt;/a>&lt;/li>
+&lt;li>To use this feature, place your image in &lt;code>assets&lt;/code> folder in root of your site&lt;/li>
 &lt;/ul>
-&lt;p>If a figure has no class set, the image will behave just like a normal markdown image: &lt;code>![]()&lt;/code>.&lt;/p></description></item><item><title>Post With Featured Image</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</link><pubDate>Mon, 01 Oct 2018 16:15:09 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</guid><description>&lt;p>Just define the image URL in the content’s front matter, the featured image will be displayed as the background.&lt;/p>
+&lt;/li>
+&lt;li>If &lt;code>src&lt;/code> contains a link (starting with http/https), it will be parsed accordingly.&lt;/li>
+&lt;li>1-to-1 feature set compatiblity if you are using figure shortcode or &lt;code>![]()&lt;/code>.&lt;/li>
+&lt;li>If you want to add image from &lt;code>static&lt;/code> folder, you can, &lt;strong>but be informed that these images cannot be converted or optimized&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more">Supported attributes to figure shortcode (Create an Issue if you want to add more)&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>src&lt;/code> : Source of the resource. It can be one of three&lt;/p></description></item><item><title>Post With Featured Image</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</link><pubDate>Mon, 01 Oct 2018 16:15:09 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</guid><description>&lt;p>Just define the image URL in the content’s front matter, the featured image will be displayed as the background.&lt;/p>
 &lt;p>For example:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>---
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">images&lt;/span>:

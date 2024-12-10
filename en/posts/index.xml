@@ -468,17 +468,15 @@ $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content></item><item><title>T
 <hr>
 <p>Inline styles：</p>
 <p><strong>strong</strong>, <em>emphasis</em>, <em><strong>strong and emphasis</strong></em>,<code>code</code>, <ins>underline</ins><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, <del>strikethrough</del>, :joy:🤣, $\LaTeX$<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, ==highlight==, <a href="https://example.com">Link</a>, and image:</p>
-<p><img alt="img" src="https://picsum.photos/600/400/?random"></p>
+<p><img src="https://picsum.photos/600/400/?random" alt="img"></p>
 <p>Images can also be implemented via figure shortcode. It extends in-built hugo shortcode to convert images to webp format.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{ {&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/928-600x400.jpg&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;webp&#34;</span> <span style="color:#a6e22e">loading</span>=<span style="color:#e6db74">&#34;lazy&#34;</span> &gt;} }
-</span></span></code></pre></div><h2 id="hahahugoshortcode14s0hbhb">
+</span></span></code></pre></div><h2 id="hahahugoshortcode13s0hbhb">
 <figure class="webp" ><picture>
           <source srcset="/hermit-V2/images/928-600x400_hu12676991745684503517.webp" type="image/webp">
           <source srcset="/hermit-V2/images/928-600x400_hu14429143669893479017.jpg" type="image/jpeg">
-          <img src="/hermit-V2/images/928-600x400_hu12676991745684503517.webp"alt="A WEBP converted image"  width="600"  height="400"  loading="lazy" />
-        </picture><figcaption>
-            <p>A WEBP converted image</p>
-          </figcaption></figure></h2>
+          <img src="/hermit-V2/images/928-600x400_hu12676991745684503517.webp"alt="A WEBP converted image" width="600"  height="400"  loading="lazy" />
+        </picture><figcaption><p>A WEBP converted image</p></figcaption></figure></h2>
 <p>Headings:</p>
 <h1 id="heading-1">Heading 1</h1>
 <h2 id="heading-2">Heading 2</h2>
@@ -826,54 +824,218 @@ Partial is injected in <code>layouts/_default/baseof.html</code></p>
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scroll</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;.scroll-up&#34;</span>),<span style="color:#a6e22e">rootElement</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">documentElement</span>;<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleScroll</span>(){<span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">scrollTop</span><span style="color:#f92672">/</span>(<span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">scrollHeight</span><span style="color:#f92672">-</span><span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">clientHeight</span>)<span style="color:#f92672">&gt;</span>.<span style="color:#ae81ff">4</span><span style="color:#f92672">?</span>(<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;hide&#34;</span>),<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;show&#34;</span>))<span style="color:#f92672">:</span>(<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;hide&#34;</span>),<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;show&#34;</span>))}document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>,<span style="color:#a6e22e">handleScroll</span>);</span></span></code></pre></td></tr></table>
 </div>
 </div>
-]]></content></item><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Mon, 24 Dec 2018 12:29:41 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>%!s(&lt;nil>)</description><content type="html"><![CDATA[<p>Hugo has <code>figure</code> shortcode built in, so you can easily add figcaptions or hyperlink rel attributes to images. Documentations can be found here:</p>
-<p><a href="https://gohugo.io/content-management/shortcodes/#figure">https://gohugo.io/content-management/shortcodes/#figure</a></p>
-<p>This theme has 3 CSS classes made for figure elements:</p>
+]]></content></item><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Mon, 24 Dec 2018 12:29:41 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>%!s(&lt;nil>)</description><content type="html"><![CDATA[<p>Hugo has <code>figure</code> shortcode built in, so you can easily add captions or hyperlink rel attributes to images. Documentations can be found <a href="https://gohugo.io/content-management/shortcodes/#figure">here</a>.</p>
+<p>This theme extends upon <a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/shortcodes/figure.html">default figure shortcode</a> to implement following features :</p>
+<ul>
+<li>Follow latest standard to display WEBP image and fallback to JPG if browser cannot render WEBP.
+<ul>
+<li>If provided with an image resource, it can convert to WEBP and JPG image</li>
+<li>Both WEBP and JPG are placed in <a href="https://www.w3schools.com/tags/tag_picture.asp">picture tag</a></li>
+<li>To use this feature, place your image in <code>assets</code> folder in root of your site</li>
+</ul>
+</li>
+<li>If <code>src</code> contains a link (starting with http/https), it will be parsed accordingly.</li>
+<li>1-to-1 feature set compatiblity if you are using figure shortcode or <code>![]()</code>.</li>
+<li>If you want to add image from <code>static</code> folder, you can, <strong>but be informed that these images cannot be converted or optimized</strong>.</li>
+</ul>
+<h3 id="supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more">Supported attributes to figure shortcode (Create an Issue if you want to add more)</h3>
+<ul>
+<li>
+<p><code>src</code> : Source of the resource. It can be one of three</p>
+<ul>
+<li>Image in <code>assets</code> folder in your site root. Supported Formats : <strong>WEBP</strong> and <strong>JPG</strong></li>
+<li>Image in <code>static</code> folder in your site root.</li>
+<li>Image fetched from another place on the internet. Must start with <strong>http://</strong> or <strong>https://</strong></li>
+</ul>
+</li>
+<li>
+<p><code>link</code> : Specifies the URL of the page the figure goes to. The value is added to <code>href</code></p>
+</li>
+<li>
+<p><code>target</code> : Specifies where to open the linked document. To be used with <code>link</code>. The value is added to <code>target</code>. Possible values:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Value</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>_blank</td>
+          <td>Opens the linked document in a new window or tab</td>
+      </tr>
+      <tr>
+          <td>_self</td>
+          <td>Opens the linked document in the same frame as it was clicked (this is default)</td>
+      </tr>
+      <tr>
+          <td>_parent</td>
+          <td>Opens the linked document in the parent frame</td>
+      </tr>
+      <tr>
+          <td>_top</td>
+          <td>Opens the linked document in the full body of the window</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>
+<p><code>rel</code> : Specifies the relationship between the current document and the linked document. The value is added to <code>rel</code>. Possible values :</p>
+<table>
+  <thead>
+      <tr>
+          <th>Value</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>alternate</td>
+          <td>Provides a link to an alternate representation of the document (i.e. print page, translated or mirror)</td>
+      </tr>
+      <tr>
+          <td>author</td>
+          <td>Provides a link to the author of the document</td>
+      </tr>
+      <tr>
+          <td>bookmark</td>
+          <td>Permanent URL used for bookmarking</td>
+      </tr>
+      <tr>
+          <td>external</td>
+          <td>Indicates that the referenced document is not part of the same site as the current document</td>
+      </tr>
+      <tr>
+          <td>help</td>
+          <td>Provides a link to a help document</td>
+      </tr>
+      <tr>
+          <td>license</td>
+          <td>Provides a link to licensing information for the document</td>
+      </tr>
+      <tr>
+          <td>next</td>
+          <td>Provides a link to the next document in the series</td>
+      </tr>
+      <tr>
+          <td>nofollow</td>
+          <td>Links to an unendorsed document, like a paid link. (&ldquo;nofollow&rdquo; is used by Google, to specify that the Google search spider should not follow that link)</td>
+      </tr>
+      <tr>
+          <td>noopener</td>
+          <td>Requires that any browsing context created by following the hyperlink must not have an opener browsing context</td>
+      </tr>
+      <tr>
+          <td>noreferrer</td>
+          <td>Makes the referrer unknown. No referer header will be included when the user clicks the hyperlink</td>
+      </tr>
+      <tr>
+          <td>prev</td>
+          <td>The previous document in a selection</td>
+      </tr>
+      <tr>
+          <td>search</td>
+          <td>Links to a search tool for the document</td>
+      </tr>
+      <tr>
+          <td>tag</td>
+          <td>A tag (keyword) for the current document</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>
+<p><code>class</code> : This theme has 3 CSS classes made for figure elements. If a figure has no class set, the image will behave just like a normal markdown image: <code>![]()</code>.</p>
 <ul>
 <li><code>big</code>: images will break the width limit of main content area.</li>
 <li><code>left</code>: images will float to the left.</li>
 <li><code>right</code>: images will float to the right.</li>
 </ul>
-<p>If a figure has no class set, the image will behave just like a normal markdown image: <code>![]()</code>.</p>
-<p>This theme extends upon default figure shortcode to implement following features :</p>
+</li>
+<li>
+<p><code>alt</code> : Provides an alternate text for an image, if the user for some reason cannot view it (because of slow connection, an error in the src attribute, or if the user uses a screen reader).</p>
+</li>
+<li>
+<p>Attribution</p>
 <ul>
-<li>Convert JPG Images on the fly to WEBP and serve WEBP images with JPG as a fallback.</li>
-<li>Convert WEBP Images on the fly to JPG and serve WEBP images with JPG as a fallback.</li>
-<li>If <code>src</code> contains a link (starting with http/https), it will be parsed accordingly.</li>
-<li>1-to-1 feature set compatiblity if you are using figure shortcode or <code>![]()</code>.</li>
-<li>To use relative paths images need to be put in a folder &ldquo;assets&rdquo; in the root of the folder. see [Hugo docs] for more details.</li>
+<li><code>attr</code> : Attribution text</li>
+<li><code>attrlink</code> : Attribution link</li>
+</ul>
+</li>
+<li>
+<p><code>title</code> : Generate title for image in <code>figcaption</code>. It will be shown in <strong>H4</strong></p>
+</li>
+<li>
+<p><code>width</code> : Specify width of the image</p>
+</li>
+<li>
+<p><code>height</code> : Specify height of the image</p>
+</li>
+<li>
+<p><code>caption</code> : Specify caption of the image</p>
+</li>
+<li>
+<p><code>loading</code> : Specifies whether a browser should load an image immediately or to defer loading of off-screen images until for example the user scrolls near them. Possible values:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Value</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>eager</td>
+          <td>Default. Loads an image immediately</td>
+      </tr>
+      <tr>
+          <td>lazy</td>
+          <td>Defer loading of images until some conditions are met</td>
+      </tr>
+  </tbody>
+</table>
+</li>
 </ul>
 <p>Here&rsquo;s some examples, please be aware that these styles only take effect when the page width is over 1300px.</p>
+<h3 id="image-located-in-static-folder-in-site-root-prepend--in-src-attribute-to-inform-that-image-is-in-static-folder">Image located in <code>static folder</code> in site root. Prepend <code>/</code> in src attribute to inform that image is in <code>static</code> folder</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;/android-chrome-192x192.png&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;android-chrome-192x192.png&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;Static folder image (notice slash &#39;/&#39; in src attribute)&#34;</span> &gt;}}
+</span></span></code></pre></div>
 
-<figure><img src="https://placehold.co/1600x800"alt="image"/><figcaption>
-        <p>figure-normal (without any classes)</p>
-      </figcaption></figure>
-<p>Pellentesque posuere sem nec nunc varius, id hendrerit arcu consequat. Maecenas commodo, sapien ut gravida porttitor, dolor risus facilisis enim, eget pharetra nibh nisl porttitor sapien. Proin finibus elementum ligula sit amet hendrerit. Praesent et erat sodales ante accumsan pharetra non eu nulla. Sed vehicula consequat lorem, a fermentum ante faucibus quis. Aliquam erat volutpat. In vitae tincidunt dui. Proin sit amet ligula sodales, elementum tortor et, venenatis sem. Maecenas non nisl erat. Curabitur nec velit eros. Ut cursus lacus nisi, non pretium libero euismod et. Fusce luctus in nisi quis sollicitudin. Aenean nec blandit ligula. Duis ac felis lorem. Proin tellus tellus, dictum nec tempus sit amet, venenatis ac felis. Sed in pharetra nulla, non mollis sem.</p>
+    <figure><img src="https://1bl4z3r.github.io/hermit-V2/android-chrome-192x192.png"alt="android-chrome-192x192.png"/><figcaption><p>Static folder image (notice slash &lsquo;/&rsquo; in src attribute)</p></figcaption></figure>
+<h3 id="image-located-in-a-folder-named-images-in-static-folder-in-site-root-prepend--in-src-attribute-to-inform-that-image-is-in-static-folder">Image located in a folder named <code>images</code> in <code>static folder</code> in site root. Prepend <code>/</code> in src attribute to inform that image is in <code>static</code> folder</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;/images/397-600x400.jpg&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;apple-touch-icon.png&#34;</span> <span style="color:#a6e22e">title</span>=<span style="color:#e6db74">&#34;Picsum image&#34;</span> <span style="color:#a6e22e">attr</span>=<span style="color:#e6db74">&#34;Picsum&#34;</span> <span style="color:#a6e22e">attrlink</span>=<span style="color:#e6db74">&#34;https://picsum.com&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;This image is located in /static/images&#34;</span> &gt;}}
+</span></span></code></pre></div>
 
-<figure class="big" ><img src="https://placehold.co/1600x800"alt="image"/><figcaption>
-        <p>figure-big</p>
-      </figcaption></figure>
-<p>Suspendisse fringilla malesuada massa, in malesuada orci lacinia a. Praesent dapibus faucibus nisl, id volutpat elit bibendum eu. Nulla vitae laoreet nibh, eu hendrerit lacus. Donec lacinia auctor ligula, vel interdum ipsum malesuada vitae. Donec placerat a justo eu gravida. Aenean ultricies imperdiet convallis. Pellentesque accumsan non ex sed euismod. Proin bibendum lectus nec enim faucibus feugiat. Donec hendrerit nisi viverra ornare luctus. Nullam non viverra nisl. Nam vel tellus et tortor elementum volutpat sit amet et erat. Aliquam a libero quis libero porta consectetur. Etiam aliquam felis vel nulla mattis finibus. Mauris laoreet lacus arcu, sed rhoncus odio condimentum sed. Aenean in dui rutrum elit faucibus faucibus nec fringilla augue. Fusce non ornare mauris.</p>
-
-<figure class="left" ><img src="https://placehold.co/400x280"alt="image"/><figcaption>
-        <p>figure-left</p>
-      </figcaption></figure>
-<p>In a libero varius, luctus ligula et, bibendum tortor. Sed sit amet dui malesuada, mattis justo id, ultricies enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam sollicitudin cursus feugiat. Vivamus suscipit ipsum eget lobortis sollicitudin. Fusce vehicula neque tellus. Integer eu posuere quam, id laoreet tortor. Mauris sit amet turpis urna. Donec venenatis tempor dolor, nec laoreet orci aliquet et. Sed condimentum elit eu tristique aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc luctus ipsum sit amet nisl maximus pellentesque.</p>
-
-<figure class="right" ><img src="https://placehold.co/400x280"alt="image"/><figcaption>
-        <p>figure-right</p>
-      </figcaption></figure>
-<p>Pellentesque eu consequat nunc. Vivamus eu eros ut nulla dapibus molestie in id tortor. Cras viverra ligula erat, tincidunt hendrerit diam blandit nec. Cras id urna vel dolor dictum mattis. Vestibulum congue erat ac eros molestie accumsan. Maecenas lorem nibh, maximus vel justo eget, facilisis egestas lectus. Mauris eu est ut odio blandit consequat id feugiat eros. Fusce id suscipit mi, et lacinia lectus. Mauris a arcu placerat dolor iaculis feugiat nec non mi. Ut porttitor elit tortor, eget tempus velit mollis eu. Aliquam sem nulla, dictum cursus mauris ac, semper ullamcorper leo.</p>
-
+    <figure><img src="https://1bl4z3r.github.io/hermit-V2/images/397-600x400.jpg"alt="apple-touch-icon.png"/><figcaption><h4>Picsum image</h4><p>This image is located in /static/images - <a href="https://picsum.com">Picsum</a></p></figcaption></figure>
+<h3 id="figure-loaded-from-another-site-with-no-class-specification">Figure loaded from another site with no class specification.</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;https://placehold.co/1600x800&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;figure-normal (without any classes)&#34;</span> &gt;}}
+</span></span></code></pre></div>
+<figure><img src="https://placehold.co/1600x800"alt="image"/><figcaption><p>figure-normal (without any classes)</p></figcaption></figure>
+<h3 id="figure-loaded-from-assets-folder-in-site-root">Figure loaded from <code>assets</code> folder in site root.</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/928-600x400.jpg&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;relative file path in assets folder&#34;</span> &gt;}}
+</span></span></code></pre></div>
 <figure><picture>
           <source srcset="/hermit-V2/images/928-600x400_hu12676991745684503517.webp" type="image/webp">
           <source srcset="/hermit-V2/images/928-600x400_hu14429143669893479017.jpg" type="image/jpeg">
-          <img src="/hermit-V2/images/928-600x400_hu12676991745684503517.webp"alt="image"  width="600"  height="400" />
-        </picture><figcaption>
-            <p>relative file path</p>
-          </figcaption></figure>
-<p>Pellentesque eu consequat nunc. Vivamus eu eros ut nulla dapibus molestie in id tortor. Cras viverra ligula erat, tincidunt hendrerit diam blandit nec. Cras id urna vel dolor dictum mattis. Vestibulum congue erat ac eros molestie accumsan. Maecenas lorem nibh, maximus vel justo eget, facilisis egestas lectus. Mauris eu est ut odio blandit consequat id feugiat eros. Fusce id suscipit mi, et lacinia lectus. Mauris a arcu placerat dolor iaculis feugiat nec non mi. Ut porttitor elit tortor, eget tempus velit mollis eu. Aliquam sem nulla, dictum cursus mauris ac, semper ullamcorper leo.</p>
-<p>Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Aliquam tempor vehicula faucibus. Phasellus consequat aliquam odio. Morbi a ex vitae sapien porta auctor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet nulla arcu. Praesent ut tortor purus. Praesent id eros diam. Pellentesque vitae dolor at nibh ultrices accumsan eu id urna. Aliquam finibus interdum orci in varius. Pellentesque a enim condimentum, condimentum felis id, vehicula augue. Vivamus cursus commodo eros nec lacinia.</p>
+          <img src="/hermit-V2/images/928-600x400_hu12676991745684503517.webp"alt="image" width="600"  height="400" />
+        </picture><figcaption><p>relative file path in assets folder</p></figcaption></figure>
+<h3 id="figure-using-class-big">Figure using class <code>big</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;https://placehold.co/1600x800&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;using class = big&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;big&#34;</span> &gt;}}
+</span></span></code></pre></div>
+<figure class="big" ><img src="https://placehold.co/1600x800"alt="image"/><figcaption><p>using class = big</p></figcaption></figure>
+<h3 id="figure-using-class-left">Figure using class <code>left</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;https://placehold.co/400x280&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;using class = left&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;left&#34;</span> &gt;}}
+</span></span></code></pre></div>
+<figure class="left" ><img src="https://placehold.co/400x280"alt="image"/><figcaption><p>using class = left</p></figcaption></figure>
+<p>In a libero varius, luctus ligula et, bibendum tortor. Sed sit amet dui malesuada, mattis justo id, ultricies enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam sollicitudin cursus feugiat. Vivamus suscipit ipsum eget lobortis sollicitudin. Fusce vehicula neque tellus. Integer eu posuere quam, id laoreet tortor. Mauris sit amet turpis urna. Donec venenatis tempor dolor, nec laoreet orci aliquet et. Sed condimentum elit eu tristique aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc luctus ipsum sit amet nisl maximus pellentesque.
+In a libero varius, luctus ligula et, bibendum tortor. Sed sit amet dui malesuada, mattis justo id, ultricies enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam sollicitudin cursus feugiat. Vivamus suscipit ipsum eget lobortis sollicitudin.</p>
+<h3 id="figure-using-class-right">Figure using class <code>right</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;https://placehold.co/400x280&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;using class = right&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;right&#34;</span> &gt;}}
+</span></span></code></pre></div>
+<figure class="right" ><img src="https://placehold.co/400x280"alt="image"/><figcaption><p>using class = right</p></figcaption></figure>
+<p>Pellentesque eu consequat nunc. Vivamus eu eros ut nulla dapibus molestie in id tortor. Cras viverra ligula erat, tincidunt hendrerit diam blandit nec. Cras id urna vel dolor dictum mattis. Vestibulum congue erat ac eros molestie accumsan. Maecenas lorem nibh, maximus vel justo eget, facilisis egestas lectus. Mauris eu est ut odio blandit consequat id feugiat eros. Fusce id suscipit mi, et lacinia lectus. Mauris a arcu placerat dolor iaculis feugiat nec non mi. Ut porttitor elit tortor, eget tempus velit mollis eu. Aliquam sem nulla, dictum cursus mauris ac, semper ullamcorper leo.
+Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Aliquam tempor vehicula faucibus. Phasellus consequat aliquam odio. Morbi a ex vitae sapien porta auctor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet nulla arcu. Praesent ut tortor purus. Praesent id eros diam. Pellentesque vitae dolor at nibh ultrices accumsan eu id urna. Aliquam finibus interdum orci in varius. Pellentesque a enim condimentum, condimentum felis id, vehicula augue. Vivamus cursus commodo eros nec lacinia.</p>
 ]]></content></item><item><title>Post With Featured Image</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</link><pubDate>Mon, 01 Oct 2018 16:15:09 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</guid><description>%!s(&lt;nil>)</description><content type="html"><![CDATA[<p>Just define the image URL in the content’s front matter, the featured image will be displayed as the background.</p>
 <p>For example:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
