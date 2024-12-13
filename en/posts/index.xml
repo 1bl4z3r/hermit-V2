@@ -16,7 +16,7 @@
 <p><code>theme</code> - Sets all layouts to be from the instaled theme (Use &ldquo;hermit-v2&rdquo; to adapt hermit-v2&rsquo;s theme)</p>
 </li>
 <li>
-<p><code>enableRobotsTXT</code> - Enables robots.txt generation using [template(https://github.com/1bl4z3r/hermit-V2/blob/main/layouts/robots.txt)]. By default, set to <code>false</code>.</p>
+<p><code>enableRobotsTXT</code> - Enables robots.txt generation using <a href="https://github.com/1bl4z3r/hermit-V2/blob/main/layouts/robots.txt">template</a>. By default, set to <code>false</code>.</p>
 </li>
 <li>
 <p><code>enableGitInfo</code> : Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.</p>
