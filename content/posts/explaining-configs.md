@@ -24,7 +24,7 @@ Lastmod : 2024-03-12T20:30:30+05:30
 	- The lang attribute of the `<html>` element in the internal alias template
 - `title` - Title of the Site
 - `theme` - Sets all layouts to be from the instaled theme (Use "hermit-v2" to adapt hermit-v2's theme)
-- `enableRobotsTXT` - Enables robots.txt generation using [template(https://github.com/1bl4z3r/hermit-V2/blob/main/layouts/robots.txt)]. By default, set to `false`.
+- `enableRobotsTXT` - Enables robots.txt generation using [template](https://github.com/1bl4z3r/hermit-V2/blob/main/layouts/robots.txt). By default, set to `false`.
 - `enableGitInfo` : Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.
   > Side-effect : Affects `.Lastmod` parameter in Pages
 
