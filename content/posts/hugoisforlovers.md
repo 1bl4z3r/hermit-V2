@@ -8,6 +8,7 @@ tags = [
 ]
 date = "2014-04-02"
 toc = true
+robots = false
 +++
 
 ## Step 1. Install Hugo

@@ -8,6 +8,7 @@ baseURL = "CHANGE BASE URL"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 #theme = "hermit-v2"
+#enableRobotsTXT = true ## set to true to enable inbuilt robots.txt
 
 #[languages]
 #  [languages.en]

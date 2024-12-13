@@ -1,0 +1,10 @@
+User-agent: *
+{{- range where $.Site.Pages ".Params.robots" false }}
+Disallow: {{ .Permalink -}}
+{{ end }}
+{{- with .Sitemap }}
+Sitemap: {{ .Filename | default "sitemap.xml" | absURL -}}
+{{ end }}
+{{- range $.Site.Home.AllTranslations }}
+Sitemap: {{ printf "%ssitemap.xml" .Permalink -}}
+{{ end }}
