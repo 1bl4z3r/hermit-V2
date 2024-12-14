@@ -20,7 +20,7 @@
 
 {{- $msg1 := "The %q shortcode requires a parameter named %q. See %s" -}}
 {{- $msg2 := "The resource %q passed to the %q shortcode is not an image. See %s" -}}
-{{- $msg3 := "The resource %q passed to the %q shortcode could not be found. See %s" -}}
+{{- $msg3 := "The resource %q passed to the %q shortcode not present in assets folder. See %s" -}}
 
 {{- if not (findRE `http[s]{0,1}://` $path 1) -}}
 

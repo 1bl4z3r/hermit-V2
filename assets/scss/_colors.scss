@@ -64,6 +64,9 @@ $pagescrollbar-background: $japanese-indigo !default;
 $pagescrollbar-thumb: $taupe-grey !default;
 $pagescrollbar-thumb-hover: $bright-grey !default;
 
+// Table of Contents
+$tableofcontents-background: transparent;
+
 // Table of Contents Scrollbar
 $tableofcontents-scrollbar-track: darken($pagescrollbar-thumb, 10%) !default;
 $tableofcontents-scrollbar-thumb: $japanese-indigo !default;
