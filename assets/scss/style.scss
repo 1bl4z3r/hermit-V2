@@ -1074,3 +1074,9 @@ a.footnote-ref {
     max-width: 50%; /* Ensure the text content does not take excessive space */
   }
 }
+
+// Link to the address
+.address-link {
+  text-decoration: underline; /* Adds underline to the link */
+  color: inherit; /* Ensures the link color matches the surrounding text */
+}
