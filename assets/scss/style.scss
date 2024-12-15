@@ -1017,3 +1017,60 @@ a.footnote-ref {
     50% { border-color: $typewriter}
   }
 {{ end }}
+
+.post-item {
+  display: flex; /* Arrange image and text side by side */
+  align-items: flex-start; /* Align items to the top */
+  gap: 20px; /* Add space between the image and text */
+  flex-wrap: nowrap; /* Prevent elements from wrapping to a new line */
+
+  .post-image {
+    flex-shrink: 0; /* Prevent the image container from shrinking */
+    max-width: 40%; /* Adjust the container size as needed */
+
+    img {
+      width: 20vw; /* 80% of the viewport width */
+      max-width: 200px; /* Prevents the image from exceeding a certain size */
+      height: auto; /* Maintains aspect ratio */
+      object-fit: cover; /* Ensures the image fills the space proportionally */
+      margin: 5px 0; /* Adds 5px margin to the top and bottom */
+    }
+  }
+
+  .post-content {
+    flex-grow: 1; /* Allow text to take up remaining space */
+    display: flex;
+    flex-direction: column; /* Stack title, summary, and description vertically */
+  }
+
+  .post-title {
+    font-weight: bold;
+    font-size: 1.5rem; /* Adjust title size */
+    margin-bottom: 10px;
+  }
+
+  .post-summary,
+  .post-description {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-item {
+    flex-wrap: nowrap; /* Prevent wrapping */
+    align-items: center; /* Center-align items vertically for better appearance */
+  }
+
+  .post-image {
+    max-width: 50%; /* Adjust size for smaller screens */
+
+    img {
+      width: 100%; /* Ensure the image scales with its container */
+      margin: 5px 0; /* Adds 5px margin to the top and bottom */
+    }
+  }
+
+  .post-content {
+    max-width: 50%; /* Ensure the text content does not take excessive space */
+  }
+}
