@@ -684,33 +684,154 @@ $$$$
 (\nabla_X Y)^k = X^i (\nabla_i Y)^k =
            X^i \left( \frac{\partial Y^k}{\partial x^i} + \Gamma_{im}^k Y^m \right)
 $$$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$<p>\begin{equation}
-S (ω)=1.466, H_s^2 ,  \frac{ω_0^5}{ω^6 }  , e^[-3^ { ω/(ω_0  )]^2}
+S (ω)=1.466, H_s<sup>2 ,  \frac{ω_0</sup>5}{ω<sup>6 }  , e</sup>[-3^ { ω/(ω_0  )]^2}
 \end{equation}</p>
 $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Tue, 15 Aug 2023 15:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>Integer lobortis vulputate mauris quis maximus. Vestibulum ac eros porttitor, auctor sem sed, tincidunt nulla. In sit amet tincidunt ex.</description><content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Footnote:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>Text that links to footnote has [^1]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Footnote text (at the bottom of the article):
+</span></span><span style="display:flex;"><span>[^1]: From : [<span style="color:#f92672">https://www.markdownguide.org/extended-syntax/#footnotes</span>](<span style="color:#a6e22e">https://www.markdownguide.org/extended-syntax/#footnotes</span>)
+</span></span></code></pre></div><p>Text that links to footnote has <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>Inline styles:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Inline styles</th>
+          <th>When rendered</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>**strong**</code></td>
+          <td><strong>strong</strong></td>
+      </tr>
+      <tr>
+          <td><code>__strong__</code></td>
+          <td><strong>strong</strong></td>
+      </tr>
+      <tr>
+          <td><code>*emphasis*</code></td>
+          <td><em>emphasis</em></td>
+      </tr>
+      <tr>
+          <td><code>_emphasis_</code></td>
+          <td><em>emphasis</em></td>
+      </tr>
+      <tr>
+          <td><code>***strong &amp; emphasis***</code></td>
+          <td><em><strong>strong and emphasis</strong></em></td>
+      </tr>
+      <tr>
+          <td><code>`code`</code></td>
+          <td><code>code</code></td>
+      </tr>
+      <tr>
+          <td><code>~~strikethrough~~</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+          <td><del>strikethrough</del></td>
+      </tr>
+      <tr>
+          <td><code>++inserted text++</code><sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+          <td><ins>inserted text</ins></td>
+      </tr>
+      <tr>
+          <td><code>==marked text==</code><sup id="fnref2:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+          <td><mark>marked text</mark></td>
+      </tr>
+      <tr>
+          <td><code>subscript~2~text</code><sup id="fnref3:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+          <td>subscript<sub>2</sub>text</td>
+      </tr>
+      <tr>
+          <td><code>superscript^6^text</code><sup id="fnref4:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+          <td>superscript<sup>6</sup>text</td>
+      </tr>
+      <tr>
+          <td><code>:joy:</code><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></td>
+          <td>&#x1f602;</td>
+      </tr>
+      <tr>
+          <td><code>&lt;cite&gt;HTML tag&lt;/cite&gt;</code><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></td>
+          <td><cite>HTML tag</cite></td>
+      </tr>
+      <tr>
+          <td><code>\(LaTeX\)</code><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></td>
+          <td>\(LaTeX\)</td>
+      </tr>
+      <tr>
+          <td><code>[Link](https://example.com)</code></td>
+          <td><a href="https://example.com">Link</a></td>
+      </tr>
+  </tbody>
+</table>
 <blockquote>
-<p>An apple is a sweet, edible fruit produced by an apple tree (Malus pumila). Apple trees are cultivated worldwide, and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today. Apples have been grown for thousands of years in Asia and Europe, and were brought to North America by European colonists. Apples have religious and mythological significance in many cultures, including Norse, Greek and European Christian traditions.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-</blockquote>
-<hr>
-<p>Inline styles：</p>
-<p><strong>strong</strong>, <em>emphasis</em>, <em><strong>strong and emphasis</strong></em>,<code>code</code>, <ins>underline</ins><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, <del>strikethrough</del>, :joy:🤣, $\LaTeX$<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, ==highlight==, <a href="https://example.com">Link</a>, and image:</p>
-<p><img src="https://picsum.photos/600/400/?random" alt="img"></p>
-<p>Images can also be implemented via figure shortcode. It extends in-built hugo shortcode to convert images to webp format.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{ {&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/928-600x400.jpg&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;webp&#34;</span> <span style="color:#a6e22e">loading</span>=<span style="color:#e6db74">&#34;lazy&#34;</span> &gt;} }
-</span></span></code></pre></div><h2 id="hahahugoshortcode13s0hbhb">
-<figure class="webp" ><picture>
-          <source srcset="/hermit-V2/images/928-600x400_hu12676991745684503517.webp" type="image/webp">
-          <source srcset="/hermit-V2/images/928-600x400_hu14429143669893479017.jpg" type="image/jpeg">
-          <img src="/hermit-V2/images/928-600x400_hu12676991745684503517.webp"alt="A WEBP converted image" width="600"  height="400"  loading="lazy" />
-        </picture><figcaption><p>A WEBP converted image</p></figcaption></figure></h2>
+<p>To use HTML tags in hugo, add following to <code>hugo.toml</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>]
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">renderer</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">unsafe</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div></blockquote>
+<blockquote>
+<p>To use deleted text, inserted text, mark text, subscript, and superscript elements in Markdown, add following to <code>hugo.toml</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>]
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">renderer</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">unsafe</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">strikethrough</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>      [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">extras</span>]
+</span></span><span style="display:flex;"><span>        [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">extras</span>.<span style="color:#a6e22e">insert</span>]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">extras</span>.<span style="color:#a6e22e">delete</span>]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">extras</span>.<span style="color:#a6e22e">mark</span>]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">extras</span>.<span style="color:#a6e22e">subscript</span>]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">extras</span>.<span style="color:#a6e22e">superscript</span>]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div></blockquote>
 <p>Headings:</p>
-<h1 id="heading-1">Heading 1</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># Heading 1
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Heading 2 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">### Heading 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#### Heading 4 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">##### Heading 5 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">###### Heading 6 
+</span></span></span></code></pre></div><h1 id="heading-1">Heading 1</h1>
 <h2 id="heading-2">Heading 2</h2>
 <h3 id="heading-3">Heading 3</h3>
 <h4 id="heading-4">Heading 4</h4>
 <h5 id="heading-5">Heading 5</h5>
 <h6 id="heading-6">Heading 6</h6>
+<p>Table of Contents returns an unordered list of level 2 and level 3 headings by default. You can adjust this in your site configuration. <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">tableOfContents</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">endLevel</span> = <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ordered</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">startLevel</span> = <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>Blockquote:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">First line
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">Another line (To keep the quote together, blank lines inside the quote must contain the &gt; character.)
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#66d9ef">&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef"></span><span style="font-style:italic">&gt; &gt; Nested line
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#66d9ef">&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef"></span><span style="font-style:italic">&gt; Last line (The space between the &gt; and the quoted text is optional.)
+</span></span></span></code></pre></div><blockquote>
+<p>First line
+Another line (To keep the quote together, blank lines inside the quote must contain the &gt; character.)</p>
+<blockquote>
+<p>Nested line</p>
+</blockquote>
+<p>Last line (The space between the &gt; and the quoted text is optional.)</p>
+</blockquote>
 <p>Table:</p>
-<table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>| Left-Aligned  | Center Aligned  | Right Aligned |
+</span></span><span style="display:flex;"><span>| :------------ | :-------------: | ------------: |
+</span></span><span style="display:flex;"><span>| col 3 is      | some wordy text |         $1600 |
+</span></span><span style="display:flex;"><span>| col 2 is      |    centered     |           $12 |
+</span></span><span style="display:flex;"><span>| zebra stripes |    are neat     |            $1 |
+</span></span></code></pre></div><table>
   <thead>
       <tr>
           <th style="text-align: left">Left-Aligned</th>
@@ -737,7 +858,16 @@ $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content></item><item><title>T
   </tbody>
 </table>
 <p>Lists:</p>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#66d9ef">*</span> Unordered list item 1.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">*</span> Unordered list item 2.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> ordered list item 1.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> ordered list item 2.
+</span></span><span style="display:flex;"><span>   + sub-unordered list item 1.
+</span></span><span style="display:flex;"><span>   + sub-unordered list item 2.
+</span></span><span style="display:flex;"><span>     + [x] something is DONE.
+</span></span><span style="display:flex;"><span>     + [ ] something is NOT DONE.
+</span></span></code></pre></div><ul>
 <li>Unordered list item 1.</li>
 <li>Unordered list item 2.</li>
 </ul>
@@ -917,7 +1047,16 @@ print(sorted_dt)
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">}</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Mermaid support</p>
+<p>Images can also be implemented via figure shortcode. It extends in-built hugo shortcode to convert images to webp format.<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>
+<img src="https://picsum.photos/600/400/?random" alt="img"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{ {&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/928-600x400.jpg&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;webp&#34;</span> <span style="color:#a6e22e">loading</span>=<span style="color:#e6db74">&#34;lazy&#34;</span> &gt;} }
+</span></span></code></pre></div>
+<figure class="webp" ><picture>
+          <source srcset="/hermit-V2/images/928-600x400_hu12676991745684503517.webp" type="image/webp">
+          <source srcset="/hermit-V2/images/928-600x400_hu14429143669893479017.jpg" type="image/jpeg">
+          <img src="/hermit-V2/images/928-600x400_hu12676991745684503517.webp"alt="A WEBP converted image" width="600"  height="400"  loading="lazy" />
+        </picture><figcaption><p>A WEBP converted image</p></figcaption></figure>
+<p>Mermaid</p>
 <pre class="mermaid">  flowchart TD
     A["Cron Job Starts at 9 AM"] --> B["Loop Through Each Newspaper"]
     B --> C["Get Newspaper URL and Upload Image"]
@@ -938,13 +1077,25 @@ print(sorted_dt)
 <hr>
 <ol>
 <li id="fn:1">
-<p>From <a href="https://en.wikipedia.org/wiki/Apple">https://en.wikipedia.org/wiki/Apple</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>From : <a href="https://www.markdownguide.org/extended-syntax/#footnotes">https://www.markdownguide.org/extended-syntax/#footnotes</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>Hugo&rsquo;s default renderer (Goldmark) cannot render HTML tags by default and Markdown doesn&rsquo;t have underlines. To use HTML tags, use <code>[markup.goldmark.renderer] unsafe = true</code> in <code>hugo.toml</code>. Find it in <a href="https://github.com/1bl4z3r/hermit-V2/blob/5f0abfda179c86f39effbc36b291a53632c4caa8/hugo.toml#L74-L75">Staging Branch</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>To use mentioned features. <a href="https://gohugo.io/getting-started/configuration-markup/#extras">Hugo Docs</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref3:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref4:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p>LaTeX is supported by Mathjax, explained <a href="/hermit-V2/en/posts/mathjax-support/">in this article</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>To enable emoji support add <code>enableEmoji = true</code> in hugo.toml. <a href="https://gohugo.io/quick-reference/emojis/">Hugo Docs</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>Hugo&rsquo;s default renderer (Goldmark) cannot render HTML tags by default. To use HTML tags, use <code>[markup.goldmark.renderer] unsafe = true</code> in <code>hugo.toml</code>. Find it in <a href="https://github.com/1bl4z3r/hermit-V2/blob/5f0abfda179c86f39effbc36b291a53632c4caa8/hugo.toml#L74-L75">Staging Branch</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>LaTeX is supported by Mathjax, explained <a href="/hermit-V2/en/posts/mathjax-support/">in this article</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>Customize Table of Contents. <a href="https://gohugo.io/methods/page/tableofcontents/">Hugo Docs</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/">the-figure-shortcode</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
