@@ -10,45 +10,119 @@ tags:
   - Typography
 pin: true
 Lastmod : 2023-08-15T15:36:33+05:30
+mathjax : true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-> An apple is a sweet, edible fruit produced by an apple tree (Malus pumila). Apple trees are cultivated worldwide, and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today. Apples have been grown for thousands of years in Asia and Europe, and were brought to North America by European colonists. Apples have religious and mythological significance in many cultures, including Norse, Greek and European Christian traditions.[^1]
+Footnote:
+```markdown
+Text that links to footnote has [^1]
 
----
+Footnote text (at the bottom of the article):
+[^1]: From : [https://www.markdownguide.org/extended-syntax/#footnotes](https://www.markdownguide.org/extended-syntax/#footnotes)
+```
+Text that links to footnote has [^1]
 
-Inline styles：
+Inline styles:
 
-**strong**, *emphasis*, ***strong and emphasis***,`code`, <ins>underline</ins>[^2], ~~strikethrough~~, :joy:🤣, $\LaTeX$[^3], ==highlight==, [Link](https://example.com), and image:
+|Inline styles                |When rendered                                  |
+|-----------------------------|-----------------------------------------------|
+|`**strong**`                 |**strong**                                     |
+|`__strong__`                 |__strong__                                     |
+|`*emphasis*`                 |*emphasis*                                     |
+|`_emphasis_`                 |_emphasis_                                     |
+|`***strong & emphasis***`    |***strong and emphasis***                      |
+|`` `code` ``                 |`code`                                         |
+|`~~strikethrough~~`[^7]      |~~strikethrough~~                              |
+|`++inserted text++`[^7]      |++inserted text++                              |
+|`==marked text==`[^7]        |==marked text==                                |
+|`subscript~2~text`[^7]       |subscript~2~text                               |
+|`superscript^6^text`[^7]     |superscript^6^text                             |
+|`:joy:`[^2]                  |:joy:                                          |
+|`<cite>HTML tag</cite>`[^3]  |<cite>HTML tag</cite>                          |
+|`\(LaTeX\)`[^4]              |\(LaTeX\)                                      |
+|`[Link](https://example.com)`|[Link](https://example.com)                    |
 
-![img](https://picsum.photos/600/400/?random)
+> To use HTML tags in hugo, add following to `hugo.toml`
+> ```toml
+> [markup]
+>   [markup.goldmark]
+>     [markup.goldmark.renderer]
+>       unsafe = true
+> ```
 
-Images can also be implemented via figure shortcode. It extends in-built hugo shortcode to convert images to webp format.
+> To use deleted text, inserted text, mark text, subscript, and superscript elements in Markdown, add following to `hugo.toml`
+> ```toml
+> [markup]
+>   [markup.goldmark]
+>     [markup.goldmark.renderer]
+>       unsafe = true
+>     [markup.goldmark.extensions]
+>       strikethrough = false
+>       [markup.goldmark.extensions.extras]
+>         [markup.goldmark.extensions.extras.insert]
+>           enable = true
+>         [markup.goldmark.extensions.extras.delete]
+>           enable = true
+>         [markup.goldmark.extensions.extras.mark]
+>           enable = true
+>         [markup.goldmark.extensions.extras.subscript]
+>           enable = true
+>         [markup.goldmark.extensions.extras.superscript]
+>           enable = true
+> ```
+Headings:
+```markdown
+# Heading 1
+## Heading 2 
+### Heading 3
+#### Heading 4 
+##### Heading 5 
+###### Heading 6 
+```
+# Heading 1 
+## Heading 2 
+### Heading 3 
+#### Heading 4 
+##### Heading 5 
+###### Heading 6 
 
-```go
-{ {< figure src="images/928-600x400.jpg" alt="A WEBP converted image" caption="A WEBP converted image" class="webp" loading="lazy" >} }
+Table of Contents returns an unordered list of level 2 and level 3 headings by default. You can adjust this in your site configuration. [^6]
+
+```toml
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
 ```
 
-{{< figure src="images/928-600x400.jpg" alt="A WEBP converted image" caption="A WEBP converted image" class="webp" loading="lazy" >}}
----
-
-Headings:
-
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
+Blockquote:
+```markdown
+> First line
+> Another line (To keep the quote together, blank lines inside the quote must contain the > character.)
+>
+> > Nested line
+>
+> Last line (The space between the > and the quoted text is optional.)
+```
+> First line
+> Another line (To keep the quote together, blank lines inside the quote must contain the > character.)
+>
+> > Nested line
+>
+> Last line (The space between the > and the quoted text is optional.)
 
 Table:
 
+```markdown
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ | :-------------: | ------------: |
+| col 3 is      | some wordy text |         $1600 |
+| col 2 is      |    centered     |           $12 |
+| zebra stripes |    are neat     |            $1 |
+```
 | Left-Aligned  | Center Aligned  | Right Aligned |
 | :------------ | :-------------: | ------------: |
 | col 3 is      | some wordy text |         $1600 |
@@ -56,7 +130,17 @@ Table:
 | zebra stripes |    are neat     |            $1 |
 
 Lists:
+```markdown
+* Unordered list item 1.
+* Unordered list item 2.
 
+1. ordered list item 1.
+2. ordered list item 2.
+   + sub-unordered list item 1.
+   + sub-unordered list item 2.
+     + [x] something is DONE.
+     + [ ] something is NOT DONE.
+```
 * Unordered list item 1.
 * Unordered list item 2.
 
@@ -91,8 +175,6 @@ Syntax Highlighting with [`highlight` shortcode](https://gohugo.io/content-manag
 /* LineHighlight */ .chroma .hl { display: block; width: 100%;background-color: #55595ebb }
 {{/*< /highlight >*/}}
 ```
-
-
 
 {{< highlight css "linenos=table,linenostart=5" >}}
 /* LineHighlight */ .chroma .hl { display: block; width: 100%;background-color: #55595ebb }
@@ -168,10 +250,20 @@ blockquote {
     }
   }
 }
-
 {{< /highlight >}}
 
-Mermaid support
+
+Images can also be implemented via figure shortcode. It extends in-built hugo shortcode to convert images to webp format.[^5]
+![img](https://picsum.photos/600/400/?random)
+
+
+```go
+{ {< figure src="images/928-600x400.jpg" alt="A WEBP converted image" caption="A WEBP converted image" class="webp" loading="lazy" >} }
+```
+
+{{< figure src="images/928-600x400.jpg" alt="A WEBP converted image" caption="A WEBP converted image" class="webp" loading="lazy" >}}
+
+Mermaid
 
 ```mermaid
   flowchart TD
@@ -192,6 +284,10 @@ Mermaid support
     O -- If All Newspapers Processed --> P["Cron Job Complete"]
 ```
 
-[^1]: From https://en.wikipedia.org/wiki/Apple
-[^2]: Hugo's default renderer (Goldmark) cannot render HTML tags by default and Markdown doesn't have underlines. To use HTML tags, use `[markup.goldmark.renderer] unsafe = true` in `hugo.toml`. Find it in [Staging Branch](https://github.com/1bl4z3r/hermit-V2/blob/5f0abfda179c86f39effbc36b291a53632c4caa8/hugo.toml#L74-L75)
-[^3]: LaTeX is supported by Mathjax, explained [in this article]({{< relref "mathjax-support.md" >}})
+[^1]: From : [https://www.markdownguide.org/extended-syntax/#footnotes](https://www.markdownguide.org/extended-syntax/#footnotes)
+[^2]: To enable emoji support add `enableEmoji = true` in hugo.toml. [Hugo Docs](https://gohugo.io/quick-reference/emojis/)
+[^3]: Hugo's default renderer (Goldmark) cannot render HTML tags by default. To use HTML tags, use `[markup.goldmark.renderer] unsafe = true` in `hugo.toml`. Find it in [Staging Branch](https://github.com/1bl4z3r/hermit-V2/blob/5f0abfda179c86f39effbc36b291a53632c4caa8/hugo.toml#L74-L75)
+[^4]: LaTeX is supported by Mathjax, explained [in this article]({{< relref "mathjax-support.md" >}})
+[^5]: [the-figure-shortcode](https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/)
+[^6]: Customize Table of Contents. [Hugo Docs](https://gohugo.io/methods/page/tableofcontents/)
+[^7]: To use mentioned features. [Hugo Docs](https://gohugo.io/getting-started/configuration-markup/#extras)
