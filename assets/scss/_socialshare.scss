@@ -7,7 +7,7 @@
   z-index: 1;
   box-sizing: border-box;
   box-shadow: -1px -2px 3px 0px rgba(0, 0, 0, 0.45);
-  background-color: $midnightblue;
+  background-color: $share-links-background;
 
   ul {
     list-style: none;
@@ -16,11 +16,11 @@
     line-height: 2;
     font-size: 1.2em;
     a {
-      color: $highlight-grey;
+      color: $share-links-a;
       &:hover,
       &:active,
       &:focus {
-        color: $text;
+        color: $share-links-a-hover-active-focus;
       }
     }
   }
