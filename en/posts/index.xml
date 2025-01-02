@@ -69,7 +69,8 @@
 <li><code>dateform</code> / <code>dateformShort</code> / <code>dateformNum</code> / <code>dateformNumTime</code> : Used to render properly formatted date &amp; time. Change this if you know what you are doing.</li>
 <li><code>description</code> : Put in default description for meta description.</li>
 <li><code>images</code> : Used to display image for site, when sharing the page as link to social media (like Twitter)</li>
-<li><code>themeColor</code>: Populates theme-color meta. Make sure to keep <code>$theme</code> in <code>_colors.scss</code> and this same for better color consistency.</li>
+<li><code>themeColor</code>: Populates theme color meta and various elements of the site. If not present, <code>#494f5c</code> will be used.</li>
+<li><code>accentColor</code>: Populates accent color for various elements of the site. If not present, it will use declarations in <strong>/themes/hermit-V2/assets/scss/_colors.scss</strong>.</li>
 <li><code>homeSubtitle</code> : Displays subtitle in Homepage.</li>
 <li><code>footerCopyright</code> : Custom copyright for footer.</li>
 <li><code>bgImg</code> : Homepage background-image URL.</li>
@@ -1086,7 +1087,7 @@ print(sorted_dt)
 <p>To enable emoji support add <code>enableEmoji = true</code> in hugo.toml. <a href="https://gohugo.io/quick-reference/emojis/">Hugo Docs</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4">
-<p>Hugo&rsquo;s default renderer (Goldmark) cannot render HTML tags by default. To use HTML tags, use <code>[markup.goldmark.renderer] unsafe = true</code> in <code>hugo.toml</code>. Find it in <a href="https://github.com/1bl4z3r/hermit-V2/blob/5f0abfda179c86f39effbc36b291a53632c4caa8/hugo.toml#L74-L75">Staging Branch</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Hugo&rsquo;s default renderer (Goldmark) cannot render HTML tags by default.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5">
 <p>LaTeX is supported by Mathjax, explained <a href="/hermit-V2/en/posts/mathjax-support/">in this article</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
