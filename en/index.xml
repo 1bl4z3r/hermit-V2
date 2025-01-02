@@ -1,11 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/</link><description>Recent content on Hermit - V2</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 24 Dec 2023 12:29:41 +0800</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Sun, 22 Oct 2023 20:06:06 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>&lt;h2 id="configuation-in-hugotoml">
-Configuation in &lt;code>hugo.toml&lt;/code>
-&lt;a href="#configuation-in-hugotoml" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/</link><description>Recent content on Hermit - V2</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 24 Dec 2023 12:29:41 +0800</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Sun, 22 Oct 2023 20:06:06 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>&lt;h2 id="configuation-in-hugotoml">Configuation in &lt;code>hugo.toml&lt;/code>&lt;a href="#configuation-in-hugotoml" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
  stroke-linecap="round" stroke-linejoin="round">
  &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
  &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
- &lt;/svg>&lt;/a>
-&lt;/h2>
+ &lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>&lt;code>hugo.toml&lt;/code> represents Global configuration for Hermit - V2. It is indicative on the changes to make the theme tailored to your personal preferences.&lt;/p>
 &lt;p>&lt;code>baseURL&lt;/code> : The absolute URL (protocol, host, path, and trailing slash) of your published site.&lt;/p></description></item><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Sun, 24 Dec 2023 12:29:41 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>&lt;p>Hugo has &lt;code>figure&lt;/code> shortcode built in, so you can easily add captions or hyperlink rel attributes to images. Documentations can be found &lt;a href="https://gohugo.io/content-management/shortcodes/#figure">here&lt;/a>.&lt;/p>
 &lt;p>This theme extends upon &lt;a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/shortcodes/figure.html">default figure shortcode&lt;/a> to implement following features :&lt;/p>
@@ -21,14 +18,11 @@ Configuation in &lt;code>hugo.toml&lt;/code>
 &lt;li>1-to-1 feature set compatiblity if you are using figure shortcode or &lt;code>![]()&lt;/code>.&lt;/li>
 &lt;li>If you want to add image from &lt;code>static&lt;/code> folder, you can, &lt;strong>but be informed that these images cannot be converted or optimized&lt;/strong>.&lt;/li>
 &lt;/ul>
-&lt;h3 id="supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more">
-Supported attributes to figure shortcode (Create an Issue if you want to add more)
-&lt;a href="#supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+&lt;h3 id="supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more">Supported attributes to figure shortcode (Create an Issue if you want to add more)&lt;a href="#supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
  stroke-linecap="round" stroke-linejoin="round">
  &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
  &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
- &lt;/svg>&lt;/a>
-&lt;/h3>
+ &lt;/svg>&lt;/a>&lt;/h3>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;code>src&lt;/code> : Source of the resource. It can be one of three&lt;/p></description></item><item><title>Admonition Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</link><pubDate>Fri, 20 Oct 2023 20:06:06 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</guid><description>&lt;p>The &lt;code>admonition&lt;/code> shortcode supports &lt;strong>8&lt;/strong> types of banners to help you put a notice on your page.&lt;/p>
@@ -134,53 +128,38 @@ Supported attributes to figure shortcode (Create an Issue if you want to add mor
  &lt;/aside>
 &lt;p>The &lt;code>admonition&lt;/code> shortcode has the following named parameters:&lt;/p></description></item><item><title>About Michael Henderson</title><link>https://1bl4z3r.github.io/hermit-V2/en/michael-henderson/</link><pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/michael-henderson/</guid><description>&lt;p>Hi there, my name is Michael Henderson. I&amp;rsquo;m a passionate photographer and programmer with a love for adventure and the great outdoors. When I&amp;rsquo;m not coding or snapping photos, you can find me cruising around town on my bike, exploring new trails and enjoying the fresh air. I&amp;rsquo;m always looking for opportunities to combine my interests and capture beautiful moments through my camera lens. Nice to meet you!&lt;/p>
 &lt;hr>
-&lt;p>This is an example which shows incase of more than one author&lt;/p></description></item><item><title>Long Article</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/long-article/</link><pubDate>Fri, 22 Sep 2023 22:00:01 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/long-article/</guid><description>&lt;h2 id="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-&lt;a href="#lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+&lt;p>This is an example which shows incase of more than one author&lt;/p></description></item><item><title>Long Article</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/long-article/</link><pubDate>Fri, 22 Sep 2023 22:00:01 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/long-article/</guid><description>&lt;h2 id="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;a href="#lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
  stroke-linecap="round" stroke-linejoin="round">
  &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
  &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
- &lt;/svg>&lt;/a>
-&lt;/h2>
-&lt;p>Ac tortor vitae purus faucibus. Pretium quam vulputate dignissim suspendisse in est ante in nibh. Ipsum dolor sit amet consectetur. Proin sagittis nisl rhoncus mattis rhoncus urna neque. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Vel pharetra vel turpis nunc eget lorem dolor sed. Nulla aliquet porttitor lacus luctus. Consequat nisl vel pretium lectus quam id leo in vitae. Diam volutpat commodo sed egestas egestas fringilla phasellus. Turpis in eu mi bibendum neque egestas congue quisque egestas. In iaculis nunc sed augue lacus. Pellentesque pulvinar pellentesque habitant morbi. Egestas congue quisque egestas diam in arcu cursus. Sed tempus urna et pharetra pharetra massa massa. At lectus urna duis convallis. Dignissim sodales ut eu sem integer vitae. Sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sodales neque sodales ut etiam sit amet nisl.&lt;/p></description></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>&lt;h1 id="latex-support-for-hermit-v2">
-\(LaTeX\) support for hermit-V2
-&lt;a href="#latex-support-for-hermit-v2" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+ &lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>Ac tortor vitae purus faucibus. Pretium quam vulputate dignissim suspendisse in est ante in nibh. Ipsum dolor sit amet consectetur. Proin sagittis nisl rhoncus mattis rhoncus urna neque. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Vel pharetra vel turpis nunc eget lorem dolor sed. Nulla aliquet porttitor lacus luctus. Consequat nisl vel pretium lectus quam id leo in vitae. Diam volutpat commodo sed egestas egestas fringilla phasellus. Turpis in eu mi bibendum neque egestas congue quisque egestas. In iaculis nunc sed augue lacus. Pellentesque pulvinar pellentesque habitant morbi. Egestas congue quisque egestas diam in arcu cursus. Sed tempus urna et pharetra pharetra massa massa. At lectus urna duis convallis. Dignissim sodales ut eu sem integer vitae. Sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sodales neque sodales ut etiam sit amet nisl.&lt;/p></description></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>&lt;h1 id="latex-support-for-hermit-v2">\(LaTeX\) support for hermit-V2&lt;a href="#latex-support-for-hermit-v2" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
  stroke-linecap="round" stroke-linejoin="round">
  &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
  &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
- &lt;/svg>&lt;/a>
-&lt;/h1>
-&lt;h2 id="configuration">
-Configuration
-&lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+ &lt;/svg>&lt;/a>&lt;/h1>
+&lt;h2 id="configuration">Configuration&lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
  stroke-linecap="round" stroke-linejoin="round">
  &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
  &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
- &lt;/svg>&lt;/a>
-&lt;/h2>
+ &lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>Put the following in &lt;code>hugo.toml&lt;/code>&lt;/p></description></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Sat, 22 Jul 2023 14:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>
-&lt;p>Footnote:&lt;/p></description></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</guid><description>&lt;h2 id="this-article-explains-how-to-use-scroll-up">
-This article explains how to use Scroll Up
-&lt;a href="#this-article-explains-how-to-use-scroll-up" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+&lt;p>Footnote:&lt;/p></description></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</guid><description>&lt;h2 id="this-article-explains-how-to-use-scroll-up">This article explains how to use Scroll Up&lt;a href="#this-article-explains-how-to-use-scroll-up" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
  stroke-linecap="round" stroke-linejoin="round">
  &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
  &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
- &lt;/svg>&lt;/a>
-&lt;/h2>
+ &lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.&lt;/p></description></item><item><title>Post With Featured Image</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</link><pubDate>Mon, 01 Oct 2018 16:15:09 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</guid><description>&lt;p>Just define the image URL in the content’s front matter, the featured image will be displayed as the background.&lt;/p>
 &lt;p>For example:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>---
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">images&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">https://picsum.photos/1024/768/?random&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is an array, you can set multiple urls, only the first url will be used. These images is also used in &lt;a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html">Twitter Cards&lt;/a> and the &lt;a href="http://ogp.me/">Open Graph&lt;/a> metadata.&lt;/p></description></item><item><title>Creating a New Theme</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/creating-a-new-theme/</link><pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/creating-a-new-theme/</guid><description>&lt;h2 id="introduction">
-Introduction
-&lt;a href="#introduction" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is an array, you can set multiple urls, only the first url will be used. These images is also used in &lt;a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html">Twitter Cards&lt;/a> and the &lt;a href="http://ogp.me/">Open Graph&lt;/a> metadata.&lt;/p></description></item><item><title>Creating a New Theme</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/creating-a-new-theme/</link><pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/creating-a-new-theme/</guid><description>&lt;h2 id="introduction">Introduction&lt;a href="#introduction" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
  stroke-linecap="round" stroke-linejoin="round">
  &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
  &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
- &lt;/svg>&lt;/a>
-&lt;/h2>
+ &lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.&lt;/p></description></item><item><title>About Hugo</title><link>https://1bl4z3r.github.io/hermit-V2/en/about-hugo/</link><pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/about-hugo/</guid><description>&lt;p>Hugo is the &lt;strong>world’s fastest framework for building websites&lt;/strong>. It is written in Go.&lt;/p>
 &lt;p>It makes use of a variety of open source projects including:&lt;/p>
 &lt;ul>
@@ -197,24 +176,18 @@ logic to be able to create a good static website. If you have used other
 template systems from different languages or frameworks you will find a lot of
 similarities in Go templates.&lt;/p>
 &lt;p>This document is a brief primer on using Go templates. The &lt;a href="https://golang.org/pkg/html/template/">Go docs&lt;/a>
-provide more details.&lt;/p></description></item><item><title>Getting Started with Hugo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/hugoisforlovers/</link><pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/hugoisforlovers/</guid><description>&lt;h2 id="step-1-install-hugo">
-Step 1. Install Hugo
-&lt;a href="#step-1-install-hugo" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+provide more details.&lt;/p></description></item><item><title>Getting Started with Hugo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/hugoisforlovers/</link><pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/hugoisforlovers/</guid><description>&lt;h2 id="step-1-install-hugo">Step 1. Install Hugo&lt;a href="#step-1-install-hugo" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
  stroke-linecap="round" stroke-linejoin="round">
  &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
  &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
- &lt;/svg>&lt;/a>
-&lt;/h2>
+ &lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>Go to &lt;a href="https://github.com/spf13/hugo/releases">Hugo releases&lt;/a> and download the
 appropriate version for your OS and architecture.&lt;/p>
 &lt;p>Save it somewhere specific as we will be using it in the next step.&lt;/p>
-&lt;p>More complete instructions are available at &lt;a href="https://gohugo.io/getting-started/installing/">Install Hugo&lt;/a>&lt;/p></description></item><item><title>Migrate to Hugo from Jekyll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/migrate-from-jekyll/</link><pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/migrate-from-jekyll/</guid><description>&lt;h2 id="move-static-content-to-static">
-Move static content to &lt;code>static&lt;/code>
-&lt;a href="#move-static-content-to-static" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+&lt;p>More complete instructions are available at &lt;a href="https://gohugo.io/getting-started/installing/">Install Hugo&lt;/a>&lt;/p></description></item><item><title>Migrate to Hugo from Jekyll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/migrate-from-jekyll/</link><pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/migrate-from-jekyll/</guid><description>&lt;h2 id="move-static-content-to-static">Move static content to &lt;code>static&lt;/code>&lt;a href="#move-static-content-to-static" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
  stroke-linecap="round" stroke-linejoin="round">
  &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
  &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
- &lt;/svg>&lt;/a>
-&lt;/h2>
+ &lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>Jekyll has a rule that any directory not starting with &lt;code>_&lt;/code> will be copied as-is to the &lt;code>_site&lt;/code> output. Hugo keeps all static content under &lt;code>static&lt;/code>. You should therefore move it all there.
 With Jekyll, something that looked like&lt;/p></description></item></channel></rss>
