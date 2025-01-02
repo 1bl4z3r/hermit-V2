@@ -24,7 +24,7 @@
 				<h1>{{ .Title }}</h1>
 			</header>
 			<div class="content">
-				{{ .Content | replaceRE "(<h[1-6] id=\"([^\"]+)\".+)(</h[1-6]+>)" `${1}<a href="#${2}" class="anchor" aria-hidden="true">{{- partial "svg.html" (dict "context" . "name" "content-link") }}</a>${3}` | safeHTML }}
+				{{ .Content | safeHTML }}
 			</div>
 			{{- if .Site.Params.relatedPosts }}
 			{{- partial "related-posts.html" . -}}
@@ -41,7 +41,7 @@
 			<div class="post-description">{{- partial "posts_single_info.html" . -}}</div>
 			<hr class="post-end">
 			<div class="content">
-				{{ .Content | replaceRE "(<h[1-6] id=\"([^\"]+)\".+)(</h[1-6]+>)" `${1}<a href="#${2}" class="anchor" aria-hidden="true">{{- partial "svg.html" (dict "context" . "name" "content-link") }}</a>${3}` | safeHTML }}
+				 {{ .Content | safeHTML }}
 			</div>
 			{{ partial "brainMade.html" . }}
 			{{- if .Site.Params.relatedPosts }}

@@ -9,9 +9,6 @@
 {{ end }}
 @import "scrolltotop.scss";
 @import "socialshare.scss";
-{{- if (fileExists "assets/scss/userstyles.scss") }}
-@import "userstyles.scss";
-{{ end -}}
 
 // Default Accent Color (accentColor) taken from hugo.toml
 // If accentColor is not present, it will fallback to declarations in _colors.scss
@@ -1070,4 +1067,7 @@ a.footnote-ref {
     from, to { border-color: transparent }
     50% { border-color: $typewriter}
   }
+{{ end -}}
+{{- if (fileExists "assets/scss/userstyles.scss") }}
+@import "userstyles.scss";
 {{ end -}}
