@@ -68,18 +68,22 @@ custom_css = ["custom_css/foo.css","custom_css/bar.css"]
 custom_js = ["custom_js/custom-about.js"]
 ```
 
-The files itself will reside in `assets` directory. Refer to [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging) to have a feel on how [this](https://github.com/1bl4z3r/hermit-V2/blob/staging/content/about-hugo.md) is implemented.
+The files itself will reside in `assets` directory. Namely:
+- `/assets/custom_css/<file_name>.css` for CSS files
+- `/assets/custom_js/<file_name>.js` for JS files
 
-### Custom styles
-
-If, for some reason, you want to apply style for the whole theme, which should be seperate from core theme styles, you can add _userstyles.scss_ in `assets/scss/`. If the file exists, it will be imported during build process.
+Refer to [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging) to have a feel on how [this](https://github.com/1bl4z3r/hermit-V2/blob/staging/content/about-hugo.md) is implemented.
 
 ### Customize theme
 
 This theme allows to be customized. To customize, copy the respective scss file from the theme to site's `assets/scss/` and edit them to your liking.
 
-* To customize theme, Scroll to Top button and Admonition colors, copy [__colors.scss_](https://github.com/1bl4z3r/hermit-V2/blob/staging/assets/scss/_colors.scss)
+* To customize theme colours, copy [__colors.scss_](https://github.com/1bl4z3r/hermit-V2/blob/staging/assets/scss/_colors.scss)
 * To customize theme fonts, copy [__fonts.scss_](https://github.com/1bl4z3r/hermit-V2/blob/staging/assets/scss/_fonts.scss)
+* To customize code block colours, copy [__syntax.scss_](https://github.com/1bl4z3r/hermit-V2/blob/staging/assets/scss/_syntax.scss)
+* To change CSS effects limited to single page or few pages, add following to your page FrontMatter
+`custom_css = ["custom_css/foo.css","custom_css/bar.css"]`, and add the relevant SCSS files in `assets/custom_css` directory. You may find additional help in [Custom CSS and JS](#custom-css-and-js).
+* To change css styling sitewide, add `userstyles.scss` and modify Stylesheets to your liking. This styles are applied to very end of stylesheet, superseding in-built ones.
 
 ### Extend functionality
 
@@ -127,7 +131,7 @@ The following icons are supported, please make sure the `name` field is exactly 
 | `dreamstime`      | `dribbble`   | `behance`      | `123rf`         | `paypal`     |
 | `twitch`          | `qq`         | `mastodon`     | `discord`       | `matrix`     |
 | `etsy`            | `tiktok`     | `imgur`        | `bluesky`       | `xmpp`       |
-| `medium`          | `medium old` | `pixelfed`     | `ko-fi`         |              |
+| `medium`          | `medium old` | `pixelfed`     | `ko-fi`         | `threads`    |
 
 
 If that's not enough, you can see [Extend functionality](#extend-functionality) section.
@@ -136,15 +140,6 @@ If that's not enough, you can see [Extend functionality](#extend-functionality) 
 
 * Keep your regular pages in the `content` folder. To create a new page, run `hugo new page-title.md`
 * Keep your blog posts in the `content/posts` folder. To create a new post, run `hugo new posts/post-title.md`
-
-### Customize CSS
-
-1. **Change predefined colors/effects** - If you'd like to customize theme color or fonts, you can simply override `assets/scss/_predefined.scss`, by simply copy it to site's root (keep the same relative path) then edit those variables.
-2. **Change CSS effects limited to single page or few pages** - Add following to your page FrontMatter
-`custom_css = ["custom_css/foo.css","custom_css/bar.css"]`, and add the relevant SCSS files in `assets` directory. You may find additional help in [Custom CSS and JS](#custom-css-and-js).
-3. **Change css styling sitewide** - If you are unhappy with how the theme looks and feels and want to change some (or all) of it to make it truly your own, you can do so by adding `assets/scss/userstyles.scss` to your site's root and modify Stylesheets to your liking.
-
-You'll need **Hugo extended version**, which has the ability to rebuild SCSS. You don't have to use extended version in production, but in this case it's necessary to make sure the `resources` folder is committed and "up to date" (by running `hugo` or `hugo server` locally using the extended version). But anyway, always use the extended version if you can.
 
 ### LaTeX in Markdown
 
