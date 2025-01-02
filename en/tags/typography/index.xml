@@ -99,31 +99,29 @@
  &lt;/div>
  &lt;div class="admonition-content">A &lt;strong>bug&lt;/strong> banner&lt;/div>
  &lt;/aside>
-&lt;p>The &lt;code>admonition&lt;/code> shortcode has the following named parameters:&lt;/p></description></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>&lt;h1 id="latex-support-for-hermit-v2">\(LaTeX\) support for hermit-V2&lt;/h1>
-&lt;h2 id="configuration">Configuration&lt;/h2>
-&lt;p>Put the following in &lt;code>hugo.toml&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#a6e22e">markup&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#a6e22e">markup&lt;/span>.&lt;span style="color:#a6e22e">goldmark&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#a6e22e">markup&lt;/span>.&lt;span style="color:#a6e22e">goldmark&lt;/span>.&lt;span style="color:#a6e22e">extensions&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#a6e22e">markup&lt;/span>.&lt;span style="color:#a6e22e">goldmark&lt;/span>.&lt;span style="color:#a6e22e">extensions&lt;/span>.&lt;span style="color:#a6e22e">passthrough&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">enable&lt;/span> = &lt;span style="color:#66d9ef">true&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#a6e22e">markup&lt;/span>.&lt;span style="color:#a6e22e">goldmark&lt;/span>.&lt;span style="color:#a6e22e">extensions&lt;/span>.&lt;span style="color:#a6e22e">passthrough&lt;/span>.&lt;span style="color:#a6e22e">delimiters&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">block&lt;/span> = [[&lt;span style="color:#e6db74">&amp;#39;\[&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;\]&amp;#39;&lt;/span>], [&lt;span style="color:#e6db74">&amp;#39;$$&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;$$&amp;#39;&lt;/span>]]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">inline&lt;/span> = [[&lt;span style="color:#e6db74">&amp;#39;\(&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;\)&amp;#39;&lt;/span>]]&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
-&lt;p>Mathjax support is implemented via partials. Please find partial in &lt;code>/layouts/partials/mathjax.html&lt;/code>&lt;/p></description></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Sat, 22 Jul 2023 14:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>
-&lt;p>Footnote:&lt;/p></description></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</guid><description>&lt;h2 id="this-article-explains-how-to-use-scroll-up">This article explains how to use Scroll Up&lt;/h2>
+&lt;p>The &lt;code>admonition&lt;/code> shortcode has the following named parameters:&lt;/p></description></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>&lt;h1 id="latex-support-for-hermit-v2">
+\(LaTeX\) support for hermit-V2
+&lt;a href="#latex-support-for-hermit-v2" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+ stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+ &lt;/svg>&lt;/a>
+&lt;/h1>
+&lt;h2 id="configuration">
+Configuration
+&lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+ stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+ &lt;/svg>&lt;/a>
+&lt;/h2>
+&lt;p>Put the following in &lt;code>hugo.toml&lt;/code>&lt;/p></description></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Sat, 22 Jul 2023 14:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>
+&lt;p>Footnote:&lt;/p></description></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</guid><description>&lt;h2 id="this-article-explains-how-to-use-scroll-up">
+This article explains how to use Scroll Up
+&lt;a href="#this-article-explains-how-to-use-scroll-up" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+ stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+ &lt;/svg>&lt;/a>
+&lt;/h2>
 &lt;p>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.&lt;/p></description></item></channel></rss>

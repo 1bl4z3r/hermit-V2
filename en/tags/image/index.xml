@@ -12,7 +12,14 @@
 &lt;li>1-to-1 feature set compatiblity if you are using figure shortcode or &lt;code>![]()&lt;/code>.&lt;/li>
 &lt;li>If you want to add image from &lt;code>static&lt;/code> folder, you can, &lt;strong>but be informed that these images cannot be converted or optimized&lt;/strong>.&lt;/li>
 &lt;/ul>
-&lt;h3 id="supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more">Supported attributes to figure shortcode (Create an Issue if you want to add more)&lt;/h3>
+&lt;h3 id="supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more">
+Supported attributes to figure shortcode (Create an Issue if you want to add more)
+&lt;a href="#supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+ stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+ &lt;/svg>&lt;/a>
+&lt;/h3>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;code>src&lt;/code> : Source of the resource. It can be one of three&lt;/p></description></item><item><title>Post With Featured Image</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</link><pubDate>Mon, 01 Oct 2018 16:15:09 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</guid><description>&lt;p>Just define the image URL in the content’s front matter, the featured image will be displayed as the background.&lt;/p>
