@@ -1,4 +1,7 @@
-@import "predefined.scss";
+@import "colors";
+@import "fonts";
+@import "admonition";
+@import "mixins";
 @import "normalize.scss";
 @import "syntax.scss";
 {{ if ne false .Site.Params.usesAnimation }}
@@ -6,36 +9,68 @@
 {{ end }}
 @import "scrolltotop.scss";
 @import "socialshare.scss";
-{{ if (fileExists "assets/scss/userstyles.scss") }}
+{{- if (fileExists "assets/scss/userstyles.scss") }}
 @import "userstyles.scss";
-{{ end }}
+{{ end -}}
+
+// Default Accent Color (accentColor) taken from hugo.toml
+// If accentColor is not present, it will fallback to declarations in _colors.scss
+{{- with .Site.Params.accentColor }}
+$aTag-mixin-a-box-shadow: {{.}};
+$aTag-mixin-a-hover-box-shadow: {{.}};
+$content-anchor-hover: {{.}};
+$footnote-ref-hover-background: {{.}};
+$post-description-a-hover-border-bottom: {{.}};
+$tableofcontents-a-hover-border-bottom: {{.}};
+$scrolltotop-arrow: {{.}};
+$typewriter: {{.}};
+$marked-background: {{.}};
+$inserted-text-underline: {{.}};
+{{ end -}}
+
+// Scroll to Top color defination
+.scroll-up {
+  .scroll {
+    #st-ring {
+      stroke: $scrolltotop-ring;
+    }
+
+    #st-circle {
+      fill: $scrolltotop-circle;
+    }
+
+    #st-arrow {
+      fill: $scrolltotop-arrow;
+    }
+  }
+}
 
 /* text selection */
 ::-moz-selection {
-  background: $highlight-grey;
+  background: $text-select;
 }
 
 ::selection {
-  background: $highlight-grey;
+  background: $text-select;
 }
 
 /* Webkit Scrollbar Customize */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
-  background: $midnightblue;
+  background: $pagescrollbar-background;
 }
 
 ::-webkit-scrollbar-thumb {
   background: $pagescrollbar-thumb;
 
   &:hover {
-    background: $text;
+    background: $pagescrollbar-thumb-hover;
   }
 }
 
 html {
-  background: $light-grey;
+  background: $html-background;
   line-height: 1.6;
   letter-spacing: .06em;
   scroll-behavior: smooth;
@@ -45,8 +80,15 @@ body,
 button,
 input,
 select,
-textarea {
+textarea,
+a {
   color: $text;
+}
+body,
+button,
+input,
+select,
+textarea {
   font-family: $fonts;
 }
 
@@ -55,6 +97,15 @@ code,
 pre tt {
   font-family: $code-fonts;
 }
+mark {
+  color: $marked-text;
+  background-color: $marked-background;
+}
+ins {
+  text-decoration: underline;
+  -webkit-text-decoration-color: $inserted-text-underline;
+  text-decoration-color: $inserted-text-underline;
+}
 
 pre {
   padding: .7em 1.1em;
@@ -62,24 +113,24 @@ pre {
   line-height: 1.5;
   letter-spacing: normal;
   white-space: pre;
-  color: #eee;
-  background: $midnightblue;
+  color: $pre-code;
+  background: $pre-background;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   &.mermaid {
-    background: $codebackground;
+    background: $mermaid-background;
   }
   code {
     padding: 0;
     margin: 0;
-    color: #eee;
-    background: transparent;
+    color: $pre-code;
+    background: $pre-code-background;
   }
 }
 
 code {
   color: hsl(0, 1%, 67%);
-  background: $dark-grey;
+  background: $code-background;
   border-radius: 3px;
   padding: 0 3px;
   margin: 0 4px;
@@ -104,7 +155,6 @@ blockquote {
 }
 
 a {
-  color: $text;
   text-decoration: none;
   border: none;
   transition-property: color;
@@ -112,8 +162,8 @@ a {
   transition-timing-function: ease-out;
 
   &:hover {
-    color: #fff;
-    text-shadow: 0 0 1px #fff;
+    color: $a-hover;
+    text-shadow: 0 0 1px $a-hover;
   }
 }
 
@@ -135,7 +185,7 @@ table {
 
   th,
   td {
-    padding: 0.5rem;
+    padding: 1.5%;
     border: 1px solid;
   }
 
@@ -194,15 +244,15 @@ table {
     padding: 1px;
     font-size: 0.7em;
     line-height: 1.8;
-    color: #fff;
-    background-color: #777;
+    color: $highlight-copy-btn;
+    background-color: $highlight-copy-btn-background;
     opacity: 0.6;
     min-width: 55px;
     text-align: center;
 }
 
 .highlight-copy-btn:hover {
-    background-color: #666;
+    background-color: $highlight-copy-btn-hover;
 }
 
 // Accessibility
@@ -221,12 +271,12 @@ table {
 }
 
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
+	background-color: $screen-reader-text-background;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	clip-path: none;
-	color: #21759b;
+	color: $screen-reader-text;
 	display: block;
 	font-size: 0.875rem;
 	font-weight: bold;
@@ -249,7 +299,7 @@ table {
   width: 100%;
   box-sizing: border-box;
   box-shadow: -1px -2px 3px rgba(0, 0, 0, 0.45);
-  background-color: $dark-grey;
+  background-color: $site-header-background;
   animation-duration: .3s;
   animation-fill-mode: forwards;
 }
@@ -274,7 +324,7 @@ table {
 
     .has-children {
       padding-right: .5em;
-      border-right: 2px solid $highlight-grey;
+      border-right: 2px solid $site-nav-children-border-right;
     }
 
     .sub-menu > a{
@@ -323,7 +373,7 @@ table {
   z-index: 1;
   box-sizing: border-box;
   box-shadow: -1px -2px 3px 0px rgba(0, 0, 0, 0.45);
-  background-color: $dark-grey;
+  background-color: $mobile-menu-background;
 
   ul {
     list-style: none;
@@ -390,7 +440,7 @@ p.img-404 {
 
     a {
       display: inline-block;
-      border: 2px solid $text;
+      border: 2px solid $btn-404-a-border;
       border-radius: 5px;
       padding: 5px;
       transition-property: color, border-color;
@@ -400,7 +450,7 @@ p.img-404 {
       }
 
       &:hover {
-        border-color: #fff;
+        border-color: $btn-404-a-hover;
       }
 
       svg {
@@ -489,7 +539,7 @@ p.img-404 {
   }
 
   .post-item {
-    border-bottom: 1px $highlight-grey dashed;
+    border-bottom: 1px $post-item-border-bottom dashed;
 
     a {
       display: flex;
@@ -515,7 +565,7 @@ p.img-404 {
   display: flex;
   margin-bottom: 1.9em;
   line-height: normal;
-  border-bottom: 2px $highlight-grey solid;
+  border-bottom: 2px $pinned-posts-group-border-bottom solid;
 
   .pinned-posts-list {
     flex-grow: 1;
@@ -562,7 +612,7 @@ p.img-404 {
   margin-top: 1.2em;
   line-height: normal;
 
-  .post-meta {
+  .post-date {
     font-size: .9em;
     letter-spacing: normal;
     @include dimmed;
@@ -641,7 +691,7 @@ hr.post-end {
     opacity: .8;
     &:hover {
       background: none;
-      color: $theme;
+      color: $content-anchor-hover;
       opacity: 1;
     }
 
@@ -694,16 +744,16 @@ a.footnote-ref {
   text-decoration: none;
   padding: 2px;
   border-radius: 2px;
-  background-color: $midnightblue;
+  background-color: $footnote-ref-background;
 
   &:hover{
     box-shadow: none;
-    background-color: $theme;
+    background-color: $footnote-ref-hover-background;
     transition-property: background-color;
   }
 }
 
-.post-info {
+.post-description {
   font-size: .8rem;
   line-height: normal;
   @include dimmed;
@@ -713,7 +763,7 @@ a.footnote-ref {
   }
 
   a:hover {
-    border-bottom: 1px solid $theme;
+    border-bottom: 1px solid $post-description-a-hover-border-bottom;
   }
 
   svg {
@@ -741,6 +791,7 @@ a.footnote-ref {
   left: 50%;
   top: 0;
   display: none;
+  background-color: $tableofcontents-background;
 }
 
 .toc-title {
@@ -768,17 +819,17 @@ a.footnote-ref {
 
   /* Track */
   &>::-webkit-scrollbar-track {
-    background: darken($pagescrollbar-thumb, 10%);
+    background: $tableofcontents-scrollbar-track;
   }
 
   /* Handle */
   &>::-webkit-scrollbar-thumb {
-    background: $midnightblue ;
+    background: $tableofcontents-scrollbar-thumb ;
   }
 
   /* Handle on hover */
   &>::-webkit-scrollbar-thumb:hover {
-    background: lighten($midnightblue, 10%);
+    background: $tableofcontents-scrollbar-thumb-hover;
   }
 
   &>ul {
@@ -792,10 +843,9 @@ a.footnote-ref {
   }
 
   a:hover {
-    border-bottom: $theme 1px solid;
+    border-bottom: $tableofcontents-a-hover-border-bottom 1px solid;
   }
 }
-
 
 .post-nav {
   display: flex;
@@ -999,7 +1049,7 @@ a.footnote-ref {
 }
 
 // If homeSubtitlePrinter is true
-{{ if .Site.Params.homeSubtitlePrinter }}
+{{- if .Site.Params.homeSubtitlePrinter }}
   #home-subtitle{
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .5em solid $typewriter; /* The typwriter cursor */
@@ -1020,4 +1070,4 @@ a.footnote-ref {
     from, to { border-color: transparent }
     50% { border-color: $typewriter}
   }
-{{ end }}
+{{ end -}}

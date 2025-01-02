@@ -47,7 +47,8 @@ Lastmod : 2024-03-12T20:30:30+05:30
 	- `dateform` / `dateformShort` / `dateformNum` / `dateformNumTime` : Used to render properly formatted date & time. Change this if you know what you are doing.
 	- `description` : Put in default description for meta description.
 	- `images` : Used to display image for site, when sharing the page as link to social media (like Twitter)
-	- `themeColor`: Populates theme-color meta. Make sure to keep `$theme` in `_colors.scss` and this same for better color consistency.
+	- `themeColor`: Populates theme color meta and various elements of the site. If not present, `#494f5c` will be used.
+	- `accentColor`: Populates accent color for various elements of the site. If not present, it will use declarations in **/themes/hermit-V2/assets/scss/_colors.scss**.
 	- `homeSubtitle` : Displays subtitle in Homepage.
 	- `footerCopyright` : Custom copyright for footer.
 	- `bgImg` : Homepage background-image URL.

@@ -88,6 +88,7 @@ expiryDate = ["expiryDate"]
   # description = "CHANGE ME SITE DESCRIPTION"
   # images = [""]
   themeColor = "#494f5c"
+  accentColor = "#018472"
 
   #homeSubtitle = "CHANGE ME HOME SUBTITLE"
   footerCopyright = "CHANGE ME FOOTER COPYRIGHT"

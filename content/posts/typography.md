@@ -286,7 +286,7 @@ Mermaid
 
 [^1]: From : [https://www.markdownguide.org/extended-syntax/#footnotes](https://www.markdownguide.org/extended-syntax/#footnotes)
 [^2]: To enable emoji support add `enableEmoji = true` in hugo.toml. [Hugo Docs](https://gohugo.io/quick-reference/emojis/)
-[^3]: Hugo's default renderer (Goldmark) cannot render HTML tags by default. To use HTML tags, use `[markup.goldmark.renderer] unsafe = true` in `hugo.toml`. Find it in [Staging Branch](https://github.com/1bl4z3r/hermit-V2/blob/5f0abfda179c86f39effbc36b291a53632c4caa8/hugo.toml#L74-L75)
+[^3]: Hugo's default renderer (Goldmark) cannot render HTML tags by default. 
 [^4]: LaTeX is supported by Mathjax, explained [in this article]({{< relref "mathjax-support.md" >}})
 [^5]: [the-figure-shortcode](https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/)
 [^6]: Customize Table of Contents. [Hugo Docs](https://gohugo.io/methods/page/tableofcontents/)

@@ -1,18 +1,4 @@
 .scroll-up {
-    .scroll {
-        #st-ring {
-            stroke: $stt-stroke;
-        }
-
-        #st-circle {
-            fill: $stt-circle;
-        }
-
-        #st-arrow {
-            fill: $stt-arrow;
-        }
-    }
-
     position: fixed;
     bottom: 10%;
     right: 2%;

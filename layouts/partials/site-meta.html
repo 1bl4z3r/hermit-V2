@@ -24,7 +24,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="{{"favicon-16x16.png" | relURL}}">
 <link rel="manifest" href="{{"site.webmanifest" | relURL}}">
 <meta name="msapplication-TileImage" content="{{"mstile-144x144.png" | relURL}}">
-{{ with .Site.Params.themeColor -}}
+{{ with $themeColor := .Site.Params.themeColor | default "#494f5c" -}}
 <meta name="theme-color" content="{{.}}">
 <meta name="msapplication-TileColor" content="{{.}}">
 <link rel="mask-icon" href="{{"safari-pinned-tab.svg" | relURL}}" color="{{.}}">
