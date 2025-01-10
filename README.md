@@ -161,6 +161,8 @@ __Sites using hermit-V2__ is a user contributed list of all the blogs/pages that
 
 You can find currently listed sites from [Sites-using-hermit‐V2 (https://github.com/1bl4z3r/hermit-V2/wiki#sites-using-hermit-v2)](https://github.com/1bl4z3r/hermit-V2/wiki#sites-using-hermit-v2) and you can add your site by raising an [issue](https://github.com/1bl4z3r/hermit-V2/issues/new?assignees=1bl4z3r&labels=hermit-V2+sites&projects=&template=add-remove-sites-using-hermit-v2.md&title=Add+to+Sites+using+hermit-V2).
 
+## To-Do
+- [ ] Add support for [Speculation Rules API](https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API#browser_compatibility) when it is stable
 ## Share your thoughts
 Share your thoughts on how to make this theme more suited for you. It could be a general feedback or something that couldn't be classified as an Issue. You can share it in Discussions : [https://github.com/1bl4z3r/hermit-V2/discussions](https://github.com/1bl4z3r/hermit-V2/discussions)
 

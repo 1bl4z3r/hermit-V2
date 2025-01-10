@@ -3,15 +3,15 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 enableRobotsTXT = true
 
+enableEmoji = true
+
 # [outputs]
-#   home = ['html', 'rss']
-#   page = ['html']
+#   home = ['html']
+#   page = ['html', 'rss']
 #   rss = ['rss']
 #   section = ['html', 'rss']
 #   taxonomy = ['html', 'rss']
 #   term = ['html', 'rss']
-
-enableEmoji = true
 
 [languages]
   [languages.en]

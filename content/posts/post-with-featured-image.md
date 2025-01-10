@@ -3,7 +3,9 @@ title: "Post With Featured Image"
 date: 2018-10-01T16:15:09+08:00
 draft: false
 images: 
-  - https://picsum.photos/1024/768/?random
+  - https://picsum.photos/seed/picsum/1024/768
+  - images/928-600x400.jpg
+featuredImg: "images/928-600x400.jpg"
 tags: 
   - Demo
   - Image
