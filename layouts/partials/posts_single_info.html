@@ -1,16 +1,18 @@
 {{- with .Params.description }}<p>{{.}}</p>{{- end }}
-{{- if and .Params.author .Params.authorLink}}{{ $relreflink := relref . .Params.authorLink }}<p>{{ partial "svg.html" (dict "context" . "name" "author") }}<a href="{{ $relreflink }}" target="_blank">{{ .Params.author }}</a></p>
-{{- else if and .Params.author .Site.Params.author.about }}{{ $relreflink := relref . .Site.Params.author.about }}<p>{{ partial "svg.html" (dict "context" . "name" "author") }}<a href="{{ $relreflink }}" target="_blank">{{ .Params.author }}</a></p>
-{{- else if and .Site.Params.author.about .Site.Params.author.name }}{{ $relreflink := relref . .Site.Params.author.about }}<p>{{ partial "svg.html" (dict "context" . "name" "author") }}<a href="{{ $relreflink }}" target="_blank">{{ .Site.Params.author.name }}</a></p>
-{{- else }}<p>{{ partial "svg.html" (dict "context" . "name" "author") }}{{ .Site.Params.author.name }}</p>
-{{- end }}
+{{- with $author := default .Site.Params.author.name .Params.author -}}
+{{- with $authorLink := default $.Site.Params.author.about $.Page.Params.authorLink -}}
+<p>{{ partial "svg.html" (dict "context" . "name" "author") }}<a href="{{ ref $.Page $authorLink }}" target="_blank">{{ $author }}</a></p>
+{{- else -}}
+<p>{{ partial "svg.html" (dict "context" . "name" "author") }}{{ $author }}</p>
+{{- end -}}
+{{- end -}}
 {{- with .Params.tags }}
 <p>{{- partial "svg.html" (dict "context" . "name" "posts_single_tags") -}}{{- range . -}}<span class="tag"><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{.}}</a></span>{{- end }}</p>
 {{- end }}
 {{- with .Params.categories }}
 <p>{{- partial "svg.html" (dict "context" . "name" "posts_single_categories") -}}{{- range . -}}<span class="category"><a href="{{ "categories/" | absLangURL }}{{ . | urlize }}">{{.}}</a></span>{{- end }}</p>
 {{- end }}
-<p>{{- partial "svg.html" (dict "context" . "name" "posts_single_wordcount") }}{{ .WordCount }} {{ if fileExists "i18n" -}} {{ i18n "wordCount" . -}} {{- else -}} Words {{- end -}} {{- partial "readTime.html" . -}}</p>
+<p>{{- partial "svg.html" (dict "context" . "name" "posts_single_wordcount") }}{{- .WordCount }} {{- if fileExists "i18n" }} {{ i18n "wordCount" . -}} {{- else -}} Words {{- end }} {{ partial "readTime.html" . -}}</p>
 <p>{{- partial "svg.html" (dict "context" . "name" "posts_single_date") }}{{ dateFormat .Site.Params.dateformNumTime .Date.Local -}}
     {{- if and (not (eq .Page.Params.ShowLastmod nil)) (.Page.Params.ShowLastmod) -}}
     {{- if and .GitInfo .Site.Params.gitUrl -}}

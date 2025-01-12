@@ -13,12 +13,11 @@
 
 		{{- if and (ge (len (where .Site.Pages ".Params.pin" true)) 1) (.Site.Params.pinned) (not (in .Page.RelPermalink (or "tags" "categories"))) -}}
 		<h2>{{- .Site.Params.pinned -}}</h2>
-		{{$pin_name := .Site.Params.pinnedSVGname | default "pin" }}
 		<div class="pinned-posts-group">
 			<ul class="pinned-posts-list">
 				{{- range where .Site.Pages ".Params.pin" true }}
 				<li class="pinned-post-item">
-					{{- partial "svg.html" (dict "context" . "name" $pin_name) }}
+					{{- partial "svg.html" (dict "context" . "name" (.Site.Params.pinnedSVGname | default "pin")) }}
 					<a href="{{.Permalink}}"><span class="post-title">{{.Title}}</span></a>
 				</li>
 				{{- end }}

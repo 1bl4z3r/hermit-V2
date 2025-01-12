@@ -1,6 +1,6 @@
 <footer id="site-footer" class="section-inner thin {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster {{- end -}}">
 	<p>
-		&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author.name }}</a>
+		&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
 		&#183; {{ .Site.Params.footerCopyright | safeHTML }}
 		{{- if not .Site.Params.footerHideThemeName -}}
 			&#183; Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>

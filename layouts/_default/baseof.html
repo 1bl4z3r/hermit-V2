@@ -1,13 +1,10 @@
-{{ $rootCtx := . }}
-
+{{- $rootCtx := . -}}
 <!DOCTYPE html>
 <html lang="{{.Site.LanguageCode}}">
 <head>
 {{- if .Site.Params.googleTagManager -}}{{- partial "googleTagManager_head.html" . -}}{{- end -}}
 {{- partial "analytics.html" . -}}
 {{- partial "site-meta.html" . -}}
-{{ $author := (.Params.author | default .Site.Params.author.name) -}}<meta name="author" content="{{ $author }}">
-{{- with .Page.Params.description | default .Site.Params.description -}}<meta name="description" content="{{.}}">{{- end -}}
 {{- partial "structure-extra.html" . -}}
 {{- partial "webschema.html" . -}}
 <title>{{.Title}}</title>
