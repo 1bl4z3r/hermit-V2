@@ -1,0 +1,1 @@
+if(!CSS.supports("animation-timeline: scroll()")){const t=document.querySelector(".scroll-up"),e=document.documentElement;function handleScroll(){e.scrollTop/(e.scrollHeight-e.clientHeight)>.4?t.classList.add("show"):t.classList.remove("show")}document.addEventListener("scroll",handleScroll)}

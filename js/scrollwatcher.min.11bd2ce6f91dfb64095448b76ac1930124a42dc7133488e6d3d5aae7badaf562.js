@@ -1,1 +1,0 @@
-const scroll=document.querySelector(".scroll-up"),rootElement=document.documentElement;function handleScroll(){rootElement.scrollTop/(rootElement.scrollHeight-rootElement.clientHeight)>.4?(scroll.classList.remove("hide"),scroll.classList.add("show")):(scroll.classList.add("hide"),scroll.classList.remove("show"))}document.addEventListener("scroll",handleScroll)

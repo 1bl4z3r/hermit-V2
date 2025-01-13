@@ -145,11 +145,6 @@
 <li><code>robots</code> : Set to <strong>false</strong> to add page Disallow entry in robots.txt. Check <a href="https://1bl4z3r.github.io/hermit-V2/robots.txt">robots.txt</a></li>
 <li><code>keywords</code> : Specify keywords for your article. It will be used to populate<a href="https://developers.google.com/search/docs/appearance/site-names"> Structured Data Site names schema</a></li>
 </ul>
-<h2 id="special-caveats">Special Caveats<a href="#special-caveats" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
 <h3 id="last-modified-date">Last Modified Date<a href="#last-modified-date" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -166,16 +161,6 @@
 </li>
 </ul>
 <p>If <code>ShowLastmod</code> is not provided. User response defaults to false. It is equivalent to providing <code>ShowLastmod:false</code>.</p>
-<h3 id="latex">LaTeX<a href="#latex" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<p>LaTeX is implemented through Mathjax.</p>
-<ul>
-<li>If you are using this theme as a proper  mathematical blog, enable <code>global_mathjax</code> to true in hugo.toml. It will enable Mathjax support site wide.</li>
-<li>Since Mathjax is a heavy script (&gt;1 MB), it is not ideal to run Mathjax site wide, especially if you are in the above cohort. However, if you want to use mathematical formulas, you can set <code>mathjax : true</code> in Page frontmatter. It will enable mathjax for only that page only.</li>
-</ul>
 <h3 id="enable-scrolltotop-button">Enable ScrolltoTop button<a href="#enable-scrolltotop-button" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
