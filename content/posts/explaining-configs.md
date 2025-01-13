@@ -109,8 +109,6 @@ Lastmod : 2025-03-12T20:30:30+05:30
 - `robots` : Set to **false** to add page Disallow entry in robots.txt. Check [robots.txt](https://1bl4z3r.github.io/hermit-V2/robots.txt)
 - `keywords` : Specify keywords for your article. It will be used to populate[ Structured Data Site names schema](https://developers.google.com/search/docs/appearance/site-names)
 
-## Special Caveats
-
 ### Last Modified Date
 
 If `ShowLastmod:true` :
@@ -120,12 +118,6 @@ If `ShowLastmod:true` :
 	- If `Lastmod` is provided or `Lastmod` is different from `Date`, value of `Lastmod` will be displayed in `[...]` after Date.
 
 If `ShowLastmod` is not provided. User response defaults to false. It is equivalent to providing `ShowLastmod:false`.
-
-### LaTeX
-
-LaTeX is implemented through Mathjax. 
-  - If you are using this theme as a proper  mathematical blog, enable `global_mathjax` to true in hugo.toml. It will enable Mathjax support site wide.
-  - Since Mathjax is a heavy script (>1 MB), it is not ideal to run Mathjax site wide, especially if you are in the above cohort. However, if you want to use mathematical formulas, you can set `mathjax : true` in Page frontmatter. It will enable mathjax for only that page only.
 
 ### Enable ScrolltoTop button
 
