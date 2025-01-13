@@ -9,6 +9,7 @@ tags:
   - Demo
   - Typography
 pin: true
+ShowLastmod : false
 Lastmod : 2023-08-15T15:36:33+05:30
 mathjax : true
 ---
@@ -283,7 +284,6 @@ Mermaid
     N --> O["End of Newspaper Process"]
     O -- If All Newspapers Processed --> P["Cron Job Complete"]
 ```
-
 [^1]: From : [https://www.markdownguide.org/extended-syntax/#footnotes](https://www.markdownguide.org/extended-syntax/#footnotes)
 [^2]: To enable emoji support add `enableEmoji = true` in hugo.toml. [Hugo Docs](https://gohugo.io/quick-reference/emojis/)
 [^3]: Hugo's default renderer (Goldmark) cannot render HTML tags by default. 

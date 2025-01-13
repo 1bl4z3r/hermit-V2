@@ -13,14 +13,14 @@
 <p>{{- partial "svg.html" (dict "context" . "name" "posts_single_categories") -}}{{- range . -}}<span class="category"><a href="{{ "categories/" | absLangURL }}{{ . | urlize }}">{{.}}</a></span>{{- end }}</p>
 {{- end }}
 <p>{{- partial "svg.html" (dict "context" . "name" "posts_single_wordcount") }}{{- .WordCount }} {{- if fileExists "i18n" }} {{ i18n "wordCount" . -}} {{- else -}} Words {{- end }} {{ partial "readTime.html" . -}}</p>
-<p>{{- partial "svg.html" (dict "context" . "name" "posts_single_date") }}{{ dateFormat .Site.Params.dateformNumTime .Date.Local -}}
-    {{- if and (not (eq .Page.Params.ShowLastmod nil)) (.Page.Params.ShowLastmod) -}}
-    {{- if and .GitInfo .Site.Params.gitUrl -}}
-        [{{- partial "svg.html" (dict "context" . "name" "posts_single_git_commit") -}}<a href="{{ .Site.Params.gitUrl -}}{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{ .GitInfo.AbbreviatedHash -}}</a> @ {{ dateFormat .Site.Params.dateformNum .GitInfo.AuthorDate.Local -}}]
-    {{- else if not (eq .Lastmod .Date ) -}}
-        &nbsp;[{{.Site.Params.initialPublish | default "Initial Published on : "}} {{ dateFormat .Site.Params.dateformNumTime .Lastmod.Local -}}]
-    {{- else -}}
-        {{ errorf "Lastmod is not found in Page Frontmatter or Lastmod is same as Date" }}
-    {{- end -}}
-    {{- end -}}
+<p>{{- partial "svg.html" (dict "context" . "name" "posts_single_date") }}{{ dateFormat .Site.Params.dateformNumTime .Date.Local }}
+{{ if .Page.Params.ShowLastmod -}}
+{{- if and .GitInfo .Site.Params.gitUrl -}}
+[{{- partial "svg.html" (dict "context" . "name" "posts_single_git_commit") -}}<a href="{{ .Site.Params.gitUrl -}}{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{ .GitInfo.AbbreviatedHash -}}</a> @ {{ dateFormat .Site.Params.dateformNum .GitInfo.AuthorDate.Local -}}]
+{{- else if not (eq .Lastmod .Date ) -}}
+[{{ .Site.Params.initialPublish | default "Initially Published on : " }} {{ dateFormat .Site.Params.dateformNumTime .Lastmod.Local -}}]
+{{- else -}}
+{{ errorf "Lastmod is not found in Page Frontmatter or Lastmod is same as Date in %s" .Permalink }}
+{{- end -}}
+{{- end -}}
 </p>
