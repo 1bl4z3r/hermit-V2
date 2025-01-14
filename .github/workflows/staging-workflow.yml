@@ -33,7 +33,7 @@ jobs:
           git status
           git diff-index --quiet HEAD ||  git commit --verbose -asm "${{ github.event.head_commit.message }}"
           git fetch origin
-          git rebase --strategy-option=theirs origin/${{ env.TARGET_BRANCH }}
+          git rebase --continue #git rebase --strategy-option=theirs origin/${{ env.TARGET_BRANCH }}
           git push origin ${{ env.TARGET_BRANCH }} --verbose --force
   analyze:
     name: Analyze (${{ matrix.language }})
