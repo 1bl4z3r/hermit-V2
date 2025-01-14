@@ -21,21 +21,11 @@ jobs:
           submodules: true
           fetch-depth: 0
       - name: Push to main
+        uses: planetoftheweb/copy-to-branches@v1
         env:
-          CI_COMMIT_AUTHOR: 1bl4z3r
-          CI_COMMIT_EMAIL: 34515568+1bl4z3r@users.noreply.github.com
-          SRC_FOLDER_PATH: '.'
-          TARGET_BRANCH: 'main'
-        run: |
-          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-          git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
-          git branch --set-upstream-to origin/${{ env.TARGET_BRANCH }}
-          git add archetypes/* assets/* layouts/* images/screenshot.jpg images/tn.jpg LICENSE README.md theme.toml hugo.toml.example
-          git status
-          git commit --verbose -asm "${{ github.event.head_commit.message }}" #git diff-index --quiet HEAD ||  git commit --verbose -asm "${{ github.event.head_commit.message }}"
-          git fetch origin
-          git rebase origin/${{ env.TARGET_BRANCH }} #git rebase --strategy-option=theirs origin/${{ env.TARGET_BRANCH }}
-          git push origin ${{ env.TARGET_BRANCH }} --verbose --force
+          key: staging
+          branches: main
+          files: archetypes/* assets/* layouts/* images/screenshot.jpg images/tn.jpg LICENSE README.md theme.toml hugo.toml.example
   analyze:
     name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
