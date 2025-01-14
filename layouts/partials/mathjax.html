@@ -1,6 +1,0 @@
-{{ if or (.Site.Params.global_mathjax) (.Params.mathjax) }}
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-{{ $mathjaxa := resources.Get "js/mathjax-assistant.js"}}
-{{ $mathjaxscript := slice $mathjaxa | resources.Concat "js/mathjaxs.js" | minify | fingerprint -}}
-<script type="text/javascript" id="MathJax-script" async src="{{ $mathjaxscript.Permalink }}" {{ printf "integrity=%q" $mathjaxscript.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
-{{ end }}
