@@ -20,22 +20,35 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
-      - name: Mark github workspace as safe
-        run: |
-          git config --global --add safe.directory /github/workspace
       - name: Push to main
         env:
           SRC_FOLDER_PATH: '.'
           TARGET_BRANCH: 'main'
         run: |
-          files=$(find $SRC_FOLDER_PATH -type f|grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|screenshot.gif') # get the file list
           git config --global user.name '1bl4z3r'
           git config --global user.email '34515568+1bl4z3r@users.noreply.github.com'
           git fetch                         # fetch branches
           git checkout $TARGET_BRANCH       # checkout to your branch
-          git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
+          
+          # Get the list of files to copy
+          files=$(find $SRC_FOLDER_PATH -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp')
+          
+          # Copy files from the source branch
+          git checkout ${GITHUB_REF##*/} -- $files
+          
+          # Handle deletions
+          # Get the list of files in the target branch
+          target_files=$(git ls-tree -r $TARGET_BRANCH --name-only)
+          
+          # Find deleted files and remove them
+          for file in $target_files; do
+            if [[ ! -f $file ]]; then
+              git rm $file
+            fi
+          done
+          
           git add -A
-          git diff-index --quiet HEAD ||  git commit -asm "${{ github.event.head_commit.message }}"  # commit to the repository (ignore if no modification)
+          git diff-index --quiet HEAD || git commit -asm "${{ github.event.head_commit.message }}"  # commit to the repository (ignore if no modification)
           git push origin $TARGET_BRANCH --force # push to remote branch
   analyze:
     name: Analyze (${{ matrix.language }})
