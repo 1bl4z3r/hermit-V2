@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="{{.Site.LanguageCode}}">
 <head>
-{{- if .Site.Params.googleTagManager -}}{{- partial "googleTagManager_head.html" . -}}{{- end -}}
+{{- partial "google-tag-manager.html" (dict "context" . "name" "head") -}}
 {{- partial "analytics.html" . -}}
 {{- partial "site-meta.html" . -}}
 {{- partial "structure-extra.html" . -}}
@@ -21,7 +21,7 @@
 {{- if templates.Exists "partials/extra-head.html" -}}{{- partial "extra-head.html" . -}}{{- end -}}
 </head>
 <body id="page">
-{{- if .Site.Params.googleTagManager -}}{{- partial "googleTagManager_body.html" . -}}{{- end -}}
+{{- partial "google-tag-manager.html" (dict "context" . "name" "body") -}}
 {{- block "header" . -}}{{ end -}}
 {{- block "main" . -}}{{ end -}}
 {{- block "footer" . -}}{{ end }}
