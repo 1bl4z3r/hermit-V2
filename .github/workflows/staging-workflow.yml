@@ -20,6 +20,9 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
+      - name: Mark github workspace as safe
+        run: |
+          git config --global --add safe.directory /github/workspace
       - name: Push to main
         env:
           SRC_FOLDER_PATH: '.'
