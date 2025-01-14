@@ -33,8 +33,12 @@ jobs:
           # Get the list of files to copy
           files=$(find $SRC_FOLDER_PATH -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp')
           
-          # Copy files from the source branch
-          git checkout ${GITHUB_REF##*/} -- $files
+          # Only checkout files that exist
+          for file in $files; do
+            if [ -f "$file" ]; then
+              git checkout ${GITHUB_REF##*/} -- "$file"
+            fi
+          done
           
           # Handle deletions
           # Get the list of files in the target branch
