@@ -21,20 +21,20 @@ jobs:
           submodules: true
           fetch-depth: 0
       - name: Push to main
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: ${{ github.event.head_commit.message }}
-          branch: main
-          commit_options: '--no-verify --signoff'
-          file_pattern: 'archetypes/* assets/* layouts/* images/screenshot.jpg images/tn.jpg LICENSE README.md theme.toml hugo.toml.example'
-          repository: .
-          status_options: '--untracked-files=no'
-          push_options: '--force'
-          skip_dirty_check: false
-          skip_fetch: false
-          skip_checkout: false
-          disable_globbing: false
-          create_branch: false
+        env:
+          CI_COMMIT_AUTHOR: 1bl4z3r
+          CI_COMMIT_EMAIL: 34515568+1bl4z3r@users.noreply.github.com
+          SRC_FOLDER_PATH: '.'
+          TARGET_BRANCH: 'main'
+        run: |
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
+          git add archetypes/* assets/* layouts/* images/screenshot.jpg images/tn.jpg LICENSE README.md theme.toml hugo.toml.example
+          git status
+          git diff-index --quiet HEAD ||  git commit --verbose -asm "${{ github.event.head_commit.message }}"
+          git fetch origin
+          git rebase --strategy-option=theirs origin/${{ env.TARGET_BRANCH }}
+          git push origin ${{ env.TARGET_BRANCH }} --verbose
   analyze:
     name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
