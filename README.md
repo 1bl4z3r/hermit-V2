@@ -152,6 +152,13 @@ This theme is made specifically with translation in mind. Translations of few la
 1. Create translation tables in the i18n directory, naming each file according to RFC 5646. E.g. `i18n/<2-2 Language Code>.toml`. To find your Language code, visit [https://gist.github.com/msikma/8912e62ed866778ff8cd](https://gist.github.com/msikma/8912e62ed866778ff8cd) to get an idea for the code. See [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging) to see how this is implemented.
 2. Copy [English Translation key](https://github.com/1bl4z3r/hermit-V2/blob/staging/i18n/en.toml) and edit to your language. Edit the section `other = "<In your Language>"`.
 
+### Page specific footers
+You can make page specific footers by creating below partials in `/layouts/partials`
+- For homepage (or landing page), `index-footer.html`
+- For article list pages, `list-footer.html`
+- For single pages (which are not articles), `single-footer.html`
+- For posts/articles pages, `posts-footer.html`
+
 ### Sites using hermit-V2
 
 __Sites using hermit-V2__ is a user contributed list of all the blogs/pages that is using hermit-V2 in some capacity. It could be any component of the theme from landing page or a partial to full fledged use of the theme. The objective of this section is to :
