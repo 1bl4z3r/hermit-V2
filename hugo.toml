@@ -16,16 +16,24 @@ enableEmoji = true
 [languages]
   [languages.en]
     title = 'Hermit - V2'
+    languageCode = 'en-US'
+    languageDirection = 'ltr'
+    languageName = 'English'
     [languages.en.params]
       homeSubtitle = "Continuing Hermit's legacy to be minimal and fast theme"
     weight = 1
   [languages.fr]
     title = 'Hermit - V2 (FR)'
+    languageCode = 'fr'
+    languageDirection = 'ltr'
+    languageName = 'French'
     [languages.fr.params]
       homeSubtitle = "Poursuivre l'héritage d'Hermit avec un thème minimal et rapide"
     weight = 2
   [languages.it]
     title = 'Hermit - V2 (IT)'
+    languageCode = 'it'
+    languageDirection = 'ltr'
     [languages.it.params]
       homeSubtitle = "Continuare l'eredità di Hermit di essere un tema minimale e veloce"
     weight = 3
@@ -49,7 +57,6 @@ enableEmoji = true
 #    shortname = ''
 #  [services.googleAnalytics]
 #    id = ''
-
 
 [frontmatter]
 date = ["lastmod", "date", "publishDate"]
