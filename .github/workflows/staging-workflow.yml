@@ -29,9 +29,20 @@ jobs:
           git config --global user.email '34515568+1bl4z3r@users.noreply.github.com'
           git fetch                         # fetch branches
           git checkout $TARGET_BRANCH       # checkout to your branch
-                  
+          # Function to handle adding files and removing problematic ones
+          add_files() {
+            for file in "$@"; do
+              git add "$file" 2>/dev/null || {
+                echo "Removing problematic file: $file"
+                git rm -f "$file"
+              }
+            done
+          }
+          
           files=$(find $SRC_FOLDER_PATH -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp')
           git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
+          
+          add_files $files
           
           git add -A
           git diff-index --quiet HEAD || git commit -asm "${{ github.event.head_commit.message }}"  # commit to the repository (ignore if no modification)
