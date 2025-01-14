@@ -32,7 +32,7 @@ jobs:
           git branch --set-upstream-to origin/${{ env.TARGET_BRANCH }}
           git add archetypes/* assets/* layouts/* images/screenshot.jpg images/tn.jpg LICENSE README.md theme.toml hugo.toml.example
           git status
-          git diff-index --quiet HEAD ||  git commit --verbose -asm "${{ github.event.head_commit.message }}"
+          git commit --verbose -asm "${{ github.event.head_commit.message }}" #git diff-index --quiet HEAD ||  git commit --verbose -asm "${{ github.event.head_commit.message }}"
           git fetch origin
           #git rebase origin/${{ env.TARGET_BRANCH }} #git rebase --strategy-option=theirs origin/${{ env.TARGET_BRANCH }}
           git push origin ${{ env.TARGET_BRANCH }} --verbose --force
