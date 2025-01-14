@@ -30,6 +30,5 @@
 	</main>
 {{ end }}
 
-{{ define "footer" }}
-{{ partialCached "footer.html" . }}
+{{ define "footer" }}<footer id="site-footer" class="section-inner thin {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster {{- end -}}">{{- if templates.Exists "partials/single-footer.html" -}}{{- partialCached "single-footer.html" . -}}{{- else -}}{{- partial "footer.html" . -}}{{- end -}}</footer>
 {{ end }}
