@@ -22,22 +22,22 @@ jobs:
           fetch-depth: 0
       - name: Push to main
         env:
-          SRC_FOLDER_PATH: '.'
-          TARGET_BRANCH: 'main'
+          SOURCE: '.'
+          TARGET: 'main'
           NAME: 1bl4z3r
           EMAIL: 34515568+1bl4z3r@users.noreply.github.com
         run: |
-          git config --global user.name '$NAME'
-          git config --global user.email '$EMAIL'
+          git config --global user.name '${{env.NAME}}'
+          git config --global user.email '${{env.EMAIL}}'
           git fetch                         # fetch branches
-          git checkout $TARGET_BRANCH       # checkout to your branch
+          git checkout ${{env.TARGET}}              # checkout to your branch
 
-          files=$(find $SRC_FOLDER_PATH -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp')
+          files=$(find ${{env.SOURCE}} -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp')
           git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
           
           git add -A
           git diff-index --quiet HEAD || git commit -asm "${{ github.event.head_commit.message }}"  # commit to the repository (ignore if no modification)
-          git push origin $TARGET_BRANCH --force # push to remote branch
+          git push origin ${{env.TARGET}} --force # push to remote branch
   analyze:
     name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
