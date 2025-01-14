@@ -29,6 +29,7 @@ jobs:
         run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
+          git branch --set-upstream-to origin/${{ env.TARGET_BRANCH }}
           git add archetypes/* assets/* layouts/* images/screenshot.jpg images/tn.jpg LICENSE README.md theme.toml hugo.toml.example
           git status
           git diff-index --quiet HEAD ||  git commit --verbose -asm "${{ github.event.head_commit.message }}"
