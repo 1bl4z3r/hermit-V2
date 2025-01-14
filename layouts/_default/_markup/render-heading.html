@@ -1,0 +1,1 @@
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}<a href="#{{ .Anchor | safeURL }}" class="anchor" aria-hidden="true">{{- partial "svg.html" (dict "context" . "name" "content-anchor") }}</a></h{{ .Level }}>

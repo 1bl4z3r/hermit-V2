@@ -1,0 +1,20 @@
+// These are default SCSS mixins
+// This mixin is used to provide darkish effect in
+// #home-footer, .post-year (in list), .post-day (in list), .post-description (in list), .post-date, .post-description, #TableOfContents
+@mixin dimmed {
+  opacity: $dimmed-opacity;
+}
+
+@mixin aTag {
+  a {
+    word-wrap: break-word;
+    border: none;
+    box-shadow: inset 0 -4px 0 $aTag-mixin-a-box-shadow;
+    transition-property: box-shadow;
+    transition-duration: 0.1s;
+
+    &:hover {
+      box-shadow: inset 0 -1em 0 $aTag-mixin-a-hover-box-shadow;
+    }
+  }
+}

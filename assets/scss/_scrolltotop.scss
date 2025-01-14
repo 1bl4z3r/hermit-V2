@@ -1,0 +1,54 @@
+.scroll-up {
+    bottom: 10%;
+    right: 2%;
+    z-index: 1;
+}
+// Support for Experimental animation-timeline (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline)
+@supports (animation-timeline: scroll()) {
+    .scroll-up {
+        animation-name: scrolltotop;
+        animation-timeline: scroll(y);
+    }
+
+    @keyframes scrolltotop {
+        0% {
+            opacity: 0;
+            position: fixed;
+            display: none;
+        }
+
+        45% {
+            opacity: 0;
+            position: fixed;
+            display: none;
+            transform: translateY(20px);
+        }
+
+        50% {
+            opacity: 1;
+            display: block;
+            position: fixed;
+            transform: translateY(0);
+        }
+
+        100% {
+            opacity: 1;
+            display: block;
+            position: fixed;
+        }
+    }
+}
+
+@supports not (animation-timeline: scroll()) {
+    .scroll-up {
+        position: fixed;
+        opacity: 0;
+        transition: all 0.5s ease;
+        transform: translateY(20px);
+    }
+
+    .show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
