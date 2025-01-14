@@ -34,6 +34,7 @@ jobs:
           git add archetypes/* assets/* layouts/* images/screenshot.jpg images/tn.jpg LICENSE README.md theme.toml hugo.toml.example
           git status
           git diff-index --quiet HEAD ||  git commit --verbose -asm "${{ github.event.head_commit.message }}"
+          git rebase --continue
           #git fetch origin
           #git rebase origin/${{ env.TARGET_BRANCH }} #git rebase --strategy-option=theirs origin/${{ env.TARGET_BRANCH }}
           
