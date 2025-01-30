@@ -12,7 +12,7 @@
 {{- with .Params.categories }}
 <p>{{- partial "svg.html" (dict "context" . "name" "posts_single_categories") -}}{{- range . -}}<span class="category"><a href="{{ "categories/" | absLangURL }}{{ . | urlize }}">{{.}}</a></span>{{- end }}</p>
 {{- end }}
-<p>{{- partial "svg.html" (dict "context" . "name" "posts_single_wordcount") }}{{- .WordCount }} {{- if fileExists "i18n" }} {{ i18n "wordCount" . -}} {{- else -}} Words {{- end }} {{ partial "readTime.html" . -}}</p>
+<p>{{- partial "svg.html" (dict "context" . "name" "posts_single_wordcount") }}{{- .WordCount }}&nbsp{{- if fileExists "i18n" }} {{ i18n "wordCount" . -}} {{- else -}} Words {{- end }} {{ partial "readTime.html" . -}}</p>
 <p>{{- partial "svg.html" (dict "context" . "name" "posts_single_date") }}{{ dateFormat .Site.Params.dateformNumTime .Date.Local }}
 {{ if .Page.Params.ShowLastmod -}}
 {{- if and .GitInfo .Site.Params.gitUrl -}}
