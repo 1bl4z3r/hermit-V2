@@ -17,7 +17,7 @@ features = [
 [module]
   [module.hugoVersion]
     extended = true
-    min = '0.140'
+    min = '0.140.0'
 
 
 [author]
