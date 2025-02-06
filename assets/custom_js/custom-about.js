@@ -1,1 +1,1 @@
-console.log("Custom About JS loaded");
+console.log("Custom About JS loaded from custom_js/custom-about.js");
