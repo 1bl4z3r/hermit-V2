@@ -73,6 +73,14 @@ Lastmod : 2025-03-12T20:30:30+05:30
 	- `noIndex` : When set to true, the page has ___noindex, nofollow, noarchive___ (unless specified by `denyRobots` added to robots meta tag. Else, robots tag will have ___index, follow___ (unless specified by `allowRobots`) 
 	- `footerHideThemeName` : When set to true, links to Hugo and Hermit-V2 would be removed from footer section
 	- `usesAnimation` : When set to false, animations are disabled site-wide
+	- `mathjaxLib` : Provides Mathjax library to the theme. If not provided, `https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js` will be used
+		- If library is in `/assets` folder, use `<FOLDER (if any)/<Library_Name.js>`
+		- If library is in `/static` folder, use `/<FOLDER (if any)/<Library_Name.js>`. Notice leading "/"
+		- If you have different CDN or site, use the absolute URL
+	- `mermaidLib` : Provides Mermaid library to the theme. If not provided, `https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs` will be used
+		- If library is in `/assets` folder, use `<FOLDER (if any)/<Library_Name.js>`
+		- If library is in `/static` folder, use `/<FOLDER (if any)/<Library_Name.js>`. Notice leading "/"
+		- If you have different CDN or site, use the absolute URL
 	-  `[params.socialLinks]` Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
 		- `name` : Name of the social page.
 		- `url` : URL of your account.
