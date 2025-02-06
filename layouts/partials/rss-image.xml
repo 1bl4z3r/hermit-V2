@@ -9,7 +9,7 @@
 </media:content>
 {{- end -}}
 {{- else if findRE `^\/.*` $path 1 -}}
-{{ $path := printf "%s%s" .Site.BaseURL (strings.TrimLeft "/" $path) }}
+{{ $path := printf "%s%s" site.BaseURL (strings.TrimLeft "/" $path) }}
 			{{- with resources.GetRemote $path -}}
 			<enclosure url="{{ .Permalink }}" length="" type="{{ .MediaType }}" />
 			<media:thumbnail url="{{ .Permalink }}" width="{{ .Width}}" height="{{ .Height}}" />
