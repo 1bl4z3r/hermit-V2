@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Posts on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/</link><description>Recent content in Posts on Hermit - V2</description><generator>Hugo -- 0.140.2</generator><language>en-US</language><lastBuildDate>Wed, 12 Mar 2025 20:30:30 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Wed, 12 Mar 2025 20:30:30 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>The Hitchhiker&amp;#39;s Guide to Hermit - V2 Configuration</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="configuation-in-hugotoml">Configuation in <code>hugo.toml</code><a href="#configuation-in-hugotoml" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Posts on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/</link><description>Recent content in Posts on Hermit - V2</description><generator>Hugo -- 0.143.1</generator><language>en-US</language><lastBuildDate>Wed, 12 Mar 2025 20:30:30 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Wed, 12 Mar 2025 20:30:30 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>The Hitchhiker&amp;#39;s Guide to Hermit - V2 Configuration</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="configuation-in-hugotoml">Configuation in <code>hugo.toml</code><a href="#configuation-in-hugotoml" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
@@ -25,8 +25,7 @@
 <li>
 <p><code>enableGitInfo</code> : Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.</p>
 <blockquote>
-<p>Side-effect : Affects <code>.Lastmod</code> parameter in Pages</p>
-</blockquote>
+<p>Side-effect : Affects <code>.Lastmod</code> parameter in Pages</p></blockquote>
 </li>
 <li>
 <p><code>hasCJKLanguage</code> : If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.</p>
@@ -100,6 +99,20 @@
 <li><code>noIndex</code> : When set to true, the page has <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code> added to robots meta tag. Else, robots tag will have <em><strong>index, follow</strong></em> (unless specified by <code>allowRobots</code>)</li>
 <li><code>footerHideThemeName</code> : When set to true, links to Hugo and Hermit-V2 would be removed from footer section</li>
 <li><code>usesAnimation</code> : When set to false, animations are disabled site-wide</li>
+<li><code>mathjaxLib</code> : Provides Mathjax library to the theme. If not provided, <code>https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js</code> will be used
+<ul>
+<li>If library is in <code>/assets</code> folder, use <code>&lt;FOLDER (if any)/&lt;Library_Name.js&gt;</code></li>
+<li>If library is in <code>/static</code> folder, use <code>/&lt;FOLDER (if any)/&lt;Library_Name.js&gt;</code>. Notice leading &ldquo;/&rdquo;</li>
+<li>If you have different CDN or site, use the absolute URL</li>
+</ul>
+</li>
+<li><code>mermaidLib</code> : Provides Mermaid library to the theme. If not provided, <code>https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs</code> will be used
+<ul>
+<li>If library is in <code>/assets</code> folder, use <code>&lt;FOLDER (if any)/&lt;Library_Name.js&gt;</code></li>
+<li>If library is in <code>/static</code> folder, use <code>/&lt;FOLDER (if any)/&lt;Library_Name.js&gt;</code>. Notice leading &ldquo;/&rdquo;</li>
+<li>If you have different CDN or site, use the absolute URL</li>
+</ul>
+</li>
 <li><code>[params.socialLinks]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
 <ul>
 <li><code>name</code> : Name of the social page.</li>
@@ -117,8 +130,7 @@
    </svg></a></h2>
 <p>As described in Hugo docs</p>
 <blockquote>
-<p>Front matter allows you to keep metadata attached to an instance of a content type—i.e., embedded inside a content file—and is one of the many features that gives Hugo its strength.</p>
-</blockquote>
+<p>Front matter allows you to keep metadata attached to an instance of a content type—i.e., embedded inside a content file—and is one of the many features that gives Hugo its strength.</p></blockquote>
 <ul>
 <li><code>title</code> : Page&rsquo;s title</li>
 <li><code>slug</code> : A slug is the part of a URL that identifies a particular page on a website in an easy-to-read form.</li>
@@ -400,9 +412,9 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/928-600x400.jpg&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;relative file path in assets folder&#34;</span> &gt;}}
 </span></span></code></pre></div>
 <figure><picture>
-          <source srcset="/hermit-V2/images/928-600x400_hu12676991745684503517.webp" type="image/webp">
-          <source srcset="/hermit-V2/images/928-600x400_hu14429143669893479017.jpg" type="image/jpeg">
-          <img src="/hermit-V2/images/928-600x400_hu12676991745684503517.webp"alt="image" width="600"  height="400" />
+          <source srcset="/hermit-V2/images/928-600x400_hu_91b9b9de0947fc42.webp" type="image/webp">
+          <source srcset="/hermit-V2/images/928-600x400_hu_3d7fd5bd614a0495.jpg" type="image/jpeg">
+          <img src="/hermit-V2/images/928-600x400_hu_91b9b9de0947fc42.webp"alt="image" width="600"  height="400" />
         </picture><figcaption><p>relative file path in assets folder</p></figcaption></figure>
 <h3 id="figure-using-class-big">Figure using class <code>big</code><a href="#figure-using-class-big" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
@@ -979,10 +991,8 @@ $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content></item><item><title>T
 <p>First line
 Another line (To keep the quote together, blank lines inside the quote must contain the &gt; character.)</p>
 <blockquote>
-<p>Nested line</p>
-</blockquote>
-<p>Last line (The space between the &gt; and the quoted text is optional.)</p>
-</blockquote>
+<p>Nested line</p></blockquote>
+<p>Last line (The space between the &gt; and the quoted text is optional.)</p></blockquote>
 <p>Table:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>| Left-Aligned  | Center Aligned  | Right Aligned |
 </span></span><span style="display:flex;"><span>| :------------ | :-------------: | ------------: |
@@ -1210,9 +1220,9 @@ print(sorted_dt)
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{ {&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/928-600x400.jpg&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;webp&#34;</span> <span style="color:#a6e22e">loading</span>=<span style="color:#e6db74">&#34;lazy&#34;</span> &gt;} }
 </span></span></code></pre></div>
 <figure class="webp" ><picture>
-          <source srcset="/hermit-V2/images/928-600x400_hu12676991745684503517.webp" type="image/webp">
-          <source srcset="/hermit-V2/images/928-600x400_hu14429143669893479017.jpg" type="image/jpeg">
-          <img src="/hermit-V2/images/928-600x400_hu12676991745684503517.webp"alt="A WEBP converted image" width="600"  height="400"  loading="lazy" />
+          <source srcset="/hermit-V2/images/928-600x400_hu_91b9b9de0947fc42.webp" type="image/webp">
+          <source srcset="/hermit-V2/images/928-600x400_hu_3d7fd5bd614a0495.jpg" type="image/jpeg">
+          <img src="/hermit-V2/images/928-600x400_hu_91b9b9de0947fc42.webp"alt="A WEBP converted image" width="600"  height="400"  loading="lazy" />
         </picture><figcaption><p>A WEBP converted image</p></figcaption></figure>
 <p>Mermaid</p>
 <pre class="mermaid">  flowchart TD
@@ -1278,8 +1288,7 @@ print(sorted_dt)
 <p>Enable <code>scrolltotop</code> to <code>true</code> in article front matter.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">scrolltotop </span>: <span style="color:#66d9ef">true</span>
 </span></span></code></pre></div><blockquote>
-<p>Some pages/articles do not require scroll up button (if there is less content)</p>
-</blockquote>
+<p>Some pages/articles do not require scroll up button (if there is less content)</p></blockquote>
 <h2 id="anti-js-crowd">Anti-JS crowd<a href="#anti-js-crowd" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -2879,8 +2888,8 @@ With Jekyll, something that looked like</p>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>I simply changed:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>    {<span style="color:#f92672">%</span> <span style="color:#a6e22e">image</span> <span style="color:#a6e22e">full</span> <span style="color:#a6e22e">http</span>:<span style="color:#75715e">//farm5.staticflickr.com/4136/4829260124_57712e570a_o_d.jpg &#34;One of my favorite touristy-type photos. I secretly waited for the good light while we were &#34;having fun&#34; and took this. Only regret: a stupid pole in the top-left corner of the frame I had to clumsily get rid of at post-processing.&#34; -&gt;http://www.flickr.com/photos/alexnormand/4829260124/in/set-72157624547713078/ %}
-</span></span></span></code></pre></div><p>to this (this example uses a slightly extended version named <code>fig</code>, different than the built-in <code>figure</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>    {<span style="color:#f92672">%</span> <span style="color:#a6e22e">image</span> <span style="color:#a6e22e">full</span> <span style="color:#a6e22e">http</span>:<span style="color:#75715e">//farm5.staticflickr.com/4136/4829260124_57712e570a_o_d.jpg &#34;One of my favorite touristy-type photos. I secretly waited for the good light while we were &#34;having fun&#34; and took this. Only regret: a stupid pole in the top-left corner of the frame I had to clumsily get rid of at post-processing.&#34; -&gt;http://www.flickr.com/photos/alexnormand/4829260124/in/set-72157624547713078/ %}</span>
+</span></span></code></pre></div><p>to this (this example uses a slightly extended version named <code>fig</code>, different than the built-in <code>figure</code>):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>    {{<span style="color:#f92672">%</span> <span style="color:#a6e22e">fig</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;full&#34;</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;http://farm5.staticflickr.com/4136/4829260124_57712e570a_o_d.jpg&#34;</span> <span style="color:#a6e22e">title</span>=<span style="color:#e6db74">&#34;One of my favorite touristy-type photos. I secretly waited for the good light while we were having fun and took this. Only regret: a stupid pole in the top-left corner of the frame I had to clumsily get rid of at post-processing.&#34;</span> <span style="color:#a6e22e">link</span>=<span style="color:#e6db74">&#34;http://www.flickr.com/photos/alexnormand/4829260124/in/set-72157624547713078/&#34;</span> <span style="color:#f92672">%</span>}}
 </span></span></code></pre></div><p>As a bonus, the shortcode named parameters are, arguably, more readable.</p>
 <h2 id="finishing-touches">Finishing touches<a href="#finishing-touches" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
