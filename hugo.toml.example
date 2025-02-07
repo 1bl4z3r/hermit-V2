@@ -122,6 +122,8 @@ expiryDate = ["expiryDate"]
   # siteNoIndex = false
   # noIndexPages = ["404 Page not found"]
   # usesAnimation = true
+  # mathjaxLib = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+  # mermaidLib = "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs"
   
   [[params.socialLinks]]
     name = "mastodon"

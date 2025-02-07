@@ -13,5 +13,5 @@ For posts/articles pages, posts-footer.html
 	&#183; Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
 	&#183; Theme <a href="https://github.com/1bl4z3r/hermit-V2" target="_blank" rel="noopener">Hermit-V2</a>
 	{{- end -}}
-	{{- with .OutputFormats.Get "RSS" }}&#183; <a href="{{ "posts/index.xml" | absLangURL }}" target="_blank" title="rss">{{- partial "svg.html" (dict "context" . "name" "rss") -}}</a>{{- end -}}
+	{{- with .OutputFormats.Get "RSS" }}&#183; <a href="{{ "index.xml" | absLangURL }}" target="_blank" title="rss">{{- partial "svg.html" (dict "context" . "name" "rss") -}}</a>{{- end -}}
 </p>
