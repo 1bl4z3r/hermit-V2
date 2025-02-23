@@ -99,7 +99,7 @@
  &lt;/div>
  &lt;div class="admonition-content">A &lt;strong>bug&lt;/strong> banner&lt;/div>
  &lt;/aside>
-&lt;p>The &lt;code>admonition&lt;/code> shortcode has the following named parameters:&lt;/p></description></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>&lt;h1 id="latex-support-for-hermit-v2">\(LaTeX\) support for hermit-V2&lt;a href="#latex-support-for-hermit-v2" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+&lt;p>The &lt;code>admonition&lt;/code> shortcode has the following named parameters:&lt;/p></description></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>&lt;h1 id="support-for-hermit-v2">\(LaTeX\) support for hermit-V2&lt;a href="#support-for-hermit-v2" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
  stroke-linecap="round" stroke-linejoin="round">
  &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
  &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
