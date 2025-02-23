@@ -68,6 +68,8 @@ Lastmod : 2025-03-12T20:30:30+05:30
 	- `pinned` : Display the name of 'Pinned Posts'. If none provided, pinned posts section would be hidden
 	- `pinnedSVGname` : Specify what icon should be displayed before a pinned post. The icon must be present in `svg.html`
 	- `descriptionInPosts` : Toggle to show/hide posts' description in list view
+	- `tagsInPosts` : Toggle to show/hide posts' tags in list view
+	- `categoriesInPosts` : Toggle to show/hide posts' categories in list view
 	- `initialPublish` : Show what should be shown in section of Initial Published. Defaults to "Initially Published on : "
 	- `human` : Shows a badge 'BrainMade' on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: [brainmade.org](brainmade.org)
 	- `noIndex` : When set to true, the page has ___noindex, nofollow, noarchive___ (unless specified by `denyRobots` added to robots meta tag. Else, robots tag will have ___index, follow___ (unless specified by `allowRobots`) 

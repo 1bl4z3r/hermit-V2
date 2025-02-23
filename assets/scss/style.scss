@@ -551,10 +551,31 @@ p.img-404 {
     margin-left: 1em;
     @include dimmed;
   }
+
+  .post-tags,
+  .post-categories {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    font-size: xx-small;
+    @include dimmed;
+
+    a {
+      margin-right: 0.5em;
+    }
+  }
+  .post-tags {
+    padding-right: 12px;
+  }
+
   .post-description {
     font-size:x-small;
-    flex-shrink: 0;
     @include dimmed;
+  }
+  .post-taxonomy {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
   }
 }
 
@@ -750,6 +771,18 @@ a.footnote-ref {
   }
 }
 
+.tag {
+  text-transform: lowercase;
+  &::before {
+    {{- with .Site.Params.tagSymbol | default "#" -}}content: "{{ . }}"{{- end -}}
+  }
+}
+.category {
+  &::before {
+    {{- with .Site.Params.categorySymbol | default "⊲" -}}content: "{{ . }}"{{- end -}}
+  }
+}
+
 .post-description {
   font-size: .8rem;
   line-height: normal;
@@ -767,19 +800,9 @@ a.footnote-ref {
     margin-right: .8em;
   }
 
-  .tag {
-    margin-right: .5em;
-
-    &::before {
-      {{- with .Site.Params.tagSymbol | default "#" -}}content: "{{ . }}"{{- end -}}
-    }
-  }
+  .tag, 
   .category {
     margin-right: .5em;
-
-    &::before {
-      {{- with .Site.Params.categorySymbol | default "⊲" -}}content: "{{ . }}"{{- end -}}
-    }
   }
 }
 
