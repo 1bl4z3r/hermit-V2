@@ -552,22 +552,30 @@ p.img-404 {
     @include dimmed;
   }
 
-  .post-tags {
+  .post-tags,
+  .post-categories {
     display: flex;
     flex-wrap: wrap;
     flex-shrink: 0;
-    font-size:x-small;
+    font-size: xx-small;
     @include dimmed;
 
     a {
       margin-right: 0.5em;
     }
   }
+  .post-tags {
+    padding-right: 12px;
+  }
 
   .post-description {
     font-size:x-small;
-    flex-shrink: 0;
     @include dimmed;
+  }
+  .post-taxonomy {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
   }
 }
 
@@ -792,9 +800,7 @@ a.footnote-ref {
     margin-right: .8em;
   }
 
-  .tag {
-    margin-right: .5em;
-  }
+  .tag, 
   .category {
     margin-right: .5em;
   }
