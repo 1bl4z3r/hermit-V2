@@ -93,9 +93,14 @@
 <li><code>categorySymbol</code> : Specify a symbol for Categories. Default is <code>⊲</code></li>
 <li><code>pinned</code> : Display the name of &lsquo;Pinned Posts&rsquo;. If none provided, pinned posts section would be hidden</li>
 <li><code>pinnedSVGname</code> : Specify what icon should be displayed before a pinned post. The icon must be present in <code>svg.html</code></li>
-<li><code>descriptionInPosts</code> : Toggle to show/hide posts&rsquo; description in list view</li>
-<li><code>tagsInPosts</code> : Toggle to show/hide posts&rsquo; tags in list view</li>
-<li><code>categoriesInPosts</code> : Toggle to show/hide posts&rsquo; categories in list view</li>
+<li><code>listLayout</code> : Control what rendering to be shown in various list view
+<ul>
+<li><code>legacy</code> - Display legacy view, where Tags and Categories are grouped by date. Else Tags and Categories are sorted by number of posts/articles with each tag/category is descending order.</li>
+<li><code>description</code> - To show/hide posts&rsquo; description in list view</li>
+<li><code>tags</code> - To show/hide posts&rsquo; tags in list view</li>
+<li><code>categories</code> - To show/hide posts&rsquo; categories in list view</li>
+</ul>
+</li>
 <li><code>initialPublish</code> : Show what should be shown in section of Initial Published. Defaults to &ldquo;Initially Published on : &quot;</li>
 <li><code>human</code> : Shows a badge &lsquo;BrainMade&rsquo; on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: <a href="brainmade.org">brainmade.org</a></li>
 <li><code>noIndex</code> : When set to true, the page has <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code> added to robots meta tag. Else, robots tag will have <em><strong>index, follow</strong></em> (unless specified by <code>allowRobots</code>)</li>
