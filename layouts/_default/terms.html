@@ -6,7 +6,7 @@
 	<main class="site-main section-inner thin {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster{{- end -}}">
 		<h1>{{ .Title }}</h1>
 		{{- if .Content }}<div class="content">{{ .Content }}</div>{{ end -}}
-		{{- if (and (or (in .Page.RelPermalink "tags") (in .Page.RelPermalink "categories")) .Site.Params.legacyList) -}}
+		{{- if (and (or (in .Page.RelPermalink "tags") (in .Page.RelPermalink "categories")) (in .Site.Params.listLayout "legacy")) -}}
 			{{- range .Data.Pages.GroupByDate "2006" }}
 				<div class="posts-group">
 					<div class="post-year" id="{{ .Key }}">
@@ -27,7 +27,7 @@
 					</ul>
 				</div>
 			{{- end }}
-		{{- else if (and (or (in .Page.RelPermalink "tags") (in .Page.RelPermalink "categories")) (not .Site.Params.legacyList)) -}}
+		{{- else if (and (or (in .Page.RelPermalink "tags") (in .Page.RelPermalink "categories")) (not (in .Site.Params.listLayout "legacy"))) -}}
 			{{- range .Data.Terms.ByCount }}
 				<div class="posts-group">
 					<ul class="posts-list">

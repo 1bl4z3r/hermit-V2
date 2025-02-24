@@ -137,6 +137,7 @@ expiryDate = ["expiryDate"]
   # categorySymbol = "⊲"
   pinned = "Pinned Posts"
   # pinnedSVGname = "pin"
+  listLayout = ["description","tags"] # Supported : legacy, description, categories, tags
   descriptionInPosts = true
   tagsInPosts = true
   categoriesInPosts = false
