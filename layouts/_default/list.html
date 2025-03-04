@@ -57,14 +57,14 @@
 							{{- if and .Page.Params.tags (in .Site.Params.listLayout "tags") -}}
 							<span class="post-tags">
 								{{- range .Page.Params.tags -}}
-								<a href="{{- printf "/tags/%s" . | urlize -}}" class="tag">{{- . -}}</a>
+								<a href="{{ "tags/" | absLangURL }}{{ . | urlize }}" class="tag">{{- . -}}</a>
 								{{- end -}}
 							</span>
 							{{- end -}}
 							{{- if and .Page.Params.categories (in .Site.Params.listLayout "categories") -}}
 							<span class="post-categories">
 								{{- range .Page.Params.categories -}}
-								<a href="{{- printf "/categories/%s" . | urlize -}}" class="category">{{- . -}}</a>
+								<a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" class="category">{{- . -}}</a>
 								{{- end -}}
 							</span>
 							{{- end -}}
@@ -96,14 +96,14 @@
 				  {{- if and .Page.Params.tags (in .Site.Params.listLayout "tags") -}}
 				  <span class="post-tags">
 					  {{- range .Page.Params.tags -}}
-					  <a href="{{- printf "/tags/%s" . | urlize -}}" class="tag">{{- . -}}</a>
+					  <a href="{{ "tags/" | absLangURL }}{{ . | urlize }}" class="tag">{{- . -}}</a>
 					  {{- end -}}
 				  </span>
 				  {{- end -}}
 				  {{- if and .Page.Params.categories (in .Site.Params.listLayout "categories") -}}
 				  <span class="post-categories">
 					  {{- range .Page.Params.categories -}}
-					  <a href="{{- printf "/categories/%s" . | urlize -}}" class="category">{{- . -}}</a>
+					  <a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" class="category">{{- . -}}</a>
 					  {{- end -}}
 				  </span>
 				  {{- end -}}
