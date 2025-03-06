@@ -157,6 +157,7 @@
 <li><code>ShowLastmod</code> : This enables Last modification date of the given Page.</li>
 <li><code>Lastmod</code> : REQUIRED (If <code>ShowLastmod=true</code>). Enter Last modified date of the Page.</li>
 <li><code>pin</code> : Specify if the post should be shown as pinned</li>
+<li><code>print</code> : Pages which has <code>print: true</code> will have additional css from print styling. The CSS file should be created by user in <code>/assets/custom_css/print.scss</code>. <a href="https://www.sitepoint.com/css-printer-friendly-pages">Learn more</a></li>
 <li><code>denyRobots</code> : Specify what directives to follow when denying crawlers. Default is <strong>noindex, nofollow, noarchive</strong></li>
 <li><code>allowRobots</code> : Specify what directives to follow when allowing crawlers. Default is <strong>index, follow</strong></li>
 <li><code>siteNoIndex</code> : When set to true, whole site will have <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code>) added to robots meta tag. Else, robots tag will have <em><strong>index, follow</strong></em> (unless specified by <code>allowRobots</code>) applied to whole site</li>
