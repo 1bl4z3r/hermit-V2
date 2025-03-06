@@ -114,6 +114,7 @@ Lastmod : 2025-03-12T20:30:30+05:30
 - `ShowLastmod` : This enables Last modification date of the given Page.
 - `Lastmod` : REQUIRED (If `ShowLastmod=true`). Enter Last modified date of the Page.
 - `pin` : Specify if the post should be shown as pinned
+- `print` : Pages which has `print: true` will have additional css from print styling. The CSS file should be created by user in `/assets/custom_css/print.scss`. [Learn more](https://www.sitepoint.com/css-printer-friendly-pages)
 - `denyRobots` : Specify what directives to follow when denying crawlers. Default is **noindex, nofollow, noarchive**
 - `allowRobots` : Specify what directives to follow when allowing crawlers. Default is **index, follow**
 - `siteNoIndex` : When set to true, whole site will have ___noindex, nofollow, noarchive___ (unless specified by `denyRobots`) added to robots meta tag. Else, robots tag will have ___index, follow___ (unless specified by `allowRobots`) applied to whole site
