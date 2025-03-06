@@ -12,10 +12,14 @@
 {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Title | safeHTML }}
 {{ end -}}
 {{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "css/style.css" . | toCSS | minify | fingerprint -}}
-<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" href="{{ $style.Permalink }}" {{ printf "integrity=%q" $style.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous">
+<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="{{ $style.Permalink }}" {{ printf "integrity=%q" $style.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous">
 {{- range .Params.custom_css -}}
 {{ $c_css := resources.Get . | resources.ExecuteAsTemplate "css/style.css" $rootCtx | toCSS | minify | fingerprint -}}
-<link rel="stylesheet preload prefetch" as="style" href="{{ $c_css.Permalink }}" {{ printf "integrity=%q" $c_css.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous">
+<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="{{ $c_css.Permalink }}" {{ printf "integrity=%q" $c_css.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous">
+{{- end -}}
+{{- if $.Page.Params.print -}}
+{{- $PRNTCSS := resources.Get "custom_css/print.scss" | resources.ExecuteAsTemplate "css/style.css" $rootCtx | toCSS | minify | fingerprint -}}
+<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="print" href="{{ $PRNTCSS.Permalink }}" {{ printf "integrity=%q" $PRNTCSS.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous">
 {{- end -}}
 {{- block "head" . -}}{{- end -}}
 {{- if templates.Exists "partials/extra-head.html" -}}{{- partial "extra-head.html" . -}}{{- end -}}
