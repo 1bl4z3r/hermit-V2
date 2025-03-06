@@ -32,7 +32,7 @@ jobs:
           git fetch                         # fetch branches
           git checkout ${{env.TARGET}}              # checkout to your branch
 
-          files=$(find ${{env.SOURCE}} -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp')
+          files=$(find ${{env.SOURCE}} -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore')
           git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
           
           git add -A
