@@ -1,0 +1,138 @@
+// assets/scss/components/_gallery.scss
+
+.image-gallery {
+    display: flex; // Use flexbox for layout.
+    flex-wrap: wrap; // Allow items to wrap to the next line.
+    gap: 10px; // Space between gallery items.
+    justify-content: center; // Center items if they don't fill the row.
+    padding: 10px 0; // Add some padding around the gallery.
+
+    .gallery-item {
+        width: 300px; // Fixed width for thumbnails.
+        height: 300px; // Fixed height for thumbnails.
+        position: relative; // For positioning the caption.
+        overflow: hidden; // Hide parts of the image that overflow.
+        border-radius: 4px; // Slightly rounded corners for items.
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow for depth.
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; // Smooth hover effect.
+        cursor: pointer; // Indicate items are clickable.
+
+        &:hover {
+            transform: scale(1.03); // Slightly enlarge on hover.
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); // Enhance shadow on hover.
+            .gallery-item-caption {
+                opacity: 1; // Show caption on hover.
+                transform: translateY(0); // Slide caption into view.
+            }
+        }
+
+        img {
+            display: block; // Remove extra space below image.
+            width: 100%; // Image takes full width of its container.
+            height: 100%; // Image takes full height of its container.
+            object-fit: cover; // Cover the area, cropping if necessary to maintain aspect ratio.
+            object-position: center; // Center the image within its frame.
+        }
+
+        .gallery-item-caption {
+            position: absolute; // Position caption over the image.
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7); // Semi-transparent background for readability.
+            color: #fff; // White text for contrast.
+            text-align: center;
+            padding: 8px;
+            font-size: 0.9em;
+            box-sizing: border-box; // Include padding in width/height calculation.
+            opacity: 0; // Hidden by default.
+            transform: translateY(100%); // Start off-screen below the item.
+            transition: opacity 0.3s ease, transform 0.3s ease; // Smooth transition for caption visibility.
+        }
+    }
+}
+
+// Lightbox styles
+.lightbox-overlay {
+    position: fixed; // Cover the entire viewport.
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); // Dark semi-transparent background to focus on image.
+    display: none; // Hidden by default.
+    justify-content: center; // Center content horizontally.
+    align-items: center; // Center content vertically.
+    z-index: 1000; // Ensure it's on top of other content.
+    opacity: 0; // Start fully transparent for fade-in.
+    transition: opacity 0.3s ease-in-out; // Smooth fade-in/out transition.
+
+    &.active {
+        display: flex; // Show when active by changing display to flex.
+        opacity: 1; // Fade in to full opacity.
+    }
+
+    .lightbox-content {
+        position: relative;
+        max-width: 90vw; // Max width relative to viewport width.
+        max-height: 90vh; // Max height relative to viewport height.
+        display: flex; // Use flexbox for internal layout (image and caption).
+        flex-direction: column; // Stack image and caption vertically.
+        align-items: center; // Center items horizontally.
+        justify-content: center; // Center content vertically if it's smaller than max-height.
+        transform: scale(0.9); // Start slightly scaled down for pop-in effect.
+        transition: transform 0.3s ease-in-out; // Smooth scaling transition.
+
+        img {
+            display: block;
+            object-fit: contain; // Ensure entire image is visible, letterboxed if necessary.
+            border-radius: 4px; // Rounded corners for the displayed image.
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); // Shadow for the image.
+            flex-shrink: 1; // Allow image to shrink to fit within bounds.
+            min-height: 0; // Prevents flex item overflow issues.
+            max-width: 100%; // Ensure image does not exceed content box width.
+            max-height: 100%;// Ensure image does not exceed content box height (flex will manage).
+        }
+
+        .lightbox-caption {
+            color: #fff;
+            text-align: center;
+            margin-top: 10px; // Space between image and caption.
+            font-size: 1em;
+            padding: 5px 10px;
+            flex-shrink: 0; // Caption should not shrink.
+        }
+    }
+    &.active .lightbox-content {
+        transform: scale(1); // Scale to full size when active.
+    }
+
+    .lightbox-close, .lightbox-nav {
+        position: absolute;
+        color: #fff;
+        cursor: pointer;
+        transition: color 0.2s ease, background-color 0.2s ease;
+        user-select: none; // Prevent text selection on controls.
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 20px;
+        font-size: 35px; // Larger close button for easy clicking.
+        font-weight: bold;
+        &:hover { color: #ccc; }
+    }
+
+    .lightbox-nav {
+        top: 50%;
+        transform: translateY(-50%); // Vertically center navigation arrows.
+        font-size: 40px;
+        font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.3); // Semi-transparent background for nav buttons.
+        padding: 10px 15px;
+        border-radius: 50%; // Circular background for nav buttons.
+        &:hover { background-color: rgba(0, 0, 0, 0.6); }
+        &.prev { left: 15px; }
+        &.next { right: 15px; }
+    }
+}
