@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Demo on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/demo/</link><description>Recent content in Demo on Hermit - V2</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sun, 24 Dec 2023 12:29:41 +0800</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/demo/index.xml" rel="self" type="application/rss+xml"/><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Sun, 22 Oct 2023 20:06:06 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>&lt;h2 id="configuation-in-hugotoml">Configuation in &lt;code>hugo.toml&lt;/code>&lt;a href="#configuation-in-hugotoml" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Demo on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/demo/</link><description>Recent content in Demo on Hermit - V2</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sat, 10 May 2025 10:00:00 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/demo/index.xml" rel="self" type="application/rss+xml"/><item><title>Image Gallery Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</link><pubDate>Sat, 10 May 2025 10:00:00 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</guid><description>&lt;p>The &lt;code>gallery&lt;/code> shortcode allows you to easily create beautiful, responsive image galleries on your Hugo site. It takes a list of image sources (local paths or remote URLs), generates thumbnails for local images, and wraps them in links that open a larger version in a clean, vanilla JavaScript lightbox.&lt;/p>
+&lt;h2 id="features">Features&lt;a href="#features" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+ stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+ &lt;/svg>&lt;/a>&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Responsive Design&lt;/strong>: The gallery adapts to different screen sizes using flexbox.&lt;/li>
+&lt;li>&lt;strong>Thumbnails&lt;/strong>:
+&lt;ul>
+&lt;li>For local images (from &lt;code>/assets&lt;/code> or &lt;code>/static&lt;/code> folders), 300x300 pixel square, smart-cropped thumbnails are automatically generated.&lt;/li>
+&lt;li>For remote images, the original image is used as the thumbnail source, and CSS (&lt;code>object-fit: cover;&lt;/code>) ensures it fits the 300x300px thumbnail container.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Lightbox&lt;/strong>:
+&lt;ul>
+&lt;li>Clicking a thumbnail opens the full-resolution image in a modal overlay.&lt;/li>
+&lt;li>Supports navigation (next/previous arrows) between images within the same gallery.&lt;/li>
+&lt;li>Keyboard controls: &lt;code>Escape&lt;/code> to close, &lt;code>ArrowLeft&lt;/code> for previous, &lt;code>ArrowRight&lt;/code> for next.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Captions&lt;/strong>:
+&lt;ul>
+&lt;li>Automatically generated from the image filename (without the file extension).&lt;/li>
+&lt;li>For remote URLs, query parameters are stripped before generating the caption.&lt;/li>
+&lt;li>Captions are displayed in the lightbox and appear on hover over the thumbnail in the gallery.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Vanilla JS &amp;amp; SCSS&lt;/strong>: Built with no external libraries for lean performance.&lt;/li>
+&lt;/ul>
+&lt;h2 id="how-to-use">How to Use&lt;a href="#how-to-use" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+ stroke-linecap="round" stroke-linejoin="round">
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
+ &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
+ &lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>To use the shortcode, simply list your image sources (one per line) between the opening and closing &lt;code>gallery&lt;/code> tags.&lt;/p></description></item><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Sun, 22 Oct 2023 20:06:06 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>&lt;h2 id="configuation-in-hugotoml">Configuation in &lt;code>hugo.toml&lt;/code>&lt;a href="#configuation-in-hugotoml" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
  stroke-linecap="round" stroke-linejoin="round">
  &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
  &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
