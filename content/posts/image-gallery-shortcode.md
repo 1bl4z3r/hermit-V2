@@ -165,7 +165,7 @@ https://picsum.photos/seed/mixed-gallery/900/700
 
 ## Styling and Customization
 
-The visual appearance of the gallery and the lightbox is controlled by SCSS located in `assets/scss/components/_gallery.scss` (or wherever you've placed and imported it). You can override these styles in your own SCSS files to match your theme's design.
+The visual appearance of the gallery and the lightbox is controlled by SCSS located in `assets/scss/_gallery.scss` (or wherever you've placed and imported it). You can override these styles in your own SCSS files to match your theme's design.
 
 The JavaScript for the lightbox functionality is located in `assets/js/gallery.js`. It's self-contained and does not rely on any third-party libraries.
 
