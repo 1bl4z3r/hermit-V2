@@ -29,7 +29,7 @@
                 {{- $cleanedFilename := index (strings.Split $filename "?") 0 -}} {{/* Get the part of the filename before the first '?' */}}
                 {{- $caption = strings.TrimSuffix (path.Ext $cleanedFilename) $cleanedFilename -}} {{/* Get filename without extension for the caption. */}}
             {{- else if $isStatic -}}
-                {{- $fullImageUrl = ($source | relURL) -}} {{/* For static files, generate a site-relative URL. */}}
+                {{- $fullImageUrl = printf "%s%s" $currentPage.Site.BaseURL (strings.TrimLeft "/" $source) -}} {{/* For static files, generate an absolute URL by prepending BaseURL. */}}
                 {{- $thumbnailUrl = $fullImageUrl -}} {{/* Static files use original as thumbnail, like remote. CSS handles display. */}}
                 {{- $filename := path.Base $source -}} {{/* Extract filename from path. */}}
                 {{- $caption = strings.TrimSuffix (path.Ext $filename) $filename -}} {{/* Get filename without extension for the caption. */}}
