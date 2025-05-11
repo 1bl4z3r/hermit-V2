@@ -22,8 +22,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "actions@github.com"
+          git config user.name "1bl4z3r"
+          git config user.email "34515568+1bl4z3r@users.noreply.github.com"
       
       - name: Setup branches and directories
         run: |
