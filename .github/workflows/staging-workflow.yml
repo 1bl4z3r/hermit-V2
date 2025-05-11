@@ -26,18 +26,52 @@ jobs:
           TARGET: 'main'
           NAME: 1bl4z3r
           EMAIL: 34515568+1bl4z3r@users.noreply.github.com
+          SOURCE_BRANCH: ${{ github.ref_name }} # e.g., staging
         run: |
+          set -e # Exit immediately if a command exits with a non-zero status.
+
           git config --global user.name '${{env.NAME}}'
           git config --global user.email '${{env.EMAIL}}'
-          git fetch                         # fetch branches
-          git checkout ${{env.TARGET}}              # checkout to your branch
 
-          files=$(find ${{env.SOURCE}} -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore')
-          git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
-          
+          echo "Current branch is ${{env.SOURCE_BRANCH}}"
+          echo "Identifying files to copy from ${{env.SOURCE_BRANCH}}..."
+          # This find command runs on the content of the SOURCE_BRANCH (staging)
+          # It lists all files (-type f) from the current directory (env.SOURCE which is '.')
+          # Then, grep filters out files matching the specified patterns.
+          # -print0, -z, -Z, and xargs -0 are used for robust handling of filenames with special characters.
+          files_to_copy_list_file=$(mktemp)
+          find ${{env.SOURCE}} -type f -print0 | grep -vzZE 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > "$files_to_copy_list_file"
+
+          echo "Fetching remote branches..."
+          git fetch origin
+
+          echo "Checking out target branch: ${{env.TARGET}}"
+          git checkout ${{env.TARGET}} # Checkout to the main branch
+
+          if ! [ -s "$files_to_copy_list_file" ]; then
+            echo "No files found to copy from ${{env.SOURCE_BRANCH}} after filtering."
+          else
+            echo "Copying files from ${{env.SOURCE_BRANCH}} to ${{env.TARGET}}..."
+            # xargs -0 reads NUL-delimited filenames from the file.
+            # -r (or --no-run-if-empty) ensures git checkout is not run if no files are listed.
+            # This command checks out the listed files from the SOURCE_BRANCH into the current working directory (which is now TARGET branch).
+            xargs -0 -r --arg-file="$files_to_copy_list_file" git checkout "${{env.SOURCE_BRANCH}}" --
+          fi
+          rm "$files_to_copy_list_file" # Clean up the temporary file
+
+          echo "Staging changes..."
           git add -A
-          git diff-index --quiet HEAD || git commit -asm "${{ github.event.head_commit.message }}"  # commit to the repository (ignore if no modification)
-          git push origin ${{env.TARGET}} --force # push to remote branch
+
+          echo "Committing changes if any..."
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit."
+          else
+            echo "Committing with message from source branch: ${{ github.event.head_commit.message }}"
+            git commit -sm "${{ github.event.head_commit.message }}" # commit with sign-off
+          fi
+
+          echo "Pushing to remote branch ${{env.TARGET}}..."
+          git push origin ${{env.TARGET}} --force
   analyze:
     name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
