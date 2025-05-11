@@ -23,8 +23,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "1bl4z3r"
-          git config user.email "34515568+1bl4z3r@users.noreply.github.com"
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
       
       - name: Set up staging and main branches
         run: |
@@ -32,38 +32,37 @@ jobs:
           git fetch origin staging
           git fetch origin main
           
-          # Create local branches tracking remote branches
-          git checkout -b staging origin/staging
-          git checkout -b main origin/main
+          # Switch to staging branch
+          git checkout staging || git checkout -b staging origin/staging
+          git pull origin staging
+          
+          # Create temp directory to store staging files
+          mkdir -p /tmp/staging_files
       
       - name: Find files to sync
         id: find_files
         run: |
-          # Create temp files to store file lists
-          find . -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|assets/images\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > staging_files.txt
+          # Create temp files to store file lists from staging
+          find . -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|assets/images\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > /tmp/staging_files/staging_files.txt
           
           # Switch to main branch to identify unique files
-          git checkout main
-          find . -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|assets/images\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > main_files.txt
+          git checkout main || git checkout -b main origin/main
+          git pull origin main
           
-          # Switch back to staging
-          git checkout staging
+          find . -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|assets/images\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > /tmp/staging_files/main_files.txt
           
           # Create list of files to sync
           echo "Files to sync from staging to main:"
-          cat staging_files.txt
+          cat /tmp/staging_files/staging_files.txt
       
       - name: Sync changes to main branch
         run: |
-          # Switch to main branch
+          # Make sure we're on main branch
           git checkout main
           
-          # Create a new branch based on main for changes
-          git checkout -b sync-staging-to-main
-          
           # Get lists of files
-          STAGING_FILES=$(cat staging_files.txt)
-          MAIN_FILES=$(cat main_files.txt)
+          STAGING_FILES=$(cat /tmp/staging_files/staging_files.txt)
+          MAIN_FILES=$(cat /tmp/staging_files/main_files.txt)
           
           # 1 & 2. Copy/create files from staging that should be synced
           for file in $STAGING_FILES; do
@@ -77,8 +76,8 @@ jobs:
           
           # 3. Delete files that exist in main but not in staging
           for file in $MAIN_FILES; do
-            if ! grep -q "^$file$" staging_files.txt; then
-              git rm "$file"
+            if ! grep -q "^$file$" /tmp/staging_files/staging_files.txt; then
+              git rm -f "$file" || echo "Could not remove $file"
               echo "Deleted: $file"
             fi
           done
@@ -89,7 +88,7 @@ jobs:
             git commit -m "Sync changes from staging to main"
             
             # Push changes to main
-            git push origin sync-staging-to-main:main
+            git push origin main
             echo "Changes synced from staging to main"
           else
             echo "No changes to sync"
@@ -98,7 +97,7 @@ jobs:
       - name: Clean up
         if: always()
         run: |
-          rm -f staging_files.txt main_files.txt
+          rm -rf /tmp/staging_files
 
   analyze:
     name: Analyze (${{ matrix.language }})
