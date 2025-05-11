@@ -15,103 +15,106 @@ jobs:
     name: Sync staging to main branch
     runs-on: ubuntu-latest
     env:
-      SOURCE_BRANCH_NAME: 'staging'
-      TARGET_BRANCH_NAME: 'main'
+      SOURCE_BRANCH: 'staging'
+      TARGET_BRANCH: 'main'
       GIT_COMMITTER_NAME: '1bl4z3r'
       GIT_COMMITTER_EMAIL: '34515568+1bl4z3r@users.noreply.github.com'
     steps:
-      - name: Checkout repository with both branches
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }} # Source branch (e.g., staging)
-          fetch-depth: 0 # Fetch all history for all branches
-      
+          fetch-depth: 0  # Fetch all history for all branches
+
       - name: Setup git configuration
         run: |
           git config user.name '${{ env.GIT_COMMITTER_NAME }}'
           git config user.email '${{ env.GIT_COMMITTER_EMAIL }}'
-      
-      - name: Set up target branch
+          
+          # Make sure we have the latest from remote
+          git fetch origin ${{ env.SOURCE_BRANCH }}:${{ env.SOURCE_BRANCH }} || git branch ${{ env.SOURCE_BRANCH }}
+          git fetch origin ${{ env.TARGET_BRANCH }}:${{ env.TARGET_BRANCH }} || git branch ${{ env.TARGET_BRANCH }}
+
+      - name: Sync changes from staging to main
         run: |
-          echo "Setting up target branch: ${{ env.TARGET_BRANCH_NAME }}"
-          # Create a local copy of the target branch
-          git fetch origin ${{ env.TARGET_BRANCH_NAME }}:${{ env.TARGET_BRANCH_NAME }}
-          # Create a temporary branch based on the target branch
-          git checkout -b temp-target-branch ${{ env.TARGET_BRANCH_NAME }}
-      
-      - name: Create exclusion list
-        run: |
-          # Create a file with exclusion patterns (one per line)
-          cat << EOF > exclude_patterns.txt
-          resources
-          .git
-          static
-          content
-          public
-          hugo.toml
-          assets/custom
-          assets/images
-          928-600x400.jpg
-          images/favicon.svg
-          hugo_build.lock
-          i18n
-          hermit.webp
-          .gitignore
-          EOF
-      
-      - name: Create list of files to sync
-        run: |
-          echo "Creating list of files to sync from ${{ env.SOURCE_BRANCH_NAME }}"
+          # Define our exclusion patterns as an array in bash
+          declare -a EXCLUDE_PATTERNS=(
+            "resources"
+            ".git"
+            "static"
+            "content"
+            "public"
+            "hugo.toml"
+            "assets/custom"
+            "assets/images"
+            "928-600x400.jpg"
+            "images/favicon.svg"
+            "hugo_build.lock"
+            "i18n"
+            "hermit.webp"
+            ".gitignore"
+          )
           
-          # Checkout the source branch to get its file listing
-          git checkout ${{ env.SOURCE_BRANCH_NAME }}
+          # Create a grep pattern from our exclusion array (join with \|)
+          EXCLUDE_PATTERN=$(IFS="|"; echo "${EXCLUDE_PATTERNS[*]}")
           
-          # Find all files in the source branch and exclude specified patterns
-          find . -type f | grep -v -f exclude_patterns.txt > source_files.txt
+          echo "Syncing from ${{ env.SOURCE_BRANCH }} to ${{ env.TARGET_BRANCH }}"
           
-          # Checkout the temporary target branch
-          git checkout temp-target-branch
+          # Step 1: Create temporary working branches
+          echo "Creating temporary working branches..."
+          git checkout ${{ env.SOURCE_BRANCH }}
+          git checkout -b temp-source ${{ env.SOURCE_BRANCH }}
           
-          # Find all files in the target branch and exclude specified patterns
-          find . -type f | grep -v -f exclude_patterns.txt > target_files.txt
+          git checkout ${{ env.TARGET_BRANCH }}
+          git checkout -b temp-target ${{ env.TARGET_BRANCH }}
           
-          # Find files that should be deleted (in target but not in source)
-          # Use grep with -F (fixed strings) and -x (exact match) to compare complete paths
-          grep -v -f source_files.txt target_files.txt > files_to_delete.txt || true
+          # Step 2: Create lists of files (exclude patterns applied)
+          echo "Creating file lists..."
+          # Switch to source branch to list files
+          git checkout temp-source
+          SOURCE_FILES=$(git ls-files | grep -v -E "$EXCLUDE_PATTERN")
+          echo "$SOURCE_FILES" > /tmp/source_files.txt
+          echo "Source files count: $(wc -l < /tmp/source_files.txt)"
           
-          # Go back to source branch to prepare for sync
-          git checkout ${{ env.SOURCE_BRANCH_NAME }}
+          # Switch to target branch to list files
+          git checkout temp-target
+          TARGET_FILES=$(git ls-files | grep -v -E "$EXCLUDE_PATTERN")
+          echo "$TARGET_FILES" > /tmp/target_files.txt
+          echo "Target files count: $(wc -l < /tmp/target_files.txt)"
           
-          echo "Files to sync:"
-          cat source_files.txt
+          # Step 3: Find files to delete (in target but not in source)
+          echo "Finding files to delete..."
+          comm -23 <(sort /tmp/target_files.txt) <(sort /tmp/source_files.txt) > /tmp/files_to_delete.txt
+          echo "Files to delete count: $(wc -l < /tmp/files_to_delete.txt)"
           
-          echo "Files to delete:"
-          cat files_to_delete.txt
-      
-      - name: Sync changes to target branch
-        run: |
-          echo "Syncing changes from ${{ env.SOURCE_BRANCH_NAME }} to ${{ env.TARGET_BRANCH_NAME }}"
+          # Step 4: Create a new branch from target for our changes
+          echo "Creating sync branch from ${{ env.TARGET_BRANCH }}..."
+          git checkout ${{ env.TARGET_BRANCH }}
+          git checkout -b sync-branch
           
-          # Create a new branch based on the target branch
-          git checkout -b synced-branch ${{ env.TARGET_BRANCH_NAME }}
-          
-          # Delete files that were removed from source
-          if [ -s files_to_delete.txt ]; then
-            echo "Deleting files that were removed from source branch"
+          # Step 5: Delete files that were removed from source
+          if [ -s /tmp/files_to_delete.txt ]; then
+            echo "Deleting files that were removed from source branch..."
             while IFS= read -r file_to_delete; do
-              echo "Deleting: $file_to_delete"
-              git rm -f "$file_to_delete" || true
-            done < files_to_delete.txt
+              if [ -f "$file_to_delete" ]; then
+                echo "Deleting: $file_to_delete"
+                git rm "$file_to_delete"
+              fi
+            done < /tmp/files_to_delete.txt
           else
             echo "No files to delete"
           fi
           
-          # Copy files from source branch
-          if [ -s source_files.txt ]; then
-            echo "Copying files from source branch"
-            
-            # Checkout source branch files
-            git checkout ${{ env.SOURCE_BRANCH_NAME }} -- $(cat source_files.txt)
+          # Step 6: Copy files from source branch
+          if [ -s /tmp/source_files.txt ]; then
+            echo "Copying files from source branch..."
+            # For each file in source branch
+            while IFS= read -r file_path; do
+              # Create directory structure if needed
+              mkdir -p "$(dirname "$file_path")" 2>/dev/null || true
+              
+              # Copy content from source branch
+              git checkout ${{ env.SOURCE_BRANCH }} -- "$file_path" 2>/dev/null || true
+            done < /tmp/source_files.txt
             
             # Stage all changes
             git add -A
@@ -119,22 +122,23 @@ jobs:
             echo "No files to copy from source branch"
           fi
           
-          # Prepare commit message
+          # Step 7: Commit and push changes
+          echo "Committing changes..."
+          # Get commit message from the triggering commit, or use default
           COMMIT_MSG="${{ github.event.head_commit.message }}"
-          # Fallback commit message
           if [ -z "$COMMIT_MSG" ]; then
-            COMMIT_MSG="Sync files from ${{ env.SOURCE_BRANCH_NAME }} to ${{ env.TARGET_BRANCH_NAME }}"
+            COMMIT_MSG="Sync files from ${{ env.SOURCE_BRANCH }} to ${{ env.TARGET_BRANCH }}"
           fi
           
           # Check if there are changes to commit
           if git diff --cached --quiet; then
-            echo "No changes to commit to ${{ env.TARGET_BRANCH_NAME }}."
+            echo "No changes to commit to ${{ env.TARGET_BRANCH }}."
           else
-            echo "Committing to ${{ env.TARGET_BRANCH_NAME }} with message: $COMMIT_MSG"
+            echo "Committing to ${{ env.TARGET_BRANCH }} with message: $COMMIT_MSG"
             git commit -sm "$COMMIT_MSG" # -s for sign-off, -m for message
             
-            echo "Pushing changes to remote branch ${{ env.TARGET_BRANCH_NAME }}..."
-            git push origin synced-branch:${{ env.TARGET_BRANCH_NAME }}
+            echo "Pushing changes to remote branch ${{ env.TARGET_BRANCH }}..."
+            git push origin sync-branch:${{ env.TARGET_BRANCH }}
           fi
 
   analyze:
