@@ -40,7 +40,7 @@ jobs:
           # Then, grep filters out files matching the specified patterns.
           # -print0, -z, -Z, and xargs -0 are used for robust handling of filenames with special characters.
           files_to_copy_list_file=$(mktemp)
-          find ${{env.SOURCE}} -type f -print0 | grep -vzZE 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > "$files_to_copy_list_file"
+          find ${{env.SOURCE}} -type f -print0 | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|assets/images\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > "$files_to_copy_list_file"
 
           echo "Fetching remote branches..."
           git fetch origin
