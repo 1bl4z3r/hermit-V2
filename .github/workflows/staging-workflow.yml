@@ -11,89 +11,131 @@ on:
   workflow_dispatch:
 
 jobs:
-  copy-theme-to-main:
-    name: Copy Themes content to main branch
+  sync-branches:
+    name: Sync staging to main branch
     runs-on: ubuntu-latest
     env:
+      SOURCE_BRANCH_NAME: 'staging'
       TARGET_BRANCH_NAME: 'main'
       GIT_COMMITTER_NAME: '1bl4z3r'
       GIT_COMMITTER_EMAIL: '34515568+1bl4z3r@users.noreply.github.com'
     steps:
-      - name: Checkout source branch (${{ github.ref_name }})
+      - name: Checkout repository with both branches
         uses: actions/checkout@v4
         with:
           ref: ${{ github.ref_name }} # Source branch (e.g., staging)
-          path: source_checkout
-          submodules: true
-          fetch-depth: 0
-
-      - name: Checkout target branch (${{ env.TARGET_BRANCH_NAME }})
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ env.TARGET_BRANCH_NAME }} # Target branch (e.g., main)
-          path: target_checkout
-          fetch-depth: 0
-
-      - name: Copy files and commit to target branch
+          fetch-depth: 0 # Fetch all history for all branches
+      
+      - name: Setup git configuration
         run: |
-          set -e # Exit immediately if a command exits with a non-zero status.
-
-          echo "Source branch: ${{ github.ref_name }}"
-          echo "Target branch: ${{ env.TARGET_BRANCH_NAME }}"
-
-          temp_files_list=$(mktemp)
-
-          echo "Identifying files to copy from source branch (${{ github.ref_name }})..."
-          # Paths in temp_files_list will be relative to source_checkout.
-          # grep uses Basic Regular Expressions (BRE) by default. `\|` is OR, `\.` is literal dot.
-          # This grep pattern filters out specified files and directories.
-          cd source_checkout
-          find . -type f -print0 | \
-            grep -v 'resources\|git\|static\|content\|public\|hugo\.toml$\|assets/custom\|assets/images\|928-600x400\.jpg\|images/favicon\.svg\|hugo_build\.lock\|i18n\|hermit\.webp\|\.gitignore' \
-            > "${GITHUB_WORKSPACE}/${temp_files_list##*/}" # Write to temp file in GITHUB_WORKSPACE
-          cd .. # Back to GITHUB_WORKSPACE
-
-          if ! [ -s "$temp_files_list" ]; then
-            echo "No files found to copy from ${{ github.ref_name }} after filtering."
+          git config user.name '${{ env.GIT_COMMITTER_NAME }}'
+          git config user.email '${{ env.GIT_COMMITTER_EMAIL }}'
+      
+      - name: Set up target branch
+        run: |
+          echo "Setting up target branch: ${{ env.TARGET_BRANCH_NAME }}"
+          # Create a local copy of the target branch
+          git fetch origin ${{ env.TARGET_BRANCH_NAME }}:${{ env.TARGET_BRANCH_NAME }}
+          # Create a temporary branch based on the target branch
+          git checkout -b temp-target-branch ${{ env.TARGET_BRANCH_NAME }}
+      
+      - name: Create exclusion list
+        run: |
+          # Create a file with exclusion patterns (one per line)
+          cat << EOF > exclude_patterns.txt
+          resources
+          .git
+          static
+          content
+          public
+          hugo.toml
+          assets/custom
+          assets/images
+          928-600x400.jpg
+          images/favicon.svg
+          hugo_build.lock
+          i18n
+          hermit.webp
+          .gitignore
+          EOF
+      
+      - name: Create list of files to sync
+        run: |
+          echo "Creating list of files to sync from ${{ env.SOURCE_BRANCH_NAME }}"
+          
+          # Checkout the source branch to get its file listing
+          git checkout ${{ env.SOURCE_BRANCH_NAME }}
+          
+          # Find all files in the source branch and exclude specified patterns
+          find . -type f | grep -v -f exclude_patterns.txt > source_files.txt
+          
+          # Checkout the temporary target branch
+          git checkout temp-target-branch
+          
+          # Find all files in the target branch and exclude specified patterns
+          find . -type f | grep -v -f exclude_patterns.txt > target_files.txt
+          
+          # Find files that should be deleted (in target but not in source)
+          # Use grep with -F (fixed strings) and -x (exact match) to compare complete paths
+          grep -v -f source_files.txt target_files.txt > files_to_delete.txt || true
+          
+          # Go back to source branch to prepare for sync
+          git checkout ${{ env.SOURCE_BRANCH_NAME }}
+          
+          echo "Files to sync:"
+          cat source_files.txt
+          
+          echo "Files to delete:"
+          cat files_to_delete.txt
+      
+      - name: Sync changes to target branch
+        run: |
+          echo "Syncing changes from ${{ env.SOURCE_BRANCH_NAME }} to ${{ env.TARGET_BRANCH_NAME }}"
+          
+          # Create a new branch based on the target branch
+          git checkout -b synced-branch ${{ env.TARGET_BRANCH_NAME }}
+          
+          # Delete files that were removed from source
+          if [ -s files_to_delete.txt ]; then
+            echo "Deleting files that were removed from source branch"
+            while IFS= read -r file_to_delete; do
+              echo "Deleting: $file_to_delete"
+              git rm -f "$file_to_delete" || true
+            done < files_to_delete.txt
           else
-            echo "Copying files from ${{ github.ref_name }} to ${{ env.TARGET_BRANCH_NAME }} using rsync..."
-            # rsync -a: archive mode (preserves permissions, ownership, timestamps, etc.)
-            # --from0: indicates that the file list from --files-from is NUL-terminated.
-            # --files-from: specifies the file containing the list of files to transfer.
-            # source_checkout/ : source directory (trailing slash copies contents).
-            # target_checkout/ : destination directory.
-            rsync -a --from0 --files-from="$temp_files_list" source_checkout/ target_checkout/
+            echo "No files to delete"
           fi
-          rm "$temp_files_list" # Clean up the temporary file list
-
-          echo "Configuring git user in target checkout..."
-          cd target_checkout
-          # Configure git user for this commit. Using --global is generally fine in ephemeral CI runners.
-          git config --global user.name '${{ env.GIT_COMMITTER_NAME }}'
-          git config --global user.email '${{ env.GIT_COMMITTER_EMAIL }}'
-
-          echo "Staging changes in ${{ env.TARGET_BRANCH_NAME }}..."
-          git add -A
-
-          echo "Committing changes if any to ${{ env.TARGET_BRANCH_NAME }}..."
+          
+          # Copy files from source branch
+          if [ -s source_files.txt ]; then
+            echo "Copying files from source branch"
+            
+            # Checkout source branch files
+            git checkout ${{ env.SOURCE_BRANCH_NAME }} -- $(cat source_files.txt)
+            
+            # Stage all changes
+            git add -A
+          else
+            echo "No files to copy from source branch"
+          fi
+          
+          # Prepare commit message
           COMMIT_MSG="${{ github.event.head_commit.message }}"
-          # Fallback commit message if the original one is empty (e.g., for workflow_dispatch triggers)
+          # Fallback commit message
           if [ -z "$COMMIT_MSG" ]; then
-            COMMIT_MSG="Sync theme files from ${{ github.ref_name }} to ${{ env.TARGET_BRANCH_NAME }}"
+            COMMIT_MSG="Sync files from ${{ env.SOURCE_BRANCH_NAME }} to ${{ env.TARGET_BRANCH_NAME }}"
           fi
-
-          if git diff-index --quiet HEAD; then
+          
+          # Check if there are changes to commit
+          if git diff --cached --quiet; then
             echo "No changes to commit to ${{ env.TARGET_BRANCH_NAME }}."
           else
             echo "Committing to ${{ env.TARGET_BRANCH_NAME }} with message: $COMMIT_MSG"
             git commit -sm "$COMMIT_MSG" # -s for sign-off, -m for message
+            
+            echo "Pushing changes to remote branch ${{ env.TARGET_BRANCH_NAME }}..."
+            git push origin synced-branch:${{ env.TARGET_BRANCH_NAME }}
           fi
-
-          echo "Pushing changes to remote branch ${{ env.TARGET_BRANCH_NAME }}..."
-          # Removed --force for safety. A regular push will fail if the target branch has new commits,
-          # preventing accidental overwrites.
-          git push origin ${{ env.TARGET_BRANCH_NAME }}
-          cd .. # Back to GITHUB_WORKSPACE
 
   analyze:
     name: Analyze (${{ matrix.language }})
@@ -116,18 +158,12 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
-    - if: matrix.build-mode == 'manual'
-      run: |
-        echo 'If you are using a "manual" build mode for one or more of the' \
-          'languages you are analyzing, replace this with the commands to build' \
-          'your code, for example:'
-        echo '  make bootstrap'
-        echo '  make release'
-        exit 1
+
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
+
   build-and-deploy-site:
     name: Build and Deploy Hugo
     runs-on: ubuntu-latest
