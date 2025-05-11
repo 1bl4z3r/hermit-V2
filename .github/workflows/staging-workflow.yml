@@ -12,7 +12,7 @@ on:
 
 jobs:
 
-sync-branches:
+  sync-branches:
     runs-on: ubuntu-latest
     
     steps:
