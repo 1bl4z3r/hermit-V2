@@ -11,135 +11,94 @@ on:
   workflow_dispatch:
 
 jobs:
-  sync-branches:
-    name: Sync staging to main branch
+
+sync-branches:
     runs-on: ubuntu-latest
-    env:
-      SOURCE_BRANCH: 'staging'
-      TARGET_BRANCH: 'main'
-      GIT_COMMITTER_NAME: '1bl4z3r'
-      GIT_COMMITTER_EMAIL: '34515568+1bl4z3r@users.noreply.github.com'
+    
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Fetch all history for all branches
 
-      - name: Setup git configuration
+      - name: Configure Git
         run: |
-          git config user.name '${{ env.GIT_COMMITTER_NAME }}'
-          git config user.email '${{ env.GIT_COMMITTER_EMAIL }}'
-          
-          # Make sure we have the latest from remote
-          git fetch origin ${{ env.SOURCE_BRANCH }}:${{ env.SOURCE_BRANCH }} || git branch ${{ env.SOURCE_BRANCH }}
-          git fetch origin ${{ env.TARGET_BRANCH }}:${{ env.TARGET_BRANCH }} || git branch ${{ env.TARGET_BRANCH }}
-
-      - name: Sync changes from staging to main
+          git config user.name "1bl4z3r"
+          git config user.email "34515568+1bl4z3r@users.noreply.github.com"
+      
+      - name: Set up staging and main branches
         run: |
-          # Define our exclusion patterns as an array in bash
-          declare -a EXCLUDE_PATTERNS=(
-            "resources"
-            ".git"
-            "static"
-            "content"
-            "public"
-            "hugo.toml"
-            "assets/custom"
-            "assets/images"
-            "928-600x400.jpg"
-            "images/favicon.svg"
-            "hugo_build.lock"
-            "i18n"
-            "hermit.webp"
-            ".gitignore"
-          )
+          # Ensure we have the latest from both branches
+          git fetch origin staging
+          git fetch origin main
           
-          # Create a grep pattern from our exclusion array (join with \|)
-          EXCLUDE_PATTERN=$(IFS="|"; echo "${EXCLUDE_PATTERNS[*]}")
+          # Create local branches tracking remote branches
+          git checkout -b staging origin/staging
+          git checkout -b main origin/main
+      
+      - name: Find files to sync
+        id: find_files
+        run: |
+          # Create temp files to store file lists
+          find . -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|assets/images\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > staging_files.txt
           
-          echo "Syncing from ${{ env.SOURCE_BRANCH }} to ${{ env.TARGET_BRANCH }}"
+          # Switch to main branch to identify unique files
+          git checkout main
+          find . -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|assets/images\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > main_files.txt
           
-          # Step 1: Create temporary working branches
-          echo "Creating temporary working branches..."
-          git checkout ${{ env.SOURCE_BRANCH }}
-          git checkout -b temp-source ${{ env.SOURCE_BRANCH }}
+          # Switch back to staging
+          git checkout staging
           
-          git checkout ${{ env.TARGET_BRANCH }}
-          git checkout -b temp-target ${{ env.TARGET_BRANCH }}
+          # Create list of files to sync
+          echo "Files to sync from staging to main:"
+          cat staging_files.txt
+      
+      - name: Sync changes to main branch
+        run: |
+          # Switch to main branch
+          git checkout main
           
-          # Step 2: Create lists of files (exclude patterns applied)
-          echo "Creating file lists..."
-          # Switch to source branch to list files
-          git checkout temp-source
-          SOURCE_FILES=$(git ls-files | grep -v -E "$EXCLUDE_PATTERN")
-          echo "$SOURCE_FILES" > /tmp/source_files.txt
-          echo "Source files count: $(wc -l < /tmp/source_files.txt)"
+          # Create a new branch based on main for changes
+          git checkout -b sync-staging-to-main
           
-          # Switch to target branch to list files
-          git checkout temp-target
-          TARGET_FILES=$(git ls-files | grep -v -E "$EXCLUDE_PATTERN")
-          echo "$TARGET_FILES" > /tmp/target_files.txt
-          echo "Target files count: $(wc -l < /tmp/target_files.txt)"
+          # Get lists of files
+          STAGING_FILES=$(cat staging_files.txt)
+          MAIN_FILES=$(cat main_files.txt)
           
-          # Step 3: Find files to delete (in target but not in source)
-          echo "Finding files to delete..."
-          comm -23 <(sort /tmp/target_files.txt) <(sort /tmp/source_files.txt) > /tmp/files_to_delete.txt
-          echo "Files to delete count: $(wc -l < /tmp/files_to_delete.txt)"
-          
-          # Step 4: Create a new branch from target for our changes
-          echo "Creating sync branch from ${{ env.TARGET_BRANCH }}..."
-          git checkout ${{ env.TARGET_BRANCH }}
-          git checkout -b sync-branch
-          
-          # Step 5: Delete files that were removed from source
-          if [ -s /tmp/files_to_delete.txt ]; then
-            echo "Deleting files that were removed from source branch..."
-            while IFS= read -r file_to_delete; do
-              if [ -f "$file_to_delete" ]; then
-                echo "Deleting: $file_to_delete"
-                git rm "$file_to_delete"
-              fi
-            done < /tmp/files_to_delete.txt
-          else
-            echo "No files to delete"
-          fi
-          
-          # Step 6: Copy files from source branch
-          if [ -s /tmp/source_files.txt ]; then
-            echo "Copying files from source branch..."
-            # For each file in source branch
-            while IFS= read -r file_path; do
-              # Create directory structure if needed
-              mkdir -p "$(dirname "$file_path")" 2>/dev/null || true
-              
-              # Copy content from source branch
-              git checkout ${{ env.SOURCE_BRANCH }} -- "$file_path" 2>/dev/null || true
-            done < /tmp/source_files.txt
+          # 1 & 2. Copy/create files from staging that should be synced
+          for file in $STAGING_FILES; do
+            # Create directory if it doesn't exist
+            mkdir -p $(dirname "$file")
             
-            # Stage all changes
-            git add -A
-          else
-            echo "No files to copy from source branch"
-          fi
+            # Copy the file from staging branch
+            git checkout staging -- "$file"
+            echo "Copied/updated: $file"
+          done
           
-          # Step 7: Commit and push changes
-          echo "Committing changes..."
-          # Get commit message from the triggering commit, or use default
-          COMMIT_MSG="${{ github.event.head_commit.message }}"
-          if [ -z "$COMMIT_MSG" ]; then
-            COMMIT_MSG="Sync files from ${{ env.SOURCE_BRANCH }} to ${{ env.TARGET_BRANCH }}"
-          fi
+          # 3. Delete files that exist in main but not in staging
+          for file in $MAIN_FILES; do
+            if ! grep -q "^$file$" staging_files.txt; then
+              git rm "$file"
+              echo "Deleted: $file"
+            fi
+          done
           
-          # Check if there are changes to commit
-          if git diff --cached --quiet; then
-            echo "No changes to commit to ${{ env.TARGET_BRANCH }}."
-          else
-            echo "Committing to ${{ env.TARGET_BRANCH }} with message: $COMMIT_MSG"
-            git commit -sm "$COMMIT_MSG" # -s for sign-off, -m for message
+          # Commit changes if any
+          if git status --porcelain | grep .; then
+            git add --all
+            git commit -m "Sync changes from staging to main"
             
-            echo "Pushing changes to remote branch ${{ env.TARGET_BRANCH }}..."
-            git push origin sync-branch:${{ env.TARGET_BRANCH }}
+            # Push changes to main
+            git push origin sync-staging-to-main:main
+            echo "Changes synced from staging to main"
+          else
+            echo "No changes to sync"
           fi
+      
+      - name: Clean up
+        if: always()
+        run: |
+          rm -f staging_files.txt main_files.txt
 
   analyze:
     name: Analyze (${{ matrix.language }})
