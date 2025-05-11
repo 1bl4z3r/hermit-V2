@@ -42,6 +42,14 @@ jobs:
       - name: Find files to sync
         id: find_files
         run: |
+          # Get the latest commit message from staging branch
+          git checkout staging
+          COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+          echo "COMMIT_MESSAGE=$COMMIT_MESSAGE" >> $GITHUB_ENV
+          
+          # Return to main branch
+          git checkout main
+        run: |
           # Create temp files to store file lists from staging
           find . -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|assets/images\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > /tmp/staging_files/staging_files.txt
           
@@ -85,7 +93,7 @@ jobs:
           # Commit changes if any
           if git status --porcelain | grep .; then
             git add --all
-            git commit -m "Sync changes from staging to main"
+            git commit -m "${{ env.COMMIT_MESSAGE || 'Sync changes from staging to main' }}"
             
             # Push changes to main
             git push origin main
