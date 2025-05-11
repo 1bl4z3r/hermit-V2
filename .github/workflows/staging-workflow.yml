@@ -14,64 +14,87 @@ jobs:
   copy-theme-to-main:
     name: Copy Themes content to main branch
     runs-on: ubuntu-latest
+    env:
+      TARGET_BRANCH_NAME: 'main'
+      GIT_COMMITTER_NAME: '1bl4z3r'
+      GIT_COMMITTER_EMAIL: '34515568+1bl4z3r@users.noreply.github.com'
     steps:
-      - name: Checkout repo
+      - name: Checkout source branch (${{ github.ref_name }})
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.ref_name }} # Source branch (e.g., staging)
+          path: source_checkout
           submodules: true
           fetch-depth: 0
-      - name: Push to main
-        env:
-          SOURCE: '.'
-          TARGET: 'main'
-          NAME: 1bl4z3r
-          EMAIL: 34515568+1bl4z3r@users.noreply.github.com
-          SOURCE_BRANCH: ${{ github.ref_name }} # e.g., staging
+
+      - name: Checkout target branch (${{ env.TARGET_BRANCH_NAME }})
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TARGET_BRANCH_NAME }} # Target branch (e.g., main)
+          path: target_checkout
+          fetch-depth: 0
+
+      - name: Copy files and commit to target branch
         run: |
           set -e # Exit immediately if a command exits with a non-zero status.
 
-          git config --global user.name '${{env.NAME}}'
-          git config --global user.email '${{env.EMAIL}}'
+          echo "Source branch: ${{ github.ref_name }}"
+          echo "Target branch: ${{ env.TARGET_BRANCH_NAME }}"
 
-          echo "Current branch is ${{env.SOURCE_BRANCH}}"
-          echo "Identifying files to copy from ${{env.SOURCE_BRANCH}}..."
-          # This find command runs on the content of the SOURCE_BRANCH (staging)
-          # It lists all files (-type f) from the current directory (env.SOURCE which is '.')
-          # Then, grep filters out files matching the specified patterns.
-          # -print0, -z, -Z, and xargs -0 are used for robust handling of filenames with special characters.
-          files_to_copy_list_file=$(mktemp)
-          find ${{env.SOURCE}} -type f -print0 | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|assets/images\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > "$files_to_copy_list_file"
+          temp_files_list=$(mktemp)
 
-          echo "Fetching remote branches..."
-          git fetch origin
+          echo "Identifying files to copy from source branch (${{ github.ref_name }})..."
+          # Paths in temp_files_list will be relative to source_checkout.
+          # grep uses Basic Regular Expressions (BRE) by default. `\|` is OR, `\.` is literal dot.
+          # This grep pattern filters out specified files and directories.
+          cd source_checkout
+          find . -type f -print0 | \
+            grep -v 'resources\|git\|static\|content\|public\|hugo\.toml$\|assets/custom\|assets/images\|928-600x400\.jpg\|images/favicon\.svg\|hugo_build\.lock\|i18n\|hermit\.webp\|\.gitignore' \
+            > "${GITHUB_WORKSPACE}/${temp_files_list##*/}" # Write to temp file in GITHUB_WORKSPACE
+          cd .. # Back to GITHUB_WORKSPACE
 
-          echo "Checking out target branch: ${{env.TARGET}}"
-          git checkout ${{env.TARGET}} # Checkout to the main branch
-
-          if ! [ -s "$files_to_copy_list_file" ]; then
-            echo "No files found to copy from ${{env.SOURCE_BRANCH}} after filtering."
+          if ! [ -s "$temp_files_list" ]; then
+            echo "No files found to copy from ${{ github.ref_name }} after filtering."
           else
-            echo "Copying files from ${{env.SOURCE_BRANCH}} to ${{env.TARGET}}..."
-            # xargs -0 reads NUL-delimited filenames from the file.
-            # -r (or --no-run-if-empty) ensures git checkout is not run if no files are listed.
-            # This command checks out the listed files from the SOURCE_BRANCH into the current working directory (which is now TARGET branch).
-            xargs -0 -r --arg-file="$files_to_copy_list_file" git checkout "${{env.SOURCE_BRANCH}}" --
+            echo "Copying files from ${{ github.ref_name }} to ${{ env.TARGET_BRANCH_NAME }} using rsync..."
+            # rsync -a: archive mode (preserves permissions, ownership, timestamps, etc.)
+            # --from0: indicates that the file list from --files-from is NUL-terminated.
+            # --files-from: specifies the file containing the list of files to transfer.
+            # source_checkout/ : source directory (trailing slash copies contents).
+            # target_checkout/ : destination directory.
+            rsync -a --from0 --files-from="$temp_files_list" source_checkout/ target_checkout/
           fi
-          rm "$files_to_copy_list_file" # Clean up the temporary file
+          rm "$temp_files_list" # Clean up the temporary file list
 
-          echo "Staging changes..."
+          echo "Configuring git user in target checkout..."
+          cd target_checkout
+          # Configure git user for this commit. Using --global is generally fine in ephemeral CI runners.
+          git config --global user.name '${{ env.GIT_COMMITTER_NAME }}'
+          git config --global user.email '${{ env.GIT_COMMITTER_EMAIL }}'
+
+          echo "Staging changes in ${{ env.TARGET_BRANCH_NAME }}..."
           git add -A
 
-          echo "Committing changes if any..."
-          if git diff-index --quiet HEAD; then
-            echo "No changes to commit."
-          else
-            echo "Committing with message from source branch: ${{ github.event.head_commit.message }}"
-            git commit -sm "${{ github.event.head_commit.message }}" # commit with sign-off
+          echo "Committing changes if any to ${{ env.TARGET_BRANCH_NAME }}..."
+          COMMIT_MSG="${{ github.event.head_commit.message }}"
+          # Fallback commit message if the original one is empty (e.g., for workflow_dispatch triggers)
+          if [ -z "$COMMIT_MSG" ]; then
+            COMMIT_MSG="Sync theme files from ${{ github.ref_name }} to ${{ env.TARGET_BRANCH_NAME }}"
           fi
 
-          echo "Pushing to remote branch ${{env.TARGET}}..."
-          git push origin ${{env.TARGET}} --force
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit to ${{ env.TARGET_BRANCH_NAME }}."
+          else
+            echo "Committing to ${{ env.TARGET_BRANCH_NAME }} with message: $COMMIT_MSG"
+            git commit -sm "$COMMIT_MSG" # -s for sign-off, -m for message
+          fi
+
+          echo "Pushing changes to remote branch ${{ env.TARGET_BRANCH_NAME }}..."
+          # Removed --force for safety. A regular push will fail if the target branch has new commits,
+          # preventing accidental overwrites.
+          git push origin ${{ env.TARGET_BRANCH_NAME }}
+          cd .. # Back to GITHUB_WORKSPACE
+
   analyze:
     name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
