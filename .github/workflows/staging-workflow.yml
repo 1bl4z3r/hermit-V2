@@ -11,7 +11,6 @@ on:
   workflow_dispatch:
 
 jobs:
-
   sync-branches:
     runs-on: ubuntu-latest
     
@@ -26,48 +25,42 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
       
-      - name: Set up staging and main branches
+      - name: Setup branches and directories
         run: |
           # Ensure we have the latest from both branches
           git fetch origin staging
           git fetch origin main
           
+          # Create temp directory to store files
+          mkdir -p /tmp/staging_files
+      
+      - name: Checkout staging and capture commit message
+        run: |
           # Switch to staging branch
           git checkout staging || git checkout -b staging origin/staging
           git pull origin staging
           
-          # Create temp directory to store staging files
-          mkdir -p /tmp/staging_files
-      
-      - name: Find files to sync
-        id: find_files
-        run: |
           # Get the latest commit message from staging branch
-          git checkout staging
           COMMIT_MESSAGE=$(git log -1 --pretty=%B)
           echo "COMMIT_MESSAGE=$COMMIT_MESSAGE" >> $GITHUB_ENV
           
-          # Return to main branch
-          git checkout main
-        run: |
-          # Create temp files to store file lists from staging
+          # Generate file list from staging
           find . -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|assets/images\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > /tmp/staging_files/staging_files.txt
           
-          # Switch to main branch to identify unique files
-          git checkout main || git checkout -b main origin/main
-          git pull origin main
-          
-          find . -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|assets/images\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > /tmp/staging_files/main_files.txt
-          
-          # Create list of files to sync
           echo "Files to sync from staging to main:"
           cat /tmp/staging_files/staging_files.txt
       
+      - name: Checkout main and generate file list
+        run: |
+          # Switch to main branch
+          git checkout main || git checkout -b main origin/main
+          git pull origin main
+          
+          # Generate file list from main
+          find . -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|assets/images\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > /tmp/staging_files/main_files.txt
+      
       - name: Sync changes to main branch
         run: |
-          # Make sure we're on main branch
-          git checkout main
-          
           # Get lists of files
           STAGING_FILES=$(cat /tmp/staging_files/staging_files.txt)
           MAIN_FILES=$(cat /tmp/staging_files/main_files.txt)
@@ -106,7 +99,6 @@ jobs:
         if: always()
         run: |
           rm -rf /tmp/staging_files
-
   analyze:
     name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
