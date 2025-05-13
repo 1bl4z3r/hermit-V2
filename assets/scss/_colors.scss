@@ -118,6 +118,19 @@ $mobile-menu-background: $arsenic !default;
 $screen-reader-text: $lapis-lazuli !default;
 $screen-reader-text-background: $anti-flash-white !default;
 
+// Image Gallery specific colours
+$gallery-item-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !default; // Subtle shadow for depth.
+$gallery-item-hover-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !default; // Enhance shadow on hover.
+$gallery-item-caption-background: rgba(0, 0, 0, 0.7) !default; // Semi-transparent background for readability.
+$gallery-item-caption-color: #fff !default; // White text for contrast.
+$lightbox-overlay-background: rgba(0, 0, 0, 0.85) !default; // Dark semi-transparent background to focus on image.
+$lightbox-image-box-shadow: 0 5px 15px rgba(0,0,0,0.3) !default; // Shadow for the image in lightbox
+$lightbox-caption-color: #fff !default; // Caption colour in lightbox.
+$lightbox-close-nav-color: #fff !default; // Close and Navigation button colour in lightbox.
+$lightbox-close-color-hover: #ccc !default; // Close button hover colour in lightbox.
+$lightbox-nav-background-color: rgba(0, 0, 0, 0.3) !default; // Semi-transparent background for nav buttons.
+$lightbox-nav-background-color-hover: rgba(0, 0, 0, 0.6) !default; // Semi-transparent background for nav buttons on hover.
+
 //Admonition colors
 $admonition-background: (
     "note": rgba($blueberry, $admonition-background-opacity),

@@ -36,7 +36,17 @@
             {{- else -}} {{/* Otherwise, assume it's an asset path for processing. */}}
                 {{- $imageResource := resources.Get $source -}} {{/* Get the image resource from /assets or page resources. */}}
                 {{- if $imageResource -}}
-                    {{- $thumbnail := $imageResource.Fill "300x300 Smart" -}} {{/* Create a 300x300 smart cropped thumbnail. */}}
+                        {{/* Determine thumbnail_spec:
+                         If params.gallery.thumbnail (e.g., "400") is set in hugo.toml, use "400x400 Smart".
+                         Else, default to "300x300 Smart". */}}
+                         {{- $thumbnailSpec := "" -}}
+                         {{- if and $.Site.Params.gallery.enable $.Site.Params.gallery.thumbnail -}}
+                            {{- $dimension := $.Site.Params.gallery.thumbnail -}} {{/* Expects a dimension value like "400" from hugo.toml */}}
+                             {{- $thumbnailSpec = printf "%sx%s Smart" $dimension $dimension -}}
+                         {{- else -}}
+                             {{- $thumbnailSpec = "300x300 Smart" -}}
+                         {{- end -}}
+                         {{- $thumbnail := $imageResource.Fill $thumbnailSpec -}} {{/* Create a thumbnail based on the determined spec. */}}
                     {{- $thumbnailUrl = $thumbnail.RelPermalink -}}
                     {{- $fullImageUrl = $imageResource.RelPermalink -}}
                     {{- $filename := $imageResource.Name -}} {{/* Get the original filename (e.g., my-image.jpg). */}}
@@ -49,7 +59,11 @@
             {{- if $fullImageUrl -}}
             {{/* Each gallery item is a link to the full image, displaying a thumbnail. */}}
             <a href="{{ $fullImageUrl }}" class="gallery-item" data-lightbox-group="{{ $galleryId }}" data-title="{{ $caption | default "Image" | humanize | title }}">
+                {{- if and $.Site.Params.gallery.enable $.Site.Params.gallery.thumbnail -}}
+                <img src="{{ $thumbnailUrl }}" alt="{{ $caption | default (printf "Gallery image %d" (add $index 1)) }}" width="{{ $.Site.Params.gallery.thumbnail }}" height="{{ $.Site.Params.gallery.thumbnail }}" loading="lazy">
+                {{- else -}}
                 <img src="{{ $thumbnailUrl }}" alt="{{ $caption | default (printf "Gallery image %d" (add $index 1)) }}" width="300" height="300" loading="lazy">
+                {{- end -}}
                 {{/* The caption is displayed over the image (styling controlled by CSS). */}}
                 <div class="gallery-item-caption">{{ $caption | default "Image" | humanize | title }}</div>
             </a>
