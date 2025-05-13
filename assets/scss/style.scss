@@ -9,7 +9,10 @@
 {{ end }}
 @import "scrolltotop.scss";
 @import "socialshare.scss";
+{{ if .Site.Params.gallery.enable }}
+$thumbnail: {{ printf "%spx" ($.Site.Params.gallery.thumbnail | default "300") }};
 @import "gallery.scss";
+{{ end }}
 
 // Default Accent Color (accentColor) taken from hugo.toml
 // If accentColor is not present, it will fallback to declarations in _colors.scss

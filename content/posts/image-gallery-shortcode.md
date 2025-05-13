@@ -42,6 +42,60 @@ https://example.com/remote/image2.png
 {{</* /gallery */>}}
 ```
 
+## Configuration
+
+You can configure the gallery's behavior and appearance through your `hugo.toml` file and by customizing SCSS variables.
+
+### Enabling the Gallery
+
+To use the gallery shortcode, you must first enable it in your site's configuration. Add the following to your `hugo.toml` file under the `[params]` section:
+
+```toml
+[params.gallery]
+  enable = true
+```
+
+### Customizing Thumbnail Size
+
+The default thumbnail size is 300x300 pixels. You can customize this by adding a `thumbnail` variable under `[params.gallery]` in your `hugo.toml`. The value should be the desired dimension in pixels (the number only).
+
+```toml
+[params.gallery]
+  enable = true
+  thumbnail = "300" # Default is 300, meaning 300px
+```
+
+### Styling with SCSS Variables
+
+You can customize all aspects of the gallery and lightbox appearance by editing the following SCSS variables, typically found in your theme's `assets/scss/_colors.scss` file (or a similar SCSS partial responsible for color definitions):
+
+```scss
+// Image Gallery specific colours
+$gallery-item-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !default; // Subtle shadow for depth.
+$gallery-item-hover-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !default; // Enhance shadow on hover.
+$gallery-item-caption-background: rgba(0, 0, 0, 0.7) !default; // Semi-transparent background for readability.
+$gallery-item-caption-color: #fff !default; // White text for contrast.
+$lightbox-overlay-background: rgba(0, 0, 0, 0.85) !default; // Dark semi-transparent background to focus on image.
+$lightbox-image-box-shadow: 0 5px 15px rgba(0,0,0,0.3) !default; // Shadow for the image in lightbox
+$lightbox-caption-color: #fff !default; // Caption colour in lightbox.
+$lightbox-close-nav-color: #fff !default; // Close and Navigation button colour in lightbox.
+$lightbox-close-color-hover: #ccc !default; // Close button hover colour in lightbox.
+$lightbox-nav-background-color: rgba(0, 0, 0, 0.3) !default; // Semi-transparent background for nav buttons.
+$lightbox-nav-background-color-hover: rgba(0, 0, 0, 0.6) !default; // Semi-transparent background for nav buttons on hover.
+```
+
+## Image Sources
+
+To use the shortcode, simply list your image sources (one per line) between the opening and closing `gallery` tags.
+
+```markdown
+{{</* gallery */>}}
+path/to/your/image1.jpg
+https://example.com/remote/image2.png
+/static-path/image3.webp
+{{</* /gallery */>}}
+```
+
 ### Image Sources
 
 The shortcode supports three main types of image sources:

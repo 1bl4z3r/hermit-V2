@@ -59,11 +59,10 @@ enableEmoji = true
 #    id = ''
 
 [frontmatter]
-date = ["lastmod", "date", "publishDate"]
-lastmod = ["date", "lastmod", ":git", "publishDate"]
-publishDate = ["publishDate", "date"]
-expiryDate = ["expiryDate"]
-
+  date = ["lastmod", "date", "publishDate"]
+  lastmod = ["date", "lastmod", ":git", "publishDate"]
+  publishDate = ["publishDate", "date"]
+  expiryDate = ["expiryDate"]
 
 [params.author]
   name = "BLZR"
@@ -148,6 +147,9 @@ expiryDate = ["expiryDate"]
   # usesAnimation = true
   # mathjaxLib = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
   # mermaidLib = "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs"
+  [params.gallery]
+    enable = true
+    thumbnail = '300'
 
   [[params.socialLinks]]
     name = "github"

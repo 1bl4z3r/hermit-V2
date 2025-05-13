@@ -85,6 +85,9 @@ Lastmod : 2025-03-12T20:30:30+05:30
 		- If library is in `/assets` folder, use `<FOLDER (if any)/<Library_Name.js>`
 		- If library is in `/static` folder, use `/<FOLDER (if any)/<Library_Name.js>`. Notice leading "/"
 		- If you have different CDN or site, use the absolute URL
+	-	`[params.gallery]` Refer to [Image Gallery Shortcode]({{< ref "image-gallery-shortcode" >}})
+  		- `enable` : Set to `true` to activate the image gallery shortcode functionality site-wide.
+  		- `thumbnail` : Defines the square dimension (in pixels) for automatically generated thumbnails for images; defaults to "300" (300px).
 	-  `[params.socialLinks]` Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
 		- `name` : Name of the social page.
 		- `url` : URL of your account.
