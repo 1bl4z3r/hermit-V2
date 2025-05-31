@@ -50,12 +50,10 @@
 {{- partial "mathjax.html" . -}}
 {{- partial "mermaid.html" . -}}
 {{- if templates.Exists "partials/extra-foot.html" -}}{{- partial "extra-foot.html" . -}}{{- end }}
-{{ if .HasShortcode "gallery" }}
-  {{ $galleryJS := resources.Get "js/gallery.js" }}
-  {{ if $galleryJS }}
-    {{ $galleryJS = $galleryJS | minify | fingerprint }}
-    <script defer src="{{ $galleryJS.RelPermalink }}" {{ printf "integrity=%q" $galleryJS.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
-  {{ end }}
+{{ $galleryJS := resources.Get "js/gallery.js" }}
+{{ if $galleryJS }}
+	{{ $galleryJS = $galleryJS | minify | fingerprint }}
+  	<script defer src="{{ $galleryJS.RelPermalink }}" {{ printf "integrity=%q" $galleryJS.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
 {{ end }}
 
 </body>
