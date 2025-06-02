@@ -124,6 +124,9 @@ expiryDate = ["expiryDate"]
   # usesAnimation = true
   # mathjaxLib = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
   # mermaidLib = "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs"
+  [params.gallery]
+    enable = true
+    thumbnail = '300'
   
   [[params.socialLinks]]
     name = "mastodon"
