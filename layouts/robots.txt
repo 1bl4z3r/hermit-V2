@@ -5,6 +5,8 @@ Disallow: {{ .Permalink -}}
 {{- with .Sitemap }}
 Sitemap: {{ .Filename | default "sitemap.xml" | absURL -}}
 {{ end }}
+{{- if gt (len $.Site.Languages) 1 }}
 {{- range $.Site.Home.AllTranslations }}
-Sitemap: {{ printf "%ssitemap.xml" .Permalink -}}
+Sitemap: {{ printf "/%s/sitemap.xml" .Language.Lang | absURL -}}
 {{ end }}
+{{- end }}
