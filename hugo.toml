@@ -129,7 +129,6 @@ enableEmoji = true
   readTime = true
   readTimeSeparator = "\u2026 \u23F2 Reading Time:"
   # legacyLayout = false
-  legacyList = false
   shareSocial = true
   # googleTagManager = "GTM-XXXXXXXX"
   # tagSymbol = "#"
