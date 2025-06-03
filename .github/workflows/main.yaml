@@ -28,7 +28,7 @@ jobs:
       - name: Create a brand new page
         working-directory: /tmp/
         run: |
-          hugo new site xp_hermi
+          hugo new site xp_hermit
           cd xp_hermit
           echo "theme = 'hermit-v2'" >> hugo.toml
 
