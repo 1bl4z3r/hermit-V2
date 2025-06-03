@@ -31,7 +31,17 @@ jobs:
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
           path: 'xp_hermit/themes/hermit-v2'
 
-      - name: Build Hugo site
+      - name: First empty build
         working-directory: ${{ github.workspace }}/xp_hermit
         run:
           hugo --logLevel debug
+
+      - name: Add new content
+        working-directory: ${{ github.workspace }}/xp_hermit
+        run:
+          hugo --logLevel debug new content content/posts/create-a-blog-with-hugo.md
+
+      - name: Build with content
+        working-directory: ${{ github.workspace }}/xp_hermit
+        run:
+          hugo --logLevel debug build --buildDrafts
