@@ -22,6 +22,17 @@ jobs:
           hugo-version: ${{ matrix.hugo-version }}
           extended: true
 
-      - name: Run Hugo
-        working-directory: exampleSite
-        run: hugo --themesDir ../..
+      - name: Sanity check Hugo
+        run: hugo --version
+
+      - name: Create a brand new page
+        working-directory: /tmp/
+        run: |
+          hugo new site xp_hermi
+          cd xp_hermit
+          echo "theme = 'hermit-v2'" >> hugo.toml
+
+      - name: Build Hugo site
+        working-directory: /tmp/xp_hermit
+        run:
+          hugo --themesDir ${{ github.workspace }}
