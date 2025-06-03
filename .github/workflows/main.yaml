@@ -23,7 +23,7 @@ jobs:
           extended: true
 
       - name: Sanity check Hugo
-        run: hugo --version
+        run: hugo version
 
       - name: Create a brand new page
         working-directory: /tmp/
