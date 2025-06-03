@@ -9,7 +9,7 @@ jobs:
       matrix:
         hugo-version:
           - 'latest'
-          - '0.146.7'
+          - '0.147.4'
     steps:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
