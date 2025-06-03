@@ -11,11 +11,6 @@ jobs:
           - 'latest'
           - '0.146.7'
     steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
@@ -26,13 +21,17 @@ jobs:
         run: hugo version
 
       - name: Create a brand new page
-        working-directory: /tmp/
         run: |
           hugo new site xp_hermit
-          cd xp_hermit
-          echo "theme = 'hermit-v2'" >> hugo.toml
+          echo "theme = 'hermit-v2'" >> xp_hermit/hugo.toml
+
+      - uses: actions/checkout@v4
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          path: 'xp_hermit/themes/hermit-v2'
 
       - name: Build Hugo site
-        working-directory: /tmp/xp_hermit
+        working-directory: ${{ github.workspace }}/xp_hermit
         run:
-          hugo --themesDir ${{ github.workspace }}
+          hugo --logLevel debug
