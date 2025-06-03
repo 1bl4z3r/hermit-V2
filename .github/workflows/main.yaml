@@ -20,10 +20,14 @@ jobs:
       - name: Sanity check Hugo
         run: hugo version
 
-      - name: Create a brand new page
+      - name: Create a brand new page using this theme
         run: |
           hugo new site xp_hermit
           echo "theme = 'hermit-v2'" >> xp_hermit/hugo.toml
+          echo "[params]" >> xp_hermit/hugo.toml
+          echo "  dateform        = 'Jan 2, 2006'" >> xp_hermit/hugo.toml
+          echo "  dateformShort   = 'Jan 2'" >> xp_hermit/hugo.toml
+          echo "  dateformNumTime = '2006-01-02'" >> xp_hermit/hugo.toml
 
       - uses: actions/checkout@v4
         with:

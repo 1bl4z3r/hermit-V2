@@ -159,7 +159,19 @@ You can make page specific footers by creating below partials in `/layouts/parti
 - For single pages (which are not articles), `single-footer.html`
 - For posts/articles pages, `posts-footer.html`
 
-### Sites using hermit-V2
+### Default for date format
+
+This setting may be needed in your hugo.toml
+
+```
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNumTime = "2006-01-02"
+```
+
+
+## Sites using hermit-V2
 
 __Sites using hermit-V2__ is a user contributed list of all the blogs/pages that is using hermit-V2 in some capacity. It could be any component of the theme from landing page or a partial to full fledged use of the theme. The objective of this section is to :
 
@@ -167,6 +179,7 @@ __Sites using hermit-V2__ is a user contributed list of all the blogs/pages that
 - Create a sense of community
 
 You can find currently listed sites from [Sites-using-hermit‐V2 (https://github.com/1bl4z3r/hermit-V2/wiki#sites-using-hermit-v2)](https://github.com/1bl4z3r/hermit-V2/wiki#sites-using-hermit-v2) and you can add your site by raising an [issue](https://github.com/1bl4z3r/hermit-V2/issues/new?assignees=1bl4z3r&labels=hermit-V2+sites&projects=&template=add-remove-sites-using-hermit-v2.md&title=Add+to+Sites+using+hermit-V2).
+
 
 ## To-Do
 - [ ] Add support for [Speculation Rules API](https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API#browser_compatibility) when it is stable
