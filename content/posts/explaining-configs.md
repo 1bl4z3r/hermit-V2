@@ -107,6 +107,7 @@ Lastmod : 2025-03-12T20:30:30+05:30
 - `date` : Date of creation of the page.
 - `draft` : If you want to un-publish the page.
 - `featuredImg` : To have a unique image for the page. Shown as background image. Can be toggled to fullscreen with special button in menu.
+- `ImgCopyright` : Optional. Use this to provide copyright text or attribution for the image specified in `featuredImg`. If provided, this text will be displayed with the featured image, typically at the bottom, allowing you to credit the image source or creator.
 - `description` : Description for the Page.
 - `tags` : Allows to define tags.
 - `categories` : Allows to define categories.

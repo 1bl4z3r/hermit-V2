@@ -15,6 +15,7 @@
 {{ define "main" }}
 	{{- if (or .Params.images .Params.featuredImg) }}
 	<div class="bg-img"></div>
+	{{- if .Params.ImgCopyright }}<div class="bg-img-copyright">{{ .Params.ImgCopyright | safeHTML }}</div>{{- end }}
 	{{- end }}
 	<main class="site-main section-inner {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster {{- end -}}">
 		{{- if and (not (eq .Site.Params.legacyLayout nil)) (.Site.Params.legacyLayout) -}}

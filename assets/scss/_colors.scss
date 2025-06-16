@@ -118,6 +118,10 @@ $mobile-menu-background: $arsenic !default;
 $screen-reader-text: $lapis-lazuli !default;
 $screen-reader-text-background: $anti-flash-white !default;
 
+// Featured Image (or Background Image) Copyright section
+$featured-image-text: $bright-grey !default;
+$featured-image-background: rgba($arsenic, 0.45) !default;
+
 // Image Gallery specific colours
 $gallery-item-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !default; // Subtle shadow for depth.
 $gallery-item-hover-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !default; // Enhance shadow on hover.

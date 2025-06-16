@@ -5,7 +5,8 @@ draft: false
 images: 
   - https://picsum.photos/seed/picsum/1024/768
   - images/928-600x400.jpg
-featuredImg: "images/928-600x400.jpg"
+featuredImg: "https://picsum.photos/seed/picsum/1024/768"
+ImgCopyright: "By <a href='https://commons.wikimedia.org/wiki/File:Zermatt_(Unsplash).jpg'>Samuel Zeller</a>"
 tags: 
   - Demo
   - Image
