@@ -630,6 +630,36 @@ p.img-404 {
   cursor: pointer;
 }
 
+.bg-img-copyright {
+  position: fixed;                                // Positioned relative to the viewport
+  bottom: 20px;                                   // Adjust padding from the bottom as needed
+  left: 0;
+  right: 0;                                       // Stretches across the full width
+  padding: 8px 15px;                              // Vertical and horizontal padding
+  color: $featured-image-text;                    // Light text color, suitable for overlays
+  background-color: $featured-image-background;  // Semi-transparent dark background for readability
+  font-size: 0.75em;                              // Smaller font size for copyright text
+  text-align: center;
+  z-index: 100;                                   // z-index should be high enough to be visible with the shown background.
+  
+  // Initially hidden: opacity for fade, visibility to remove from layout/interaction
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; // Prevent any interaction when hidden
+
+  // Transition opacity smoothly. Visibility changes will be immediate.
+  transition: opacity 0.5s ease;
+
+  @include aTag;
+}
+
+.bg-img.show-bg-img + .bg-img-copyright {
+  opacity: 1;
+  visibility: visible; // Make it visible
+  pointer-events: auto; // Allow interaction
+}
+
+
 .post-header {
   margin-top: 1.2em;
   line-height: normal;
