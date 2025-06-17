@@ -21,7 +21,7 @@
 		{{- if and (not (eq .Site.Params.legacyLayout nil)) (.Site.Params.legacyLayout) -}}
 		<article class="thin">
 			<header class="post-header">
-				<div class="post-date"><span>{{ .Date.Format .Site.Params.dateform }}</span></div>
+				<div class="post-date"><span>{{ .Date.Format (default .Site.Params.dateform.LongDate "Jan 2, 2006") }}</span></div>
 				<h1>{{ .Title }}</h1>
 			</header>
 			<div class="content">
@@ -36,7 +36,7 @@
 		{{- else -}}
 		<article class="thin">
 			<header class="post-header">
-				<div class="post-date"><span>{{ .Date.Format .Site.Params.dateform }}</span></div>
+				<div class="post-date"><span>{{ .Date.Format (default .Site.Params.dateform.LongDate "Jan 2, 2006") }}</span></div>
 				<h1>{{ .Title }}</h1>
 			</header>
 			<div class="post-description">{{- partial "posts_single_info.html" . -}}</div>

@@ -102,11 +102,6 @@ enableEmoji = true
           inline = [['\(', '\)']]
 
 [params]
-  dateform        = "Jan 2, 2006"
-  dateformShort   = "Jan 2"
-  dateformNum     = "2006-01-02"
-  dateformNumTime = "2006-01-02 15:04 -0700"
-
   # Metadata mostly used in document's head
   description = "Continuing Hermit's legacy to be minimal and fast theme"
   # images = [""]
@@ -146,6 +141,13 @@ enableEmoji = true
   # usesAnimation = true
   # mathjaxLib = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
   # mermaidLib = "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs"
+
+  [params.dateform]
+    LongDate = "Jan 2, 2006"
+    ShortDate = "Jan 2"
+    NumDateShort = "2006-01-02"
+    NumDateLong = "2006-01-02 15:04 -0700"
+
   [params.gallery]
     enable = true
     thumbnail = '300'
