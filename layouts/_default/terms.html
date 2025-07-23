@@ -20,7 +20,7 @@
 									{{- else if in .Page.RelPermalink "categories" -}}<span class="post-title category">{{.Page.LinkTitle}}</span>
 									{{- else -}}<span class="post-title">{{.Page.LinkTitle}}</span>
 									{{- end -}}
-								  	<span class="post-day">{{ .Date.Format (default .Site.Params.dateform.ShortDate "Jan 2") }}</span>
+								  	<span class="post-day">{{ .Date.Format (default "Jan 2" .Site.Params.dateform.ShortDate) }}</span>
 							  	</a>
 							</li>
 						{{- end }}
