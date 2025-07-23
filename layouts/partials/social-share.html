@@ -13,6 +13,12 @@
             <a href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener" aria-label="Share on Facebook">{{- partial "svg.html" (dict "context" . "name" "facebook") -}}</a>
         </li>
         <li>
+            <a href="https://www.threads.net/intent/post?text={{ .Title }}&amp;url={{ .Permalink }}" target="_blank" rel="noopener" aria-label="Share on threads">{{- partial "svg.html" (dict "context" . "name" "threads") -}}</a>
+        </li>
+        <li>
+            <a href="https://bsky.app/intent/compose?text={{ .Permalink }}" target="_blank" rel="noopener" aria-label="Share on bluesky">{{- partial "svg.html" (dict "context" . "name" "bluesky") -}}</a>
+        </li>
+        <li>
             <a href="mailto:?subject={{ .Title }}&amp;body={{ .Permalink }}" target="_self" rel="noopener" aria-label="Share on Email">{{- partial "svg.html" (dict "context" . "name" "email") -}}</a>
         </li>
         <li>
