@@ -474,13 +474,20 @@ p.img-404 {
 }
 
 #home-subtitle {
-  margin-top: 0;
-  margin-bottom: 1.5em;
+  margin: 0 auto 1.5em auto;
   text-align: center;
   line-height: normal;
-  font-size: .7em;
+  font-size: 0.7em;
   font-style: italic;
-  opacity: .9;
+  opacity: 0.9;
+  white-space: normal; // Let the text wrap on all screens
+  overflow: hidden;
+}
+
+@media (max-width: 520px) {
+  #home-subtitle {
+    font-size: 0.5em;
+  }
 }
 
 #home-links {
@@ -1102,17 +1109,6 @@ a.footnote-ref {
   justify-content: flex-end;
 }
 
-// If homeSubtitlePrinter is true
-{{- if .Site.Params.homeSubtitlePrinter }}
-  #home-subtitle{
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .5em solid $typewriter; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto 1.5em auto; /* Gives that scrolling effect as the typing happens */
-    // letter-spacing: .100em; /* Adjust as needed */
-    animation: typing 5s steps({{ strings.RuneCount .Site.Params.homeSubtitle }}, end),blink-caret .75s linear 5.1s infinite;
-  }
-
   /* The typing effect */
   @keyframes typing {
     from {max-width: 0;}
@@ -1124,7 +1120,12 @@ a.footnote-ref {
     from, to { border-color: transparent }
     50% { border-color: $typewriter}
   }
-{{ end -}}
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
 {{- if (fileExists "assets/scss/userstyles.scss") }}
 @import "userstyles.scss";
 {{ end -}}
