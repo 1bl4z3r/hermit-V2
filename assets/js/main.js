@@ -31,7 +31,14 @@ let lastScrollPosition = window.pageYOffset;
 
 const autoHideHeader = () => {
   let currentScrollPosition = Math.max(window.pageYOffset, 0);
-  if (currentScrollPosition > lastScrollPosition) {
+  // Check if the user has scrolled to the bottom of the page.
+  const atBottom = window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 1;
+
+  if (atBottom) {
+    // If at the bottom, always show the header
+    header.classList.remove('slideOutDown');
+    header.classList.add('slideInUp');
+  } else if (currentScrollPosition > lastScrollPosition) {
     header.classList.remove('slideInUp');
     header.classList.add('slideOutDown');
   } else {
