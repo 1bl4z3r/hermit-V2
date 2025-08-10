@@ -143,6 +143,7 @@ enableEmoji = true
   # mermaidLib = "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs"
 
   [params.dateform]
+    CopyrightDate = "2006"
     LongDate = "Jan 2, 2006"
     ShortDate = "Jan 2"
     NumDateShort = "2006-01-02"

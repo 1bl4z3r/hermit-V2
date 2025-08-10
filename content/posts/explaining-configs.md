@@ -96,6 +96,7 @@ Lastmod : 2025-03-12T20:30:30+05:30
 		- `ShortDate`: Used for a concise date representation, typically month and day (e.g., "Jan 2"). Used in list views (blog index, tag/category lists). Defaults to `"Jan 2"`.
 		- `NumDateShort`: Used for a short, numerical date format (e.g., "2006-01-02"). Used for Git commit author dates in post metadata. Defaults to `"2006-01-02"`.
 		- `NumDateLong`: Used for a numerical date and time format, including timezone (e.g., "2006-01-02 15:04 -0700"). Used for the main post date/time and last modified date/time in post metadata. Defaults to `"2006-01-02 15:04 -0700"`.
+		- `CopyrightDate` : Used for configuring the date format for Copyright in footer. Defaults to format `2006`, shows year.
 	-  `[params.socialLinks]` Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
 		- `name` : Name of the social page.
 		- `url` : URL of your account.

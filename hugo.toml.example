@@ -124,6 +124,7 @@ expiryDate = ["expiryDate"]
     thumbnail = '300'
 
   [params.dateform]
+    CopyrightDate = "2006"
     LongDate = "Jan 2, 2006"
     ShortDate = "Jan 2"
     NumDateShort = "2006-01-02"
