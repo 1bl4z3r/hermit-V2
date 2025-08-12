@@ -47,6 +47,12 @@
 	{{ $c_js := resources.Get . | minify | fingerprint -}}
 	<script defer src="{{ $c_js.Permalink }}" {{ printf "integrity=%q" $c_js.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
 	{{- end }}
+	{{- if .Site.Params.homeSubtitlePrinter | default true -}}
+  	{{- $typewriter := resources.Get "js/typewriter.js" | minify | fingerprint -}}
+  	<script defer src="{{ $typewriter.RelPermalink }}" integrity="{{ $typewriter.Data.Integrity }}" crossorigin="anonymous"></script>
+	{{- else -}}
+  	<!-- Typewriter disabled: fallback or nothing -->
+	{{- end -}}
 	{{- partial "mathjax.html" . -}}
 	{{- partial "mermaid.html" . -}}
 	{{- if templates.Exists "partials/extra-foot.html" -}}{{- partial "extra-foot.html" . -}}{{- end }}
