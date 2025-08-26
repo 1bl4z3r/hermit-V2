@@ -1,21 +1,35 @@
+// ==========================================
+// STYLESHEET IMPORTS AND DEPENDENCIES
+// ==========================================
+// Import base styling modules for colors, fonts, and core functionality
 @import "colors";
 @import "fonts";
+@import "variables";
 @import "admonition";
 @import "mixins";
 @import "normalize.scss";
 @import "syntax.scss";
+
+// Conditionally import animation styles if enabled in site configuration
 {{ if ne false .Site.Params.usesAnimation }}
 @import "animate.scss";
 {{ end }}
+
+// Import additional feature-specific stylesheets
 @import "scrolltotop.scss";
 @import "socialshare.scss";
+
+// Conditionally import gallery styles and set thumbnail size if gallery feature is enabled
 {{ if .Site.Params.gallery.enable }}
 $thumbnail: {{ printf "%spx" ($.Site.Params.gallery.thumbnail | default "300") }};
 @import "gallery.scss";
 {{ end }}
 
-// Default Accent Color (accentColor) taken from hugo.toml
-// If accentColor is not present, it will fallback to declarations in _colors.scss
+// ==========================================
+// DYNAMIC ACCENT COLOR CONFIGURATION
+// ==========================================
+// Override default accent color variables with site-specific accent color from hugo.toml
+// If no custom accent color is specified, fallback values from _colors.scss will be used
 {{- with .Site.Params.accentColor }}
 $aTag-mixin-a-box-shadow: {{.}};
 $aTag-mixin-a-hover-box-shadow: {{.}};
@@ -29,24 +43,28 @@ $marked-background: {{.}};
 $inserted-text-underline: {{.}};
 {{ end -}}
 
-// Scroll to Top color defination
+// ==========================================
+// SCROLL-TO-TOP BUTTON STYLING
+// ==========================================
+// Define color properties for the circular scroll-to-top button components
 .scroll-up {
   .scroll {
     #st-ring {
       stroke: $scrolltotop-ring;
     }
-
     #st-circle {
       fill: $scrolltotop-circle;
     }
-
     #st-arrow {
       fill: $scrolltotop-arrow;
     }
   }
 }
 
-/* text selection */
+// ==========================================
+// TEXT SELECTION STYLING
+// ==========================================
+// Customize the background color of selected text across browsers
 ::-moz-selection {
   background: $text-select;
 }
@@ -55,13 +73,17 @@ $inserted-text-underline: {{.}};
   background: $text-select;
 }
 
-/* Webkit Scrollbar Customize */
+// ==========================================
+// WEBKIT SCROLLBAR CUSTOMIZATION
+// ==========================================
+// Style the main page scrollbar for webkit-based browsers
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
   background: $pagescrollbar-background;
 }
 
+// Style the scrollbar thumb (draggable portion) with hover effects
 ::-webkit-scrollbar-thumb {
   background: $pagescrollbar-thumb;
 
@@ -70,6 +92,10 @@ $inserted-text-underline: {{.}};
   }
 }
 
+// ==========================================
+// BASE HTML AND BODY STYLING
+// ==========================================
+// Set global HTML properties including background, typography, and smooth scrolling
 html {
   background: $html-background;
   line-height: 1.6;
@@ -77,6 +103,7 @@ html {
   scroll-behavior: smooth;
 }
 
+// Apply consistent text color to all interactive and text elements
 body,
 button,
 input,
@@ -85,6 +112,8 @@ textarea,
 a {
   color: $text;
 }
+
+// Set primary font family for all form elements and body text
 body,
 button,
 input,
@@ -93,21 +122,30 @@ textarea {
   font-family: $fonts;
 }
 
+// ==========================================
+// CODE AND TYPOGRAPHY STYLING
+// ==========================================
+// Apply monospace font family to all code-related elements
 pre,
 code,
 pre tt {
   font-family: $code-fonts;
 }
+
+// Style highlighted text (mark element) with custom colors
 mark {
   color: $marked-text;
   background-color: $marked-background;
 }
+
+// Style inserted text with custom underline color
 ins {
   text-decoration: underline;
   -webkit-text-decoration-color: $inserted-text-underline;
   text-decoration-color: $inserted-text-underline;
 }
 
+// Style preformatted code blocks with syntax highlighting support
 pre {
   padding: .7em 1.1em;
   font-size: .9em;
@@ -118,9 +156,13 @@ pre {
   background: $pre-background;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  
+  // Special background for Mermaid diagrams
   &.mermaid {
     background: $mermaid-background;
   }
+  
+  // Style inline code within pre blocks
   code {
     padding: 0;
     margin: 0;
@@ -129,6 +171,7 @@ pre {
   }
 }
 
+// Style inline code elements with rounded corners and spacing
 code {
   color: hsl(0, 1%, 67%);
   background: $code-background;
@@ -139,22 +182,29 @@ code {
   letter-spacing: normal;
 }
 
+// Style blockquotes with left border and italic text
 blockquote {
   border-left: .25em solid;
   margin: 1em;
   padding: 0 1em;
   font-style: italic;
 
+  // Style citation elements within blockquotes
   cite {
     font-weight: bold;
     font-style: normal;
 
+    // Add em dash before citations
     &::before {
       content: "—— ";
     }
   }
 }
 
+// ==========================================
+// LINK AND INTERACTIVE ELEMENT STYLING
+// ==========================================
+// Style all links with smooth color transitions and hover effects
 a {
   text-decoration: none;
   border: none;
@@ -168,6 +218,7 @@ a {
   }
 }
 
+// Style horizontal rule elements with dashed appearance
 hr {
   opacity: .2;
   border-width: 0 0 5px 0;
@@ -177,6 +228,10 @@ hr {
   margin: 1.8em auto;
 }
 
+// ==========================================
+// TABLE STYLING
+// ==========================================
+// Style data tables with consistent borders and spacing
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -196,17 +251,23 @@ table {
   }
 }
 
+// ==========================================
+// LAYOUT CONTAINER CLASSES
+// ==========================================
+// Main content container with responsive width and centering
 .section-inner {
   margin: 0 auto;
   max-width: 1200px;
   width: 93%;
 }
 
+// Narrow content container for better readability
 .thin {
   max-width: 720px;
   margin: auto;
 }
 
+// Icon styling for consistent feather icon display
 .feather {
   display: inline-block;
   vertical-align: -.125em;
@@ -214,21 +275,25 @@ table {
   height: 1em;
 }
 
+// Sub-menu text sizing
 .sub-menu {
   font-size: .7em;
 }
 
+// Elements that are hidden on mobile and shown only on desktop
 .desktop-only, .desktop-only-ib {
   display: none;
 }
 
-// Code copy buttons
-//
-
+// ==========================================
+// CODE COPY BUTTON FUNCTIONALITY
+// ==========================================
+// Container positioning for syntax highlighted code blocks
 .highlight {
     position: relative;
 }
 
+// Ensure proper overflow handling for code blocks
 .highlight div,
 .highlight pre {
   overflow-x: auto;
@@ -236,6 +301,7 @@ table {
   -webkit-overflow-scrolling: touch;
 }
 
+// Style the copy-to-clipboard button for code blocks
 .highlight-copy-btn {
     position: absolute;
     bottom: 7px;
@@ -252,47 +318,53 @@ table {
     text-align: center;
 }
 
+// Hover state for the copy button
 .highlight-copy-btn:hover {
     background-color: $highlight-copy-btn-hover;
 }
 
-// Accessibility
-//
+// ==========================================
+// ACCESSIBILITY FEATURES
+// ==========================================
+// Screen reader accessible text that's visually hidden but available to assistive technologies
 .screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
 }
 
+// Show screen reader text when it receives keyboard focus
 .screen-reader-text:focus {
-	background-color: $screen-reader-text-background;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	clip-path: none;
-	color: $screen-reader-text;
-	display: block;
-	font-size: 0.875rem;
-	font-weight: bold;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000;
+  background-color: $screen-reader-text-background;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: $screen-reader-text;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
 }
 
-// Header & Footer
-//
+// ==========================================
+// SITE HEADER AND NAVIGATION
+// ==========================================
+// Fixed bottom header with shadow and animation support
 #site-header {
   position: fixed;
   z-index: 1;
@@ -305,6 +377,7 @@ table {
   animation-fill-mode: forwards;
 }
 
+// Header wrapper with flexbox layout for navigation elements
 .hdr-wrapper {
   display: flex;
   justify-content: space-between;
@@ -312,36 +385,43 @@ table {
   padding: .5em 0;
   font-size: 1.2rem;
 
+  // Site logo/branding styling
   .site-branding {
     display: inline-block;
     margin-right: .8em;
     font-size: 1.2em;
   }
 
+  // Main navigation menu styling
   .site-nav {
     display: inline-block;
     font-size: 1.1em;
     opacity: .8;
 
+    // Parent menu items with children indicators
     .has-children {
       padding-right: .5em;
       border-right: 2px solid $site-nav-children-border-right;
     }
 
+    // Sub-menu item spacing
     .sub-menu > a{
       margin-left: .3em;
     }
 
+    // General navigation link spacing
     a {
       margin-left: .8em;
     }
   }
 }
 
+// Header icon container styling
 .hdr-icons {
   font-size: 1.2em;
 }
 
+// Header link container for external links
 .hdr-links {
   display: inline-block;
   margin-left: .6em;
@@ -351,6 +431,7 @@ table {
   }
 }
 
+// Base styling for header buttons
 .hdr-btn {
   border: none;
   background: none;
@@ -359,12 +440,14 @@ table {
   cursor: pointer;
 }
 
+// Mobile hamburger menu button (hidden by default)
 #menu-btn {
   display: none;
   margin-left: .6em;
   cursor: pointer;
 }
 
+// Mobile dropdown menu overlay
 #mobile-menu {
   position: fixed;
   bottom: 4.8em;
@@ -385,6 +468,10 @@ table {
   }
 }
 
+// ==========================================
+// SITE FOOTER
+// ==========================================
+// Simple centered footer with appropriate spacing
 #site-footer {
   text-align: center;
   font-size: .6em;
@@ -396,8 +483,10 @@ table {
   }
 }
 
-// Spotlight
-//
+// ==========================================
+// SPOTLIGHT/HOMEPAGE LAYOUT
+// ==========================================
+// Full-height centered layout for homepage and error pages
 #spotlight {
   display: flex;
   min-height: 100vh;
@@ -408,12 +497,14 @@ table {
   margin: auto;
   font-size: 1.5rem;
 
+  // Special layout for 404 error pages
   &.error-404 {
     flex-direction: row;
     line-height: normal;
   }
 }
 
+// 404 error page illustration container
 p.img-404 {
   margin: 0;
 
@@ -424,6 +515,7 @@ p.img-404 {
   }
 }
 
+// 404 error page content and action buttons
 .banner-404 {
   margin-left: 2em;
 
@@ -461,6 +553,7 @@ p.img-404 {
   }
 }
 
+// Homepage central content container
 #home-center {
   display: flex;
   flex-grow: 1;
@@ -468,21 +561,13 @@ p.img-404 {
   justify-content: center;
 }
 
+// Homepage main title styling
 #home-title {
   margin: 0;
   text-align: center;
 }
 
-#home-subtitle {
-  margin-top: 0;
-  margin-bottom: 1.5em;
-  text-align: center;
-  line-height: normal;
-  font-size: .7em;
-  font-style: italic;
-  opacity: .9;
-}
-
+// Homepage social/external links
 #home-links {
   font-size: 1.4em;
   text-align: center;
@@ -493,6 +578,7 @@ p.img-404 {
   }
 }
 
+// Homepage internal navigation links
 #home-nav {
   opacity: .8;
 
@@ -503,6 +589,7 @@ p.img-404 {
   }
 }
 
+// Homepage footer content
 #home-footer {
   text-align: center;
   font-size: .6em;
@@ -514,13 +601,16 @@ p.img-404 {
   }
 }
 
-// list.html
-//
+// ==========================================
+// BLOG POST LISTING PAGE (list.html)
+// ==========================================
+// Yearly post grouping container with flexible layout
 .posts-group {
   display: flex;
   margin-bottom: 1.9em;
   line-height: normal;
 
+  // Year header for post groupings
   .post-year {
     padding-top: 6px;
     margin-right: 1.8em;
@@ -532,6 +622,7 @@ p.img-404 {
     }
   }
 
+  // List of posts within each year group
   .posts-list {
     flex-grow: 1;
     margin: 0;
@@ -539,6 +630,7 @@ p.img-404 {
     list-style: none;
   }
 
+  // Individual post item styling with divider
   .post-item {
     border-bottom: 1px $post-item-border-bottom dashed;
 
@@ -550,12 +642,14 @@ p.img-404 {
     }
   }
 
+  // Post publication date display
   .post-day {
     flex-shrink: 0;
     margin-left: 1em;
     @include dimmed;
   }
 
+  // Post taxonomy (tags and categories) styling
   .post-tags,
   .post-categories {
     display: flex;
@@ -568,14 +662,18 @@ p.img-404 {
       margin-right: 0.5em;
     }
   }
+  
   .post-tags {
     padding-right: 12px;
   }
 
+  // Post excerpt/description styling
   .post-description {
     font-size:x-small;
     @include dimmed;
   }
+  
+  // Container for post metadata (tags, categories)
   .post-taxonomy {
     display: flex;
     justify-content: flex-start;
@@ -583,6 +681,7 @@ p.img-404 {
   }
 }
 
+// Special styling for pinned/featured posts
 .pinned-posts-group {
   display: flex;
   margin-bottom: 1.9em;
@@ -608,8 +707,10 @@ p.img-404 {
   }
 }
 
-// single.html
-//
+// ==========================================
+// SINGLE POST PAGE STYLING (single.html)
+// ==========================================
+// Full-screen background image overlay functionality
 .bg-img {
   width: 100vw;
   height: 100vh;
@@ -624,12 +725,14 @@ p.img-404 {
   transition: opacity .5s;
 }
 
+// Active state for background image overlay
 .show-bg-img {
   z-index: 100;
   opacity: 1;
   cursor: pointer;
 }
 
+// Copyright notice overlay for featured background images
 .bg-img-copyright {
   position: fixed;                                // Positioned relative to the viewport
   bottom: 20px;                                   // Adjust padding from the bottom as needed
@@ -653,13 +756,14 @@ p.img-404 {
   @include aTag;
 }
 
+// Show copyright when background image is active
 .bg-img.show-bg-img + .bg-img-copyright {
   opacity: 1;
   visibility: visible; // Make it visible
   pointer-events: auto; // Allow interaction
 }
 
-
+// Post header section with title and metadata
 .post-header {
   margin-top: 1.2em;
   line-height: normal;
@@ -675,6 +779,7 @@ p.img-404 {
   }
 }
 
+// Decorative horizontal rule at post end
 hr.post-end {
   width: 50%;
   margin-top: 1.6em;
@@ -684,6 +789,10 @@ hr.post-end {
   border-bottom-width: 4px;
 }
 
+// ==========================================
+// MAIN CONTENT AREA STYLING
+// ==========================================
+// Primary post content container with optional text justification
 .content {
   {{- with .Site.Params.justifyContent }}
   text-align: justify;
@@ -692,12 +801,14 @@ hr.post-end {
 
   @include aTag;
 
+  // Figure and image handling with various alignment options
   figure {
     max-width: 100%;
     height: auto;
     margin: 0;
     text-align: center;
 
+    // Figure captions styling
     p {
       font-size: .8em;
       font-style: italic;
@@ -705,22 +816,26 @@ hr.post-end {
     }
   }
 
+  // Left-aligned figures for text wrapping
   figure.left {
     float: left;
     margin-right: 1.5em;
     max-width: 50%;
   }
 
+  // Right-aligned figures for text wrapping
   figure.right {
     float: right;
     margin-left: 1.5em;
     max-width: 50%;
   }
 
+  // Full-width figures that extend beyond content bounds
   figure.big {
     max-width: 100vw;
   }
 
+  // Responsive image styling with rounded corners
   img {
     display: block;
     max-width: 100%;
@@ -729,18 +844,21 @@ hr.post-end {
     border-radius: 4px;
   }
 
+  // List styling with consistent indentation
   ul,
   ol {
     padding: 0;
     margin-left: 1.8em;
   }
 
+  // Heading anchor links for deep linking to sections
   a.anchor {
     float: left;
     margin-left: -20px;
     padding-right: 6px;
     box-shadow: none;
     opacity: .8;
+    
     &:hover {
       background: none;
       color: $content-anchor-hover;
@@ -754,11 +872,13 @@ hr.post-end {
       vertical-align: baseline;
       visibility: hidden;
     }
+    
     &:focus svg {
       visibility: visible;
     }
   }
 
+  // Show anchor links on heading hover for better UX
   h1:hover a.anchor svg,
   h2:hover a.anchor svg,
   h3:hover a.anchor svg,
@@ -769,6 +889,10 @@ hr.post-end {
   }
 }
 
+// ==========================================
+// FOOTNOTES STYLING
+// ==========================================
+// Footnotes section with smaller text and specialized link handling
 .footnotes {
   font-size: .85em;
 
@@ -791,6 +915,7 @@ hr.post-end {
   }
 }
 
+// Inline footnote reference links with background highlighting
 a.footnote-ref {
   box-shadow: none;
   text-decoration: none;
@@ -805,18 +930,25 @@ a.footnote-ref {
   }
 }
 
+// ==========================================
+// TAXONOMY (TAGS AND CATEGORIES) STYLING
+// ==========================================
+// Tag styling with customizable prefix symbol
 .tag {
   text-transform: lowercase;
   &::before {
     {{- with .Site.Params.tagSymbol | default "#" -}}content: "{{ . }}"{{- end -}}
   }
 }
+
+// Category styling with customizable prefix symbol
 .category {
   &::before {
     {{- with .Site.Params.categorySymbol | default "⊲" -}}content: "{{ . }}"{{- end -}}
   }
 }
 
+// Post metadata and taxonomy display
 .post-description {
   font-size: .8rem;
   line-height: normal;
@@ -840,6 +972,10 @@ a.footnote-ref {
   }
 }
 
+// ==========================================
+// TABLE OF CONTENTS (TOC) FUNCTIONALITY
+// ==========================================
+// Fixed-position table of contents for long articles
 #toc {
   position: fixed;
   left: 50%;
@@ -848,6 +984,7 @@ a.footnote-ref {
   background-color: $tableofcontents-background;
 }
 
+// Table of contents title styling
 .toc-title {
   margin-left: 1em;
   margin-bottom: .5em;
@@ -855,6 +992,7 @@ a.footnote-ref {
   font-weight: bold;
 }
 
+// Main table of contents container with custom scrollbar
 #TableOfContents {
   font-size: .8em;
   @include dimmed;
@@ -865,23 +1003,19 @@ a.footnote-ref {
     margin: 0;
   }
 
-  /* scrollbar customization for ToC */
-  /* Width */
+  // Custom scrollbar styling for table of contents
   &>::-webkit-scrollbar {
     width: 4px;
   }
 
-  /* Track */
   &>::-webkit-scrollbar-track {
     background: $tableofcontents-scrollbar-track;
   }
 
-  /* Handle */
   &>::-webkit-scrollbar-thumb {
     background: $tableofcontents-scrollbar-thumb ;
   }
 
-  /* Handle on hover */
   &>::-webkit-scrollbar-thumb:hover {
     background: $tableofcontents-scrollbar-thumb-hover;
   }
@@ -891,6 +1025,7 @@ a.footnote-ref {
     overflow-y: auto;
     height: calc(100vh - 300px);
 
+    // Nested list styling with smaller font
     ul ul {
       font-size: .9em;
     }
@@ -901,6 +1036,10 @@ a.footnote-ref {
   }
 }
 
+// ==========================================
+// POST NAVIGATION (PREV/NEXT LINKS)
+// ==========================================
+// Navigation between consecutive blog posts
 .post-nav {
   display: flex;
   justify-content: space-between;
@@ -923,6 +1062,10 @@ a.footnote-ref {
   }
 }
 
+// ==========================================
+// RELATED POSTS SECTION
+// ==========================================
+// Suggested related posts at the end of articles
 .related-posts {
   padding: .8em;
   margin-top: 1.5em;
@@ -941,114 +1084,118 @@ a.footnote-ref {
   }
 }
 
-
-// Media Queries
-//
-@media (min-width: 800px) {
-  .site-main {
-    margin-top: 3em;
-  }
-
-  hr.post-end {
-    width: 40%;
-  }
+// Positioning of brainmade label at the end of articles
+.human{
+  display: flex;
+  justify-content: flex-end;
 }
 
-@media (min-width: 960px) {
-  .site-main {
-    margin-top: 6em;
-  }
+// ==========================================
+// TYPEWRITER ANIMATION EFFECT SYSTEM
+// ==========================================
+// Main container for typewriter effect with responsive sizing
+#typewriter-container {
+    width: $width-desktop;
+    font-size: $font-size-desktop;
+    line-height: $line-height;
 }
 
-@media (min-width: 1300px) {
-  .site-main {
-    margin-top: 8em;
+// Subtitle text element with typewriter animation behavior
+#home-subtitle {
+  padding: 0 1.2em;
+  margin: 0;
+  line-height: normal;
+  font-size: .7em;
+  font-style: italic;
+  opacity: .9;
+  word-wrap: break-word;
+  text-align: left;
+  white-space: pre-wrap;
+  
+  // Reserve minimum height based on maximum expected content to prevent layout shift
+  min-height: calc(#{$line-height} * #{$max-lines-desktop} * 1em);
+}
+
+{{- if .Site.Params.homeSubtitlePrinter -}}
+// Enhanced typewriter animation functionality when printer feature is enabled
+#home-subtitle {
+  // Initially hidden until animation system is ready
+  visibility: hidden;
+
+  // Show element during active typewriter animation states
+  &.ready,
+  &.typing,
+  &.done {
+    visibility: visible;
   }
 
-  .desktop-only,
-  #toc.show-toc {
-    display: block;
-  }
-
-  .desktop-only-ib {
+  // Animated cursor implemented as CSS pseudo-element
+  &::after {
+    content: '';
     display: inline-block;
+    width: $cursor-width;
+    height: $cursor-height;
+    background: $typewriter;
+    margin-left: $cursor-margin;
+    vertical-align: middle;
   }
 
-  figure.left {
-    margin-left: -240px;
-    p {
-      text-align: left;
-    }
-  }
-
-  figure.right {
-    margin-right: -240px;
-    p {
-      text-align: right;
-    }
-  }
-
-  figure.big {
-    width: 1200px;
-    margin-left: -240px;
-  }
-
-  hr.post-end {
-    width: 30%;
-  }
-
-  #toc {
-    top: 13em;
-    margin-left: 370px;
-    max-width: 220px;
+  // Activate blinking cursor animation during ready and completed states
+  &.ready::after,
+  &.done::after {
+    animation: blink $blink-duration infinite;
   }
 }
 
-@media (min-width: 1800px) {
-  .site-main {
-    margin-top: 10em;
+// Hidden element for measuring text width during typewriter animation calculations
+.measure-element {
+  width: auto;
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  white-space: nowrap;
+  top: -9999px; // Position element outside visible viewport
+  left: -9999px;
+}
+
+// Keyframe animation for typewriter cursor blinking effect
+@keyframes blink {
+  from,
+  to {
+    opacity: 1; // Cursor visible state
   }
 
-  .section-inner {
-    max-width: 1600px;
+  50% {
+    opacity: 0; // Cursor hidden state (mid-animation)
   }
+}
+{{- end -}}
 
-  .thin {
-    max-width: 960px;
-  }
+// ==========================================
+// RESPONSIVE DESIGN MEDIA QUERIES
+// ==========================================
+// Progressive enhancement for different screen sizes and devices
 
-  figure.left {
-    max-width: 75%;
-    margin-left: -320px;
-  }
-
-  figure.right {
-    max-width: 75%;
-    margin-right: -320px;
-  }
-
-  figure.big {
-    width: 1600px;
-    margin-left: -320px;
+// Extra Small Mobile Devices - Phones in portrait mode (up to 520px)
+@media (max-width: 520px) {
+  .content figure.left,
+  .content figure.right {
+    float: unset;
+    max-width: 100%;
+    margin: 0;
   }
 
   hr.post-end {
-    width: 30%;
+    width: 60%;
   }
 
-  #toc {
-    top: 15em;
-    margin-left: 490px;
-    max-width: 300px;
-  }
-}
-@media (min-width: 761px) {
   #mobile-menu {
-    display: none !important;
+    right: 4.2em;
   }
 }
-@media (max-width: 760px) {
 
+// Small Mobile Devices - Phones and small tablets (up to 760px)
+@media (max-width: 760px) {
   .hide-in-mobile,
   .site-nav.hide-in-mobile {
     display: none;
@@ -1073,58 +1220,152 @@ a.footnote-ref {
     .banner-404 {
       margin: 0;
     }
+  } 
+
+  #home-subtitle {
+    font-size: .7rem;
+  }
+
+  // Mobile-specific typewriter container sizing
+  #typewriter-container {
+    width: $width-mobile;
+    font-size: $font-size-mobile;
+  }
+  
+  #home-subtitle {
+    padding: 0;
+    // Adjust minimum height for mobile line count expectations
+    min-height: calc(#{$line-height} * #{$max-lines-mobile} * 1em);
   }
 }
 
-@media (max-width: 520px) {
+// Above Mobile - Desktop and tablet devices (761px and up)
+@media (min-width: 761px) {
+  #mobile-menu {
+    display: none !important;
+  }
+}
 
-  .content figure.left,
-  .content figure.right {
-    float: unset;
-    max-width: 100%;
-    margin: 0;
+// Medium Tablet Devices - iPads and similar (768px to 1023px)
+@media (min-width: 768px) and (max-width: 1023px) {
+  #typewriter-container {
+    width: $width-tablet;
+  }
+}
+
+// Small Desktop - Laptops and smaller desktops (800px and up)
+@media (min-width: 800px) {
+  .site-main {
+    margin-top: 3em;
   }
 
   hr.post-end {
-    width: 60%;
-  }
-
-  #mobile-menu {
-    right: 4.2em;
-  }
-  #home-subtitle {
-    font-size: 0.5em;
+    width: 40%;
   }
 }
 
-.human{
-  display: flex;
-  justify-content: flex-end;
+// Medium Desktop - Standard desktop screens (960px and up)
+@media (min-width: 960px) {
+  .site-main {
+    margin-top: 6em;
+  }
 }
 
-// If homeSubtitlePrinter is true
-{{- if .Site.Params.homeSubtitlePrinter }}
-  #home-subtitle{
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .5em solid $typewriter; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto 1.5em auto; /* Gives that scrolling effect as the typing happens */
-    // letter-spacing: .100em; /* Adjust as needed */
-    animation: typing 5s steps({{ strings.RuneCount .Site.Params.homeSubtitle }}, end),blink-caret .75s linear 5.1s infinite;
+// Large Desktop - Wide desktop monitors (1300px and up)
+@media (min-width: 1300px) {
+  .site-main {
+    margin-top: 8em;
   }
 
-  /* The typing effect */
-  @keyframes typing {
-    from {max-width: 0;}
-    to {max-width: 100%;}
+  // Show desktop-only elements and table of contents
+  .desktop-only,
+  #toc.show-toc {
+    display: block;
   }
 
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: $typewriter}
+  .desktop-only-ib {
+    display: inline-block;
   }
-{{ end -}}
+
+  // Extended figure positioning for wide screens
+  figure.left {
+    margin-left: -240px;
+    p {
+      text-align: left;
+    }
+  }
+
+  figure.right {
+    margin-right: -240px;
+    p {
+      text-align: right;
+    }
+  }
+
+  figure.big {
+    width: 1200px;
+    margin-left: -240px;
+  }
+
+  hr.post-end {
+    width: 30%;
+  }
+
+  // Position table of contents in sidebar area
+  #toc {
+    top: 13em;
+    margin-left: 370px;
+    max-width: 220px;
+  }
+}
+
+// Extra Large Desktop - Ultra-wide monitors (1800px and up)
+@media (min-width: 1800px) {
+  .site-main {
+    margin-top: 10em;
+  }
+
+  // Expanded content container for ultra-wide screens
+  .section-inner {
+    max-width: 1600px;
+  }
+
+  .thin {
+    max-width: 960px;
+  }
+
+  // Further extended figure positioning for ultra-wide displays
+  figure.left {
+    max-width: 75%;
+    margin-left: -320px;
+  }
+
+  figure.right {
+    max-width: 75%;
+    margin-right: -320px;
+  }
+
+  figure.big {
+    width: 1600px;
+    margin-left: -320px;
+  }
+
+  hr.post-end {
+    width: 30%;
+  }
+
+  // Adjusted table of contents positioning for ultra-wide layouts
+  #toc {
+    top: 15em;
+    margin-left: 490px;
+    max-width: 300px;
+  }
+}
+
+// ==========================================
+// USER CUSTOMIZATION OVERRIDE
+// ==========================================
+// Import user-specific custom styles if they exist - these will override all built-in styles
 {{- if (fileExists "assets/scss/userstyles.scss") }}
 @import "userstyles.scss";
 {{ end -}}

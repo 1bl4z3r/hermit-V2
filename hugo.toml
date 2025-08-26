@@ -20,7 +20,7 @@ enableEmoji = true
     languageDirection = 'ltr'
     languageName = 'English'
     [languages.en.params]
-      homeSubtitle = "Continuing Hermit's legacy to be minimal and fast theme"
+      homeSubtitle = "Minimalist, production-ready Hugo theme with crisp typography, lightweight, mobile-ready, SEO-optimized and responsive design for modern bloggers & developers"
     weight = 1
   [languages.fr]
     title = 'Hermit - V2 (FR)'
@@ -28,14 +28,14 @@ enableEmoji = true
     languageDirection = 'ltr'
     languageName = 'French'
     [languages.fr.params]
-      homeSubtitle = "Poursuivre l'héritage d'Hermit avec un thème minimal et rapide"
+      homeSubtitle = "Thème Hugo minimaliste, prêt pour la production, avec une typographie nette, un design léger, adapté aux mobiles, optimisé pour le référencement et réactif pour les blogueurs et développeurs modernes"
     weight = 2
   [languages.it]
     title = 'Hermit - V2 (IT)'
     languageCode = 'it'
     languageDirection = 'ltr'
     [languages.it.params]
-      homeSubtitle = "Continuare l'eredità di Hermit di essere un tema minimale e veloce"
+      homeSubtitle = "Tema Hugo minimalista, pronto per la produzione, con tipografia nitida, design leggero, ottimizzato per i dispositivi mobili, SEO e reattivo per blogger e sviluppatori moderni"
     weight = 3
  
 languageCode = "en-us"
@@ -49,7 +49,7 @@ pygmentsUseClasses  = true
 
 rssLimit = 10
 
-copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+copyright = "This work is licensed under the MIT License."
 enableEmoji = true
 
 #[services]
@@ -109,7 +109,7 @@ enableEmoji = true
   accentColor = "#018472"
 
   #homeSubtitle = "Continuing Hermit's legacy to be minimal and fast theme"
-  footerCopyright = ' <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+  footerCopyright = ' <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a>'
   # bgImg = ""
   # gitUrl = "https://github.com/1bl4z3r/hermit-V2/tree/staging"
 
@@ -143,7 +143,6 @@ enableEmoji = true
   # mermaidLib = "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs"
 
   [params.dateform]
-    CopyrightDate = "2006"
     LongDate = "Jan 2, 2006"
     ShortDate = "Jan 2"
     NumDateShort = "2006-01-02"
