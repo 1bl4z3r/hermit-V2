@@ -12,7 +12,7 @@ This demo also acts as an documentation for the theme, utilizing its powerful fe
 
 The source for the site is located in [Staging Branch](https://github.com/1bl4z3r/hermit-V2/tree/staging)
 
-![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/staging/images/screenshot.gif)
+![](https://raw.githubusercontent.com/1bl4z3r/hermit-V2/staging/images/homepage.gif)
 
 ### Initial Information
 
