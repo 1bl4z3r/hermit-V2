@@ -1,0 +1,39 @@
+/*
+* This file only deals with user provided variables
+* This does not have any dependency on `_colors.scss` that only handles site colors
+* This is optional for an user to edit. 
+*/
+
+/*
+* Variables related to typewriter effect
+*/
+
+// Typography configuration for typewriter text display
+$font-size-desktop: 1.2rem;          // Base font size for desktop viewports
+$font-size-mobile: 1rem;             // Reduced font size for mobile devices
+$line-height: 1.6;                   // Line height multiplier for optimal readability
+
+// Responsive container width settings across device breakpoints
+$width-desktop: 60vw;                // Container width for desktop screens (60% viewport width)
+$width-tablet: 70vw;                 // Container width for tablet screens (70% viewport width)
+$width-mobile: 80vw;                 // Container width for mobile screens (80% viewport width)
+
+// Cursor appearance and positioning properties
+$cursor-width: 0.4em;                // Width of the typewriter cursor element
+$cursor-height: 1.1em;               // Height of the typewriter cursor element
+$cursor-margin: 1px;                 // Left margin spacing for cursor positioning
+
+// Animation timing and delay configuration
+$blink-duration: 1s;                 // Duration of cursor blink animation cycle
+$typing-speed: 100;                  // Interval between character appearances (in milliseconds)
+$pre-blink-duration: 2000;           // Duration of cursor blinking before typing starts (in milliseconds)
+
+// Layout calculation constants for minimum height requirements
+$max-lines-desktop: 3;               // Maximum expected lines of text on desktop displays
+$max-lines-mobile: 4;                // Maximum expected lines of text on mobile displays
+
+// CSS Custom Properties bridge for JavaScript animation control
+:root {
+    --ts: #{$typing-speed}ms;         // Typing speed accessible to JavaScript
+    --pbd: #{$pre-blink-duration}ms;  // Pre-blink duration accessible to JavaScript
+}
