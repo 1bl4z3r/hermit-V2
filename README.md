@@ -181,3 +181,5 @@ Share your thoughts on how to make this theme more suited for you. It could be a
 * [code-copy.js](assets/js/code-copy.js) - [Tom Spencer](https://www.fiznool.com/blog/2018/09/14/adding-click-to-copy-buttons-to-a-hugo-powered-blog/)
 * [Everyone, who has raised an issue](https://github.com/1bl4z3r/hermit-V2/issues?q=)
 * [Everyone, who has submitted a PR](https://github.com/1bl4z3r/hermit-V2/pulls?q=)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
