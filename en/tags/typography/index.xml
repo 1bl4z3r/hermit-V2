@@ -1,118 +1,118 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Typography on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/typography/</link><description>Recent content in Typography on Hermit - V2</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 20 Oct 2023 20:06:06 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/typography/index.xml" rel="self" type="application/rss+xml"/><item><title>Admonition Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</link><pubDate>Fri, 20 Oct 2023 20:06:06 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</guid><description>&lt;p>The &lt;code>admonition&lt;/code> shortcode supports &lt;strong>8&lt;/strong> types of banners to help you put a notice on your page.&lt;/p>
-&lt;p>&lt;em>Markdown or HTML format in the content is supported.&lt;/em>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Typography on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/typography/</link><description>Recent content in Typography on Hermit - V2</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 20 Oct 2023 20:06:06 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/typography/index.xml" rel="self" type="application/rss+xml"/><item><title>Admonition Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</link><pubDate>Fri, 20 Oct 2023 20:06:06 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</guid><description>&lt;p&gt;The &lt;code&gt;admonition&lt;/code&gt; shortcode supports &lt;strong&gt;8&lt;/strong&gt; types of banners to help you put a notice on your page.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Markdown or HTML format in the content is supported.&lt;/em&gt;&lt;/p&gt;
 
- &lt;aside class="admonition note">
- &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2">
- &lt;path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">&lt;/path>
- &lt;/svg>&lt;/div>&lt;b>This is a note&lt;/b>
- &lt;/div>
- &lt;div class="admonition-content">A &lt;strong>note&lt;/strong> banner&lt;/div>
- &lt;/aside>
+ &lt;aside class="admonition note"&gt;
+ &lt;div class="admonition-title"&gt;
+ &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2"&gt;
+ &lt;path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"&gt;&lt;/path&gt;
+ &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;This is a note&lt;/b&gt;
+ &lt;/div&gt;
+ &lt;div class="admonition-content"&gt;A &lt;strong&gt;note&lt;/strong&gt; banner&lt;/div&gt;
+ &lt;/aside&gt;
 
- &lt;aside class="admonition info">
- &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info">
- &lt;circle cx="12" cy="12" r="10">&lt;/circle>
- &lt;line x1="12" y1="16" x2="12" y2="12">&lt;/line>
- &lt;line x1="12" y1="8" x2="12.01" y2="8">&lt;/line>
- &lt;/svg>&lt;/div>&lt;b>This is an info&lt;/b>
- &lt;/div>
- &lt;div class="admonition-content">A &lt;strong>info&lt;/strong> banner&lt;/div>
- &lt;/aside>
+ &lt;aside class="admonition info"&gt;
+ &lt;div class="admonition-title"&gt;
+ &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"&gt;
+ &lt;circle cx="12" cy="12" r="10"&gt;&lt;/circle&gt;
+ &lt;line x1="12" y1="16" x2="12" y2="12"&gt;&lt;/line&gt;
+ &lt;line x1="12" y1="8" x2="12.01" y2="8"&gt;&lt;/line&gt;
+ &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;This is an info&lt;/b&gt;
+ &lt;/div&gt;
+ &lt;div class="admonition-content"&gt;A &lt;strong&gt;info&lt;/strong&gt; banner&lt;/div&gt;
+ &lt;/aside&gt;
 
- &lt;aside class="admonition tip">
- &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
- &lt;circle cx="12" cy="12" r="5">&lt;/circle>
- &lt;line x1="12" y1="1" x2="12" y2="3">&lt;/line>
- &lt;line x1="12" y1="21" x2="12" y2="23">&lt;/line>
- &lt;line x1="4.22" y1="4.22" x2="5.64" y2="5.64">&lt;/line>
- &lt;line x1="18.36" y1="18.36" x2="19.78" y2="19.78">&lt;/line>
- &lt;line x1="1" y1="12" x2="3" y2="12">&lt;/line>
- &lt;line x1="21" y1="12" x2="23" y2="12">&lt;/line>
- &lt;line x1="4.22" y1="19.78" x2="5.64" y2="18.36">&lt;/line>
- &lt;line x1="18.36" y1="5.64" x2="19.78" y2="4.22">&lt;/line>
- &lt;/svg>&lt;/div>&lt;b>Tip&lt;/b>
- &lt;/div>
- &lt;div class="admonition-content">A &lt;strong>tip&lt;/strong> banner&lt;/div>
- &lt;/aside>
+ &lt;aside class="admonition tip"&gt;
+ &lt;div class="admonition-title"&gt;
+ &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"&gt;
+ &lt;circle cx="12" cy="12" r="5"&gt;&lt;/circle&gt;
+ &lt;line x1="12" y1="1" x2="12" y2="3"&gt;&lt;/line&gt;
+ &lt;line x1="12" y1="21" x2="12" y2="23"&gt;&lt;/line&gt;
+ &lt;line x1="4.22" y1="4.22" x2="5.64" y2="5.64"&gt;&lt;/line&gt;
+ &lt;line x1="18.36" y1="18.36" x2="19.78" y2="19.78"&gt;&lt;/line&gt;
+ &lt;line x1="1" y1="12" x2="3" y2="12"&gt;&lt;/line&gt;
+ &lt;line x1="21" y1="12" x2="23" y2="12"&gt;&lt;/line&gt;
+ &lt;line x1="4.22" y1="19.78" x2="5.64" y2="18.36"&gt;&lt;/line&gt;
+ &lt;line x1="18.36" y1="5.64" x2="19.78" y2="4.22"&gt;&lt;/line&gt;
+ &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;Tip&lt;/b&gt;
+ &lt;/div&gt;
+ &lt;div class="admonition-content"&gt;A &lt;strong&gt;tip&lt;/strong&gt; banner&lt;/div&gt;
+ &lt;/aside&gt;
 
- &lt;aside class="admonition success">
- &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
- &lt;path d="M22 11.08V12a10 10 0 1 1-5.93-9.14">&lt;/path>
- &lt;polyline points="22 4 12 14.01 9 11.01">&lt;/polyline>
- &lt;/svg>&lt;/div>&lt;b>Success&lt;/b>
- &lt;/div>
- &lt;div class="admonition-content">A &lt;strong>success&lt;/strong> banner&lt;/div>
- &lt;/aside>
+ &lt;aside class="admonition success"&gt;
+ &lt;div class="admonition-title"&gt;
+ &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"&gt;
+ &lt;path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"&gt;&lt;/path&gt;
+ &lt;polyline points="22 4 12 14.01 9 11.01"&gt;&lt;/polyline&gt;
+ &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;Success&lt;/b&gt;
+ &lt;/div&gt;
+ &lt;div class="admonition-content"&gt;A &lt;strong&gt;success&lt;/strong&gt; banner&lt;/div&gt;
+ &lt;/aside&gt;
 
- &lt;aside class="admonition warning">
- &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle">
- &lt;circle cx="12" cy="12" r="10">&lt;/circle>
- &lt;line x1="12" y1="8" x2="12" y2="12">&lt;/line>
- &lt;line x1="12" y1="16" x2="12.01" y2="16">&lt;/line>
- &lt;/svg>&lt;/div>&lt;b>Warning&lt;/b>
- &lt;/div>
- &lt;div class="admonition-content">A &lt;strong>warning&lt;/strong> banner&lt;/div>
- &lt;/aside>
+ &lt;aside class="admonition warning"&gt;
+ &lt;div class="admonition-title"&gt;
+ &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"&gt;
+ &lt;circle cx="12" cy="12" r="10"&gt;&lt;/circle&gt;
+ &lt;line x1="12" y1="8" x2="12" y2="12"&gt;&lt;/line&gt;
+ &lt;line x1="12" y1="16" x2="12.01" y2="16"&gt;&lt;/line&gt;
+ &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;Warning&lt;/b&gt;
+ &lt;/div&gt;
+ &lt;div class="admonition-content"&gt;A &lt;strong&gt;warning&lt;/strong&gt; banner&lt;/div&gt;
+ &lt;/aside&gt;
 
- &lt;aside class="admonition failure">
- &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
- &lt;circle cx="12" cy="12" r="10">&lt;/circle>
- &lt;line x1="15" y1="9" x2="9" y2="15">&lt;/line>
- &lt;line x1="9" y1="9" x2="15" y2="15">&lt;/line>
- &lt;/svg>&lt;/div>&lt;b>Failure&lt;/b>
- &lt;/div>
- &lt;div class="admonition-content">A &lt;strong>failure&lt;/strong> banner&lt;/div>
- &lt;/aside>
+ &lt;aside class="admonition failure"&gt;
+ &lt;div class="admonition-title"&gt;
+ &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle"&gt;
+ &lt;circle cx="12" cy="12" r="10"&gt;&lt;/circle&gt;
+ &lt;line x1="15" y1="9" x2="9" y2="15"&gt;&lt;/line&gt;
+ &lt;line x1="9" y1="9" x2="15" y2="15"&gt;&lt;/line&gt;
+ &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;Failure&lt;/b&gt;
+ &lt;/div&gt;
+ &lt;div class="admonition-content"&gt;A &lt;strong&gt;failure&lt;/strong&gt; banner&lt;/div&gt;
+ &lt;/aside&gt;
 
- &lt;aside class="admonition danger">
- &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle">
- &lt;path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">&lt;/path>
- &lt;line x1="12" y1="9" x2="12" y2="13">&lt;/line>
- &lt;line x1="12" y1="17" x2="12.01" y2="17">&lt;/line>
- &lt;/svg>&lt;/div>&lt;b>Danger&lt;/b>
- &lt;/div>
- &lt;div class="admonition-content">A &lt;strong>danger&lt;/strong> banner&lt;/div>
- &lt;/aside>
+ &lt;aside class="admonition danger"&gt;
+ &lt;div class="admonition-title"&gt;
+ &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"&gt;
+ &lt;path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"&gt;&lt;/path&gt;
+ &lt;line x1="12" y1="9" x2="12" y2="13"&gt;&lt;/line&gt;
+ &lt;line x1="12" y1="17" x2="12.01" y2="17"&gt;&lt;/line&gt;
+ &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;Danger&lt;/b&gt;
+ &lt;/div&gt;
+ &lt;div class="admonition-content"&gt;A &lt;strong&gt;danger&lt;/strong&gt; banner&lt;/div&gt;
+ &lt;/aside&gt;
 
- &lt;aside class="admonition bug">
- &lt;div class="admonition-title">
- &lt;div class="icon">&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
- &lt;polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2">&lt;/polygon>
- &lt;line x1="12" y1="8" x2="12" y2="12">&lt;/line>
- &lt;line x1="12" y1="16" x2="12.01" y2="16">&lt;/line>
- &lt;/svg>&lt;/div>&lt;b>Bug&lt;/b>
- &lt;/div>
- &lt;div class="admonition-content">A &lt;strong>bug&lt;/strong> banner&lt;/div>
- &lt;/aside>
-&lt;p>The &lt;code>admonition&lt;/code> shortcode has the following named parameters:&lt;/p></description></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>&lt;h1 id="support-for-hermit-v2">\(LaTeX\) support for hermit-V2&lt;a href="#support-for-hermit-v2" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
- stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
- &lt;/svg>&lt;/a>&lt;/h1>
-&lt;h2 id="configuration">Configuration&lt;a href="#configuration" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
- stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
- &lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>Put the following in &lt;code>hugo.toml&lt;/code>&lt;/p></description></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Sat, 22 Jul 2023 14:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>
-&lt;p>Footnote:&lt;/p></description></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</guid><description>&lt;h2 id="this-article-explains-how-to-use-scroll-up">This article explains how to use Scroll Up&lt;a href="#this-article-explains-how-to-use-scroll-up" class="anchor" aria-hidden="true">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
- stroke-linecap="round" stroke-linejoin="round">
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3">&lt;/path>
- &lt;line x1="8" y1="12" x2="16" y2="12">&lt;/line>
- &lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.&lt;/p></description></item></channel></rss>
+ &lt;aside class="admonition bug"&gt;
+ &lt;div class="admonition-title"&gt;
+ &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon"&gt;
+ &lt;polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"&gt;&lt;/polygon&gt;
+ &lt;line x1="12" y1="8" x2="12" y2="12"&gt;&lt;/line&gt;
+ &lt;line x1="12" y1="16" x2="12.01" y2="16"&gt;&lt;/line&gt;
+ &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;Bug&lt;/b&gt;
+ &lt;/div&gt;
+ &lt;div class="admonition-content"&gt;A &lt;strong&gt;bug&lt;/strong&gt; banner&lt;/div&gt;
+ &lt;/aside&gt;
+&lt;p&gt;The &lt;code&gt;admonition&lt;/code&gt; shortcode has the following named parameters:&lt;/p&gt;</description></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>&lt;h1 id="support-for-hermit-v2"&gt;\(LaTeX\) support for hermit-V2&lt;a href="#support-for-hermit-v2" class="anchor" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+ stroke-linecap="round" stroke-linejoin="round"&gt;
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"&gt;&lt;/path&gt;
+ &lt;line x1="8" y1="12" x2="16" y2="12"&gt;&lt;/line&gt;
+ &lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="configuration"&gt;Configuration&lt;a href="#configuration" class="anchor" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+ stroke-linecap="round" stroke-linejoin="round"&gt;
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"&gt;&lt;/path&gt;
+ &lt;line x1="8" y1="12" x2="16" y2="12"&gt;&lt;/line&gt;
+ &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Put the following in &lt;code&gt;hugo.toml&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Sat, 22 Jul 2023 14:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;p&gt;Footnote:&lt;/p&gt;</description></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</guid><description>&lt;h2 id="this-article-explains-how-to-use-scroll-up"&gt;This article explains how to use Scroll Up&lt;a href="#this-article-explains-how-to-use-scroll-up" class="anchor" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+ stroke-linecap="round" stroke-linejoin="round"&gt;
+ &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"&gt;&lt;/path&gt;
+ &lt;line x1="8" y1="12" x2="16" y2="12"&gt;&lt;/line&gt;
+ &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.&lt;/p&gt;</description></item></channel></rss>
