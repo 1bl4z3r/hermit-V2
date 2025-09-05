@@ -10,22 +10,16 @@
 <meta name="author" content="{{ .Params.author | default .Site.Params.author.name }}">
 <meta name="description" content="{{ .Page.Params.description | default .Site.Params.description }}">
 <link rel="author" type="text/plain" href="{{"humans.txt" | relURL}}">
-<link rel="apple-touch-icon" sizes="180x180" href="{{"apple-touch-icon.png" | relURL}}">
-{{- if (fileExists "static/favicon.ico") -}}
-<link rel="icon" href="{{"favicon.ico" | relURL}}" type="image/x-icon">
-{{- end -}}
+<link rel="manifest" href="{{"site.webmanifest" | relURL}}">
+{{- if (fileExists "static/favicon.ico") -}}<link rel="shortcut icon" href="{{"favicon.ico" | relURL}}" type="image/x-icon">{{- end -}}
 {{ $favicon := "images/favicon.svg" }}
 {{- if (fileExists (printf "assets/%s" $favicon)) -}}
-{{- with resources.Get $favicon | minify -}}
-<link rel="icon" href="{{ .Permalink }}" type="image/svg+xml">
+{{- with resources.Get $favicon | minify -}}<link rel="icon" href="{{ .Permalink }}" type="image/svg+xml">{{- end -}}
+{{- else if (fileExists "static/favicon.svg") -}}<link rel="icon" href="{{"favicon.svg" | relURL}}" type="image/svg+xml">
 {{- end -}}
-{{- else if (fileExists "static/favicon.svg") -}}
-<link rel="icon" href="{{"favicon.svg" | relURL}}" type="image/svg+xml">
-{{- end -}}
-<link rel="icon" type="image/png" sizes="32x32" href="{{"favicon-32x32.png" | relURL}}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{"favicon-16x16.png" | relURL}}">
-<link rel="manifest" href="{{"site.webmanifest" | relURL}}">
-<meta name="msapplication-TileImage" content="{{"mstile-144x144.png" | relURL}}">
+<link rel="icon" type="image/png" sizes="96x96" href="{{"favicon-96x96.png" | relURL}}" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{"apple-touch-icon.png" | relURL}}">
+<meta name="apple-mobile-web-app-title" content="Hermit - V2" />
 {{ with $themeColor := .Site.Params.themeColor | default "#494f5c" -}}
 <meta name="theme-color" content="{{.}}">
 <meta name="msapplication-TileColor" content="{{.}}">
