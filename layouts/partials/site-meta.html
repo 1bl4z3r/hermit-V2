@@ -19,7 +19,7 @@
 {{- end -}}
 <link rel="icon" type="image/png" sizes="96x96" href="{{"favicon-96x96.png" | relURL}}" />
 <link rel="apple-touch-icon" sizes="180x180" href="{{"apple-touch-icon.png" | relURL}}">
-<meta name="apple-mobile-web-app-title" content="Hermit - V2" />
+<meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}" />
 {{ with $themeColor := .Site.Params.themeColor | default "#494f5c" -}}
 <meta name="theme-color" content="{{.}}">
 <meta name="msapplication-TileColor" content="{{.}}">
