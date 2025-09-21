@@ -9,7 +9,7 @@
 {{- end -}}
 <meta name="author" content="{{ .Params.author | default .Site.Params.author.name }}">
 <meta name="description" content="{{ .Page.Params.description | default .Site.Params.description }}">
-<link rel="author" type="text/plain" href="{{"humans.txt" | relURL}}">
+{{- if or (fileExists "static/humans.txt") (templates.Exists "humans.txt") -}}<link rel="author" type="text/plain" href="{{"humans.txt" | relURL}}">{{- end -}}
 <link rel="manifest" href="{{"site.webmanifest" | relURL}}">
 {{- if (fileExists "static/favicon.ico") -}}<link rel="shortcut icon" href="{{"favicon.ico" | relURL}}" type="image/x-icon">{{- end -}}
 {{ $favicon := "images/favicon.svg" }}
