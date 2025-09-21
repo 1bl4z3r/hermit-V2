@@ -9,12 +9,12 @@
   a {
     word-wrap: break-word;
     border: none;
+    position: relative;
     box-shadow: inset 0 -4px 0 $aTag-mixin-a-box-shadow;
-    transition-property: box-shadow;
-    transition-duration: 0.1s;
+    transition: box-shadow 0.3s ease;
 
     &:hover {
-      box-shadow: inset 0 -1em 0 $aTag-mixin-a-hover-box-shadow;
+      box-shadow: inset 0 calc(-1.5em - 5px) 0 $aTag-mixin-a-hover-box-shadow;
     }
   }
 }
