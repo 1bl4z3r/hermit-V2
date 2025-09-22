@@ -11,7 +11,7 @@ toc : true
 
 Hugo has `figure` shortcode built in, so you can easily add captions or hyperlink rel attributes to images. Documentations can be found [here](https://gohugo.io/content-management/shortcodes/#figure).
 
-This theme extends upon [default figure shortcode](https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/shortcodes/figure.html) to implement following features :
+This theme extends upon [default figure shortcode](https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_shortcodes/figure.html) to implement following features :
 
 * Follow latest standard to display WEBP image and fallback to JPG if browser cannot render WEBP.
   * If provided with an image resource, it can convert to WEBP and JPG image
