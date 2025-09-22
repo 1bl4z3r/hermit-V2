@@ -34,7 +34,7 @@
  &lt;line x1="8" y1="12" x2="16" y2="12"&gt;&lt;/line&gt;
  &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;To use the shortcode, simply list your image sources (one per line) between the opening and closing &lt;code&gt;gallery&lt;/code&gt; tags.&lt;/p&gt;</description></item><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Sun, 24 Dec 2023 12:29:41 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>&lt;p&gt;Hugo has &lt;code&gt;figure&lt;/code&gt; shortcode built in, so you can easily add captions or hyperlink rel attributes to images. Documentations can be found &lt;a href="https://gohugo.io/content-management/shortcodes/#figure"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This theme extends upon &lt;a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/shortcodes/figure.html"&gt;default figure shortcode&lt;/a&gt; to implement following features :&lt;/p&gt;
+&lt;p&gt;This theme extends upon &lt;a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_shortcodes/figure.html"&gt;default figure shortcode&lt;/a&gt; to implement following features :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Follow latest standard to display WEBP image and fallback to JPG if browser cannot render WEBP.
 &lt;ul&gt;
