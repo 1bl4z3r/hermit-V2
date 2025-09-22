@@ -1,0 +1,71 @@
+{{- $rootCtx := . -}}
+<!DOCTYPE html>
+<html lang="{{.Site.LanguageCode}}">
+
+<head>
+	{{- partial "google-tag-manager.html" (dict "context" . "name" "head") -}}
+	{{- partial "analytics.html" . -}}
+	{{- partial "site-meta.html" . -}}
+	{{- partial "structure-extra.html" . -}}
+	{{- partial "webschema.html" . -}}
+	<title>{{ block "title" . }}{{ .Title }}{{ end }}</title>
+	{{- range .AlternativeOutputFormats -}}{{- printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Title | safeHTML -}}{{- end -}}
+	{{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "css/style.css" . | toCSS | minify | fingerprint -}}
+	<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="{{ $style.Permalink }}" {{ printf "integrity=%q" $style.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous">
+	{{- range .Params.custom_css -}}
+		{{ $c_css := resources.Get . | resources.ExecuteAsTemplate "css/style.css" $rootCtx | toCSS | minify | fingerprint -}}
+	<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="{{ $c_css.Permalink }}" {{ printf "integrity=%q" $c_css.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous">
+	{{- end -}}
+	{{- if $.Page.Params.print -}}
+		{{- $PRNTCSS := resources.Get "custom_css/print.scss" | resources.ExecuteAsTemplate "css/style.css" $rootCtx | toCSS | minify | fingerprint -}}
+	<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="print" href="{{ $PRNTCSS.Permalink }}" {{ printf "integrity=%q" $PRNTCSS.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous">
+	{{- end -}}
+	{{- block "head" . -}}{{- end -}}
+	{{- if templates.Exists "partials/extra-head.html" -}}{{- partial "extra-head.html" . -}}{{- end -}}
+</head>
+
+<body id="page">
+	{{- partial "google-tag-manager.html" (dict "context" . "name" "body") -}}
+	{{- block "header" . -}}{{ end -}}
+	{{- block "main" . -}}{{ end -}}
+	{{- block "footer" . -}}{{ end }}
+	{{- partial "scroll-to-top.html" . }}
+	{{- $main := resources.Get "js/main.js" -}}
+	{{- if .Site.Params.code_copy_button | default true -}}
+	{{ $codeCopy := resources.Get "js/code-copy.js" -}}
+	{{ $script := slice $main $codeCopy | resources.Concat "js/bundle.js" | minify | fingerprint -}}
+	<script async src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
+	{{- else -}}
+	{{ $script := $main | minify | fingerprint -}}
+	<script async src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
+	{{- end -}}
+	{{- if and (not (eq .Site.Params.shareSocial nil)) (.Site.Params.shareSocial) -}}
+	{{ $linkshare := resources.Get "js/link-share.js" | minify | fingerprint -}}
+	<script async src="{{ $linkshare.Permalink }}" {{ printf "integrity=%q" $linkshare.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
+	{{- end -}}
+	{{- range .Params.custom_js -}}
+	{{ $c_js := resources.Get . | minify | fingerprint -}}
+	<script defer src="{{ $c_js.Permalink }}" {{ printf "integrity=%q" $c_js.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
+	{{- end }}
+	{{- if and .Site.Params.homeSubtitlePrinter .IsHome -}}
+		{{ $typewriter := resources.Get "js/typewriter.js" | minify | fingerprint -}}
+		<script defer src="{{ $typewriter.Permalink }}" {{ printf "integrity=%q" $typewriter.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
+	{{- end -}}
+	{{- partial "mathjax.html" . -}}
+	{{- partial "mermaid.html" . -}}
+	{{- if templates.Exists "partials/extra-foot.html" -}}{{- partial "extra-foot.html" . -}}{{- end }}
+	{{- if .HasShortcode "gallery" -}}
+		{{- if and .Site.Params.gallery .Site.Params.gallery.enable -}}
+			{{- $galleryJS := resources.Get "js/gallery.js" -}}
+			{{- if $galleryJS -}}
+				{{- $galleryJS = $galleryJS | minify | fingerprint -}}
+				<script defer src="{{ $galleryJS.RelPermalink }}" {{ printf "integrity=%q" $galleryJS.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
+			{{- else -}}
+				{{- warnf "Gallery is enabled and shortcode used on page '%s' (detected in baseof.html), but js/gallery.js was not found. The gallery might not function correctly." .Page.Path -}}
+			{{- end -}}
+		{{- else -}}
+			{{- warnf "Gallery shortcode used on page '%s' (detected in baseof.html), but 'gallery.enable' is not set to true in site parameters (hugo.toml). Gallery JavaScript will not be loaded." .Page.Path -}}
+		{{- end -}}
+	{{- end -}}
+</body>
+</html>

@@ -1,0 +1,50 @@
+{{ define "header" }}
+{{ partialCached "header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+	<main class="site-main section-inner thin {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster{{- end -}}">
+		<h1>{{ .Title }}</h1>
+		{{- if .Content }}<div class="content">{{ .Content }}</div>{{ end -}}
+		{{- if (and (or (in .Page.RelPermalink "tags") (in .Page.RelPermalink "categories")) (in .Site.Params.listLayout "legacy")) -}}
+			{{- range .Data.Pages.GroupByDate "2006" }}
+				<div class="posts-group">
+					<div class="post-year" id="{{ .Key }}">
+						{{ .Key }}
+					</div>
+					<ul class="posts-list">
+						{{- range .Pages }}
+							<li class="post-item">
+								<a href="{{.Page.RelPermalink}}">
+									{{- if in .Page.RelPermalink "tags" -}}<span class="post-title tag">{{.Page.LinkTitle }}</span>
+									{{- else if in .Page.RelPermalink "categories" -}}<span class="post-title category">{{.Page.LinkTitle}}</span>
+									{{- else -}}<span class="post-title">{{.Page.LinkTitle}}</span>
+									{{- end -}}
+								  	<span class="post-day">{{ .Date.Format (default "Jan 2" .Site.Params.dateform.ShortDate) }}</span>
+							  	</a>
+							</li>
+						{{- end }}
+					</ul>
+				</div>
+			{{- end }}
+		{{- else if (and (or (in .Page.RelPermalink "tags") (in .Page.RelPermalink "categories")) (not (in .Site.Params.listLayout "legacy"))) -}}
+			{{- range .Data.Terms.ByCount }}
+				<div class="posts-group">
+					<ul class="posts-list">
+						<li class="post-item">
+							<a href="{{.Page.RelPermalink}}">
+        		  				{{- if in .Page.RelPermalink "tags" -}}<span class="post-title tag">{{.Page.LinkTitle }}</span>
+        		  				{{- else if in .Page.RelPermalink "categories" -}}<span class="post-title category">{{.Page.LinkTitle}}</span>
+        		  				{{- else -}}<span class="post-title">{{.Page.LinkTitle}}</span>
+        		  				{{- end -}}
+								<span class="post-day">{{ .Count }}</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			{{- end -}}
+		{{- end -}}
+	</main>
+{{ end }}
+{{ define "footer" }}<footer id="site-footer" class="section-inner thin {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster {{- end -}}">{{- if templates.Exists "partials/list-footer.html" -}}{{- partialCached "list-footer.html" . -}}{{- else -}}{{- partial "footer.html" . -}}{{- end -}}</footer>
+{{ end }}

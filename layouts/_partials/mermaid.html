@@ -1,0 +1,23 @@
+{{- if .Page.Store.Get "hasMermaid" -}}
+  {{- $mermaid_initialize := `startOnLoad: true,theme: 'dark'` -}}
+  {{- with $mermaidLib := $.Site.Params.mermaidLib | default "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs" -}}
+  {{- if not (or (findRE `http[s]{0,1}://` $mermaidLib 1) (findRE `^\/.*` $mermaidLib 1)) -}}
+  {{ $mm := resources.Get $mermaidLib }}
+  <script defer async type="module">
+    import mermaid from '{{ $mm.Permalink }}';
+    mermaid.initialize({ {{ $mermaid_initialize | safeJS }} });
+  </script>
+  {{- else if findRE `^\/.*` $mermaidLib 1 -}}
+  {{ $mm := printf "%s%s" $.Site.BaseURL (strings.TrimLeft "/" $mermaidLib) }}
+  <script defer async type="module">
+    import mermaid from '{{ $mm }}';
+    mermaid.initialize({ {{ $mermaid_initialize | safeJS }} });
+  </script>
+  {{- else -}}
+  <script defer async type="module">
+    import mermaid from '{{ $mermaidLib }}';
+    mermaid.initialize({ {{ $mermaid_initialize | safeJS }} });
+  </script>
+  {{- end -}}
+  {{- end -}}
+{{- end -}}

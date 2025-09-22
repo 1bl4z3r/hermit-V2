@@ -1,0 +1,26 @@
+{{- with .Params.description }}<p>{{.}}</p>{{- end }}
+{{- with $author := default .Site.Params.author.name .Params.author -}}
+{{- with $authorLink := default $.Site.Params.author.about $.Page.Params.authorLink -}}
+<p>{{ partial "svg.html" (dict "context" . "name" "author") }}<a href="{{ ref $.Page $authorLink }}" target="_blank">{{ $author }}</a></p>
+{{- else -}}
+<p>{{ partial "svg.html" (dict "context" . "name" "author") }}{{ $author }}</p>
+{{- end -}}
+{{- end -}}
+{{- with .Params.tags }}
+<p>{{- partial "svg.html" (dict "context" . "name" "posts_single_tags") -}}{{- range . -}}<span class="tag"><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{.}}</a></span>{{- end }}</p>
+{{- end }}
+{{- with .Params.categories }}
+<p>{{- partial "svg.html" (dict "context" . "name" "posts_single_categories") -}}{{- range . -}}<span class="category"><a href="{{ "categories/" | absLangURL }}{{ . | urlize }}">{{.}}</a></span>{{- end }}</p>
+{{- end }}
+<p>{{- partial "svg.html" (dict "context" . "name" "posts_single_wordcount") }}{{- .WordCount }}&nbsp{{- if fileExists "i18n" }} {{ i18n "wordCount" . -}} {{- else -}} Words {{- end }} {{ partial "readTime.html" . -}}</p>
+<p>{{- partial "svg.html" (dict "context" . "name" "posts_single_date") }}{{ dateFormat (default "2006-01-02 15:04 -0700" .Site.Params.dateform.NumDateLong) .Date.Local }}
+{{ if .Page.Params.ShowLastmod -}}
+{{- if and .GitInfo .Site.Params.gitUrl -}}
+[{{- partial "svg.html" (dict "context" . "name" "posts_single_git_commit") -}}<a href="{{ .Site.Params.gitUrl -}}{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{ .GitInfo.AbbreviatedHash -}}</a> @ {{ dateFormat (default "2006-01-02" .Site.Params.dateform.NumDateShort) .GitInfo.AuthorDate.Local -}}]
+{{- else if not (eq .Lastmod .Date ) -}}
+[{{ .Site.Params.initialPublish | default "Initially Published on : " }} {{ dateFormat (default "2006-01-02 15:04 -0700" .Site.Params.dateform.NumDateLong) .Lastmod.Local -}}]
+{{- else -}}
+{{ errorf "Lastmod is not found in Page Frontmatter or Lastmod is same as Date in %s" .Permalink }}
+{{- end -}}
+{{- end -}}
+</p>

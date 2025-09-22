@@ -1,0 +1,16 @@
+{{/* 
+This partial is responsible for footer contents for the site 
+You can make page specific footers by creating below partials in `/layouts/partials`
+For homepage (or landing page), index-footer.html
+For article list pages, list-footer.html
+For single pages (which are not articles), single-footer.html
+For posts/articles pages, posts-footer.html
+*/}}
+<p>
+	&copy; {{ now.Format (default "2006" .Site.Params.dateform.CopyrightDate) }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+	&#183; {{ .Site.Params.footerCopyright | safeHTML }}
+	{{ if not .Site.Params.footerHideThemeName -}}
+	&#183; Made with <a href="https://gohugo.io/" target="_blank" rel="noopener" title="The world's fastest framework for building websites">Hugo</a> &amp; <a href="https://github.com/1bl4z3r/hermit-V2" target="_blank" rel="noopener" title="A fast, minimalist Hugo theme">Hermit-V2</a>
+	{{- end }}
+	{{ with .OutputFormats.Get "RSS" }}&#183; <a href="{{ "index.xml" | absLangURL }}" target="_blank" title="rss">{{- partial "svg.html" (dict "context" . "name" "rss") -}}</a>{{- end -}}
+</p>

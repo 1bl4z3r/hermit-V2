@@ -1,0 +1,29 @@
+{{/* This partial is to help `rss.xml` on generating proper links to images in feed */}}
+{{- with $path := .path -}}
+{{- if not (or (findRE `http[s]{0,1}://` $path 1) (findRE `^\/.*` $path 1)) -}}
+{{- with resources.Get $path -}}
+<enclosure url="{{ .RelPermalink | absURL }}" length="" type="{{ .MediaType }}" />
+<media:thumbnail url="{{ .RelPermalink | absURL }}" width="{{ .Width}}" height="{{ .Height}}" />
+<media:content url="{{ .RelPermalink | absURL }}" medium="{{ .MediaType.MainType }}" type="{{ .MediaType}}" width="{{ .Width}}" height="{{ .Height}}" >
+    <media:title type="html">{{ . }}</media:title>
+</media:content>
+{{- end -}}
+{{- else if findRE `^\/.*` $path 1 -}}
+{{ $path := printf "%s%s" site.BaseURL (strings.TrimLeft "/" $path) }}
+			{{- with resources.GetRemote $path -}}
+			<enclosure url="{{ .Permalink }}" length="" type="{{ .MediaType }}" />
+			<media:thumbnail url="{{ .Permalink }}" width="{{ .Width}}" height="{{ .Height}}" />
+			<media:content url="{{ .Permalink }}" medium="{{ .MediaType.MainType }}" type="{{ .MediaType}}" width="{{ .Width}}" height="{{ .Height}}" >
+			    <media:title type="html">{{ . }}</media:title>
+			</media:content>
+			{{- end -}}
+{{- else -}}
+			{{- with resources.GetRemote . -}}
+			<enclosure url="{{ .Permalink }}" length="" type="{{ .MediaType }}" />
+			<media:thumbnail url="{{ .Permalink }}" width="{{ .Width}}" height="{{ .Height}}" />
+			<media:content url="{{ .Permalink }}" medium="{{ .MediaType.MainType }}" type="{{ .MediaType}}" width="{{ .Width}}" height="{{ .Height}}" >
+			    <media:title type="html">{{ . }}</media:title>
+			</media:content>
+			{{- end -}}
+{{- end -}}
+{{- end -}}

@@ -1,0 +1,82 @@
+{{/* layouts/shortcodes/gallery.html */}}
+{{/* This shortcode creates a responsive image gallery with a lightbox. */}}
+{{/* Usage:
+    {{< gallery >}}
+    /images/image1.jpg
+    https://example.com/remote-image.png
+    /assets/img/another-image.webp
+    {{< /gallery >}}
+*/}}
+
+{{- if not (and $.Site.Params.gallery $.Site.Params.gallery.enable) -}}
+    {{- warnf "Gallery shortcode used on page '%s', but 'gallery.enable' is not set to true in site parameters (hugo.toml). The gallery might not function as expected without its specific configurations." .Page.Path -}}
+{{- else -}}
+    {{- $galleryId := printf "gallery-%s" (substr (md5 .Inner) 0 8) -}} {{/* Generate a somewhat unique ID for the gallery based on its content. Used for grouping lightbox items. */}}
+    {{- $imageSources := split .Inner "\n" -}} {{/* Split inner content by newlines to get image sources (URLs or local paths). */}}
+    {{- $currentPage := .Page -}} {{/* Store the current page context to safely use it in warnf. */}}
+
+    <div class="image-gallery" id="{{ $galleryId }}">
+        {{- range $index, $rawSource := $imageSources -}}
+            {{- $source := "" -}}
+            {{- if (not (strings.HasPrefix hugo.Version "0.136.4")) -}} {{/* Hugo version is less than 0.136.4 */}}
+                {{- $source = trim $rawSource " \t\n\r" -}} {{/* Trim specific whitespace characters. */}}
+            {{- else -}} {{/* Hugo version is 0.136.4 or newer */}}
+                {{- $source = strings.TrimSpace $rawSource -}} {{/* Trim whitespace using the more general TrimSpace. */}}
+            {{- end -}}
+            {{- if $source -}} {{/* Process only if the source string is not empty. */}}
+                {{- $caption := "" -}}
+                {{- $thumbnailUrl := "" -}}
+                {{- $fullImageUrl := "" -}}
+                {{- $isRemote := or (strings.HasPrefix $source "http://") (strings.HasPrefix $source "https://") -}} {{/* Check if the source is a remote URL. */}}
+                {{- $isStatic := and (not $isRemote) (strings.HasPrefix $source "/") -}} {{/* Check if it's a path to a static file (starts with / but not http/s). */}}
+
+                {{- if $isRemote -}}
+                    {{- $fullImageUrl = $source -}}
+                    {{- $thumbnailUrl = $source -}} {{/* For remote images, thumbnail is the same as full. CSS will handle display. */}}
+                    {{- $filename := path.Base $source -}} {{/* Extract filename from URL (e.g., image.jpg?query). */}}
+                    {{- $cleanedFilename := index (strings.Split $filename "?") 0 -}} {{/* Get the part of the filename before the first '?' */}}
+                    {{- $caption = strings.TrimSuffix (path.Ext $cleanedFilename) $cleanedFilename -}} {{/* Get filename without extension for the caption. */}}
+                {{- else if $isStatic -}}
+                    {{- $fullImageUrl = printf "%s%s" $currentPage.Site.BaseURL (strings.TrimLeft "/" $source) -}} {{/* For static files, generate an absolute URL by prepending BaseURL. */}}
+                    {{- $thumbnailUrl = $fullImageUrl -}} {{/* Static files use original as thumbnail, like remote. CSS handles display. */}}
+                    {{- $filename := path.Base $source -}} {{/* Extract filename from path. */}}
+                    {{- $caption = strings.TrimSuffix (path.Ext $filename) $filename -}} {{/* Get filename without extension for the caption. */}}
+                {{- else -}} {{/* Otherwise, assume it's an asset path for processing. */}}
+                    {{- $imageResource := resources.Get $source -}} {{/* Get the image resource from /assets or page resources. */}}
+                    {{- if $imageResource -}}
+                            {{/* Determine thumbnail_spec:
+                             If params.gallery.thumbnail (e.g., "400") is set in hugo.toml, use "400x400 Smart".
+                             Else, default to "300x300 Smart". */}}
+                             {{- $thumbnailSpec := "" -}}
+                             {{- if and $.Site.Params.gallery.enable $.Site.Params.gallery.thumbnail -}}
+                                {{- $dimension := $.Site.Params.gallery.thumbnail -}} {{/* Expects a dimension value like "400" from hugo.toml */}}
+                                 {{- $thumbnailSpec = printf "%sx%s Smart" $dimension $dimension -}}
+                             {{- else -}}
+                                 {{- $thumbnailSpec = "300x300 Smart" -}}
+                             {{- end -}}
+                             {{- $thumbnail := $imageResource.Fill $thumbnailSpec -}} {{/* Create a thumbnail based on the determined spec. */}}
+                        {{- $thumbnailUrl = $thumbnail.RelPermalink -}}
+                        {{- $fullImageUrl = $imageResource.RelPermalink -}}
+                        {{- $filename := $imageResource.Name -}} {{/* Get the original filename (e.g., my-image.jpg). */}}
+                        {{- $caption = strings.TrimSuffix (path.Ext $filename) $filename -}} {{/* Get filename without extension for the caption. */}}
+                    {{- else -}}
+                        {{- warnf "Image gallery: Asset resource not found for path: '%s' in page '%s'. If this is a static file (e.g., in /static/images/), prefix the path with a '/' like '/images/myimage.jpg'." $source $currentPage.Path -}}
+                    {{- end -}}
+                {{- end -}}
+
+                {{- if $fullImageUrl -}}
+                {{/* Each gallery item is a link to the full image, displaying a thumbnail. */}}
+                <a href="{{ $fullImageUrl }}" class="gallery-item" data-lightbox-group="{{ $galleryId }}" data-title="{{ $caption | default "Image" | humanize | title }}">
+                    {{- if and $.Site.Params.gallery.enable $.Site.Params.gallery.thumbnail -}}
+                    <img src="{{ $thumbnailUrl }}" alt="{{ $caption | default (printf "Gallery image %d" (add $index 1)) }}" width="{{ $.Site.Params.gallery.thumbnail }}" height="{{ $.Site.Params.gallery.thumbnail }}" loading="lazy">
+                    {{- else -}}
+                    <img src="{{ $thumbnailUrl }}" alt="{{ $caption | default (printf "Gallery image %d" (add $index 1)) }}" width="300" height="300" loading="lazy">
+                    {{- end -}}
+                    {{/* The caption is displayed over the image (styling controlled by CSS). */}}
+                    <div class="gallery-item-caption">{{ $caption | default "Image" | humanize | title }}</div>
+                </a>
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    </div>
+{{- end -}}

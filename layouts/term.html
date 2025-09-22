@@ -1,0 +1,120 @@
+{{ define "header" }}
+{{ partialCached "header.html" . }}
+{{ end }}
+
+{{ define "title" }}
+	{{- if in .Page.RelPermalink "tags" -}}
+    	{{- with .Site.Params.tagSymbol | default "#" -}}{{ . }}{{- end -}}{{ .Title | lower }}
+	{{- else if in .Page.RelPermalink "categories" -}}
+		{{- with .Site.Params.categorySymbol | default "⊲" -}}{{ . }}{{- end -}}{{ .Title | lower }}
+	{{- else -}}
+		{{ .Title }}
+	{{- end -}}
+{{ end }}
+
+{{ define "main" }}
+	<main class="site-main section-inner thin {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster{{- end -}}">
+		{{- if in .Page.RelPermalink "tags" -}}
+		<h1 class="tag">{{ .Title }}</h1>
+		{{- else if in .Page.RelPermalink "categories" -}}
+		<h1 class="category">{{ .Title }}</h1>
+		{{- else -}}
+		<h1>{{ .Title }}</h1>
+		{{- end -}}
+		{{- if .Content }}<div class="content">{{ .Content }}</div>{{ end -}}
+
+		{{- if and (ge (len (where .Site.Pages ".Params.pin" true)) 1) (.Site.Params.pinned) (not (or (in .Page.RelPermalink "tags") (in .Page.RelPermalink "categories"))) -}}
+		<h2>{{- .Site.Params.pinned -}}</h2>
+		<div class="pinned-posts-group">
+			<ul class="pinned-posts-list">
+				{{- range where .Site.Pages ".Params.pin" true }}
+				<li class="pinned-post-item">
+					{{- partial "svg.html" (dict "context" . "name" (.Site.Params.pinnedSVGname | default "pin")) }}
+					<a href="{{.Permalink}}"><span class="post-title">{{.Title}}</span></a>
+				</li>
+				{{- end }}
+			</ul>
+		</div>
+		{{- end -}}
+		{{- if not (or (in .Page.RelPermalink "tags") (in .Page.RelPermalink "categories")) -}}
+			{{- range .Data.Pages.GroupByDate "2006" }}
+			{{ $pages := len (.Pages) }}
+			{{ $pages_pin := len ( where .Pages ".Params.pin" "eq" true) }}
+			{{- if gt $pages $pages_pin -}}
+			<div class="posts-group">
+				<div class="post-year" id="{{ .Key }}">{{ .Key }}</div>
+				<ul class="posts-list">
+					{{- range where .Pages ".Params.pin" "ne" true }}
+					<li class="post-item">
+						<a href="{{.Permalink}}">
+							<span class="post-title">{{.Title}}</span>
+							<span class="post-day">{{ .Date.Format (default "Jan 2" .Site.Params.dateform.ShortDate) }}</span>
+						</a>
+						{{- if and .Page.Params.description (in .Site.Params.listLayout "description") -}}
+						<span class="post-description">{{ .Page.Params.description }}</span>
+						{{- end -}}
+						{{- if or (in .Site.Params.listLayout "tags") (in .Site.Params.listLayout "categories") -}}<div class="post-taxonomy">
+							{{- if and .Page.Params.tags (in .Site.Params.listLayout "tags") -}}
+							<span class="post-tags">
+								{{- range .Page.Params.tags -}}
+								<a href="{{ "tags/" | absLangURL }}{{ . | urlize }}" class="tag">{{- . -}}</a>
+								{{- end -}}
+							</span>
+							{{- end -}}
+							{{- if and .Page.Params.categories (in .Site.Params.listLayout "categories") -}}
+							<span class="post-categories">
+								{{- range .Page.Params.categories -}}
+								<a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" class="category">{{- . -}}</a>
+								{{- end -}}
+							</span>
+							{{- end -}}
+						  </div>{{- end -}}
+					</li>
+					{{- end }}
+				</ul>
+			</div>
+			{{- end -}}
+			{{- end }}
+		{{- else -}}
+		{{- range .Data.Pages.GroupByDate "2006" }}
+		<div class="posts-group">
+			<div class="post-year" id="{{ .Key }}">{{ .Key }}</div>
+			<ul class="posts-list">
+				{{- range .Pages }}
+				<li class="post-item">
+					<a href="{{.Page.RelPermalink}}">
+						{{- if in .Page.RelPermalink "tags" -}}<span class="post-title tag">{{.Page.LinkTitle }}</span>
+						{{- else if in .Page.RelPermalink "categories" -}}<span class="post-title category">{{.Page.LinkTitle}}</span>
+						{{- else -}}<span class="post-title">{{.Page.LinkTitle}}</span>
+						{{- end -}}
+					  <span class="post-day">{{ .Date.Format (default "Jan 2" .Site.Params.dateform.ShortDate) }}</span>
+				  </a>
+				  {{- if and .Page.Params.description (in .Site.Params.listLayout "description") -}}
+				  <span class="post-description">{{ .Page.Params.description }}</span>
+				  {{- end -}}
+				  {{- if or (in .Site.Params.listLayout "tags") (in .Site.Params.listLayout "categories") -}}<div class="post-taxonomy">
+				  {{- if and .Page.Params.tags (in .Site.Params.listLayout "tags") -}}
+				  <span class="post-tags">
+					  {{- range .Page.Params.tags -}}
+					  <a href="{{ "tags/" | absLangURL }}{{ . | urlize }}" class="tag">{{- . -}}</a>
+					  {{- end -}}
+				  </span>
+				  {{- end -}}
+				  {{- if and .Page.Params.categories (in .Site.Params.listLayout "categories") -}}
+				  <span class="post-categories">
+					  {{- range .Page.Params.categories -}}
+					  <a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" class="category">{{- . -}}</a>
+					  {{- end -}}
+				  </span>
+				  {{- end -}}
+				</div>{{- end -}}
+				</li>
+				{{- end }}
+			</ul>
+		</div>
+		{{- end }}
+		{{- end -}}
+	</main>
+{{ end }}
+{{ define "footer" }}<footer id="site-footer" class="section-inner thin {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster {{- end -}}">{{- if templates.Exists "partials/list-footer.html" -}}{{- partialCached "list-footer.html" . -}}{{- else -}}{{- partial "footer.html" . -}}{{- end -}}</footer>
+{{ end }}

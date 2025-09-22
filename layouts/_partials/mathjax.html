@@ -1,0 +1,15 @@
+{{ if or (.Site.Params.global_mathjax) (.Params.mathjax) }}
+{{- with $mathjaxLib := $.Site.Params.mathjaxLib | default "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" -}}
+{{- if not (or (findRE `http[s]{0,1}://` $mathjaxLib 1) (findRE `^\/.*` $mathjaxLib 1)) -}}
+{{ $mj := resources.Get $mathjaxLib }}
+<script id="MathJax-script" type="text/javascript" async src="{{ $mj.Permalink }}" {{ printf "integrity=%q" $mj.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
+{{- else if findRE `^\/.*` $mathjaxLib 1 -}}
+{{ $mj := printf "%s%s" $.Site.BaseURL (strings.TrimLeft "/" $mathjaxLib) }}
+<script id="MathJax-script" type="text/javascript" async src="{{ $mj }}" crossorigin="anonymous"></script>
+{{- else -}}
+<script id="MathJax-script" type="text/javascript" async src="{{ $mathjaxLib }}" crossorigin="anonymous"></script>
+{{- end -}}
+{{- end -}}
+{{ $mathjaxa := resources.Get "js/mathjax-assistant.js" | minify | fingerprint }}
+<script type="text/javascript" id="MathJax-script-helper" async src="{{ $mathjaxa.Permalink }}" {{ printf "integrity=%q" $mathjaxa.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
+{{ end }}
