@@ -45,7 +45,14 @@
       if (!codeEl) {
         return;
       }
-      const codeText = codeEl.innerText;
+      // Prefer the <code> element if present, otherwise fall back to <pre>
+      const codeNode = codeEl.querySelector("code") || codeEl;
+
+      // Use textContent instead of innerText so we don't get extra newlines from spans / line-number wrappers.
+      let codeText = codeNode.textContent;
+
+      // Normalise line endings (optional but nice)
+      codeText = codeText.replace(/\r\n/g, "\n");
 
       // Try using the modern Clipboard API if available
       if (navigator.clipboard && navigator.clipboard.writeText) {
