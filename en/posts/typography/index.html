@@ -35,11 +35,11 @@
 </span></span><span style=display:flex><span>    <span style=color:#a6e22e>ordered</span> = <span style=color:#66d9ef>false</span>
 </span></span><span style=display:flex><span>    <span style=color:#a6e22e>startLevel</span> = <span style=color:#ae81ff>2</span>
 </span></span></code></pre></div><p>Blockquote:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown><span style=display:flex><span><span style=color:#66d9ef>&gt; </span><span style=font-style:italic>First line
-</span></span></span><span style=display:flex><span><span style=font-style:italic></span><span style=color:#66d9ef>&gt; </span><span style=font-style:italic>Another line (To keep the quote together, blank lines inside the quote must contain the &gt; character.)
-</span></span></span><span style=display:flex><span><span style=font-style:italic></span><span style=color:#66d9ef>&gt;
-</span></span></span><span style=display:flex><span><span style=color:#66d9ef></span><span style=font-style:italic>&gt; &gt; Nested line
-</span></span></span><span style=display:flex><span><span style=font-style:italic></span><span style=color:#66d9ef>&gt;
-</span></span></span><span style=display:flex><span><span style=color:#66d9ef></span><span style=font-style:italic>&gt; Last line (The space between the &gt; and the quoted text is optional.)
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>&gt; </span><span style=font-style:italic>Another line (To keep the quote together, blank lines inside the quote must contain the &gt; character.)
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>&gt;
+</span></span></span><span style=display:flex><span><span style=font-style:italic>&gt; &gt; Nested line
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>&gt;
+</span></span></span><span style=display:flex><span><span style=font-style:italic>&gt; Last line (The space between the &gt; and the quoted text is optional.)
 </span></span></span></code></pre></div><blockquote><p>First line
 Another line (To keep the quote together, blank lines inside the quote must contain the > character.)</p><blockquote><p>Nested line</p></blockquote><p>Last line (The space between the > and the quoted text is optional.)</p></blockquote><p>Table:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown><span style=display:flex><span>| Left-Aligned  | Center Aligned  | Right Aligned |
 </span></span><span style=display:flex><span>| :------------ | :-------------: | ------------: |
@@ -62,7 +62,7 @@ print(sorted_dt)
 </span></span><span style=display:flex><span><span style=color:#a6e22e>num1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>prompt</span>(<span style=color:#e6db74>&#34;Enter first number&#34;</span>)
 </span></span><span style=display:flex><span><span style=color:#a6e22e>num2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>prompt</span>(<span style=color:#e6db74>&#34;Enter second number&#34;</span>)
 </span></span><span style=display:flex><span><span style=color:#a6e22e>sum</span> <span style=color:#f92672>=</span> parseInt(<span style=color:#a6e22e>num1</span>) <span style=color:#f92672>+</span> parseInt(<span style=color:#a6e22e>num2</span>) <span style=color:#75715e>// &#34;+&#34; means &#34;add&#34;
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>alert</span>(<span style=color:#e6db74>&#34;Sum = &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>sum</span>)  <span style=color:#75715e>// &#34;+&#34; means combine into a string
+</span></span></span><span style=display:flex><span><span style=color:#a6e22e>alert</span>(<span style=color:#e6db74>&#34;Sum = &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>sum</span>)  <span style=color:#75715e>// &#34;+&#34; means combine into a string
 </span></span></span></code></pre></div><p>Syntax Highlighting with <a href=https://gohugo.io/content-management/syntax-highlighting/><code>highlight</code> shortcode</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span>{{<span style=color:#75715e>/*&lt; highlight css &#34;linenos=table,linenostart=5&#34; &gt;*/</span>}}
 </span></span><span style=display:flex><span><span style=color:#75715e>/* LineHighlight */</span> .<span style=color:#a6e22e>chroma</span> .<span style=color:#a6e22e>hl</span> { <span style=color:#a6e22e>display</span>: <span style=color:#a6e22e>block</span>; <span style=color:#a6e22e>width</span>: <span style=color:#ae81ff>100</span><span style=color:#f92672>%</span>;<span style=color:#a6e22e>background</span><span style=color:#f92672>-</span><span style=color:#a6e22e>color</span>: <span style=color:#960050;background-color:#1e0010>#</span><span style=color:#ae81ff>55595</span><span style=color:#a6e22e>ebb</span> }
 </span></span><span style=display:flex><span>{{<span style=color:#75715e>/*&lt; /highlight &gt;*/</span>}}
@@ -137,7 +137,7 @@ print(sorted_dt)
 </span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#960050;background-color:#1e0010>$</span>light-grey;
 </span></span><span style=display:flex><span>  <span style=color:#66d9ef>line-height</span>: <span style=color:#ae81ff>1.6</span>;
 </span></span><span style=display:flex><span>  <span style=color:#66d9ef>letter-spacing</span>: <span style=color:#ae81ff>.06</span><span style=color:#66d9ef>em</span>;
-</span></span><span style=display:flex;background-color:#3c3d38><span>  scroll-behavior: <span style=color:#66d9ef>smooth</span>;
+</span></span><span style=display:flex;background-color:#3c3d38><span>  <span style=color:#66d9ef>scroll-behavior</span>: <span style=color:#66d9ef>smooth</span>;
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#f92672>body</span><span style=color:#f92672>,</span>

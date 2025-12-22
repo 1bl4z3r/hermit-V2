@@ -41,13 +41,13 @@
 </span></span><span style=display:flex><span>      <span style=color:#a6e22e>displayMath</span><span style=color:#f92672>:</span> [[<span style=color:#e6db74>&#39;\\[&#39;</span>, <span style=color:#e6db74>&#39;\\]&#39;</span>], [<span style=color:#e6db74>&#39;$$&#39;</span>, <span style=color:#e6db74>&#39;$$&#39;</span>]],
 </span></span><span style=display:flex><span>      <span style=color:#a6e22e>inlineMath</span><span style=color:#f92672>:</span> [[<span style=color:#e6db74>&#39;\\(&#39;</span>, <span style=color:#e6db74>&#39;\\)&#39;</span>]]
 </span></span><span style=display:flex><span>      <span style=color:#75715e>// processEscapes: true,
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      <span style=color:#75715e>// processEnvironments: true,
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  }
+</span></span></span><span style=display:flex><span>      <span style=color:#75715e>// processEnvironments: true,
+</span></span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>  <span style=color:#75715e>// options: {
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#75715e>//     skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#75715e>//     enableMenu: false
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#75715e>// }
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>};</span></span></code></pre></td></tr></table></div></div><p>You can invoke partial in following ways:</p><ol><li>If you want global Mathjax support (for technical blog): set <code>global_mathjax</code> to true in hugo.toml</li><li>If you want mathjax support in individual articles : add <code>mathjax : true</code> to Frontmatter</li></ol><h3 id=in-action>\(LaTeX\) in action<a href=#in-action class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>This is an inline \(a^*=x-b^*\) equation.</p><p>These are block equations:</p>\[a^*=x-b^*\]\[ a^*=x-b^* \]\[
+</span></span></span><span style=display:flex><span>  <span style=color:#75715e>//     skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],
+</span></span></span><span style=display:flex><span>  <span style=color:#75715e>//     enableMenu: false
+</span></span></span><span style=display:flex><span>  <span style=color:#75715e>// }
+</span></span></span><span style=display:flex><span>};</span></span></code></pre></td></tr></table></div></div><p>You can invoke partial in following ways:</p><ol><li>If you want global Mathjax support (for technical blog): set <code>global_mathjax</code> to true in hugo.toml</li><li>If you want mathjax support in individual articles : add <code>mathjax : true</code> to Frontmatter</li></ol><h3 id=in-action>\(LaTeX\) in action<a href=#in-action class=anchor aria-hidden=true><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 015 5 5 5 0 01-5 5h-3m-6 0H6a5 5 0 01-5-5 5 5 0 015-5h3"/><line x1="8" y1="12" x2="16" y2="12"/></svg></a></h3><p>This is an inline \(a^*=x-b^*\) equation.</p><p>These are block equations:</p>\[a^*=x-b^*\]\[ a^*=x-b^* \]\[
 a^*=x-b^*
 \]<p>These are block equations using alternate delimiters:</p>$$a^*=x-b^*$$$$ a^*=x-b^* $$$$
 a^*=x-b^*
