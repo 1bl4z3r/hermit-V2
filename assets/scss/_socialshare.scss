@@ -1,12 +1,12 @@
 #share-links {
   position: fixed;
-  inset-block-end: 7em;
-  inset-inline-end: 0.5em;
+  bottom: 7em;
+  right: 0.5em;
   display: none;
-  padding-block: 0.6em;
-  padding-inline: 0.5em;
+  padding: 0.6em 0.5em;
   z-index: 1;
-  box-shadow: -1px -2px 3px 0 rgb(0 0 0 / 0.45);
+  box-sizing: border-box;
+  box-shadow: -1px -2px 3px 0px rgba(0, 0, 0, 0.45);
   background-color: $share-links-background;
 
   ul {
@@ -15,19 +15,12 @@
     padding: 0;
     line-height: 2;
     font-size: 1.2em;
-    
     a {
       color: $share-links-a;
-      transition: color 0.2s ease;
-      
-      &:is(:hover, :active, :focus) {
+      &:hover,
+      &:active,
+      &:focus {
         color: $share-links-a-hover-active-focus;
-      }
-      
-      &:focus-visible {
-        outline: 2px solid currentColor;
-        outline-offset: 2px;
-        border-radius: 2px;
       }
     }
   }
@@ -35,14 +28,7 @@
 
 @media (max-width: 520px) {
   #share-links {
-    inset-inline-end: 0.2em;
-    inset-block-end: 8em;
-  }
-}
-
-// Modern range syntax
-@media (width <= 520px) {
-  #share-links {
-    font-size: clamp(0.9em, 3vw, 1.2em);
+    right: 0.2em;
+    bottom: 8em;
   }
 }

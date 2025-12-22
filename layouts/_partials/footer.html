@@ -12,32 +12,5 @@ For posts/articles pages, posts-footer.html
 	{{ if not .Site.Params.footerHideThemeName -}}
 	&#183; Made with <a href="https://gohugo.io/" target="_blank" rel="noopener" title="The world's fastest framework for building websites">Hugo</a> &amp; <a href="https://github.com/1bl4z3r/hermit-V2" target="_blank" rel="noopener" title="A fast, minimalist Hugo theme">Hermit-V2</a>
 	{{- end }}
-	{{/* Replace the prior RSS block with this one */}}
-{{- $isHome := .IsHome -}}
-{{- $isPosts := eq .Section "posts" -}}
-{{- $rssURL := "" -}}
-
-{{- if $isHome -}}
-  {{- with .Site.Home.OutputFormats.Get "RSS" -}}
-    {{- $rssURL = .Permalink -}}
-  {{- end -}}
-{{- else if $isPosts -}}
-  {{- $postsPage := .Site.GetPage "section" "posts" -}}
-  {{- with $postsPage -}}
-    {{- with .OutputFormats.Get "RSS" -}}
-      {{- $rssURL = .Permalink -}}
-    {{- end -}}
-  {{- end -}}
-{{- else -}}
-  {{- with .OutputFormats.Get "RSS" -}}
-    {{- $rssURL = .Permalink -}}
-  {{- end -}}
-{{- end -}}
-
-{{- if $rssURL -}}
-  · <a href="{{ $rssURL }}" target="_blank" title="rss">
-    {{- partial "svg.html" (dict "context" . "name" "rss") -}}
-  </a>
-{{- end -}}
-
+	{{ with .OutputFormats.Get "RSS" }}&#183; <a href="{{ "index.xml" | absLangURL }}" target="_blank" title="rss">{{- partial "svg.html" (dict "context" . "name" "rss") -}}</a>{{- end -}}
 </p>

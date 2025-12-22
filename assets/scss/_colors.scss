@@ -2,9 +2,9 @@
 $pine-green: #018472;
 $bright-grey: #eeeeee;
 $white: #ffffff;
-$davys-grey: #494f5c;
+$davys-grey : #494f5c;
 $granite-grey: #666666;
-$sonic-silver: #777777;
+$sonic-silver: #777777; 
 $arsenic: #3b3e48;
 $css-grey: #7d828a;
 $japanese-indigo: #2c3e50;
@@ -12,7 +12,7 @@ $pine-tree: #272822;
 $taupe-grey: #878787;
 $chinese-silver: #cccccc;
 $anti-flash-white: #f1f1f1;
-$lapis-lazuli: #21759b;
+$lapis-lazuli: #21759b; 
 
 // Default Colors and Opacity for Admonition
 $blueberry: #448aff;
@@ -23,7 +23,7 @@ $dark-orange: #ff9100;
 $crayola: #ff5252;
 $awesome: #ff1744;
 $folly: #f50057;
-$admonition-background-opacity: 0.1;
+$admonition-background-opacity : 0.1;
 
 // Default dimmed value
 $dimmed-opacity: 0.8 !default;
@@ -32,7 +32,7 @@ $dimmed-opacity: 0.8 !default;
 $html-background: $davys-grey !default;
 
 // Site Navigation color
-$site-nav-children-border-right: $css-grey !default;
+$site-nav-children-border-right:$css-grey !default;
 
 // Posts seperator in list view
 $post-item-border-bottom: $css-grey !default;
@@ -41,21 +41,23 @@ $post-item-border-bottom: $css-grey !default;
 $pinned-posts-group-border-bottom: $css-grey !default;
 
 // Elements of the site which are expected to follow accent color
-$aTag-mixin-a-box-shadow: $pine-green !default;
-$aTag-mixin-a-hover-box-shadow: $pine-green !default;
-$content-anchor-hover: $pine-green !default;
-$post-description-a-hover-border-bottom: $pine-green !default;
-$tableofcontents-a-hover-border-bottom: $pine-green !default;
-$scrolltotop-arrow: $pine-green !default;
-$typewriter: $pine-green !default;
-$footnote-ref-hover-background: $pine-green !default;
-$marked-background: $pine-green !default;
-$inserted-text-underline: $pine-green !default;
+// In this current form, `accentColor` in hugo.toml will have higher precedence than these declarations
+$aTag-mixin-a-box-shadow: $pine-green !default; // Box shadow for Mixin "aTag" used by figure element
+$aTag-mixin-a-hover-box-shadow: $pine-green !default; // Box shadow on hover for Mixin "aTag" used by figure element
+$content-anchor-hover: $pine-green !default; // Anchor text hover color
+$post-description-a-hover-border-bottom: $pine-green !default; // Anchor text on hover for post description in list
+$tableofcontents-a-hover-border-bottom: $pine-green !default; // Table of Contents on hover
+$scrolltotop-arrow: $pine-green !default; // Scroll yo Top arrow color
+$typewriter: $pine-green !default; // Typewriter carat color
+$footnote-ref-hover-background: $pine-green !default; // Footnote reference on hover
+$marked-background: $pine-green !default; // Marked text background color
+$inserted-text-underline: $pine-green !default; // Inserted text underline color
 
 // Footnote
 $footnote-ref-background: $japanese-indigo !default;
 
 // Scroll to Top Default colors
+// Scroll to Top "Up arrow" color is defined as : $scrolltotop-arrow
 $scrolltotop-ring: $chinese-silver !default;
 $scrolltotop-circle: $arsenic !default;
 
@@ -79,7 +81,7 @@ $text: $bright-grey !default;
 $text-select: $css-grey !default;
 
 // Marked text color
-$marked-text: $bright-grey !default;
+$marked-text:$bright-grey !default;
 
 // Link text color on hover
 $a-hover: $white !default;
@@ -96,7 +98,7 @@ $share-links-a-hover-active-focus: $bright-grey !default;
 // Code block, Mermaid block color
 $pre-code: $bright-grey !default;
 $pre-code-background: transparent !default;
-$code-background: $arsenic !default;
+$code-background:$arsenic !default;
 $syntax-background: $japanese-indigo !default;
 $pre-background: $japanese-indigo !default;
 $mermaid-background: $pine-tree !default;
@@ -107,7 +109,7 @@ $highlight-copy-btn-hover: $sonic-silver !default;
 $highlight-copy-btn-background: $granite-grey !default;
 
 // Site Header color
-$site-header-background: $arsenic !default;
+$site-header-background:$arsenic !default;
 
 // Mobile menu color
 $mobile-menu-background: $arsenic !default;
@@ -121,37 +123,37 @@ $featured-image-text: $bright-grey !default;
 $featured-image-background: rgba($arsenic, 0.45) !default;
 
 // Image Gallery specific colours
-$gallery-item-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !default;
-$gallery-item-hover-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !default;
-$gallery-item-caption-background: rgba(0, 0, 0, 0.7) !default;
-$gallery-item-caption-color: #fff !default;
-$lightbox-overlay-background: rgba(0, 0, 0, 0.85) !default;
-$lightbox-image-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !default;
-$lightbox-caption-color: #fff !default;
-$lightbox-close-nav-color: #fff !default;
-$lightbox-close-color-hover: #ccc !default;
-$lightbox-nav-background-color: rgba(0, 0, 0, 0.3) !default;
-$lightbox-nav-background-color-hover: rgba(0, 0, 0, 0.6) !default;
+$gallery-item-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !default; // Subtle shadow for depth.
+$gallery-item-hover-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !default; // Enhance shadow on hover.
+$gallery-item-caption-background: rgba(0, 0, 0, 0.7) !default; // Semi-transparent background for readability.
+$gallery-item-caption-color: #fff !default; // White text for contrast.
+$lightbox-overlay-background: rgba(0, 0, 0, 0.85) !default; // Dark semi-transparent background to focus on image.
+$lightbox-image-box-shadow: 0 5px 15px rgba(0,0,0,0.3) !default; // Shadow for the image in lightbox
+$lightbox-caption-color: #fff !default; // Caption colour in lightbox.
+$lightbox-close-nav-color: #fff !default; // Close and Navigation button colour in lightbox.
+$lightbox-close-color-hover: #ccc !default; // Close button hover colour in lightbox.
+$lightbox-nav-background-color: rgba(0, 0, 0, 0.3) !default; // Semi-transparent background for nav buttons.
+$lightbox-nav-background-color-hover: rgba(0, 0, 0, 0.6) !default; // Semi-transparent background for nav buttons on hover.
 
-// Admonition colors
+//Admonition colors
 $admonition-background: (
-  "note": rgba($blueberry, $admonition-background-opacity),
-  "info": rgba($turquoise-surf, $admonition-background-opacity),
-  "tip": rgba($caribbean-green, $admonition-background-opacity),
-  "success": rgba($malachite, $admonition-background-opacity),
-  "warning": rgba($dark-orange, $admonition-background-opacity),
-  "failure": rgba($crayola, $admonition-background-opacity),
-  "danger": rgba($awesome, $admonition-background-opacity),
-  "bug": rgba($folly, $admonition-background-opacity),
-) !default;
+    "note": rgba($blueberry, $admonition-background-opacity),
+    "info": rgba($turquoise-surf, $admonition-background-opacity),
+    "tip": rgba($caribbean-green, $admonition-background-opacity),
+    "success": rgba($malachite, $admonition-background-opacity),
+    "warning": rgba($dark-orange, $admonition-background-opacity),
+    "failure": rgba($crayola, $admonition-background-opacity),
+    "danger": rgba($awesome, $admonition-background-opacity),
+    "bug": rgba($folly, $admonition-background-opacity),
+    ) !default;
 
 $admonition-color: (
-  "note": $blueberry,
-  "info": $turquoise-surf,
-  "tip": $caribbean-green,
-  "success": $malachite,
-  "warning": $dark-orange,
-  "failure": $crayola,
-  "danger": $awesome,
-  "bug": $folly,
-) !default;
+    "note": $blueberry,
+    "info": $turquoise-surf,
+    "tip": $caribbean-green,
+    "success": $malachite,
+    "warning": $dark-orange,
+    "failure": $crayola,
+    "danger": $awesome,
+    "bug": $folly,
+    ) !default;
