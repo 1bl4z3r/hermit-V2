@@ -1,43 +1,53 @@
-// Admonition styling
 .admonition {
   position: relative;
-  margin: 1rem 0 1.5rem 0;
-  border-left: 0.25rem solid map-get($admonition-color, "note");
+  margin-block: 1rem 1.5rem;
+  margin-inline: 0;
+  border-inline-start: 0.25rem solid map-get($admonition-color, "note");
   box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.5);
-  border-radius: 0 8px 8px 0;
+  border-start-end-radius: 8px;
+  border-end-end-radius: 8px;
   overflow: auto;
+  
   .admonition-title {
-    padding: 0.25rem 0.5rem;
-    border-bottom: 1px solid map-get($admonition-background, "note");
+    padding-block: 0.25rem;
+    padding-inline: 0.5rem;
+    border-block-end: 1px solid map-get($admonition-background, "note");
     background-color: rgba(map-get($admonition-background, "note"), 0.1);
     color: map-get($admonition-color, "note");
+    
     .icon {
       display: inline-block;
-      padding: 0 10px 0 0;
+      padding-inline-end: 10px;
       font-size: 0.85rem;
       color: map-get($admonition-color, "note");
     }
   }
+  
   .admonition-content {
-    padding: 0.25rem 0.5rem;
+    padding-block: 0.25rem;
+    padding-inline: 0.5rem;
   }
+  
   @each $type, $color in $admonition-color {
     &.#{$type} {
-      border-left-color: $color;
+      border-inline-start-color: $color;
+      
       .admonition-title {
         color: $color;
       }
+      
       .icon {
         color: $color;
       }
     }
   }
+  
   @each $type, $color in $admonition-background {
     &.#{$type} {
       background-color: $color;
 
       .admonition-title {
-        border-bottom-color: $color;
+        border-block-end-color: $color;
         background-color: rgba($color, 0.1);
       }
     }
