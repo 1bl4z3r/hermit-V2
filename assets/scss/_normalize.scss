@@ -1,20 +1,23 @@
-/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+/*! modern-normalize | MIT License | based on normalize.css v8.0.0 */
 
-/* Document
+/* General Document
    ========================================================================== */
 
 /**
- * 1. Correct the line height in all browsers.
+ * 1. Use a more intuitive box-sizing model.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* 1 */
 }
 
-/* Sections
-   ========================================================================== */
+html {
+  -webkit-text-size-adjust: 100%; /* 2 */
+  tab-size: 4; /* Modern addition: Improves readability of code blocks */
+}
 
 /**
  * Remove the margin in all browsers.
@@ -22,7 +25,13 @@ html {
 
 body {
   margin: 0;
+  /* Modern addition: Set a system font stack for better performance */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5; /* Improved readability over 1.15 */
 }
+
+/* Sections
+   ========================================================================== */
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -43,9 +52,8 @@ h1 {
  */
 
 hr {
-  box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  color: inherit; /* Modern addition: Allows hr to inherit color */
 }
 
 /**
@@ -54,7 +62,7 @@ hr {
  */
 
 pre {
-  font-family: monospace, monospace; /* 1 */
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* Modern system monospace stack */
   font-size: 1em; /* 2 */
 }
 
@@ -62,22 +70,11 @@ pre {
    ========================================================================== */
 
 /**
- * Remove the gray background on active links in IE 10.
- */
-
-a {
-  background-color: transparent;
-}
-
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ * Add the correct text decoration in Chrome, Edge, and Safari.
  */
 
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted;
 }
 
 /**
@@ -97,7 +94,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -133,12 +130,21 @@ sup {
 /* Embedded content
    ========================================================================== */
 
-/**
- * Remove the border on images inside links in IE 10.
+/*
+ * Modern addition: Ensure images and media are responsive and block-level
+ * to avoid "magic space" issues.
  */
 
-img {
-  border-style: none;
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  max-width: 100%;
 }
 
 /* Forms
@@ -161,22 +167,11 @@ textarea {
 }
 
 /**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
+ * Remove the inheritance of text transform in Edge and Firefox.
  */
 
 button,
-input { /* 1 */
-  overflow: visible;
-}
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-
-button,
-select { /* 1 */
+select {
   text-transform: none;
 }
 
@@ -226,7 +221,7 @@ fieldset {
  * 1. Correct the text wrapping in Edge and IE.
  * 2. Correct the color inheritance from `fieldset` elements in IE.
  * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
+ * `fieldset` elements in all browsers.
  */
 
 legend {
@@ -244,25 +239,6 @@ legend {
 
 progress {
   vertical-align: baseline;
-}
-
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
-
-textarea {
-  overflow: auto;
-}
-
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
 }
 
 /**
@@ -306,36 +282,9 @@ textarea {
    ========================================================================== */
 
 /*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-
-details {
-  display: block;
-}
-
-/*
  * Add the correct display in all browsers.
  */
 
 summary {
   display: list-item;
-}
-
-/* Misc
-   ========================================================================== */
-
-/**
- * Add the correct display in IE 10+.
- */
-
-template {
-  display: none;
-}
-
-/**
- * Add the correct display in IE 10.
- */
-
-[hidden] {
-  display: none;
 }
