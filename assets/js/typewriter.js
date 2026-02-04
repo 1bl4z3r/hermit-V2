@@ -1,203 +1,158 @@
 class TypewriterEffect {
-
     constructor(elementId) {
-        // Locate the target text element by its ID in the DOM
         this.element = document.getElementById(elementId);
+        if (!this.element) return;
+        
         this.container = this.element.parentElement;
-
-        // Preserve the initial text content for restoration and measurement
-        this.originalText = this.element.textContent;
-
-        // Initialize control variables for typing effect
-        this.typingText = '';
+        this.originalText = this.element.textContent.trim();
+        this.tokens = []; 
         this.currentIndex = 0;
-        this.timeouts = []; // Keep track of active timers
-        this.measurer = null; // Element used for text width measurement
+        this.timeouts = [];
+        this.isTyping = false;
+        this.resizeTimer = null; // Store resize timer as instance property
 
-        // Retrieve typing effect settings from CSS custom properties
         this.settings = {
-            preBlinkDuration: this.getCSSVar('--pbd'),
-            typingSpeed: this.getCSSVar('--ts')
+            typingSpeed: this.getCSSVar('--ts') || 50,
+            preBlinkDuration: this.getCSSVar('--pbd') || 1000
         };
 
-        // Initialize the typewriter effect components
-        this.init();
+        document.fonts.ready.then(() => {
+            this.init();
+        });
+
+        // Use bound method for better performance and proper cleanup
+        this.handleResize = this.handleResize.bind(this);
+        window.addEventListener('resize', this.handleResize, { passive: true });
     }
 
-    // Utility function to parse CSS variable values
     getCSSVar(name) {
         const value = getComputedStyle(document.documentElement).getPropertyValue(name);
         return parseInt(value) || parseInt(value.replace('ms', ''));
     }
 
-    // Initialize the typewriter effect sequence
+    handleResize() {
+        clearTimeout(this.resizeTimer);
+        this.resizeTimer = setTimeout(() => {
+            this.cleanup();
+            this.init();
+        }, 250);
+    }
+
     init() {
-        // Create hidden element to measure text width accurately
-        this.createMeasurer();
-        // Calculate required container dimensions for text wrapping
-        this.calculateContainerSize();
-        // Begin the typing animation sequence
+        // Simply wrap each character in a span for animation
+        const wrappedHtml = this.wrapCharacters(this.originalText);
+        this.element.innerHTML = wrappedHtml;
+        this.element.className = 'typewriter-content';
+        
+        // Cache tokens
+        this.tokens = Array.from(this.element.querySelectorAll('.char'));
+        
+        // Start
         this.startSequence();
     }
 
-    // Create a hidden element for precise text width measurement
-    createMeasurer() {
-        this.measurer = document.createElement('div');
-        this.measurer.className = 'measure-element';
-
-        // Copy only the dynamic styles from the target element
-        const styles = getComputedStyle(this.element);
-
-        // Essential text-related styles that need to match exactly
-        this.measurer.style.font = styles.font;
-        this.measurer.style.fontSize = styles.fontSize;
-        this.measurer.style.fontFamily = styles.fontFamily;
-        this.measurer.style.fontWeight = styles.fontWeight;
-        this.measurer.style.letterSpacing = styles.letterSpacing;
-        this.measurer.style.fontStyle = styles.fontStyle;
-        this.measurer.style.textAlign = styles.textAlign;
-        this.measurer.style.padding = styles.padding;
-        this.measurer.style.boxSizing = styles.boxSizing;
-
-        // Attach measurer to document for layout calculation
-        document.body.appendChild(this.measurer);
-    }
-
-
-    // Calculate container height based on wrapped text lines
-    calculateContainerSize() {
-        // Generate text string with line breaks according to container width
-        this.typingText = this.calculateWrappedText();
-
-        // Determine the number of lines for the wrapped text
-        const lines = this.typingText.split('\n').length;
-
-        // Get the computed line height of the text
-        const computedLineHeight = parseFloat(getComputedStyle(this.element).lineHeight);
-
-        // Compute total height, adding padding for aesthetics
-        const totalHeight = (lines + 0.5) * computedLineHeight;
-
-        // Set container height to avoid layout shifting during typing
-        this.container.style.height = `${totalHeight}px`;
-    }
-
-    // Determine text wrapping points based on container width
-    calculateWrappedText() {
-        // Get the actual content width (excluding padding)
-        const elementStyles = getComputedStyle(this.element);
-        const paddingLeft = parseFloat(elementStyles.paddingLeft);
-        const paddingRight = parseFloat(elementStyles.paddingRight);
-        const containerWidth = this.element.clientWidth - paddingLeft - paddingRight;
-
-        const words = this.originalText.split(' ');
-        let result = '';
-        let currentLine = '';
-
-        // Iterate over words to build lines
-        for (let i = 0; i < words.length; i++) {
-            const word = words[i];
-            const testLine = currentLine === '' ? word : currentLine + ' ' + word;
-
-            // Measure width of candidate line
-            this.measurer.textContent = testLine;
-
-            if (this.measurer.clientWidth > containerWidth && currentLine !== '') {
-                // Current line full, append and start new line
-                result += currentLine;
-                if (i < words.length - 1) { // Only add newline if not the last word
-                    result += '\n';
-                }
-                currentLine = word;
-            } else {
-                // Word fits, append to current line
-                currentLine = testLine;
-            }
+    /**
+     * Wrap each character in a span for animation
+     * CSS text-wrap: balance handles the line breaking consistently
+     * OPTIMIZED: Use array pre-allocation and single join operation
+     */
+    wrapCharacters(text) {
+        const chars = text.split('');
+        const result = new Array(chars.length);
+        
+        for (let i = 0; i < chars.length; i++) {
+            const char = chars[i];
+            // Preserve line breaks if present in original text
+            result[i] = char === '\n' ? '<br>' : `<span class="char">${char}</span>`;
         }
-
-        // Append the last line after loop
-        if (currentLine !== '') {
-            result += currentLine;
-        }
-
-        return result;
+        
+        return result.join('');
     }
 
-    // Display text with typing effect one character at a time
-    type() {
-        if (this.currentIndex < this.typingText.length) {
-            // Update displayed text incrementally
-            this.element.textContent = this.typingText.slice(0, this.currentIndex + 1);
-            this.currentIndex++;
+    // --- ANIMATION SEQUENCE ---
 
-            // Schedule next character display
-            const timeout = setTimeout(() => this.type(), this.settings.typingSpeed);
-            this.timeouts.push(timeout);
-        } else {
-            // Typing complete, trigger cursor blinking effect
-            this.element.className = 'done';
-        }
-    }
-
-    // Start typing animation sequence after preparing
     startSequence() {
-        // Clear text and reset index
-        this.element.textContent = '';
-        this.currentIndex = 0;
-
-        // Set cursor blink animation before typing AND make element visible
-        this.element.className = 'ready';
-
-        // Delay before starting typing effect
-        const blinkTimeout = setTimeout(() => {
-            // Set typing class to keep element visible during animation
-            this.element.className = 'typing';
+        // State 1: Ready
+        // We add the class to the container to show the cursor at position 0
+        this.element.classList.add('ready'); 
+        
+        const startTimeout = setTimeout(() => {
+            this.element.classList.remove('ready');
             this.type();
         }, this.settings.preBlinkDuration);
-        this.timeouts.push(blinkTimeout);
+        
+        this.timeouts.push(startTimeout);
     }
 
-    // Display text with typing effect one character at a time
     type() {
-        if (this.currentIndex < this.typingText.length) {
-            // Update displayed text incrementally
-            this.element.textContent = this.typingText.slice(0, this.currentIndex + 1);
-            this.currentIndex++;
+        this.isTyping = true;
+        
+        if (this.currentIndex < this.tokens.length) {
+            const charSpan = this.tokens[this.currentIndex];
+            
+            // Clean up previous cursor
+            if (this.currentIndex > 0) {
+                this.tokens[this.currentIndex - 1].classList.remove('cursor-active');
+            }
 
-            // Schedule next character display
-            const timeout = setTimeout(() => this.type(), this.settings.typingSpeed);
-            this.timeouts.push(timeout);
+            // Reveal current character
+            charSpan.style.opacity = '1';
+            
+            // State 2: Active
+            // Add cursor to current character (positioned to the right by CSS)
+            charSpan.classList.add('cursor-active');
+
+            this.currentIndex++;
+            
+            const nextStep = setTimeout(() => this.type(), this.settings.typingSpeed);
+            this.timeouts.push(nextStep);
         } else {
-            // Typing complete, trigger cursor blinking effect
-            this.element.className = 'done';
+            // Finished Typing
+            this.isTyping = false;
+            
+            if (this.tokens.length > 0) {
+                const lastChar = this.tokens[this.tokens.length - 1];
+                
+                // Switch from solid Active cursor to blinking Idle cursor
+                lastChar.classList.remove('cursor-active');
+                lastChar.classList.add('cursor-idle');
+            }
         }
     }
 
-    // Clean up resources and restore original text
-    destroy() {
-        // Cancel all active typing timers
-        this.timeouts.forEach(timeout => clearTimeout(timeout));
-        this.timeouts = [];
-
-        // Remove the hidden measurer element from DOM
-        if (this.measurer && this.measurer.parentNode) {
-            this.measurer.parentNode.removeChild(this.measurer);
-            this.measurer = null;
+    cleanup() {
+        // Clear all timeouts efficiently
+        for (let i = 0; i < this.timeouts.length; i++) {
+            clearTimeout(this.timeouts[i]);
         }
-
-        // Restore original text content and reset styling
-        if (this.element) {
-            this.element.textContent = this.originalText;
-            this.element.className = '';
+        this.timeouts.length = 0; // Clear array efficiently
+        
+        this.currentIndex = 0;
+        this.element.innerHTML = this.originalText;
+        this.element.classList.remove('ready'); // Safety cleanup
+    }
+    
+    destroy() {
+        this.cleanup();
+        
+        // Remove event listener to prevent memory leaks
+        window.removeEventListener('resize', this.handleResize);
+        
+        // Clear resize timer
+        if (this.resizeTimer) {
+            clearTimeout(this.resizeTimer);
+            this.resizeTimer = null;
         }
     }
 }
 
-// Initialize typewriter effect on page load and cleanup on unload
 let typewriter = null;
 
 function initTypewriter() {
-    typewriter = new TypewriterEffect('home-subtitle');
+    const element = document.getElementById('home-subtitle');
+    if (element) {
+        typewriter = new TypewriterEffect('home-subtitle');
+    }
 }
 
 function cleanup() {
@@ -207,7 +162,7 @@ function cleanup() {
     }
 }
 
-// Register event listeners for initialization and cleanup
-addEventListener('load', initTypewriter);
-addEventListener('beforeunload', cleanup);
-addEventListener('pagehide', cleanup);
+// Use options for better performance
+addEventListener('load', initTypewriter, { once: true });
+addEventListener('beforeunload', cleanup, { once: true });
+addEventListener('pagehide', cleanup, { once: true });

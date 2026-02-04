@@ -18,3 +18,18 @@
     }
   }
 }
+
+// --- HOME SUBTITLE PRINTER CURSOR STYLES ---
+
+// Define the visual look of the cursor
+@mixin cursor-block {
+  content: "";
+  display: block;
+  width: 0.6em; // Adjust width if the block feels too fat/thin
+  height: 1.2em; // Matches standard line-height
+  background-color: $typewriter;
+
+  // Positioning: Anchored relative to the character span
+  position: absolute;
+  bottom: 0; // Aligns with the text baseline
+}
