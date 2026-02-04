@@ -1,63 +1,546 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Image on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/image/</link><description>Recent content in Image on Hermit - V2</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sat, 10 May 2025 10:00:00 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/image/index.xml" rel="self" type="application/rss+xml"/><item><title>Image Gallery Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</link><pubDate>Sat, 10 May 2025 10:00:00 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</guid><description>&lt;p&gt;The &lt;code&gt;gallery&lt;/code&gt; shortcode allows you to easily create beautiful, responsive image galleries on your Hugo site. It takes a list of image sources (local paths or remote URLs), generates thumbnails for local images, and wraps them in links that open a larger version in a clean, vanilla JavaScript lightbox.&lt;/p&gt;
-&lt;h2 id="features"&gt;Features&lt;a href="#features" class="anchor" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
- stroke-linecap="round" stroke-linejoin="round"&gt;
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"&gt;&lt;/path&gt;
- &lt;line x1="8" y1="12" x2="16" y2="12"&gt;&lt;/line&gt;
- &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Responsive Design&lt;/strong&gt;: The gallery adapts to different screen sizes using flexbox.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Thumbnails&lt;/strong&gt;:
-&lt;ul&gt;
-&lt;li&gt;For local images (from &lt;code&gt;/assets&lt;/code&gt; or &lt;code&gt;/static&lt;/code&gt; folders), 300x300 pixel square, smart-cropped thumbnails are automatically generated.&lt;/li&gt;
-&lt;li&gt;For remote images, the original image is used as the thumbnail source, and CSS (&lt;code&gt;object-fit: cover;&lt;/code&gt;) ensures it fits the 300x300px thumbnail container.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Lightbox&lt;/strong&gt;:
-&lt;ul&gt;
-&lt;li&gt;Clicking a thumbnail opens the full-resolution image in a modal overlay.&lt;/li&gt;
-&lt;li&gt;Supports navigation (next/previous arrows) between images within the same gallery.&lt;/li&gt;
-&lt;li&gt;Keyboard controls: &lt;code&gt;Escape&lt;/code&gt; to close, &lt;code&gt;ArrowLeft&lt;/code&gt; for previous, &lt;code&gt;ArrowRight&lt;/code&gt; for next.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Captions&lt;/strong&gt;:
-&lt;ul&gt;
-&lt;li&gt;Automatically generated from the image filename (without the file extension).&lt;/li&gt;
-&lt;li&gt;For remote URLs, query parameters are stripped before generating the caption.&lt;/li&gt;
-&lt;li&gt;Captions are displayed in the lightbox and appear on hover over the thumbnail in the gallery.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Vanilla JS &amp;amp; SCSS&lt;/strong&gt;: Built with no external libraries for lean performance.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="how-to-use"&gt;How to Use&lt;a href="#how-to-use" class="anchor" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
- stroke-linecap="round" stroke-linejoin="round"&gt;
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"&gt;&lt;/path&gt;
- &lt;line x1="8" y1="12" x2="16" y2="12"&gt;&lt;/line&gt;
- &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;To use the shortcode, simply list your image sources (one per line) between the opening and closing &lt;code&gt;gallery&lt;/code&gt; tags.&lt;/p&gt;</description></item><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Sun, 24 Dec 2023 12:29:41 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>&lt;p&gt;Hugo has &lt;code&gt;figure&lt;/code&gt; shortcode built in, so you can easily add captions or hyperlink rel attributes to images. Documentations can be found &lt;a href="https://gohugo.io/content-management/shortcodes/#figure"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This theme extends upon &lt;a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_shortcodes/figure.html"&gt;default figure shortcode&lt;/a&gt; to implement following features :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Follow latest standard to display WEBP image and fallback to JPG if browser cannot render WEBP.
-&lt;ul&gt;
-&lt;li&gt;If provided with an image resource, it can convert to WEBP and JPG image&lt;/li&gt;
-&lt;li&gt;Both WEBP and JPG are placed in &lt;a href="https://www.w3schools.com/tags/tag_picture.asp"&gt;picture tag&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;To use this feature, place your image in &lt;code&gt;assets&lt;/code&gt; folder in root of your site&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;If &lt;code&gt;src&lt;/code&gt; contains a link (starting with http/https), it will be parsed accordingly.&lt;/li&gt;
-&lt;li&gt;1-to-1 feature set compatiblity if you are using figure shortcode or &lt;code&gt;![]()&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;If you want to add image from &lt;code&gt;static&lt;/code&gt; folder, you can, &lt;strong&gt;but be informed that these images cannot be converted or optimized&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more"&gt;Supported attributes to figure shortcode (Create an Issue if you want to add more)&lt;a href="#supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more" class="anchor" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
- stroke-linecap="round" stroke-linejoin="round"&gt;
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"&gt;&lt;/path&gt;
- &lt;line x1="8" y1="12" x2="16" y2="12"&gt;&lt;/line&gt;
- &lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;src&lt;/code&gt; : Source of the resource. It can be one of three&lt;/p&gt;</description></item><item><title>Post With Featured Image</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</link><pubDate>Mon, 01 Oct 2018 16:15:09 +0800</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</guid><description>&lt;p&gt;Just define the image URL in the content’s front matter, the featured image will be displayed as the background.&lt;/p&gt;
-&lt;p&gt;For example:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;---
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;images&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; - &lt;span style="color:#ae81ff"&gt;https://picsum.photos/1024/768/?random&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;---
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is an array, you can set multiple urls, only the first url will be used. These images is also used in &lt;a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html"&gt;Twitter Cards&lt;/a&gt; and the &lt;a href="http://ogp.me/"&gt;Open Graph&lt;/a&gt; metadata.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Image on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/image/</link><description>Recent content in Image on Hermit - V2</description><generator>Hugo -- 0.155.2</generator><language>en-US</language><lastBuildDate>Sat, 10 May 2025 10:00:00 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/image/index.xml" rel="self" type="application/rss+xml"/><item><title>Image Gallery Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</link><pubDate>Sat, 10 May 2025 10:00:00 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</guid><description>Learn how to use the image gallery shortcode to create responsive galleries with thumbnails, captions, and a JavaScript-powered lightbox.</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>gallery</code> shortcode allows you to easily create beautiful, responsive image galleries on your Hugo site. It takes a list of image sources (local paths or remote URLs), generates thumbnails for local images, and wraps them in links that open a larger version in a clean, vanilla JavaScript lightbox.</p>
+<h2 id="features">Features<a href="#features" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<ul>
+<li><strong>Responsive Design</strong>: The gallery adapts to different screen sizes using flexbox.</li>
+<li><strong>Thumbnails</strong>:
+<ul>
+<li>For local images (from <code>/assets</code> or <code>/static</code> folders), 300x300 pixel square, smart-cropped thumbnails are automatically generated.</li>
+<li>For remote images, the original image is used as the thumbnail source, and CSS (<code>object-fit: cover;</code>) ensures it fits the 300x300px thumbnail container.</li>
+</ul>
+</li>
+<li><strong>Lightbox</strong>:
+<ul>
+<li>Clicking a thumbnail opens the full-resolution image in a modal overlay.</li>
+<li>Supports navigation (next/previous arrows) between images within the same gallery.</li>
+<li>Keyboard controls: <code>Escape</code> to close, <code>ArrowLeft</code> for previous, <code>ArrowRight</code> for next.</li>
+</ul>
+</li>
+<li><strong>Captions</strong>:
+<ul>
+<li>Automatically generated from the image filename (without the file extension).</li>
+<li>For remote URLs, query parameters are stripped before generating the caption.</li>
+<li>Captions are displayed in the lightbox and appear on hover over the thumbnail in the gallery.</li>
+</ul>
+</li>
+<li><strong>Vanilla JS &amp; SCSS</strong>: Built with no external libraries for lean performance.</li>
+</ul>
+<h2 id="how-to-use">How to Use<a href="#how-to-use" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>To use the shortcode, simply list your image sources (one per line) between the opening and closing <code>gallery</code> tags.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>{{&lt; gallery &gt;}}
+</span></span><span style="display:flex;"><span>path/to/your/image1.jpg
+</span></span><span style="display:flex;"><span>https://example.com/remote/image2.png
+</span></span><span style="display:flex;"><span>/static-path/image3.webp
+</span></span><span style="display:flex;"><span>{{&lt; /gallery &gt;}}
+</span></span></code></pre></div><h2 id="configuration">Configuration<a href="#configuration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>You can configure the gallery&rsquo;s behavior and appearance through your <code>hugo.toml</code> file and by customizing SCSS variables.</p>
+<h3 id="enabling-the-gallery">Enabling the Gallery<a href="#enabling-the-gallery" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>To use the gallery shortcode, you must first enable it in your site&rsquo;s configuration. Add the following to your <code>hugo.toml</code> file under the <code>[params]</code> section:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">gallery</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><h3 id="customizing-thumbnail-size">Customizing Thumbnail Size<a href="#customizing-thumbnail-size" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>The default thumbnail size is 300x300 pixels. You can customize this by adding a <code>thumbnail</code> variable under <code>[params.gallery]</code> in your <code>hugo.toml</code>. The value should be the desired dimension in pixels (the number only).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">gallery</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">thumbnail</span> = <span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#75715e"># Default is 300, meaning 300px</span>
+</span></span></code></pre></div><h3 id="styling-with-scss-variables">Styling with SCSS Variables<a href="#styling-with-scss-variables" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>You can customize all aspects of the gallery and lightbox appearance by editing the following SCSS variables, typically found in your theme&rsquo;s <code>assets/scss/_colors.scss</code> file (or a similar SCSS partial responsible for color definitions):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#75715e">// Image Gallery specific colours
+</span></span></span><span style="display:flex;"><span>$gallery-item-box-shadow<span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span> <span style="color:#a6e22e">rgba</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.1</span>) <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// Subtle shadow for depth.
+</span></span></span><span style="display:flex;"><span>$gallery-item-hover-box-shadow<span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span> <span style="color:#a6e22e">rgba</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.15</span>) <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// Enhance shadow on hover.
+</span></span></span><span style="display:flex;"><span>$gallery-item-caption-background<span style="color:#f92672">:</span> <span style="color:#a6e22e">rgba</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.7</span>) <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// Semi-transparent background for readability.
+</span></span></span><span style="display:flex;"><span>$gallery-item-caption-color<span style="color:#f92672">:</span> <span style="color:#ae81ff">#fff</span> <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// White text for contrast.
+</span></span></span><span style="display:flex;"><span>$lightbox-overlay-background<span style="color:#f92672">:</span> <span style="color:#a6e22e">rgba</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.85</span>) <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// Dark semi-transparent background to focus on image.
+</span></span></span><span style="display:flex;"><span>$lightbox-image-box-shadow<span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span> <span style="color:#a6e22e">rgba</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">,</span><span style="color:#ae81ff">0</span><span style="color:#f92672">,</span><span style="color:#ae81ff">0</span><span style="color:#f92672">,</span><span style="color:#ae81ff">0</span><span style="color:#ae81ff">.3</span>) <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// Shadow for the image in lightbox
+</span></span></span><span style="display:flex;"><span>$lightbox-caption-color<span style="color:#f92672">:</span> <span style="color:#ae81ff">#fff</span> <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// Caption colour in lightbox.
+</span></span></span><span style="display:flex;"><span>$lightbox-close-nav-color<span style="color:#f92672">:</span> <span style="color:#ae81ff">#fff</span> <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// Close and Navigation button colour in lightbox.
+</span></span></span><span style="display:flex;"><span>$lightbox-close-color-hover<span style="color:#f92672">:</span> <span style="color:#ae81ff">#ccc</span> <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// Close button hover colour in lightbox.
+</span></span></span><span style="display:flex;"><span>$lightbox-nav-background-color<span style="color:#f92672">:</span> <span style="color:#a6e22e">rgba</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.3</span>) <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// Semi-transparent background for nav buttons.
+</span></span></span><span style="display:flex;"><span>$lightbox-nav-background-color-hover<span style="color:#f92672">:</span> <span style="color:#a6e22e">rgba</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.6</span>) <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// Semi-transparent background for nav buttons on hover.
+</span></span></span></code></pre></div><h2 id="image-sources">Image Sources<a href="#image-sources" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>To use the shortcode, simply list your image sources (one per line) between the opening and closing <code>gallery</code> tags.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>{{&lt; gallery &gt;}}
+</span></span><span style="display:flex;"><span>path/to/your/image1.jpg
+</span></span><span style="display:flex;"><span>https://example.com/remote/image2.png
+</span></span><span style="display:flex;"><span>/static-path/image3.webp
+</span></span><span style="display:flex;"><span>{{&lt; /gallery &gt;}}
+</span></span></code></pre></div><h3 id="image-sources-1">Image Sources<a href="#image-sources-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>The shortcode supports three main types of image sources:</p>
+<ol>
+<li>
+<p><strong>Local Images from <code>/assets</code> directory (Recommended for processing)</strong>:</p>
+<ul>
+<li>Paths should be relative to your Hugo project&rsquo;s <code>/assets</code> directory.</li>
+<li>Example: If your image is at <code>/assets/images/landscapes/mountain.jpg</code>, you would use <code>images/landscapes/mountain.jpg</code>.</li>
+<li>Hugo&rsquo;s powerful image processing will be used to generate thumbnails.</li>
+</ul>
+</li>
+<li>
+<p><strong>Local Images from <code>/static</code> directory</strong>:</p>
+<ul>
+<li>Paths should start with a <code>/</code> and be relative to your Hugo project&rsquo;s <code>/static</code> directory.</li>
+<li>Example: If your image is at <code>/static/photos/beach.png</code>, you would use <code>/photos/beach.png</code>.</li>
+<li>Hugo&rsquo;s image processing will also apply to these images if they are found and processable by <code>resources.Get</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Remote Images (URLs)</strong>:</p>
+<ul>
+<li>Full HTTP or HTTPS URLs to images hosted elsewhere.</li>
+<li>Example: <code>https://images.unsplash.com/your-image-id</code>.</li>
+<li>Thumbnails for remote images are not processed server-side; the original image is used and styled by CSS.</li>
+</ul>
+</li>
+</ol>
+<h2 id="examples">Examples<a href="#examples" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>Below are some examples demonstrating different ways to use the <code>gallery</code> shortcode.</p>
+<h3 id="1-gallery-with-local-images-from-assets">1. Gallery with Local Images from <code>/assets</code><a href="#1-gallery-with-local-images-from-assets" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>Place your images inside the <code>/assets</code> directory of your Hugo project. For instance, if you have images in <code>/assets/my-trip/</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go-text-template" data-lang="go-text-template"><span style="display:flex;"><span><span style="color:#75715e">{{</span><span style="color:#960050;background-color:#1e0010">&lt;</span> <span style="color:#a6e22e">gallery</span> <span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#75715e">}}</span>
+</span></span><span style="display:flex;"><span>my-gallery-assets/landscape.jpg
+</span></span><span style="display:flex;"><span>my-gallery-assets/portrait.png
+</span></span><span style="display:flex;"><span>my-gallery-assets/pano.webp
+</span></span><span style="display:flex;"><span><span style="color:#75715e">{{</span><span style="color:#960050;background-color:#1e0010">&lt;</span> <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">gallery</span> <span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#75715e">}}</span>
+</span></span></code></pre></div>
+
+
+
+    <div class="image-gallery" id="gallery-23996566">
+                <a href="/hermit-V2/images/10-2500x1667.jpg" class="gallery-item" data-lightbox-group="gallery-23996566" data-title="Images 10 2500x1667"><img src="/hermit-V2/images/10-2500x1667_hu_b15368392b8f6c33.jpg" alt="/images/10-2500x1667" width="300" height="300" loading="lazy">
+                    <div class="gallery-item-caption">Images 10 2500x1667</div>
+                </a>
+                <a href="/hermit-V2/images/11-2500x1667.jpg" class="gallery-item" data-lightbox-group="gallery-23996566" data-title="Images 11 2500x1667"><img src="/hermit-V2/images/11-2500x1667_hu_f810f03837750382.jpg" alt="/images/11-2500x1667" width="300" height="300" loading="lazy">
+                    <div class="gallery-item-caption">Images 11 2500x1667</div>
+                </a>
+                <a href="/hermit-V2/images/928-600x400.jpg" class="gallery-item" data-lightbox-group="gallery-23996566" data-title="Images 928 600x400"><img src="/hermit-V2/images/928-600x400_hu_47e6da54d8cf9e.jpg" alt="/images/928-600x400" width="300" height="300" loading="lazy">
+                    <div class="gallery-item-caption">Images 928 600x400</div>
+                </a></div>
+<ul>
+<li><strong>To make this work:</strong>
+<ul>
+<li>Create a folder: <code>your-project/assets/my-gallery-assets/</code></li>
+<li>Add images like <code>landscape.jpg</code>, <code>portrait.png</code>, <code>pano.webp</code> into that folder.</li>
+</ul>
+</li>
+<li><strong>Captions generated</strong>: &ldquo;landscape&rdquo;, &ldquo;portrait&rdquo;, &ldquo;pano&rdquo;.</li>
+<li><strong>Thumbnails</strong>: 300x300 smart-cropped versions will be generated.</li>
+</ul>
+<h3 id="2-gallery-with-local-images-from-static">2. Gallery with Local Images from <code>/static</code><a href="#2-gallery-with-local-images-from-static" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>Place your images inside the <code>/static</code> directory. For instance, if you have images in <code>/static/event-photos/</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>{{&lt; gallery &gt;}}
+</span></span><span style="display:flex;"><span>/event-photos/conference.jpg
+</span></span><span style="display:flex;"><span>/event-photos/workshop.jpeg
+</span></span><span style="display:flex;"><span>{{&lt; /gallery &gt;}}
+</span></span></code></pre></div>
+
+
+
+    <div class="image-gallery" id="gallery-7a1bccb1">
+                <a href="https://1bl4z3r.github.io/hermit-V2/images/397-600x400.jpg" class="gallery-item" data-lightbox-group="gallery-7a1bccb1" data-title="397 600x400"><img src="https://1bl4z3r.github.io/hermit-V2/images/397-600x400.jpg" alt="397-600x400" width="300" height="300" loading="lazy">
+                    <div class="gallery-item-caption">397 600x400</div>
+                </a>
+                <a href="https://1bl4z3r.github.io/hermit-V2/android-chrome-192x192.png" class="gallery-item" data-lightbox-group="gallery-7a1bccb1" data-title="Android Chrome 192x192"><img src="https://1bl4z3r.github.io/hermit-V2/android-chrome-192x192.png" alt="android-chrome-192x192" width="300" height="300" loading="lazy">
+                    <div class="gallery-item-caption">Android Chrome 192x192</div>
+                </a>
+                <a href="https://1bl4z3r.github.io/hermit-V2/android-chrome-384x384.png" class="gallery-item" data-lightbox-group="gallery-7a1bccb1" data-title="Android Chrome 384x384"><img src="https://1bl4z3r.github.io/hermit-V2/android-chrome-384x384.png" alt="android-chrome-384x384" width="300" height="300" loading="lazy">
+                    <div class="gallery-item-caption">Android Chrome 384x384</div>
+                </a></div>
+<ul>
+<li><strong>To make this work:</strong>
+<ul>
+<li>Create a folder: <code>your-project/static/event-photos/</code></li>
+<li>Add images: <code>conference.jpg</code>, <code>workshop.jpeg</code> into that folder.</li>
+</ul>
+</li>
+<li><strong>Captions generated</strong>: &ldquo;conference&rdquo;, &ldquo;workshop&rdquo;.</li>
+<li><strong>Thumbnails</strong>: 300x300 smart-cropped versions will be generated.</li>
+</ul>
+<h3 id="3-gallery-with-remote-images">3. Gallery with Remote Images<a href="#3-gallery-with-remote-images" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>You can directly link to images hosted on other websites.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>{{&lt; gallery &gt;}}
+</span></span><span style="display:flex;"><span>https://picsum.photos/seed/gallery-remote1/800/600
+</span></span><span style="display:flex;"><span>https://placehold.co/600x400/png
+</span></span><span style="display:flex;"><span>https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1
+</span></span><span style="display:flex;"><span>https://picsum.photos/seed/gallery-remote3/1024/768
+</span></span><span style="display:flex;"><span>https://picsum.photos/seed/another-image/700/500?blur=2
+</span></span><span style="display:flex;"><span>https://placehold.co/600x400?text=More+Examples
+</span></span><span style="display:flex;"><span>{{&lt; /gallery &gt;}}
+</span></span></code></pre></div>
+
+
+
+    <div class="image-gallery" id="gallery-1b94c02d">
+                <a href="https://picsum.photos/seed/gallery-remote1/800/600" class="gallery-item" data-lightbox-group="gallery-1b94c02d" data-title="600th"><img src="https://picsum.photos/seed/gallery-remote1/800/600" alt="600" width="300" height="300" loading="lazy">
+                    <div class="gallery-item-caption">600th</div>
+                </a>
+                <a href="https://placehold.co/600x400/png" class="gallery-item" data-lightbox-group="gallery-1b94c02d" data-title="Png"><img src="https://placehold.co/600x400/png" alt="png" width="300" height="300" loading="lazy">
+                    <div class="gallery-item-caption">Png</div>
+                </a>
+                <a href="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" class="gallery-item" data-lightbox-group="gallery-1b94c02d" data-title="Pexels Photo 3408744"><img src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="pexels-photo-3408744" width="300" height="300" loading="lazy">
+                    <div class="gallery-item-caption">Pexels Photo 3408744</div>
+                </a>
+                <a href="https://picsum.photos/seed/gallery-remote3/1024/768" class="gallery-item" data-lightbox-group="gallery-1b94c02d" data-title="768th"><img src="https://picsum.photos/seed/gallery-remote3/1024/768" alt="768" width="300" height="300" loading="lazy">
+                    <div class="gallery-item-caption">768th</div>
+                </a>
+                <a href="https://picsum.photos/seed/another-image/700/500?blur=2" class="gallery-item" data-lightbox-group="gallery-1b94c02d" data-title="500th"><img src="https://picsum.photos/seed/another-image/700/500?blur=2" alt="500" width="300" height="300" loading="lazy">
+                    <div class="gallery-item-caption">500th</div>
+                </a>
+                <a href="https://placehold.co/600x400?text=More&#43;Examples" class="gallery-item" data-lightbox-group="gallery-1b94c02d" data-title="600x400"><img src="https://placehold.co/600x400?text=More&#43;Examples" alt="600x400" width="300" height="300" loading="lazy">
+                    <div class="gallery-item-caption">600x400</div>
+                </a></div>
+<ul>
+<li><strong>Captions generated</strong>: &ldquo;gallery-remote1&rdquo;, &ldquo;gallery-remote2&rdquo; (query string <code>?grayscale</code> is removed), &ldquo;pexels-photo-3408744&rdquo;.</li>
+<li><strong>Thumbnails</strong>: The original remote images will be displayed, scaled and cropped by CSS to fit the 300x300 thumbnail area.</li>
+</ul>
+<h3 id="4-mixed-gallery-local-and-remote-images">4. Mixed Gallery (Local and Remote Images)<a href="#4-mixed-gallery-local-and-remote-images" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>You can combine different source types in a single gallery.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>{{&lt; gallery &gt;}}
+</span></span><span style="display:flex;"><span>portfolio/project-alpha.png  &lt;!-- From /assets/portfolio/project-alpha.png --&gt;
+</span></span><span style="display:flex;"><span>/archive/old-photo.jpg       &lt;!-- From /static/archive/old-photo.jpg --&gt;
+</span></span><span style="display:flex;"><span>https://picsum.photos/seed/mixed-gallery/900/700
+</span></span><span style="display:flex;"><span>{{&lt; /gallery &gt;}}
+</span></span></code></pre></div><ul>
+<li>Ensure <code>portfolio/project-alpha.png</code> exists in <code>/assets/portfolio/</code> and <code>old-photo.jpg</code> exists in <code>/static/archive/</code>.</li>
+<li>The gallery will display thumbnails from all sources, processing local ones and styling remote ones.</li>
+</ul>
+<h2 id="important-notes">Important Notes<a href="#important-notes" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<ul>
+<li><strong>Path Conventions</strong>:
+<ul>
+<li>For images in <code>/assets</code> (e.g., <code>/assets/img/example.jpg</code>), use the path relative to the <code>assets</code> directory: <code>img/example.jpg</code>.</li>
+<li>For images in <code>/static</code> (e.g., <code>/static/img/example.jpg</code>), use the path relative to the <code>static</code> directory, <strong>prefixed with a <code>/</code></strong>: <code>/img/example.jpg</code>.</li>
+</ul>
+</li>
+<li><strong>Image Processing</strong>: Hugo&rsquo;s built-in image processing (for thumbnail generation) is applied to local images found in <code>/assets</code> or <code>/static</code> that are successfully loaded via <code>resources.Get</code>.</li>
+<li><strong>File Names for Captions</strong>: Keep your filenames descriptive, as they are used to generate captions. For example, <code>golden-gate-bridge-sunset.jpg</code> becomes the caption &ldquo;golden-gate-bridge-sunset&rdquo;.</li>
+<li><strong>Empty Lines</strong>: Empty lines within the shortcode block are ignored.</li>
+<li><strong>Error Handling</strong>: If a local image path is incorrect and the resource is not found, a warning will be logged during Hugo&rsquo;s build process, and that item will be skipped in the gallery.</li>
+</ul>
+<h2 id="styling-and-customization">Styling and Customization<a href="#styling-and-customization" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>The visual appearance of the gallery and the lightbox is controlled by SCSS located in <code>assets/scss/_gallery.scss</code> (or wherever you&rsquo;ve placed and imported it). You can override these styles in your own SCSS files to match your theme&rsquo;s design.</p>
+<p>The JavaScript for the lightbox functionality is located in <code>assets/js/gallery.js</code>. It&rsquo;s self-contained and does not rely on any third-party libraries.</p>
+<p>This gallery shortcode provides a flexible and straightforward way to add rich image displays to your content. Experiment with different image sources and enjoy the automated thumbnails and lightbox features!</p>
+]]></content></item><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Sun, 24 Dec 2023 12:29:41 +0800</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>&amp;lt;no value&amp;gt;</description><content type="text/html" mode="escaped"><![CDATA[<p>Hugo has <code>figure</code> shortcode built in, so you can easily add captions or hyperlink rel attributes to images. Documentations can be found <a href="https://gohugo.io/content-management/shortcodes/#figure">here</a>.</p>
+<p>This theme extends upon <a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_shortcodes/figure.html">default figure shortcode</a> to implement following features :</p>
+<ul>
+<li>Follow latest standard to display WEBP image and fallback to JPG if browser cannot render WEBP.
+<ul>
+<li>If provided with an image resource, it can convert to WEBP and JPG image</li>
+<li>Both WEBP and JPG are placed in <a href="https://www.w3schools.com/tags/tag_picture.asp">picture tag</a></li>
+<li>To use this feature, place your image in <code>assets</code> folder in root of your site</li>
+</ul>
+</li>
+<li>If <code>src</code> contains a link (starting with http/https), it will be parsed accordingly.</li>
+<li>1-to-1 feature set compatiblity if you are using figure shortcode or <code>![]()</code>.</li>
+<li>If you want to add image from <code>static</code> folder, you can, <strong>but be informed that these images cannot be converted or optimized</strong>.</li>
+</ul>
+<h3 id="supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more">Supported attributes to figure shortcode (Create an Issue if you want to add more)<a href="#supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<ul>
+<li>
+<p><code>src</code> : Source of the resource. It can be one of three</p>
+<ul>
+<li>Image in <code>assets</code> folder in your site root. Supported Formats : <strong>WEBP</strong> and <strong>JPG</strong></li>
+<li>Image in <code>static</code> folder in your site root.</li>
+<li>Image fetched from another place on the internet. Must start with <strong>http://</strong> or <strong>https://</strong></li>
+</ul>
+</li>
+<li>
+<p><code>link</code> : Specifies the URL of the page the figure goes to. The value is added to <code>href</code></p>
+</li>
+<li>
+<p><code>target</code> : Specifies where to open the linked document. To be used with <code>link</code>. The value is added to <code>target</code>. Possible values:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Value</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>_blank</td>
+          <td>Opens the linked document in a new window or tab</td>
+      </tr>
+      <tr>
+          <td>_self</td>
+          <td>Opens the linked document in the same frame as it was clicked (this is default)</td>
+      </tr>
+      <tr>
+          <td>_parent</td>
+          <td>Opens the linked document in the parent frame</td>
+      </tr>
+      <tr>
+          <td>_top</td>
+          <td>Opens the linked document in the full body of the window</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>
+<p><code>rel</code> : Specifies the relationship between the current document and the linked document. The value is added to <code>rel</code>. Possible values :</p>
+<table>
+  <thead>
+      <tr>
+          <th>Value</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>alternate</td>
+          <td>Provides a link to an alternate representation of the document (i.e. print page, translated or mirror)</td>
+      </tr>
+      <tr>
+          <td>author</td>
+          <td>Provides a link to the author of the document</td>
+      </tr>
+      <tr>
+          <td>bookmark</td>
+          <td>Permanent URL used for bookmarking</td>
+      </tr>
+      <tr>
+          <td>external</td>
+          <td>Indicates that the referenced document is not part of the same site as the current document</td>
+      </tr>
+      <tr>
+          <td>help</td>
+          <td>Provides a link to a help document</td>
+      </tr>
+      <tr>
+          <td>license</td>
+          <td>Provides a link to licensing information for the document</td>
+      </tr>
+      <tr>
+          <td>next</td>
+          <td>Provides a link to the next document in the series</td>
+      </tr>
+      <tr>
+          <td>nofollow</td>
+          <td>Links to an unendorsed document, like a paid link. (&ldquo;nofollow&rdquo; is used by Google, to specify that the Google search spider should not follow that link)</td>
+      </tr>
+      <tr>
+          <td>noopener</td>
+          <td>Requires that any browsing context created by following the hyperlink must not have an opener browsing context</td>
+      </tr>
+      <tr>
+          <td>noreferrer</td>
+          <td>Makes the referrer unknown. No referer header will be included when the user clicks the hyperlink</td>
+      </tr>
+      <tr>
+          <td>prev</td>
+          <td>The previous document in a selection</td>
+      </tr>
+      <tr>
+          <td>search</td>
+          <td>Links to a search tool for the document</td>
+      </tr>
+      <tr>
+          <td>tag</td>
+          <td>A tag (keyword) for the current document</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>
+<p><code>class</code> : This theme has 3 CSS classes made for figure elements. If a figure has no class set, the image will behave just like a normal markdown image: <code>![]()</code>.</p>
+<ul>
+<li><code>big</code>: images will break the width limit of main content area.</li>
+<li><code>left</code>: images will float to the left.</li>
+<li><code>right</code>: images will float to the right.</li>
+</ul>
+</li>
+<li>
+<p><code>alt</code> : Provides an alternate text for an image, if the user for some reason cannot view it (because of slow connection, an error in the src attribute, or if the user uses a screen reader).</p>
+</li>
+<li>
+<p>Attribution</p>
+<ul>
+<li><code>attr</code> : Attribution text</li>
+<li><code>attrlink</code> : Attribution link</li>
+</ul>
+</li>
+<li>
+<p><code>title</code> : Generate title for image in <code>figcaption</code>. It will be shown in <strong>H4</strong></p>
+</li>
+<li>
+<p><code>width</code> : Specify width of the image</p>
+</li>
+<li>
+<p><code>height</code> : Specify height of the image</p>
+</li>
+<li>
+<p><code>caption</code> : Specify caption of the image</p>
+</li>
+<li>
+<p><code>loading</code> : Specifies whether a browser should load an image immediately or to defer loading of off-screen images until for example the user scrolls near them. Possible values:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Value</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>eager</td>
+          <td>Default. Loads an image immediately</td>
+      </tr>
+      <tr>
+          <td>lazy</td>
+          <td>Defer loading of images until some conditions are met</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+</ul>
+<p>Here&rsquo;s some examples, please be aware that these styles only take effect when the page width is over 1300px.</p>
+<h3 id="image-located-in-static-folder-in-site-root-prepend--in-src-attribute-to-inform-that-image-is-in-static-folder">Image located in <code>static folder</code> in site root. Prepend <code>/</code> in src attribute to inform that image is in <code>static</code> folder<a href="#image-located-in-static-folder-in-site-root-prepend--in-src-attribute-to-inform-that-image-is-in-static-folder" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;/android-chrome-192x192.png&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;android-chrome-192x192.png&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;Static folder image (notice slash &#39;/&#39; in src attribute)&#34;</span> &gt;}}
+</span></span></code></pre></div>
+
+    <figure><img src="https://1bl4z3r.github.io/hermit-V2/android-chrome-192x192.png"alt="android-chrome-192x192.png"/><figcaption><p>Static folder image (notice slash &lsquo;/&rsquo; in src attribute)</p></figcaption></figure>
+<h3 id="image-located-in-a-folder-named-images-in-static-folder-in-site-root-prepend--in-src-attribute-to-inform-that-image-is-in-static-folder">Image located in a folder named <code>images</code> in <code>static folder</code> in site root. Prepend <code>/</code> in src attribute to inform that image is in <code>static</code> folder<a href="#image-located-in-a-folder-named-images-in-static-folder-in-site-root-prepend--in-src-attribute-to-inform-that-image-is-in-static-folder" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;/images/397-600x400.jpg&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;apple-touch-icon.png&#34;</span> <span style="color:#a6e22e">title</span>=<span style="color:#e6db74">&#34;Picsum image&#34;</span> <span style="color:#a6e22e">attr</span>=<span style="color:#e6db74">&#34;Picsum&#34;</span> <span style="color:#a6e22e">attrlink</span>=<span style="color:#e6db74">&#34;https://picsum.com&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;This image is located in /static/images&#34;</span> &gt;}}
+</span></span></code></pre></div>
+
+    <figure><img src="https://1bl4z3r.github.io/hermit-V2/images/397-600x400.jpg"alt="apple-touch-icon.png"/><figcaption><h4>Picsum image</h4><p>This image is located in /static/images - <a href="https://picsum.com">Picsum</a></p></figcaption></figure>
+<h3 id="figure-loaded-from-another-site-with-no-class-specification">Figure loaded from another site with no class specification.<a href="#figure-loaded-from-another-site-with-no-class-specification" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;https://placehold.co/1600x800&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;figure-normal (without any classes)&#34;</span> &gt;}}
+</span></span></code></pre></div>
+<figure><img src="https://placehold.co/1600x800"alt="image"/><figcaption><p>figure-normal (without any classes)</p></figcaption></figure>
+<h3 id="figure-loaded-from-assets-folder-in-site-root">Figure loaded from <code>assets</code> folder in site root.<a href="#figure-loaded-from-assets-folder-in-site-root" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/928-600x400.jpg&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;relative file path in assets folder&#34;</span> &gt;}}
+</span></span></code></pre></div>
+<figure><picture>
+          <source srcset="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" type="image/webp">
+          <source srcset="/hermit-V2/images/928-600x400_hu_fa0438000595b6b0.jpg" type="image/jpeg">
+          <img src="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp"alt="image" width="600"  height="400" />
+        </picture><figcaption><p>relative file path in assets folder</p></figcaption></figure>
+<h3 id="figure-using-class-big">Figure using class <code>big</code><a href="#figure-using-class-big" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;https://placehold.co/1600x800&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;using class = big&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;big&#34;</span> &gt;}}
+</span></span></code></pre></div>
+<figure class="big" ><img src="https://placehold.co/1600x800"alt="image"/><figcaption><p>using class = big</p></figcaption></figure>
+<h3 id="figure-using-class-left">Figure using class <code>left</code><a href="#figure-using-class-left" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;https://placehold.co/400x280&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;using class = left&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;left&#34;</span> &gt;}}
+</span></span></code></pre></div>
+<figure class="left" ><img src="https://placehold.co/400x280"alt="image"/><figcaption><p>using class = left</p></figcaption></figure>
+<p>In a libero varius, luctus ligula et, bibendum tortor. Sed sit amet dui malesuada, mattis justo id, ultricies enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam sollicitudin cursus feugiat. Vivamus suscipit ipsum eget lobortis sollicitudin. Fusce vehicula neque tellus. Integer eu posuere quam, id laoreet tortor. Mauris sit amet turpis urna. Donec venenatis tempor dolor, nec laoreet orci aliquet et. Sed condimentum elit eu tristique aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc luctus ipsum sit amet nisl maximus pellentesque.
+In a libero varius, luctus ligula et, bibendum tortor. Sed sit amet dui malesuada, mattis justo id, ultricies enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam sollicitudin cursus feugiat. Vivamus suscipit ipsum eget lobortis sollicitudin.</p>
+<h3 id="figure-using-class-right">Figure using class <code>right</code><a href="#figure-using-class-right" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;https://placehold.co/400x280&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;using class = right&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;right&#34;</span> &gt;}}
+</span></span></code></pre></div>
+<figure class="right" ><img src="https://placehold.co/400x280"alt="image"/><figcaption><p>using class = right</p></figcaption></figure>
+<p>Pellentesque eu consequat nunc. Vivamus eu eros ut nulla dapibus molestie in id tortor. Cras viverra ligula erat, tincidunt hendrerit diam blandit nec. Cras id urna vel dolor dictum mattis. Vestibulum congue erat ac eros molestie accumsan. Maecenas lorem nibh, maximus vel justo eget, facilisis egestas lectus. Mauris eu est ut odio blandit consequat id feugiat eros. Fusce id suscipit mi, et lacinia lectus. Mauris a arcu placerat dolor iaculis feugiat nec non mi. Ut porttitor elit tortor, eget tempus velit mollis eu. Aliquam sem nulla, dictum cursus mauris ac, semper ullamcorper leo.
+Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Aliquam tempor vehicula faucibus. Phasellus consequat aliquam odio. Morbi a ex vitae sapien porta auctor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet nulla arcu. Praesent ut tortor purus. Praesent id eros diam. Pellentesque vitae dolor at nibh ultrices accumsan eu id urna. Aliquam finibus interdum orci in varius. Pellentesque a enim condimentum, condimentum felis id, vehicula augue. Vivamus cursus commodo eros nec lacinia.</p>
+<h3 id="use-static-directory-as-assets-directory">Use static directory as assets directory<a href="#use-static-directory-as-assets-directory" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>This configuration allows you would want to use static directory or a subdirectory as assets. To utilize this feature, add following lines to <code>hugo.toml</code>. Assuming you put your images in <code>/static/images</code>, you can mount this folder as assets. <a href="https://discourse.gohugo.io/t/why-does-a-path-that-works-for-a-markdown-image-not-work-for-the-figure-shortcode/52631">Hugo forum - Why does a path that works for a markdown image not work for the figure shortcode?</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[[<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">mounts</span>]]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">source</span> = <span style="color:#e6db74">&#39;assets&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">target</span> = <span style="color:#e6db74">&#39;assets&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">mounts</span>]]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">source</span> = <span style="color:#e6db74">&#39;static/images&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">target</span> = <span style="color:#e6db74">&#39;assets&#39;</span>
+</span></span></code></pre></div>]]></content></item><item><title>Post With Featured Image</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</link><pubDate>Mon, 01 Oct 2018 16:15:09 +0800</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</guid><description>&amp;lt;no value&amp;gt;</description><enclosure url="https://1bl4z3r.github.io/hermit-V2/866-1024x768_9964604113945904457.jpg" length="" type="image/jpeg"/><media:thumbnail url="https://1bl4z3r.github.io/hermit-V2/866-1024x768_9964604113945904457.jpg" width="1024" height="768"/><media:content url="https://1bl4z3r.github.io/hermit-V2/866-1024x768_9964604113945904457.jpg" medium="image" type="image/jpeg" width="1024" height="768"><media:title type="html">/866-1024x768_9964604113945904457.jpg</media:title></media:content><enclosure url="https://1bl4z3r.github.io/hermit-V2/866-1024x768_9964604113945904457.jpg" length="" type="image/jpeg"/><media:thumbnail url="https://1bl4z3r.github.io/hermit-V2/866-1024x768_9964604113945904457.jpg" width="1024" height="768"/><media:content url="https://1bl4z3r.github.io/hermit-V2/866-1024x768_9964604113945904457.jpg" medium="image" type="image/jpeg" width="1024" height="768"><media:title type="html">/866-1024x768_9964604113945904457.jpg</media:title></media:content><enclosure url="https://1bl4z3r.github.io/hermit-V2/images/928-600x400.jpg" length="" type="image/jpeg"/><media:thumbnail url="https://1bl4z3r.github.io/hermit-V2/images/928-600x400.jpg" width="600" height="400"/><media:content url="https://1bl4z3r.github.io/hermit-V2/images/928-600x400.jpg" medium="image" type="image/jpeg" width="600" height="400"><media:title type="html">/images/928-600x400.jpg</media:title></media:content><content type="text/html" mode="escaped"><![CDATA[<p>Just define the image URL in the content’s front matter, the featured image will be displayed as the background.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">images</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">https://picsum.photos/1024/768/?random</span>
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><p>This is an array, you can set multiple urls, only the first url will be used. These images is also used in <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html">Twitter Cards</a> and the <a href="http://ogp.me/">Open Graph</a> metadata.</p>
+]]></content></item></channel></rss>

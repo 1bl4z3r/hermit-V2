@@ -1,118 +1,840 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Typography on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/typography/</link><description>Recent content in Typography on Hermit - V2</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Fri, 20 Oct 2023 20:06:06 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/typography/index.xml" rel="self" type="application/rss+xml"/><item><title>Admonition Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</link><pubDate>Fri, 20 Oct 2023 20:06:06 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</guid><description>&lt;p&gt;The &lt;code&gt;admonition&lt;/code&gt; shortcode supports &lt;strong&gt;8&lt;/strong&gt; types of banners to help you put a notice on your page.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Markdown or HTML format in the content is supported.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Typography on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/typography/</link><description>Recent content in Typography on Hermit - V2</description><generator>Hugo -- 0.155.2</generator><language>en-US</language><lastBuildDate>Fri, 20 Oct 2023 20:06:06 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/typography/index.xml" rel="self" type="application/rss+xml"/><item><title>Admonition Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</link><pubDate>Fri, 20 Oct 2023 20:06:06 +0530</pubDate><author>blzr</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</guid><description>This explains admonition shortcode implementation</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>admonition</code> shortcode supports <strong>8</strong> types of banners to help you put a notice on your page.</p>
+<p><em>Markdown or HTML format in the content is supported.</em></p>
 
- &lt;aside class="admonition note"&gt;
- &lt;div class="admonition-title"&gt;
- &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2"&gt;
- &lt;path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"&gt;&lt;/path&gt;
- &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;This is a note&lt;/b&gt;
- &lt;/div&gt;
- &lt;div class="admonition-content"&gt;A &lt;strong&gt;note&lt;/strong&gt; banner&lt;/div&gt;
- &lt;/aside&gt;
+    <aside class="admonition note">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2">
+      <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+   </svg></div><b>This is a note</b>
+        </div>
+        <div class="admonition-content">A <strong>note</strong> banner</div>
+    </aside>
 
- &lt;aside class="admonition info"&gt;
- &lt;div class="admonition-title"&gt;
- &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"&gt;
- &lt;circle cx="12" cy="12" r="10"&gt;&lt;/circle&gt;
- &lt;line x1="12" y1="16" x2="12" y2="12"&gt;&lt;/line&gt;
- &lt;line x1="12" y1="8" x2="12.01" y2="8"&gt;&lt;/line&gt;
- &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;This is an info&lt;/b&gt;
- &lt;/div&gt;
- &lt;div class="admonition-content"&gt;A &lt;strong&gt;info&lt;/strong&gt; banner&lt;/div&gt;
- &lt;/aside&gt;
+    <aside class="admonition info">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="16" x2="12" y2="12"></line>
+      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+   </svg></div><b>This is an info</b>
+        </div>
+        <div class="admonition-content">A <strong>info</strong> banner</div>
+    </aside>
 
- &lt;aside class="admonition tip"&gt;
- &lt;div class="admonition-title"&gt;
- &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"&gt;
- &lt;circle cx="12" cy="12" r="5"&gt;&lt;/circle&gt;
- &lt;line x1="12" y1="1" x2="12" y2="3"&gt;&lt;/line&gt;
- &lt;line x1="12" y1="21" x2="12" y2="23"&gt;&lt;/line&gt;
- &lt;line x1="4.22" y1="4.22" x2="5.64" y2="5.64"&gt;&lt;/line&gt;
- &lt;line x1="18.36" y1="18.36" x2="19.78" y2="19.78"&gt;&lt;/line&gt;
- &lt;line x1="1" y1="12" x2="3" y2="12"&gt;&lt;/line&gt;
- &lt;line x1="21" y1="12" x2="23" y2="12"&gt;&lt;/line&gt;
- &lt;line x1="4.22" y1="19.78" x2="5.64" y2="18.36"&gt;&lt;/line&gt;
- &lt;line x1="18.36" y1="5.64" x2="19.78" y2="4.22"&gt;&lt;/line&gt;
- &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;Tip&lt;/b&gt;
- &lt;/div&gt;
- &lt;div class="admonition-content"&gt;A &lt;strong&gt;tip&lt;/strong&gt; banner&lt;/div&gt;
- &lt;/aside&gt;
+    <aside class="admonition tip">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+   </svg></div><b>Tip</b>
+        </div>
+        <div class="admonition-content">A <strong>tip</strong> banner</div>
+    </aside>
 
- &lt;aside class="admonition success"&gt;
- &lt;div class="admonition-title"&gt;
- &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"&gt;
- &lt;path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"&gt;&lt;/path&gt;
- &lt;polyline points="22 4 12 14.01 9 11.01"&gt;&lt;/polyline&gt;
- &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;Success&lt;/b&gt;
- &lt;/div&gt;
- &lt;div class="admonition-content"&gt;A &lt;strong&gt;success&lt;/strong&gt; banner&lt;/div&gt;
- &lt;/aside&gt;
+    <aside class="admonition success">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+   </svg></div><b>Success</b>
+        </div>
+        <div class="admonition-content">A <strong>success</strong> banner</div>
+    </aside>
 
- &lt;aside class="admonition warning"&gt;
- &lt;div class="admonition-title"&gt;
- &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"&gt;
- &lt;circle cx="12" cy="12" r="10"&gt;&lt;/circle&gt;
- &lt;line x1="12" y1="8" x2="12" y2="12"&gt;&lt;/line&gt;
- &lt;line x1="12" y1="16" x2="12.01" y2="16"&gt;&lt;/line&gt;
- &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;Warning&lt;/b&gt;
- &lt;/div&gt;
- &lt;div class="admonition-content"&gt;A &lt;strong&gt;warning&lt;/strong&gt; banner&lt;/div&gt;
- &lt;/aside&gt;
+    <aside class="admonition warning">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="8" x2="12" y2="12"></line>
+      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+   </svg></div><b>Warning</b>
+        </div>
+        <div class="admonition-content">A <strong>warning</strong> banner</div>
+    </aside>
 
- &lt;aside class="admonition failure"&gt;
- &lt;div class="admonition-title"&gt;
- &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle"&gt;
- &lt;circle cx="12" cy="12" r="10"&gt;&lt;/circle&gt;
- &lt;line x1="15" y1="9" x2="9" y2="15"&gt;&lt;/line&gt;
- &lt;line x1="9" y1="9" x2="15" y2="15"&gt;&lt;/line&gt;
- &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;Failure&lt;/b&gt;
- &lt;/div&gt;
- &lt;div class="admonition-content"&gt;A &lt;strong&gt;failure&lt;/strong&gt; banner&lt;/div&gt;
- &lt;/aside&gt;
+    <aside class="admonition failure">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="15" y1="9" x2="9" y2="15"></line>
+      <line x1="9" y1="9" x2="15" y2="15"></line>
+   </svg></div><b>Failure</b>
+        </div>
+        <div class="admonition-content">A <strong>failure</strong> banner</div>
+    </aside>
 
- &lt;aside class="admonition danger"&gt;
- &lt;div class="admonition-title"&gt;
- &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"&gt;
- &lt;path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"&gt;&lt;/path&gt;
- &lt;line x1="12" y1="9" x2="12" y2="13"&gt;&lt;/line&gt;
- &lt;line x1="12" y1="17" x2="12.01" y2="17"&gt;&lt;/line&gt;
- &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;Danger&lt;/b&gt;
- &lt;/div&gt;
- &lt;div class="admonition-content"&gt;A &lt;strong&gt;danger&lt;/strong&gt; banner&lt;/div&gt;
- &lt;/aside&gt;
+    <aside class="admonition danger">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle">
+      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+      <line x1="12" y1="9" x2="12" y2="13"></line>
+      <line x1="12" y1="17" x2="12.01" y2="17"></line>
+   </svg></div><b>Danger</b>
+        </div>
+        <div class="admonition-content">A <strong>danger</strong> banner</div>
+    </aside>
 
- &lt;aside class="admonition bug"&gt;
- &lt;div class="admonition-title"&gt;
- &lt;div class="icon"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
- stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon"&gt;
- &lt;polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"&gt;&lt;/polygon&gt;
- &lt;line x1="12" y1="8" x2="12" y2="12"&gt;&lt;/line&gt;
- &lt;line x1="12" y1="16" x2="12.01" y2="16"&gt;&lt;/line&gt;
- &lt;/svg&gt;&lt;/div&gt;&lt;b&gt;Bug&lt;/b&gt;
- &lt;/div&gt;
- &lt;div class="admonition-content"&gt;A &lt;strong&gt;bug&lt;/strong&gt; banner&lt;/div&gt;
- &lt;/aside&gt;
-&lt;p&gt;The &lt;code&gt;admonition&lt;/code&gt; shortcode has the following named parameters:&lt;/p&gt;</description></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>&lt;h1 id="support-for-hermit-v2"&gt;\(LaTeX\) support for hermit-V2&lt;a href="#support-for-hermit-v2" class="anchor" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
- stroke-linecap="round" stroke-linejoin="round"&gt;
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"&gt;&lt;/path&gt;
- &lt;line x1="8" y1="12" x2="16" y2="12"&gt;&lt;/line&gt;
- &lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;h2 id="configuration"&gt;Configuration&lt;a href="#configuration" class="anchor" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
- stroke-linecap="round" stroke-linejoin="round"&gt;
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"&gt;&lt;/path&gt;
- &lt;line x1="8" y1="12" x2="16" y2="12"&gt;&lt;/line&gt;
- &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Put the following in &lt;code&gt;hugo.toml&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Sat, 22 Jul 2023 14:36:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
-&lt;p&gt;Footnote:&lt;/p&gt;</description></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</guid><description>&lt;h2 id="this-article-explains-how-to-use-scroll-up"&gt;This article explains how to use Scroll Up&lt;a href="#this-article-explains-how-to-use-scroll-up" class="anchor" aria-hidden="true"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
- stroke-linecap="round" stroke-linejoin="round"&gt;
- &lt;path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"&gt;&lt;/path&gt;
- &lt;line x1="8" y1="12" x2="16" y2="12"&gt;&lt;/line&gt;
- &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.&lt;/p&gt;</description></item></channel></rss>
+    <aside class="admonition bug">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
+      <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+      <line x1="12" y1="8" x2="12" y2="12"></line>
+      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+   </svg></div><b>Bug</b>
+        </div>
+        <div class="admonition-content">A <strong>bug</strong> banner</div>
+    </aside>
+<p>The <code>admonition</code> shortcode has the following named parameters:</p>
+<ul>
+<li>
+<p><strong>type</strong> <em>[optional]</em> (<strong>first</strong> positional parameter)</p>
+<p>Type of the <code>admonition</code> banner, the default value is <code>note</code>.</p>
+</li>
+<li>
+<p><strong>title</strong> <em>[optional]</em> (<strong>second</strong> positional parameter)</p>
+<p>Title of the <code>admonition</code> banner, the default value is the value of the <strong>type</strong> parameter.</p>
+</li>
+</ul>
+<p>Example <code>admonition</code> input:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>{{&lt; admonition type=tip title=&#34;This is a tip&#34; &gt;}}
+</span></span><span style="display:flex;"><span>A <span style="font-weight:bold">**tip**</span> banner
+</span></span><span style="display:flex;"><span>{{&lt; /admonition &gt;}}
+</span></span><span style="display:flex;"><span>Or
+</span></span><span style="display:flex;"><span>{{&lt; admonition tip &#34;This is a tip&#34; &gt;}}
+</span></span><span style="display:flex;"><span>A <span style="font-weight:bold">**tip**</span> banner
+</span></span><span style="display:flex;"><span>{{&lt; /admonition &gt;}}
+</span></span></code></pre></div><p>The rendered output looks like this:</p>
+
+    <aside class="admonition tip">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+   </svg></div><b>This is a tip</b>
+        </div>
+        <div class="admonition-content">A <strong>tip</strong> banner</div>
+    </aside>
+]]></content></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><author>blzr</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>This page demos MathJax support, nothing else</description><content type="text/html" mode="escaped"><![CDATA[<h1 id="support-for-hermit-v2">\(LaTeX\) support for hermit-V2<a href="#support-for-hermit-v2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h1>
+<h2 id="configuration">Configuration<a href="#configuration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>Put the following in <code>hugo.toml</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>]
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>]
+</span></span><span style="display:flex;"><span>      [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">passthrough</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">passthrough</span>.<span style="color:#a6e22e">delimiters</span>]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">block</span> = [[<span style="color:#e6db74">&#39;\[&#39;</span>, <span style="color:#e6db74">&#39;\]&#39;</span>], [<span style="color:#e6db74">&#39;$$&#39;</span>, <span style="color:#e6db74">&#39;$$&#39;</span>]]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">inline</span> = [[<span style="color:#e6db74">&#39;\(&#39;</span>, <span style="color:#e6db74">&#39;\)&#39;</span>]]</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Mathjax support is implemented via partials. Please find partial in <code>/layouts/partials/mathjax.html</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ if or (.Site.Params.global_mathjax) (.Params.mathjax) }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MathJax-script&#34;</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>{{ $mathjaxa := resources.Get &#34;js/mathjax/mathjax-assistant.js&#34;}}
+</span></span><span style="display:flex;"><span>{{ $mathjaxscript := slice $mathjaxa | resources.Concat &#34;js/mathjaxs.js&#34; | minify | fingerprint -}}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MathJax-script&#34;</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $mathjaxscript.Permalink }}&#34;</span> <span style="color:#960050;background-color:#1e0010">{{</span> <span style="color:#a6e22e">printf</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">%q&#34;</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">mathjaxscript</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Data</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Integrity</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">safeHTMLAttr</span> <span style="color:#960050;background-color:#1e0010">}}</span> <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Finally, Javacript. Mathjax has two JS.</p>
+<ul>
+<li><code>mathjax@3/es5/tex-chtml.js</code> (This is the main library downloaded from <a href="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">jsDelivr</a>)</li>
+<li><code>/assets/js/mathjax/mathjax-assistant.js</code> (You may extend this according to your liking)</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">MathJax</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tex</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">displayMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;\\[&#39;</span>, <span style="color:#e6db74">&#39;\\]&#39;</span>], [<span style="color:#e6db74">&#39;$$&#39;</span>, <span style="color:#e6db74">&#39;$$&#39;</span>]],
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">inlineMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;\\(&#39;</span>, <span style="color:#e6db74">&#39;\\)&#39;</span>]]
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// processEscapes: true,
+</span></span></span><span style="display:flex;"><span>      <span style="color:#75715e">// processEnvironments: true,
+</span></span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// options: {
+</span></span></span><span style="display:flex;"><span>  <span style="color:#75715e">//     skipHtmlTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],
+</span></span></span><span style="display:flex;"><span>  <span style="color:#75715e">//     enableMenu: false
+</span></span></span><span style="display:flex;"><span>  <span style="color:#75715e">// }
+</span></span></span><span style="display:flex;"><span>};</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>You can invoke partial in following ways:</p>
+<ol>
+<li>If you want global Mathjax support (for technical blog): set <code>global_mathjax</code> to true in hugo.toml</li>
+<li>If you want mathjax support in individual articles : add <code>mathjax : true</code> to Frontmatter</li>
+</ol>
+<h3 id="in-action">\(LaTeX\) in action<a href="#in-action" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>This is an inline \(a^*=x-b^*\) equation.</p>
+<p>These are block equations:</p>
+\[a^*=x-b^*\]\[ a^*=x-b^* \]\[
+a^*=x-b^*
+\]<p>These are block equations using alternate delimiters:</p>
+$$a^*=x-b^*$$$$ a^*=x-b^* $$$$
+a^*=x-b^*
+$$\[
+\begin{aligned}
+KL(\hat{y} || y) &= \sum_{c=1}^{M}\hat{y}_c \log{\frac{\hat{y}_c}{y_c}} \\
+JS(\hat{y} || y) &= \frac{1}{2}(KL(y||\frac{y+\hat{y}}{2}) + KL(\hat{y}||\frac{y+\hat{y}}{2}))
+\end{aligned}
+\]$$C_p[\ce{H2O(l)}] = \pu{75.3 J // mol K}$$$$
+x = {-b \pm \sqrt{b^2-4ac} \over 2a}
+$$$$
+f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz
+$$$$
+\int_D ({\nabla\cdot} F)dV=\int_{\partial D} F\cdot ndS
+$$$$
+\vec{\nabla} \times \vec{F} =
+            \left( \frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z} \right) \mathbf{i}
+          + \left( \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x} \right) \mathbf{j}
+          + \left( \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} \right) \mathbf{k}
+$$$$
+\sigma = \sqrt{ \frac{1}{N} \sum_{i=1}^N (x_i -\mu)^2}
+$$$$
+(\nabla_X Y)^k = X^i (\nabla_i Y)^k =
+           X^i \left( \frac{\partial Y^k}{\partial x^i} + \Gamma_{im}^k Y^m \right)
+$$<p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+</p>
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$<p>\begin{equation}
+S (ω)=1.466, H_s<sup>2 ,  \frac{ω_0</sup>5}{ω<sup>6 }  , e</sup>[-3^ { ω/(ω_0  )]^2}
+\end{equation}</p>
+$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Tue, 15 Aug 2023 15:36:33 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>Integer lobortis vulputate mauris quis maximus. Vestibulum ac eros porttitor, auctor sem sed, tincidunt nulla. In sit amet tincidunt ex.</description><content type="text/html" mode="escaped"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Footnote:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>Text that links to footnote has [^1]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Footnote text (at the bottom of the article):
+</span></span><span style="display:flex;"><span>[^1]: From : [<span style="color:#f92672">https://www.markdownguide.org/extended-syntax/#footnotes</span>](<span style="color:#a6e22e">https://www.markdownguide.org/extended-syntax/#footnotes</span>)
+</span></span></code></pre></div><p>Text that links to footnote has <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>Inline styles:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Inline styles</th>
+          <th>When rendered</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>**strong**</code></td>
+          <td><strong>strong</strong></td>
+      </tr>
+      <tr>
+          <td><code>__strong__</code></td>
+          <td><strong>strong</strong></td>
+      </tr>
+      <tr>
+          <td><code>*emphasis*</code></td>
+          <td><em>emphasis</em></td>
+      </tr>
+      <tr>
+          <td><code>_emphasis_</code></td>
+          <td><em>emphasis</em></td>
+      </tr>
+      <tr>
+          <td><code>***strong &amp; emphasis***</code></td>
+          <td><em><strong>strong and emphasis</strong></em></td>
+      </tr>
+      <tr>
+          <td><code>`code`</code></td>
+          <td><code>code</code></td>
+      </tr>
+      <tr>
+          <td><code>~~strikethrough~~</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+          <td><del>strikethrough</del></td>
+      </tr>
+      <tr>
+          <td><code>++inserted text++</code><sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+          <td><ins>inserted text</ins></td>
+      </tr>
+      <tr>
+          <td><code>==marked text==</code><sup id="fnref2:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+          <td><mark>marked text</mark></td>
+      </tr>
+      <tr>
+          <td><code>subscript~2~text</code><sup id="fnref3:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+          <td>subscript<sub>2</sub>text</td>
+      </tr>
+      <tr>
+          <td><code>superscript^6^text</code><sup id="fnref4:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+          <td>superscript<sup>6</sup>text</td>
+      </tr>
+      <tr>
+          <td><code>:joy:</code><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></td>
+          <td>&#x1f602;</td>
+      </tr>
+      <tr>
+          <td><code>&lt;cite&gt;HTML tag&lt;/cite&gt;</code><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></td>
+          <td><cite>HTML tag</cite></td>
+      </tr>
+      <tr>
+          <td><code>\(LaTeX\)</code><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></td>
+          <td>\(LaTeX\)</td>
+      </tr>
+      <tr>
+          <td><code>[Link](https://example.com)</code></td>
+          <td><a href="https://example.com">Link</a></td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>To use HTML tags in hugo, add following to <code>hugo.toml</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>]
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">renderer</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">unsafe</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div></blockquote>
+<blockquote>
+<p>To use deleted text, inserted text, mark text, subscript, and superscript elements in Markdown, add following to <code>hugo.toml</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>]
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">renderer</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">unsafe</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">strikethrough</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>      [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">extras</span>]
+</span></span><span style="display:flex;"><span>        [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">extras</span>.<span style="color:#a6e22e">insert</span>]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">extras</span>.<span style="color:#a6e22e">delete</span>]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">extras</span>.<span style="color:#a6e22e">mark</span>]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">extras</span>.<span style="color:#a6e22e">subscript</span>]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">extensions</span>.<span style="color:#a6e22e">extras</span>.<span style="color:#a6e22e">superscript</span>]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div></blockquote>
+<p>Headings:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># Heading 1
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Heading 2 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">### Heading 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#### Heading 4 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">##### Heading 5 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">###### Heading 6 
+</span></span></span></code></pre></div><h1 id="heading-1">Heading 1<a href="#heading-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h1>
+<h2 id="heading-2">Heading 2<a href="#heading-2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<h3 id="heading-3">Heading 3<a href="#heading-3" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<h4 id="heading-4">Heading 4<a href="#heading-4" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h4>
+<h5 id="heading-5">Heading 5<a href="#heading-5" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h5>
+<h6 id="heading-6">Heading 6<a href="#heading-6" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h6>
+<p>Table of Contents returns an unordered list of level 2 and level 3 headings by default. You can adjust this in your site configuration. <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">tableOfContents</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">endLevel</span> = <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ordered</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">startLevel</span> = <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>Blockquote:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">First line
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">Another line (To keep the quote together, blank lines inside the quote must contain the &gt; character.)
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">&gt;
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">&gt; &gt; Nested line
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">&gt;
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">&gt; Last line (The space between the &gt; and the quoted text is optional.)
+</span></span></span></code></pre></div><blockquote>
+<p>First line
+Another line (To keep the quote together, blank lines inside the quote must contain the &gt; character.)</p>
+<blockquote>
+<p>Nested line</p>
+</blockquote>
+<p>Last line (The space between the &gt; and the quoted text is optional.)</p>
+</blockquote>
+<p>Table:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>| Left-Aligned  | Center Aligned  | Right Aligned |
+</span></span><span style="display:flex;"><span>| :------------ | :-------------: | ------------: |
+</span></span><span style="display:flex;"><span>| col 3 is      | some wordy text |         $1600 |
+</span></span><span style="display:flex;"><span>| col 2 is      |    centered     |           $12 |
+</span></span><span style="display:flex;"><span>| zebra stripes |    are neat     |            $1 |
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Left-Aligned</th>
+          <th style="text-align: center">Center Aligned</th>
+          <th style="text-align: right">Right Aligned</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">col 3 is</td>
+          <td style="text-align: center">some wordy text</td>
+          <td style="text-align: right">$1600</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">col 2 is</td>
+          <td style="text-align: center">centered</td>
+          <td style="text-align: right">$12</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">zebra stripes</td>
+          <td style="text-align: center">are neat</td>
+          <td style="text-align: right">$1</td>
+      </tr>
+  </tbody>
+</table>
+<p>Lists:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#66d9ef">*</span> Unordered list item 1.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">*</span> Unordered list item 2.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> ordered list item 1.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> ordered list item 2.
+</span></span><span style="display:flex;"><span>   + sub-unordered list item 1.
+</span></span><span style="display:flex;"><span>   + sub-unordered list item 2.
+</span></span><span style="display:flex;"><span>     + [x] something is DONE.
+</span></span><span style="display:flex;"><span>     + [ ] something is NOT DONE.
+</span></span></code></pre></div><ul>
+<li>Unordered list item 1.</li>
+<li>Unordered list item 2.</li>
+</ul>
+<ol>
+<li>ordered list item 1.</li>
+<li>ordered list item 2.
+<ul>
+<li>sub-unordered list item 1.</li>
+<li>sub-unordered list item 2.
+<ul>
+<li><input checked="" disabled="" type="checkbox"> something is DONE.</li>
+<li><input disabled="" type="checkbox"> something is NOT DONE.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>Syntax Highlighting without backticks:</p>
+<pre><code>dt = {5:4, 1:6, 6:3}
+sorted_dt = {key: value for key, value in sorted(dt.items(), key=lambda item: item[1])}
+print(sorted_dt)
+</code></pre>
+<p>Syntax Highlighting with backticks:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num1</span>, <span style="color:#a6e22e">num2</span>, <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">num1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">prompt</span>(<span style="color:#e6db74">&#34;Enter first number&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">num2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">prompt</span>(<span style="color:#e6db74">&#34;Enter second number&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">num1</span>) <span style="color:#f92672">+</span> parseInt(<span style="color:#a6e22e">num2</span>) <span style="color:#75715e">// &#34;+&#34; means &#34;add&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Sum = &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">sum</span>)  <span style="color:#75715e">// &#34;+&#34; means combine into a string
+</span></span></span></code></pre></div><p>Syntax Highlighting with <a href="https://gohugo.io/content-management/syntax-highlighting/"><code>highlight</code> shortcode</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{<span style="color:#75715e">/*&lt; highlight css &#34;linenos=table,linenostart=5&#34; &gt;*/</span>}}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* LineHighlight */</span> .<span style="color:#a6e22e">chroma</span> .<span style="color:#a6e22e">hl</span> { <span style="color:#a6e22e">display</span>: <span style="color:#a6e22e">block</span>; <span style="color:#a6e22e">width</span>: <span style="color:#ae81ff">100</span><span style="color:#f92672">%</span>;<span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span>: <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">55595</span><span style="color:#a6e22e">ebb</span> }
+</span></span><span style="display:flex;"><span>{{<span style="color:#75715e">/*&lt; /highlight &gt;*/</span>}}
+</span></span></code></pre></div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#75715e">/* LineHighlight */</span> .<span style="color:#a6e22e">chroma</span> .<span style="color:#a6e22e">hl</span> { <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>; <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;<span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#55595e</span>bb }</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Change Highlight color in <code>_syntax.scss</code> Line 5</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;display:grid;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">html</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#960050;background-color:#1e0010">$</span>light-grey;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">1.6</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">letter-spacing</span>: <span style="color:#ae81ff">.06</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">scroll-behavior</span>: <span style="color:#66d9ef">smooth</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">body</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">button</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">input</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">select</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">textarea</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#66d9ef">text</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-family</span>: <span style="color:#960050;background-color:#1e0010">$</span>fonts;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pre</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">code</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pre</span> <span style="color:#f92672">tt</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-family</span>: <span style="color:#960050;background-color:#1e0010">$</span>code-fonts;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#f92672">pre</span> {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">.7</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">1.1</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">.9</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">1.5</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">letter-spacing</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">pre</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#eee</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#66d9ef">midnightblue</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#66d9ef">-webkit-</span>overflow-scrolling: touch;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">code</span> <span style="color:#960050;background-color:#1e0010">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>: <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#66d9ef">midnightblue</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">code</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#eee</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background</span>: <span style="color:#960050;background-color:#1e0010">$</span>highlight-grey;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">word-wrap</span>: <span style="color:#66d9ef">break-word</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">letter-spacing</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">blockquote</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-left</span>: <span style="color:#ae81ff">.25</span><span style="color:#66d9ef">em</span> <span style="color:#66d9ef">solid</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-style</span>: <span style="color:#66d9ef">italic</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">cite</span> <span style="color:#960050;background-color:#1e0010">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">bold</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-style</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&amp;::before</span> <span style="color:#960050;background-color:#1e0010">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;—— &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Images can also be implemented via figure shortcode. It extends in-built hugo shortcode to convert images to webp format.<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>
+<img src="https://picsum.photos/600/400/?random" alt="img"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{ {&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/928-600x400.jpg&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;webp&#34;</span> <span style="color:#a6e22e">loading</span>=<span style="color:#e6db74">&#34;lazy&#34;</span> &gt;} }
+</span></span></code></pre></div>
+<figure class="webp" ><picture>
+          <source srcset="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" type="image/webp">
+          <source srcset="/hermit-V2/images/928-600x400_hu_fa0438000595b6b0.jpg" type="image/jpeg">
+          <img src="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp"alt="A WEBP converted image" width="600"  height="400"  loading="lazy" />
+        </picture><figcaption><p>A WEBP converted image</p></figcaption></figure>
+<p>Mermaid</p>
+<pre class="mermaid">  flowchart TD
+    A["Cron Job Starts at 9 AM"] --> B["Loop Through Each Newspaper"]
+    B --> C["Get Newspaper URL and Upload Image"]
+    C --> D["Convert Image to Base64 & Calculate Hash"]
+    D --> E["Analyze Image Using LLM"]
+    E -- If Success --> F["Save Newspaper Data"]
+    F --> G["Perform Google Search for Headlines"] & I["Check If Newspaper Already Exists"]
+    G --> H["Store Headline Search Results in Database"]
+    I -- If Exists --> J["Compare Hash and Update If Needed"]
+    I -- If New --> K["Create New Newspaper Entry"]
+    J --> L["Update Existing Entry in Database"]
+    K --> M["Save New Entry to Database"]
+    L --> N["Save or Update Search Results"]
+    M --> N
+    N --> O["End of Newspaper Process"]
+    O -- If All Newspapers Processed --> P["Cron Job Complete"]
+</pre><div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>From : <a href="https://www.markdownguide.org/extended-syntax/#footnotes">https://www.markdownguide.org/extended-syntax/#footnotes</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>To use mentioned features. <a href="https://gohugo.io/getting-started/configuration-markup/#extras">Hugo Docs</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref3:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref4:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>To enable emoji support add <code>enableEmoji = true</code> in hugo.toml. <a href="https://gohugo.io/quick-reference/emojis/">Hugo Docs</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>Hugo&rsquo;s default renderer (Goldmark) cannot render HTML tags by default.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>LaTeX is supported by Mathjax, explained <a href="/hermit-V2/en/posts/mathjax-support/">in this article</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>Customize Table of Contents. <a href="https://gohugo.io/methods/page/tableofcontents/">Hugo Docs</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/">the-figure-shortcode</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</guid><description>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="this-article-explains-how-to-use-scroll-up">This article explains how to use Scroll Up<a href="#this-article-explains-how-to-use-scroll-up" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.</p>
+<h3 id="step-1">Step 1<a href="#step-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>Set <code>scrollToTop</code> to true in <code>hugo.toml</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">scrollToTop</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><h3 id="step-2">Step 2<a href="#step-2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>Enable <code>scrolltotop</code> to <code>true</code> in article front matter.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">scrolltotop </span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><blockquote>
+<p>Some pages/articles do not require scroll up button (if there is less content)</p>
+</blockquote>
+<h2 id="anti-js-crowd">Anti-JS crowd<a href="#anti-js-crowd" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>The button will work as intended if JS is disabled, but it will not hide/show on scroll position. So, if you have decided to disable JS on client, you will be struck with an floating icon.</p>
+<h2 id="icon">Icon<a href="#icon" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>Icon is located in <code>layouts/partials/svg.html</code> under scrollup.
+Icon svg code is as follows:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">fill</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#3B3E48&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;64px&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;64px&#34;</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-2.4 -2.4 28.80 28.80&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;up-circle&#34;</span> <span style="color:#a6e22e">data-name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Flat Color&#34;</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon flat-color&#34;</span> <span style="color:#a6e22e">stroke</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#3B3E48&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.00024000000000000003&#34;</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_bgCarrier&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_tracerCarrier&#34;</span> <span style="color:#a6e22e">stroke-linecap</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;round&#34;</span> <span style="color:#a6e22e">stroke-linejoin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;round&#34;</span> <span style="color:#a6e22e">stroke</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#CCCCCC&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.9600000000000002&#34;</span>&gt;&lt;<span style="color:#f92672">circle</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span> <span style="color:#a6e22e">cx</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">cy</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">r</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #3B3E48;&#34;</span>&gt;&lt;/<span style="color:#f92672">circle</span>&gt;&lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #018574;&#34;</span>&gt;&lt;/<span style="color:#f92672">path</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_iconCarrier&#34;</span>&gt;&lt;<span style="color:#f92672">circle</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span> <span style="color:#a6e22e">cx</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">cy</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">r</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #3B3E48;&#34;</span>&gt;&lt;/<span style="color:#f92672">circle</span>&gt;&lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #018574;&#34;</span>&gt;&lt;/<span style="color:#f92672">path</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;/<span style="color:#f92672">svg</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="html">HTML<a href="#html" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>This is implemented as a partial located in <code>layouts/partials/scroll-to-top.html</code>.
+Partial is injected in <code>layouts/_default/baseof.html</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{ <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">and</span> (.<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">scrollToTop</span>) (.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">scrolltotop</span>) }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span>=<span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;scroll-up&#34;</span>&gt;{{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;svg.html&#34;</span> (<span style="color:#a6e22e">dict</span> <span style="color:#e6db74">&#34;context&#34;</span> . <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#e6db74">&#34;scrollup&#34;</span>) }}&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">noscript</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span>=<span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;scroll-up show&#34;</span>&gt;{{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;svg.html&#34;</span> (<span style="color:#a6e22e">dict</span> <span style="color:#e6db74">&#34;context&#34;</span> . <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#e6db74">&#34;scrollup&#34;</span>) }}&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">noscript</span>&gt;
+</span></span><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">scrollwatcher</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">resources</span>.<span style="color:#a6e22e">Get</span> <span style="color:#e6db74">&#34;js/scrollwatcher.js&#34;</span> <span style="color:#f92672">-</span>}}
+</span></span><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">script</span> <span style="color:#f92672">:=</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">scrollwatcher</span> | <span style="color:#a6e22e">minify</span> | <span style="color:#a6e22e">fingerprint</span> <span style="color:#f92672">-</span>}}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;{{ $script.Permalink }}&#34;</span> {{ <span style="color:#a6e22e">printf</span> <span style="color:#e6db74">&#34;integrity=%q&#34;</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">Data</span>.<span style="color:#a6e22e">Integrity</span> | <span style="color:#a6e22e">safeHTMLAttr</span> }} <span style="color:#a6e22e">crossorigin</span>=<span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">script</span>&gt;
+</span></span><span style="display:flex;"><span>{{ <span style="color:#a6e22e">end</span> }}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="css">CSS<a href="#css" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>Located in <code>assets/scss/_scrolltotop.scss</code>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#a6e22e">.scroll-up</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> fixed;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">bottom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">right</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">z-index</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transition</span><span style="color:#f92672">:</span> all <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.5</span><span style="color:#66d9ef">s</span> ease;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.hide</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transform</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">translateY</span>(<span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.show</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transform</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">translateY</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>  }</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="javascript">JavaScript<a href="#javascript" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>Located in <code>assets/js/scrollwatcher.js</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scroll</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;.scroll-up&#34;</span>),<span style="color:#a6e22e">rootElement</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">documentElement</span>;<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleScroll</span>(){<span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">scrollTop</span><span style="color:#f92672">/</span>(<span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">scrollHeight</span><span style="color:#f92672">-</span><span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">clientHeight</span>)<span style="color:#f92672">&gt;</span>.<span style="color:#ae81ff">4</span><span style="color:#f92672">?</span>(<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;hide&#34;</span>),<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;show&#34;</span>))<span style="color:#f92672">:</span>(<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;hide&#34;</span>),<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;show&#34;</span>))}document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>,<span style="color:#a6e22e">handleScroll</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+]]></content></item></channel></rss>
