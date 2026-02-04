@@ -25,80 +25,118 @@ jobs:
           git config user.name "1bl4z3r"
           git config user.email "34515568+1bl4z3r@users.noreply.github.com"
       
-      - name: Setup branches and directories
+      - name: Fetch all branches
         run: |
-          # Ensure we have the latest from both branches
           git fetch origin staging
           git fetch origin main
-          
-          # Create temp directory to store files
-          mkdir -p /tmp/staging_files
       
-      - name: Checkout staging and capture commit message
+      - name: Capture commit message from staging
         run: |
           # Switch to staging branch
-          git checkout staging || git checkout -b staging origin/staging
+          git checkout staging
           git pull origin staging
           
-          # Get the latest commit message from staging branch
-          COMMIT_MESSAGE=$(git log -1 --pretty=%B)
-          echo "COMMIT_MESSAGE=$COMMIT_MESSAGE" >> $GITHUB_ENV
+          # Capture the full commit message using heredoc syntax for multiline support
+          echo 'COMMIT_MESSAGE<<EOF' >> $GITHUB_ENV
+          git log -1 --pretty=%B >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+      
+      - name: Generate list of files to sync from staging
+        run: |
+          # Find all files in staging, excluding ignored patterns
+          # This list represents what should exist in main after sync
+          git ls-files | grep -v \
+            -e '^resources/' \
+            -e '^\.git/' \
+            -e '^\.github/' \
+            -e '^static/' \
+            -e '^content/' \
+            -e '^public/' \
+            -e '^assets/custom_css/' \
+            -e '^assets/custom_js/' \
+            -e '^assets/images/' \
+            -e '^i18n/' \
+            -e '^hugo\.toml$' \
+            -e '/928-600x400\.jpg$' \
+            -e '/images/favicon\.svg$' \
+            -e '^hugo_build\.lock$' \
+            -e '/hermit\.webp$' \
+            -e '^\.gitignore$' \
+            > /tmp/files_to_sync.txt || true
           
-          # Generate file list from staging
-          find . -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|assets/images\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > /tmp/staging_files/staging_files.txt
+          # Ensure hugo.toml.example is included if it exists
+          if git ls-files | grep -q '^hugo\.toml\.example$'; then
+            echo "hugo.toml.example" >> /tmp/files_to_sync.txt
+          fi
           
           echo "Files to sync from staging to main:"
-          cat /tmp/staging_files/staging_files.txt
+          cat /tmp/files_to_sync.txt
       
-      - name: Checkout main and generate file list
+      - name: Sync main branch with staging (selective)
         run: |
           # Switch to main branch
-          git checkout main || git checkout -b main origin/main
+          git checkout main
           git pull origin main
           
-          # Generate file list from main
-          find . -type f | grep -v 'resources\|git\|static\|content\|public\|hugo.toml$\|assets/custom\|assets/images\|928-600x400.jpg\|images/favicon.svg\|hugo_build.lock\|i18n\|hermit.webp\|gitignore' > /tmp/staging_files/main_files.txt
-      
-      - name: Sync changes to main branch
-        run: |
-          # Get lists of files
-          STAGING_FILES=$(cat /tmp/staging_files/staging_files.txt)
-          MAIN_FILES=$(cat /tmp/staging_files/main_files.txt)
+          # Step 1: Remove all non-ignored files from main
+          # This handles deletions and moves (old locations get cleaned up)
+          echo "Removing existing non-ignored files from main..."
+          git ls-files | grep -v \
+            -e '^resources/' \
+            -e '^\.git/' \
+            -e '^\.github/' \
+            -e '^static/' \
+            -e '^content/' \
+            -e '^public/' \
+            -e '^assets/custom_css/' \
+            -e '^assets/custom_js/' \
+            -e '^assets/images/' \
+            -e '^i18n/' \
+            -e '^hugo\.toml$' \
+            -e '/928-600x400\.jpg$' \
+            -e '/images/favicon\.svg$' \
+            -e '^hugo_build\.lock$' \
+            -e '/hermit\.webp$' \
+            -e '^\.gitignore$' \
+            | xargs -r git rm -f --quiet || true
           
-          # 1 & 2. Copy/create files from staging that should be synced
-          for file in $STAGING_FILES; do
-            # Create directory if it doesn't exist
-            mkdir -p $(dirname "$file")
-            
-            # Copy the file from staging branch
-            git checkout staging -- "$file"
-            echo "Copied/updated: $file"
-          done
-          
-          # 3. Delete files that exist in main but not in staging
-          for file in $MAIN_FILES; do
-            if ! grep -q "^$file$" /tmp/staging_files/staging_files.txt; then
-              git rm -f "$file" || echo "Could not remove $file"
-              echo "Deleted: $file"
+          # Step 2: Copy all files from staging that should be synced
+          echo "Copying files from staging..."
+          while IFS= read -r file; do
+            if [ -n "$file" ]; then
+              # Create directory if it doesn't exist
+              mkdir -p "$(dirname "$file")"
+              
+              # Copy the file from staging branch
+              git checkout staging -- "$file" 2>/dev/null || echo "Warning: Could not checkout $file"
             fi
-          done
+          done < /tmp/files_to_sync.txt
           
-          # Commit changes if any
-          if git status --porcelain | grep .; then
-            git add --all
-            git commit -m "${{ env.COMMIT_MESSAGE || 'Sync changes from staging to main' }}"
-            
-            # Push changes to main
-            git push origin main
-            echo "Changes synced from staging to main"
+          # Stage all changes
+          git add -A
+          
+          echo "Sync complete. Summary of changes:"
+          git status --short
+      
+      - name: Commit and push changes
+        run: |
+          # Check if there are any changes to commit
+          if git diff --cached --quiet; then
+            echo "No changes to sync - main already matches staging"
           else
-            echo "No changes to sync"
+            # Commit with the original message from staging
+            git commit -m "$COMMIT_MESSAGE" || git commit -m "Sync changes from staging to main"
+            
+            # Push the changes
+            git push origin main
+            echo "Changes successfully synced from staging to main"
           fi
       
       - name: Clean up
         if: always()
         run: |
-          rm -rf /tmp/staging_files
+          rm -f /tmp/files_to_sync.txt
+  
   analyze:
     name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
