@@ -16,7 +16,6 @@
 {{ end }}
 
 // Import additional feature-specific stylesheets
-@import "scrolltotop.scss";
 @import "socialshare.scss";
 
 // Conditionally import gallery styles and set thumbnail size if gallery feature is enabled
@@ -44,22 +43,13 @@ $inserted-text-underline: {{.}};
 {{ end -}}
 
 // ==========================================
-// SCROLL-TO-TOP BUTTON STYLING
+// SCROLL TO TOP BUTTON
 // ==========================================
-// Define color properties for the circular scroll-to-top button components
-.scroll-up {
-  .scroll {
-    #st-ring {
-      stroke: $scrolltotop-ring;
-    }
-    #st-circle {
-      fill: $scrolltotop-circle;
-    }
-    #st-arrow {
-      fill: $scrolltotop-arrow;
-    }
-  }
-}
+// All styles related to scroll to top button
+{{- if and (.Site.Params.scrollToTop) }}
+@import "scrolltotop.scss";
+{{ end -}}
+
 
 // ==========================================
 // TEXT SELECTION STYLING
