@@ -4,19 +4,23 @@
     z-index: 1;
 
     .scroll {
-        #st-ring {
-            stroke: $scrolltotop-ring;
-        }
+        transition: transform .2s;
 
-        #st-circle {
-            fill: $scrolltotop-circle;
+        #st-ring {
+            fill: $scrolltotop-ring;
         }
 
         #st-arrow {
             fill: $scrolltotop-arrow;
         }
+
+        &:hover,
+        &:active {
+            transform: scale(1.15);
+        }
     }
 }
+
 // Support for Experimental animation-timeline (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline)
 @supports (animation-timeline: scroll()) {
     .scroll-up {
