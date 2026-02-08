@@ -2,6 +2,20 @@
     bottom: 10%;
     right: 2%;
     z-index: 1;
+
+    .scroll {
+        #st-ring {
+            stroke: $scrolltotop-ring;
+        }
+
+        #st-circle {
+            fill: $scrolltotop-circle;
+        }
+
+        #st-arrow {
+            fill: $scrolltotop-arrow;
+        }
+    }
 }
 // Support for Experimental animation-timeline (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline)
 @supports (animation-timeline: scroll()) {
@@ -43,7 +57,7 @@
     .scroll-up {
         position: fixed;
         opacity: 0;
-        transition: all 0.5s ease;
+        transition: all 1s ease;
         transform: translateY(20px);
     }
 
