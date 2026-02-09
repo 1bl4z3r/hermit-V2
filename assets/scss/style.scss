@@ -163,7 +163,7 @@ pre {
 
 // Style inline code elements with rounded corners and spacing
 code {
-  color: hsl(0, 1%, 67%);
+  color: $code-color;
   background: $code-background;
   border-radius: 3px;
   padding: 0 3px;
