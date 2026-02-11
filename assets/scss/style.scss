@@ -858,7 +858,7 @@ hr.post-end {
     svg {
       display: inline-block;
       width: 14px;
-      height: 14px;
+      height: auto;
       vertical-align: baseline;
       visibility: hidden;
     }
@@ -1165,6 +1165,7 @@ a.footnote-ref {
 
 // Extra Small Mobile Devices - Phones in portrait mode (up to 520px)
 @media (max-width: 520px) {
+
   .content figure.left,
   .content figure.right {
     float: unset;
@@ -1183,6 +1184,7 @@ a.footnote-ref {
 
 // Small Mobile Devices - Phones and small tablets (up to 760px)
 @media (max-width: 760px) {
+
   .hide-in-mobile,
   .site-nav.hide-in-mobile {
     display: none;
@@ -1207,7 +1209,7 @@ a.footnote-ref {
     .banner-404 {
       margin: 0;
     }
-  } 
+  }
 
   #home-subtitle {
     font-size: .7rem;
@@ -1218,11 +1220,16 @@ a.footnote-ref {
     width: $width-mobile;
     font-size: $font-size-mobile;
   }
-  
+
   #home-subtitle {
     padding: 0;
     // Adjust minimum height for mobile line count expectations
     min-height: calc(#{$line-height} * #{$max-lines-mobile} * 1em);
+  }
+
+  .content a.anchor {
+    float: inherit;
+    margin-left: 10px;
   }
 }
 
