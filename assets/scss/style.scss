@@ -582,7 +582,9 @@ p.img-404 {
 // Homepage footer content
 #home-footer {
   text-align: center;
-  font-size: .6em;
+  font-size: clamp(0.4em, calc(0.3em + 0.5vw), 0.6em);
+  white-space: nowrap;
+  overflow: hidden;
   line-height: normal;
   @include dimmed;
 
