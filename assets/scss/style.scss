@@ -1096,20 +1096,23 @@ a.footnote-ref {
 
 #home-subtitle {
   margin: 0;
-  line-height: 1.4; 
+  line-height: 1.4;
   font-size: .7em;
   font-style: italic;
   opacity: .9;
-  
-  display: inline-block; 
-  text-align: center; 
+  display: inline-block;               // make container block-level for predictable centering
+  text-align: center;
   position: relative;
-  max-width: 100%;
-  text-wrap: balance;
-  white-space: normal;
-  word-wrap: break-word;
-  hyphens: none;
+  max-width: 85ch;              // keep readable measure similar to desktop
+  margin-left: auto;
+  margin-right: auto;
+
+  /* reliable wrapping rules */
+  white-space: pre-wrap;        // preserve multiple spaces but allow wrapping
+  overflow-wrap: anywhere;      // breaks long words if needed
+  hyphens: auto;
 }
+
 
 // 2. ANIMATION LOGIC (Conditional)
 // Only applied if homeSubtitlePrinter is set to true in config
@@ -1119,10 +1122,14 @@ a.footnote-ref {
   .char {
     opacity: 0;
     transition: none;
-    position: relative; // REQUIRED for anchoring
-    white-space: pre;   // Preserves spaces properly
+    position: relative;    // required for cursor pseudo-element anchoring
+
+    /* Allow wrapping while preserving multiple spaces */
+    white-space: pre-wrap;
+    display: inline;       // let chars flow inline and wrap naturally
   }
 }
+
 
 // STATE 1: READY (Waiting to start)
 #home-subtitle.ready .char:first-child {
@@ -1219,12 +1226,25 @@ a.footnote-ref {
   #typewriter-container {
     width: $width-mobile;
     font-size: $font-size-mobile;
+        width: 90vw;
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
   }
 
+  /* Remove artificial height limits */
   #home-subtitle {
-    padding: 0;
-    // Adjust minimum height for mobile line count expectations
-    min-height: calc(#{$line-height} * #{$max-lines-mobile} * 1em);
+    min-height: auto !important;
+    width: 100%;
+    max-width: 100%;
+        white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+
+  /* CRITICAL: stop per-character whitespace preservation */
+  #home-subtitle .char {
+    white-space: normal;
   }
 
   .content a.anchor {
