@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Shortcode on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/shortcode/</link><description>Recent content in Shortcode on Hermit - V2</description><generator>Hugo -- 0.155.3</generator><language>en-US</language><lastBuildDate>Sat, 10 May 2025 10:00:00 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/shortcode/index.xml" rel="self" type="application/rss+xml"/><item><title>Image Gallery Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</link><pubDate>Sat, 10 May 2025 10:00:00 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</guid><description>Learn how to use the image gallery shortcode to create responsive galleries with thumbnails, captions, and a JavaScript-powered lightbox.</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>gallery</code> shortcode allows you to easily create beautiful, responsive image galleries on your Hugo site. It takes a list of image sources (local paths or remote URLs), generates thumbnails for local images, and wraps them in links that open a larger version in a clean, vanilla JavaScript lightbox.</p>
 <h2 id="features">Features<a href="#features" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -29,7 +29,7 @@
 <li><strong>Vanilla JS &amp; SCSS</strong>: Built with no external libraries for lean performance.</li>
 </ul>
 <h2 id="how-to-use">How to Use<a href="#how-to-use" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -40,13 +40,13 @@
 </span></span><span style="display:flex;"><span>/static-path/image3.webp
 </span></span><span style="display:flex;"><span>{{&lt; /gallery &gt;}}
 </span></span></code></pre></div><h2 id="configuration">Configuration<a href="#configuration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>You can configure the gallery&rsquo;s behavior and appearance through your <code>hugo.toml</code> file and by customizing SCSS variables.</p>
 <h3 id="enabling-the-gallery">Enabling the Gallery<a href="#enabling-the-gallery" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -54,7 +54,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">gallery</span>]
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
 </span></span></code></pre></div><h3 id="customizing-thumbnail-size">Customizing Thumbnail Size<a href="#customizing-thumbnail-size" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -63,7 +63,7 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">thumbnail</span> = <span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#75715e"># Default is 300, meaning 300px</span>
 </span></span></code></pre></div><h3 id="styling-with-scss-variables">Styling with SCSS Variables<a href="#styling-with-scss-variables" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -81,7 +81,7 @@
 </span></span></span><span style="display:flex;"><span>$lightbox-nav-background-color<span style="color:#f92672">:</span> <span style="color:#a6e22e">rgba</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.3</span>) <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// Semi-transparent background for nav buttons.
 </span></span></span><span style="display:flex;"><span>$lightbox-nav-background-color-hover<span style="color:#f92672">:</span> <span style="color:#a6e22e">rgba</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.6</span>) <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// Semi-transparent background for nav buttons on hover.
 </span></span></span></code></pre></div><h2 id="image-sources">Image Sources<a href="#image-sources" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -92,7 +92,7 @@
 </span></span><span style="display:flex;"><span>/static-path/image3.webp
 </span></span><span style="display:flex;"><span>{{&lt; /gallery &gt;}}
 </span></span></code></pre></div><h3 id="image-sources-1">Image Sources<a href="#image-sources-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -124,13 +124,13 @@
 </li>
 </ol>
 <h2 id="examples">Examples<a href="#examples" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Below are some examples demonstrating different ways to use the <code>gallery</code> shortcode.</p>
 <h3 id="1-gallery-with-local-images-from-assets">1. Gallery with Local Images from <code>/assets</code><a href="#1-gallery-with-local-images-from-assets" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -165,7 +165,7 @@
 <li><strong>Thumbnails</strong>: 300x300 smart-cropped versions will be generated.</li>
 </ul>
 <h3 id="2-gallery-with-local-images-from-static">2. Gallery with Local Images from <code>/static</code><a href="#2-gallery-with-local-images-from-static" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -199,7 +199,7 @@
 <li><strong>Thumbnails</strong>: 300x300 smart-cropped versions will be generated.</li>
 </ul>
 <h3 id="3-gallery-with-remote-images">3. Gallery with Remote Images<a href="#3-gallery-with-remote-images" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -240,7 +240,7 @@
 <li><strong>Thumbnails</strong>: The original remote images will be displayed, scaled and cropped by CSS to fit the 300x300 thumbnail area.</li>
 </ul>
 <h3 id="4-mixed-gallery-local-and-remote-images">4. Mixed Gallery (Local and Remote Images)<a href="#4-mixed-gallery-local-and-remote-images" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -255,7 +255,7 @@
 <li>The gallery will display thumbnails from all sources, processing local ones and styling remote ones.</li>
 </ul>
 <h2 id="important-notes">Important Notes<a href="#important-notes" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -272,7 +272,7 @@
 <li><strong>Error Handling</strong>: If a local image path is incorrect and the resource is not found, a warning will be logged during Hugo&rsquo;s build process, and that item will be skipped in the gallery.</li>
 </ul>
 <h2 id="styling-and-customization">Styling and Customization<a href="#styling-and-customization" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>

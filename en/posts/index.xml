@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Posts on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/</link><description>Recent content in Posts on Hermit - V2</description><generator>Hugo -- 0.155.3</generator><language>en-US</language><lastBuildDate>Sat, 10 May 2025 10:00:00 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Image Gallery Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</link><pubDate>Sat, 10 May 2025 10:00:00 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</guid><description>Learn how to use the image gallery shortcode to create responsive galleries with thumbnails, captions, and a JavaScript-powered lightbox.</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>gallery</code> shortcode allows you to easily create beautiful, responsive image galleries on your Hugo site. It takes a list of image sources (local paths or remote URLs), generates thumbnails for local images, and wraps them in links that open a larger version in a clean, vanilla JavaScript lightbox.</p>
 <h2 id="features">Features<a href="#features" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -29,7 +29,7 @@
 <li><strong>Vanilla JS &amp; SCSS</strong>: Built with no external libraries for lean performance.</li>
 </ul>
 <h2 id="how-to-use">How to Use<a href="#how-to-use" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -40,13 +40,13 @@
 </span></span><span style="display:flex;"><span>/static-path/image3.webp
 </span></span><span style="display:flex;"><span>{{&lt; /gallery &gt;}}
 </span></span></code></pre></div><h2 id="configuration">Configuration<a href="#configuration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>You can configure the gallery&rsquo;s behavior and appearance through your <code>hugo.toml</code> file and by customizing SCSS variables.</p>
 <h3 id="enabling-the-gallery">Enabling the Gallery<a href="#enabling-the-gallery" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -54,7 +54,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">gallery</span>]
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
 </span></span></code></pre></div><h3 id="customizing-thumbnail-size">Customizing Thumbnail Size<a href="#customizing-thumbnail-size" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -63,7 +63,7 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">thumbnail</span> = <span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#75715e"># Default is 300, meaning 300px</span>
 </span></span></code></pre></div><h3 id="styling-with-scss-variables">Styling with SCSS Variables<a href="#styling-with-scss-variables" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -81,7 +81,7 @@
 </span></span></span><span style="display:flex;"><span>$lightbox-nav-background-color<span style="color:#f92672">:</span> <span style="color:#a6e22e">rgba</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.3</span>) <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// Semi-transparent background for nav buttons.
 </span></span></span><span style="display:flex;"><span>$lightbox-nav-background-color-hover<span style="color:#f92672">:</span> <span style="color:#a6e22e">rgba</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.6</span>) <span style="color:#66d9ef">!default</span>; <span style="color:#75715e">// Semi-transparent background for nav buttons on hover.
 </span></span></span></code></pre></div><h2 id="image-sources">Image Sources<a href="#image-sources" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -92,7 +92,7 @@
 </span></span><span style="display:flex;"><span>/static-path/image3.webp
 </span></span><span style="display:flex;"><span>{{&lt; /gallery &gt;}}
 </span></span></code></pre></div><h3 id="image-sources-1">Image Sources<a href="#image-sources-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -124,13 +124,13 @@
 </li>
 </ol>
 <h2 id="examples">Examples<a href="#examples" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Below are some examples demonstrating different ways to use the <code>gallery</code> shortcode.</p>
 <h3 id="1-gallery-with-local-images-from-assets">1. Gallery with Local Images from <code>/assets</code><a href="#1-gallery-with-local-images-from-assets" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -165,7 +165,7 @@
 <li><strong>Thumbnails</strong>: 300x300 smart-cropped versions will be generated.</li>
 </ul>
 <h3 id="2-gallery-with-local-images-from-static">2. Gallery with Local Images from <code>/static</code><a href="#2-gallery-with-local-images-from-static" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -199,7 +199,7 @@
 <li><strong>Thumbnails</strong>: 300x300 smart-cropped versions will be generated.</li>
 </ul>
 <h3 id="3-gallery-with-remote-images">3. Gallery with Remote Images<a href="#3-gallery-with-remote-images" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -240,7 +240,7 @@
 <li><strong>Thumbnails</strong>: The original remote images will be displayed, scaled and cropped by CSS to fit the 300x300 thumbnail area.</li>
 </ul>
 <h3 id="4-mixed-gallery-local-and-remote-images">4. Mixed Gallery (Local and Remote Images)<a href="#4-mixed-gallery-local-and-remote-images" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -255,7 +255,7 @@
 <li>The gallery will display thumbnails from all sources, processing local ones and styling remote ones.</li>
 </ul>
 <h2 id="important-notes">Important Notes<a href="#important-notes" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -272,7 +272,7 @@
 <li><strong>Error Handling</strong>: If a local image path is incorrect and the resource is not found, a warning will be logged during Hugo&rsquo;s build process, and that item will be skipped in the gallery.</li>
 </ul>
 <h2 id="styling-and-customization">Styling and Customization<a href="#styling-and-customization" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -280,7 +280,7 @@
 <p>The JavaScript for the lightbox functionality is located in <code>assets/js/gallery.js</code>. It&rsquo;s self-contained and does not rely on any third-party libraries.</p>
 <p>This gallery shortcode provides a flexible and straightforward way to add rich image displays to your content. Experiment with different image sources and enjoy the automated thumbnails and lightbox features!</p>
 ]]></content></item><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Wed, 12 Mar 2025 20:30:30 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>The Hitchhiker&amp;#39;s Guide to Hermit - V2 Configuration</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="configuation-in-hugotoml">Configuation in <code>hugo.toml</code><a href="#configuation-in-hugotoml" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -431,7 +431,7 @@
 </li>
 </ul>
 <h2 id="configuration-in-page-frontmatter">Configuration in page Frontmatter<a href="#configuration-in-page-frontmatter" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -465,7 +465,7 @@
 <li><code>keywords</code> : Specify keywords for your article. It will be used to populate<a href="https://developers.google.com/search/docs/appearance/site-names"> Structured Data Site names schema</a></li>
 </ul>
 <h3 id="last-modified-date">Last Modified Date<a href="#last-modified-date" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -481,7 +481,7 @@
 </ul>
 <p>If <code>ShowLastmod</code> is not provided. User response defaults to false. It is equivalent to providing <code>ShowLastmod:false</code>.</p>
 <h3 id="enable-scrolltotop-button">Enable ScrolltoTop button<a href="#enable-scrolltotop-button" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -491,7 +491,7 @@
 <li>Open the Markdown content file and set <code>scrolltotop : true</code> in Page Frontmatter</li>
 </ol>
 <h3 id="support-for-guest-authors">Support for Guest Authors<a href="#support-for-guest-authors" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -522,7 +522,7 @@
 <li>If you want to add image from <code>static</code> folder, you can, <strong>but be informed that these images cannot be converted or optimized</strong>.</li>
 </ul>
 <h3 id="supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more">Supported attributes to figure shortcode (Create an Issue if you want to add more)<a href="#supported-attributes-to-figure-shortcode-create-an-issue-if-you-want-to-add-more" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -686,7 +686,7 @@
 </ul>
 <p>Here&rsquo;s some examples, please be aware that these styles only take effect when the page width is over 1300px.</p>
 <h3 id="image-located-in-static-folder-in-site-root-prepend--in-src-attribute-to-inform-that-image-is-in-static-folder">Image located in <code>static folder</code> in site root. Prepend <code>/</code> in src attribute to inform that image is in <code>static</code> folder<a href="#image-located-in-static-folder-in-site-root-prepend--in-src-attribute-to-inform-that-image-is-in-static-folder" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -695,7 +695,7 @@
 
     <figure><img src="https://1bl4z3r.github.io/hermit-V2/android-chrome-192x192.png"alt="android-chrome-192x192.png"/><figcaption><p>Static folder image (notice slash &lsquo;/&rsquo; in src attribute)</p></figcaption></figure>
 <h3 id="image-located-in-a-folder-named-images-in-static-folder-in-site-root-prepend--in-src-attribute-to-inform-that-image-is-in-static-folder">Image located in a folder named <code>images</code> in <code>static folder</code> in site root. Prepend <code>/</code> in src attribute to inform that image is in <code>static</code> folder<a href="#image-located-in-a-folder-named-images-in-static-folder-in-site-root-prepend--in-src-attribute-to-inform-that-image-is-in-static-folder" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -704,7 +704,7 @@
 
     <figure><img src="https://1bl4z3r.github.io/hermit-V2/images/397-600x400.jpg"alt="apple-touch-icon.png"/><figcaption><h4>Picsum image</h4><p>This image is located in /static/images - <a href="https://picsum.com">Picsum</a></p></figcaption></figure>
 <h3 id="figure-loaded-from-another-site-with-no-class-specification">Figure loaded from another site with no class specification.<a href="#figure-loaded-from-another-site-with-no-class-specification" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -712,7 +712,7 @@
 </span></span></code></pre></div>
 <figure><img src="https://placehold.co/1600x800"alt="image"/><figcaption><p>figure-normal (without any classes)</p></figcaption></figure>
 <h3 id="figure-loaded-from-assets-folder-in-site-root">Figure loaded from <code>assets</code> folder in site root.<a href="#figure-loaded-from-assets-folder-in-site-root" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -724,7 +724,7 @@
           <img src="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp"alt="image" width="600"  height="400" />
         </picture><figcaption><p>relative file path in assets folder</p></figcaption></figure>
 <h3 id="figure-using-class-big">Figure using class <code>big</code><a href="#figure-using-class-big" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -732,7 +732,7 @@
 </span></span></code></pre></div>
 <figure class="big" ><img src="https://placehold.co/1600x800"alt="image"/><figcaption><p>using class = big</p></figcaption></figure>
 <h3 id="figure-using-class-left">Figure using class <code>left</code><a href="#figure-using-class-left" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -742,7 +742,7 @@
 <p>In a libero varius, luctus ligula et, bibendum tortor. Sed sit amet dui malesuada, mattis justo id, ultricies enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam sollicitudin cursus feugiat. Vivamus suscipit ipsum eget lobortis sollicitudin. Fusce vehicula neque tellus. Integer eu posuere quam, id laoreet tortor. Mauris sit amet turpis urna. Donec venenatis tempor dolor, nec laoreet orci aliquet et. Sed condimentum elit eu tristique aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc luctus ipsum sit amet nisl maximus pellentesque.
 In a libero varius, luctus ligula et, bibendum tortor. Sed sit amet dui malesuada, mattis justo id, ultricies enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam sollicitudin cursus feugiat. Vivamus suscipit ipsum eget lobortis sollicitudin.</p>
 <h3 id="figure-using-class-right">Figure using class <code>right</code><a href="#figure-using-class-right" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -752,7 +752,7 @@ In a libero varius, luctus ligula et, bibendum tortor. Sed sit amet dui malesuad
 <p>Pellentesque eu consequat nunc. Vivamus eu eros ut nulla dapibus molestie in id tortor. Cras viverra ligula erat, tincidunt hendrerit diam blandit nec. Cras id urna vel dolor dictum mattis. Vestibulum congue erat ac eros molestie accumsan. Maecenas lorem nibh, maximus vel justo eget, facilisis egestas lectus. Mauris eu est ut odio blandit consequat id feugiat eros. Fusce id suscipit mi, et lacinia lectus. Mauris a arcu placerat dolor iaculis feugiat nec non mi. Ut porttitor elit tortor, eget tempus velit mollis eu. Aliquam sem nulla, dictum cursus mauris ac, semper ullamcorper leo.
 Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Aliquam tempor vehicula faucibus. Phasellus consequat aliquam odio. Morbi a ex vitae sapien porta auctor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet nulla arcu. Praesent ut tortor purus. Praesent id eros diam. Pellentesque vitae dolor at nibh ultrices accumsan eu id urna. Aliquam finibus interdum orci in varius. Pellentesque a enim condimentum, condimentum felis id, vehicula augue. Vivamus cursus commodo eros nec lacinia.</p>
 <h3 id="use-static-directory-as-assets-directory">Use static directory as assets directory<a href="#use-static-directory-as-assets-directory" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -904,120 +904,120 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
         <div class="admonition-content">A <strong>tip</strong> banner</div>
     </aside>
 ]]></content></item><item><title>Long Article</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/long-article/</link><pubDate>Fri, 22 Sep 2023 22:00:01 +0530</pubDate><author>1bl4z3r</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/long-article/</guid><description>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<a href="#lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Ac tortor vitae purus faucibus. Pretium quam vulputate dignissim suspendisse in est ante in nibh. Ipsum dolor sit amet consectetur. Proin sagittis nisl rhoncus mattis rhoncus urna neque. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Vel pharetra vel turpis nunc eget lorem dolor sed. Nulla aliquet porttitor lacus luctus. Consequat nisl vel pretium lectus quam id leo in vitae. Diam volutpat commodo sed egestas egestas fringilla phasellus. Turpis in eu mi bibendum neque egestas congue quisque egestas. In iaculis nunc sed augue lacus. Pellentesque pulvinar pellentesque habitant morbi. Egestas congue quisque egestas diam in arcu cursus. Sed tempus urna et pharetra pharetra massa massa. At lectus urna duis convallis. Dignissim sodales ut eu sem integer vitae. Sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Sagittis purus sit amet volutpat consequat mauris nunc congue. Sodales neque sodales ut etiam sit amet nisl.</p>
 <h3 id="enim-sit-amet-venenatis-urna-cursus-eget-nunc-scelerisque-viverra">Enim sit amet venenatis urna cursus eget nunc scelerisque viverra.<a href="#enim-sit-amet-venenatis-urna-cursus-eget-nunc-scelerisque-viverra" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>Eu volutpat odio facilisis mauris. Erat pellentesque adipiscing commodo elit at imperdiet. Est sit amet facilisis magna etiam tempor. Potenti nullam ac tortor vitae. Turpis egestas integer eget aliquet nibh praesent tristique. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Sit amet nisl purus in mollis. Arcu felis bibendum ut tristique et egestas. Morbi enim nunc faucibus a pellentesque sit amet. Ante metus dictum at tempor commodo ullamcorper a lacus vestibulum.</p>
 <h3 id="accumsan-tortor-posuere-ac-ut-consequat-semper-viverra-nam">Accumsan tortor posuere ac ut consequat semper viverra nam.<a href="#accumsan-tortor-posuere-ac-ut-consequat-semper-viverra-nam" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>emper feugiat nibh sed pulvinar. Vitae suscipit tellus mauris a diam maecenas. Sit amet cursus sit amet dictum sit amet justo. Feugiat sed lectus vestibulum mattis ullamcorper. Vel fringilla est ullamcorper eget nulla. Ut diam quam nulla porttitor massa. Eleifend quam adipiscing vitae proin sagittis nisl. Amet risus nullam eget felis eget nunc. Quam pellentesque nec nam aliquam sem. Amet purus gravida quis blandit turpis cursus in hac habitasse.</p>
 <h3 id="sed-tempus-urna-et-pharetra-pharetra">Sed tempus urna et pharetra pharetra.<a href="#sed-tempus-urna-et-pharetra-pharetra" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>Amet nulla facilisi morbi tempus iaculis. Volutpat odio facilisis mauris sit amet massa vitae tortor. Consequat id porta nibh venenatis. Elit eget gravida cum sociis natoque penatibus et magnis dis. Enim lobortis scelerisque fermentum dui faucibus in. Nibh ipsum consequat nisl vel pretium lectus quam. Adipiscing commodo elit at imperdiet dui accumsan sit amet nulla. Scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis. Nisi vitae suscipit tellus mauris a diam maecenas sed. Urna et pharetra pharetra massa massa ultricies. Arcu ac tortor dignissim convallis aenean. Turpis massa tincidunt dui ut. Volutpat sed cras ornare arcu dui. Aliquet enim tortor at auctor urna nunc id. Nullam ac tortor vitae purus. Sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula ipsum. Senectus et netus et malesuada fames ac turpis. Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi tristique. Nec feugiat nisl pretium fusce id.</p>
 <h2 id="habitant-morbi-tristique-senectus-et-netus-et-malesuada">Habitant morbi tristique senectus et netus et malesuada.<a href="#habitant-morbi-tristique-senectus-et-netus-et-malesuada" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Sed enim ut sem viverra aliquet eget sit amet tellus. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Bibendum est ultricies integer quis auctor elit sed vulputate mi. Tellus at urna condimentum mattis pellentesque id nibh. Interdum velit laoreet id donec. In ornare quam viverra orci sagittis eu volutpat. Vitae purus faucibus ornare suspendisse sed nisi lacus. Turpis nunc eget lorem dolor sed viverra. Lorem ipsum dolor sit amet consectetur adipiscing. Et tortor at risus viverra adipiscing.</p>
 <h2 id="nisl-suscipit-adipiscing-bibendum-est-ultricies-integer-quis-auctor-elit">Nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit.<a href="#nisl-suscipit-adipiscing-bibendum-est-ultricies-integer-quis-auctor-elit" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Varius quam quisque id diam vel quam. Risus ultricies tristique nulla aliquet enim tortor at. Faucibus in ornare quam viverra. Aenean vel elit scelerisque mauris pellentesque. Diam donec adipiscing tristique risus. At imperdiet dui accumsan sit amet nulla facilisi morbi. Faucibus et molestie ac feugiat sed lectus vestibulum. Nisl suscipit adipiscing bibendum est ultricies integer quis auctor. Odio tempor orci dapibus ultrices in iaculis nunc sed augue. Id diam maecenas ultricies mi eget mauris pharetra. Adipiscing at in tellus integer feugiat. Et tortor at risus viverra. Ac placerat vestibulum lectus mauris ultrices eros.</p>
 <h2 id="id-cursus-metus-aliquam-eleifend-mi-in-nulla">Id cursus metus aliquam eleifend mi in nulla.<a href="#id-cursus-metus-aliquam-eleifend-mi-in-nulla" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Semper auctor neque vitae tempus. Quam id leo in vitae turpis massa sed elementum tempus. Augue eget arcu dictum varius duis at consectetur. Vel pretium lectus quam id leo in vitae turpis. Eget est lorem ipsum dolor sit. Donec pretium vulputate sapien nec sagittis aliquam. Etiam sit amet nisl purus in mollis nunc. Id nibh tortor id aliquet lectus. Velit dignissim sodales ut eu sem.</p>
 <h2 id="nunc-scelerisque-viverra-mauris-in-aliquam-sem-fringilla-ut-morbi">Nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi.<a href="#nunc-scelerisque-viverra-mauris-in-aliquam-sem-fringilla-ut-morbi" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Turpis nunc eget lorem dolor sed viverra ipsum. Tempus urna et pharetra pharetra massa massa ultricies mi quis. Molestie nunc non blandit massa. Metus dictum at tempor commodo ullamcorper. Odio facilisis mauris sit amet. Integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque. Cras pulvinar mattis nunc sed blandit libero volutpat sed cras. Laoreet id donec ultrices tincidunt arcu non sodales. Et malesuada fames ac turpis. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Auctor eu augue ut lectus.</p>
 <h2 id="quis-lectus-nulla-at-volutpat-diam-ut-venenatis-tellus">Quis lectus nulla at volutpat diam ut venenatis tellus.<a href="#quis-lectus-nulla-at-volutpat-diam-ut-venenatis-tellus" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Et malesuada fames ac turpis egestas. Eu ultrices vitae auctor eu augue ut lectus arcu bibendum. Dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu. Lectus arcu bibendum at varius vel pharetra vel turpis nunc. Cursus mattis molestie a iaculis at erat pellentesque. Pharetra magna ac placerat vestibulum lectus mauris. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat. Sed nisi lacus sed viverra tellus in hac habitasse platea. Lectus sit amet est placerat in egestas erat imperdiet. Consectetur purus ut faucibus pulvinar elementum integer enim neque. Duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam. Netus et malesuada fames ac turpis. Ullamcorper velit sed ullamcorper morbi tincidunt ornare. Mi quis hendrerit dolor magna. Elementum integer enim neque volutpat ac tincidunt vitae. Nullam non nisi est sit.</p>
 <h2 id="dolor-sit-amet-consectetur-adipiscing-elit-pellentesque-habitant">Dolor sit amet consectetur adipiscing elit pellentesque habitant.<a href="#dolor-sit-amet-consectetur-adipiscing-elit-pellentesque-habitant" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Semper feugiat nibh sed pulvinar proin gravida. Et ultrices neque ornare aenean euismod elementum nisi quis eleifend. Ultrices eros in cursus turpis massa tincidunt dui. Sit amet nisl suscipit adipiscing bibendum est. Facilisi etiam dignissim diam quis enim lobortis scelerisque. Consectetur purus ut faucibus pulvinar. Porta non pulvinar neque laoreet suspendisse interdum consectetur libero id. Volutpat blandit aliquam etiam erat. Sit amet consectetur adipiscing elit.</p>
 <h2 id="blandit-volutpat-maecenas-volutpat-blandit-aliquam-etiam">Blandit volutpat maecenas volutpat blandit aliquam etiam.<a href="#blandit-volutpat-maecenas-volutpat-blandit-aliquam-etiam" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Blandit aliquam etiam erat velit scelerisque in dictum. Massa vitae tortor condimentum lacinia quis vel. Parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer. Duis ut diam quam nulla porttitor massa id. Fames ac turpis egestas maecenas. Gravida cum sociis natoque penatibus et magnis. Eget gravida cum sociis natoque penatibus et. In nibh mauris cursus mattis molestie a iaculis at erat. Malesuada proin libero nunc consequat interdum varius sit amet. Vitae congue eu consequat ac. Eu consequat ac felis donec et odio pellentesque. Scelerisque felis imperdiet proin fermentum leo vel orci porta non. Arcu dui vivamus arcu felis bibendum ut tristique. Semper feugiat nibh sed pulvinar proin. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Sed faucibus turpis in eu mi bibendum neque egestas. Vitae ultricies leo integer malesuada nunc vel. Nisi est sit amet facilisis. Et leo duis ut diam quam nulla porttitor massa id.</p>
 <h2 id="consequat-semper-viverra-nam-libero">Consequat semper viverra nam libero.<a href="#consequat-semper-viverra-nam-libero" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Eget mauris pharetra et ultrices neque ornare. Nisl pretium fusce id velit ut tortor. Et molestie ac feugiat sed lectus. Potenti nullam ac tortor vitae purus faucibus ornare suspendisse. Condimentum mattis pellentesque id nibh tortor id aliquet. Eget duis at tellus at. Duis ultricies lacus sed turpis tincidunt id aliquet. Mus mauris vitae ultricies leo integer malesuada. Sollicitudin tempor id eu nisl nunc mi. Fermentum et sollicitudin ac orci phasellus egestas tellus. Nisl vel pretium lectus quam. In nulla posuere sollicitudin aliquam ultrices sagittis orci. Elit pellentesque habitant morbi tristique senectus et netus. Nisl condimentum id venenatis a. Volutpat blandit aliquam etiam erat velit.</p>
 <h2 id="arcu-cursus-vitae-congue-mauris-rhoncus-aenean-vel-elit-scelerisque">Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque.<a href="#arcu-cursus-vitae-congue-mauris-rhoncus-aenean-vel-elit-scelerisque" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Amet venenatis urna cursus eget nunc scelerisque viverra. Elit sed vulputate mi sit amet mauris commodo. Morbi non arcu risus quis varius quam quisque id diam. Pulvinar etiam non quam lacus suspendisse. Sed id semper risus in hendrerit gravida rutrum quisque. Est velit egestas dui id. Posuere sollicitudin aliquam ultrices sagittis. Aliquam id diam maecenas ultricies mi eget mauris. Orci nulla pellentesque dignissim enim sit amet venenatis. Ipsum faucibus vitae aliquet nec. Odio aenean sed adipiscing diam donec adipiscing tristique. Sagittis id consectetur purus ut faucibus.</p>
 <h2 id="vestibulum-lorem-sed-risus-ultricies">Vestibulum lorem sed risus ultricies.<a href="#vestibulum-lorem-sed-risus-ultricies" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Feugiat vivamus at augue eget arcu dictum varius duis at. Suscipit adipiscing bibendum est ultricies. Placerat duis ultricies lacus sed turpis. Amet consectetur adipiscing elit pellentesque. Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue. Quisque id diam vel quam elementum pulvinar etiam. Aliquam sem fringilla ut morbi. Pretium vulputate sapien nec sagittis. Ante metus dictum at tempor commodo ullamcorper a lacus vestibulum. Molestie a iaculis at erat pellentesque adipiscing commodo elit at. At ultrices mi tempus imperdiet nulla malesuada pellentesque.</p>
 <h2 id="consequat-mauris-nunc-congue-nisi-vitae">Consequat mauris nunc congue nisi vitae.<a href="#consequat-mauris-nunc-congue-nisi-vitae" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Mollis nunc sed id semper. Quis hendrerit dolor magna eget est. At varius vel pharetra vel. Sit amet risus nullam eget felis eget nunc lobortis. Lacus sed turpis tincidunt id aliquet risus feugiat in ante. Gravida neque convallis a cras semper. Interdum varius sit amet mattis vulputate. Elit duis tristique sollicitudin nibh sit. Neque sodales ut etiam sit amet nisl purus. Nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc. Consequat semper viverra nam libero justo laoreet sit. Quis hendrerit dolor magna eget est.</p>
 <h2 id="egestas-quis-ipsum-suspendisse-ultrices-gravida-dictum-fusce">Egestas quis ipsum suspendisse ultrices gravida dictum fusce.<a href="#egestas-quis-ipsum-suspendisse-ultrices-gravida-dictum-fusce" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Sed lectus vestibulum mattis ullamcorper velit. Quis eleifend quam adipiscing vitae. Iaculis nunc sed augue lacus viverra vitae. Duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam. Gravida in fermentum et sollicitudin ac. Ornare massa eget egestas purus viverra accumsan in. Sociis natoque penatibus et magnis dis. Urna duis convallis convallis tellus id interdum velit. Dignissim convallis aenean et tortor at risus viverra. Eget est lorem ipsum dolor sit amet consectetur. Sapien faucibus et molestie ac. Diam sollicitudin tempor id eu nisl nunc mi ipsum faucibus.</p>
 <h2 id="lectus-sit-amet-est-placerat-in">Lectus sit amet est placerat in.<a href="#lectus-sit-amet-est-placerat-in" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Facilisi morbi tempus iaculis urna id volutpat lacus laoreet non. Egestas erat imperdiet sed euismod nisi porta. Eu mi bibendum neque egestas congue quisque egestas diam in. Ultricies mi quis hendrerit dolor magna eget est lorem. Elementum facilisis leo vel fringilla. Parturient montes nascetur ridiculus mus. Congue mauris rhoncus aenean vel elit scelerisque mauris. Mauris vitae ultricies leo integer malesuada nunc vel risus. Id interdum velit laoreet id donec ultrices tincidunt arcu. Tempus iaculis urna id volutpat. Lectus magna fringilla urna porttitor. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Nisi est sit amet facilisis magna etiam tempor orci. Elit pellentesque habitant morbi tristique senectus et netus. Orci eu lobortis elementum nibh. Scelerisque felis imperdiet proin fermentum leo vel. Sapien et ligula ullamcorper malesuada proin.</p>
 <h2 id="feugiat-sed-lectus-vestibulum-mattis-ullamcorper-velit-sed-ullamcorper">Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper.<a href="#feugiat-sed-lectus-vestibulum-mattis-ullamcorper-velit-sed-ullamcorper" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Dui ut ornare lectus sit amet est placerat in. Nunc sed id semper risus. Nibh sit amet commodo nulla facilisi nullam. In arcu cursus euismod quis. Porttitor lacus luctus accumsan tortor. Egestas diam in arcu cursus euismod quis. Nisl nunc mi ipsum faucibus vitae aliquet. Enim sed faucibus turpis in eu mi bibendum neque. Neque aliquam vestibulum morbi blandit cursus risus at ultrices. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique.</p>
 ]]></content></item><item><title>MathJax Support Demo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</link><pubDate>Fri, 18 Aug 2023 14:07:33 +0530</pubDate><author>blzr</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/mathjax-support/</guid><description>This page demos MathJax support, nothing else</description><content type="text/html" mode="escaped"><![CDATA[<h1 id="support-for-hermit-v2">\(LaTeX\) support for hermit-V2<a href="#support-for-hermit-v2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h1>
 <h2 id="configuration">Configuration<a href="#configuration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -1044,7 +1044,7 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 </span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">inline</span> = [[<span style="color:#e6db74">&#39;\(&#39;</span>, <span style="color:#e6db74">&#39;\)&#39;</span>]]</span></span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Mathjax support is implemented via partials. Please find partial in <code>/layouts/partials/mathjax.html</code></p>
+<p>Mathjax support is implemented via partials. Please find partial in <code>/layouts/_partials/mathjax.html</code></p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -1104,7 +1104,7 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 <li>If you want mathjax support in individual articles : add <code>mathjax : true</code> to Frontmatter</li>
 </ol>
 <h3 id="in-action">\(LaTeX\) in action<a href="#in-action" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -1254,32 +1254,32 @@ $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content></item><item><title>T
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">##### Heading 5 
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">###### Heading 6 
 </span></span></span></code></pre></div><h1 id="heading-1">Heading 1<a href="#heading-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h1>
 <h2 id="heading-2">Heading 2<a href="#heading-2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <h3 id="heading-3">Heading 3<a href="#heading-3" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <h4 id="heading-4">Heading 4<a href="#heading-4" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h4>
 <h5 id="heading-5">Heading 5<a href="#heading-5" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h5>
 <h6 id="heading-6">Heading 6<a href="#heading-6" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h6>
@@ -1296,6 +1296,8 @@ $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content></item><item><title>T
 </span></span></span><span style="display:flex;"><span><span style="font-style:italic">&gt; &gt; Nested line
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">&gt;
 </span></span></span><span style="display:flex;"><span><span style="font-style:italic">&gt; Last line (The space between the &gt; and the quoted text is optional.)
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">&gt;
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">&gt; --- Citation remarks
 </span></span></span></code></pre></div><blockquote>
 <p>First line
 Another line (To keep the quote together, blank lines inside the quote must contain the &gt; character.)</p>
@@ -1303,6 +1305,7 @@ Another line (To keep the quote together, blank lines inside the quote must cont
 <p>Nested line</p>
 </blockquote>
 <p>Last line (The space between the &gt; and the quoted text is optional.)</p>
+<p>&mdash; Citation remarks</p>
 </blockquote>
 <p>Table:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>| Left-Aligned  | Center Aligned  | Right Aligned |
@@ -1579,20 +1582,20 @@ print(sorted_dt)
 </ol>
 </div>
 ]]></content></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</guid><description>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="this-article-explains-how-to-use-scroll-up">This article explains how to use Scroll Up<a href="#this-article-explains-how-to-use-scroll-up" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.</p>
 <h3 id="step-1">Step 1<a href="#step-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>Set <code>scrollToTop</code> to true in <code>hugo.toml</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">scrollToTop</span> = <span style="color:#66d9ef">true</span>
 </span></span></code></pre></div><h3 id="step-2">Step 2<a href="#step-2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -1602,17 +1605,17 @@ print(sorted_dt)
 <p>Some pages/articles do not require scroll up button (if there is less content)</p>
 </blockquote>
 <h2 id="anti-js-crowd">Anti-JS crowd<a href="#anti-js-crowd" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>The button will work as intended if JS is disabled, but it will not hide/show on scroll position. So, if you have decided to disable JS on client, you will be struck with an floating icon.</p>
 <h2 id="icon">Icon<a href="#icon" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
-<p>Icon is located in <code>layouts/partials/svg.html</code> under scrollup.
+<p>Icon is located in <code>layouts/_partials/svg.html</code> under scrollup.
 Icon svg code is as follows:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -1623,11 +1626,11 @@ Icon svg code is as follows:</p>
 </div>
 </div>
 <h2 id="html">HTML<a href="#html" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
-<p>This is implemented as a partial located in <code>layouts/partials/scroll-to-top.html</code>.
+<p>This is implemented as a partial located in <code>layouts/_partials/scroll-to-top.html</code>.
 Partial is injected in <code>layouts/_default/baseof.html</code></p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -1654,7 +1657,7 @@ Partial is injected in <code>layouts/_default/baseof.html</code></p>
 </div>
 </div>
 <h2 id="css">CSS<a href="#css" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -1698,7 +1701,7 @@ Partial is injected in <code>layouts/_default/baseof.html</code></p>
 </div>
 </div>
 <h2 id="javascript">JavaScript<a href="#javascript" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -1719,7 +1722,7 @@ Partial is injected in <code>layouts/_default/baseof.html</code></p>
 </span></span><span style="display:flex;"><span>---
 </span></span></code></pre></div><p>This is an array, you can set multiple urls, only the first url will be used. These images is also used in <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html">Twitter Cards</a> and the <a href="http://ogp.me/">Open Graph</a> metadata.</p>
 ]]></content></item><item><title>Creating a New Theme</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/creating-a-new-theme/</link><pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate><author>Michael Henderson</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/creating-a-new-theme/</guid><description>&amp;lt;no value&amp;gt;</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="introduction">Introduction<a href="#introduction" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -1751,13 +1754,13 @@ title = &#34;creating a new theme&#34;
 bah and humbug
 $
 </code></pre><h2 id="some-definitions">Some Definitions<a href="#some-definitions" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>There are a few concepts that you need to understand before creating a theme.</p>
 <h3 id="skins">Skins<a href="#skins" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -1768,39 +1771,39 @@ $
 <p>The rest of this tutorial will call a skin created in the <code>themes/</code> directory a theme.</p>
 <p>Note that you can use this tutorial to create a skin in the <code>layouts/</code> directory if you wish to. The main difference will be that you won’t need to update the site’s configuration file to use a theme.</p>
 <h3 id="the-home-page">The Home Page<a href="#the-home-page" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>The home page, or landing page, is the first page that many visitors to a site see. It is the index.html file in the root directory of the web site. Since Hugo writes files to the public/ directory, our home page is public/index.html.</p>
 <h3 id="site-configuration-file">Site Configuration File<a href="#site-configuration-file" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>When Hugo runs, it looks for a configuration file that contains settings that override default values for the entire site. The file can use TOML, YAML, or JSON. I prefer to use TOML for my configuration files. If you prefer to use JSON or YAML, you’ll need to translate my examples. You’ll also need to change the name of the file since Hugo uses the extension to determine how to process it.</p>
 <p>Hugo translates Markdown files into HTML. By default, Hugo expects to find Markdown files in your <code>content/</code> directory and template files in your <code>themes/</code> directory. It will create HTML files in your <code>public/</code> directory. You can change this by specifying alternate locations in the configuration file.</p>
 <h3 id="content">Content<a href="#content" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>Content is stored in text files that contain two sections. The first section is the “front matter,” which is the meta-information on the content. The second section contains Markdown that will be converted to HTML.</p>
 <h4 id="front-matter">Front Matter<a href="#front-matter" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h4>
 <p>The front matter is information about the content. Like the configuration file, it can be written in TOML, YAML, or JSON. Unlike the configuration file, Hugo doesn’t use the file’s extension to know the format. It looks for markers to signal the type. TOML is surrounded by “<code>+++</code>”, YAML by “<code>---</code>”, and JSON is enclosed in curly braces. I prefer to use TOML, so you’ll need to translate my examples if you prefer YAML or JSON.</p>
 <p>The information in the front matter is passed into the template before the content is rendered into HTML.</p>
 <h4 id="markdown">Markdown<a href="#markdown" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h4>
 <p>Content is written in Markdown which makes it easier to create the content. Hugo runs the content through a Markdown engine to create the HTML which will be written to the output file.</p>
 <h3 id="template-files">Template Files<a href="#template-files" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -1809,26 +1812,26 @@ $
 <p>Hugo uses its knowledge of the content to find the template file used to render the content. If it can’t find a template that is an exact match for the content, it will shift up a level and search from there. It will continue to do so until it finds a matching template or runs out of templates to try. If it can’t find a template, it will use the default template for the site.</p>
 <p>Please note that you can use the front matter to influence Hugo’s choice of templates.</p>
 <h4 id="single-template">Single Template<a href="#single-template" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h4>
 <p>A single template is used to render a single piece of content. For example, an article or post would be a single piece of content and use a single template.</p>
 <h4 id="list-template">List Template<a href="#list-template" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h4>
 <p>A list template renders a group of related content. That could be a summary of recent postings or all articles in a category. List templates can contain multiple groups.</p>
 <p>The homepage template is a special type of list template. Hugo assumes that the home page of your site will act as the portal for the rest of the content in the site.</p>
 <h4 id="partial-template">Partial Template<a href="#partial-template" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h4>
 <p>A partial template is a template that can be included in other templates. Partial templates must be called using the “partial” template command. They are very handy for rolling up common behavior. For example, your site may have a banner that all pages use. Instead of copying the text of the banner into every single and list template, you could create a partial with the banner in it. That way if you decide to change the banner, you only have to change the partial template.</p>
 <h2 id="create-a-new-site">Create a New Site<a href="#create-a-new-site" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -1849,7 +1852,7 @@ $
 </code></pre><p>Take a look in the content/ directory to confirm that it is empty.</p>
 <p>The other directories (archetypes/, layouts/, and static/) are used when customizing a theme. That&rsquo;s a topic for a different tutorial, so please ignore them for now.</p>
 <h3 id="generate-the-html-for-the-new-site">Generate the HTML For the New Site<a href="#generate-the-html-for-the-new-site" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -1885,7 +1888,7 @@ total 16
 $ 
 </code></pre><p>Hugo created two XML files, which is standard, but there are no HTML files.</p>
 <h3 id="test-the-new-site">Test the New Site<a href="#test-the-new-site" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -1916,7 +1919,7 @@ WARN: 2014/09/29 Unable to locate layout: [404.html]
 <p>I like that the verbose flag causes Hugo to list the files that it&rsquo;s searching for. For the home page, they are index.html, _default/list.html, and _default/single.html. There are some rules that we&rsquo;ll cover later that explain the names and paths. For now, just remember that Hugo couldn&rsquo;t find a template for the home page and it told you so.</p>
 <p>At this point, you&rsquo;ve got a working installation and site that we can build upon. All that’s left is to add some content and a theme to display it.</p>
 <h2 id="create-a-new-theme">Create a New Theme<a href="#create-a-new-theme" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -1924,7 +1927,7 @@ WARN: 2014/09/29 Unable to locate layout: [404.html]
 <p>We&rsquo;re going to create a new theme called &ldquo;zafta.&rdquo; Since the goal of this tutorial is to show you how to fill out the files to pull in your content, the theme will not contain any CSS. In other words, ugly but functional.</p>
 <p>All themes have opinions on content and layout. For example, Zafta uses &ldquo;post&rdquo; over &ldquo;blog&rdquo;. Strong opinions make for simpler templates but differing opinions make it tougher to use themes. When you build a theme, consider using the terms that other themes do.</p>
 <h3 id="create-a-skeleton">Create a Skeleton<a href="#create-a-skeleton" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -1947,8 +1950,8 @@ $ find themes -type f | xargs ls -l
 -rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/_default/list.html
 -rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/_default/single.html
 -rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/index.html
--rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/partials/footer.html
--rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/partials/header.html
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/_partials/footer.html
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/_partials/header.html
 -rw-r--r--  1 quoha  staff    93 Sep 29 17:31 themes/zafta/theme.toml
 $ 
 </code></pre><p>The skeleton includes templates (the files ending in .html), license file, a description of your theme (the theme.toml file), and an empty archetype.</p>
@@ -1969,11 +1972,11 @@ tags = [&#34;tags&#34;, &#34;categories&#34;]
 -rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/_default/list.html
 -rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/_default/single.html
 -rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/index.html
--rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/partials/footer.html
--rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/partials/header.html
+-rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/_partials/footer.html
+-rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/_partials/header.html
 $
 </code></pre><h3 id="update-the-configuration-file-to-use-the-theme">Update the Configuration File to Use the Theme<a href="#update-the-configuration-file-to-use-the-theme" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -1989,7 +1992,7 @@ MetaDataFormat = &#34;toml&#34;
 
 $
 </code></pre><h3 id="generate-the-site">Generate the Site<a href="#generate-the-site" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -2024,7 +2027,7 @@ $
 <li>Hugo claimed that it created 0 pages. It created a file and copied over static files, but didn&rsquo;t create any pages. That&rsquo;s because it considers a &ldquo;page&rdquo; to be a file created directly from a content file. It doesn&rsquo;t count things like the index.html files that it creates automatically.</li>
 </ol>
 <h4 id="the-home-page-1">The Home Page<a href="#the-home-page-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h4>
@@ -2037,7 +2040,7 @@ $
 -rw-r--r--  1 quoha  staff  0 Sep 29 17:31 ./themes/zafta/layouts/index.html
 $ 
 </code></pre><h4 id="the-magic-of-static">The Magic of Static<a href="#the-magic-of-static" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h4>
@@ -2054,7 +2057,7 @@ drwxr-xr-x  2 quoha  staff   68 Sep 29 17:31 themes/zafta/static/css
 drwxr-xr-x  2 quoha  staff   68 Sep 29 17:31 themes/zafta/static/js
 $ 
 </code></pre><h2 id="the-theme-development-cycle">The Theme Development Cycle<a href="#the-theme-development-cycle" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -2070,26 +2073,26 @@ $
 <p>I’ll throw in one more opinion: never work on a theme on a live site. Always work on a copy of your site. Make changes to your theme, test them, then copy them up to your site. For added safety, use a tool like Git to keep a revision history of your content and your theme. Believe me when I say that it is too easy to lose both your mind and your changes.</p>
 <p>Check the main Hugo site for information on using Git with Hugo.</p>
 <h3 id="purge-the-public-directory">Purge the public/ Directory<a href="#purge-the-public-directory" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>When generating the site, Hugo will create new files and update existing ones in the <code>public/</code> directory. It will not delete files that are no longer used. For example, files that were created in the wrong directory or with the wrong title will remain. If you leave them, you might get confused by them later. I recommend cleaning out your site prior to generating it.</p>
 <p>Note: If you&rsquo;re building on an SSD, you should ignore this. Churning on a SSD can be costly.</p>
 <h3 id="hugos-watch-option">Hugo&rsquo;s Watch Option<a href="#hugos-watch-option" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>Hugo&rsquo;s &ldquo;<code>--watch</code>&rdquo; option will monitor the content/ and your theme directories for changes and rebuild the site automatically.</p>
 <h3 id="live-reload">Live Reload<a href="#live-reload" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>Hugo&rsquo;s built in web server supports live reload. As pages are saved on the server, the browser is told to refresh the page. Usually, this happens faster than you can say, &ldquo;Wow, that&rsquo;s totally amazing.&rdquo;</p>
 <h3 id="development-commands">Development Commands<a href="#development-commands" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -2129,7 +2132,7 @@ WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
 0 categories created
 in 1 ms
 </code></pre><h2 id="update-the-home-page-template">Update the Home Page Template<a href="#update-the-home-page-template" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -2141,7 +2144,7 @@ in 1 ms
 </ol>
 <p>We could update one of the default templates, but a good design decision is to update the most specific template available. That&rsquo;s not a hard and fast rule (in fact, we&rsquo;ll break it a few times in this tutorial), but it is a good generalization.</p>
 <h3 id="make-a-static-home-page">Make a Static Home Page<a href="#make-a-static-home-page" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -2179,7 +2182,7 @@ $ cat public/index.html
   &lt;p&gt;hugo says hello!&lt;/p&gt; 
 &lt;/html&gt;
 </code></pre><h4 id="live-reload-1">Live Reload<a href="#live-reload-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h4>
@@ -2196,13 +2199,13 @@ $ cat public/index.html
 &lt;/html&gt;
 </code></pre><p>When you use <code>--watch</code>, the Live Reload script is added by Hugo. Look for live reload in the documentation to see what it does and how to disable it.</p>
 <h3 id="build-a-dynamic-home-page">Build a &ldquo;Dynamic&rdquo; Home Page<a href="#build-a-dynamic-home-page" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>&ldquo;Dynamic home page?&rdquo; Hugo&rsquo;s a static web site generator, so this seems an odd thing to say. I mean let&rsquo;s have the home page automatically reflect the content in the site every time Hugo builds it. We&rsquo;ll use iteration in the template to do that.</p>
 <h4 id="create-new-posts">Create New Posts<a href="#create-new-posts" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h4>
@@ -2295,7 +2298,7 @@ $
 $
 </code></pre><p>The new files are empty because because the templates used to generate the content are empty. The homepage doesn&rsquo;t show the new content, either. We have to update the templates to add the posts.</p>
 <h3 id="list-and-single-templates">List and Single Templates<a href="#list-and-single-templates" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -2303,7 +2306,7 @@ $
 <p>Generally speaking, list templates are named &ldquo;list.html&rdquo; and single templates are named &ldquo;single.html.&rdquo;</p>
 <p>There are three other types of templates: partials, content views, and terms. We will not go into much detail on these.</p>
 <h3 id="add-content-to-the-homepage">Add Content to the Homepage<a href="#add-content-to-the-homepage" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -2364,7 +2367,7 @@ $
 </code></pre><p>Congratulations, the home page shows the title of the two posts. The posts themselves are still empty, but let&rsquo;s take a moment to appreciate what we&rsquo;ve done. Your template now generates output dynamically. Believe it or not, by inserting the range command inside of those curly braces, you&rsquo;ve learned everything you need to know to build a theme. All that&rsquo;s really left is understanding which template will be used to generate each content file and becoming familiar with the commands for the template engine.</p>
 <p>And, if that were entirely true, this tutorial would be much shorter. There are a few things to know that will make creating a new template much easier. Don&rsquo;t worry, though, that&rsquo;s all to come.</p>
 <h3 id="add-content-to-the-posts">Add Content to the Posts<a href="#add-content-to-the-posts" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -2377,7 +2380,7 @@ $
 <p>Remember, any content that we haven&rsquo;t created a template for will end up using this template. That can be good or bad. Bad because I know that we&rsquo;re going to be adding different types of content and we&rsquo;re going to end up undoing some of the changes we&rsquo;ve made. It&rsquo;s good because we&rsquo;ll be able to see immediate results. It&rsquo;s also good to start here because we can start to build the basic layout for the site. As we add more content types, we&rsquo;ll refactor this file and move logic around. Hugo makes that fairly painless, so we&rsquo;ll accept the cost and proceed.</p>
 <p>Please see the Hugo documentation on template rendering for all the details on determining which template to use. And, as the docs mention, if you&rsquo;re building a single page application (SPA) web site, you can delete all of the other templates and work with just the default single page. That&rsquo;s a refreshing amount of joy right there.</p>
 <h4 id="update-the-template-file">Update the Template File<a href="#update-the-template-file" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h4>
@@ -2444,7 +2447,7 @@ $ cat public/post/second/index.html
 $
 </code></pre><p>Notice that the posts now have content. You can go to localhost:1313/post/first to verify.</p>
 <h3 id="linking-to-content">Linking to Content<a href="#linking-to-content" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -2493,7 +2496,7 @@ $ cat public/index.html
 
 $
 </code></pre><h3 id="create-a-post-listing">Create a Post Listing<a href="#create-a-post-listing" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -2503,7 +2506,7 @@ $
 -rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/_default/list.html
 </code></pre><p>As with the single post, we have to decide to update _default/list.html or create post/list.html. We still don&rsquo;t have multiple content types, so let&rsquo;s stay consistent and update the default list template.</p>
 <h2 id="creating-top-level-pages">Creating Top Level Pages<a href="#creating-top-level-pages" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -2579,19 +2582,19 @@ i&#39;m speechless
 	about = &#34;/:filename/&#34;
 </code></pre><p>Generate the web site and verify that this didn&rsquo;t work. Hugo lets &ldquo;slug&rdquo; or &ldquo;URL&rdquo; override the permalinks setting in the configuration file. Go ahead and comment out the slug in content/about.md, then generate the web site to get it to be created in the right place.</p>
 <h2 id="sharing-templates">Sharing Templates<a href="#sharing-templates" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>If you&rsquo;ve been following along, you probably noticed that posts have titles in the browser and the home page doesn&rsquo;t. That&rsquo;s because we didn&rsquo;t put the title in the home page&rsquo;s template (layouts/index.html). That&rsquo;s an easy thing to do, but let&rsquo;s look at a different option.</p>
-<p>We can put the common bits into a shared template that&rsquo;s stored in the themes/zafta/layouts/partials/ directory.</p>
+<p>We can put the common bits into a shared template that&rsquo;s stored in the themes/zafta/layouts/_partials/ directory.</p>
 <h3 id="create-the-header-and-footer-partials">Create the Header and Footer Partials<a href="#create-the-header-and-footer-partials" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>In Hugo, a partial is a sugar-coated template. Normally a template reference has a path specified. Partials are different. Hugo searches for them along a TODO defined search path. This makes it easier for end-users to override the theme&rsquo;s presentation.</p>
-<pre tabindex="0"><code>$ vi themes/zafta/layouts/partials/header.html
+<pre tabindex="0"><code>$ vi themes/zafta/layouts/_partials/header.html
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -2600,17 +2603,17 @@ i&#39;m speechless
 &lt;body&gt;
 :wq
 
-$ vi themes/zafta/layouts/partials/footer.html
+$ vi themes/zafta/layouts/_partials/footer.html
 &lt;/body&gt;
 &lt;/html&gt;
 :wq
 </code></pre><h3 id="update-the-home-page-template-to-use-the-partials">Update the Home Page Template to Use the Partials<a href="#update-the-home-page-template-to-use-the-partials" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>The most noticeable difference between a template call and a partials call is the lack of path:</p>
-<pre tabindex="0"><code>{{ template &#34;theme/partials/header.html&#34; . }}
+<pre tabindex="0"><code>{{ template &#34;theme/_partials/header.html&#34; . }}
 </code></pre><p>versus</p>
 <pre tabindex="0"><code>{{ partial &#34;header.html&#34; . }}
 </code></pre><p>Both pass in the context.</p>
@@ -2636,7 +2639,7 @@ $ vi themes/zafta/layouts/partials/footer.html
 :wq
 </code></pre><p>Generate the web site and verify the results. The title on the home page is now &ldquo;your title here&rdquo;, which comes from the &ldquo;title&rdquo; variable in the config.toml file.</p>
 <h3 id="update-the-default-single-template-to-use-the-partials">Update the Default Single Template to Use the Partials<a href="#update-the-default-single-template-to-use-the-partials" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -2650,13 +2653,13 @@ $ vi themes/zafta/layouts/partials/footer.html
 :wq
 </code></pre><p>Generate the web site and verify the results. The title on the posts and the about page should both reflect the value in the markdown file.</p>
 <h2 id="add-date-published-to-posts">Add “Date Published” to Posts<a href="#add-date-published-to-posts" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>It&rsquo;s common to have posts display the date that they were written or published, so let&rsquo;s add that. The front matter of our posts has a variable named &ldquo;date.&rdquo; It&rsquo;s usually the date the content was created, but let&rsquo;s pretend that&rsquo;s the value we want to display.</p>
 <h3 id="add-date-published-to-the-template">Add “Date Published” to the Template<a href="#add-date-published-to-the-template" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -2698,7 +2701,7 @@ $ vi themes/zafta/layouts/_default/single.html
 :wq
 </code></pre><p>Note that we removed the date logic from the default template and put it in the post template. Generate the web site and verify the results. Posts have dates and the about page doesn&rsquo;t.</p>
 <h3 id="dont-repeat-yourself">Don&rsquo;t Repeat Yourself<a href="#dont-repeat-yourself" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -2712,7 +2715,7 @@ similarities in Go templates.</p>
 <p>This document is a brief primer on using Go templates. The <a href="https://golang.org/pkg/html/template/">Go docs</a>
 provide more details.</p>
 <h2 id="introduction-to-go-templates">Introduction to Go Templates<a href="#introduction-to-go-templates" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -2723,7 +2726,7 @@ One consequence of this simplicity is that Go templates parse very quickly.</p>
 content will be sanitized depending on the context of where they are used. More
 details can be found in the <a href="https://golang.org/pkg/html/template/">Go docs</a>.</p>
 <h2 id="basic-syntax">Basic Syntax<a href="#basic-syntax" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -2745,7 +2748,7 @@ functions.</p>
 <pre><code>{{ if or (isset .Params &quot;alt&quot;) (isset .Params &quot;caption&quot;) }} Caption {{ end }}
 </code></pre>
 <h2 id="variables">Variables<a href="#variables" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -2761,7 +2764,7 @@ page you are rendering. More details are available on the
 {{ $address }}
 </code></pre>
 <h2 id="functions">Functions<a href="#functions" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -2776,7 +2779,7 @@ functions cannot be added without recompiling hugo.</p>
 <pre><code>{{ add 1 2 }}
 </code></pre>
 <h2 id="includes">Includes<a href="#includes" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -2788,13 +2791,13 @@ the /layout/ directory within Hugo.</p>
 <pre><code>{{ template &quot;chrome/header.html&quot; . }}
 </code></pre>
 <h2 id="logic">Logic<a href="#logic" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Go templates provide the most basic iteration and conditional logic.</p>
 <h3 id="iteration">Iteration<a href="#iteration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -2818,7 +2821,7 @@ range.</p>
 {{ end }}
 </code></pre>
 <h3 id="conditionals">Conditionals<a href="#conditionals" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -2858,7 +2861,7 @@ and skips the block if the variable is absent.</p>
 {{ end }}
 </code></pre>
 <h2 id="pipes">Pipes<a href="#pipes" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -2894,7 +2897,7 @@ Stuff Here
 {{ end }}
 </code></pre>
 <h2 id="context-aka-the-dot">Context (aka. the dot)<a href="#context-aka-the-dot" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -2915,7 +2918,7 @@ instead of depending on the context.</p>
 have defined a variable outside of the loop so we have access to it from within
 the loop.</p>
 <h1 id="hugo-parameters">Hugo Parameters<a href="#hugo-parameters" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h1>
@@ -2925,7 +2928,7 @@ data of each specific piece of content. You can define any values of any
 type (supported by your front matter/config format) and use them however
 you want to inside of your templates.</p>
 <h2 id="using-content-page-parameters">Using Content (page) Parameters<a href="#using-content-page-parameters" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -2953,7 +2956,7 @@ notoc: true
   {{ end }}
 </code></pre>
 <h2 id="using-site-config-parameters">Using Site (config) Parameters<a href="#using-site-config-parameters" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -2989,7 +2992,7 @@ so, such as in this example:</p>
   {{end}}&lt;/ul&gt;
 &lt;/nav&gt;
 </code></pre>]]></content></item><item><title>Getting Started with Hugo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/hugoisforlovers/</link><pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/hugoisforlovers/</guid><description>&amp;lt;no value&amp;gt;</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="step-1-install-hugo">Step 1. Install Hugo<a href="#step-1-install-hugo" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -2998,7 +3001,7 @@ appropriate version for your OS and architecture.</p>
 <p>Save it somewhere specific as we will be using it in the next step.</p>
 <p>More complete instructions are available at <a href="https://gohugo.io/getting-started/installing/">Install Hugo</a></p>
 <h2 id="step-2-build-the-docs">Step 2. Build the Docs<a href="#step-2-build-the-docs" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -3023,7 +3026,7 @@ cd hugo
 </code></pre>
 <p>Once you&rsquo;ve gotten here, follow along the rest of this page on your local build.</p>
 <h2 id="step-3-change-the-docs-site">Step 3. Change the docs site<a href="#step-3-change-the-docs-site" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -3053,13 +3056,13 @@ are located at the same relative location as the url, in our case
 <p>Notice how quick that was. Try to refresh the site before it&rsquo;s finished building. I double dare you.
 Having nearly instant feedback enables you to have your creativity flow without waiting for long builds.</p>
 <h2 id="step-4-have-fun">Step 4. Have fun<a href="#step-4-have-fun" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>The best way to learn something is to play with it.</p>
 ]]></content></item><item><title>Migrate to Hugo from Jekyll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/migrate-from-jekyll/</link><pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/migrate-from-jekyll/</guid><description>&amp;lt;no value&amp;gt;</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="move-static-content-to-static">Move static content to <code>static</code><a href="#move-static-content-to-static" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -3077,13 +3080,13 @@ With Jekyll, something that looked like</p>
 </code></pre>
 <p>Additionally, you&rsquo;ll want any files that should reside at the root (such as <code>CNAME</code>) to be moved to <code>static</code>.</p>
 <h2 id="create-your-hugo-configuration-file">Create your Hugo configuration file<a href="#create-your-hugo-configuration-file" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Hugo can read your configuration as JSON, YAML or TOML. Hugo supports parameters custom configuration too. Refer to the <a href="/overview/configuration/">Hugo configuration documentation</a> for details.</p>
 <h2 id="set-your-configuration-publish-folder-to-_site">Set your configuration publish folder to <code>_site</code><a href="#set-your-configuration-publish-folder-to-_site" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -3103,20 +3106,20 @@ With Jekyll, something that looked like</p>
 </span></span><span style="display:flex;"><span>      <span style="color:#960050;background-color:#1e0010">..</span>
 </span></span><span style="display:flex;"><span>  }
 </span></span></code></pre></div><h2 id="convert-jekyll-templates-to-hugo-templates">Convert Jekyll templates to Hugo templates<a href="#convert-jekyll-templates-to-hugo-templates" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>That&rsquo;s the bulk of the work right here. The documentation is your friend. You should refer to <a href="http://jekyllrb.com/docs/templates/">Jekyll&rsquo;s template documentation</a> if you need to refresh your memory on how you built your blog and <a href="/layout/templates/">Hugo&rsquo;s template</a> to learn Hugo&rsquo;s way.</p>
 <p>As a single reference data point, converting my templates for <a href="http://heyitsalex.net/">heyitsalex.net</a> took me no more than a few hours.</p>
 <h2 id="convert-jekyll-plugins-to-hugo-shortcodes">Convert Jekyll plugins to Hugo shortcodes<a href="#convert-jekyll-plugins-to-hugo-shortcodes" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>Jekyll has <a href="http://jekyllrb.com/docs/plugins/">plugins</a>; Hugo has <a href="/doc/shortcodes/">shortcodes</a>. It&rsquo;s fairly trivial to do a port.</p>
 <h3 id="implementation">Implementation<a href="#implementation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -3195,7 +3198,7 @@ With Jekyll, something that looked like</p>
 </span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">figure</span>&gt;
 </span></span><span style="display:flex;"><span>    &lt;!<span style="color:#f92672">--</span> <span style="color:#a6e22e">image</span> <span style="color:#f92672">--</span>&gt;
 </span></span></code></pre></div><h3 id="usage">Usage<a href="#usage" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
@@ -3205,24 +3208,24 @@ With Jekyll, something that looked like</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>    {{<span style="color:#f92672">%</span> <span style="color:#a6e22e">fig</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;full&#34;</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;http://farm5.staticflickr.com/4136/4829260124_57712e570a_o_d.jpg&#34;</span> <span style="color:#a6e22e">title</span>=<span style="color:#e6db74">&#34;One of my favorite touristy-type photos. I secretly waited for the good light while we were having fun and took this. Only regret: a stupid pole in the top-left corner of the frame I had to clumsily get rid of at post-processing.&#34;</span> <span style="color:#a6e22e">link</span>=<span style="color:#e6db74">&#34;http://www.flickr.com/photos/alexnormand/4829260124/in/set-72157624547713078/&#34;</span> <span style="color:#f92672">%</span>}}
 </span></span></code></pre></div><p>As a bonus, the shortcode named parameters are, arguably, more readable.</p>
 <h2 id="finishing-touches">Finishing touches<a href="#finishing-touches" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <h3 id="fix-content">Fix content<a href="#fix-content" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>Depending on the amount of customization that was done with each post with Jekyll, this step will require more or less effort. There are no hard and fast rules here except that <code>hugo server --watch</code> is your friend. Test your changes and fix errors as needed.</p>
 <h3 id="clean-up">Clean up<a href="#clean-up" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>You&rsquo;ll want to remove the Jekyll configuration at this point. If you have anything else that isn&rsquo;t used, delete it.</p>
 <h2 id="a-practical-example-in-a-diff">A practical example in a diff<a href="#a-practical-example-in-a-diff" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>

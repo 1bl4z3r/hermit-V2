@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Hugo on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/hugo/</link><description>Recent content in Hugo on Hermit - V2</description><generator>Hugo -- 0.155.3</generator><language>en-US</language><lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Getting Started with Hugo</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/hugoisforlovers/</link><pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/hugoisforlovers/</guid><description>&amp;lt;no value&amp;gt;</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="step-1-install-hugo">Step 1. Install Hugo<a href="#step-1-install-hugo" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -8,7 +8,7 @@ appropriate version for your OS and architecture.</p>
 <p>Save it somewhere specific as we will be using it in the next step.</p>
 <p>More complete instructions are available at <a href="https://gohugo.io/getting-started/installing/">Install Hugo</a></p>
 <h2 id="step-2-build-the-docs">Step 2. Build the Docs<a href="#step-2-build-the-docs" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -33,7 +33,7 @@ cd hugo
 </code></pre>
 <p>Once you&rsquo;ve gotten here, follow along the rest of this page on your local build.</p>
 <h2 id="step-3-change-the-docs-site">Step 3. Change the docs site<a href="#step-3-change-the-docs-site" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
@@ -63,7 +63,7 @@ are located at the same relative location as the url, in our case
 <p>Notice how quick that was. Try to refresh the site before it&rsquo;s finished building. I double dare you.
 Having nearly instant feedback enables you to have your creativity flow without waiting for long builds.</p>
 <h2 id="step-4-have-fun">Step 4. Have fun<a href="#step-4-have-fun" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
