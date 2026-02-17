@@ -5,8 +5,180 @@
 */
 
 /*
-* Variables related to typewriter effect
+* Variables related to base html and body styling
 */
+$html-line-height: 1.6;
+$html-letter-spacing: .06em;
+$html-scroll-behavior: smooth;
+
+
+/*
+* Variables related to page scrollbar
+*/
+$page-scrollbar-width: 8px;
+$page-scrollbar-height: 8px;
+
+/*
+* Variables related to preformatted code blocks
+*/
+$pre-block-padding: .7em 1.1em;
+$pre-block-font-size: .9em;
+$pre-block-line-height: 1.5;
+$pre-block-letter-spacing: normal;
+$pre-block-white-space: pre;
+
+/*
+* Variables related to inline code elements
+*/
+$code-border-radius: 3px;
+$code-padding: 0 3px;
+$code-margin: 0;
+$code-word-wrap: break-word;
+$code-letter-spacing: normal;
+
+/*
+* Variables related to blockquotes
+*/
+$blockquote-border-left: .25em solid;
+$blockquote-margin: 1em;
+$blockquote-padding: 0 1em;
+$blockquote-font-style: italic;
+$blockquote-cite-font-weight: bold;
+$blockquote-cite-font-style: normal;
+$blockquote-cite-before: "—— ";
+
+/*
+* Variables related to link elements
+*/
+$link-text-decoration: none;
+$link-border: none;
+$link-transition: color .4s ease-out;
+$link-hover-text-shadow: 0 0 1px $a-hover;
+
+/*
+* Variables related to horizontal rule element
+*/
+$hr-opacity: .2;
+$hr-border-width: 0 0 5px 0;
+$hr-border-style: dashed;
+$hr-background: transparent;
+$hr-width: 50%;
+$hr-margin: 1.8em auto;
+
+/*
+* Variables related to table element
+*/
+$table-border-collapse: collapse;
+$table-border-spacing: 0;
+$table-empty-cells: show;
+$table-width: 100%;
+$table-max-width: 100%;
+$table-th-td-padding: 1.5%;
+$table-th-td-border: 1px solid;
+$table-th-font-weight: 700;
+$table-th-vertical-align: bottom;
+
+/*
+* Variables related to code copy button
+*/
+$highlight-copy-btn-text: "Copy!!!";
+$highlight-copy-btn-text-complete: "Copied!";
+$highlight-copy-btn-text-failed: "Failed!";
+$highlight-copy-btn-position: absolute;
+$highlight-copy-btn-bottom: 7px;
+$highlight-copy-btn-right: 7px;
+$highlight-copy-btn-border: 0;
+$highlight-copy-btn-border-radius: 4px;
+$highlight-copy-btn-padding: 1px;
+$highlight-copy-btn-font-size: 0.7em;
+$highlight-copy-btn-line-height: 1.8;
+$highlight-copy-btn-opacity: 0.6;
+$highlight-copy-btn-min-width: 55px;
+$highlight-copy-btn-text-align: center;
+
+/*
+* Variables related to site header
+*/
+$site-header-position: fixed;
+$site-header-z-index: 1;
+$site-header-bottom: 0;
+$site-header-width: 100%;
+$site-header-box-sizing: border-box;
+$site-header-box-shadow: -1px -2px 3px rgba(0, 0, 0, 0.45);
+$site-header-animation-duration: .3s;
+$site-header-animation-fill-mode: forwards;
+
+// Header Wrapper
+$hdr-wrapper-display: flex;
+$hdr-wrapper-justify-content: space-between;
+$hdr-wrapper-align-items: center;
+$hdr-wrapper-padding: .5em 0;
+$hdr-wrapper-font-size: 1.2rem;
+
+// Homepage Title
+$site-branding-display: inline-block;
+$site-branding-margin-right: .8em;
+$site-branding-font-size: 1.2em;
+
+// Main Navigation Menu
+$site-nav-display: inline-block;
+$site-nav-font-size: 1.1em;
+$site-nav-opacity: .8;
+
+// Childrem of Site Navigation
+$site-nav-children-border-right: 2px solid $site-nav-children-border-right;
+$site-nav-children-padding-right: .5em;
+
+// Links within main navigation
+$site-nav-sub-menu-a-margin-left: .3em;
+$site-nav-a-margin-left: .8em;
+
+/*
+* Variables related to header icons, links and buttons
+*/
+$hdr-icons-font-size: 1.2em;
+$hdr-links-display: inline-block;
+$hdr-links-margin-left: .6em;
+$hdr-links-a-margin-left: .4em;
+$hdr-btn-border: none;
+$hdr-btn-background: none;
+$hdr-btn-padding: 0;
+$hdr-btn-margin-left: .4em;
+$hdr-btn-cursor: pointer;
+
+
+/*
+* Variables related to mobile hamburger menu button
+*/
+$menu-btn-display: none;
+$menu-btn-margin-left: .6em;
+$menu-btn-cursor: pointer;
+
+/*
+* Variables related to mobile menu overlay
+*/
+$mobile-menu-position: fixed;
+$mobile-menu-bottom: 4.8em;
+$mobile-menu-right: 4.5em;
+$mobile-menu-padding: .6em 1.8em;
+$mobile-menu-z-index: 1;
+$mobile-menu-box-sizing: border-box;
+$mobile-menu-box-shadow: -1px -2px 3px rgba(0, 0, 0, 0.45);
+$mobile-menu-ul-list-style: none;
+$mobile-menu-ul-margin: 0;
+$mobile-menu-ul-padding: 0;
+$mobile-menu-ul-line-height: 2;
+$mobile-menu-ul-font-size: 1.2em;
+
+/*
+* Variables related to site footer (not hoem footer)
+*/
+$site-footer-text-align: center;
+$site-footer-font-size: .8em;
+$site-footer-margin-bottom: 96px;
+$site-footer-margin-top: 64px;
+
+
 
 // Typography configuration for typewriter text display
 $font-size-desktop: 1.2rem;          // Base font size for desktop viewports
@@ -32,8 +204,8 @@ $pre-blink-duration: 2000;           // Duration of cursor blinking before typin
 $max-lines-desktop: 3;               // Maximum expected lines of text on desktop displays
 $max-lines-mobile: 4;                // Maximum expected lines of text on mobile displays
 
-// CSS Custom Properties bridge for JavaScript animation control
+
 :root {
     --ts: #{$typing-speed}ms;         // Typing speed accessible to JavaScript
-    --pbd: #{$pre-blink-duration}ms;  // Pre-blink duration accessible to JavaScript
+    --pbd: #{$pre-blink-duration}ms;  // Pre-blink duration accessible to JavaScript    
 }

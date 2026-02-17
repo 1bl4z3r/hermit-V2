@@ -31,7 +31,7 @@ Put the following in `hugo.toml`
           inline = [['\(', '\)']]
 {{< /highlight >}}
 
-Mathjax support is implemented via partials. Please find partial in `/layouts/partials/mathjax.html`
+Mathjax support is implemented via partials. Please find partial in `/layouts/_partials/mathjax.html`
 
 {{< highlight html "linenos=table,linenostart=1" >}}
 {{ if or (.Site.Params.global_mathjax) (.Params.mathjax) }}

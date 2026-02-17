@@ -259,8 +259,8 @@ $ find themes -type f | xargs ls -l
 -rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/_default/list.html
 -rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/_default/single.html
 -rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/index.html
--rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/partials/footer.html
--rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/partials/header.html
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/_partials/footer.html
+-rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/_partials/header.html
 -rw-r--r--  1 quoha  staff    93 Sep 29 17:31 themes/zafta/theme.toml
 $ 
 ```
@@ -290,8 +290,8 @@ $ find themes/zafta -name '*.html' | xargs ls -l
 -rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/_default/list.html
 -rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/_default/single.html
 -rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/index.html
--rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/partials/footer.html
--rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/partials/header.html
+-rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/_partials/footer.html
+-rw-r--r--  1 quoha  staff  0 Sep 29 17:31 themes/zafta/layouts/_partials/header.html
 $
 ```
 
@@ -997,14 +997,14 @@ Generate the web site and verify that this didn't work. Hugo lets "slug" or "URL
 
 If you've been following along, you probably noticed that posts have titles in the browser and the home page doesn't. That's because we didn't put the title in the home page's template (layouts/index.html). That's an easy thing to do, but let's look at a different option.
 
-We can put the common bits into a shared template that's stored in the themes/zafta/layouts/partials/ directory.
+We can put the common bits into a shared template that's stored in the themes/zafta/layouts/_partials/ directory.
 
 ### Create the Header and Footer Partials
 
 In Hugo, a partial is a sugar-coated template. Normally a template reference has a path specified. Partials are different. Hugo searches for them along a TODO defined search path. This makes it easier for end-users to override the theme's presentation.
 
 ```
-$ vi themes/zafta/layouts/partials/header.html
+$ vi themes/zafta/layouts/_partials/header.html
 <!DOCTYPE html>
 <html>
 <head>
@@ -1013,7 +1013,7 @@ $ vi themes/zafta/layouts/partials/header.html
 <body>
 :wq
 
-$ vi themes/zafta/layouts/partials/footer.html
+$ vi themes/zafta/layouts/_partials/footer.html
 </body>
 </html>
 :wq
@@ -1024,7 +1024,7 @@ $ vi themes/zafta/layouts/partials/footer.html
 The most noticeable difference between a template call and a partials call is the lack of path:
 
 ```
-{{ template "theme/partials/header.html" . }}
+{{ template "theme/_partials/header.html" . }}
 ```
 versus
 ```

@@ -156,14 +156,32 @@ enableEmoji = true
     name = "github"
     url = "https://github.com/1bl4z3r/hermit-V2/tree/staging"
 
-[menu]
+[Menus]
 
-  [[menu.main]]
+  [[Menus.main]]
     name = "Posts"
     url = "posts/"
     weight = 10
 
-  [[menu.main]]
+  [[Menus.main]]
     name = "About"
     url = "about-hugo/"
     weight = 20
+
+  [[Menus.main]]
+    identifier = "featured"
+    name = "Featured"
+    url = "posts/"
+    weight = 30
+
+  [[Menus.main]]
+    parent = "featured"
+    name = "Explaining Configs"
+    url = "posts/explaining-configs/"
+    weight = 1
+
+  [[Menus.main]]
+    parent = "featured"
+    name = "Typography"
+    url = "posts/typography/"
+    weight = 2

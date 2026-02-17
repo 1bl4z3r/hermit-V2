@@ -107,6 +107,8 @@ Blockquote:
 > > Nested line
 >
 > Last line (The space between the > and the quoted text is optional.)
+>
+> --- Citation remarks
 ```
 > First line
 > Another line (To keep the quote together, blank lines inside the quote must contain the > character.)
@@ -114,6 +116,8 @@ Blockquote:
 > > Nested line
 >
 > Last line (The space between the > and the quoted text is optional.)
+>
+> --- Citation remarks
 
 Table:
 

@@ -91,11 +91,11 @@ Functionality can be extended via layouts.
 
 Layouts can live in either the project’s (root) or the themes’ layout folders, any template inside the root layout folder will override theme's layout that relative to it, for example: `layouts/_default/baseof.html` will override `themes/hermit-V2/layouts/_default/baseof.html`. So, you can easily customize the theme without edit it directly, which makes updating the theme easier.
 
-Copy files as required to site's `layouts/partials/` and edit them to fit your needs.
+Copy files as required to site's `layouts/_partials/` and edit them to fit your needs.
 
-* To add or modify SVG images used in the theme, copy [_svg.html_](https://github.com/1bl4z3r/hermit-V2/blob/staging/layouts/partials/svg.html)
-* To add or modify comment system (default is Disqus), copy [_comments.html_](https://github.com/1bl4z3r/hermit-V2/blob/staging/layouts/partials/comments.html)
-* To add or modify custom analytics(default is Google Analytics), copy [_analytics.html_](https://github.com/1bl4z3r/hermit-V2/blob/staging/layouts/partials/analytics.html)
+* To add or modify SVG images used in the theme, copy [_svg.html_](https://github.com/1bl4z3r/hermit-V2/blob/staging/layouts/_partials/svg.html)
+* To add or modify comment system (default is Disqus), copy [_comments.html_](https://github.com/1bl4z3r/hermit-V2/blob/staging/layouts/_partials/comments.html)
+* To add or modify custom analytics(default is Google Analytics), copy [_analytics.html_](https://github.com/1bl4z3r/hermit-V2/blob/staging/layouts/_partials/analytics.html)
 * To inject HTML code to every page's document head or right above the closing body tag ( this makes it easy to add any HTML metadata, custom css/js, DNS-prefetch etc.), create a file at site's _extra-head.html_ or _extra-foot.html_
 
 ### Favicon

@@ -39,7 +39,7 @@ scrolltotop : true
 The button will work as intended if JS is disabled, but it will not hide/show on scroll position. So, if you have decided to disable JS on client, you will be struck with an floating icon.
 
 ## Icon
-Icon is located in `layouts/partials/svg.html` under scrollup.
+Icon is located in `layouts/_partials/svg.html` under scrollup.
 Icon svg code is as follows:
 
 {{< highlight html "linenos=table,linenostart=1" >}}
@@ -48,7 +48,7 @@ Icon svg code is as follows:
 
 ## HTML
 
-This is implemented as a partial located in `layouts/partials/scroll-to-top.html`.
+This is implemented as a partial located in `layouts/_partials/scroll-to-top.html`.
 Partial is injected in `layouts/_default/baseof.html`
 
 {{< highlight go "linenos=table,linenostart=1" >}}

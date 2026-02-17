@@ -32,7 +32,7 @@ other = "Précédent"
 [humanMade]
 other = "Je ne déteste pas les IA, mais j’adore les humains!"
 
-# partials/header.html
+# _partials/header.html
 #
 [menu]
 other = "Menu"
