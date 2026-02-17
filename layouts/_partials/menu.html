@@ -1,12 +1,18 @@
-{{- range .Site.Menus.main -}}
+{{- $page := . -}}
+{{- $mobile := false -}}
+{{- if and (reflect.IsMap .) (isset . "context") -}}
+  {{- $page = .context -}}
+  {{- $mobile = .mobile | default false -}}
+{{- end -}}
+{{- range $page.Site.Menus.main -}}
 	{{- if .HasChildren -}}
-		<a href="{{ .URL | absLangURL }}" class="has-children">{{ .Name }}</a>
-		<span class="sub-menu">
+		{{- if $mobile -}}<li>{{- end -}}<a href="{{ .URL | absLangURL }}" class="has-children">{{ .Name }}</a>{{- if $mobile -}}</li>{{- end -}}
+		{{- if $mobile -}}<span class="sub-menu mobile"> {{- else -}} <span class="sub-menu">{{- end -}} 
 		{{- range .Children -}}
-			<a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+			{{- if $mobile -}}<li>{{- end -}}<a href="{{ .URL | absLangURL }}">{{ .Name }}</a>{{- if $mobile -}}</li>{{- end -}}
 		{{- end -}}
 		</span>
 	{{- else -}}
-		<a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+		{{- if $mobile -}}<li>{{- end -}}<a href="{{ .URL | absLangURL }}">{{ .Name }}</a>{{- if $mobile -}}</li>{{- end -}}
 	{{- end -}}
 {{- end -}}

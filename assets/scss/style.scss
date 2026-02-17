@@ -2,27 +2,17 @@
 // STYLESHEET IMPORTS AND DEPENDENCIES
 // ==========================================
 // Import base styling modules for colors, fonts, and core functionality
+@import "normalize.scss";
+{{- if ne false .Site.Params.usesAnimation }}@import "animate.scss";{{ end -}} // Conditionally import animation styles if enabled in site configuration
 @import "colors";
 @import "fonts";
 @import "variables";
 @import "admonition";
 @import "mixins";
-@import "normalize.scss";
 @import "syntax.scss";
-
-// Conditionally import animation styles if enabled in site configuration
-{{ if ne false .Site.Params.usesAnimation }}
-@import "animate.scss";
-{{ end }}
-
-// Import additional feature-specific stylesheets
-@import "socialshare.scss";
-
-// Conditionally import gallery styles and set thumbnail size if gallery feature is enabled
-{{ if .Site.Params.gallery.enable }}
-$thumbnail: {{ printf "%spx" ($.Site.Params.gallery.thumbnail | default "300") }};
-@import "gallery.scss";
-{{ end }}
+@import "accessibility.scss";
+{{- if and .Site.Params.shareSocial (templates.Exists "_partials/social-share.html") }}@import "socialshare.scss";{{ end -}} // Conditionally import share social styles if enabled in site configuration
+{{- if .Site.Params.gallery.enable }}$thumbnail: {{ printf "%spx" ($.Site.Params.gallery.thumbnail | default "300") }};@import "gallery.scss";{{ end -}} // Conditionally import gallery styles and set thumbnail size if gallery feature is enabled
 
 // ==========================================
 // DYNAMIC ACCENT COLOR CONFIGURATION
@@ -42,13 +32,7 @@ $marked-background: {{.}};
 $inserted-text-underline: {{.}};
 {{ end -}}
 
-// ==========================================
-// SCROLL TO TOP BUTTON
-// ==========================================
-// All styles related to scroll to top button
-{{- if and (.Site.Params.scrollToTop) }}
-@import "scrolltotop.scss";
-{{ end -}}
+{{- if and (.Site.Params.scrollToTop) }}@import "scrolltotop.scss";{{ end -}}  // Conditionally import scroll to top styles if enabled in site configuration
 
 
 // ==========================================
@@ -68,8 +52,8 @@ $inserted-text-underline: {{.}};
 // ==========================================
 // Style the main page scrollbar for webkit-based browsers
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: $page-scrollbar-width;
+  height: $page-scrollbar-height;
   background: $pagescrollbar-background;
 }
 
@@ -88,9 +72,9 @@ $inserted-text-underline: {{.}};
 // Set global HTML properties including background, typography, and smooth scrolling
 html {
   background: $html-background;
-  line-height: 1.6;
-  letter-spacing: .06em;
-  scroll-behavior: smooth;
+  line-height: $html-line-height;
+  letter-spacing: $html-letter-spacing;
+  scroll-behavior: $html-scroll-behavior;
 }
 
 // Apply consistent text color to all interactive and text elements
@@ -137,12 +121,11 @@ ins {
 
 // Style preformatted code blocks with syntax highlighting support
 pre {
-  padding: .7em 1.1em;
-  font-size: .9em;
-  line-height: 1.5;
-  letter-spacing: normal;
-  white-space: pre;
-  color: $pre-code;
+  padding: $pre-block-padding;
+  font-size: $pre-block-font-size;
+  line-height: $pre-block-line-height;
+  letter-spacing: $pre-block-letter-spacing;
+  white-space: $pre-block-white-space;
   background: $pre-background;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -154,9 +137,7 @@ pre {
   
   // Style inline code within pre blocks
   code {
-    padding: 0;
-    margin: 0;
-    color: $pre-code;
+    padding:0;
     background: $pre-code-background;
   }
 }
@@ -165,28 +146,28 @@ pre {
 code {
   color: $code-color;
   background: $code-background;
-  border-radius: 3px;
-  padding: 0 3px;
-  margin: 0 4px;
-  word-wrap: break-word;
-  letter-spacing: normal;
+  border-radius: $code-border-radius;
+  padding: $code-padding;
+  margin: $code-margin;
+  word-wrap: $code-word-wrap;
+  letter-spacing: $code-letter-spacing;
 }
 
 // Style blockquotes with left border and italic text
 blockquote {
-  border-left: .25em solid;
-  margin: 1em;
-  padding: 0 1em;
-  font-style: italic;
+  border-left: $blockquote-border-left;
+  margin: $blockquote-margin;
+  padding: $blockquote-padding;
+  font-style: $blockquote-font-style;
 
   // Style citation elements within blockquotes
   cite {
-    font-weight: bold;
-    font-style: normal;
+    font-weight: $blockquote-cite-font-weight;
+    font-style: $blockquote-cite-font-style;
 
     // Add em dash before citations
     &::before {
-      content: "—— ";
+      content: $blockquote-cite-before;
     }
   }
 }
@@ -196,26 +177,24 @@ blockquote {
 // ==========================================
 // Style all links with smooth color transitions and hover effects
 a {
-  text-decoration: none;
-  border: none;
-  transition-property: color;
-  transition-duration: .4s;
-  transition-timing-function: ease-out;
+  text-decoration: $link-text-decoration;
+  border: $link-border;
+  transition: $link-transition;
 
   &:hover {
     color: $a-hover;
-    text-shadow: 0 0 1px $a-hover;
+    text-shadow: $link-hover-text-shadow;
   }
 }
 
 // Style horizontal rule elements with dashed appearance
 hr {
-  opacity: .2;
-  border-width: 0 0 5px 0;
-  border-style: dashed;
-  background: transparent;
-  width: 50%;
-  margin: 1.8em auto;
+  opacity: $hr-opacity;
+  border-width: $hr-border-width;
+  border-style: $hr-border-style;
+  background: $hr-background;
+  width: $hr-width;
+  margin: $hr-margin;
 }
 
 // ==========================================
@@ -223,22 +202,60 @@ hr {
 // ==========================================
 // Style data tables with consistent borders and spacing
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  empty-cells: show;
-  width: 100%;
-  max-width: 100%;
+  border-collapse: $table-border-collapse;
+  border-spacing: $table-border-spacing;
+  empty-cells: $table-empty-cells;
+  width: $table-width;
+  max-width: $table-max-width;
 
   th,
   td {
-    padding: 1.5%;
-    border: 1px solid;
+    padding: $table-th-td-padding;
+    border: $table-th-td-border;
   }
 
   th {
-    font-weight: 700;
-    vertical-align: bottom;
+    font-weight: $table-th-font-weight;
+    vertical-align: $table-th-vertical-align;
   }
+}
+
+// ==========================================
+// CODE COPY BUTTON FUNCTIONALITY
+// ==========================================
+// Container positioning for syntax highlighted code blocks
+.highlight {
+    position: relative;
+}
+
+// Ensure proper overflow handling for code blocks
+.highlight div,
+.highlight pre {
+  overflow-x: auto;
+  border-radius: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+
+// Style the copy-to-clipboard button for code blocks
+.highlight-copy-btn {
+    position: $highlight-copy-btn-position;
+    bottom: $highlight-copy-btn-bottom;
+    right: $highlight-copy-btn-right;
+    border: $highlight-copy-btn-border;
+    border-radius: $highlight-copy-btn-border-radius;
+    padding: $highlight-copy-btn-padding;
+    font-size: $highlight-copy-btn-font-size;
+    line-height: $highlight-copy-btn-line-height;
+    color: $highlight-copy-btn;
+    background-color: $highlight-copy-btn-background;
+    opacity: $highlight-copy-btn-opacity;
+    min-width: $highlight-copy-btn-min-width;
+    text-align: $highlight-copy-btn-text-align;
+}
+
+// Hover state for the copy button
+.highlight-copy-btn:hover {
+    background-color: $highlight-copy-btn-hover;
 }
 
 // ==========================================
@@ -276,185 +293,109 @@ table {
 }
 
 // ==========================================
-// CODE COPY BUTTON FUNCTIONALITY
-// ==========================================
-// Container positioning for syntax highlighted code blocks
-.highlight {
-    position: relative;
-}
-
-// Ensure proper overflow handling for code blocks
-.highlight div,
-.highlight pre {
-  overflow-x: auto;
-  border-radius: 4px;
-  -webkit-overflow-scrolling: touch;
-}
-
-// Style the copy-to-clipboard button for code blocks
-.highlight-copy-btn {
-    position: absolute;
-    bottom: 7px;
-    right: 7px;
-    border: 0;
-    border-radius: 4px;
-    padding: 1px;
-    font-size: 0.7em;
-    line-height: 1.8;
-    color: $highlight-copy-btn;
-    background-color: $highlight-copy-btn-background;
-    opacity: 0.6;
-    min-width: 55px;
-    text-align: center;
-}
-
-// Hover state for the copy button
-.highlight-copy-btn:hover {
-    background-color: $highlight-copy-btn-hover;
-}
-
-// ==========================================
-// ACCESSIBILITY FEATURES
-// ==========================================
-// Screen reader accessible text that's visually hidden but available to assistive technologies
-.screen-reader-text {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute !important;
-  width: 1px;
-  word-wrap: normal !important;
-}
-
-// Show screen reader text when it receives keyboard focus
-.screen-reader-text:focus {
-  background-color: $screen-reader-text-background;
-  border-radius: 3px;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  clip: auto !important;
-  clip-path: none;
-  color: $screen-reader-text;
-  display: block;
-  font-size: 0.875rem;
-  font-weight: bold;
-  height: auto;
-  left: 5px;
-  line-height: normal;
-  padding: 15px 23px 14px;
-  text-decoration: none;
-  top: 5px;
-  width: auto;
-  z-index: 100000;
-}
-
-// ==========================================
 // SITE HEADER AND NAVIGATION
 // ==========================================
 // Fixed bottom header with shadow and animation support
 #site-header {
-  position: fixed;
-  z-index: 1;
-  bottom: 0;
-  width: 100%;
-  box-sizing: border-box;
-  box-shadow: -1px -2px 3px rgba(0, 0, 0, 0.45);
+  position: $site-header-position;
+  z-index: $site-header-z-index;
+  bottom: $site-header-bottom;
+  width: $site-header-width;
+  box-sizing: $site-header-box-sizing;
+  box-shadow: $site-header-box-shadow;
   background-color: $site-header-background;
-  animation-duration: .3s;
-  animation-fill-mode: forwards;
+  animation-duration: $site-header-animation-duration;
+  animation-fill-mode: $site-header-animation-fill-mode;
 }
 
 // Header wrapper with flexbox layout for navigation elements
 .hdr-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: .5em 0;
-  font-size: 1.2rem;
+  display: $hdr-wrapper-display;
+  justify-content: $hdr-wrapper-justify-content;
+  align-items: $hdr-wrapper-align-items;
+  padding: $hdr-wrapper-padding;
+  font-size: $hdr-wrapper-font-size;
 
-  // Site logo/branding styling
+  // Site homepage title styling
   .site-branding {
-    display: inline-block;
-    margin-right: .8em;
-    font-size: 1.2em;
+    display: $site-branding-display;
+    margin-right: $site-branding-margin-right;
+    font-size: $site-branding-font-size;
   }
 
   // Main navigation menu styling
   .site-nav {
-    display: inline-block;
-    font-size: 1.1em;
-    opacity: .8;
+    display: $site-nav-display;
+    font-size: $site-nav-font-size;
+    opacity: $site-nav-opacity;
 
     // Parent menu items with children indicators
     .has-children {
-      padding-right: .5em;
-      border-right: 2px solid $site-nav-children-border-right;
+      padding-right: $site-nav-children-padding-right;
+      border-right: $site-nav-children-border-right;
     }
 
     // Sub-menu item spacing
     .sub-menu > a{
-      margin-left: .3em;
+      margin-left: $site-nav-sub-menu-a-margin-left;
     }
 
     // General navigation link spacing
     a {
-      margin-left: .8em;
+      margin-left: $site-nav-a-margin-left;
     }
   }
 }
 
 // Header icon container styling
 .hdr-icons {
-  font-size: 1.2em;
+  font-size: $hdr-icons-font-size;
 }
 
 // Header link container for external links
 .hdr-links {
-  display: inline-block;
-  margin-left: .6em;
+  display: $hdr-links-display;
+  margin-left: $hdr-links-margin-left;
 
   &>a {
-    margin-left: .4em;
+    margin-left: $hdr-links-a-margin-left;
   }
 }
 
 // Base styling for header buttons
 .hdr-btn {
-  border: none;
-  background: none;
-  padding: 0;
-  margin-left: .4em;
-  cursor: pointer;
+  border: $hdr-btn-border;
+  background: $hdr-btn-background;
+  padding: $hdr-btn-padding;
+  margin-left: $hdr-btn-margin-left;
+  cursor: $hdr-btn-cursor;
 }
 
 // Mobile hamburger menu button (hidden by default)
 #menu-btn {
-  display: none;
-  margin-left: .6em;
-  cursor: pointer;
+  display: $menu-btn-display;
+  margin-left: $menu-btn-margin-left;
+  cursor: $menu-btn-cursor;
 }
 
 // Mobile dropdown menu overlay
 #mobile-menu {
-  position: fixed;
-  bottom: 4.8em;
-  right: 4.5em;
+  position: $mobile-menu-position;
+  bottom: $mobile-menu-bottom;
+  right: $mobile-menu-right;
   display: none;
-  padding: .6em 1.8em;
-  z-index: 1;
-  box-sizing: border-box;
-  box-shadow: -1px -2px 3px 0px rgba(0, 0, 0, 0.45);
+  padding: $mobile-menu-padding;
+  z-index: $mobile-menu-z-index;
+  box-sizing: $mobile-menu-box-sizing;
+  box-shadow: $mobile-menu-box-shadow;
   background-color: $mobile-menu-background;
 
   ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    line-height: 2;
-    font-size: 1.2em;
+    list-style: $mobile-menu-ul-list-style;
+    margin: $mobile-menu-ul-margin;
+    padding: $mobile-menu-ul-padding;
+    line-height: $mobile-menu-ul-line-height;
+    font-size: $mobile-menu-ul-font-size;
   }
 }
 
@@ -463,10 +404,10 @@ table {
 // ==========================================
 // Simple centered footer with appropriate spacing
 #site-footer {
-  text-align: center;
-  font-size: .6em;
-  margin-bottom: 96px;
-  margin-top: 64px;
+  text-align: $site-footer-text-align;
+  font-size: $site-footer-font-size;
+  margin-bottom: $site-footer-margin-bottom;
+  margin-top: $site-footer-margin-top;
 
   p {
     margin: 0;
@@ -1382,6 +1323,4 @@ a.footnote-ref {
 // USER CUSTOMIZATION OVERRIDE
 // ==========================================
 // Import user-specific custom styles if they exist - these will override all built-in styles
-{{- if (fileExists "assets/scss/userstyles.scss") }}
-@import "userstyles.scss";
-{{ end -}}
+{{- if (fileExists "assets/scss/userstyles.scss") }}@import "userstyles.scss";{{ end -}}

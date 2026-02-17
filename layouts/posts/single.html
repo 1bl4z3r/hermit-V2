@@ -74,5 +74,5 @@
 	</main>
 {{ end }}
 
-{{ define "footer" }}<footer id="site-footer" class="section-inner thin {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster {{- end -}}">{{- if templates.Exists "partials/posts-footer.html" -}}{{- partialCached "posts-footer.html" . -}}{{- else -}}{{- partial "footer.html" . -}}{{- end -}}</footer>
+{{ define "footer" }}<footer id="site-footer" class="section-inner thin {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster {{- end -}}">{{- if templates.Exists "_partials/posts-footer.html" -}}{{- partialCached "posts-footer.html" . -}}{{- else -}}{{- partial "footer.html" . -}}{{- end -}}</footer>
 {{ end }}
