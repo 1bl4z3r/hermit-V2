@@ -179,7 +179,6 @@ $site-footer-margin-bottom: 96px;
 $site-footer-margin-top: 64px;
 
 
-
 // Typography configuration for typewriter text display
 $font-size-desktop: 1.2rem;          // Base font size for desktop viewports
 $font-size-mobile: 1rem;             // Reduced font size for mobile devices
@@ -209,3 +208,145 @@ $max-lines-mobile: 4;                // Maximum expected lines of text on mobile
     --ts: #{$typing-speed}ms;         // Typing speed accessible to JavaScript
     --pbd: #{$pre-blink-duration}ms;  // Pre-blink duration accessible to JavaScript    
 }
+
+/*
+* Variables related to code block container border radius
+*/
+$highlight-pre-border-radius: 4px;
+
+/*
+* Variables related to sub-menu text
+*/
+$sub-menu-font-size: .7em;
+
+/*
+* Variables related to spotlight / homepage hero layout
+*/
+$spotlight-font-size: 1.5rem;
+
+/*
+* Variables related to 404 error page
+*/
+$img-404-svg-width: 180px;
+$banner-404-h1-font-size: 3em;
+$banner-404-h1-margin: .5rem 0;
+$banner-404-btn-font-size: .8em;
+$banner-404-btn-border-radius: 5px;
+$banner-404-btn-padding: 5px;
+
+/*
+* Variables related to homepage sections (links, nav, footer)
+*/
+$home-links-font-size: 1.4em;
+$home-links-opacity: .8;
+$home-nav-opacity: .8;
+$home-footer-font-size: clamp(0.4em, calc(0.3em + 0.5vw), 0.6em);
+
+/*
+* Variables related to home subtitle display
+*/
+$home-subtitle-line-height: 1.4;
+$home-subtitle-font-size: .7em;
+$home-subtitle-opacity: .9;
+$home-subtitle-max-width: 85ch;
+
+/*
+* Variables related to post listing page
+*/
+$posts-group-margin-bottom: 1.9em;
+$post-year-padding-top: 6px;
+$post-year-margin-right: 1.8em;
+$post-year-font-size: 1.6em;
+$post-item-border-width: 1px;
+$post-item-border-style: dashed;
+$post-day-margin-left: 1em;
+$post-tag-margin-right: 0.5em;
+$post-tags-padding-right: 12px;
+
+/*
+* Variables related to pinned posts listing
+*/
+$pinned-post-item-padding: 12px 0;
+$pinned-post-item-a-padding-left: 12px;
+
+/*
+* Variables related to featured/background image copyright notice
+*/
+$bg-img-copyright-bottom: 20px;
+$bg-img-copyright-padding: 8px 15px;
+$bg-img-copyright-font-size: 0.75em;
+
+/*
+* Variables related to single post header
+*/
+$post-header-margin-top: 1.2em;
+$post-header-date-font-size: .9em;
+$post-header-h1-margin-top: .1em;
+
+/*
+* Variables related to post end horizontal rule
+*/
+$post-end-hr-width: 50%;
+$post-end-hr-margin-top: 1.6em;
+$post-end-hr-margin-bottom: .8em;
+$post-end-hr-border-style: solid;
+$post-end-hr-border-bottom-width: 4px;
+
+/*
+* Variables related to post content area
+*/
+$content-figure-caption-font-size: .8em;
+$content-img-border-radius: 4px;
+$content-list-margin-left: 1.8em;
+$content-anchor-margin-left: -20px;
+$content-anchor-padding-right: 6px;
+$content-anchor-opacity: .8;
+
+/*
+* Variables related to footnotes section
+*/
+$footnotes-font-size: .85em;
+$footnotes-ol-line-height: 1.8;
+$footnote-ref-padding: 2px;
+$footnote-ref-border-radius: 2px;
+
+/*
+* Variables related to post description / metadata block
+*/
+$post-description-font-size: .8rem;
+$post-description-p-margin: .8em 0;
+$post-description-svg-margin-right: .8em;
+$post-description-tag-margin-right: .5em;
+
+/*
+* Variables related to table of contents
+*/
+$toc-title-margin-left: 1em;
+$toc-title-margin-bottom: .5em;
+$toc-title-font-size: .8em;
+$toc-content-font-size: .8em;
+$toc-content-nested-font-size: .9em;
+
+/*
+* Variables related to post navigation (previous / next links)
+*/
+$post-nav-margin-top: 1.5em;
+$post-nav-margin-bottom: 2.5em;
+$post-nav-font-size: 1.2em;
+$post-nav-label-font-size: .8em;
+$post-nav-label-opacity: .8;
+
+/*
+* Variables related to related posts section
+*/
+$related-posts-padding: .8em;
+$related-posts-margin-top: 1.5em;
+$related-posts-font-size: .8rem;
+$related-posts-border: 3px dashed rgba(255, 255, 255, .2);
+$related-posts-border-radius: 5px;
+$related-posts-ul-margin-top: .5em;
+
+/*
+* Variables related to brainmade / human label
+*/
+$human-margin-top: 1em;
