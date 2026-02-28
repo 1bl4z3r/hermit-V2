@@ -232,7 +232,7 @@ table {
 .highlight div,
 .highlight pre {
   overflow-x: auto;
-  border-radius: 4px;
+  border-radius: $highlight-pre-border-radius;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -251,45 +251,6 @@ table {
     opacity: $highlight-copy-btn-opacity;
     min-width: $highlight-copy-btn-min-width;
     text-align: $highlight-copy-btn-text-align;
-}
-
-// Hover state for the copy button
-.highlight-copy-btn:hover {
-    background-color: $highlight-copy-btn-hover;
-}
-
-// ==========================================
-// LAYOUT CONTAINER CLASSES
-// ==========================================
-// Main content container with responsive width and centering
-.section-inner {
-  margin: 0 auto;
-  max-width: 1200px;
-  width: 93%;
-}
-
-// Narrow content container for better readability
-.thin {
-  max-width: 720px;
-  margin: auto;
-}
-
-// Icon styling for consistent feather icon display
-.feather {
-  display: inline-block;
-  vertical-align: -.125em;
-  width: 1em;
-  height: 1em;
-}
-
-// Sub-menu text sizing
-.sub-menu {
-  font-size: .7em;
-}
-
-// Elements that are hidden on mobile and shown only on desktop
-.desktop-only, .desktop-only-ib {
-  display: none;
 }
 
 // ==========================================
@@ -414,6 +375,45 @@ table {
   }
 }
 
+// Hover state for the copy button
+.highlight-copy-btn:hover {
+    background-color: $highlight-copy-btn-hover;
+}
+
+// ==========================================
+// LAYOUT CONTAINER CLASSES
+// ==========================================
+// Main content container with responsive width and centering
+.section-inner {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 93%;
+}
+
+// Narrow content container for better readability
+.thin {
+  max-width: 720px;
+  margin: auto;
+}
+
+// Icon styling for consistent feather icon display
+.feather {
+  display: inline-block;
+  vertical-align: -.125em;
+  width: 1em;
+  height: 1em;
+}
+
+// Sub-menu text sizing
+.sub-menu {
+  font-size: $sub-menu-font-size;
+}
+
+// Elements that are hidden on mobile and shown only on desktop
+.desktop-only, .desktop-only-ib {
+  display: none;
+}
+
 // ==========================================
 // SPOTLIGHT/HOMEPAGE LAYOUT
 // ==========================================
@@ -426,7 +426,7 @@ table {
   justify-content: center;
   max-width: 93%;
   margin: auto;
-  font-size: 1.5rem;
+  font-size: $spotlight-font-size;
 
   // Special layout for 404 error pages
   &.error-404 {
@@ -440,7 +440,7 @@ p.img-404 {
   margin: 0;
 
   svg {
-    width: 180px;
+    width: $img-404-svg-width;
     max-width: 100%;
     height: auto;
   }
@@ -451,8 +451,8 @@ p.img-404 {
   margin-left: 2em;
 
   h1 {
-    font-size: 3em;
-    margin: .5rem 0;
+    font-size: $banner-404-h1-font-size;
+    margin: $banner-404-h1-margin;
   }
 
   p {
@@ -460,13 +460,13 @@ p.img-404 {
   }
 
   .btn-404 {
-    font-size: .8em;
+    font-size: $banner-404-btn-font-size;
 
     a {
       display: inline-block;
       border: 2px solid $btn-404-a-border;
-      border-radius: 5px;
-      padding: 5px;
+      border-radius: $banner-404-btn-border-radius;
+      padding: $banner-404-btn-padding;
       transition-property: color, border-color;
 
       &:first-child {
@@ -500,9 +500,9 @@ p.img-404 {
 
 // Homepage social/external links
 #home-links {
-  font-size: 1.4em;
+  font-size: $home-links-font-size;
   text-align: center;
-  opacity: .8;
+  opacity: $home-links-opacity;
 
   a {
     margin: 0 .2em;
@@ -511,7 +511,7 @@ p.img-404 {
 
 // Homepage internal navigation links
 #home-nav {
-  opacity: .8;
+  opacity: $home-nav-opacity;
 
   a {
     display: block;
@@ -523,7 +523,7 @@ p.img-404 {
 // Homepage footer content
 #home-footer {
   text-align: center;
-  font-size: clamp(0.4em, calc(0.3em + 0.5vw), 0.6em);
+  font-size: $home-footer-font-size;
   white-space: nowrap;
   overflow: hidden;
   line-height: normal;
@@ -540,14 +540,14 @@ p.img-404 {
 // Yearly post grouping container with flexible layout
 .posts-group {
   display: flex;
-  margin-bottom: 1.9em;
+  margin-bottom: $posts-group-margin-bottom;
   line-height: normal;
 
   // Year header for post groupings
   .post-year {
-    padding-top: 6px;
-    margin-right: 1.8em;
-    font-size: 1.6em;
+    padding-top: $post-year-padding-top;
+    margin-right: $post-year-margin-right;
+    font-size: $post-year-font-size;
     @include dimmed;
 
     &:hover {
@@ -565,7 +565,7 @@ p.img-404 {
 
   // Individual post item styling with divider
   .post-item {
-    border-bottom: 1px $post-item-border-bottom dashed;
+    border-bottom: $post-item-border-width $post-item-border-bottom $post-item-border-style;
 
     a {
       display: flex;
@@ -578,7 +578,7 @@ p.img-404 {
   // Post publication date display
   .post-day {
     flex-shrink: 0;
-    margin-left: 1em;
+    margin-left: $post-day-margin-left;
     @include dimmed;
   }
 
@@ -592,12 +592,12 @@ p.img-404 {
     @include dimmed;
 
     a {
-      margin-right: 0.5em;
+      margin-right: $post-tag-margin-right;
     }
   }
   
   .post-tags {
-    padding-right: 12px;
+    padding-right: $post-tags-padding-right;
   }
 
   // Post excerpt/description styling
@@ -617,7 +617,7 @@ p.img-404 {
 // Special styling for pinned/featured posts
 .pinned-posts-group {
   display: flex;
-  margin-bottom: 1.9em;
+  margin-bottom: $posts-group-margin-bottom;
   line-height: normal;
   border-bottom: 2px $pinned-posts-group-border-bottom solid;
 
@@ -632,10 +632,10 @@ p.img-404 {
     display: flex;
     justify-content: start;
     align-items: baseline;
-    padding: 12px 0;
+    padding: $pinned-post-item-padding;
 
     a {
-      padding-left: 12px;
+      padding-left: $pinned-post-item-a-padding-left;
     }
   }
 }
@@ -668,13 +668,13 @@ p.img-404 {
 // Copyright notice overlay for featured background images
 .bg-img-copyright {
   position: fixed;                                // Positioned relative to the viewport
-  bottom: 20px;                                   // Adjust padding from the bottom as needed
+  bottom: $bg-img-copyright-bottom;              // Adjust padding from the bottom as needed
   left: 0;
   right: 0;                                       // Stretches across the full width
-  padding: 8px 15px;                              // Vertical and horizontal padding
+  padding: $bg-img-copyright-padding;            // Vertical and horizontal padding
   color: $featured-image-text;                    // Light text color, suitable for overlays
   background-color: $featured-image-background;  // Semi-transparent dark background for readability
-  font-size: 0.75em;                              // Smaller font size for copyright text
+  font-size: $bg-img-copyright-font-size;        // Smaller font size for copyright text
   text-align: center;
   z-index: 100;                                   // z-index should be high enough to be visible with the shown background.
   
@@ -698,28 +698,28 @@ p.img-404 {
 
 // Post header section with title and metadata
 .post-header {
-  margin-top: 1.2em;
+  margin-top: $post-header-margin-top;
   line-height: normal;
 
   .post-date {
-    font-size: .9em;
+    font-size: $post-header-date-font-size;
     letter-spacing: normal;
     @include dimmed;
   }
 
   h1 {
-    margin-top: .1em;
+    margin-top: $post-header-h1-margin-top;
   }
 }
 
 // Decorative horizontal rule at post end
 hr.post-end {
-  width: 50%;
-  margin-top: 1.6em;
-  margin-bottom: .8em;
+  width: $post-end-hr-width;
+  margin-top: $post-end-hr-margin-top;
+  margin-bottom: $post-end-hr-margin-bottom;
   margin-left: 0;
-  border-style: solid;
-  border-bottom-width: 4px;
+  border-style: $post-end-hr-border-style;
+  border-bottom-width: $post-end-hr-border-bottom-width;
 }
 
 // ==========================================
@@ -743,7 +743,7 @@ hr.post-end {
 
     // Figure captions styling
     p {
-      font-size: .8em;
+      font-size: $content-figure-caption-font-size;
       font-style: italic;
       @include dimmed;
     }
@@ -774,23 +774,23 @@ hr.post-end {
     max-width: 100%;
     height: auto;
     margin: auto;
-    border-radius: 4px;
+    border-radius: $content-img-border-radius;
   }
 
   // List styling with consistent indentation
   ul,
   ol {
     padding: 0;
-    margin-left: 1.8em;
+    margin-left: $content-list-margin-left;
   }
 
   // Heading anchor links for deep linking to sections
   a.anchor {
     float: left;
-    margin-left: -20px;
-    padding-right: 6px;
+    margin-left: $content-anchor-margin-left;
+    padding-right: $content-anchor-padding-right;
     box-shadow: none;
-    opacity: .8;
+    opacity: $content-anchor-opacity;
     
     &:hover {
       background: none;
@@ -827,7 +827,7 @@ hr.post-end {
 // ==========================================
 // Footnotes section with smaller text and specialized link handling
 .footnotes {
-  font-size: .85em;
+  font-size: $footnotes-font-size;
 
   a {
     box-shadow: none;
@@ -844,7 +844,7 @@ hr.post-end {
   }
 
   ol {
-    line-height: 1.8;
+    line-height: $footnotes-ol-line-height;
   }
 }
 
@@ -852,8 +852,8 @@ hr.post-end {
 a.footnote-ref {
   box-shadow: none;
   text-decoration: none;
-  padding: 2px;
-  border-radius: 2px;
+  padding: $footnote-ref-padding;
+  border-radius: $footnote-ref-border-radius;
   background-color: $footnote-ref-background;
 
   &:hover{
@@ -883,12 +883,12 @@ a.footnote-ref {
 
 // Post metadata and taxonomy display
 .post-description {
-  font-size: .8rem;
+  font-size: $post-description-font-size;
   line-height: normal;
   @include dimmed;
 
   p {
-    margin: .8em 0;
+    margin: $post-description-p-margin;
   }
 
   a:hover {
@@ -896,12 +896,12 @@ a.footnote-ref {
   }
 
   svg {
-    margin-right: .8em;
+    margin-right: $post-description-svg-margin-right;
   }
 
   .tag, 
   .category {
-    margin-right: .5em;
+    margin-right: $post-description-tag-margin-right;
   }
 }
 
@@ -919,15 +919,15 @@ a.footnote-ref {
 
 // Table of contents title styling
 .toc-title {
-  margin-left: 1em;
-  margin-bottom: .5em;
-  font-size: .8em;
+  margin-left: $toc-title-margin-left;
+  margin-bottom: $toc-title-margin-bottom;
+  font-size: $toc-title-font-size;
   font-weight: bold;
 }
 
 // Main table of contents container with custom scrollbar
 #TableOfContents {
-  font-size: .8em;
+  font-size: $toc-content-font-size;
   @include dimmed;
 
   ul {
@@ -960,7 +960,7 @@ a.footnote-ref {
 
     // Nested list styling with smaller font
     ul ul {
-      font-size: .9em;
+      font-size: $toc-content-nested-font-size;
     }
   }
 
@@ -976,9 +976,9 @@ a.footnote-ref {
 .post-nav {
   display: flex;
   justify-content: space-between;
-  margin-top: 1.5em;
-  margin-bottom: 2.5em;
-  font-size: 1.2em;
+  margin-top: $post-nav-margin-top;
+  margin-bottom: $post-nav-margin-bottom;
+  font-size: $post-nav-font-size;
 
   a {
     flex-basis: 50%;
@@ -989,8 +989,8 @@ a.footnote-ref {
   .prev-post {text-align: right; padding-left: 5px;}
 
   .post-nav-label {
-    font-size: .8em;
-    opacity: .8;
+    font-size: $post-nav-label-font-size;
+    opacity: $post-nav-label-opacity;
     text-transform: uppercase;
   }
 }
@@ -1000,11 +1000,11 @@ a.footnote-ref {
 // ==========================================
 // Suggested related posts at the end of articles
 .related-posts {
-  padding: .8em;
-  margin-top: 1.5em;
-  font-size: .8rem;
-  border: 3px dashed rgba(255, 255, 255, .2);
-  border-radius: 5px;
+  padding: $related-posts-padding;
+  margin-top: $related-posts-margin-top;
+  font-size: $related-posts-font-size;
+  border: $related-posts-border;
+  border-radius: $related-posts-border-radius;
 
   h2{
     margin: 0;
@@ -1012,7 +1012,7 @@ a.footnote-ref {
   }
 
   ul {
-    margin-top: .5em;
+    margin-top: $related-posts-ul-margin-top;
     margin-bottom: 0;
   }
 }
@@ -1021,7 +1021,7 @@ a.footnote-ref {
 .human{
   display: flex;
   justify-content: flex-end;
-  margin-top: 1em;
+  margin-top: $human-margin-top;
 }
 
 // ==========================================
@@ -1039,14 +1039,14 @@ a.footnote-ref {
 
 #home-subtitle {
   margin: 0;
-  line-height: 1.4;
-  font-size: .7em;
+  line-height: $home-subtitle-line-height;
+  font-size: $home-subtitle-font-size;
   font-style: italic;
-  opacity: .9;
+  opacity: $home-subtitle-opacity;
   display: inline-block;               // make container block-level for predictable centering
   text-align: center;
   position: relative;
-  max-width: 85ch;              // keep readable measure similar to desktop
+  max-width: $home-subtitle-max-width;              // keep readable measure similar to desktop
   margin-left: auto;
   margin-right: auto;
 
