@@ -876,6 +876,28 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
    </svg></span><b>This is a tip</b></div>
     <div class="admonition-content">A <strong>tip</strong> banner</div>
 </aside>
+<h3 id="summary">Summary<a href="#summary" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>Summary is implemented in the admonition shortcode using type as <code>summary</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>{{&lt; admonition type=summary title=&#34;This is a Summary headline&#34; &gt;}}
+</span></span><span style="display:flex;"><span>Details for the summary can be entered here
+</span></span><span style="display:flex;"><span>{{&lt; /admonition &gt;}}
+</span></span><span style="display:flex;"><span>Or
+</span></span><span style="display:flex;"><span>{{&lt; admonition summary &gt;}}
+</span></span><span style="display:flex;"><span>Details for the summary can be entered here (with no title)
+</span></span><span style="display:flex;"><span>{{&lt; /admonition &gt;}}
+</span></span></code></pre></div><p>The rendered output looks like this:
+<details class="admonition summary">
+    <summary class="admonition-title"><span class="icon summary-arrow" aria-hidden="true">&#9654;</span><b>This is a Summary headline</b></summary>
+    <div class="admonition-content">Details for the summary can be entered here</div>
+</details></p>
+<details class="admonition summary">
+    <summary class="admonition-title"><span class="icon summary-arrow" aria-hidden="true">&#9654;</span><b>Summary</b></summary>
+    <div class="admonition-content">Details for the summary can be entered here (with no title)</div>
+</details>
 ]]></content></item><item><title>Long Article</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/long-article/</link><pubDate>Fri, 22 Sep 2023 22:00:01 +0530</pubDate><author>1bl4z3r</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/long-article/</guid><description>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<a href="#lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
