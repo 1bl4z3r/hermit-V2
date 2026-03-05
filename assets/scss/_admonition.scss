@@ -13,7 +13,7 @@
     color: map-get($admonition-color, "note");
     .icon {
       display: inline-block;
-      padding: 0 10px 0 0;
+      margin-right: 10px;
       font-size: 0.85rem;
       color: map-get($admonition-color, "note");
     }
@@ -41,5 +41,30 @@
         background-color: rgba($color, 0.1);
       }
     }
+  }
+}
+
+// Summary/Details admonition
+details.admonition {
+  summary.admonition-title {
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+    .summary-arrow {
+      transition: transform 0.25s ease;
+      transform: rotate(0deg);
+      font-style: normal;
+    }
+
+  }
+  &[open]>summary.admonition-title .summary-arrow {
+    transform: rotate(90deg);
+  }
+  &:not([open])>summary.admonition-title {
+    border-bottom-color: transparent;
   }
 }

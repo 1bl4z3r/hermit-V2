@@ -1,29 +1,24 @@
 {{- $inner := .Inner | .Page.RenderString -}}
-
+{{- $type := "note" -}}
+{{- $title := "" -}}
 {{- if .IsNamedParams -}}
-    {{- $type := .Get "type" | default "note" -}}
-    {{ $admonition_name := print "admonition_" $type }}
-    <aside class="admonition {{ $type }}">
-        <div class="admonition-title">
-            <div class="icon">
-                {{- partial "svg.html" (dict "context" . "name" $admonition_name) -}}
-            </div><b>{{- .Get "title" | default (T $type) | strings.FirstUpper -}}</b>
-        </div>
-        <div class="admonition-content">
-            {{- $inner -}}
-        </div>
-    </aside>
+    {{- $type = .Get "type" | default "note" -}}
+    {{- $title = .Get "title" | default (T $type) | strings.FirstUpper -}}
 {{- else -}}
-    {{- $type := .Get 0 | default "note" -}}
-    {{ $admonition_name := print "admonition_" $type }}
-    <aside class="admonition {{ $type }}">
-        <div class="admonition-title">
-            <div class="icon">
-                {{- partial "svg.html" (dict "context" . "name" $admonition_name) -}}
-            </div><b>{{- .Get 1 | default ($type) | strings.FirstUpper -}}</b>
-        </div>
-        <div class="admonition-content">
-            {{- $inner -}}
-        </div>
-    </aside>
+    {{- $type = .Get 0 | default "note" -}}
+    {{- $title = .Get 1 | default $type | strings.FirstUpper -}}
+{{- end -}}
+
+{{- if eq $type "summary" -}}
+{{- $title = $title | default (cond (fileExists "i18n") (i18n "Summary") "Summary") -}}
+<details class="admonition summary">
+    <summary class="admonition-title"><span class="icon summary-arrow" aria-hidden="true">&#9654;</span><b>{{- $title -}}</b></summary>
+    <div class="admonition-content">{{- $inner -}}</div>
+</details>
+{{- else -}}
+{{- $admonition_name := print "admonition_" $type -}}
+<aside class="admonition {{ $type }}">
+    <div class="admonition-title"><span class="icon">{{- partial "svg.html" (dict "context" . "name" $admonition_name) -}}</span><b>{{- $title -}}</b></div>
+    <div class="admonition-content">{{- $inner -}}</div>
+</aside>
 {{- end -}}
