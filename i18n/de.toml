@@ -42,3 +42,6 @@ other = "Teilen"
 
 [featuredImage]
 other = "Ausgewähltes Bild"
+
+[Summary]
+other = "Zusammenfassung"

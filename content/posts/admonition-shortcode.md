@@ -77,3 +77,23 @@ The rendered output looks like this:
 {{< admonition tip "This is a tip" >}}
 A **tip** banner
 {{< /admonition >}}
+
+### Summary
+Summary is implemented in the admonition shortcode using type as `summary`.
+```markdown
+{{</* admonition type=summary title="This is a Summary headline" */>}}
+Details for the summary can be entered here
+{{</* /admonition */>}}
+Or
+{{</* admonition summary */>}}
+Details for the summary can be entered here (with no title)
+{{</* /admonition */>}}
+```
+The rendered output looks like this:
+{{< admonition summary "This is a Summary headline" >}}
+Details for the summary can be entered here
+{{< /admonition >}}
+
+{{< admonition summary >}}
+Details for the summary can be entered here (with no title)
+{{< /admonition >}}

@@ -42,3 +42,6 @@ other = "Share"
 
 [featuredImage]
 other = "Featured Image"
+
+[Summary]
+other = "Summary"

@@ -42,3 +42,6 @@ other = "Cuota"
 
 [featuredImage]
 other = "Imagen Presentada"
+
+[Summary]
+other = "Resumen"

@@ -39,3 +39,6 @@ other = "Condividere"
 
 [featuredImage]
 other = "Immagine in primo piano"
+
+[Summary]
+other = "Riassunto"
