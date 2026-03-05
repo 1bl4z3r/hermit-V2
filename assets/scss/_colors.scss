@@ -23,6 +23,7 @@ $dark-orange: #ff9100;
 $crayola: #ff5252;
 $awesome: #ff1744;
 $folly: #f50057;
+$goldenrod: #ccbb00;
 $admonition-background-opacity : 0.1;
 
 // Default dimmed value
@@ -144,6 +145,7 @@ $admonition-background: (
     "failure": rgba($crayola, $admonition-background-opacity),
     "danger": rgba($awesome, $admonition-background-opacity),
     "bug": rgba($folly, $admonition-background-opacity),
+    "summary": rgba($goldenrod, $admonition-background-opacity),
     ) !default;
 
 $admonition-color: (
@@ -155,4 +157,5 @@ $admonition-color: (
     "failure": $crayola,
     "danger": $awesome,
     "bug": $folly,
+    "summary": $goldenrod,
     ) !default;
