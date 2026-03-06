@@ -139,7 +139,51 @@ These have been part of the theme since the original Hermit and remain front and
 
 ## Features
 
-Hermit-V2 builds on the minimal foundation of the original Hermit theme, adding new capabilities whilst keeping the same lean footprint. The sections below cover both what comes out of the box and how to enable optional features — each with a short snippet to get you going quickly.
+Hermit-V2 builds on the minimal foundation of the original Hermit theme, adding new
+capabilities whilst keeping the same lean footprint. Jump to any feature below, or read
+through for a full walkthrough with configuration snippets.
+
+**Out of the box**
+- [Single-column layout with focused typography](#core-features)
+- [Navigation bar that hides on scroll and reappears at the bottom of a page](#core-features)
+- [Posts listed on a single page, grouped by year](#core-features)
+- [Syntax highlighting and one-click code copying](#syntax-highlighting)
+- [Responsive and retina-ready](#core-features)
+
+**Content & Display**
+- [Featured image with optional copyright notice](#featured-image)
+- [Image gallery with lightbox](#image-gallery)
+- [Admonition and collapsible summary call-out blocks](#admonition--summary-shortcodes)
+- [Scroll to Top button](#scroll-to-top)
+- [Read time estimate](#read-time)
+- [Pinned posts](#pinned-posts)
+- [Related posts](#related-posts)
+- [Print styling per page](#print-styling)
+
+**Writing & Formatting**
+- [Markdown extended inline styles](#markdown-inline-styles)
+- [Table of Contents](#table-of-contents)
+- [The `figure` shortcode with automatic WebP conversion](#the-figure-shortcode)
+- [LaTeX support via MathJax](#mathjax--latex-support)
+- [Diagram support via Mermaid](#mermaid--diagram-support)
+
+**Site Configuration**
+- [Multi-line typewriter homepage subtitle](#multi-line-typewriter-homepage-subtitle)
+- [Configurable date formats](#configurable-date-formats)
+- [Colour palette and accent colour](#colour-palette--accent-colour)
+- [Animations toggle](#animations)
+- [Post list layout customisation](#list-layout-customisation)
+- [Social sharing bar](#social-sharing)
+- [Multiple authors](#multiple-authors)
+- [Footer customisation](#footer-customisation)
+- [robots.txt and per-page noIndex controls](#robotstxt--noindex-controls)
+- [humans.txt support](#humanstxt)
+
+**Customisation**
+- [Per-page custom CSS and JS](#custom-css-and-js-per-page)
+- [Site-wide SCSS overrides](#site-wide-scss-overrides)
+- [Layout overrides without forking](#layout-overrides)
+- [Page-specific footers](#page-specific-footers)
 
 ### Image Gallery
 
