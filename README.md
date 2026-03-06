@@ -706,7 +706,7 @@ If the files are in a subdirectory, include the relative path in the front matte
 Copy any of the following from the theme into your own `assets/scss/` and edit freely:
 
 | File | Purpose |
-|||
+|---|---|
 | `_colors.scss` | All colour variables |
 | `_fonts.scss` | Typography and font stacks |
 | `_syntax.scss` | Code block colour scheme |
@@ -720,7 +720,7 @@ For site-wide CSS additions that don't fit neatly into the above files, create `
 Any file in your site's `layouts/` directory takes precedence over the theme's equivalent. This lets you customise the theme without forking it, which keeps upgrades painless. Common overrides:
 
 | File | Purpose |
-|||
+|---|---|
 | `layouts/_partials/svg.html` | Add or modify SVG icons |
 | `layouts/_partials/comments.html` | Swap in a different comment system |
 | `layouts/_partials/analytics.html` | Use an analytics platform other than Google Analytics |
@@ -732,7 +732,7 @@ Any file in your site's `layouts/` directory takes precedence over the theme's e
 Create any of the following partials in `layouts/_partials/` to inject content into the footer of specific page types:
 
 | File | Applies to |
-||--|
+|---|---|
 | `index-footer.html` | Homepage / landing page |
 | `list-footer.html` | Post list pages |
 | `single-footer.html` | Single pages (non-articles) |
@@ -756,7 +756,7 @@ Social links are configured in `hugo.toml` under `[[params.social]]`. Add one bl
 ```
 
 | | | | | |
-||||||
+|-|-|-|-|-|
 | `email` | `codepen` | `facebook` | `github` | `gitlab` |
 | `instagram` | `linkedin` | `slack` | `stackoverflow` | `telegram` |
 | `twitter (Now X)` | `youtube` | `shutterstock` | `freepik` | `adobestock` |
