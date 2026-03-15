@@ -2,17 +2,17 @@
 // STYLESHEET IMPORTS AND DEPENDENCIES
 // ==========================================
 // Import base styling modules for colors, fonts, and core functionality
-@import "normalize.scss";
-{{- if ne false .Site.Params.usesAnimation }}@import "animate.scss";{{ end -}} // Conditionally import animation styles if enabled in site configuration
+@import "normalize";
+{{- if ne false .Site.Params.usesAnimation }}@import "animate";{{ end -}} // Conditionally import animation styles if enabled in site configuration
 @import "colors";
 @import "fonts";
 @import "variables";
 @import "admonition";
 @import "mixins";
-@import "syntax.scss";
-@import "accessibility.scss";
-{{- if and .Site.Params.shareSocial (templates.Exists "_partials/social-share.html") }}@import "socialshare.scss";{{ end -}} // Conditionally import share social styles if enabled in site configuration
-{{- if .Site.Params.gallery.enable }}$thumbnail: {{ printf "%spx" ($.Site.Params.gallery.thumbnail | default "300") }};@import "gallery.scss";{{ end -}} // Conditionally import gallery styles and set thumbnail size if gallery feature is enabled
+@import "syntax";
+@import "accessibility";
+{{- if and .Site.Params.shareSocial (templates.Exists "_partials/social-share.html") }}@import "socialshare";{{ end -}} // Conditionally import share social styles if enabled in site configuration
+{{- if .Site.Params.gallery.enable }}$thumbnail: {{ printf "%spx" ($.Site.Params.gallery.thumbnail | default "300") }};@import "gallery";{{ end -}} // Conditionally import gallery styles and set thumbnail size if gallery feature is enabled
 
 // ==========================================
 // DYNAMIC ACCENT COLOR CONFIGURATION
@@ -32,7 +32,7 @@ $marked-background: {{.}};
 $inserted-text-underline: {{.}};
 {{ end -}}
 
-{{- if and (.Site.Params.scrollToTop) }}@import "scrolltotop.scss";{{ end -}}  // Conditionally import scroll to top styles if enabled in site configuration
+{{- if and (.Site.Params.scrollToTop) }}@import "scrolltotop";{{ end -}}  // Conditionally import scroll to top styles if enabled in site configuration
 
 
 // ==========================================
@@ -1323,4 +1323,4 @@ a.footnote-ref {
 // USER CUSTOMIZATION OVERRIDE
 // ==========================================
 // Import user-specific custom styles if they exist - these will override all built-in styles
-{{- if (fileExists "assets/scss/userstyles.scss") }}@import "userstyles.scss";{{ end -}}
+{{ with resources.Get "scss/_userstyles.scss" }}@import "userstyles";{{ end }}

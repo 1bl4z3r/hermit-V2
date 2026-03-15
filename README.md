@@ -713,7 +713,7 @@ Copy any of the following from the theme into your own `assets/scss/` and edit f
 | `_scrolltotop.scss` | Scroll-to-top button styles |
 | `_accessibility.scss` | Accessibility-related styles |
 
-For site-wide CSS additions that don't fit neatly into the above files, create `assets/scss/userstyles.scss`. Styles defined there are appended last and will override everything else.
+For site-wide CSS additions that don't fit neatly into the above files, create `assets/scss/_userstyles.scss`. Styles defined there are appended last and will override everything else.
 
 ### Layout Overrides
 
