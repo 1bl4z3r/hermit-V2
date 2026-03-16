@@ -929,45 +929,30 @@ a.footnote-ref {
 #TableOfContents {
   font-size: $toc-content-font-size;
   @include dimmed;
+  scroll-target-group: auto;
 
   ul {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 0 1em;
     margin: 0;
   }
 
-  // Custom scrollbar styling for table of contents
-  &>::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  &>::-webkit-scrollbar-track {
-    background: $tableofcontents-scrollbar-track;
-  }
-
+  &>::-webkit-scrollbar { width: 4px; }
+  &>::-webkit-scrollbar-track { background: $tableofcontents-scrollbar-track; }
   &>::-webkit-scrollbar-thumb {
-    background: $tableofcontents-scrollbar-thumb ;
-  }
-
-  &>::-webkit-scrollbar-thumb:hover {
-    background: $tableofcontents-scrollbar-thumb-hover;
+    background: $tableofcontents-scrollbar-thumb;
+    &:hover { background: $tableofcontents-scrollbar-thumb-hover; }
   }
 
   &>ul {
     list-style-type: none;
     overflow-y: auto;
     height: calc(100vh - 300px);
-
-    // Nested list styling with smaller font
-    ul ul {
-      font-size: $toc-content-nested-font-size;
-    }
+    ul ul { font-size: $toc-content-nested-font-size; }
   }
 
-  a:hover {
-    border-bottom: $tableofcontents-a-hover-border-bottom 1px solid;
-  }
+  a:hover, :target-current { border-bottom: $tableofcontents-a-hover-border-bottom 1px solid; }
 }
+
 
 // ==========================================
 // POST NAVIGATION (PREV/NEXT LINKS)
