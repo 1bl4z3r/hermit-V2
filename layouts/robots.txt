@@ -1,12 +1,12 @@
 User-agent: *
-{{- range where $.Site.Pages ".Params.robots" false }}
-Disallow: {{ .Permalink -}}
+{{- range where site.Pages ".Params.robots" false }}
+Disallow: {{ .RelPermalink -}}
 {{ end }}
 {{- with .Sitemap }}
-Sitemap: {{ .Filename | default "sitemap.xml" | absURL -}}
+Sitemap: {{ .Filename | default "sitemap.xml" | relURL -}}
 {{ end }}
-{{- if gt (len $.Site.Languages) 1 }}
-{{- range $.Site.Home.AllTranslations }}
-Sitemap: {{ printf "/%s/sitemap.xml" .Language.Lang | absURL -}}
+{{- if hugo.IsMultilingual }}
+{{- range site.Home.AllTranslations }}
+Sitemap: {{ printf "/%s/sitemap.xml" .Language.Lang | relURL -}}
 {{ end }}
 {{- end }}
