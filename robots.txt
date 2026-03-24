@@ -1,7 +1,7 @@
 User-agent: *
-Disallow: https://1bl4z3r.github.io/hermit-V2/en/michael-henderson/
-Disallow: https://1bl4z3r.github.io/hermit-V2/en/posts/hugoisforlovers/
-Sitemap: https://1bl4z3r.github.io/hermit-V2/sitemap.xml
-Sitemap: https://1bl4z3r.github.io/en/sitemap.xml
-Sitemap: https://1bl4z3r.github.io/fr/sitemap.xml
-Sitemap: https://1bl4z3r.github.io/it/sitemap.xml
+Disallow: /hermit-V2/en/michael-henderson/
+Disallow: /hermit-V2/en/posts/hugoisforlovers/
+Sitemap: /hermit-V2/sitemap.xml
+Sitemap: /en/sitemap.xml
+Sitemap: /fr/sitemap.xml
+Sitemap: /it/sitemap.xml
