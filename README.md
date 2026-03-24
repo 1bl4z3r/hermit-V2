@@ -764,7 +764,7 @@ Social links are configured in `hugo.toml` under `[[params.social]]`. Add one bl
 | `twitch` | `qq` | `mastodon` | `discord` | `matrix` |
 | `etsy` | `tiktok` | `imgur` | `bluesky` | `xmpp` |
 | `medium` | `medium old` | `pixelfed` | `ko-fi` | `threads` |
-| `wechat` | | | | |
+| `wechat` | `sourcehut` | | | |
 
 Need an icon that isn't listed? Copy `layouts/_partials/svg.html` to your site and add it — see [Layout Overrides](#layout-overrides).
 
