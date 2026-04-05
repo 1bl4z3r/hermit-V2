@@ -1,29 +1,44 @@
-{{/* This partial is to help `rss.xml` on generating proper links to images in feed */}}
+{{/* Generates RSS enclosure/media tags for a post's image.
+     Handles local assets, root-relative paths, and external URLs.
+     SVGs are emitted without width/height (unsupported by Hugo). */}}
 {{- with $path := .path -}}
-{{- if not (or (findRE `http[s]{0,1}://` $path 1) (findRE `^\/.*` $path 1)) -}}
-{{- with resources.Get $path -}}
-<enclosure url="{{ .RelPermalink | absURL }}" length="" type="{{ .MediaType }}" />
-<media:thumbnail url="{{ .RelPermalink | absURL }}" width="{{ .Width}}" height="{{ .Height}}" />
-<media:content url="{{ .RelPermalink | absURL }}" medium="{{ .MediaType.MainType }}" type="{{ .MediaType}}" width="{{ .Width}}" height="{{ .Height}}" >
+
+  {{- $isLocal    := not (or (strings.HasPrefix $path "http://") (strings.HasPrefix $path "https://") (strings.HasPrefix $path "/")) -}}
+  {{- $isRooted   := and (not $isLocal) (strings.HasPrefix $path "/") -}}
+
+  {{- $res := "" -}}
+  {{- $url := "" -}}
+
+  {{- if $isLocal -}}
+    {{- with resources.Get $path -}}
+      {{- $res = . -}}
+      {{- $url = .RelPermalink | absURL -}}
+    {{- end -}}
+  {{- else if $isRooted -}}
+    {{- $remote := printf "%s%s" site.BaseURL (strings.TrimLeft "/" $path) -}}
+    {{- with resources.GetRemote $remote -}}
+      {{- $res = . -}}
+      {{- $url = .Permalink -}}
+    {{- end -}}
+  {{- else -}}
+    {{- with resources.GetRemote $path -}}
+      {{- $res = . -}}
+      {{- $url = .Permalink -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- with $res -}}
+    {{- $isSVG := eq .MediaType.SubType "svg+xml" -}}
+<enclosure url="{{ $url }}" length="" type="{{ .MediaType }}" />
+    {{- if $isSVG }}
+<media:thumbnail url="{{ $url }}" />
+<media:content url="{{ $url }}" medium="{{ .MediaType.MainType }}" type="{{ .MediaType }}">
+    {{- else }}
+<media:thumbnail url="{{ $url }}" width="{{ .Width }}" height="{{ .Height }}" />
+<media:content url="{{ $url }}" medium="{{ .MediaType.MainType }}" type="{{ .MediaType }}" width="{{ .Width }}" height="{{ .Height }}">
+    {{- end }}
     <media:title type="html">{{ . }}</media:title>
 </media:content>
-{{- end -}}
-{{- else if findRE `^\/.*` $path 1 -}}
-{{ $path := printf "%s%s" site.BaseURL (strings.TrimLeft "/" $path) }}
-			{{- with resources.GetRemote $path -}}
-			<enclosure url="{{ .Permalink }}" length="" type="{{ .MediaType }}" />
-			<media:thumbnail url="{{ .Permalink }}" width="{{ .Width}}" height="{{ .Height}}" />
-			<media:content url="{{ .Permalink }}" medium="{{ .MediaType.MainType }}" type="{{ .MediaType}}" width="{{ .Width}}" height="{{ .Height}}" >
-			    <media:title type="html">{{ . }}</media:title>
-			</media:content>
-			{{- end -}}
-{{- else -}}
-			{{- with resources.GetRemote . -}}
-			<enclosure url="{{ .Permalink }}" length="" type="{{ .MediaType }}" />
-			<media:thumbnail url="{{ .Permalink }}" width="{{ .Width}}" height="{{ .Height}}" />
-			<media:content url="{{ .Permalink }}" medium="{{ .MediaType.MainType }}" type="{{ .MediaType}}" width="{{ .Width}}" height="{{ .Height}}" >
-			    <media:title type="html">{{ . }}</media:title>
-			</media:content>
-			{{- end -}}
-{{- end -}}
+  {{- end -}}
+
 {{- end -}}
