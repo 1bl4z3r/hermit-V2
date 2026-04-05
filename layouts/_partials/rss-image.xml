@@ -28,7 +28,7 @@
   {{- end -}}
 
   {{- with $res -}}
-    {{- $isSVG := eq .MediaType.SubType "svg+xml" -}}
+    {{- $isSVG := eq .MediaType.SubType "svg" -}}
 <enclosure url="{{ $url }}" length="" type="{{ .MediaType }}" />
     {{- if $isSVG }}
 <media:thumbnail url="{{ $url }}" />
