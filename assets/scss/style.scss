@@ -12,8 +12,12 @@
 @import "syntax";
 @import "accessibility";
 {{- if and .Site.Params.shareSocial (templates.Exists "_partials/social-share.html") }}@import "socialshare";{{ end -}} // Conditionally import share social styles if enabled in site configuration
-{{- if .Site.Params.gallery.enable }}$thumbnail: {{ printf "%spx" ($.Site.Params.gallery.thumbnail | default "300") }};@import "gallery";{{ end -}} // Conditionally import gallery styles and set thumbnail size if gallery feature is enabled
-
+{{- with .Site.Params.gallery -}} // Conditionally import gallery styles and set thumbnail size if gallery feature is enabled
+  {{- if .enable }}
+$thumbnail: {{ printf "%spx" (.thumbnail | default "300") }};
+@import "gallery";
+  {{- end }}
+{{- end -}}
 // ==========================================
 // DYNAMIC ACCENT COLOR CONFIGURATION
 // ==========================================
