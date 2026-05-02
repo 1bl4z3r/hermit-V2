@@ -27,7 +27,7 @@ defaultContentLanguageInSubdir = true
 #      homeSubtitle = "CHANGE ME"
 #    weight = 3
  
-languageCode = "en-us"
+locale = "en-US"
 
 # title = "CHANGE ME"
 # enableGitInfo = true
