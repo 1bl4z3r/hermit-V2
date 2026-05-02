@@ -16,7 +16,7 @@
 		<title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}</title>
 		<link>{{ .Permalink }}</link>
 		<description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
-		<generator>Hugo -- {{ hugo.Version }}</generator>{{ with .Site.LanguageCode }}
+		<generator>Hugo -- {{ hugo.Version }}</generator>{{ with .Site.Language.Locale }}
 		<language>{{.}}</language>{{end}}{{ with .Site.Params.author.email }}
 		<managingEditor>{{.}}{{ with $.Site.Params.author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Params.author.email }}
 		<webMaster>{{.}}{{ with $.Site.Params.author.name }} ({{.}}){{end}}</webMaster>{{end}}{{ with .Site.Copyright }}

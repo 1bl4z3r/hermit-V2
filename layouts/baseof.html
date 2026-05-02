@@ -1,6 +1,6 @@
 {{- $rootCtx := . -}}
 <!DOCTYPE html>
-<html lang="{{.Site.LanguageCode}}">
+<html lang="{{.Site.Language.Locale}}">
 
 <head>
 	{{- partial "google-tag-manager.html" (dict "context" . "name" "head") -}}
