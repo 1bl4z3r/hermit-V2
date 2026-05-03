@@ -16,29 +16,29 @@ enableEmoji = true
 [languages]
   [languages.en]
     title = 'Hermit - V2'
-    languageCode = 'en-US'
-    languageDirection = 'ltr'
-    languageName = 'English'
+    locale = 'en-US'
+    direction = 'ltr'
+    label = 'English'
     [languages.en.params]
       homeSubtitle = "Minimalist, production-ready Hugo theme with crisp typography, lightweight, mobile-ready, SEO-optimized and responsive design for modern bloggers & developers"
     weight = 1
   [languages.fr]
     title = 'Hermit - V2 (FR)'
-    languageCode = 'fr'
-    languageDirection = 'ltr'
-    languageName = 'French'
+    locale = 'fr'
+    direction = 'ltr'
+    label = 'French'
     [languages.fr.params]
       homeSubtitle = "Thème Hugo minimaliste, prêt pour la production, avec une typographie nette, un design léger, adapté aux mobiles, optimisé pour le référencement et réactif pour les blogueurs et développeurs modernes"
     weight = 2
   [languages.it]
     title = 'Hermit - V2 (IT)'
-    languageCode = 'it'
-    languageDirection = 'ltr'
+    locale = 'it'
+    direction = 'ltr'
     [languages.it.params]
       homeSubtitle = "Tema Hugo minimalista, pronto per la produzione, con tipografia nitida, design leggero, ottimizzato per i dispositivi mobili, SEO e reattivo per blogger e sviluppatori moderni"
     weight = 3
  
-languageCode = "en-us"
+locale = "en-US"
 
 # title = "Hermit - V2"
 # enableGitInfo = true

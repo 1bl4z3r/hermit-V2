@@ -18,7 +18,7 @@ Lastmod : 2025-03-12T20:30:30+05:30
 `hugo.toml` represents Global configuration for Hermit - V2. It is indicative on the changes to make the theme tailored to your personal preferences.
 
 `baseURL` : The absolute URL (protocol, host, path, and trailing slash) of your published site.
-- `languageCode` : A language tag as defined by RFC 5646. This value is used to populate:
+- `locale` : A language tag as defined by RFC 5646. This value is used to populate:
 	- The `<language>` element in the internal RSS template
 	- The lang attribute of the `<html>` element in the internal alias template
 - `title` - Title of the Site
