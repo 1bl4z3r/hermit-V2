@@ -1,0 +1,240 @@
+{{/* layouts/_shortcodes/figure.html */}}
+{{/*
+    Extended figure shortcode. Behaves identically to the standard Hugo figure
+    shortcode when used standalone, but gains thumbnail-generation behaviour
+    when rendered inside a {{< gallery >}} shortcode.
+
+    Standard parameters (unchanged from Hugo built-in):
+      src, link, target, rel, class, alt, attr, attrlink,
+      title, width, height, caption, loading
+
+    Gallery context (set via $.Page.Store by gallery.html):
+      "galleryThumbnail" — dimension in px (e.g. "300") for thumbnail generation.
+      "galleryId"        — used by gallery.js for lightbox grouping.
+
+    When in gallery context AND src is a local Hugo asset:
+      - A square thumbnail is generated via .Fill (Smart crop).
+      - The full-resolution image permalink is stored in data-fullsrc.
+      - gallery.js reads data-fullsrc for the lightbox; img src stays low-res.
+
+    For remote (http/https) and static (leading /) paths inside a gallery:
+      - No processing is possible; src is used for both thumbnail and lightbox.
+
+    References:
+      https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_shortcodes/figure.html
+      https://discourse.gohugo.io/t/has-anyone-a-webp-shortcode/35391
+*/}}
+
+{{- $path     := .Get "src" -}}
+{{- $link     := .Get "link" -}}
+{{- $target   := .Get "target" -}}
+{{- $rel      := .Get "rel" -}}
+{{- $class    := .Get "class" -}}
+{{- $alt      := .Get "alt" -}}
+{{- $attr     := .Get "attr" -}}
+{{- $attrlink := .Get "attrlink" -}}
+{{- $title    := .Get "title" -}}
+{{- $width    := .Get "width" -}}
+{{- $height   := .Get "height" -}}
+{{- $caption  := .Get "caption" -}}
+{{- $loading  := .Get "loading" -}}
+
+{{- $msg1 := "The %q shortcode requires a parameter named %q. See %s" -}}
+{{- $msg2 := "The resource %q passed to %q is not an image. See %s" -}}
+{{- $msg3 := "The resource %q passed to %q could not be found. See %s" -}}
+
+{{/* Determine path type. */}}
+{{- $isHTTP    := findRE `http[s]{0,1}://` $path 1 -}}
+{{- $isAbsPath := findRE `^\/.*` $path 1 -}}
+
+{{/* ----------------------------------------------------------------------- */}}
+{{/* Gallery context: read keys set by gallery.html via $.Page.Store.         */}}
+{{/* ----------------------------------------------------------------------- */}}
+{{- $inGallery     := $.Page.Store.Get "galleryId" -}}        {{/* Non-empty when inside a {{< gallery >}} block. */}}
+{{- $thumbnailSize := $.Page.Store.Get "galleryThumbnail" -}} {{/* e.g. "300" */}}
+
+{{/* Variables populated in the local-asset branch. */}}
+{{- $jpg         := "" -}}
+{{- $webp        := "" -}}
+{{- $useResource := false -}}
+
+{{/* Full-resolution permalink — populated for local assets in gallery context. */}}
+{{- $fullSrc := "" -}}
+
+{{/* Thumbnail img src — defaults to $path; overridden for local assets. */}}
+{{- $thumbSrc := "" -}}
+
+{{- if not (or $isHTTP $isAbsPath) -}}
+    {{/* ------------------------------------------------------------------- */}}
+    {{/* Local asset path: process via Hugo image pipeline.                  */}}
+    {{/* ------------------------------------------------------------------- */}}
+    {{- if not $path }}{{ errorf $msg1 .Name "src" .Position }}{{ end -}}
+    {{- with $i := resources.Get $path -}}
+        {{- if eq $i.MediaType.MainType "image" -}}
+
+            {{- if $inGallery -}}
+                {{/* ----------------------------------------------------- */}}
+                {{/* Gallery mode: generate a square thumbnail + keep full   */}}
+                {{/* resolution permalink for the lightbox.                  */}}
+                {{/* ----------------------------------------------------- */}}
+                {{- $dim  := $thumbnailSize | default "300" -}}
+                {{- $spec := printf "%sx%s Smart" $dim $dim -}} {{/* e.g. "300x300 Smart" */}}
+
+                {{- $thumb := $i.Fill $spec -}}
+                {{- $thumbSrc = $thumb.RelPermalink -}}
+                {{- $fullSrc  = $i.RelPermalink -}}       {{/* Full-res for lightbox. */}}
+
+                {{/* Derive display dimensions from thumbnail for correct layout. */}}
+                {{- if not $width  -}}{{- $width  = $dim -}}{{- end -}}
+                {{- if not $height -}}{{- $height = $dim -}}{{- end -}}
+
+                {{/* Also prepare webp/jpg pair for the <picture> element. */}}
+                {{- $fitSpec := printf "%sx%s" $dim $dim -}}
+                {{- if eq $i.MediaType "image/webp" -}}
+                    {{- $jpg  = $thumb.Fit (printf "%s jpg"  $fitSpec) -}}
+                    {{- $webp = $thumb -}}
+                {{- else if eq $i.MediaType "image/jpeg" -}}
+                    {{- $webp = $thumb.Fit (printf "%s webp" $fitSpec) -}}
+                    {{- $jpg  = $thumb -}}
+                {{- else -}}
+                    {{- $jpg  = $thumb.Fit (printf "%s jpg"  $fitSpec) -}}
+                    {{- $webp = $thumb.Fit (printf "%s webp" $fitSpec) -}}
+                {{- end -}}
+
+            {{- else -}}
+                {{/* ----------------------------------------------------- */}}
+                {{/* Standalone mode: original behaviour (fit to w×h).      */}}
+                {{/* ----------------------------------------------------- */}}
+                {{- if not $width  -}}{{- $width  = $i.Width  -}}{{- end -}}
+                {{- if not $height -}}{{- $height = $i.Height -}}{{- end -}}
+                {{- $fitJpg  := printf "%vx%v jpg"  $width $height -}}
+                {{- $fitWebp := printf "%vx%v webp" $width $height -}}
+                {{- if eq $i.MediaType "image/webp" -}}
+                    {{- $jpg  = $i.Fit $fitJpg -}}
+                    {{- $webp = $i -}}
+                {{- else if eq $i.MediaType "image/jpeg" -}}
+                    {{- $webp = $i.Fit $fitWebp -}}
+                    {{- $jpg  = $i -}}
+                {{- else -}}
+                    {{- $jpg  = $i.Fit $fitJpg -}}
+                    {{- $webp = $i.Fit $fitWebp -}}
+                {{- end -}}
+                {{- $thumbSrc = $webp.RelPermalink -}}
+
+            {{- end -}}
+
+            {{- $useResource = true -}}
+
+        {{- else -}}
+            {{- errorf $msg2 $path $.Name $.Position -}}
+        {{- end -}}
+    {{- else -}}
+        {{- errorf $msg3 $path .Name .Position -}}
+    {{- end -}}
+{{- end -}}
+
+{{/* Resolve the src for non-resource paths (static / remote). */}}
+{{- $src := $path -}}
+{{- if $isAbsPath -}}
+    {{- $src = printf "%s%s" .Site.BaseURL (strings.TrimLeft "/" $path) -}}
+{{- end -}}
+{{- if not $thumbSrc -}}{{- $thumbSrc = $src -}}{{- end -}} {{/* Fallback: use src as thumbnail. */}}
+
+{{/* Shared alt text — priority: explicit alt → title → caption → filename. */}}
+{{- $altText := "" -}}
+{{- if $alt -}}
+    {{- $altText = $alt -}}
+{{- else if $title -}}
+    {{- $altText = $title -}}
+{{- else if $caption -}}
+    {{- $altText = $caption | markdownify | plainify -}}
+{{- else -}}
+    {{- $altText = path.Base $path | strings.TrimSuffix (path.Ext $path) -}} {{/* Filename without extension as last resort. */}}
+{{- end -}}
+
+{{/*
+    In gallery context, default loading to "lazy" unless the caller overrides it.
+    Gallery images are almost always below the fold.
+*/}}
+{{- if and $inGallery (not $loading) -}}
+    {{- $loading = "lazy" -}}
+{{- end -}}
+
+{{/*
+    data-fullsrc: present only when inside a gallery AND a full-res URL is
+    available (local assets only). gallery.js reads this for the lightbox URL.
+    Falls back to the `link` param if provided (manual override).
+*/}}
+{{- $dataFullSrc := "" -}}
+{{- if $inGallery -}}
+    {{- if $fullSrc -}}
+        {{- $dataFullSrc = $fullSrc -}}
+    {{- else if $link -}}
+        {{- $dataFullSrc = $link -}} {{/* Manual full-res override via link param. */}}
+    {{- end -}}
+{{- end -}}
+
+{{/*
+    Schema.org ImageObject markup for gallery figures.
+    <meta> tags are used for machine-readable data that isn't visible to users.
+    contentUrl  — canonical full-resolution URL for crawlers.
+    name        — image title (maps to figure's title param).
+    description — caption text (maps to figure's caption param).
+*/}}
+{{- $schemaContentUrl := $dataFullSrc | default $thumbSrc -}}
+
+<figure{{ with $class }} class="{{ . }}"{{ end -}}
+    {{- with $dataFullSrc }} data-fullsrc="{{ . }}"{{ end -}}
+    {{- if $inGallery }} itemprop="image" itemscope itemtype="https://schema.org/ImageObject"{{ end }}>
+
+    {{- if and $link (not $inGallery) -}}
+        <a href="{{ $link }}"{{ with $target }} target="{{ . }}"{{ end }}{{ with $rel }} rel="{{ . }}"{{ end }}>
+    {{- end -}}
+
+    {{/* Schema.org meta tags: machine-readable, invisible to users, readable by crawlers. */}}
+    {{- if $inGallery -}}
+        <meta itemprop="contentUrl" content="{{ $schemaContentUrl }}">
+        {{- with $title }}<meta itemprop="name" content="{{ . }}">{{ end -}}
+        {{- with $caption }}<meta itemprop="description" content="{{ $caption | markdownify | plainify }}">{{ end -}}
+    {{- end -}}
+
+    {{- if $useResource -}}
+        <picture>
+            <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+            <source srcset="{{ $jpg.RelPermalink }}"  type="image/jpeg">
+            <img src="{{ $webp.RelPermalink }}"
+                {{- with $altText }} alt="{{ . }}"{{ end -}}
+                {{- with $jpg.Width }} width="{{ . }}"{{ end -}}
+                {{- with $jpg.Height }} height="{{ . }}"{{ end -}}
+                {{- with $loading }} loading="{{ . }}"{{ end }}
+                decoding="async" />
+        </picture>
+    {{- else -}}
+        <img src="{{ $thumbSrc }}"
+            {{- with $altText }} alt="{{ . }}"{{ end -}}
+            {{- with $width }} width="{{ . }}"{{ end -}}
+            {{- with $height }} height="{{ . }}"{{ end -}}
+            {{- with $loading }} loading="{{ . }}"{{ end }}
+            decoding="async" />
+    {{- end -}}
+
+    {{- if and $link (not $inGallery) -}}</a>{{- end -}}
+
+    {{- if or $title $caption $attr -}}
+        <figcaption>
+            {{- with $title -}}<h4>{{ . }}</h4>{{- end -}}
+            {{- if or $caption $attr -}}
+                <p>
+                    {{- $caption | markdownify -}}
+                    {{- with $attrlink -}}
+                        {{- if $caption }} - {{ end -}}
+                        <a href="{{ . }}">
+                    {{- end -}}
+                    {{- $attr | markdownify | default $attrlink -}}
+                    {{- if $attrlink }}</a>{{ end -}}
+                </p>
+            {{- end -}}
+        </figcaption>
+    {{- end -}}
+
+</figure>

@@ -90,7 +90,8 @@ Lastmod : 2025-03-12T20:30:30+05:30
 		- If you have different CDN or site, use the absolute URL
 	- `[params.gallery]` Refer to [Image Gallery Shortcode]({{< ref "image-gallery-shortcode" >}})
   		- `enable` : Set to `true` to activate the image gallery shortcode functionality site-wide.
-  		- `thumbnail` : Defines the square dimension (in pixels) for automatically generated thumbnails for images; defaults to "300" (300px).
+  		- `width` : Defines the width (in pixels) for automatically generated thumbnails for images; defaults to "300" (300px).
+		- `layout` : Defines what would be default gallery layout sitewide. Defaults to "grid". Layout can be either "grid" or "masonry"; and can be changed on per gallery-shortcode basis.
 	- `[params.dateform]` These parameters accept Go's time formatting strings. Refer to Hugo's `dateFormat` function documentation for more examples on how to format these strings.
 		- `LongDate`: Used for displaying a full, human-readable date, typically including the month name, day, and year (e.g., "Jan 2, 2006"). Primarily used on single post pages in the header for the publication date. Defaults to `"Jan 2, 2006"`.
 		- `ShortDate`: Used for a concise date representation, typically month and day (e.g., "Jan 2"). Used in list views (blog index, tag/category lists). Defaults to `"Jan 2"`.

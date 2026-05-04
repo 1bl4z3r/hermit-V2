@@ -12,215 +12,388 @@ tags:
 toc: true
 ---
 
-The `gallery` shortcode allows you to easily create beautiful, responsive image galleries on your Hugo site. It takes a list of image sources (local paths or remote URLs), generates thumbnails for local images, and wraps them in links that open a larger version in a clean, vanilla JavaScript lightbox.
+The `gallery` shortcode lets you add a beautiful, responsive image gallery to any page on your Hugo site. You compose it using nested `{{</* figure */>}}` shortcodes — one per image — giving you full control over captions, titles, and links without any extra tooling or third-party libraries.
 
-## Features
+## What You Get
+ 
+- **Two layout modes** — a uniform square grid, or a masonry layout where images keep their natural height
+- **Automatic thumbnails** — for images stored in your `/assets` folder, a square smart-cropped thumbnail is generated at build time; the full-resolution image is loaded only when the lightbox opens
+- **Lightbox** — clicking any thumbnail opens the full image in a modal overlay with title, caption, previous/next navigation, and keyboard controls
+- **No-JS warning** — if JavaScript is disabled, hovering over a thumbnail shows a clear message instead of silently doing nothing
+- **SEO & accessibility built in** — structured data, meaningful alt text, lazy loading, ARIA roles, and URL-hash navigation so every open image has its own linkable URL
+- **No external libraries** — pure vanilla JavaScript and SCSS
 
-*   **Responsive Design**: The gallery adapts to different screen sizes using flexbox.
-*   **Thumbnails**:
-    *   For local images (from `/assets` or `/static` folders), 300x300 pixel square, smart-cropped thumbnails are automatically generated.
-    *   For remote images, the original image is used as the thumbnail source, and CSS (`object-fit: cover;`) ensures it fits the 300x300px thumbnail container.
-*   **Lightbox**:
-    *   Clicking a thumbnail opens the full-resolution image in a modal overlay.
-    *   Supports navigation (next/previous arrows) between images within the same gallery.
-    *   Keyboard controls: `Escape` to close, `ArrowLeft` for previous, `ArrowRight` for next.
-*   **Captions**:
-    *   Automatically generated from the image filename (without the file extension).
-    *   For remote URLs, query parameters are stripped before generating the caption.
-    *   Captions are displayed in the lightbox and appear on hover over the thumbnail in the gallery.
-*   **Vanilla JS & SCSS**: Built with no external libraries for lean performance.
+## Step 1 — Enable the Gallery
+ 
+Before the shortcode will render, add this to your `hugo.toml`:
+ 
+```toml
+[params.gallery]
+  enable    = true
+  thumbnail = "300"   # thumbnail size in pixels — default is 300
+  layout    = "grid"  # default layout: "grid" or "masonry"
+```
+ 
+- `enable` — **required**. The gallery will not render without this.
+- `thumbnail` — controls the width and height of generated thumbnails in pixels.
+- `layout` — sets the default layout for all galleries on your site. You can override this per gallery with the `mode` parameter (see below).
 
-## How to Use
-
-To use the shortcode, simply list your image sources (one per line) between the opening and closing `gallery` tags.
-
-```markdown
+## Step 2 — Add a Gallery to Your Content
+ 
+Wrap one or more `{{</* figure */>}}` shortcodes inside `{{</* gallery */>}}`:
+ 
+```go
 {{</* gallery */>}}
-path/to/your/image1.jpg
-https://example.com/remote/image2.png
-/static-path/image3.webp
+  {{</* figure src="images/photo1.jpg" title="Sunset" caption="Taken at the coast" */>}}
+  {{</* figure src="images/photo2.jpg" title="Mountains" caption="Early morning hike" */>}}
+  {{</* figure src="images/photo3.jpg" caption="City lights" */>}}
 {{</* /gallery */>}}
 ```
+ 
+That is all the minimum setup requires. Hugo will generate thumbnails, wire up the lightbox, and output SEO-friendly markup automatically.
 
-## Configuration
-
-You can configure the gallery's behavior and appearance through your `hugo.toml` file and by customizing SCSS variables.
-
-### Enabling the Gallery
-
-To use the gallery shortcode, you must first enable it in your site's configuration. Add the following to your `hugo.toml` file under the `[params]` section:
-
-```toml
-[params.gallery]
-  enable = true
+## Layout Modes
+ 
+### Grid
+ 
+The default layout. Every image is displayed as a uniform square cell. Images are cropped to fill the square (smart crop — the most interesting part of the image is preserved). Cells are centred when there are fewer images than would fill a full row.
+ 
+```go
+{{</* gallery mode="grid" */>}}
+  {{</* figure src="images/a.jpg" title="A" caption="First image" */>}}
+  {{</* figure src="images/b.jpg" title="B" caption="Second image" */>}}
+  {{</* figure src="images/c.jpg" title="C" caption="Third image" */>}}
+{{</* /gallery */>}}
 ```
-
-### Customizing Thumbnail Size
-
-The default thumbnail size is 300x300 pixels. You can customize this by adding a `thumbnail` variable under `[params.gallery]` in your `hugo.toml`. The value should be the desired dimension in pixels (the number only).
-
-```toml
-[params.gallery]
-  enable = true
-  thumbnail = "300" # Default is 300, meaning 300px
+ 
+### Masonry
+ 
+Images keep their natural height, creating a staggered, Pinterest-style layout. Useful when your images have varying aspect ratios and you want to show them without cropping. Sparse rows (fewer images than fill the full width) are centred.
+ 
+```go
+{{</* gallery mode="masonry" */>}}
+  {{</* figure src="images/landscape.jpg" caption="Wide shot" */>}}
+  {{</* figure src="images/portrait.jpg" caption="Tall shot" */>}}
+{{</* /gallery */>}}
 ```
+{{< admonition warning "Important note on Masonry" >}}
+Masonry layout doesnot have a baseline browser support. This layout was created as an experimental solution and should not be used in production.
+Using grid layout is recommended, and is set as a default when using this shortcode. 
 
-### Styling with SCSS Variables
+Browser support can be checked from [Masonry layout - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Masonry_layout)
+{{< /admonition >}}
+ 
+> **Tip:** The `mode` parameter always overrides the `layout` value you set in `hugo.toml`. Set `layout` to whichever mode you use most often, then use `mode` on the shortcodes where you need something different.
 
-You can customize all aspects of the gallery and lightbox appearance by editing the following SCSS variables, typically found in your theme's `assets/scss/_colors.scss` file (or a similar SCSS partial responsible for color definitions):
-
-```scss
-// Image Gallery specific colours
-$gallery-item-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !default; // Subtle shadow for depth.
-$gallery-item-hover-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !default; // Enhance shadow on hover.
-$gallery-item-caption-background: rgba(0, 0, 0, 0.7) !default; // Semi-transparent background for readability.
-$gallery-item-caption-color: #fff !default; // White text for contrast.
-$lightbox-overlay-background: rgba(0, 0, 0, 0.85) !default; // Dark semi-transparent background to focus on image.
-$lightbox-image-box-shadow: 0 5px 15px rgba(0,0,0,0.3) !default; // Shadow for the image in lightbox
-$lightbox-caption-color: #fff !default; // Caption colour in lightbox.
-$lightbox-close-nav-color: #fff !default; // Close and Navigation button colour in lightbox.
-$lightbox-close-color-hover: #ccc !default; // Close button hover colour in lightbox.
-$lightbox-nav-background-color: rgba(0, 0, 0, 0.3) !default; // Semi-transparent background for nav buttons.
-$lightbox-nav-background-color-hover: rgba(0, 0, 0, 0.6) !default; // Semi-transparent background for nav buttons on hover.
-```
+## The `figure` Parameters
+ 
+Each `{{</* figure */>}}` inside a gallery accepts the following parameters:
+ 
+| Parameter  | Required | Description |
+|------------|----------|-------------|
+| `src`      | Yes      | Path to the image. See [Image Sources](#image-sources) below. |
+| `title`    | No       | Shown as a bold heading in the lightbox above the caption. |
+| `caption`  | No       | Descriptive text shown in the lightbox and on thumbnail hover. Supports Markdown. |
+| `alt`      | No       | Alt text for the image. Defaults to `title`, then `caption`, then the filename. Always set this when your image conveys meaning not covered by the caption. |
+| `attr`     | No       | Attribution or credit line, shown alongside the caption. |
+| `attrlink` | No       | URL to link the attribution text to. |
+| `link`     | No       | In standalone `{{</* figure */>}}` use (outside a gallery), wraps the image in a link. Inside a gallery, this is used as the lightbox full-resolution URL for static and remote images. |
+| `loading`  | No       | Override the loading behaviour. Defaults to `lazy` inside a gallery. Set to `eager` for the first image if it is above the fold. |
+| `class`    | No       | CSS class applied to the `<figure>` element. |
+ 
 
 ## Image Sources
+ 
+The shortcode handles three types of image paths:
+ 
+### 1. Local assets (recommended)
+ 
+Images stored in your `/assets` directory. Use the path relative to `assets/`:
+ 
+```go
+{{</* figure src="images/photo.jpg" */>}}
+```
+ 
+This means the file lives at `your-project/assets/images/photo.jpg`.
+ 
+Hugo's image pipeline processes these at build time:
+ 
+- A square thumbnail is generated and used in the gallery grid
+- A WebP version is created (with JPEG fallback via `<picture>`)
+- The original full-resolution image is loaded only when the lightbox opens
+### 2. Static files
+ 
+Images stored in your `/static` directory. Prefix the path with `/`:
+ 
+```go
+{{</* figure src="/photos/event.jpg" */>}}
+```
+ 
+This means the file lives at `your-project/static/photos/event.jpg`.
+ 
+> Static files are served as-is. Hugo cannot resize or convert them, so the same file is used for both the thumbnail display and the lightbox.
+ 
+### 3. Remote images
+ 
+Full `http://` or `https://` URLs to images hosted elsewhere:
+ 
+```go
+{{</* figure src="https://example.com/photo.jpg" caption="Photo from the web" */>}}
+```
+ 
+> Remote images cannot be resized by Hugo. The same URL is used for both thumbnail and lightbox. CSS handles the visual fit.
 
-To use the shortcode, simply list your image sources (one per line) between the opening and closing `gallery` tags.
+## Lightbox
+ 
+Clicking any thumbnail opens the lightbox. If you provided a `title` and/or `caption`, they appear below the enlarged image — title in bold, caption underneath.
+ 
+| Control | Action |
+|---|---|
+| Click thumbnail | Open lightbox at that image |
+| `←` / `→` arrow keys | Navigate to previous / next image |
+| `Escape` | Close the lightbox |
+| Click outside the image | Close the lightbox |
+| Browser back button | Close the lightbox |
 
-```markdown
-{{</* gallery */>}}
-path/to/your/image1.jpg
-https://example.com/remote/image2.png
-/static-path/image3.webp
-{{</* /gallery */>}}
+### Deep-linking to a specific image
+ 
+When you open the lightbox, the URL automatically updates to include a hash like `#gallery-abc123-2` (gallery ID + image index). This means:
+ 
+- You can copy and share a URL that opens directly to a specific image
+- The browser back button works as expected — pressing back closes the lightbox rather than leaving the page
+
+## No-JavaScript Warning
+ 
+If a visitor has JavaScript disabled, the lightbox cannot open. Rather than leave them confused by an unresponsive click, the gallery shows a clear overlay message on hover:
+ 
+> ⚠ Lightbox requires JavaScript
+ 
+This overlay is shown by default using pure CSS and is automatically hidden as soon as gallery.js loads successfully. No configuration needed.
+
+## SEO and Accessibility
+ 
+The gallery is built with search engines and assistive technology in mind. Here is what is applied automatically:
+ 
+| Feature | What it does |
+|---|---|
+| `schema.org/ImageGallery` | Marks the gallery container as a structured data entity for Google Image Search |
+| `schema.org/ImageObject` | Marks each figure with its URL, name, and description for rich results |
+| `contentUrl` meta | Gives crawlers the full-resolution image URL, even though the thumbnail is what's displayed |
+| Meaningful `alt` text | Falls back through `alt` → `title` → `caption` → filename — no image is ever left without a description |
+| `loading="lazy"` | Gallery images load only as they scroll into view, improving page speed |
+| `decoding="async"` | Images decode off the main thread, keeping the page responsive |
+| `role="region"` + `aria-label` | Screen readers announce the gallery as a named landmark |
+| `role="dialog"` + `aria-modal` on lightbox | Screen readers correctly identify the lightbox as a modal dialog |
+| `aria-live` on caption | Screen readers announce the caption when you navigate between images |
+| `role="button"` + `tabindex` on controls | Close and navigation buttons are reachable by keyboard Tab |
+
+## Configuration Reference
+ 
+### `hugo.toml`
+ 
+```toml
+[params.gallery]
+  enable    = true      # Required — gallery will not render without this
+  thumbnail = "300"     # Thumbnail dimension in px (width and height). Default: "300"
+  layout    = "grid"    # Site-wide default layout: "grid" or "masonry". Default: "grid"
+```
+ 
+### SCSS Variables
+ 
+All colours and shadows are controlled by SCSS variables. Copy these into your theme's `assets/scss/_colors.scss` (or equivalent) and edit to match your design:
+ 
+```scss
+// Gallery thumbnail cells
+$gallery-item-box-shadow:       0 2px 4px rgba(0, 0, 0, 0.1)  !default;
+$gallery-item-hover-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !default;
+$gallery-item-caption-background: rgba(0, 0, 0, 0.7)          !default; // hover caption overlay
+$gallery-item-caption-color:    #fff                           !default;
+ 
+// Lightbox
+$lightbox-overlay-background:           rgba(0, 0, 0, 0.85)   !default; // backdrop
+$lightbox-image-box-shadow:             0 5px 15px rgba(0, 0, 0, 0.3) !default;
+$lightbox-caption-color:                #fff                   !default;
+$lightbox-close-nav-color:              #fff                   !default; // close & arrow buttons
+$lightbox-close-color-hover:            #ccc                   !default;
+$lightbox-nav-background-color:         rgba(0, 0, 0, 0.3)    !default;
+$lightbox-nav-background-color-hover:   rgba(0, 0, 0, 0.6)    !default;
 ```
 
-### Image Sources
+## Full Examples
+ 
+### Basic grid gallery with local assets
 
-The shortcode supports three main types of image sources:
-
-1.  **Local Images from `/assets` directory (Recommended for processing)**:
-    *   Paths should be relative to your Hugo project's `/assets` directory.
-    *   Example: If your image is at `/assets/images/landscapes/mountain.jpg`, you would use `images/landscapes/mountain.jpg`.
-    *   Hugo's powerful image processing will be used to generate thumbnails.
-
-2.  **Local Images from `/static` directory**:
-    *   Paths should start with a `/` and be relative to your Hugo project's `/static` directory.
-    *   Example: If your image is at `/static/photos/beach.png`, you would use `/photos/beach.png`.
-    *   Hugo's image processing will also apply to these images if they are found and processable by `resources.Get`.
-
-3.  **Remote Images (URLs)**:
-    *   Full HTTP or HTTPS URLs to images hosted elsewhere.
-    *   Example: `https://images.unsplash.com/your-image-id`.
-    *   Thumbnails for remote images are not processed server-side; the original image is used and styled by CSS.
-
-## Examples
-
-Below are some examples demonstrating different ways to use the `gallery` shortcode.
-
-### 1. Gallery with Local Images from `/assets`
-
-Place your images inside the `/assets` directory of your Hugo project. For instance, if you have images in `/assets/my-trip/`:
-
-```go-text-template
-{{</* gallery */>}}
-my-gallery-assets/landscape.jpg
-my-gallery-assets/portrait.png
-my-gallery-assets/pano.webp
+```go
+{{</* gallery mode="grid" */>}}
+  {{</* figure src="images/mountain.jpg"  title="Mountain" caption="Taken at sunrise · John" */>}}
+  {{</* figure src="images/ocean.jpg"     title="Ocean"    caption="Pacific coastline" */>}}
+  {{</* figure src="images/forest.jpg"    title="Forest"   caption="Autumn colours" */>}}
 {{</* /gallery */>}}
 ```
-
-{{< gallery >}}
-images/10-2500x1667.jpg
-images/11-2500x1667.jpg
-images/928-600x400.jpg
+#### 2 images
+{{< gallery mode="grid" >}}
+{{< figure src="images/10-2500x1667.jpg" title="Grid Image 1" caption="Caption for Image 1" >}}
+{{< figure src="images/11-2500x1667.jpg" title="Grid Image 2" caption="Caption for Image 2" >}}
 {{< /gallery >}}
 
-*   **To make this work:**
-    *   Create a folder: `your-project/assets/my-gallery-assets/`
-    *   Add images like `landscape.jpg`, `portrait.png`, `pano.webp` into that folder.
-*   **Captions generated**: "landscape", "portrait", "pano".
-*   **Thumbnails**: 300x300 smart-cropped versions will be generated.
-
-### 2. Gallery with Local Images from `/static`
-
-Place your images inside the `/static` directory. For instance, if you have images in `/static/event-photos/`:
-
-```markdown
-{{</* gallery */>}}
-/event-photos/conference.jpg
-/event-photos/workshop.jpeg
-{{</* /gallery */>}}
-```
-
-{{< gallery >}}
-/images/397-600x400.jpg
-/android-chrome-192x192.png
-/android-chrome-384x384.png
+#### 3 images
+{{< gallery mode="grid" >}}
+{{< figure src="images/10-2500x1667.jpg" title="Grid Image 1" caption="Caption for Image 1" >}}
+{{< figure src="images/11-2500x1667.jpg" title="Grid Image 2" caption="Caption for Image 2" >}}
+{{< figure src="images/928-600x400.jpg"  title="Grid Image 3" caption="Caption for Image 3" >}}
 {{< /gallery >}}
 
-*   **To make this work:**
-    *   Create a folder: `your-project/static/event-photos/`
-    *   Add images: `conference.jpg`, `workshop.jpeg` into that folder.
-*   **Captions generated**: "conference", "workshop".
-*   **Thumbnails**: 300x300 smart-cropped versions will be generated.
-
-### 3. Gallery with Remote Images
-
-You can directly link to images hosted on other websites.
-
-```markdown
-{{</* gallery */>}}
-https://picsum.photos/seed/gallery-remote1/800/600
-https://placehold.co/600x400/png
-https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-https://picsum.photos/seed/gallery-remote3/1024/768
-https://picsum.photos/seed/another-image/700/500?blur=2
-https://placehold.co/600x400?text=More+Examples
-{{</* /gallery */>}}
-```
-{{< gallery >}}
-https://picsum.photos/seed/gallery-remote1/800/600
-https://placehold.co/600x400/png
-https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-https://picsum.photos/seed/gallery-remote3/1024/768
-https://picsum.photos/seed/another-image/700/500?blur=2
-https://placehold.co/600x400?text=More+Examples
+#### 4 images
+{{< gallery mode="grid" >}}
+{{< figure src="images/10-2500x1667.jpg" title="Grid Image 1" caption="Caption for Image 1" >}}
+{{< figure src="images/11-2500x1667.jpg" title="Grid Image 2" caption="Caption for Image 2" >}}
+{{< figure src="images/928-600x400.jpg"  title="Grid Image 3" caption="Caption for Image 3" >}}
+{{< figure src="images/11-2500x1667.jpg" title="Grid Image 4" caption="Caption for Image 4" >}}
 {{< /gallery >}}
 
-*   **Captions generated**: "gallery-remote1", "gallery-remote2" (query string `?grayscale` is removed), "pexels-photo-3408744".
-*   **Thumbnails**: The original remote images will be displayed, scaled and cropped by CSS to fit the 300x300 thumbnail area.
+#### 5 images
+{{< gallery mode="grid" >}}
+{{< figure src="images/10-2500x1667.jpg" title="Grid Image 1" caption="Caption for Image 1" >}}
+{{< figure src="images/11-2500x1667.jpg" title="Grid Image 2" caption="Caption for Image 2" >}}
+{{< figure src="images/928-600x400.jpg"  title="Grid Image 3" caption="Caption for Image 3" >}}
+{{< figure src="images/11-2500x1667.jpg" title="Grid Image 4" caption="Caption for Image 4" >}}
+{{< figure src="images/11-2500x1667.jpg" title="Grid Image 5" caption="Caption for Image 5" >}}
+{{< /gallery >}}
 
-### 4. Mixed Gallery (Local and Remote Images)
 
-You can combine different source types in a single gallery.
+### Basic Masonry gallery with local assets
 
-```markdown
-{{</* gallery */>}}
-portfolio/project-alpha.png  <!-- From /assets/portfolio/project-alpha.png -->
-/archive/old-photo.jpg       <!-- From /static/archive/old-photo.jpg -->
-https://picsum.photos/seed/mixed-gallery/900/700
+```go
+{{</* gallery mode="masonry" */>}}
+  {{</* figure src="images/mountain.jpg"  title="Mountain" caption="Taken at sunrise · John" */>}}
+  {{</* figure src="images/ocean.jpg"     title="Ocean"    caption="Pacific coastline" */>}}
+  {{</* figure src="images/forest.jpg"    title="Forest"   caption="Autumn colours" */>}}
+{{</* /gallery */>}}
+```
+#### 2 images
+{{< gallery mode="masonry" >}}
+{{< figure src="images/10-2500x1667.jpg" title="Grid Image 1" caption="Caption for Image 1" >}}
+{{< figure src="images/11-2500x1667.jpg" title="Grid Image 2" caption="Caption for Image 2" >}}
+{{< /gallery >}}
+
+#### 3 images
+{{< gallery mode="masonry" >}}
+{{< figure src="images/10-2500x1667.jpg" title="Grid Image 1" caption="Caption for Image 1" >}}
+{{< figure src="images/11-2500x1667.jpg" title="Grid Image 2" caption="Caption for Image 2" >}}
+{{< figure src="images/928-600x400.jpg"  title="Grid Image 3" caption="Caption for Image 3" >}}
+{{< /gallery >}}
+
+#### 4 images
+{{< gallery mode="masonry" >}}
+{{< figure src="images/10-2500x1667.jpg" title="Grid Image 1" caption="Caption for Image 1" >}}
+{{< figure src="images/11-2500x1667.jpg" title="Grid Image 2" caption="Caption for Image 2" >}}
+{{< figure src="images/928-600x400.jpg"  title="Grid Image 3" caption="Caption for Image 3" >}}
+{{< figure src="images/11-2500x1667.jpg" title="Grid Image 4" caption="Caption for Image 4" >}}
+{{< /gallery >}}
+
+#### 5 images
+{{< gallery mode="masonry" >}}
+{{< figure src="images/10-2500x1667.jpg" title="Grid Image 1" caption="Caption for Image 1" >}}
+{{< figure src="images/11-2500x1667.jpg" title="Grid Image 2" caption="Caption for Image 2" >}}
+{{< figure src="images/928-600x400.jpg"  title="Grid Image 3" caption="Caption for Image 3" >}}
+{{< figure src="images/11-2500x1667.jpg" title="Grid Image 4" caption="Caption for Image 4" >}}
+{{< figure src="images/11-2500x1667.jpg" title="Grid Image 5" caption="Caption for Image 5" >}}
+{{< /gallery >}}
+
+### Gallery with attribution
+
+Use `attr` and `attrlink` to credit the photographer or source:
+
+```go
+{{</* gallery mode="grid" */>}}
+  {{</* figure src="images/city.jpg"
+      title="City at Night"
+      caption="Downtown skyline"
+      attr="Jane Smith"
+      attrlink="https://example.com/jane" */>}}
+  {{</* figure src="images/market.jpg"
+      title="Street Market"
+      caption="Saturday morning"
+      attr="Bob Jones" */>}}
 {{</* /gallery */>}}
 ```
 
-*   Ensure `portfolio/project-alpha.png` exists in `/assets/portfolio/` and `old-photo.jpg` exists in `/static/archive/`.
-*   The gallery will display thumbnails from all sources, processing local ones and styling remote ones.
+{{< gallery mode="grid" >}}
+  {{< figure src="images/10-2500x1667.jpg"
+      title="FOREST"
+      caption="Downtown forest"
+      attr="Jane Smith"
+      attrlink="https://example.com/jane" >}}
+  {{< figure src="images/11-2500x1667.jpg"
+      title="LAKE"
+      caption="Saturday morning"
+      attr="Bob Jones" 
+      attrlink="https://example.com/bob" >}}
+{{< /gallery >}}
+
+### Gallery using static files
+
+```go
+{{</* gallery mode="grid" */>}}
+  {{</* figure src="/images/397-600x400.jpg"      title="IMAGE1"  caption="Image 1 from /static folder" */>}}
+  {{</* figure src="/android-chrome-192x192.png"  title="IMAGE2"  caption="Image 2 from /static folder" */>}}
+  {{</* figure src="/android-chrome-384x384.png"  title="IMAGE3"  caption="Image 3 from /static folder" */>}}
+{{</* /gallery */>}}
+```
+{{< gallery mode="grid" >}}
+  {{< figure src="/images/397-600x400.jpg"      title="IMAGE1"  caption="Image 1 from /static folder" >}}
+  {{< figure src="/android-chrome-192x192.png"  title="IMAGE2"  caption="Image 2 from /static folder" >}}
+  {{< figure src="/android-chrome-384x384.png"  title="IMAGE3"  caption="Image 3 from /static folder" >}}
+{{< /gallery >}}
+
+### Gallery with remote images
+
+```go
+{{</* gallery mode="masonry" */>}}
+    {{</* figure src="https://picsum.photos/seed/gallery-remote1/800/600"  caption="Random 1" */>}}
+    {{</* figure src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  caption="Random 2" */>}}
+    {{</* figure src="https://picsum.photos/seed/c/800/800"  caption="Random 3" */>}}
+    {{</* figure src="https://picsum.photos/seed/another-image/700/500?blur=2"  caption="Random 4" */>}}
+    {{</* figure src="https://picsum.photos/seed/gallery-remote3/1024/768"  caption="Random 5" */>}}
+    {{</* figure src="https://placehold.co/600x400?text=More+Examples"  caption="Random 6" */>}}
+{{</* /gallery */>}}
+```
+{{< gallery mode="masonry" >}}
+    {{< figure src="https://picsum.photos/seed/gallery-remote1/800/600"  caption="Random 1" >}}
+    {{< figure src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  caption="Random 2" >}}
+    {{< figure src="https://picsum.photos/seed/c/800/800"  caption="Random 3" >}}
+    {{< figure src="https://picsum.photos/seed/another-image/700/500?blur=2"  caption="Random 4" >}}
+    {{< figure src="https://picsum.photos/seed/gallery-remote3/1024/768"  caption="Random 5" >}}
+    {{< figure src="https://placehold.co/600x400?text=More+Examples"  caption="Random 6" >}}
+{{< /gallery >}}
+
+### Overriding the default layout per gallery
+
+If your `hugo.toml` sets `layout = "grid"` but one particular gallery should be masonry, just set `mode` on that shortcode:
+
+```toml
+# hugo.toml — site-wide default
+[params.gallery]
+  enable = true
+  thumbnail = "300"
+```
+
+```go
+{{</* gallery */>}}                       <!-- uses grid (from hugo.toml) -->
+  {{</* figure src="images/a.jpg" */>}}
+{{</* /gallery */>}}
+
+{{</* gallery mode="masonry" */>}}        <!-- overrides to masonry just for this gallery -->
+  {{</* figure src="images/b.jpg" */>}}
+{{</* /gallery */>}}
+```
+
+---
 
 ## Important Notes
 
-*   **Path Conventions**:
-    *   For images in `/assets` (e.g., `/assets/img/example.jpg`), use the path relative to the `assets` directory: `img/example.jpg`.
-    *   For images in `/static` (e.g., `/static/img/example.jpg`), use the path relative to the `static` directory, **prefixed with a `/`**: `/img/example.jpg`.
-*   **Image Processing**: Hugo's built-in image processing (for thumbnail generation) is applied to local images found in `/assets` or `/static` that are successfully loaded via `resources.Get`.
-*   **File Names for Captions**: Keep your filenames descriptive, as they are used to generate captions. For example, `golden-gate-bridge-sunset.jpg` becomes the caption "golden-gate-bridge-sunset".
-*   **Empty Lines**: Empty lines within the shortcode block are ignored.
-*   **Error Handling**: If a local image path is incorrect and the resource is not found, a warning will be logged during Hugo's build process, and that item will be skipped in the gallery.
-
-## Styling and Customization
-
-The visual appearance of the gallery and the lightbox is controlled by SCSS located in `assets/scss/_gallery.scss` (or wherever you've placed and imported it). You can override these styles in your own SCSS files to match your theme's design.
-
-The JavaScript for the lightbox functionality is located in `assets/js/gallery.js`. It's self-contained and does not rely on any third-party libraries.
-
-This gallery shortcode provides a flexible and straightforward way to add rich image displays to your content. Experiment with different image sources and enjoy the automated thumbnails and lightbox features!
+- **Path conventions matter.** A path without a leading `/` (e.g. `images/photo.jpg`) is looked up in `/assets`. A path with a leading `/` (e.g. `/images/photo.jpg`) is looked up in `/static`. Getting this wrong will cause a build warning and the image will be skipped.
+- **Write good captions.** Alt text falls back to the caption if no explicit `alt` is set, so a descriptive caption improves both accessibility and SEO.
+- **`loading="lazy"` is the default inside a gallery.** If your first gallery image is visible immediately on page load (above the fold), add `loading="eager"` to that one figure so it does not delay rendering.
+- **JavaScript is required for the lightbox.** Thumbnails and captions are fully visible without JS; only the lightbox and navigation require it. Visitors without JS see a hover warning on each thumbnail.
+- **Gallery JS is only loaded on pages that use the shortcode.** It will not affect pages that have no gallery.

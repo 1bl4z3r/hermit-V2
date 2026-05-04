@@ -150,7 +150,8 @@ enableEmoji = true
 
   [params.gallery]
     enable = true
-    thumbnail = '300'
+    width = '300'
+    layout = "grid"
 
   [[params.socialLinks]]
     name = "github"

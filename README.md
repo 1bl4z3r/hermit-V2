@@ -187,32 +187,53 @@ through for a full walkthrough with configuration snippets.
 
 ### Image Gallery
 
-Embed a lightbox-style image gallery anywhere in your content using the built-in `gallery` shortcode. It supports local images (from `/assets` or `/static`) and remote URLs, generates smart-cropped 300×300 thumbnails for local images, and powers a keyboard-navigable lightbox — all with no external libraries. For a full demo, see the [Image Gallery Shortcode](https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/) page.
+Embed a responsive image gallery anywhere in your content using the built-in `gallery` shortcode. Compose it with nested `{{< figure >}}` shortcodes — one per image. For a full demo and complete parameter reference, see the [Image Gallery Shortcode](https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/) page.
+
+**What you get out of the box:**
+- **Grid and masonry layouts** — square uniform grid, or a staggered layout that preserves natural image heights
+- **Automatic thumbnails** — local assets (from `/assets`) are smart-cropped at build time; the full-resolution image loads only when the lightbox opens
+- **Lightbox** — keyboard-navigable modal with title, caption, and URL-hash deep-linking (each open image gets its own shareable URL)
+- **No-JS warning** — hovering over a thumbnail shows a clear message if JavaScript is disabled, instead of silently doing nothing
+- **SEO & accessibility** — `schema.org` structured data, meaningful alt text fallbacks, `loading="lazy"`, `decoding="async"`, ARIA roles, and keyboard support throughout
 
 **Step 1** — Enable the gallery in `hugo.toml`:
 
 ```toml
 [params.gallery]
   enable    = true
-  thumbnail = "300"  # thumbnail size in px, default is 300
+  thumbnail = "300"   # thumbnail size in px — default is 300
+  layout    = "grid"  # site-wide default: "grid" or "masonry"
 ```
 
-**Step 2** — List image paths (one per line) inside the shortcode in your post:
+**Step 2** — Add a gallery to your content using nested `{{< figure >}}` shortcodes:
 
 ```
-{{< gallery >}}
-images/photo1.jpg
-/static-images/photo2.png
-https://example.com/remote-photo.jpg
+{{< gallery mode="grid" >}}
+  {{< figure src="images/photo1.jpg" title="Sunset"    caption="Taken at the coast" >}}
+  {{< figure src="images/photo2.jpg" title="Mountains" caption="Early morning hike" >}}
 {{< /gallery >}}
 ```
 
-Image path conventions:
-- **`assets/` images** — use the path relative to `assets/`, e.g. `images/photo.jpg` for `/assets/images/photo.jpg`
-- **`static/` images** — prefix with `/`, e.g. `/photos/photo.jpg` for `/static/photos/photo.jpg`
-- **Remote images** — full `http://` or `https://` URL; thumbnails are CSS-scaled rather than server-processed
+Switch to masonry for a staggered layout:
 
-Captions are generated automatically from the filename. The gallery JavaScript is only loaded on pages where the shortcode is used. Gallery and lightbox colours can be fine-tuned via SCSS variables in `_colors.scss` — the full variable list is in the [gallery docs](https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/).
+```
+{{< gallery mode="masonry" >}}
+  {{< figure src="images/wide.jpg"     caption="Landscape" >}}
+  {{< figure src="images/portrait.jpg" caption="Portrait"  >}}
+{{< /gallery >}}
+```
+
+The `mode` parameter overrides the site-wide `layout` value from `hugo.toml`, so you can set a sensible default and override it per gallery as needed.
+
+**Image path conventions:**
+
+| Source | `src` format | Notes |
+|---|---|---|
+| `assets/` folder | `images/photo.jpg` | Hugo generates thumbnails and WebP automatically |
+| `static/` folder | `/images/photo.jpg` | Prefix with `/`; served as-is, no resizing |
+| Remote URL | `https://example.com/photo.jpg` | Thumbnail is CSS-scaled; no server-side processing |
+
+Gallery and lightbox colours are customisable via SCSS variables in `_colors.scss` — the full variable list is in the [gallery docs](https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/#scss-variables). The gallery JavaScript is only loaded on pages where the shortcode is used.
 
 ### Featured Image
 
