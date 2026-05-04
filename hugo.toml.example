@@ -121,7 +121,8 @@ expiryDate = ["expiryDate"]
   # mermaidLib = "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs"
   [params.gallery]
     enable = true
-    thumbnail = '300'
+    width = '300'
+    layout = "grid"
 
   [params.dateform]
     CopyrightDate = "2006"
