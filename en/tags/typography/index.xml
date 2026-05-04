@@ -654,11 +654,22 @@ print(sorted_dt)
 <img src="https://picsum.photos/600/400/?random" alt="img"></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{ {&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/928-600x400.jpg&#34;</span> <span style="color:#a6e22e">alt</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;A WEBP converted image&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;webp&#34;</span> <span style="color:#a6e22e">loading</span>=<span style="color:#e6db74">&#34;lazy&#34;</span> &gt;} }
 </span></span></code></pre></div>
+
+
+
+
+
+    
+    
+                
+                
+
 <figure class="webp"><picture>
-      <source srcset="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" type="image/webp">
-      <source srcset="/hermit-V2/images/928-600x400_hu_fa0438000595b6b0.jpg" type="image/jpeg">
-      <img src="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" alt="A WEBP converted image" width="600" height="400" loading="lazy" />
-    </picture><figcaption><p>A WEBP converted image</p></figcaption></figure>
+            <source srcset="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_fa0438000595b6b0.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" alt="A WEBP converted image" width="600" height="400" loading="lazy"
+                decoding="async" />
+        </picture><figcaption><p>A WEBP converted image</p></figcaption></figure>
 <p>Mermaid</p>
 <pre class="mermaid">  flowchart TD
     A["Cron Job Starts at 9 AM"] --> B["Loop Through Each Newspaper"]
