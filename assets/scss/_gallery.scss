@@ -31,14 +31,18 @@
         overflow: hidden;
         border-radius: 4px;
         margin: 0; // Reset browser default figure margin.
-        box-shadow: $gallery-item-box-shadow;
         transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         cursor: pointer;
 
+        &:not(.figure--no-shadow) {
+            box-shadow: $gallery-item-box-shadow;
+        }
+
         &:hover {
             transform: scale(1.03);
-            box-shadow: $gallery-item-hover-box-shadow;
-
+            &:not(.figure--no-shadow) {
+                box-shadow: $gallery-item-hover-box-shadow;
+            }
             figcaption {
                 opacity: 1;
                 transform: translateY(0); // Slide into view on hover.
@@ -213,6 +217,10 @@
             img {
                 height: auto;
             }
+            // Override classes for individual images
+            &.align-top { align-self: flex-start; }
+            &.align-center { align-self: center; }
+            &.align-bottom { align-self: flex-end; }
         }
     }
 }

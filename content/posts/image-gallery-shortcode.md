@@ -1,7 +1,7 @@
 ---
 title: "Image Gallery Shortcode"
 slug: "image-gallery-shortcode"
-date: 2025-05-10T10:00:00+05:30
+date: 2026-05-11T10:00:00+05:30
 draft: false
 featuredImg: ""
 description: "Learn how to use the image gallery shortcode to create responsive galleries with thumbnails, captions, and a JavaScript-powered lightbox."
@@ -19,6 +19,8 @@ The `gallery` shortcode lets you add a beautiful, responsive image gallery to an
 - **Two layout modes** — a uniform square grid, or a masonry layout where images keep their natural height
 - **Automatic thumbnails** — for images stored in your `/assets` folder, a square smart-cropped thumbnail is generated at build time; the full-resolution image is loaded only when the lightbox opens
 - **Lightbox** — clicking any thumbnail opens the full image in a modal overlay with title, caption, previous/next navigation, and keyboard controls
+- **Native SVG Support** — `.svg` files are automatically detected and rendered without box shadows so transparent graphics blend perfectly into the page
+- **Granular Alignment** — control the vertical alignment of specific images in your masonry layouts using utility classes
 - **No-JS warning** — if JavaScript is disabled, hovering over a thumbnail shows a clear message instead of silently doing nothing
 - **SEO & accessibility built in** — structured data, meaningful alt text, lazy loading, ARIA roles, and URL-hash navigation so every open image has its own linkable URL
 - **No external libraries** — pure vanilla JavaScript and SCSS
@@ -99,7 +101,7 @@ Each `{{</* figure */>}}` inside a gallery accepts the following parameters:
 | `attrlink` | No       | URL to link the attribution text to. |
 | `link`     | No       | In standalone `{{</* figure */>}}` use (outside a gallery), wraps the image in a link. Inside a gallery, this is used as the lightbox full-resolution URL for static and remote images. |
 | `loading`  | No       | Override the loading behaviour. Defaults to `lazy` inside a gallery. Set to `eager` for the first image if it is above the fold. |
-| `class`    | No       | CSS class applied to the `<figure>` element. |
+| `class`    | No       | CSS class applied to the `<figure>` element. Inside a masonry gallery, you can use `align-top`, `align-center`, or `align-bottom` to override vertical alignment for that specific image. |
  
 
 ## Image Sources
@@ -365,6 +367,26 @@ Use `attr` and `attrlink` to credit the photographer or source:
     {{< figure src="https://picsum.photos/seed/another-image/700/500?blur=2"  caption="Random 4" >}}
     {{< figure src="https://picsum.photos/seed/gallery-remote3/1024/768"  caption="Random 5" >}}
     {{< figure src="https://placehold.co/600x400?text=More+Examples"  caption="Random 6" >}}
+{{< /gallery >}}
+
+### Masonry Gallery with Custom Alignment and SVGs
+
+You can override the global masonry alignment for specific images using the `class` parameter (`align-top`, `align-center`, or `align-bottom`).
+Additionally, any `.svg` image will automatically have its box-shadow removed for a clean, integrated look.
+
+```go
+{{</* gallery mode="masonry" */>}}
+  {{</* figure src="images/tall-photo.jpg" class="align-top" title="Photo" caption="Default alignment (top)" */>}}
+  {{</* figure src="images/transparent-graphic.svg" class="align-center" title="SVG" caption="Centered and shadow-free" */>}}
+  {{</* figure src="images/wide-photo.jpg" class="align-bottom" title="Photo" caption="Aligned to bottom" */>}}
+{{</* /gallery */>}}
+
+```
+
+{{< gallery mode="masonry" >}}
+{{< figure src="images/10-2500x1667.jpg" class="align-top" title="Photo" caption="Default alignment (top)" >}}
+{{< figure src="/android-chrome-192x192.png" class="align-center" title="Graphic" caption="Centered" >}}
+{{< figure src="images/928-600x400.jpg" class="align-bottom" title="Photo" caption="Aligned to bottom" >}}
 {{< /gallery >}}
 
 ### Overriding the default layout per gallery

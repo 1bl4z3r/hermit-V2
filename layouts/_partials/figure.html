@@ -48,10 +48,20 @@
 {{- $isAbsPath := findRE `^\/.*` $path 1 -}}
 
 {{/* ----------------------------------------------------------------------- */}}
-{{/* Gallery context: read keys set by gallery.html via $.Page.Store.         */}}
+{{/* Gallery context: check if parent shortcode is a gallery.                */}}
 {{/* ----------------------------------------------------------------------- */}}
-{{- $inGallery     := $.Page.Store.Get "galleryId" -}}        {{/* Non-empty when inside a {{< gallery >}} block. */}}
-{{- $thumbnailSize := $.Page.Store.Get "galleryThumbnail" -}} {{/* e.g. "300" */}}
+{{- $inGallery := false -}}
+{{- $galleryMode := "grid" -}}
+{{- if .Parent -}}
+    {{- if eq .Parent.Name "gallery" -}}
+        {{- $inGallery = true -}}
+        {{- $galleryMode = .Parent.Get "mode" | default ($.Site.Params.gallery.layout | default "grid") -}}
+    {{- end -}}
+{{- end -}}
+
+{{/* Derive thumbnail size from Site config since Page.Store isn't available */}}
+{{- $thumbnailSize := $.Site.Params.gallery.width | default "300" -}}
+{{- $isSVG := eq (lower (path.Ext $path)) ".svg" -}}
 
 {{/* Variables populated in the local-asset branch. */}}
 {{- $jpg         := "" -}}
@@ -71,58 +81,44 @@
     {{- if not $path }}{{ errorf $msg1 .Name "src" .Position }}{{ end -}}
     {{- with $i := resources.Get $path -}}
         {{- if eq $i.MediaType.MainType "image" -}}
+            {{- $thumb := "" -}}
 
+            {{/* 1. Generate target geometry based on layout context */}}
             {{- if $inGallery -}}
-                {{/* ----------------------------------------------------- */}}
-                {{/* Gallery mode: generate a square thumbnail + keep full   */}}
-                {{/* resolution permalink for the lightbox.                  */}}
-                {{/* ----------------------------------------------------- */}}
-                {{- $dim  := $thumbnailSize | default "300" -}}
-                {{- $spec := printf "%sx%s Smart" $dim $dim -}} {{/* e.g. "300x300 Smart" */}}
-
-                {{- $thumb := $i.Fill $spec -}}
-                {{- $thumbSrc = $thumb.RelPermalink -}}
-                {{- $fullSrc  = $i.RelPermalink -}}       {{/* Full-res for lightbox. */}}
-
-                {{/* Derive display dimensions from thumbnail for correct layout. */}}
-                {{- if not $width  -}}{{- $width  = $dim -}}{{- end -}}
-                {{- if not $height -}}{{- $height = $dim -}}{{- end -}}
-
-                {{/* Also prepare webp/jpg pair for the <picture> element. */}}
-                {{- $fitSpec := printf "%sx%s" $dim $dim -}}
-                {{- if eq $i.MediaType "image/webp" -}}
-                    {{- $jpg  = $thumb.Fit (printf "%s jpg"  $fitSpec) -}}
-                    {{- $webp = $thumb -}}
-                {{- else if eq $i.MediaType "image/jpeg" -}}
-                    {{- $webp = $thumb.Fit (printf "%s webp" $fitSpec) -}}
-                    {{- $jpg  = $thumb -}}
+                {{- $dim := $thumbnailSize | default "300" -}}
+                {{- if eq $galleryMode "masonry" -}}
+                    {{- $thumb = $i.Resize (printf "%sx" $dim) -}}
                 {{- else -}}
-                    {{- $jpg  = $thumb.Fit (printf "%s jpg"  $fitSpec) -}}
-                    {{- $webp = $thumb.Fit (printf "%s webp" $fitSpec) -}}
+                    {{- $thumb = $i.Fill (printf "%sx%s Smart" $dim $dim) -}}
                 {{- end -}}
-
+                {{- $fullSrc = $i.RelPermalink -}}
             {{- else -}}
-                {{/* ----------------------------------------------------- */}}
-                {{/* Standalone mode: original behaviour (fit to w×h).      */}}
-                {{/* ----------------------------------------------------- */}}
-                {{- if not $width  -}}{{- $width  = $i.Width  -}}{{- end -}}
-                {{- if not $height -}}{{- $height = $i.Height -}}{{- end -}}
-                {{- $fitJpg  := printf "%vx%v jpg"  $width $height -}}
-                {{- $fitWebp := printf "%vx%v webp" $width $height -}}
-                {{- if eq $i.MediaType "image/webp" -}}
-                    {{- $jpg  = $i.Fit $fitJpg -}}
-                    {{- $webp = $i -}}
-                {{- else if eq $i.MediaType "image/jpeg" -}}
-                    {{- $webp = $i.Fit $fitWebp -}}
-                    {{- $jpg  = $i -}}
-                {{- else -}}
-                    {{- $jpg  = $i.Fit $fitJpg -}}
-                    {{- $webp = $i.Fit $fitWebp -}}
-                {{- end -}}
-                {{- $thumbSrc = $webp.RelPermalink -}}
-
+                {{/* Standalone mode: fit within provided or natural bounds */}}
+                {{- $w := $width  | default $i.Width -}}
+                {{- $h := $height | default $i.Height -}}
+                {{- $thumb = $i.Fit (printf "%vx%v" $w $h) -}}
             {{- end -}}
 
+            {{/* 2. Update width/height safely from the resized output */}}
+            {{- if not $width  -}}{{- $width  = $thumb.Width  -}}{{- end -}}
+            {{- if not $height -}}{{- $height = $thumb.Height -}}{{- end -}}
+
+            {{/* 3. Single shared conversion block targeting the unified shape */}}
+            {{- $fitJpg  := printf "%vx%v jpg"  $thumb.Width $thumb.Height -}}
+            {{- $fitWebp := printf "%vx%v webp" $thumb.Width $thumb.Height -}}
+
+            {{- if eq $thumb.MediaType "image/webp" -}}
+                {{- $jpg  = $thumb.Fit $fitJpg -}}
+                {{- $webp = $thumb -}}
+            {{- else if eq $thumb.MediaType "image/jpeg" -}}
+                {{- $webp = $thumb.Fit $fitWebp -}}
+                {{- $jpg  = $thumb -}}
+            {{- else -}}
+                {{- $jpg  = $thumb.Fit $fitJpg -}}
+                {{- $webp = $thumb.Fit $fitWebp -}}
+            {{- end -}}
+
+            {{- $thumbSrc = $webp.RelPermalink -}}
             {{- $useResource = true -}}
 
         {{- else -}}
@@ -183,7 +179,7 @@
 */}}
 {{- $schemaContentUrl := $dataFullSrc | default $thumbSrc -}}
 
-<figure{{ with $class }} class="{{ . }}"{{ end -}}
+<figure class="{{ with $class }}{{ . }} {{ end }}{{ if $isSVG }}figure--no-shadow{{ end }}"
     {{- with $dataFullSrc }} data-fullsrc="{{ . }}"{{ end -}}
     {{- if $inGallery }} itemprop="image" itemscope itemtype="https://schema.org/ImageObject"{{ end }}>
 

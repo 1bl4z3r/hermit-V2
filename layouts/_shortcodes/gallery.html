@@ -44,15 +44,6 @@
     {{/* Unique gallery ID derived from inner content. */}}
     {{- $galleryId := printf "gallery-%s" (substr (md5 .Inner) 0 8) -}}
 
-    {{/*
-        Signal to child figure shortcodes that they are inside a gallery.
-        figure.html reads these keys to decide whether to generate thumbnails.
-        Keys are deleted after .Inner renders to avoid leaking into other
-        figure shortcodes used later on the same page.
-    */}}
-    {{- $.Page.Store.Set "galleryId"        $galleryId -}}
-    {{- $.Page.Store.Set "galleryThumbnail" $thumbnailWidth -}}
-
     <div class="image-gallery image-gallery--{{ $mode }}"
          id="{{ $galleryId }}"
          data-gallery-id="{{ $galleryId }}"
@@ -62,9 +53,5 @@
          itemtype="https://schema.org/ImageGallery">
         {{- .Inner -}}
     </div>
-
-    {{/* Clean up store so figure shortcodes outside this gallery are unaffected. */}}
-    {{- $.Page.Store.Delete "galleryId" -}}
-    {{- $.Page.Store.Delete "galleryThumbnail" -}}
 
 {{- end -}}
