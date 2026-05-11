@@ -657,17 +657,13 @@ print(sorted_dt)
 
 
 
-
-
     
     
-                
-                
 
-<figure class="webp"><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_fa0438000595b6b0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" alt="A WEBP converted image" width="600" height="400" loading="lazy"
+<figure class="webp "><picture>
+            <source srcset="/hermit-V2/images/928-600x400_hu_44fe612ee2f34034.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_a7b9dfbe70d1c8ba.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_44fe612ee2f34034.webp" alt="A WEBP converted image" width="600" height="400" loading="lazy"
                 decoding="async" />
         </picture><figcaption><p>A WEBP converted image</p></figcaption></figure>
 <p>Mermaid</p>

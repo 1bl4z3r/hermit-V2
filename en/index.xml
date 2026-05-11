@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/</link><description>Recent content on Hermit - V2</description><generator>Hugo -- 0.161.1</generator><language>en-US</language><lastBuildDate>Sat, 10 May 2025 10:00:00 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Image Gallery Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</link><pubDate>Sat, 10 May 2025 10:00:00 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</guid><description>Learn how to use the image gallery shortcode to create responsive galleries with thumbnails, captions, and a JavaScript-powered lightbox.</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>gallery</code> shortcode lets you add a beautiful, responsive image gallery to any page on your Hugo site. You compose it using nested <code>{{&lt; figure &gt;}}</code> shortcodes — one per image — giving you full control over captions, titles, and links without any extra tooling or third-party libraries.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/</link><description>Recent content on Hermit - V2</description><generator>Hugo -- 0.161.1</generator><language>en-US</language><lastBuildDate>Mon, 11 May 2026 10:00:00 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Image Gallery Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</link><pubDate>Mon, 11 May 2026 10:00:00 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</guid><description>Learn how to use the image gallery shortcode to create responsive galleries with thumbnails, captions, and a JavaScript-powered lightbox.</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>gallery</code> shortcode lets you add a beautiful, responsive image gallery to any page on your Hugo site. You compose it using nested <code>{{&lt; figure &gt;}}</code> shortcodes — one per image — giving you full control over captions, titles, and links without any extra tooling or third-party libraries.</p>
 <h2 id="what-you-get">What You Get<a href="#what-you-get" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -8,6 +8,8 @@
 <li><strong>Two layout modes</strong> — a uniform square grid, or a masonry layout where images keep their natural height</li>
 <li><strong>Automatic thumbnails</strong> — for images stored in your <code>/assets</code> folder, a square smart-cropped thumbnail is generated at build time; the full-resolution image is loaded only when the lightbox opens</li>
 <li><strong>Lightbox</strong> — clicking any thumbnail opens the full image in a modal overlay with title, caption, previous/next navigation, and keyboard controls</li>
+<li><strong>Native SVG Support</strong> — <code>.svg</code> files are automatically detected and rendered without box shadows so transparent graphics blend perfectly into the page</li>
+<li><strong>Granular Alignment</strong> — control the vertical alignment of specific images in your masonry layouts using utility classes</li>
 <li><strong>No-JS warning</strong> — if JavaScript is disabled, hovering over a thumbnail shows a clear message instead of silently doing nothing</li>
 <li><strong>SEO &amp; accessibility built in</strong> — structured data, meaningful alt text, lazy loading, ARIA roles, and URL-hash navigation so every open image has its own linkable URL</li>
 <li><strong>No external libraries</strong> — pure vanilla JavaScript and SCSS</li>
@@ -138,7 +140,7 @@ Using grid layout is recommended, and is set as a default when using this shortc
       <tr>
           <td><code>class</code></td>
           <td>No</td>
-          <td>CSS class applied to the <code>&lt;figure&gt;</code> element.</td>
+          <td>CSS class applied to the <code>&lt;figure&gt;</code> element. Inside a masonry gallery, you can use <code>align-top</code>, <code>align-center</code>, or <code>align-bottom</code> to override vertical alignment for that specific image.</td>
       </tr>
   </tbody>
 </table>
@@ -351,8 +353,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--grid"
-         id="gallery-c2ce7e17"
-         data-gallery-id="gallery-c2ce7e17"
+         id="gallery-59c29ced"
+         data-gallery-id="gallery-59c29ced"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -361,39 +363,29 @@ Using grid layout is recommended, and is set as a default when using this shortc
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_6fdefbcd32a92223.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" alt="Grid Image 1" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_f39b50b089687e8.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="Grid Image 2" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 </div>
-
-    
 <h4 id="3-images">3 images<a href="#3-images" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -401,8 +393,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--grid"
-         id="gallery-b9c189e7"
-         data-gallery-id="gallery-b9c189e7"
+         id="gallery-047861f2"
+         data-gallery-id="gallery-047861f2"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -411,56 +403,42 @@ Using grid layout is recommended, and is set as a default when using this shortc
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_6fdefbcd32a92223.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" alt="Grid Image 1" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_f39b50b089687e8.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="Grid Image 2" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_fa0438000595b6b0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" alt="Grid Image 3" width="600" height="400"
+<figure class="" data-fullsrc="/hermit-V2/images/928-600x400.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/928-600x400.jpg"><meta itemprop="name" content="Grid Image 3"><meta itemprop="description" content="Caption for Image 3"><picture>
+            <source srcset="/hermit-V2/images/928-600x400_hu_fb38b0bfc97982db.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_ae87959fd7e8be.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_fb38b0bfc97982db.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 3</h4><p>Caption for Image 3</p></figcaption></figure>
 </div>
-
-    
 <h4 id="4-images">4 images<a href="#4-images" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -468,8 +446,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--grid"
-         id="gallery-445983d5"
-         data-gallery-id="gallery-445983d5"
+         id="gallery-150124f3"
+         data-gallery-id="gallery-150124f3"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -478,73 +456,55 @@ Using grid layout is recommended, and is set as a default when using this shortc
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_6fdefbcd32a92223.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" alt="Grid Image 1" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_f39b50b089687e8.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="Grid Image 2" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_fa0438000595b6b0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" alt="Grid Image 3" width="600" height="400"
+<figure class="" data-fullsrc="/hermit-V2/images/928-600x400.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/928-600x400.jpg"><meta itemprop="name" content="Grid Image 3"><meta itemprop="description" content="Caption for Image 3"><picture>
+            <source srcset="/hermit-V2/images/928-600x400_hu_fb38b0bfc97982db.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_ae87959fd7e8be.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_fb38b0bfc97982db.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 3</h4><p>Caption for Image 3</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="Grid Image 4" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 4"><meta itemprop="description" content="Caption for Image 4"><picture>
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="Grid Image 4" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 4</h4><p>Caption for Image 4</p></figcaption></figure>
 </div>
-
-    
 <h4 id="5-images">5 images<a href="#5-images" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -552,8 +512,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--grid"
-         id="gallery-31ce37d3"
-         data-gallery-id="gallery-31ce37d3"
+         id="gallery-0771434f"
+         data-gallery-id="gallery-0771434f"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -562,90 +522,68 @@ Using grid layout is recommended, and is set as a default when using this shortc
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_6fdefbcd32a92223.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" alt="Grid Image 1" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_f39b50b089687e8.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="Grid Image 2" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_fa0438000595b6b0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" alt="Grid Image 3" width="600" height="400"
+<figure class="" data-fullsrc="/hermit-V2/images/928-600x400.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/928-600x400.jpg"><meta itemprop="name" content="Grid Image 3"><meta itemprop="description" content="Caption for Image 3"><picture>
+            <source srcset="/hermit-V2/images/928-600x400_hu_fb38b0bfc97982db.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_ae87959fd7e8be.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_fb38b0bfc97982db.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 3</h4><p>Caption for Image 3</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="Grid Image 4" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 4"><meta itemprop="description" content="Caption for Image 4"><picture>
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="Grid Image 4" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 4</h4><p>Caption for Image 4</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="Grid Image 5" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 5"><meta itemprop="description" content="Caption for Image 5"><picture>
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="Grid Image 5" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 5</h4><p>Caption for Image 5</p></figcaption></figure>
 </div>
-
-    
 <h3 id="basic-masonry-gallery-with-local-assets">Basic Masonry gallery with local assets<a href="#basic-masonry-gallery-with-local-assets" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -663,8 +601,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--masonry"
-         id="gallery-c2ce7e17"
-         data-gallery-id="gallery-c2ce7e17"
+         id="gallery-96701627"
+         data-gallery-id="gallery-96701627"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -673,39 +611,29 @@ Using grid layout is recommended, and is set as a default when using this shortc
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_6fdefbcd32a92223.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" alt="Grid Image 1" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_2961c8a79bc229e7.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_e962a0b4e59ef35d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_2961c8a79bc229e7.webp" alt="Grid Image 1" width="300" height="200" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="Grid Image 2" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_1ccb953051354ab8.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_66c3c489d4b871af.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_1ccb953051354ab8.webp" alt="Grid Image 2" width="300" height="200" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 </div>
-
-    
 <h4 id="3-images-1">3 images<a href="#3-images-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -713,8 +641,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--masonry"
-         id="gallery-b9c189e7"
-         data-gallery-id="gallery-b9c189e7"
+         id="gallery-10f7571d"
+         data-gallery-id="gallery-10f7571d"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -723,56 +651,42 @@ Using grid layout is recommended, and is set as a default when using this shortc
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_6fdefbcd32a92223.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" alt="Grid Image 1" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_2961c8a79bc229e7.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_e962a0b4e59ef35d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_2961c8a79bc229e7.webp" alt="Grid Image 1" width="300" height="200" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="Grid Image 2" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_1ccb953051354ab8.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_66c3c489d4b871af.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_1ccb953051354ab8.webp" alt="Grid Image 2" width="300" height="200" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_fa0438000595b6b0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" alt="Grid Image 3" width="600" height="400"
+<figure class="" data-fullsrc="/hermit-V2/images/928-600x400.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/928-600x400.jpg"><meta itemprop="name" content="Grid Image 3"><meta itemprop="description" content="Caption for Image 3"><picture>
+            <source srcset="/hermit-V2/images/928-600x400_hu_f54595b70d64b107.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_48f7b3930b6c8858.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_f54595b70d64b107.webp" alt="Grid Image 3" width="300" height="200" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 3</h4><p>Caption for Image 3</p></figcaption></figure>
 </div>
-
-    
 <h4 id="4-images-1">4 images<a href="#4-images-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -780,8 +694,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--masonry"
-         id="gallery-445983d5"
-         data-gallery-id="gallery-445983d5"
+         id="gallery-72d98519"
+         data-gallery-id="gallery-72d98519"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -790,73 +704,55 @@ Using grid layout is recommended, and is set as a default when using this shortc
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_6fdefbcd32a92223.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" alt="Grid Image 1" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_2961c8a79bc229e7.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_e962a0b4e59ef35d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_2961c8a79bc229e7.webp" alt="Grid Image 1" width="300" height="200" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="Grid Image 2" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_1ccb953051354ab8.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_66c3c489d4b871af.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_1ccb953051354ab8.webp" alt="Grid Image 2" width="300" height="200" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_fa0438000595b6b0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" alt="Grid Image 3" width="600" height="400"
+<figure class="" data-fullsrc="/hermit-V2/images/928-600x400.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/928-600x400.jpg"><meta itemprop="name" content="Grid Image 3"><meta itemprop="description" content="Caption for Image 3"><picture>
+            <source srcset="/hermit-V2/images/928-600x400_hu_f54595b70d64b107.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_48f7b3930b6c8858.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_f54595b70d64b107.webp" alt="Grid Image 3" width="300" height="200" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 3</h4><p>Caption for Image 3</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="Grid Image 4" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 4"><meta itemprop="description" content="Caption for Image 4"><picture>
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_1ccb953051354ab8.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_66c3c489d4b871af.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_1ccb953051354ab8.webp" alt="Grid Image 4" width="300" height="200" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 4</h4><p>Caption for Image 4</p></figcaption></figure>
 </div>
-
-    
 <h4 id="5-images-1">5 images<a href="#5-images-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -864,8 +760,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--masonry"
-         id="gallery-31ce37d3"
-         data-gallery-id="gallery-31ce37d3"
+         id="gallery-ac0eafd1"
+         data-gallery-id="gallery-ac0eafd1"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -874,90 +770,68 @@ Using grid layout is recommended, and is set as a default when using this shortc
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_6fdefbcd32a92223.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" alt="Grid Image 1" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_2961c8a79bc229e7.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_e962a0b4e59ef35d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_2961c8a79bc229e7.webp" alt="Grid Image 1" width="300" height="200" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="Grid Image 2" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_1ccb953051354ab8.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_66c3c489d4b871af.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_1ccb953051354ab8.webp" alt="Grid Image 2" width="300" height="200" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_fa0438000595b6b0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" alt="Grid Image 3" width="600" height="400"
+<figure class="" data-fullsrc="/hermit-V2/images/928-600x400.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/928-600x400.jpg"><meta itemprop="name" content="Grid Image 3"><meta itemprop="description" content="Caption for Image 3"><picture>
+            <source srcset="/hermit-V2/images/928-600x400_hu_f54595b70d64b107.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_48f7b3930b6c8858.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_f54595b70d64b107.webp" alt="Grid Image 3" width="300" height="200" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 3</h4><p>Caption for Image 3</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="Grid Image 4" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 4"><meta itemprop="description" content="Caption for Image 4"><picture>
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_1ccb953051354ab8.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_66c3c489d4b871af.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_1ccb953051354ab8.webp" alt="Grid Image 4" width="300" height="200" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 4</h4><p>Caption for Image 4</p></figcaption></figure>
 
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="Grid Image 5" width="2500" height="1667"
+<figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 5"><meta itemprop="description" content="Caption for Image 5"><picture>
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_1ccb953051354ab8.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_66c3c489d4b871af.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_1ccb953051354ab8.webp" alt="Grid Image 5" width="300" height="200" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 5</h4><p>Caption for Image 5</p></figcaption></figure>
 </div>
-
-    
 <h3 id="gallery-with-attribution">Gallery with attribution<a href="#gallery-with-attribution" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -977,8 +851,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
 </span></span><span style="display:flex;"><span>{{&lt; <span style="color:#f92672">/</span><span style="color:#a6e22e">gallery</span> &gt;}}
 </span></span></code></pre></div>
 <div class="image-gallery image-gallery--grid"
-         id="gallery-06cd8246"
-         data-gallery-id="gallery-06cd8246"
+         id="gallery-79fe160e"
+         data-gallery-id="gallery-79fe160e"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -987,39 +861,29 @@ Using grid layout is recommended, and is set as a default when using this shortc
   
   
   
-  
-  
       
       
-                  
-                  
   
-  <figure><picture>
-              <source srcset="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" type="image/webp">
-              <source srcset="/hermit-V2/images/10-2500x1667_hu_6fdefbcd32a92223.jpg"  type="image/jpeg">
-              <img src="/hermit-V2/images/10-2500x1667_hu_3586eca8d4846669.webp" alt="FOREST" width="2500" height="1667"
+  <figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="FOREST"><meta itemprop="description" content="Downtown forest"><picture>
+              <source srcset="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" type="image/webp">
+              <source srcset="/hermit-V2/images/10-2500x1667_hu_f39b50b089687e8.jpg"  type="image/jpeg">
+              <img src="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" alt="FOREST" width="300" height="300" loading="lazy"
                   decoding="async" />
           </picture><figcaption><h4>FOREST</h4><p>Downtown forest - <a href="https://example.com/jane">Jane Smith</a></p></figcaption></figure>
   
   
   
   
-  
-  
       
       
-                  
-                  
   
-  <figure><picture>
-              <source srcset="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" type="image/webp">
-              <source srcset="/hermit-V2/images/11-2500x1667_hu_58c52fd8055035f0.jpg"  type="image/jpeg">
-              <img src="/hermit-V2/images/11-2500x1667_hu_cd44a08530002af5.webp" alt="LAKE" width="2500" height="1667"
+  <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="LAKE"><meta itemprop="description" content="Saturday morning"><picture>
+              <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
+              <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
+              <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="LAKE" width="300" height="300" loading="lazy"
                   decoding="async" />
           </picture><figcaption><h4>LAKE</h4><p>Saturday morning - <a href="https://example.com/bob">Bob Jones</a></p></figcaption></figure>
 </div>
-
-    
 <h3 id="gallery-using-static-files">Gallery using static files<a href="#gallery-using-static-files" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -1032,8 +896,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
 </span></span><span style="display:flex;"><span>{{&lt; <span style="color:#f92672">/</span><span style="color:#a6e22e">gallery</span> &gt;}}
 </span></span></code></pre></div>
 <div class="image-gallery image-gallery--grid"
-         id="gallery-c75a44bc"
-         data-gallery-id="gallery-c75a44bc"
+         id="gallery-a9a31e03"
+         data-gallery-id="gallery-a9a31e03"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -1043,31 +907,23 @@ Using grid layout is recommended, and is set as a default when using this shortc
   
   
   
-  
-  
-  <figure><img src="https://1bl4z3r.github.io/hermit-V2/images/397-600x400.jpg" alt="IMAGE1"
+  <figure class="" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="https://1bl4z3r.github.io/hermit-V2/images/397-600x400.jpg"><meta itemprop="name" content="IMAGE1"><meta itemprop="description" content="Image 1 from /static folder"><img src="https://1bl4z3r.github.io/hermit-V2/images/397-600x400.jpg" alt="IMAGE1" loading="lazy"
               decoding="async" /><figcaption><h4>IMAGE1</h4><p>Image 1 from /static folder</p></figcaption></figure>
   
   
   
   
   
-  
-  
-  <figure><img src="https://1bl4z3r.github.io/hermit-V2/android-chrome-192x192.png" alt="IMAGE2"
+  <figure class="" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="https://1bl4z3r.github.io/hermit-V2/android-chrome-192x192.png"><meta itemprop="name" content="IMAGE2"><meta itemprop="description" content="Image 2 from /static folder"><img src="https://1bl4z3r.github.io/hermit-V2/android-chrome-192x192.png" alt="IMAGE2" loading="lazy"
               decoding="async" /><figcaption><h4>IMAGE2</h4><p>Image 2 from /static folder</p></figcaption></figure>
   
   
   
   
   
-  
-  
-  <figure><img src="https://1bl4z3r.github.io/hermit-V2/android-chrome-384x384.png" alt="IMAGE3"
+  <figure class="" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="https://1bl4z3r.github.io/hermit-V2/android-chrome-384x384.png"><meta itemprop="name" content="IMAGE3"><meta itemprop="description" content="Image 3 from /static folder"><img src="https://1bl4z3r.github.io/hermit-V2/android-chrome-384x384.png" alt="IMAGE3" loading="lazy"
               decoding="async" /><figcaption><h4>IMAGE3</h4><p>Image 3 from /static folder</p></figcaption></figure>
 </div>
-
-    
 <h3 id="gallery-with-remote-images">Gallery with remote images<a href="#gallery-with-remote-images" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -1083,8 +939,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
 </span></span><span style="display:flex;"><span>{{&lt; <span style="color:#f92672">/</span><span style="color:#a6e22e">gallery</span> &gt;}}
 </span></span></code></pre></div>
 <div class="image-gallery image-gallery--masonry"
-         id="gallery-54d9169a"
-         data-gallery-id="gallery-54d9169a"
+         id="gallery-ec897558"
+         data-gallery-id="gallery-ec897558"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -1094,58 +950,98 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
     
     
-    
-    
-    <figure><img src="https://picsum.photos/seed/gallery-remote1/800/600" alt="Random 1"
+    <figure class="" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="https://picsum.photos/seed/gallery-remote1/800/600"><meta itemprop="description" content="Random 1"><img src="https://picsum.photos/seed/gallery-remote1/800/600" alt="Random 1" loading="lazy"
                 decoding="async" /><figcaption><p>Random 1</p></figcaption></figure>
     
     
     
     
     
-    
-    
-    <figure><img src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Random 2"
+    <figure class="" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1"><meta itemprop="description" content="Random 2"><img src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Random 2" loading="lazy"
                 decoding="async" /><figcaption><p>Random 2</p></figcaption></figure>
     
     
     
     
     
-    
-    
-    <figure><img src="https://picsum.photos/seed/c/800/800" alt="Random 3"
+    <figure class="" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="https://picsum.photos/seed/c/800/800"><meta itemprop="description" content="Random 3"><img src="https://picsum.photos/seed/c/800/800" alt="Random 3" loading="lazy"
                 decoding="async" /><figcaption><p>Random 3</p></figcaption></figure>
     
     
     
     
     
-    
-    
-    <figure><img src="https://picsum.photos/seed/another-image/700/500?blur=2" alt="Random 4"
+    <figure class="" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="https://picsum.photos/seed/another-image/700/500?blur=2"><meta itemprop="description" content="Random 4"><img src="https://picsum.photos/seed/another-image/700/500?blur=2" alt="Random 4" loading="lazy"
                 decoding="async" /><figcaption><p>Random 4</p></figcaption></figure>
     
     
     
     
     
-    
-    
-    <figure><img src="https://picsum.photos/seed/gallery-remote3/1024/768" alt="Random 5"
+    <figure class="" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="https://picsum.photos/seed/gallery-remote3/1024/768"><meta itemprop="description" content="Random 5"><img src="https://picsum.photos/seed/gallery-remote3/1024/768" alt="Random 5" loading="lazy"
                 decoding="async" /><figcaption><p>Random 5</p></figcaption></figure>
     
     
     
     
     
-    
-    
-    <figure><img src="https://placehold.co/600x400?text=More&#43;Examples" alt="Random 6"
+    <figure class="" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="https://placehold.co/600x400?text=More&#43;Examples"><meta itemprop="description" content="Random 6"><img src="https://placehold.co/600x400?text=More&#43;Examples" alt="Random 6" loading="lazy"
                 decoding="async" /><figcaption><p>Random 6</p></figcaption></figure>
 </div>
+<h3 id="masonry-gallery-with-custom-alignment-and-svgs">Masonry Gallery with Custom Alignment and SVGs<a href="#masonry-gallery-with-custom-alignment-and-svgs" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>You can override the global masonry alignment for specific images using the <code>class</code> parameter (<code>align-top</code>, <code>align-center</code>, or <code>align-bottom</code>).
+Additionally, any <code>.svg</code> image will automatically have its box-shadow removed for a clean, integrated look.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{&lt; <span style="color:#a6e22e">gallery</span> <span style="color:#a6e22e">mode</span>=<span style="color:#e6db74">&#34;masonry&#34;</span> &gt;}}
+</span></span><span style="display:flex;"><span>  {{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/tall-photo.jpg&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;align-top&#34;</span> <span style="color:#a6e22e">title</span>=<span style="color:#e6db74">&#34;Photo&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;Default alignment (top)&#34;</span> &gt;}}
+</span></span><span style="display:flex;"><span>  {{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/transparent-graphic.svg&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;align-center&#34;</span> <span style="color:#a6e22e">title</span>=<span style="color:#e6db74">&#34;SVG&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;Centered and shadow-free&#34;</span> &gt;}}
+</span></span><span style="display:flex;"><span>  {{&lt; <span style="color:#a6e22e">figure</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;images/wide-photo.jpg&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;align-bottom&#34;</span> <span style="color:#a6e22e">title</span>=<span style="color:#e6db74">&#34;Photo&#34;</span> <span style="color:#a6e22e">caption</span>=<span style="color:#e6db74">&#34;Aligned to bottom&#34;</span> &gt;}}
+</span></span><span style="display:flex;"><span>{{&lt; <span style="color:#f92672">/</span><span style="color:#a6e22e">gallery</span> &gt;}}
+</span></span></code></pre></div>
+<div class="image-gallery image-gallery--masonry"
+         id="gallery-f2438ea6"
+         data-gallery-id="gallery-f2438ea6"
+         role="region"
+         aria-label="Image gallery"
+         itemscope
+         itemtype="https://schema.org/ImageGallery">
+
+
+
 
     
+    
+
+<figure class="align-top " data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Photo"><meta itemprop="description" content="Default alignment (top)"><picture>
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_2961c8a79bc229e7.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_e962a0b4e59ef35d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_2961c8a79bc229e7.webp" alt="Photo" width="300" height="200" loading="lazy"
+                decoding="async" />
+        </picture><figcaption><h4>Photo</h4><p>Default alignment (top)</p></figcaption></figure>
+
+
+
+
+
+<figure class="align-center " itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="https://1bl4z3r.github.io/hermit-V2/android-chrome-192x192.png"><meta itemprop="name" content="Graphic"><meta itemprop="description" content="Centered"><img src="https://1bl4z3r.github.io/hermit-V2/android-chrome-192x192.png" alt="Graphic" loading="lazy"
+            decoding="async" /><figcaption><h4>Graphic</h4><p>Centered</p></figcaption></figure>
+
+
+
+
+    
+    
+
+<figure class="align-bottom " data-fullsrc="/hermit-V2/images/928-600x400.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/928-600x400.jpg"><meta itemprop="name" content="Photo"><meta itemprop="description" content="Aligned to bottom"><picture>
+            <source srcset="/hermit-V2/images/928-600x400_hu_f54595b70d64b107.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_48f7b3930b6c8858.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_f54595b70d64b107.webp" alt="Photo" width="300" height="200" loading="lazy"
+                decoding="async" />
+        </picture><figcaption><h4>Photo</h4><p>Aligned to bottom</p></figcaption></figure>
+</div>
 <h3 id="overriding-the-default-layout-per-gallery">Overriding the default layout per gallery<a href="#overriding-the-default-layout-per-gallery" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -1594,9 +1490,7 @@ Using grid layout is recommended, and is set as a default when using this shortc
 
 
 
-
-
-<figure><img src="https://1bl4z3r.github.io/hermit-V2/android-chrome-192x192.png" alt="android-chrome-192x192.png"
+<figure class=""><img src="https://1bl4z3r.github.io/hermit-V2/android-chrome-192x192.png" alt="android-chrome-192x192.png"
             decoding="async" /><figcaption><p>Static folder image (notice slash &lsquo;/&rsquo; in src attribute)</p></figcaption></figure>
 <h3 id="image-located-in-a-folder-named-images-in-static-folder-in-site-root-prepend--in-src-attribute-to-inform-that-image-is-in-static-folder">Image located in a folder named <code>images</code> in <code>static folder</code> in site root. Prepend <code>/</code> in src attribute to inform that image is in <code>static</code> folder<a href="#image-located-in-a-folder-named-images-in-static-folder-in-site-root-prepend--in-src-attribute-to-inform-that-image-is-in-static-folder" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
@@ -1609,9 +1503,7 @@ Using grid layout is recommended, and is set as a default when using this shortc
 
 
 
-
-
-<figure><img src="https://1bl4z3r.github.io/hermit-V2/images/397-600x400.jpg" alt="apple-touch-icon.png"
+<figure class=""><img src="https://1bl4z3r.github.io/hermit-V2/images/397-600x400.jpg" alt="apple-touch-icon.png"
             decoding="async" /><figcaption><h4>Picsum image</h4><p>This image is located in /static/images - <a href="https://picsum.com">Picsum</a></p></figcaption></figure>
 <h3 id="figure-loaded-from-another-site-with-no-class-specification">Figure loaded from another site with no class specification.<a href="#figure-loaded-from-another-site-with-no-class-specification" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
@@ -1624,9 +1516,7 @@ Using grid layout is recommended, and is set as a default when using this shortc
 
 
 
-
-
-<figure><img src="https://placehold.co/1600x800" alt="image"
+<figure class=""><img src="https://placehold.co/1600x800" alt="image"
             decoding="async" /><figcaption><p>figure-normal (without any classes)</p></figcaption></figure>
 <h3 id="figure-loaded-from-assets-folder-in-site-root">Figure loaded from <code>assets</code> folder in site root.<a href="#figure-loaded-from-assets-folder-in-site-root" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
@@ -1638,17 +1528,13 @@ Using grid layout is recommended, and is set as a default when using this shortc
 
 
 
-
-
     
     
-                
-                
 
-<figure><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_fa0438000595b6b0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" alt="image" width="600" height="400"
+<figure class=""><picture>
+            <source srcset="/hermit-V2/images/928-600x400_hu_44fe612ee2f34034.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_a7b9dfbe70d1c8ba.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_44fe612ee2f34034.webp" alt="image" width="600" height="400"
                 decoding="async" />
         </picture><figcaption><p>relative file path in assets folder</p></figcaption></figure>
 <h3 id="figure-using-class-big">Figure using class <code>big</code><a href="#figure-using-class-big" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -1662,9 +1548,7 @@ Using grid layout is recommended, and is set as a default when using this shortc
 
 
 
-
-
-<figure class="big"><img src="https://placehold.co/1600x800" alt="image"
+<figure class="big "><img src="https://placehold.co/1600x800" alt="image"
             decoding="async" /><figcaption><p>using class = big</p></figcaption></figure>
 <h3 id="figure-using-class-left">Figure using class <code>left</code><a href="#figure-using-class-left" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
@@ -1677,9 +1561,7 @@ Using grid layout is recommended, and is set as a default when using this shortc
 
 
 
-
-
-<figure class="left"><img src="https://placehold.co/400x280" alt="image"
+<figure class="left "><img src="https://placehold.co/400x280" alt="image"
             decoding="async" /><figcaption><p>using class = left</p></figcaption></figure>
 <p>In a libero varius, luctus ligula et, bibendum tortor. Sed sit amet dui malesuada, mattis justo id, ultricies enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam sollicitudin cursus feugiat. Vivamus suscipit ipsum eget lobortis sollicitudin. Fusce vehicula neque tellus. Integer eu posuere quam, id laoreet tortor. Mauris sit amet turpis urna. Donec venenatis tempor dolor, nec laoreet orci aliquet et. Sed condimentum elit eu tristique aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc luctus ipsum sit amet nisl maximus pellentesque.
 In a libero varius, luctus ligula et, bibendum tortor. Sed sit amet dui malesuada, mattis justo id, ultricies enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam sollicitudin cursus feugiat. Vivamus suscipit ipsum eget lobortis sollicitudin.</p>
@@ -1694,9 +1576,7 @@ In a libero varius, luctus ligula et, bibendum tortor. Sed sit amet dui malesuad
 
 
 
-
-
-<figure class="right"><img src="https://placehold.co/400x280" alt="image"
+<figure class="right "><img src="https://placehold.co/400x280" alt="image"
             decoding="async" /><figcaption><p>using class = right</p></figcaption></figure>
 <p>Pellentesque eu consequat nunc. Vivamus eu eros ut nulla dapibus molestie in id tortor. Cras viverra ligula erat, tincidunt hendrerit diam blandit nec. Cras id urna vel dolor dictum mattis. Vestibulum congue erat ac eros molestie accumsan. Maecenas lorem nibh, maximus vel justo eget, facilisis egestas lectus. Mauris eu est ut odio blandit consequat id feugiat eros. Fusce id suscipit mi, et lacinia lectus. Mauris a arcu placerat dolor iaculis feugiat nec non mi. Ut porttitor elit tortor, eget tempus velit mollis eu. Aliquam sem nulla, dictum cursus mauris ac, semper ullamcorper leo.
 Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Aliquam tempor vehicula faucibus. Phasellus consequat aliquam odio. Morbi a ex vitae sapien porta auctor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet nulla arcu. Praesent ut tortor purus. Praesent id eros diam. Pellentesque vitae dolor at nibh ultrices accumsan eu id urna. Aliquam finibus interdum orci in varius. Pellentesque a enim condimentum, condimentum felis id, vehicula augue. Vivamus cursus commodo eros nec lacinia.</p>
@@ -2503,17 +2383,13 @@ print(sorted_dt)
 
 
 
-
-
     
     
-                
-                
 
-<figure class="webp"><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_fa0438000595b6b0.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_cbd87b407b9a7945.webp" alt="A WEBP converted image" width="600" height="400" loading="lazy"
+<figure class="webp "><picture>
+            <source srcset="/hermit-V2/images/928-600x400_hu_44fe612ee2f34034.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_a7b9dfbe70d1c8ba.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_44fe612ee2f34034.webp" alt="A WEBP converted image" width="600" height="400" loading="lazy"
                 decoding="async" />
         </picture><figcaption><p>A WEBP converted image</p></figcaption></figure>
 <p>Mermaid</p>
