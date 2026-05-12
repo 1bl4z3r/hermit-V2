@@ -217,11 +217,17 @@
             img {
                 height: auto;
             }
-            // Override classes for individual images
-            &.align-top { align-self: flex-start; }
-            &.align-center { align-self: center; }
-            &.align-bottom { align-self: flex-end; }
         }
+    }
+
+    // Per-item alignment overrides — declared outside both @supports blocks so
+    // they apply in every browser (flexbox fallback AND native CSS Grid masonry).
+    // Note: in native masonry each cell is sized to its own content, so
+    // align-self has no visible effect there — but it is harmless to include.
+    figure {
+        &.align-top    { align-self: flex-start; }
+        &.align-center { align-self: center; }
+        &.align-bottom { align-self: flex-end; }
     }
 }
 
