@@ -27,7 +27,7 @@
 			<div class="content">
 				{{ .Content | safeHTML }}
 			</div>
-			{{- if .Site.Params.relatedPosts }}
+			{{- if $.Site.Params.pages.relatedPosts }}
 			{{- partial "related-posts.html" . -}}
 			{{- end }}
 			<hr class="post-end">
@@ -45,7 +45,7 @@
 				 {{ .Content | safeHTML }}
 			</div>
 			{{ partial "brainMade.html" . }}
-			{{- if .Site.Params.relatedPosts }}
+			{{- if $.Site.Params.pages.relatedPosts }}
 			{{- partial "related-posts.html" . -}}
 			{{- end }}
 		</article>

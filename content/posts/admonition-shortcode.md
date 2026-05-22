@@ -2,6 +2,8 @@
 title: "Admonition Shortcode"
 slug : "admonition-shortcode"
 date: 2023-10-20T20:06:06+05:30
+ShowLastmod : true
+Lastmod : 2026-03-06T20:30:30+05:30
 draft: false
 featuredImg: ""
 description : 'This explains admonition shortcode implementation'
@@ -12,6 +14,7 @@ author : blzr
 scrolltotop : true
 toc : true
 mathjax : false
+readTime : true
 ---
 
 The `admonition` shortcode supports **8** types of banners to help you put a notice on your page.

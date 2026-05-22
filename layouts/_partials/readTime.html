@@ -1,5 +1,5 @@
-{{- if .Site.Params.readTime -}}
-    {{- .Site.Params.readTimeSeparator -}}
+{{- if .Page.Params.readTime -}}
+    {{- $.Site.Params.pages.readTimeSeparator -}}
     {{- $rT := mul (div (.WordCount) 220.0) 60 -}}
     {{- $rTH := math.Floor (div $rT 3600) -}}
     {{- $rTM := math.Floor (div (mod $rT 3600) 60) -}}

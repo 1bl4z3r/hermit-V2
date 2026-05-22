@@ -58,11 +58,11 @@ enableEmoji = true
 #  [services.googleAnalytics]
 #    id = ''
 
-[frontmatter]
-  date = ["lastmod", "date", "publishDate"]
-  lastmod = ["date", "lastmod", ":git", "publishDate"]
-  publishDate = ["publishDate", "date"]
-  expiryDate = ["expiryDate"]
+#[frontmatter]
+#  date = ["lastmod", "date", "publishDate"]
+#  lastmod = ["date", "lastmod", ":git", "publishDate"]
+#  publishDate = ["publishDate", "date"]
+#  expiryDate = ["expiryDate"]
 
 [params.author]
   name = "BLZR"
@@ -112,17 +112,11 @@ enableEmoji = true
   footerCopyright = ' <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a>'
   # bgImg = ""
   # gitUrl = "https://github.com/1bl4z3r/hermit-V2/tree/staging"
-
   justifyContent = false
-
-  relatedPosts = true
   code_copy_button = true
-
   homeSubtitlePrinter = true
   scrollToTop = true 
   global_mathjax = false
-  readTime = true
-  readTimeSeparator = "\u2026 \u23F2 Reading Time:"
   # legacyLayout = false
   shareSocial = true
   # googleTagManager = "GTM-XXXXXXXX"
@@ -131,7 +125,6 @@ enableEmoji = true
   pinned = "Pinned Posts"
   # pinnedSVGname = "pin"
   listLayout = ["description","tags"] # Supported : legacy, description, categories, tags
-  # initialPublish = "Initally Posted on: "
   human = ["single","posts"]
   # denyRobots = "noindex, nofollow, noarchive"
   # allowRobots = "index, follow"
@@ -141,6 +134,13 @@ enableEmoji = true
   # usesAnimation = true
   # mathjaxLib = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
   # mermaidLib = "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs"
+
+  [params.pages]
+    LastmodOpen = '['
+    LastmodClose = ']'
+    readTimeSeparator = "\u2026 \u23F2 Reading Time:"
+    lastUpdatedOn = "Last updated on: "
+    relatedPosts = true
 
   [params.dateform]
     LongDate = "Jan 2, 2006"

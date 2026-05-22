@@ -47,13 +47,6 @@ enableEmoji = true
 #  [services.googleAnalytics]
 #    id = ''
 
-[frontmatter]
-date = ["date", "publishDate", "lastmod"]
-lastmod = ["lastmod", ":git", "date", "publishDate"]
-publishDate = ["publishDate", "date"]
-expiryDate = ["expiryDate"]
-
-
 [params.author]
   name = "CHANGE SITE AUTHOR"
   about = "CHANGE SITE AUTHOR ABOUT"
@@ -90,17 +83,11 @@ expiryDate = ["expiryDate"]
   # footerHideThemeName = false
   # bgImg = ""
   # gitUrl = "https://github.com/1bl4z3r/hermit-V2/tree/staging"
-
   justifyContent = false
-
-  relatedPosts = true
   code_copy_button = true
-
   homeSubtitlePrinter = true
   scrollToTop = true 
   global_mathjax = false
-  readTime = true
-  readTimeSeparator = "CHANGE ME READ TIME"
   # legacyLayout = false
   shareSocial = true
   # googleTagManager = "GTM-XXXXXXXX"
@@ -119,6 +106,14 @@ expiryDate = ["expiryDate"]
   # usesAnimation = true
   # mathjaxLib = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
   # mermaidLib = "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs"
+
+  [params.pages]
+    LastmodOpen = '['
+    LastmodClose = ']'
+    readTimeSeparator = "\u2026 \u23F2 Reading Time:"
+    lastUpdatedOn = "Last updated on: "
+    relatedPosts = true
+
   [params.gallery]
     enable = true
     width = '300'

@@ -10,8 +10,9 @@ tags:
 pin: true
 scrolltotop : true
 toc : true
+readTime : true
 ShowLastmod : true
-Lastmod : 2025-03-12T20:30:30+05:30
+Lastmod : 2026-05-23T20:30:30+05:30
 ---
 ## Configuation in `hugo.toml`
 
@@ -53,13 +54,10 @@ Lastmod : 2025-03-12T20:30:30+05:30
 	- `bgImg` : Homepage background-image URL.
 	- `gitUrl` : Prefix of link to the git commit detail page. GitInfo must be enabled.
 	- `justifyContent` : Set "text-align: justify" to `.content`. Toggling this option needs to rebuild SCSS, requires Hugo extended version.
-	- `relatedPosts` : Add a related content section to all single posts page.
 	- `code_copy_button` : Turn on/off the code-copy-button for code-fields.
 	- `homeSubtitlePrinter` : Allows homeSubtitle to be shown with printer animation effect.
 	- `scrollToTop` : Enables Scroll to Top button Site wide.
 	- `global_mathjax` : Enable global_mathjax to true, if you want MathJax support sitewide (if you have technical page)
-	- `readTime` : Toggle Reading time for articles.
-	- `readTimeSeparator` : Specifies Separator between wordCount and readTime.
 	- `legacyLayout` : Enables legacy layout (where post info is below content)
 	- `shareSocial` : Enables Social sharing links to share pages to social media.
 	- `googleTagManager` : Enables scripts for [Google Tag Manager](https://tagmanager.google.com/)
@@ -72,7 +70,6 @@ Lastmod : 2025-03-12T20:30:30+05:30
 		- `description` - To show/hide posts' description in list view
 		- `tags` - To show/hide posts' tags in list view
 		- `categories` - To show/hide posts' categories in list view
-	- `initialPublish` : Show what should be shown in section of Initial Published. Defaults to "Initially Published on : "
 	- `human` : Shows a badge 'BrainMade' on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: [brainmade.org](brainmade.org)
 	- `denyRobots` : Specify what directives to follow when denying crawlers. Default is **noindex, nofollow, noarchive**
 	- `allowRobots` : Specify what directives to follow when allowing crawlers. Default is **index, follow**
@@ -88,6 +85,12 @@ Lastmod : 2025-03-12T20:30:30+05:30
 		- If library is in `/assets` folder, use `<FOLDER (if any)/<Library_Name.js>`
 		- If library is in `/static` folder, use `/<FOLDER (if any)/<Library_Name.js>`. Notice leading "/"
 		- If you have different CDN or site, use the absolute URL
+	- `params.pages` : Holds configuration items for pages.
+		- `readTimeSeparator` : Specifies Separator between wordCount and readTime.
+		- `LastmodOpen` : Specify the symbol for opening of **Last Modified** section. Defaults to **"["**
+		- `LastmodClose` : Specify the symbol for closing of **Last Modified** section. Defaults to **"]"**
+		- `lastUpdatedOn` : Show what should be shown in section of Last Modified. Defaults to **"Last updated on: "**
+		- `relatedPosts` : Add a related content section to all single posts page.
 	- `[params.gallery]` Refer to [Image Gallery Shortcode]({{< ref "image-gallery-shortcode" >}})
   		- `enable` : Set to `true` to activate the image gallery shortcode functionality site-wide.
   		- `width` : Defines the width (in pixels) for automatically generated thumbnails for images; defaults to "300" (300px).
@@ -132,6 +135,7 @@ Lastmod : 2025-03-12T20:30:30+05:30
 - `robots` : Set to **false** to add page Disallow entry in robots.txt. Check [robots.txt](https://1bl4z3r.github.io/hermit-V2/robots.txt)
 - `noIndex` : When set to true, the page has ___noindex, nofollow, noarchive___ (unless specified by `denyRobots` added to robots meta tag. Else, robots tag will have ___index, follow___ (unless specified by `allowRobots`)
 - `keywords` : Specify keywords for your article. It will be used to populate[ Structured Data Site names schema](https://developers.google.com/search/docs/appearance/site-names)
+- `readTime` : Toggle Reading time for articles. *Note: This setting was moved from `hugo.toml` to page frontmatter to allow you to individually configure if the read time is shown on a page-by-page basis.*
 
 ### Last Modified Date
 

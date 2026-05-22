@@ -91,7 +91,6 @@ enableRobotsTXT = true
 
 [params]
   homeSubtitle     = "Just a humble blogger."
-  readTime         = true
   code_copy_button = true
   scrollToTop      = true
   shareSocial      = true
@@ -429,11 +428,18 @@ Then add `pinned: true` to the front matter of any post you wish to pin.
 
 ### Read Time
 
-Display an estimated reading time on every post:
+Display an estimated reading time on a post. This setting has been moved from `hugo.toml` to page frontmatter to allow you to individually configure if the read time is shown on a page-by-page basis:
+
+```yaml
+---
+readTime: true
+---
+```
+
+The separator text can still be configured site-wide in `hugo.toml`:
 
 ```toml
-[params]
-  readTime          = true
+[params.pages]
   readTimeSeparator = "·"
 ```
 
