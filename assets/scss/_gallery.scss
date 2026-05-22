@@ -206,7 +206,7 @@
 
         figure {
             width: $thumbnail;
-            flex: 0 0 $thumbnail; // Fixed width; no grow or shrink.
+            flex: 0 0 auto;
             display: inline-block;
 
             > a,
