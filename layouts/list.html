@@ -3,118 +3,204 @@
 {{ end }}
 
 {{ define "title" }}
-	{{- if in .Page.RelPermalink "tags" -}}
-    	{{- with .Site.Params.tagSymbol | default "#" -}}{{ . }}{{- end -}}{{ .Title | lower }}
-	{{- else if in .Page.RelPermalink "categories" -}}
-		{{- with .Site.Params.categorySymbol | default "⊲" -}}{{ . }}{{- end -}}{{ .Title | lower }}
-	{{- else -}}
-		{{ .Title }}
-	{{- end -}}
+  {{- $permalink := .Page.RelPermalink -}}
+  {{- if in $permalink "tags" -}}
+    {{- with .Site.Params.tagSymbol | default "#" }}{{ . }}{{ end -}}{{ .Title | lower }}
+  {{- else if in $permalink "categories" -}}
+    {{- with .Site.Params.categorySymbol | default "⊲" }}{{ . }}{{ end -}}{{ .Title | lower }}
+  {{- else -}}
+    {{ .Title }}
+  {{- end -}}
 {{ end }}
 
 {{ define "main" }}
-	<main class="site-main section-inner thin {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster{{- end -}}">
-		{{- if in .Page.RelPermalink "tags" -}}
-		<h1 class="tag">{{ .Title }}</h1>
-		{{- else if in .Page.RelPermalink "categories" -}}
-		<h1 class="category">{{ .Title }}</h1>
-		{{- else -}}
-		<h1>{{ .Title }}</h1>
-		{{- end -}}
-		{{- if .Content }}<div class="content">{{ .Content }}</div>{{ end -}}
+  {{- /* ── Precompute frequently-reused values ────────────────────────────── */ -}}
+  {{- $permalink    := .Page.RelPermalink -}}
+  {{- $isTag        := in $permalink "tags" -}}
+  {{- $isCategory   := in $permalink "categories" -}}
+  {{- $isTaxonomy   := or $isTag $isCategory -}}
+  {{- $listLayout   := .Site.Params.listLayout -}}
+  {{- $dateFormat   := .Site.Params.dateform.ShortDate | default "Jan 2" -}}
+  {{- $usesAnim     := ne false .Site.Params.usesAnimation -}}
 
-		{{- if and (ge (len (where .Site.Pages ".Params.pin" true)) 1) (.Site.Params.pinned) (not (or (in .Page.RelPermalink "tags") (in .Page.RelPermalink "categories"))) -}}
-		<h2>{{- .Site.Params.pinned -}}</h2>
-		<div class="pinned-posts-group">
-			<ul class="pinned-posts-list">
-				{{- range where .Site.Pages ".Params.pin" true }}
-				<li class="pinned-post-item">
-					{{- partial "svg.html" (dict "context" . "name" (.Site.Params.pinnedSVGname | default "pin")) }}
-					<a href="{{.Permalink}}"><span class="post-title">{{.Title}}</span></a>
-				</li>
-				{{- end }}
-			</ul>
-		</div>
-		{{- end -}}
-		{{- if not (or (in .Page.RelPermalink "tags") (in .Page.RelPermalink "categories")) -}}
-			{{- range .Data.Pages.GroupByDate "2006" }}
-			{{ $pages := len (.Pages) }}
-			{{ $pages_pin := len ( where .Pages ".Params.pin" "eq" true) }}
-			{{- if gt $pages $pages_pin -}}
-			<div class="posts-group">
-				<div class="post-year" id="{{ .Key }}">{{ .Key }}</div>
-				<ul class="posts-list">
-					{{- range where .Pages ".Params.pin" "ne" true }}
-					<li class="post-item">
-						<a href="{{.Permalink}}">
-							<span class="post-title">{{.Title}}</span>
-							<span class="post-day">{{ .Date.Format (default "Jan 2" .Site.Params.dateform.ShortDate) }}</span>
-						</a>
-						{{- if and .Page.Params.description (in .Site.Params.listLayout "description") -}}
-						<span class="post-description">{{ .Page.Params.description }}</span>
-						{{- end -}}
-						{{- if or (in .Site.Params.listLayout "tags") (in .Site.Params.listLayout "categories") -}}<div class="post-taxonomy">
-							{{- if and .Page.Params.tags (in .Site.Params.listLayout "tags") -}}
-							<span class="post-tags">
-								{{- range .Page.Params.tags -}}
-								<a href="{{ "tags/" | absLangURL }}{{ . | urlize }}" class="tag">{{- . -}}</a>
-								{{- end -}}
-							</span>
-							{{- end -}}
-							{{- if and .Page.Params.categories (in .Site.Params.listLayout "categories") -}}
-							<span class="post-categories">
-								{{- range .Page.Params.categories -}}
-								<a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" class="category">{{- . -}}</a>
-								{{- end -}}
-							</span>
-							{{- end -}}
-						  </div>{{- end -}}
-					</li>
-					{{- end }}
-				</ul>
-			</div>
-			{{- end -}}
-			{{- end }}
-		{{- else -}}
-		{{- range .Data.Pages.GroupByDate "2006" }}
-		<div class="posts-group">
-			<div class="post-year" id="{{ .Key }}">{{ .Key }}</div>
-			<ul class="posts-list">
-				{{- range .Pages }}
-				<li class="post-item">
-					<a href="{{.Page.RelPermalink}}">
-						{{- if in .Page.RelPermalink "tags" -}}<span class="post-title tag">{{.Page.LinkTitle }}</span>
-						{{- else if in .Page.RelPermalink "categories" -}}<span class="post-title category">{{.Page.LinkTitle}}</span>
-						{{- else -}}<span class="post-title">{{.Page.LinkTitle}}</span>
-						{{- end -}}
-					  <span class="post-day">{{ .Date.Format (default "Jan 2" .Site.Params.dateform.ShortDate) }}</span>
-				  </a>
-				  {{- if and .Page.Params.description (in .Site.Params.listLayout "description") -}}
-				  <span class="post-description">{{ .Page.Params.description }}</span>
-				  {{- end -}}
-				  {{- if or (in .Site.Params.listLayout "tags") (in .Site.Params.listLayout "categories") -}}<div class="post-taxonomy">
-				  {{- if and .Page.Params.tags (in .Site.Params.listLayout "tags") -}}
-				  <span class="post-tags">
-					  {{- range .Page.Params.tags -}}
-					  <a href="{{ "tags/" | absLangURL }}{{ . | urlize }}" class="tag">{{- . -}}</a>
-					  {{- end -}}
-				  </span>
-				  {{- end -}}
-				  {{- if and .Page.Params.categories (in .Site.Params.listLayout "categories") -}}
-				  <span class="post-categories">
-					  {{- range .Page.Params.categories -}}
-					  <a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" class="category">{{- . -}}</a>
-					  {{- end -}}
-				  </span>
-				  {{- end -}}
-				</div>{{- end -}}
-				</li>
-				{{- end }}
-			</ul>
-		</div>
-		{{- end }}
-		{{- end -}}
-	</main>
+  <main class="site-main section-inner thin{{- if $usesAnim }} animated fadeIn faster{{- end -}}">
+
+    {{- /* ── Page heading (taxonomy-aware) ────────────────────────────────── */ -}}
+    {{- if $isTag -}}
+      <h1 class="tag">{{ .Title }}</h1>
+    {{- else if $isCategory -}}
+      <h1 class="category">{{ .Title }}</h1>
+    {{- else -}}
+      <h1>{{ .Title }}</h1>
+    {{- end -}}
+
+    {{- with .Content }}<div class="content">{{ . }}</div>{{ end -}}
+
+    {{- /* ── Pinned posts (non-taxonomy pages only) ────────────────────────── */ -}}
+    {{- $pinnedPages := where .Site.Pages ".Params.pin" true -}}
+    {{- if and (ge (len $pinnedPages) 1) .Site.Params.pinned (not $isTaxonomy) -}}
+      <h2>{{ .Site.Params.pinned }}</h2>
+      <div class="pinned-posts-group">
+        <ul class="pinned-posts-list">
+          {{- range $pinnedPages }}
+          <li class="pinned-post-item">
+            {{- partial "svg.html" (dict "context" . "name" (.Site.Params.pinnedSVGname | default "pin")) }}
+            <a href="{{ .Permalink }}"><span class="post-title">{{ .Title }}</span></a>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+    {{- end -}}
+
+    {{- /* ── Build effective-date-sorted, year-grouped page list ────────────
+         Effective date = Lastmod when Lastmod > Date, otherwise Date.
+         This replaces .Data.Pages.GroupByDate which only considers .Date.
+    ──────────────────────────────────────────────────────────────────────── */ -}}
+
+    {{- /* Step 1: Annotate each page with its effective date */ -}}
+    {{- $annotated := slice -}}
+    {{- range .Data.Pages -}}
+      {{- $effDate := .Date -}}
+      {{- if gt .Lastmod .Date -}}
+        {{- $effDate = .Lastmod -}}
+      {{- end -}}
+      {{- $annotated = $annotated | append (dict "page" . "effectiveDate" $effDate) -}}
+    {{- end -}}
+
+    {{- /* Step 2: Sort all annotated pages by effective date, descending */ -}}
+    {{- $sorted := sort $annotated "effectiveDate" "desc" -}}
+
+    {{- /* Step 3: Group into a year-keyed dict; $years preserves desc order
+         because $sorted is already descending — first occurrence of each year
+         is the latest year seen so far. */ -}}
+    {{- $yearMap := dict -}}
+    {{- $years   := slice -}}
+    {{- range $sorted -}}
+      {{- $year := .effectiveDate.Format "2006" -}}
+      {{- /* Track unique years in the order they first appear (desc) */ -}}
+      {{- if not (index $yearMap $year) -}}
+        {{- $years = $years | append $year -}}
+      {{- end -}}
+      {{- $existing := index $yearMap $year | default slice -}}
+      {{- $yearMap  = merge $yearMap (dict $year ($existing | append .)) -}}
+    {{- end -}}
+
+    {{- /* ── Step 4: Render year groups ──────────────────────────────────── */ -}}
+    {{- if not $isTaxonomy -}}
+
+      {{- /* Standard list page — exclude pinned posts from yearly groups */ -}}
+      {{- range $years -}}
+        {{- $year  := . -}}
+        {{- $items := index $yearMap $year -}}
+
+        {{- /* Filter out pinned posts */ -}}
+        {{- $unpinned := slice -}}
+        {{- range $items -}}
+          {{- if not .page.Params.pin -}}
+            {{- $unpinned = $unpinned | append . -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- if gt (len $unpinned) 0 -}}
+        <div class="posts-group">
+          <div class="post-year" id="{{ $year }}">{{ $year }}</div>
+          <ul class="posts-list">
+            {{- range $unpinned -}}
+              {{- $p       := .page -}}
+              {{- $effDate := .effectiveDate -}}
+              <li class="post-item">
+                <a href="{{ $p.Permalink }}">
+                  <span class="post-title">{{ $p.Title }}</span>
+                  <span class="post-day">{{ $effDate.Format $dateFormat }}</span>
+                </a>
+                {{- if and $p.Params.description (in $listLayout "description") -}}
+                <span class="post-description">{{ $p.Params.description }}</span>
+                {{- end -}}
+                {{- if or (in $listLayout "tags") (in $listLayout "categories") -}}
+                <div class="post-taxonomy">
+                  {{- if and $p.Params.tags (in $listLayout "tags") -}}
+                  <span class="post-tags">
+                    {{- range $p.Params.tags -}}
+                    <a href="{{ "tags/" | absLangURL }}{{ . | urlize }}" class="tag">{{ . }}</a>
+                    {{- end -}}
+                  </span>
+                  {{- end -}}
+                  {{- if and $p.Params.categories (in $listLayout "categories") -}}
+                  <span class="post-categories">
+                    {{- range $p.Params.categories -}}
+                    <a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" class="category">{{ . }}</a>
+                    {{- end -}}
+                  </span>
+                  {{- end -}}
+                </div>
+                {{- end -}}
+              </li>
+            {{- end }}
+          </ul>
+        </div>
+        {{- end -}}
+      {{- end -}}
+
+    {{- else -}}
+
+      {{- /* Taxonomy list page (tags / categories) */ -}}
+      {{- range $years -}}
+        {{- $year  := . -}}
+        {{- $items := index $yearMap $year -}}
+        <div class="posts-group">
+          <div class="post-year" id="{{ $year }}">{{ $year }}</div>
+          <ul class="posts-list">
+            {{- range $items -}}
+              {{- $p       := .page -}}
+              {{- $effDate := .effectiveDate -}}
+              <li class="post-item">
+                <a href="{{ $p.RelPermalink }}">
+                  {{- if in $p.RelPermalink "tags" -}}
+                  <span class="post-title tag">{{ $p.LinkTitle }}</span>
+                  {{- else if in $p.RelPermalink "categories" -}}
+                  <span class="post-title category">{{ $p.LinkTitle }}</span>
+                  {{- else -}}
+                  <span class="post-title">{{ $p.LinkTitle }}</span>
+                  {{- end -}}
+                  <span class="post-day">{{ $effDate.Format $dateFormat }}</span>
+                </a>
+                {{- if and $p.Params.description (in $listLayout "description") -}}
+                <span class="post-description">{{ $p.Params.description }}</span>
+                {{- end -}}
+                {{- if or (in $listLayout "tags") (in $listLayout "categories") -}}
+                <div class="post-taxonomy">
+                  {{- if and $p.Params.tags (in $listLayout "tags") -}}
+                  <span class="post-tags">
+                    {{- range $p.Params.tags -}}
+                    <a href="{{ "tags/" | absLangURL }}{{ . | urlize }}" class="tag">{{ . }}</a>
+                    {{- end -}}
+                  </span>
+                  {{- end -}}
+                  {{- if and $p.Params.categories (in $listLayout "categories") -}}
+                  <span class="post-categories">
+                    {{- range $p.Params.categories -}}
+                    <a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" class="category">{{ . }}</a>
+                    {{- end -}}
+                  </span>
+                  {{- end -}}
+                </div>
+                {{- end -}}
+              </li>
+            {{- end }}
+          </ul>
+        </div>
+      {{- end -}}
+
+    {{- end -}}
+  </main>
 {{ end }}
-{{ define "footer" }}<footer id="site-footer" class="section-inner thin {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster {{- end -}}">{{- if templates.Exists "_partials/list-footer.html" -}}{{- partialCached "list-footer.html" . -}}{{- else -}}{{- partial "footer.html" . -}}{{- end -}}</footer>
+
+{{ define "footer" }}
+<footer id="site-footer" class="section-inner thin{{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster{{- end -}}">
+  {{- if templates.Exists "_partials/list-footer.html" -}}
+    {{- partialCached "list-footer.html" . -}}
+  {{- else -}}
+    {{- partial "footer.html" . -}}
+  {{- end -}}
+</footer>
 {{ end }}
