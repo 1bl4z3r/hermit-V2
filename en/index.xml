@@ -1072,235 +1072,6 @@ Additionally, any <code>.svg</code> image will automatically have its box-shadow
 <li><strong>JavaScript is required for the lightbox.</strong> Thumbnails and captions are fully visible without JS; only the lightbox and navigation require it. Visitors without JS see a hover warning on each thumbnail.</li>
 <li><strong>Gallery JS is only loaded on pages that use the shortcode.</strong> It will not affect pages that have no gallery.</li>
 </ul>
-]]></content></item><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Wed, 12 Mar 2025 20:30:30 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>The Hitchhiker&amp;#39;s Guide to Hermit - V2 Configuration</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="configuation-in-hugotoml">Configuation in <code>hugo.toml</code><a href="#configuation-in-hugotoml" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-<p><code>hugo.toml</code> represents Global configuration for Hermit - V2. It is indicative on the changes to make the theme tailored to your personal preferences.</p>
-<p><code>baseURL</code> : The absolute URL (protocol, host, path, and trailing slash) of your published site.</p>
-<ul>
-<li>
-<p><code>locale</code> : A language tag as defined by RFC 5646. This value is used to populate:</p>
-<ul>
-<li>The <code>&lt;language&gt;</code> element in the internal RSS template</li>
-<li>The lang attribute of the <code>&lt;html&gt;</code> element in the internal alias template</li>
-</ul>
-</li>
-<li>
-<p><code>title</code> - Title of the Site</p>
-</li>
-<li>
-<p><code>theme</code> - Sets all layouts to be from the instaled theme (Use &ldquo;hermit-v2&rdquo; to adapt hermit-v2&rsquo;s theme)</p>
-</li>
-<li>
-<p><code>enableRobotsTXT</code> - Enables robots.txt generation using <a href="https://github.com/1bl4z3r/hermit-V2/blob/main/layouts/robots.txt">template</a>. By default, set to <code>false</code>.</p>
-</li>
-<li>
-<p><code>enableGitInfo</code> : Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.</p>
-<blockquote>
-<p>Side-effect : Affects <code>.Lastmod</code> parameter in Pages</p>
-</blockquote>
-</li>
-<li>
-<p><code>hasCJKLanguage</code> : If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.</p>
-</li>
-<li>
-<p><code>pygmentsCodefences</code> : Set to true to enable syntax highlighting in code fences with a language tag in markdown.</p>
-</li>
-<li>
-<p><code>pygmentsUseClasses</code> : Set to <code>true</code> to use CSS classes to format your highlighted code.</p>
-</li>
-<li>
-<p><code>rssLimit</code> : Maximum number of items in the RSS feed.</p>
-</li>
-<li>
-<p><code>copyright</code> : This message is only used by the RSS template.</p>
-</li>
-<li>
-<p><code>enableEmoji</code> : Enables shorthand emojis in content files. <a href="https://gohugo.io/functions/emojify/">Info</a></p>
-</li>
-<li>
-<p><code>[services]</code></p>
-<ul>
-<li><code>[services.disqus] shortname</code> : To enable Disqus.</li>
-<li><code>[services.googleAnalytics] id</code> : Enter Google Analytics UA code to invoke inbuilt Google Analytics.</li>
-</ul>
-</li>
-<li>
-<p><code>[params.author]</code></p>
-<ul>
-<li><code>name</code> : Name of Site-wide or default author.</li>
-<li><code>about</code> : Name of the about page of the Site-wide or default author.</li>
-</ul>
-</li>
-<li>
-<p><code>[taxonomies]</code></p>
-<ul>
-<li><code>tag = &quot;tags&quot;</code> : Allows to specify taxonomy to be shown as tags</li>
-<li><code>category = &quot;categories&quot;</code> : Allows to specify taxonomy to be shown as categories. This is disabled by default</li>
-</ul>
-</li>
-<li>
-<p><code>[params]</code></p>
-<ul>
-<li><code>dateform</code> / <code>dateformShort</code> / <code>dateformNum</code> / <code>dateformNumTime</code> : Used to render properly formatted date &amp; time. Change this if you know what you are doing.</li>
-<li><code>description</code> : Put in default description for meta description.</li>
-<li><code>images</code> : Used to display image for site, when sharing the page as link to social media (like Twitter)</li>
-<li><code>themeColor</code>: Populates theme color meta and various elements of the site. If not present, <code>#494f5c</code> will be used.</li>
-<li><code>accentColor</code>: Populates accent color for various elements of the site. If not present, it will use declarations in <strong>/themes/hermit-V2/assets/scss/_colors.scss</strong>.</li>
-<li><code>homeSubtitle</code> : Displays subtitle in Homepage.</li>
-<li><code>footerCopyright</code> : Custom copyright for footer.</li>
-<li><code>bgImg</code> : Homepage background-image URL.</li>
-<li><code>gitUrl</code> : Prefix of link to the git commit detail page. GitInfo must be enabled.</li>
-<li><code>justifyContent</code> : Set &ldquo;text-align: justify&rdquo; to <code>.content</code>. Toggling this option needs to rebuild SCSS, requires Hugo extended version.</li>
-<li><code>relatedPosts</code> : Add a related content section to all single posts page.</li>
-<li><code>code_copy_button</code> : Turn on/off the code-copy-button for code-fields.</li>
-<li><code>homeSubtitlePrinter</code> : Allows homeSubtitle to be shown with printer animation effect.</li>
-<li><code>scrollToTop</code> : Enables Scroll to Top button Site wide.</li>
-<li><code>global_mathjax</code> : Enable global_mathjax to true, if you want MathJax support sitewide (if you have technical page)</li>
-<li><code>readTime</code> : Toggle Reading time for articles.</li>
-<li><code>readTimeSeparator</code> : Specifies Separator between wordCount and readTime.</li>
-<li><code>legacyLayout</code> : Enables legacy layout (where post info is below content)</li>
-<li><code>shareSocial</code> : Enables Social sharing links to share pages to social media.</li>
-<li><code>googleTagManager</code> : Enables scripts for <a href="https://tagmanager.google.com/">Google Tag Manager</a></li>
-<li><code>tagSymbol</code> : Specify a symbol for Tags. Default is <code>#</code></li>
-<li><code>categorySymbol</code> : Specify a symbol for Categories. Default is <code>⊲</code></li>
-<li><code>pinned</code> : Display the name of &lsquo;Pinned Posts&rsquo;. If none provided, pinned posts section would be hidden</li>
-<li><code>pinnedSVGname</code> : Specify what icon should be displayed before a pinned post. The icon must be present in <code>svg.html</code></li>
-<li><code>listLayout</code> : Control what rendering to be shown in various list view
-<ul>
-<li><code>legacy</code> - Display legacy view, where Tags and Categories are grouped by date. Else Tags and Categories are sorted by number of posts/articles with each tag/category is descending order.</li>
-<li><code>description</code> - To show/hide posts&rsquo; description in list view</li>
-<li><code>tags</code> - To show/hide posts&rsquo; tags in list view</li>
-<li><code>categories</code> - To show/hide posts&rsquo; categories in list view</li>
-</ul>
-</li>
-<li><code>initialPublish</code> : Show what should be shown in section of Initial Published. Defaults to &ldquo;Initially Published on : &quot;</li>
-<li><code>human</code> : Shows a badge &lsquo;BrainMade&rsquo; on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: <a href="brainmade.org">brainmade.org</a></li>
-<li><code>denyRobots</code> : Specify what directives to follow when denying crawlers. Default is <strong>noindex, nofollow, noarchive</strong></li>
-<li><code>allowRobots</code> : Specify what directives to follow when allowing crawlers. Default is <strong>index, follow</strong></li>
-<li><code>siteNoIndex</code> : When set to true, whole site will have <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code>) added to robots meta tag. Else, robots tag will have <em><strong>index, follow</strong></em> (unless specified by <code>allowRobots</code>) applied to whole site</li>
-<li><code>noIndexPages</code> : Specify on which pages crawlers will be denied. Pages specified will have <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code> added to robots meta tag. Use <strong>Page title</strong> to select pages. Useful for the pages generated by Hugo. (Eg. for <a href="https://1bl4z3r.github.io/hermit-V2/en/tags/">List of Tags</a>, use <em><strong>Tags</strong></em>)</li>
-<li><code>footerHideThemeName</code> : When set to true, links to Hugo and Hermit-V2 would be removed from footer section</li>
-<li><code>usesAnimation</code> : When set to false, animations are disabled site-wide</li>
-<li><code>mathjaxLib</code> : Provides Mathjax library to the theme. If not provided, <code>https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js</code> will be used
-<ul>
-<li>If library is in <code>/assets</code> folder, use <code>&lt;FOLDER (if any)/&lt;Library_Name.js&gt;</code></li>
-<li>If library is in <code>/static</code> folder, use <code>/&lt;FOLDER (if any)/&lt;Library_Name.js&gt;</code>. Notice leading &ldquo;/&rdquo;</li>
-<li>If you have different CDN or site, use the absolute URL</li>
-</ul>
-</li>
-<li><code>mermaidLib</code> : Provides Mermaid library to the theme. If not provided, <code>https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs</code> will be used
-<ul>
-<li>If library is in <code>/assets</code> folder, use <code>&lt;FOLDER (if any)/&lt;Library_Name.js&gt;</code></li>
-<li>If library is in <code>/static</code> folder, use <code>/&lt;FOLDER (if any)/&lt;Library_Name.js&gt;</code>. Notice leading &ldquo;/&rdquo;</li>
-<li>If you have different CDN or site, use the absolute URL</li>
-</ul>
-</li>
-<li><code>[params.gallery]</code> Refer to <a href="https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/">Image Gallery Shortcode</a>
-<ul>
-<li><code>enable</code> : Set to <code>true</code> to activate the image gallery shortcode functionality site-wide.</li>
-<li><code>width</code> : Defines the width (in pixels) for automatically generated thumbnails for images; defaults to &ldquo;300&rdquo; (300px).</li>
-<li><code>layout</code> : Defines what would be default gallery layout sitewide. Defaults to &ldquo;grid&rdquo;. Layout can be either &ldquo;grid&rdquo; or &ldquo;masonry&rdquo;; and can be changed on per gallery-shortcode basis.</li>
-</ul>
-</li>
-<li><code>[params.dateform]</code> These parameters accept Go&rsquo;s time formatting strings. Refer to Hugo&rsquo;s <code>dateFormat</code> function documentation for more examples on how to format these strings.
-<ul>
-<li><code>LongDate</code>: Used for displaying a full, human-readable date, typically including the month name, day, and year (e.g., &ldquo;Jan 2, 2006&rdquo;). Primarily used on single post pages in the header for the publication date. Defaults to <code>&quot;Jan 2, 2006&quot;</code>.</li>
-<li><code>ShortDate</code>: Used for a concise date representation, typically month and day (e.g., &ldquo;Jan 2&rdquo;). Used in list views (blog index, tag/category lists). Defaults to <code>&quot;Jan 2&quot;</code>.</li>
-<li><code>NumDateShort</code>: Used for a short, numerical date format (e.g., &ldquo;2006-01-02&rdquo;). Used for Git commit author dates in post metadata. Defaults to <code>&quot;2006-01-02&quot;</code>.</li>
-<li><code>NumDateLong</code>: Used for a numerical date and time format, including timezone (e.g., &ldquo;2006-01-02 15:04 -0700&rdquo;). Used for the main post date/time and last modified date/time in post metadata. Defaults to <code>&quot;2006-01-02 15:04 -0700&quot;</code>.</li>
-<li><code>CopyrightDate</code> : Used for configuring the date format for Copyright in footer. Defaults to format <code>2006</code>, shows year.</li>
-</ul>
-</li>
-<li><code>[params.socialLinks]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
-<ul>
-<li><code>name</code> : Name of the social page.</li>
-<li><code>url</code> : URL of your account.</li>
-</ul>
-</li>
-<li><code>[menu]</code> : Display menu items in Homepage as well as in menubar. To make more menu items, use [[menu.main]]</li>
-</ul>
-</li>
-</ul>
-<h2 id="configuration-in-page-frontmatter">Configuration in page Frontmatter<a href="#configuration-in-page-frontmatter" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-<p>As described in Hugo docs</p>
-<blockquote>
-<p>Front matter allows you to keep metadata attached to an instance of a content type—i.e., embedded inside a content file—and is one of the many features that gives Hugo its strength.</p>
-</blockquote>
-<ul>
-<li><code>title</code> : Page&rsquo;s title</li>
-<li><code>slug</code> : A slug is the part of a URL that identifies a particular page on a website in an easy-to-read form.</li>
-<li><code>date</code> : Date of creation of the page.</li>
-<li><code>draft</code> : If you want to un-publish the page.</li>
-<li><code>featuredImg</code> : To have a unique image for the page. Shown as background image. Can be toggled to fullscreen with special button in menu.</li>
-<li><code>ImgCopyright</code> : Optional. Use this to provide copyright text or attribution for the image specified in <code>featuredImg</code>. If provided, this text will be displayed with the featured image, typically at the bottom, allowing you to credit the image source or creator.</li>
-<li><code>description</code> : Description for the Page.</li>
-<li><code>tags</code> : Allows to define tags.</li>
-<li><code>categories</code> : Allows to define categories.</li>
-<li><code>author</code> : Allows to specify page author.</li>
-<li><code>authorLink</code> : Allows to supply separate author bio.</li>
-<li><code>scrolltotop</code> : Toggles scroll to top button for that particular page.</li>
-<li><code>mathjax</code> : Enable Per-Page MathJax support.</li>
-<li><code>toc</code> : Enables Table of Contents.</li>
-<li><code>custom_css</code> : Allows to supply custom CSS by placing the css files in <code>/static/css/</code>. CSS will be invoked for that page only.</li>
-<li><code>custom_js</code> : Allows to supply custom CSS by placing the css files in <code>/static/js/</code>. JS will be invoked for that page only.</li>
-<li><code>ShowLastmod</code> : This enables Last modification date of the given Page.</li>
-<li><code>Lastmod</code> : REQUIRED (If <code>ShowLastmod=true</code>). Enter Last modified date of the Page.</li>
-<li><code>pin</code> : Specify if the post should be shown as pinned</li>
-<li><code>print</code> : Pages which has <code>print: true</code> will have additional css from print styling. The CSS file should be created by user in <code>/assets/custom_css/print.scss</code>. <a href="https://www.sitepoint.com/css-printer-friendly-pages">Learn more</a></li>
-<li><code>robots</code> : Set to <strong>false</strong> to add page Disallow entry in robots.txt. Check <a href="https://1bl4z3r.github.io/hermit-V2/robots.txt">robots.txt</a></li>
-<li><code>noIndex</code> : When set to true, the page has <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code> added to robots meta tag. Else, robots tag will have <em><strong>index, follow</strong></em> (unless specified by <code>allowRobots</code>)</li>
-<li><code>keywords</code> : Specify keywords for your article. It will be used to populate<a href="https://developers.google.com/search/docs/appearance/site-names"> Structured Data Site names schema</a></li>
-</ul>
-<h3 id="last-modified-date">Last Modified Date<a href="#last-modified-date" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<p>If <code>ShowLastmod:true</code> :</p>
-<ul>
-<li>If <code>enableGitInfo = true</code>, then Git Hash will be shown in <code>[...]</code> after Date.</li>
-<li>If <code>enableGitInfo = false</code>, then:
-<ul>
-<li>If <code>Lastmod</code> is not provided or <code>Lastmod</code> has same value as <code>Date</code>, error will be thrown.</li>
-<li>If <code>Lastmod</code> is provided or <code>Lastmod</code> is different from <code>Date</code>, value of <code>Lastmod</code> will be displayed in <code>[...]</code> after Date.</li>
-</ul>
-</li>
-</ul>
-<p>If <code>ShowLastmod</code> is not provided. User response defaults to false. It is equivalent to providing <code>ShowLastmod:false</code>.</p>
-<h3 id="enable-scrolltotop-button">Enable ScrolltoTop button<a href="#enable-scrolltotop-button" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<p>To enable scroll to top, <strong>you must enable <code>scrollToTop</code> in hugo.toml and <code>scrolltotop</code> in Page Frontmatter</strong>. This is to prevent scroll to top button from showing if the page has very less content. If you feel that for the content, you need scroll to top button, follow below steps:</p>
-<ol>
-<li>Open hugo.toml and set <code>scrollToTop = true</code></li>
-<li>Open the Markdown content file and set <code>scrolltotop : true</code> in Page Frontmatter</li>
-</ol>
-<h3 id="support-for-guest-authors">Support for Guest Authors<a href="#support-for-guest-authors" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<p>If blog has more than one author or if you want to invite Guest Authors, here&rsquo;s how to do.</p>
-<ul>
-<li>If author is not Site Author:
-<ol>
-<li>Update <code>author</code> to the Author&rsquo;s name in Page Frontmatter.</li>
-<li>Create a markdown file in <code>/content</code> directory. (eg. <code>author-1.md</code>)</li>
-<li>Add the markdown file to Page Frontmatter as <code>authorLink</code> (eg. <code>authorLink = author-1</code>)</li>
-</ol>
-</li>
-<li>If <code>authorLink</code> is not provided, but <code>author</code> is provided. Link will be referenced to Site author&rsquo;s page as defined in <code>author.about</code> in hugo.toml</li>
-<li>If Neither <code>author</code> nor <code>authorLink</code> is provided. Author will be referenced to Site author (as defined in <code>author.name</code>) and the link will referenced to Site author&rsquo;s page as defined in <code>author.about</code> in hugo.toml</li>
-</ul>
 ]]></content></item><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Sun, 24 Dec 2023 12:29:41 +0800</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>&amp;lt;no value&amp;gt;</description><content type="text/html" mode="escaped"><![CDATA[<p>Hugo has <code>figure</code> shortcode built in, so you can easily add captions or hyperlink rel attributes to images. Documentations can be found <a href="https://gohugo.io/content-management/shortcodes/#figure">here</a>.</p>
 <p>This theme extends upon <a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_shortcodes/figure.html">default figure shortcode</a> to implement following features :</p>
 <ul>
@@ -1593,7 +1364,242 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 </span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">mounts</span>]]
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">source</span> = <span style="color:#e6db74">&#39;static/images&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">target</span> = <span style="color:#e6db74">&#39;assets&#39;</span>
-</span></span></code></pre></div>]]></content></item><item><title>Admonition Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</link><pubDate>Fri, 20 Oct 2023 20:06:06 +0530</pubDate><author>blzr</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</guid><description>This explains admonition shortcode implementation</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>admonition</code> shortcode supports <strong>8</strong> types of banners to help you put a notice on your page.</p>
+</span></span></code></pre></div>]]></content></item><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Sun, 22 Oct 2023 20:06:06 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>The Hitchhiker&amp;#39;s Guide to Hermit - V2 Configuration</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="configuation-in-hugotoml">Configuation in <code>hugo.toml</code><a href="#configuation-in-hugotoml" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p><code>hugo.toml</code> represents Global configuration for Hermit - V2. It is indicative on the changes to make the theme tailored to your personal preferences.</p>
+<p><code>baseURL</code> : The absolute URL (protocol, host, path, and trailing slash) of your published site.</p>
+<ul>
+<li>
+<p><code>locale</code> : A language tag as defined by RFC 5646. This value is used to populate:</p>
+<ul>
+<li>The <code>&lt;language&gt;</code> element in the internal RSS template</li>
+<li>The lang attribute of the <code>&lt;html&gt;</code> element in the internal alias template</li>
+</ul>
+</li>
+<li>
+<p><code>title</code> - Title of the Site</p>
+</li>
+<li>
+<p><code>theme</code> - Sets all layouts to be from the instaled theme (Use &ldquo;hermit-v2&rdquo; to adapt hermit-v2&rsquo;s theme)</p>
+</li>
+<li>
+<p><code>enableRobotsTXT</code> - Enables robots.txt generation using <a href="https://github.com/1bl4z3r/hermit-V2/blob/main/layouts/robots.txt">template</a>. By default, set to <code>false</code>.</p>
+</li>
+<li>
+<p><code>enableGitInfo</code> : Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.</p>
+<blockquote>
+<p>Side-effect : Affects <code>.Lastmod</code> parameter in Pages</p>
+</blockquote>
+</li>
+<li>
+<p><code>hasCJKLanguage</code> : If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.</p>
+</li>
+<li>
+<p><code>pygmentsCodefences</code> : Set to true to enable syntax highlighting in code fences with a language tag in markdown.</p>
+</li>
+<li>
+<p><code>pygmentsUseClasses</code> : Set to <code>true</code> to use CSS classes to format your highlighted code.</p>
+</li>
+<li>
+<p><code>rssLimit</code> : Maximum number of items in the RSS feed.</p>
+</li>
+<li>
+<p><code>copyright</code> : This message is only used by the RSS template.</p>
+</li>
+<li>
+<p><code>enableEmoji</code> : Enables shorthand emojis in content files. <a href="https://gohugo.io/functions/emojify/">Info</a></p>
+</li>
+<li>
+<p><code>[services]</code></p>
+<ul>
+<li><code>[services.disqus] shortname</code> : To enable Disqus.</li>
+<li><code>[services.googleAnalytics] id</code> : Enter Google Analytics UA code to invoke inbuilt Google Analytics.</li>
+</ul>
+</li>
+<li>
+<p><code>[params.author]</code></p>
+<ul>
+<li><code>name</code> : Name of Site-wide or default author.</li>
+<li><code>about</code> : Name of the about page of the Site-wide or default author.</li>
+</ul>
+</li>
+<li>
+<p><code>[taxonomies]</code></p>
+<ul>
+<li><code>tag = &quot;tags&quot;</code> : Allows to specify taxonomy to be shown as tags</li>
+<li><code>category = &quot;categories&quot;</code> : Allows to specify taxonomy to be shown as categories. This is disabled by default</li>
+</ul>
+</li>
+<li>
+<p><code>[params]</code></p>
+<ul>
+<li><code>dateform</code> / <code>dateformShort</code> / <code>dateformNum</code> / <code>dateformNumTime</code> : Used to render properly formatted date &amp; time. Change this if you know what you are doing.</li>
+<li><code>description</code> : Put in default description for meta description.</li>
+<li><code>images</code> : Used to display image for site, when sharing the page as link to social media (like Twitter)</li>
+<li><code>themeColor</code>: Populates theme color meta and various elements of the site. If not present, <code>#494f5c</code> will be used.</li>
+<li><code>accentColor</code>: Populates accent color for various elements of the site. If not present, it will use declarations in <strong>/themes/hermit-V2/assets/scss/_colors.scss</strong>.</li>
+<li><code>homeSubtitle</code> : Displays subtitle in Homepage.</li>
+<li><code>footerCopyright</code> : Custom copyright for footer.</li>
+<li><code>bgImg</code> : Homepage background-image URL.</li>
+<li><code>gitUrl</code> : Prefix of link to the git commit detail page. GitInfo must be enabled.</li>
+<li><code>justifyContent</code> : Set &ldquo;text-align: justify&rdquo; to <code>.content</code>. Toggling this option needs to rebuild SCSS, requires Hugo extended version.</li>
+<li><code>code_copy_button</code> : Turn on/off the code-copy-button for code-fields.</li>
+<li><code>homeSubtitlePrinter</code> : Allows homeSubtitle to be shown with printer animation effect.</li>
+<li><code>scrollToTop</code> : Enables Scroll to Top button Site wide.</li>
+<li><code>global_mathjax</code> : Enable global_mathjax to true, if you want MathJax support sitewide (if you have technical page)</li>
+<li><code>legacyLayout</code> : Enables legacy layout (where post info is below content)</li>
+<li><code>shareSocial</code> : Enables Social sharing links to share pages to social media.</li>
+<li><code>googleTagManager</code> : Enables scripts for <a href="https://tagmanager.google.com/">Google Tag Manager</a></li>
+<li><code>tagSymbol</code> : Specify a symbol for Tags. Default is <code>#</code></li>
+<li><code>categorySymbol</code> : Specify a symbol for Categories. Default is <code>⊲</code></li>
+<li><code>pinned</code> : Display the name of &lsquo;Pinned Posts&rsquo;. If none provided, pinned posts section would be hidden</li>
+<li><code>pinnedSVGname</code> : Specify what icon should be displayed before a pinned post. The icon must be present in <code>svg.html</code></li>
+<li><code>listLayout</code> : Control what rendering to be shown in various list view
+<ul>
+<li><code>legacy</code> - Display legacy view, where Tags and Categories are grouped by date. Else Tags and Categories are sorted by number of posts/articles with each tag/category is descending order.</li>
+<li><code>description</code> - To show/hide posts&rsquo; description in list view</li>
+<li><code>tags</code> - To show/hide posts&rsquo; tags in list view</li>
+<li><code>categories</code> - To show/hide posts&rsquo; categories in list view</li>
+</ul>
+</li>
+<li><code>human</code> : Shows a badge &lsquo;BrainMade&rsquo; on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: <a href="brainmade.org">brainmade.org</a></li>
+<li><code>denyRobots</code> : Specify what directives to follow when denying crawlers. Default is <strong>noindex, nofollow, noarchive</strong></li>
+<li><code>allowRobots</code> : Specify what directives to follow when allowing crawlers. Default is <strong>index, follow</strong></li>
+<li><code>siteNoIndex</code> : When set to true, whole site will have <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code>) added to robots meta tag. Else, robots tag will have <em><strong>index, follow</strong></em> (unless specified by <code>allowRobots</code>) applied to whole site</li>
+<li><code>noIndexPages</code> : Specify on which pages crawlers will be denied. Pages specified will have <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code> added to robots meta tag. Use <strong>Page title</strong> to select pages. Useful for the pages generated by Hugo. (Eg. for <a href="https://1bl4z3r.github.io/hermit-V2/en/tags/">List of Tags</a>, use <em><strong>Tags</strong></em>)</li>
+<li><code>footerHideThemeName</code> : When set to true, links to Hugo and Hermit-V2 would be removed from footer section</li>
+<li><code>usesAnimation</code> : When set to false, animations are disabled site-wide</li>
+<li><code>mathjaxLib</code> : Provides Mathjax library to the theme. If not provided, <code>https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js</code> will be used
+<ul>
+<li>If library is in <code>/assets</code> folder, use <code>&lt;FOLDER (if any)/&lt;Library_Name.js&gt;</code></li>
+<li>If library is in <code>/static</code> folder, use <code>/&lt;FOLDER (if any)/&lt;Library_Name.js&gt;</code>. Notice leading &ldquo;/&rdquo;</li>
+<li>If you have different CDN or site, use the absolute URL</li>
+</ul>
+</li>
+<li><code>mermaidLib</code> : Provides Mermaid library to the theme. If not provided, <code>https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs</code> will be used
+<ul>
+<li>If library is in <code>/assets</code> folder, use <code>&lt;FOLDER (if any)/&lt;Library_Name.js&gt;</code></li>
+<li>If library is in <code>/static</code> folder, use <code>/&lt;FOLDER (if any)/&lt;Library_Name.js&gt;</code>. Notice leading &ldquo;/&rdquo;</li>
+<li>If you have different CDN or site, use the absolute URL</li>
+</ul>
+</li>
+<li><code>params.pages</code> : Holds configuration items for pages.
+<ul>
+<li><code>readTimeSeparator</code> : Specifies Separator between wordCount and readTime.</li>
+<li><code>LastmodOpen</code> : Specify the symbol for opening of <strong>Last Modified</strong> section. Defaults to <strong>&quot;[&quot;</strong></li>
+<li><code>LastmodClose</code> : Specify the symbol for closing of <strong>Last Modified</strong> section. Defaults to <strong>&quot;]&quot;</strong></li>
+<li><code>lastUpdatedOn</code> : Show what should be shown in section of Last Modified. Defaults to <strong>&ldquo;Last updated on: &ldquo;</strong></li>
+<li><code>relatedPosts</code> : Add a related content section to all single posts page.</li>
+</ul>
+</li>
+<li><code>[params.gallery]</code> Refer to <a href="https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/">Image Gallery Shortcode</a>
+<ul>
+<li><code>enable</code> : Set to <code>true</code> to activate the image gallery shortcode functionality site-wide.</li>
+<li><code>width</code> : Defines the width (in pixels) for automatically generated thumbnails for images; defaults to &ldquo;300&rdquo; (300px).</li>
+<li><code>layout</code> : Defines what would be default gallery layout sitewide. Defaults to &ldquo;grid&rdquo;. Layout can be either &ldquo;grid&rdquo; or &ldquo;masonry&rdquo;; and can be changed on per gallery-shortcode basis.</li>
+</ul>
+</li>
+<li><code>[params.dateform]</code> These parameters accept Go&rsquo;s time formatting strings. Refer to Hugo&rsquo;s <code>dateFormat</code> function documentation for more examples on how to format these strings.
+<ul>
+<li><code>LongDate</code>: Used for displaying a full, human-readable date, typically including the month name, day, and year (e.g., &ldquo;Jan 2, 2006&rdquo;). Primarily used on single post pages in the header for the publication date. Defaults to <code>&quot;Jan 2, 2006&quot;</code>.</li>
+<li><code>ShortDate</code>: Used for a concise date representation, typically month and day (e.g., &ldquo;Jan 2&rdquo;). Used in list views (blog index, tag/category lists). Defaults to <code>&quot;Jan 2&quot;</code>.</li>
+<li><code>NumDateShort</code>: Used for a short, numerical date format (e.g., &ldquo;2006-01-02&rdquo;). Used for Git commit author dates in post metadata. Defaults to <code>&quot;2006-01-02&quot;</code>.</li>
+<li><code>NumDateLong</code>: Used for a numerical date and time format, including timezone (e.g., &ldquo;2006-01-02 15:04 -0700&rdquo;). Used for the main post date/time and last modified date/time in post metadata. Defaults to <code>&quot;2006-01-02 15:04 -0700&quot;</code>.</li>
+<li><code>CopyrightDate</code> : Used for configuring the date format for Copyright in footer. Defaults to format <code>2006</code>, shows year.</li>
+</ul>
+</li>
+<li><code>[params.socialLinks]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
+<ul>
+<li><code>name</code> : Name of the social page.</li>
+<li><code>url</code> : URL of your account.</li>
+</ul>
+</li>
+<li><code>[menu]</code> : Display menu items in Homepage as well as in menubar. To make more menu items, use [[menu.main]]</li>
+</ul>
+</li>
+</ul>
+<h2 id="configuration-in-page-frontmatter">Configuration in page Frontmatter<a href="#configuration-in-page-frontmatter" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>As described in Hugo docs</p>
+<blockquote>
+<p>Front matter allows you to keep metadata attached to an instance of a content type—i.e., embedded inside a content file—and is one of the many features that gives Hugo its strength.</p>
+</blockquote>
+<ul>
+<li><code>title</code> : Page&rsquo;s title</li>
+<li><code>slug</code> : A slug is the part of a URL that identifies a particular page on a website in an easy-to-read form.</li>
+<li><code>date</code> : Date of creation of the page.</li>
+<li><code>draft</code> : If you want to un-publish the page.</li>
+<li><code>featuredImg</code> : To have a unique image for the page. Shown as background image. Can be toggled to fullscreen with special button in menu.</li>
+<li><code>ImgCopyright</code> : Optional. Use this to provide copyright text or attribution for the image specified in <code>featuredImg</code>. If provided, this text will be displayed with the featured image, typically at the bottom, allowing you to credit the image source or creator.</li>
+<li><code>description</code> : Description for the Page.</li>
+<li><code>tags</code> : Allows to define tags.</li>
+<li><code>categories</code> : Allows to define categories.</li>
+<li><code>author</code> : Allows to specify page author.</li>
+<li><code>authorLink</code> : Allows to supply separate author bio.</li>
+<li><code>scrolltotop</code> : Toggles scroll to top button for that particular page.</li>
+<li><code>mathjax</code> : Enable Per-Page MathJax support.</li>
+<li><code>toc</code> : Enables Table of Contents.</li>
+<li><code>custom_css</code> : Allows to supply custom CSS by placing the css files in <code>/static/css/</code>. CSS will be invoked for that page only.</li>
+<li><code>custom_js</code> : Allows to supply custom CSS by placing the css files in <code>/static/js/</code>. JS will be invoked for that page only.</li>
+<li><code>ShowLastmod</code> : This enables Last modification date of the given Page.</li>
+<li><code>Lastmod</code> : REQUIRED (If <code>ShowLastmod=true</code>). Enter Last modified date of the Page.</li>
+<li><code>pin</code> : Specify if the post should be shown as pinned</li>
+<li><code>print</code> : Pages which has <code>print: true</code> will have additional css from print styling. The CSS file should be created by user in <code>/assets/custom_css/print.scss</code>. <a href="https://www.sitepoint.com/css-printer-friendly-pages">Learn more</a></li>
+<li><code>robots</code> : Set to <strong>false</strong> to add page Disallow entry in robots.txt. Check <a href="https://1bl4z3r.github.io/hermit-V2/robots.txt">robots.txt</a></li>
+<li><code>noIndex</code> : When set to true, the page has <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code> added to robots meta tag. Else, robots tag will have <em><strong>index, follow</strong></em> (unless specified by <code>allowRobots</code>)</li>
+<li><code>keywords</code> : Specify keywords for your article. It will be used to populate<a href="https://developers.google.com/search/docs/appearance/site-names"> Structured Data Site names schema</a></li>
+<li><code>readTime</code> : Toggle Reading time for articles. <em>Note: This setting was moved from <code>hugo.toml</code> to page frontmatter to allow you to individually configure if the read time is shown on a page-by-page basis.</em></li>
+</ul>
+<h3 id="last-modified-date">Last Modified Date<a href="#last-modified-date" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>If <code>ShowLastmod:true</code> :</p>
+<ul>
+<li>If <code>enableGitInfo = true</code>, then Git Hash will be shown in <code>[...]</code> after Date.</li>
+<li>If <code>enableGitInfo = false</code>, then:
+<ul>
+<li>If <code>Lastmod</code> is not provided or <code>Lastmod</code> has same value as <code>Date</code>, error will be thrown.</li>
+<li>If <code>Lastmod</code> is provided or <code>Lastmod</code> is different from <code>Date</code>, value of <code>Lastmod</code> will be displayed in <code>[...]</code> after Date.</li>
+</ul>
+</li>
+</ul>
+<p>If <code>ShowLastmod</code> is not provided. User response defaults to false. It is equivalent to providing <code>ShowLastmod:false</code>.</p>
+<h3 id="enable-scrolltotop-button">Enable ScrolltoTop button<a href="#enable-scrolltotop-button" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>To enable scroll to top, <strong>you must enable <code>scrollToTop</code> in hugo.toml and <code>scrolltotop</code> in Page Frontmatter</strong>. This is to prevent scroll to top button from showing if the page has very less content. If you feel that for the content, you need scroll to top button, follow below steps:</p>
+<ol>
+<li>Open hugo.toml and set <code>scrollToTop = true</code></li>
+<li>Open the Markdown content file and set <code>scrolltotop : true</code> in Page Frontmatter</li>
+</ol>
+<h3 id="support-for-guest-authors">Support for Guest Authors<a href="#support-for-guest-authors" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>If blog has more than one author or if you want to invite Guest Authors, here&rsquo;s how to do.</p>
+<ul>
+<li>If author is not Site Author:
+<ol>
+<li>Update <code>author</code> to the Author&rsquo;s name in Page Frontmatter.</li>
+<li>Create a markdown file in <code>/content</code> directory. (eg. <code>author-1.md</code>)</li>
+<li>Add the markdown file to Page Frontmatter as <code>authorLink</code> (eg. <code>authorLink = author-1</code>)</li>
+</ol>
+</li>
+<li>If <code>authorLink</code> is not provided, but <code>author</code> is provided. Link will be referenced to Site author&rsquo;s page as defined in <code>author.about</code> in hugo.toml</li>
+<li>If Neither <code>author</code> nor <code>authorLink</code> is provided. Author will be referenced to Site author (as defined in <code>author.name</code>) and the link will referenced to Site author&rsquo;s page as defined in <code>author.about</code> in hugo.toml</li>
+</ul>
+]]></content></item><item><title>Admonition Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</link><pubDate>Fri, 20 Oct 2023 20:06:06 +0530</pubDate><author>blzr</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</guid><description>This explains admonition shortcode implementation</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>admonition</code> shortcode supports <strong>8</strong> types of banners to help you put a notice on your page.</p>
 <p><em>Markdown or HTML format in the content is supported.</em></p>
 <aside class="admonition note">
     <div class="admonition-title"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1988,7 +1994,140 @@ $$<p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they a
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$<p>\begin{equation}
 S (ω)=1.466, H_s<sup>2 ,  \frac{ω_0</sup>5}{ω<sup>6 }  , e</sup>[-3^ { ω/(ω_0  )]^2}
 \end{equation}</p>
-$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Tue, 15 Aug 2023 15:36:33 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>Integer lobortis vulputate mauris quis maximus. Vestibulum ac eros porttitor, auctor sem sed, tincidunt nulla. In sit amet tincidunt ex.</description><content type="text/html" mode="escaped"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$]]></content></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</guid><description>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="this-article-explains-how-to-use-scroll-up">This article explains how to use Scroll Up<a href="#this-article-explains-how-to-use-scroll-up" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.</p>
+<h3 id="step-1">Step 1<a href="#step-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>Set <code>scrollToTop</code> to true in <code>hugo.toml</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">scrollToTop</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><h3 id="step-2">Step 2<a href="#step-2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>Enable <code>scrolltotop</code> to <code>true</code> in article front matter.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">scrolltotop </span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><blockquote>
+<p>Some pages/articles do not require scroll up button (if there is less content)</p>
+</blockquote>
+<h2 id="anti-js-crowd">Anti-JS crowd<a href="#anti-js-crowd" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>The button will work as intended if JS is disabled, but it will not hide/show on scroll position. So, if you have decided to disable JS on client, you will be struck with an floating icon.</p>
+<h2 id="icon">Icon<a href="#icon" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>Icon is located in <code>layouts/_partials/svg.html</code> under scrollup.
+Icon svg code is as follows:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">fill</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#3B3E48&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;64px&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;64px&#34;</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-2.4 -2.4 28.80 28.80&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;up-circle&#34;</span> <span style="color:#a6e22e">data-name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Flat Color&#34;</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon flat-color&#34;</span> <span style="color:#a6e22e">stroke</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#3B3E48&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.00024000000000000003&#34;</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_bgCarrier&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_tracerCarrier&#34;</span> <span style="color:#a6e22e">stroke-linecap</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;round&#34;</span> <span style="color:#a6e22e">stroke-linejoin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;round&#34;</span> <span style="color:#a6e22e">stroke</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#CCCCCC&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.9600000000000002&#34;</span>&gt;&lt;<span style="color:#f92672">circle</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span> <span style="color:#a6e22e">cx</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">cy</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">r</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #3B3E48;&#34;</span>&gt;&lt;/<span style="color:#f92672">circle</span>&gt;&lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #018574;&#34;</span>&gt;&lt;/<span style="color:#f92672">path</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_iconCarrier&#34;</span>&gt;&lt;<span style="color:#f92672">circle</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span> <span style="color:#a6e22e">cx</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">cy</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">r</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #3B3E48;&#34;</span>&gt;&lt;/<span style="color:#f92672">circle</span>&gt;&lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #018574;&#34;</span>&gt;&lt;/<span style="color:#f92672">path</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;/<span style="color:#f92672">svg</span>&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="html">HTML<a href="#html" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>This is implemented as a partial located in <code>layouts/_partials/scroll-to-top.html</code>.
+Partial is injected in <code>layouts/_default/baseof.html</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{ <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">and</span> (.<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">scrollToTop</span>) (.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">scrolltotop</span>) }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span>=<span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;scroll-up&#34;</span>&gt;{{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;svg.html&#34;</span> (<span style="color:#a6e22e">dict</span> <span style="color:#e6db74">&#34;context&#34;</span> . <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#e6db74">&#34;scrollup&#34;</span>) }}&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">noscript</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span>=<span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;scroll-up show&#34;</span>&gt;{{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;svg.html&#34;</span> (<span style="color:#a6e22e">dict</span> <span style="color:#e6db74">&#34;context&#34;</span> . <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#e6db74">&#34;scrollup&#34;</span>) }}&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">noscript</span>&gt;
+</span></span><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">scrollwatcher</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">resources</span>.<span style="color:#a6e22e">Get</span> <span style="color:#e6db74">&#34;js/scrollwatcher.js&#34;</span> <span style="color:#f92672">-</span>}}
+</span></span><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">script</span> <span style="color:#f92672">:=</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">scrollwatcher</span> | <span style="color:#a6e22e">minify</span> | <span style="color:#a6e22e">fingerprint</span> <span style="color:#f92672">-</span>}}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;{{ $script.Permalink }}&#34;</span> {{ <span style="color:#a6e22e">printf</span> <span style="color:#e6db74">&#34;integrity=%q&#34;</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">Data</span>.<span style="color:#a6e22e">Integrity</span> | <span style="color:#a6e22e">safeHTMLAttr</span> }} <span style="color:#a6e22e">crossorigin</span>=<span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">script</span>&gt;
+</span></span><span style="display:flex;"><span>{{ <span style="color:#a6e22e">end</span> }}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="css">CSS<a href="#css" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>Located in <code>assets/scss/_scrolltotop.scss</code>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#a6e22e">.scroll-up</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> fixed;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">bottom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">right</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">z-index</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transition</span><span style="color:#f92672">:</span> all <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.5</span><span style="color:#66d9ef">s</span> ease;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.hide</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transform</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">translateY</span>(<span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.show</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transform</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">translateY</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>  }</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="javascript">JavaScript<a href="#javascript" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>Located in <code>assets/js/scrollwatcher.js</code></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scroll</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;.scroll-up&#34;</span>),<span style="color:#a6e22e">rootElement</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">documentElement</span>;<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleScroll</span>(){<span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">scrollTop</span><span style="color:#f92672">/</span>(<span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">scrollHeight</span><span style="color:#f92672">-</span><span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">clientHeight</span>)<span style="color:#f92672">&gt;</span>.<span style="color:#ae81ff">4</span><span style="color:#f92672">?</span>(<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;hide&#34;</span>),<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;show&#34;</span>))<span style="color:#f92672">:</span>(<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;hide&#34;</span>),<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;show&#34;</span>))}document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>,<span style="color:#a6e22e">handleScroll</span>);</span></span></code></pre></td></tr></table>
+</div>
+</div>
+]]></content></item><item><title>Typography</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</link><pubDate>Sat, 22 Jul 2023 14:36:33 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/typography/</guid><description>Integer lobortis vulputate mauris quis maximus. Vestibulum ac eros porttitor, auctor sem sed, tincidunt nulla. In sit amet tincidunt ex.</description><content type="text/html" mode="escaped"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <p>Footnote:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>Text that links to footnote has [^1]
 </span></span><span style="display:flex;"><span>
@@ -2434,139 +2573,6 @@ print(sorted_dt)
 <p><a href="https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/">the-figure-shortcode</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</div>
-]]></content></item><item><title>The New Scroll</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</link><pubDate>Sun, 06 Aug 2023 16:07:33 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-new-scroll/</guid><description>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="this-article-explains-how-to-use-scroll-up">This article explains how to use Scroll Up<a href="#this-article-explains-how-to-use-scroll-up" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-<p>A button to return to the top of the page allows the user to quickly return to the top of the page without making too much effort. This can be very useful when the page has a lot of content or which happens, for example, on one page websites, when infinite scrolling is used, or on mobile devices where different screen sizes can cause the content to scroll extend.</p>
-<h3 id="step-1">Step 1<a href="#step-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<p>Set <code>scrollToTop</code> to true in <code>hugo.toml</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">scrollToTop</span> = <span style="color:#66d9ef">true</span>
-</span></span></code></pre></div><h3 id="step-2">Step 2<a href="#step-2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<p>Enable <code>scrolltotop</code> to <code>true</code> in article front matter.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">scrolltotop </span>: <span style="color:#66d9ef">true</span>
-</span></span></code></pre></div><blockquote>
-<p>Some pages/articles do not require scroll up button (if there is less content)</p>
-</blockquote>
-<h2 id="anti-js-crowd">Anti-JS crowd<a href="#anti-js-crowd" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-<p>The button will work as intended if JS is disabled, but it will not hide/show on scroll position. So, if you have decided to disable JS on client, you will be struck with an floating icon.</p>
-<h2 id="icon">Icon<a href="#icon" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-<p>Icon is located in <code>layouts/_partials/svg.html</code> under scrollup.
-Icon svg code is as follows:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">fill</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#3B3E48&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;64px&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;64px&#34;</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-2.4 -2.4 28.80 28.80&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;up-circle&#34;</span> <span style="color:#a6e22e">data-name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Flat Color&#34;</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon flat-color&#34;</span> <span style="color:#a6e22e">stroke</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#3B3E48&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.00024000000000000003&#34;</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_bgCarrier&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_tracerCarrier&#34;</span> <span style="color:#a6e22e">stroke-linecap</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;round&#34;</span> <span style="color:#a6e22e">stroke-linejoin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;round&#34;</span> <span style="color:#a6e22e">stroke</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#CCCCCC&#34;</span> <span style="color:#a6e22e">stroke-width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.9600000000000002&#34;</span>&gt;&lt;<span style="color:#f92672">circle</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span> <span style="color:#a6e22e">cx</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">cy</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">r</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #3B3E48;&#34;</span>&gt;&lt;/<span style="color:#f92672">circle</span>&gt;&lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #018574;&#34;</span>&gt;&lt;/<span style="color:#f92672">path</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;<span style="color:#f92672">g</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SVGRepo_iconCarrier&#34;</span>&gt;&lt;<span style="color:#f92672">circle</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primary&#34;</span> <span style="color:#a6e22e">cx</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">cy</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;12&#34;</span> <span style="color:#a6e22e">r</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #3B3E48;&#34;</span>&gt;&lt;/<span style="color:#f92672">circle</span>&gt;&lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secondary&#34;</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M15,14a1,1,0,0,1-.71-.29L12,11.41l-2.29,2.3a1,1,0,0,1-1.42-1.42l3-3a1,1,0,0,1,1.42,0l3,3a1,1,0,0,1,0,1.42A1,1,0,0,1,15,14Z&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fill: #018574;&#34;</span>&gt;&lt;/<span style="color:#f92672">path</span>&gt;&lt;/<span style="color:#f92672">g</span>&gt;&lt;/<span style="color:#f92672">svg</span>&gt;</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="html">HTML<a href="#html" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-<p>This is implemented as a partial located in <code>layouts/_partials/scroll-to-top.html</code>.
-Partial is injected in <code>layouts/_default/baseof.html</code></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{ <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">and</span> (.<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">scrollToTop</span>) (.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">scrolltotop</span>) }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span>=<span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;scroll-up&#34;</span>&gt;{{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;svg.html&#34;</span> (<span style="color:#a6e22e">dict</span> <span style="color:#e6db74">&#34;context&#34;</span> . <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#e6db74">&#34;scrollup&#34;</span>) }}&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">a</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">noscript</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span>=<span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;scroll-up show&#34;</span>&gt;{{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;svg.html&#34;</span> (<span style="color:#a6e22e">dict</span> <span style="color:#e6db74">&#34;context&#34;</span> . <span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#e6db74">&#34;scrollup&#34;</span>) }}&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">a</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">noscript</span>&gt;
-</span></span><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">scrollwatcher</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">resources</span>.<span style="color:#a6e22e">Get</span> <span style="color:#e6db74">&#34;js/scrollwatcher.js&#34;</span> <span style="color:#f92672">-</span>}}
-</span></span><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">script</span> <span style="color:#f92672">:=</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">scrollwatcher</span> | <span style="color:#a6e22e">minify</span> | <span style="color:#a6e22e">fingerprint</span> <span style="color:#f92672">-</span>}}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span>=<span style="color:#e6db74">&#34;{{ $script.Permalink }}&#34;</span> {{ <span style="color:#a6e22e">printf</span> <span style="color:#e6db74">&#34;integrity=%q&#34;</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">Data</span>.<span style="color:#a6e22e">Integrity</span> | <span style="color:#a6e22e">safeHTMLAttr</span> }} <span style="color:#a6e22e">crossorigin</span>=<span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">script</span>&gt;
-</span></span><span style="display:flex;"><span>{{ <span style="color:#a6e22e">end</span> }}</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="css">CSS<a href="#css" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-<p>Located in <code>assets/scss/_scrolltotop.scss</code>.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#a6e22e">.scroll-up</span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">position</span><span style="color:#f92672">:</span> fixed;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">bottom</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">right</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">z-index</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transition</span><span style="color:#f92672">:</span> all <span style="color:#ae81ff">0</span><span style="color:#ae81ff">.5</span><span style="color:#66d9ef">s</span> ease;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.hide</span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transform</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">translateY</span>(<span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.show</span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">transform</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">translateY</span>(<span style="color:#ae81ff">0</span>);
-</span></span><span style="display:flex;"><span>  }</span></span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="javascript">JavaScript<a href="#javascript" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-<p>Located in <code>assets/js/scrollwatcher.js</code></p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">scroll</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;.scroll-up&#34;</span>),<span style="color:#a6e22e">rootElement</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">documentElement</span>;<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleScroll</span>(){<span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">scrollTop</span><span style="color:#f92672">/</span>(<span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">scrollHeight</span><span style="color:#f92672">-</span><span style="color:#a6e22e">rootElement</span>.<span style="color:#a6e22e">clientHeight</span>)<span style="color:#f92672">&gt;</span>.<span style="color:#ae81ff">4</span><span style="color:#f92672">?</span>(<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;hide&#34;</span>),<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;show&#34;</span>))<span style="color:#f92672">:</span>(<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;hide&#34;</span>),<span style="color:#a6e22e">scroll</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;show&#34;</span>))}document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>,<span style="color:#a6e22e">handleScroll</span>);</span></span></code></pre></td></tr></table>
-</div>
 </div>
 ]]></content></item><item><title>Post With Featured Image</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</link><pubDate>Mon, 01 Oct 2018 16:15:09 +0800</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/post-with-featured-image/</guid><description>&amp;lt;no value&amp;gt;</description><enclosure url="https://1bl4z3r.github.io/hermit-V2/866-1024x768_9964604113945904457.jpg" length="" type="image/jpeg"/><media:thumbnail url="https://1bl4z3r.github.io/hermit-V2/866-1024x768_9964604113945904457.jpg" width="1024" height="768"/><media:content url="https://1bl4z3r.github.io/hermit-V2/866-1024x768_9964604113945904457.jpg" medium="image" type="image/jpeg" width="1024" height="768"><media:title type="html">/866-1024x768_9964604113945904457.jpg</media:title></media:content><enclosure url="https://1bl4z3r.github.io/hermit-V2/866-1024x768_9964604113945904457.jpg" length="" type="image/jpeg"/><media:thumbnail url="https://1bl4z3r.github.io/hermit-V2/866-1024x768_9964604113945904457.jpg" width="1024" height="768"/><media:content url="https://1bl4z3r.github.io/hermit-V2/866-1024x768_9964604113945904457.jpg" medium="image" type="image/jpeg" width="1024" height="768"><media:title type="html">/866-1024x768_9964604113945904457.jpg</media:title></media:content><enclosure url="https://1bl4z3r.github.io/hermit-V2/images/928-600x400.jpg" length="" type="image/jpeg"/><media:thumbnail url="https://1bl4z3r.github.io/hermit-V2/images/928-600x400.jpg" width="600" height="400"/><media:content url="https://1bl4z3r.github.io/hermit-V2/images/928-600x400.jpg" medium="image" type="image/jpeg" width="600" height="400"><media:title type="html">/images/928-600x400.jpg</media:title></media:content><content type="text/html" mode="escaped"><![CDATA[<p>Just define the image URL in the content’s front matter, the featured image will be displayed as the background.</p>
 <p>For example:</p>
