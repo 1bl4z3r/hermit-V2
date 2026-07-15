@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Demo on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/demo/</link><description>Recent content in Demo on Hermit - V2</description><generator>Hugo -- 0.161.1</generator><language>en-US</language><lastBuildDate>Mon, 11 May 2026 10:00:00 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/demo/index.xml" rel="self" type="application/rss+xml"/><item><title>Image Gallery Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</link><pubDate>Mon, 11 May 2026 10:00:00 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</guid><description>Learn how to use the image gallery shortcode to create responsive galleries with thumbnails, captions, and a JavaScript-powered lightbox.</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>gallery</code> shortcode lets you add a beautiful, responsive image gallery to any page on your Hugo site. You compose it using nested <code>{{&lt; figure &gt;}}</code> shortcodes — one per image — giving you full control over captions, titles, and links without any extra tooling or third-party libraries.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Demo on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/demo/</link><description>Recent content in Demo on Hermit - V2</description><generator>Hugo -- 0.164.0</generator><language>en-US</language><lastBuildDate>Mon, 11 May 2026 10:00:00 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/demo/index.xml" rel="self" type="application/rss+xml"/><item><title>Image Gallery Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</link><pubDate>Mon, 11 May 2026 10:00:00 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</guid><description>Learn how to use the image gallery shortcode to create responsive galleries with thumbnails, captions, and a JavaScript-powered lightbox.</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>gallery</code> shortcode lets you add a beautiful, responsive image gallery to any page on your Hugo site. You compose it using nested <code>{{&lt; figure &gt;}}</code> shortcodes — one per image — giving you full control over captions, titles, and links without any extra tooling or third-party libraries.</p>
 <h2 id="what-you-get">What You Get<a href="#what-you-get" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -89,60 +89,60 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h2>
 <p>Each <code>{{&lt; figure &gt;}}</code> inside a gallery accepts the following parameters:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Parameter</th>
-          <th>Required</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>src</code></td>
-          <td>Yes</td>
-          <td>Path to the image. See <a href="/hermit-V2/en/posts/image-gallery-shortcode/#image-sources">Image Sources</a> below.</td>
-      </tr>
-      <tr>
-          <td><code>title</code></td>
-          <td>No</td>
-          <td>Shown as a bold heading in the lightbox above the caption.</td>
-      </tr>
-      <tr>
-          <td><code>caption</code></td>
-          <td>No</td>
-          <td>Descriptive text shown in the lightbox and on thumbnail hover. Supports Markdown.</td>
-      </tr>
-      <tr>
-          <td><code>alt</code></td>
-          <td>No</td>
-          <td>Alt text for the image. Defaults to <code>title</code>, then <code>caption</code>, then the filename. Always set this when your image conveys meaning not covered by the caption.</td>
-      </tr>
-      <tr>
-          <td><code>attr</code></td>
-          <td>No</td>
-          <td>Attribution or credit line, shown alongside the caption.</td>
-      </tr>
-      <tr>
-          <td><code>attrlink</code></td>
-          <td>No</td>
-          <td>URL to link the attribution text to.</td>
-      </tr>
-      <tr>
-          <td><code>link</code></td>
-          <td>No</td>
-          <td>In standalone <code>{{&lt; figure &gt;}}</code> use (outside a gallery), wraps the image in a link. Inside a gallery, this is used as the lightbox full-resolution URL for static and remote images.</td>
-      </tr>
-      <tr>
-          <td><code>loading</code></td>
-          <td>No</td>
-          <td>Override the loading behaviour. Defaults to <code>lazy</code> inside a gallery. Set to <code>eager</code> for the first image if it is above the fold.</td>
-      </tr>
-      <tr>
-          <td><code>class</code></td>
-          <td>No</td>
-          <td>CSS class applied to the <code>&lt;figure&gt;</code> element. Inside a masonry gallery, you can use <code>align-top</code>, <code>align-center</code>, or <code>align-bottom</code> to override vertical alignment for that specific image.</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Parameter</th>
+					<th>Required</th>
+					<th>Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>src</code></td>
+					<td>Yes</td>
+					<td>Path to the image. See <a href="/hermit-V2/en/posts/image-gallery-shortcode/#image-sources">Image Sources</a> below.</td>
+			</tr>
+			<tr>
+					<td><code>title</code></td>
+					<td>No</td>
+					<td>Shown as a bold heading in the lightbox above the caption.</td>
+			</tr>
+			<tr>
+					<td><code>caption</code></td>
+					<td>No</td>
+					<td>Descriptive text shown in the lightbox and on thumbnail hover. Supports Markdown.</td>
+			</tr>
+			<tr>
+					<td><code>alt</code></td>
+					<td>No</td>
+					<td>Alt text for the image. Defaults to <code>title</code>, then <code>caption</code>, then the filename. Always set this when your image conveys meaning not covered by the caption.</td>
+			</tr>
+			<tr>
+					<td><code>attr</code></td>
+					<td>No</td>
+					<td>Attribution or credit line, shown alongside the caption.</td>
+			</tr>
+			<tr>
+					<td><code>attrlink</code></td>
+					<td>No</td>
+					<td>URL to link the attribution text to.</td>
+			</tr>
+			<tr>
+					<td><code>link</code></td>
+					<td>No</td>
+					<td>In standalone <code>{{&lt; figure &gt;}}</code> use (outside a gallery), wraps the image in a link. Inside a gallery, this is used as the lightbox full-resolution URL for static and remote images.</td>
+			</tr>
+			<tr>
+					<td><code>loading</code></td>
+					<td>No</td>
+					<td>Override the loading behaviour. Defaults to <code>lazy</code> inside a gallery. Set to <code>eager</code> for the first image if it is above the fold.</td>
+			</tr>
+			<tr>
+					<td><code>class</code></td>
+					<td>No</td>
+					<td>CSS class applied to the <code>&lt;figure&gt;</code> element. Inside a masonry gallery, you can use <code>align-top</code>, <code>align-center</code>, or <code>align-bottom</code> to override vertical alignment for that specific image.</td>
+			</tr>
+	</tbody>
 </table>
 <h2 id="image-sources">Image Sources<a href="#image-sources" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
@@ -192,34 +192,34 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h2>
 <p>Clicking any thumbnail opens the lightbox. If you provided a <code>title</code> and/or <code>caption</code>, they appear below the enlarged image — title in bold, caption underneath.</p>
 <table>
-  <thead>
-      <tr>
-          <th>Control</th>
-          <th>Action</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Click thumbnail</td>
-          <td>Open lightbox at that image</td>
-      </tr>
-      <tr>
-          <td><code>←</code> / <code>→</code> arrow keys</td>
-          <td>Navigate to previous / next image</td>
-      </tr>
-      <tr>
-          <td><code>Escape</code></td>
-          <td>Close the lightbox</td>
-      </tr>
-      <tr>
-          <td>Click outside the image</td>
-          <td>Close the lightbox</td>
-      </tr>
-      <tr>
-          <td>Browser back button</td>
-          <td>Close the lightbox</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Control</th>
+					<th>Action</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Click thumbnail</td>
+					<td>Open lightbox at that image</td>
+			</tr>
+			<tr>
+					<td><code>←</code> / <code>→</code> arrow keys</td>
+					<td>Navigate to previous / next image</td>
+			</tr>
+			<tr>
+					<td><code>Escape</code></td>
+					<td>Close the lightbox</td>
+			</tr>
+			<tr>
+					<td>Click outside the image</td>
+					<td>Close the lightbox</td>
+			</tr>
+			<tr>
+					<td>Browser back button</td>
+					<td>Close the lightbox</td>
+			</tr>
+	</tbody>
 </table>
 <h3 id="deep-linking-to-a-specific-image">Deep-linking to a specific image<a href="#deep-linking-to-a-specific-image" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
@@ -248,54 +248,54 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h2>
 <p>The gallery is built with search engines and assistive technology in mind. Here is what is applied automatically:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Feature</th>
-          <th>What it does</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>schema.org/ImageGallery</code></td>
-          <td>Marks the gallery container as a structured data entity for Google Image Search</td>
-      </tr>
-      <tr>
-          <td><code>schema.org/ImageObject</code></td>
-          <td>Marks each figure with its URL, name, and description for rich results</td>
-      </tr>
-      <tr>
-          <td><code>contentUrl</code> meta</td>
-          <td>Gives crawlers the full-resolution image URL, even though the thumbnail is what&rsquo;s displayed</td>
-      </tr>
-      <tr>
-          <td>Meaningful <code>alt</code> text</td>
-          <td>Falls back through <code>alt</code> → <code>title</code> → <code>caption</code> → filename — no image is ever left without a description</td>
-      </tr>
-      <tr>
-          <td><code>loading=&quot;lazy&quot;</code></td>
-          <td>Gallery images load only as they scroll into view, improving page speed</td>
-      </tr>
-      <tr>
-          <td><code>decoding=&quot;async&quot;</code></td>
-          <td>Images decode off the main thread, keeping the page responsive</td>
-      </tr>
-      <tr>
-          <td><code>role=&quot;region&quot;</code> + <code>aria-label</code></td>
-          <td>Screen readers announce the gallery as a named landmark</td>
-      </tr>
-      <tr>
-          <td><code>role=&quot;dialog&quot;</code> + <code>aria-modal</code> on lightbox</td>
-          <td>Screen readers correctly identify the lightbox as a modal dialog</td>
-      </tr>
-      <tr>
-          <td><code>aria-live</code> on caption</td>
-          <td>Screen readers announce the caption when you navigate between images</td>
-      </tr>
-      <tr>
-          <td><code>role=&quot;button&quot;</code> + <code>tabindex</code> on controls</td>
-          <td>Close and navigation buttons are reachable by keyboard Tab</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Feature</th>
+					<th>What it does</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>schema.org/ImageGallery</code></td>
+					<td>Marks the gallery container as a structured data entity for Google Image Search</td>
+			</tr>
+			<tr>
+					<td><code>schema.org/ImageObject</code></td>
+					<td>Marks each figure with its URL, name, and description for rich results</td>
+			</tr>
+			<tr>
+					<td><code>contentUrl</code> meta</td>
+					<td>Gives crawlers the full-resolution image URL, even though the thumbnail is what&rsquo;s displayed</td>
+			</tr>
+			<tr>
+					<td>Meaningful <code>alt</code> text</td>
+					<td>Falls back through <code>alt</code> → <code>title</code> → <code>caption</code> → filename — no image is ever left without a description</td>
+			</tr>
+			<tr>
+					<td><code>loading=&quot;lazy&quot;</code></td>
+					<td>Gallery images load only as they scroll into view, improving page speed</td>
+			</tr>
+			<tr>
+					<td><code>decoding=&quot;async&quot;</code></td>
+					<td>Images decode off the main thread, keeping the page responsive</td>
+			</tr>
+			<tr>
+					<td><code>role=&quot;region&quot;</code> + <code>aria-label</code></td>
+					<td>Screen readers announce the gallery as a named landmark</td>
+			</tr>
+			<tr>
+					<td><code>role=&quot;dialog&quot;</code> + <code>aria-modal</code> on lightbox</td>
+					<td>Screen readers correctly identify the lightbox as a modal dialog</td>
+			</tr>
+			<tr>
+					<td><code>aria-live</code> on caption</td>
+					<td>Screen readers announce the caption when you navigate between images</td>
+			</tr>
+			<tr>
+					<td><code>role=&quot;button&quot;</code> + <code>tabindex</code> on controls</td>
+					<td>Close and navigation buttons are reachable by keyboard Tab</td>
+			</tr>
+	</tbody>
 </table>
 <h2 id="configuration-reference">Configuration Reference<a href="#configuration-reference" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
@@ -353,8 +353,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--grid"
-         id="gallery-59c29ced"
-         data-gallery-id="gallery-59c29ced"
+         id="gallery-49d47586"
+         data-gallery-id="gallery-49d47586"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -367,9 +367,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_f39b50b089687e8.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_3f35f1167cf55c16.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
@@ -380,9 +380,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 </div>
@@ -393,8 +393,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--grid"
-         id="gallery-047861f2"
-         data-gallery-id="gallery-047861f2"
+         id="gallery-0df0537f"
+         data-gallery-id="gallery-0df0537f"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -407,9 +407,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_f39b50b089687e8.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_3f35f1167cf55c16.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
@@ -420,9 +420,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 
@@ -433,9 +433,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/928-600x400.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/928-600x400.jpg"><meta itemprop="name" content="Grid Image 3"><meta itemprop="description" content="Caption for Image 3"><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_fb38b0bfc97982db.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_ae87959fd7e8be.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_fb38b0bfc97982db.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/928-600x400_hu_d1a7c2167f14a0a0.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_ea6255deb49ee5fe.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_d1a7c2167f14a0a0.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 3</h4><p>Caption for Image 3</p></figcaption></figure>
 </div>
@@ -446,8 +446,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--grid"
-         id="gallery-150124f3"
-         data-gallery-id="gallery-150124f3"
+         id="gallery-3e461169"
+         data-gallery-id="gallery-3e461169"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -460,9 +460,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_f39b50b089687e8.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_3f35f1167cf55c16.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
@@ -473,9 +473,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 
@@ -486,9 +486,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/928-600x400.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/928-600x400.jpg"><meta itemprop="name" content="Grid Image 3"><meta itemprop="description" content="Caption for Image 3"><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_fb38b0bfc97982db.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_ae87959fd7e8be.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_fb38b0bfc97982db.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/928-600x400_hu_d1a7c2167f14a0a0.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_ea6255deb49ee5fe.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_d1a7c2167f14a0a0.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 3</h4><p>Caption for Image 3</p></figcaption></figure>
 
@@ -499,9 +499,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 4"><meta itemprop="description" content="Caption for Image 4"><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="Grid Image 4" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="Grid Image 4" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 4</h4><p>Caption for Image 4</p></figcaption></figure>
 </div>
@@ -512,8 +512,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--grid"
-         id="gallery-0771434f"
-         data-gallery-id="gallery-0771434f"
+         id="gallery-b85c253c"
+         data-gallery-id="gallery-b85c253c"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -526,9 +526,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_f39b50b089687e8.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_3f35f1167cf55c16.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
@@ -539,9 +539,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 
@@ -552,9 +552,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/928-600x400.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/928-600x400.jpg"><meta itemprop="name" content="Grid Image 3"><meta itemprop="description" content="Caption for Image 3"><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_fb38b0bfc97982db.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_ae87959fd7e8be.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_fb38b0bfc97982db.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/928-600x400_hu_d1a7c2167f14a0a0.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_ea6255deb49ee5fe.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_d1a7c2167f14a0a0.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 3</h4><p>Caption for Image 3</p></figcaption></figure>
 
@@ -565,9 +565,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 4"><meta itemprop="description" content="Caption for Image 4"><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="Grid Image 4" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="Grid Image 4" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 4</h4><p>Caption for Image 4</p></figcaption></figure>
 
@@ -578,9 +578,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 5"><meta itemprop="description" content="Caption for Image 5"><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="Grid Image 5" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="Grid Image 5" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 5</h4><p>Caption for Image 5</p></figcaption></figure>
 </div>
@@ -851,8 +851,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
 </span></span><span style="display:flex;"><span>{{&lt; <span style="color:#f92672">/</span><span style="color:#a6e22e">gallery</span> &gt;}}
 </span></span></code></pre></div>
 <div class="image-gallery image-gallery--grid"
-         id="gallery-79fe160e"
-         data-gallery-id="gallery-79fe160e"
+         id="gallery-8936914f"
+         data-gallery-id="gallery-8936914f"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -865,9 +865,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
       
   
   <figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="FOREST"><meta itemprop="description" content="Downtown forest"><picture>
-              <source srcset="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" type="image/webp">
-              <source srcset="/hermit-V2/images/10-2500x1667_hu_f39b50b089687e8.jpg"  type="image/jpeg">
-              <img src="/hermit-V2/images/10-2500x1667_hu_8ebfb90bab4f68a0.webp" alt="FOREST" width="300" height="300" loading="lazy"
+              <source srcset="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" type="image/webp">
+              <source srcset="/hermit-V2/images/10-2500x1667_hu_3f35f1167cf55c16.jpg"  type="image/jpeg">
+              <img src="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" alt="FOREST" width="300" height="300" loading="lazy"
                   decoding="async" />
           </picture><figcaption><h4>FOREST</h4><p>Downtown forest - <a href="https://example.com/jane">Jane Smith</a></p></figcaption></figure>
   
@@ -878,9 +878,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
       
   
   <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="LAKE"><meta itemprop="description" content="Saturday morning"><picture>
-              <source srcset="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" type="image/webp">
-              <source srcset="/hermit-V2/images/11-2500x1667_hu_e81e07e6feedb28d.jpg"  type="image/jpeg">
-              <img src="/hermit-V2/images/11-2500x1667_hu_70e286107b221526.webp" alt="LAKE" width="300" height="300" loading="lazy"
+              <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
+              <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
+              <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="LAKE" width="300" height="300" loading="lazy"
                   decoding="async" />
           </picture><figcaption><h4>LAKE</h4><p>Saturday morning - <a href="https://example.com/bob">Bob Jones</a></p></figcaption></figure>
 </div>
@@ -1106,95 +1106,95 @@ Additionally, any <code>.svg</code> image will automatically have its box-shadow
 <li>
 <p><code>target</code> : Specifies where to open the linked document. To be used with <code>link</code>. The value is added to <code>target</code>. Possible values:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Value</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>_blank</td>
-          <td>Opens the linked document in a new window or tab</td>
-      </tr>
-      <tr>
-          <td>_self</td>
-          <td>Opens the linked document in the same frame as it was clicked (this is default)</td>
-      </tr>
-      <tr>
-          <td>_parent</td>
-          <td>Opens the linked document in the parent frame</td>
-      </tr>
-      <tr>
-          <td>_top</td>
-          <td>Opens the linked document in the full body of the window</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Value</th>
+					<th>Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>_blank</td>
+					<td>Opens the linked document in a new window or tab</td>
+			</tr>
+			<tr>
+					<td>_self</td>
+					<td>Opens the linked document in the same frame as it was clicked (this is default)</td>
+			</tr>
+			<tr>
+					<td>_parent</td>
+					<td>Opens the linked document in the parent frame</td>
+			</tr>
+			<tr>
+					<td>_top</td>
+					<td>Opens the linked document in the full body of the window</td>
+			</tr>
+	</tbody>
 </table>
 </li>
 <li>
 <p><code>rel</code> : Specifies the relationship between the current document and the linked document. The value is added to <code>rel</code>. Possible values :</p>
 <table>
-  <thead>
-      <tr>
-          <th>Value</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>alternate</td>
-          <td>Provides a link to an alternate representation of the document (i.e. print page, translated or mirror)</td>
-      </tr>
-      <tr>
-          <td>author</td>
-          <td>Provides a link to the author of the document</td>
-      </tr>
-      <tr>
-          <td>bookmark</td>
-          <td>Permanent URL used for bookmarking</td>
-      </tr>
-      <tr>
-          <td>external</td>
-          <td>Indicates that the referenced document is not part of the same site as the current document</td>
-      </tr>
-      <tr>
-          <td>help</td>
-          <td>Provides a link to a help document</td>
-      </tr>
-      <tr>
-          <td>license</td>
-          <td>Provides a link to licensing information for the document</td>
-      </tr>
-      <tr>
-          <td>next</td>
-          <td>Provides a link to the next document in the series</td>
-      </tr>
-      <tr>
-          <td>nofollow</td>
-          <td>Links to an unendorsed document, like a paid link. (&ldquo;nofollow&rdquo; is used by Google, to specify that the Google search spider should not follow that link)</td>
-      </tr>
-      <tr>
-          <td>noopener</td>
-          <td>Requires that any browsing context created by following the hyperlink must not have an opener browsing context</td>
-      </tr>
-      <tr>
-          <td>noreferrer</td>
-          <td>Makes the referrer unknown. No referer header will be included when the user clicks the hyperlink</td>
-      </tr>
-      <tr>
-          <td>prev</td>
-          <td>The previous document in a selection</td>
-      </tr>
-      <tr>
-          <td>search</td>
-          <td>Links to a search tool for the document</td>
-      </tr>
-      <tr>
-          <td>tag</td>
-          <td>A tag (keyword) for the current document</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Value</th>
+					<th>Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>alternate</td>
+					<td>Provides a link to an alternate representation of the document (i.e. print page, translated or mirror)</td>
+			</tr>
+			<tr>
+					<td>author</td>
+					<td>Provides a link to the author of the document</td>
+			</tr>
+			<tr>
+					<td>bookmark</td>
+					<td>Permanent URL used for bookmarking</td>
+			</tr>
+			<tr>
+					<td>external</td>
+					<td>Indicates that the referenced document is not part of the same site as the current document</td>
+			</tr>
+			<tr>
+					<td>help</td>
+					<td>Provides a link to a help document</td>
+			</tr>
+			<tr>
+					<td>license</td>
+					<td>Provides a link to licensing information for the document</td>
+			</tr>
+			<tr>
+					<td>next</td>
+					<td>Provides a link to the next document in the series</td>
+			</tr>
+			<tr>
+					<td>nofollow</td>
+					<td>Links to an unendorsed document, like a paid link. (&ldquo;nofollow&rdquo; is used by Google, to specify that the Google search spider should not follow that link)</td>
+			</tr>
+			<tr>
+					<td>noopener</td>
+					<td>Requires that any browsing context created by following the hyperlink must not have an opener browsing context</td>
+			</tr>
+			<tr>
+					<td>noreferrer</td>
+					<td>Makes the referrer unknown. No referer header will be included when the user clicks the hyperlink</td>
+			</tr>
+			<tr>
+					<td>prev</td>
+					<td>The previous document in a selection</td>
+			</tr>
+			<tr>
+					<td>search</td>
+					<td>Links to a search tool for the document</td>
+			</tr>
+			<tr>
+					<td>tag</td>
+					<td>A tag (keyword) for the current document</td>
+			</tr>
+	</tbody>
 </table>
 </li>
 <li>
@@ -1230,22 +1230,22 @@ Additionally, any <code>.svg</code> image will automatically have its box-shadow
 <li>
 <p><code>loading</code> : Specifies whether a browser should load an image immediately or to defer loading of off-screen images until for example the user scrolls near them. Possible values:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Value</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>eager</td>
-          <td>Default. Loads an image immediately</td>
-      </tr>
-      <tr>
-          <td>lazy</td>
-          <td>Defer loading of images until some conditions are met</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Value</th>
+					<th>Description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>eager</td>
+					<td>Default. Loads an image immediately</td>
+			</tr>
+			<tr>
+					<td>lazy</td>
+					<td>Defer loading of images until some conditions are met</td>
+			</tr>
+	</tbody>
 </table>
 </li>
 </ul>
@@ -2113,74 +2113,74 @@ Partial is injected in <code>layouts/_default/baseof.html</code></p>
 </span></span></code></pre></div><p>Text that links to footnote has <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <p>Inline styles:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Inline styles</th>
-          <th>When rendered</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>**strong**</code></td>
-          <td><strong>strong</strong></td>
-      </tr>
-      <tr>
-          <td><code>__strong__</code></td>
-          <td><strong>strong</strong></td>
-      </tr>
-      <tr>
-          <td><code>*emphasis*</code></td>
-          <td><em>emphasis</em></td>
-      </tr>
-      <tr>
-          <td><code>_emphasis_</code></td>
-          <td><em>emphasis</em></td>
-      </tr>
-      <tr>
-          <td><code>***strong &amp; emphasis***</code></td>
-          <td><em><strong>strong and emphasis</strong></em></td>
-      </tr>
-      <tr>
-          <td><code>`code`</code></td>
-          <td><code>code</code></td>
-      </tr>
-      <tr>
-          <td><code>~~strikethrough~~</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
-          <td><del>strikethrough</del></td>
-      </tr>
-      <tr>
-          <td><code>++inserted text++</code><sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
-          <td><ins>inserted text</ins></td>
-      </tr>
-      <tr>
-          <td><code>==marked text==</code><sup id="fnref2:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
-          <td><mark>marked text</mark></td>
-      </tr>
-      <tr>
-          <td><code>subscript~2~text</code><sup id="fnref3:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
-          <td>subscript<sub>2</sub>text</td>
-      </tr>
-      <tr>
-          <td><code>superscript^6^text</code><sup id="fnref4:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
-          <td>superscript<sup>6</sup>text</td>
-      </tr>
-      <tr>
-          <td><code>:joy:</code><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></td>
-          <td>&#x1f602;</td>
-      </tr>
-      <tr>
-          <td><code>&lt;cite&gt;HTML tag&lt;/cite&gt;</code><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></td>
-          <td><cite>HTML tag</cite></td>
-      </tr>
-      <tr>
-          <td><code>\(LaTeX\)</code><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></td>
-          <td>\(LaTeX\)</td>
-      </tr>
-      <tr>
-          <td><code>[Link](https://example.com)</code></td>
-          <td><a href="https://example.com">Link</a></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Inline styles</th>
+					<th>When rendered</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>**strong**</code></td>
+					<td><strong>strong</strong></td>
+			</tr>
+			<tr>
+					<td><code>__strong__</code></td>
+					<td><strong>strong</strong></td>
+			</tr>
+			<tr>
+					<td><code>*emphasis*</code></td>
+					<td><em>emphasis</em></td>
+			</tr>
+			<tr>
+					<td><code>_emphasis_</code></td>
+					<td><em>emphasis</em></td>
+			</tr>
+			<tr>
+					<td><code>***strong &amp; emphasis***</code></td>
+					<td><em><strong>strong and emphasis</strong></em></td>
+			</tr>
+			<tr>
+					<td><code>`code`</code></td>
+					<td><code>code</code></td>
+			</tr>
+			<tr>
+					<td><code>~~strikethrough~~</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+					<td><del>strikethrough</del></td>
+			</tr>
+			<tr>
+					<td><code>++inserted text++</code><sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+					<td><ins>inserted text</ins></td>
+			</tr>
+			<tr>
+					<td><code>==marked text==</code><sup id="fnref2:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+					<td><mark>marked text</mark></td>
+			</tr>
+			<tr>
+					<td><code>subscript~2~text</code><sup id="fnref3:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+					<td>subscript<sub>2</sub>text</td>
+			</tr>
+			<tr>
+					<td><code>superscript^6^text</code><sup id="fnref4:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+					<td>superscript<sup>6</sup>text</td>
+			</tr>
+			<tr>
+					<td><code>:joy:</code><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></td>
+					<td>&#x1f602;</td>
+			</tr>
+			<tr>
+					<td><code>&lt;cite&gt;HTML tag&lt;/cite&gt;</code><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></td>
+					<td><cite>HTML tag</cite></td>
+			</tr>
+			<tr>
+					<td><code>\(LaTeX\)</code><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></td>
+					<td>\(LaTeX\)</td>
+			</tr>
+			<tr>
+					<td><code>[Link](https://example.com)</code></td>
+					<td><a href="https://example.com">Link</a></td>
+			</tr>
+	</tbody>
 </table>
 <blockquote>
 <p>To use HTML tags in hugo, add following to <code>hugo.toml</code></p>
@@ -2277,30 +2277,30 @@ Another line (To keep the quote together, blank lines inside the quote must cont
 </span></span><span style="display:flex;"><span>| col 2 is      |    centered     |           $12 |
 </span></span><span style="display:flex;"><span>| zebra stripes |    are neat     |            $1 |
 </span></span></code></pre></div><table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Left-Aligned</th>
-          <th style="text-align: center">Center Aligned</th>
-          <th style="text-align: right">Right Aligned</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">col 3 is</td>
-          <td style="text-align: center">some wordy text</td>
-          <td style="text-align: right">$1600</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">col 2 is</td>
-          <td style="text-align: center">centered</td>
-          <td style="text-align: right">$12</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">zebra stripes</td>
-          <td style="text-align: center">are neat</td>
-          <td style="text-align: right">$1</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">Left-Aligned</th>
+					<th style="text-align: center">Center Aligned</th>
+					<th style="text-align: right">Right Aligned</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">col 3 is</td>
+					<td style="text-align: center">some wordy text</td>
+					<td style="text-align: right">$1600</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">col 2 is</td>
+					<td style="text-align: center">centered</td>
+					<td style="text-align: right">$12</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">zebra stripes</td>
+					<td style="text-align: center">are neat</td>
+					<td style="text-align: right">$1</td>
+			</tr>
+	</tbody>
 </table>
 <p>Lists:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#66d9ef">*</span> Unordered list item 1.

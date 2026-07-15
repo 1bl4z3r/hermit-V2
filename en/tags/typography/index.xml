@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Typography on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/typography/</link><description>Recent content in Typography on Hermit - V2</description><generator>Hugo -- 0.161.1</generator><language>en-US</language><lastBuildDate>Fri, 20 Oct 2023 20:06:06 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/typography/index.xml" rel="self" type="application/rss+xml"/><item><title>Admonition Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</link><pubDate>Fri, 20 Oct 2023 20:06:06 +0530</pubDate><author>blzr</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</guid><description>This explains admonition shortcode implementation</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>admonition</code> shortcode supports <strong>8</strong> types of banners to help you put a notice on your page.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Typography on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/typography/</link><description>Recent content in Typography on Hermit - V2</description><generator>Hugo -- 0.164.0</generator><language>en-US</language><lastBuildDate>Fri, 20 Oct 2023 20:06:06 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/typography/index.xml" rel="self" type="application/rss+xml"/><item><title>Admonition Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</link><pubDate>Fri, 20 Oct 2023 20:06:06 +0530</pubDate><author>blzr</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/admonition-shortcode/</guid><description>This explains admonition shortcode implementation</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>admonition</code> shortcode supports <strong>8</strong> types of banners to help you put a notice on your page.</p>
 <p><em>Markdown or HTML format in the content is supported.</em></p>
 <aside class="admonition note">
     <div class="admonition-title"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -404,74 +404,74 @@ Partial is injected in <code>layouts/_default/baseof.html</code></p>
 </span></span></code></pre></div><p>Text that links to footnote has <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <p>Inline styles:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Inline styles</th>
-          <th>When rendered</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>**strong**</code></td>
-          <td><strong>strong</strong></td>
-      </tr>
-      <tr>
-          <td><code>__strong__</code></td>
-          <td><strong>strong</strong></td>
-      </tr>
-      <tr>
-          <td><code>*emphasis*</code></td>
-          <td><em>emphasis</em></td>
-      </tr>
-      <tr>
-          <td><code>_emphasis_</code></td>
-          <td><em>emphasis</em></td>
-      </tr>
-      <tr>
-          <td><code>***strong &amp; emphasis***</code></td>
-          <td><em><strong>strong and emphasis</strong></em></td>
-      </tr>
-      <tr>
-          <td><code>`code`</code></td>
-          <td><code>code</code></td>
-      </tr>
-      <tr>
-          <td><code>~~strikethrough~~</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
-          <td><del>strikethrough</del></td>
-      </tr>
-      <tr>
-          <td><code>++inserted text++</code><sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
-          <td><ins>inserted text</ins></td>
-      </tr>
-      <tr>
-          <td><code>==marked text==</code><sup id="fnref2:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
-          <td><mark>marked text</mark></td>
-      </tr>
-      <tr>
-          <td><code>subscript~2~text</code><sup id="fnref3:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
-          <td>subscript<sub>2</sub>text</td>
-      </tr>
-      <tr>
-          <td><code>superscript^6^text</code><sup id="fnref4:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
-          <td>superscript<sup>6</sup>text</td>
-      </tr>
-      <tr>
-          <td><code>:joy:</code><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></td>
-          <td>&#x1f602;</td>
-      </tr>
-      <tr>
-          <td><code>&lt;cite&gt;HTML tag&lt;/cite&gt;</code><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></td>
-          <td><cite>HTML tag</cite></td>
-      </tr>
-      <tr>
-          <td><code>\(LaTeX\)</code><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></td>
-          <td>\(LaTeX\)</td>
-      </tr>
-      <tr>
-          <td><code>[Link](https://example.com)</code></td>
-          <td><a href="https://example.com">Link</a></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Inline styles</th>
+					<th>When rendered</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>**strong**</code></td>
+					<td><strong>strong</strong></td>
+			</tr>
+			<tr>
+					<td><code>__strong__</code></td>
+					<td><strong>strong</strong></td>
+			</tr>
+			<tr>
+					<td><code>*emphasis*</code></td>
+					<td><em>emphasis</em></td>
+			</tr>
+			<tr>
+					<td><code>_emphasis_</code></td>
+					<td><em>emphasis</em></td>
+			</tr>
+			<tr>
+					<td><code>***strong &amp; emphasis***</code></td>
+					<td><em><strong>strong and emphasis</strong></em></td>
+			</tr>
+			<tr>
+					<td><code>`code`</code></td>
+					<td><code>code</code></td>
+			</tr>
+			<tr>
+					<td><code>~~strikethrough~~</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+					<td><del>strikethrough</del></td>
+			</tr>
+			<tr>
+					<td><code>++inserted text++</code><sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+					<td><ins>inserted text</ins></td>
+			</tr>
+			<tr>
+					<td><code>==marked text==</code><sup id="fnref2:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+					<td><mark>marked text</mark></td>
+			</tr>
+			<tr>
+					<td><code>subscript~2~text</code><sup id="fnref3:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+					<td>subscript<sub>2</sub>text</td>
+			</tr>
+			<tr>
+					<td><code>superscript^6^text</code><sup id="fnref4:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+					<td>superscript<sup>6</sup>text</td>
+			</tr>
+			<tr>
+					<td><code>:joy:</code><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></td>
+					<td>&#x1f602;</td>
+			</tr>
+			<tr>
+					<td><code>&lt;cite&gt;HTML tag&lt;/cite&gt;</code><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></td>
+					<td><cite>HTML tag</cite></td>
+			</tr>
+			<tr>
+					<td><code>\(LaTeX\)</code><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></td>
+					<td>\(LaTeX\)</td>
+			</tr>
+			<tr>
+					<td><code>[Link](https://example.com)</code></td>
+					<td><a href="https://example.com">Link</a></td>
+			</tr>
+	</tbody>
 </table>
 <blockquote>
 <p>To use HTML tags in hugo, add following to <code>hugo.toml</code></p>
@@ -568,30 +568,30 @@ Another line (To keep the quote together, blank lines inside the quote must cont
 </span></span><span style="display:flex;"><span>| col 2 is      |    centered     |           $12 |
 </span></span><span style="display:flex;"><span>| zebra stripes |    are neat     |            $1 |
 </span></span></code></pre></div><table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Left-Aligned</th>
-          <th style="text-align: center">Center Aligned</th>
-          <th style="text-align: right">Right Aligned</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">col 3 is</td>
-          <td style="text-align: center">some wordy text</td>
-          <td style="text-align: right">$1600</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">col 2 is</td>
-          <td style="text-align: center">centered</td>
-          <td style="text-align: right">$12</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">zebra stripes</td>
-          <td style="text-align: center">are neat</td>
-          <td style="text-align: right">$1</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">Left-Aligned</th>
+					<th style="text-align: center">Center Aligned</th>
+					<th style="text-align: right">Right Aligned</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">col 3 is</td>
+					<td style="text-align: center">some wordy text</td>
+					<td style="text-align: right">$1600</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">col 2 is</td>
+					<td style="text-align: center">centered</td>
+					<td style="text-align: right">$12</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">zebra stripes</td>
+					<td style="text-align: center">are neat</td>
+					<td style="text-align: right">$1</td>
+			</tr>
+	</tbody>
 </table>
 <p>Lists:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#66d9ef">*</span> Unordered list item 1.
