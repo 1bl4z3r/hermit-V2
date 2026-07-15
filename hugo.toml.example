@@ -65,6 +65,7 @@ enableEmoji = true
 #[markup]
 #  [markup.goldmark]
 #    [markup.goldmark.extensions]
+#      typographer = true
 #      [markup.goldmark.extensions.passthrough]
 #        enable = true
 #        [markup.goldmark.extensions.passthrough.delimiters]
