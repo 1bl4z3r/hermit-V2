@@ -1,0 +1,12 @@
+This is a human
+
+/* TEAM */
+BLZR (1BL4Z3R).
+Site: github/com/1bl4z3r
+
+/* THANKS */
+Name: Hermit - V2
+
+/* SITE */
+Standards: HTML5, CSS3, JS13
+Software: Hugo
