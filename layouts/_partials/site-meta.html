@@ -1,7 +1,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimal-ui">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+{{ hugo.Generator }}
 {{- if (or (in .Page.RelPermalink "404") (or .Site.Params.siteNoIndex .Params.noIndex) (in .Site.Params.noIndexPages .Title)) -}}
 <meta name="robots" content="{{ .Site.Params.denyRobots | default "noindex, nofollow, noarchive" }}">
 {{- else -}}
@@ -9,18 +10,62 @@
 {{- end -}}
 <meta name="author" content="{{ .Params.author | default .Site.Params.author.name }}">
 <meta name="description" content="{{ .Page.Params.description | default .Site.Params.description }}">
-{{- if or (fileExists "static/humans.txt") (templates.Exists "humans.txt") -}}<link rel="author" type="text/plain" href="{{"humans.txt" | relURL}}">{{- end -}}
-<link rel="manifest" href="{{"site.webmanifest" | relURL}}">
-{{- if (fileExists "static/favicon.ico") -}}<link rel="shortcut icon" href="{{"favicon.ico" | relURL}}" type="image/x-icon">{{- end -}}
-{{ $favicon := "images/favicon.svg" }}
-{{- if (fileExists (printf "assets/%s" $favicon)) -}}
-{{- with resources.Get $favicon | minify -}}<link rel="icon" href="{{ .Permalink }}" type="image/svg+xml">{{- end -}}
-{{- else if (fileExists "static/favicon.svg") -}}<link rel="icon" href="{{"favicon.svg" | relURL}}" type="image/svg+xml">
-{{- end -}}
-<link rel="icon" type="image/png" sizes="96x96" href="{{"favicon-96x96.png" | relURL}}" />
-<link rel="apple-touch-icon" sizes="180x180" href="{{"apple-touch-icon.png" | relURL}}">
-<meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}" />
-{{ with $themeColor := .Site.Params.themeColor | default "#494f5c" -}}
-<meta name="theme-color" content="{{.}}">
-<meta name="msapplication-TileColor" content="{{.}}">
+<meta name="apple-mobile-web-app-title" content="{{ .Page.Title | default .Site.Title }}">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+
+{{- $themeColor := site.Params.themeColor | default "#494f5c" }}
+<meta name="theme-color" content="{{ $themeColor }}">
+<link rel="canonical" href="{{ .Permalink }}">
+{{- range .AlternativeOutputFormats }}
+{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Title | safeHTML }}
+{{ end -}}
+
+{{- $ctx := . -}}
+
+{{- $identityFiles := slice
+  (dict "name" "humans.txt" "action" "template" "format" `<link rel="author" type="text/plain" href="%s">`)
+  (dict "name" "site.webmanifest" "action" "template" "format" `<link rel="manifest" href="%s">`)
+  (dict "name" "favicon.ico" "action" "none" "format" `<link rel="icon" href="%s" sizes="48x48">`)
+  (dict "name" "favicon-32x32.png" "action" "none" "format" `<link rel="icon" href="%s" type="image/png" sizes="32x32">`)
+  (dict "name" "favicon-16x16.png" "action" "none" "format" `<link rel="icon" href="%s" type="image/png" sizes="16x16">`)
+  (dict "name" "apple-touch-icon.png" "action" "none" "format" `<link rel="apple-touch-icon" href="%s" sizes="180x180">`)
+  (dict "name" "icon-monochrome.svg" "action" "minify" "format" (printf `<link rel="mask-icon" rel="icon" href="%%s" type="image/svg+xml" sizes="any" color="%s">` $themeColor))
+  (dict "name" "favicon.svg" "action" "minify" "format" `<link rel="icon" href="%s" type="image/svg+xml" sizes="any">`)
+-}}
+
+{{- range $identityFiles -}}
+  {{- $file := .name -}}
+  {{- $action := .action -}}
+  {{- $format := .format -}}
+  
+  {{- $assetPath := printf "identity/%s" $file -}}
+  {{- $staticPath := printf "static/%s" $file -}}
+  {{- $href := "" -}}
+  
+  {{- with resources.Get $assetPath -}}
+    {{- if eq $action "template" -}}
+      {{- $targetPath := $file -}}
+      {{- /* Fix: Switched from .Site.IsMultiLingual to global hugo.IsMultilingual */ -}}
+      {{- if hugo.IsMultilingual -}}
+        {{- /* Fix: Switched to $ctx.Language.Lang to avoid .Site interface issues */ -}}
+        {{- $targetPath = printf "%s/%s" $ctx.Language.Lang $file -}}
+      {{- end -}}
+      {{- $href = (. | resources.ExecuteAsTemplate $targetPath $ctx).RelPermalink -}}
+    {{- else if eq $action "minify" -}}
+      {{- $href = (. | minify).RelPermalink -}}
+    {{- else -}}
+      {{- $href = .RelPermalink -}}
+    {{- end -}}
+  {{- else -}}
+    {{- if fileExists $staticPath -}}
+      {{- $href = $file | relURL -}}
+    {{- else -}}
+      {{- warnf "Meta Warning: %s was not found in /assets/identity/ or /static/" $file -}}
+    {{- end -}}
+  {{- end -}}
+  
+  {{- if ne $href "" -}}
+    {{- printf "%s\n" (printf $format $href) | safeHTML -}}
+  {{- end -}}
 {{- end -}}

@@ -795,24 +795,30 @@ Social links are configured in `hugo.toml` under `[[params.social]]`. Add one bl
 
 Need an icon that isn't listed? Copy `layouts/_partials/svg.html` to your site and add it — see [Layout Overrides](#layout-overrides).
 
-## Favicon
+## Site Identity & Favicons
 
-Use [RealFaviconGenerator](https://realfavicongenerator.net/) to produce your favicon files, then place them in your site's `static/` folder:
+>**Important**: While placing identity files in the `static/` directory is currently supported as a fallback, this behavior will be deprecated in future releases. To take advantage of Hugo's asset pipeline, templating, and full multilingual support, you are strongly urged to place all site identity files in `assets/identity/`
 
-- `apple-touch-icon.png`
-- `favicon.ico`
-- `favicon.svg`
-- `favicon-96x96.png`
-- `site.webmanifest`
-- `web-app-manifest-192x192.png`
-- `web-app-manifest-512x512.png`
+Use a tool like [RealFaviconGenerator](https://realfavicongenerator.net/) to produce your base favicon files, and place them into your site's `assets/identity/` folder. The theme automatically detects these files, applies the necessary Hugo pipes (minification or templating), and securely links them in your site's `<head>`.
 
-### SVG Favicons
+#### Required Files & Considerations
+Place the following exact filenames in the `assets/identity/` directory for automatic processing:
 
-If your favicon is in SVG format, you have two options:
+|File Name                | Dimensions	  | Special Considerations                                                              |
+|-------------------------|---------------|-------------------------------------------------------------------------------------|
+| `favicon.svg`           | Vector (Any)  | Minified automatically. Serves as the primary icon for modern browsers.             |
+| `favicon.ico`           | 48x48px       | Served as-is. Acts as a fallback for legacy browsers.                               |
+| `favicon-32x32.png`     | 32x32px       | Served as-is. Standard resolution for desktop browser tabs.                         |
+| `favicon-16x16.png`     | 16x16px       | Served as-is. Standard resolution for desktop browser tabs.                         |
+| `apple-touch-icon.png`  | 180x180px     | Served as-is. Utilized by iOS devices for home screen shortcuts.                    |
+| `icon-monochrome.svg`   | Vector (Any)  | Minified automatically. Injects your site's themeColor for Safari pinned tabs.      |
+| `site.webmanifest`      | NA            | Executed as a Hugo template. Generates unique output paths for multilingual sites.  |
+| `humans.txt`            | NA            | Executed as a Hugo template. Generates unique output paths for multilingual sites.  |
 
-- **Clean directory, no minification:** place `favicon.svg` in `static/`
-- **Minified by Hugo:** place `favicon.svg` in `assets/images/`
+#### A Note on site.webmanifest Images
+The image files required inside your `site.webmanifest` file are not listed in the table above, as their naming and inclusion depend entirely on your per-user configuration.
+
+You should place these supplementary manifest images in your `assets/identity/` folder and ensure the paths declared inside your `site.webmanifest` correctly point to them.
 
 ### Post front matter
 

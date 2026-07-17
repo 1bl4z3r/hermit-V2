@@ -55,6 +55,7 @@ jobs:
             -e '^assets/custom_css/' \
             -e '^assets/custom_js/' \
             -e '^assets/images/' \
+            -e '^assets/identity/' \
             -e '^i18n/' \
             -e '^hugo\.toml$' \
             -e '/928-600x400\.jpg$' \
@@ -91,6 +92,7 @@ jobs:
             -e '^assets/custom_css/' \
             -e '^assets/custom_js/' \
             -e '^assets/images/' \
+            -e '^assets/identity/' \
             -e '^i18n/' \
             -e '^hugo\.toml$' \
             -e '/928-600x400\.jpg$' \

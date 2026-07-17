@@ -1,11 +1,23 @@
+{{- $favicon := site.Params.assets.favicon | default "favicon.ico" -}}
+{{- $logoUrl := "" -}}
+{{- $assetPath := printf "identity/%s" $favicon -}}
+
+{{- /* Check if file is in /assets/identity/ */ -}}
+{{- with resources.Get $assetPath -}}
+  {{- $logoUrl = .Permalink -}}
+{{- else -}}
+  {{- /* Fallback to /static/ handling */ -}}
+  {{- $logoUrl = $favicon | absURL -}}
+{{- end -}}
+
 {{- if .IsHome -}}
 <script type="application/ld+json">
 {
     "@context" : "https://schema.org",
     "@type" : "WebSite",
-    "name" : {{ site.Title }},
-    "description": {{ site.Params.description | plainify | truncate 180 | safeHTML }},
-    "logo": {{ site.Params.assets.favicon | default "favicon.ico" | absURL }},
+    "name" : {{ site.Title | plainify }},
+    "description": {{ site.Params.description | plainify | truncate 180 | plainify | safeHTML }},
+    "logo": {{ $logoUrl }},
     "url" : {{ site.Home.Permalink }}
 }
 </script>
@@ -57,7 +69,7 @@
       "description": {{ site.Params.description | plainify | truncate 180 | safeHTML }},
       "logo": {
         "@type": "ImageObject",
-        "url": {{ site.Params.assets.favicon | default "favicon.ico" | absURL }}
+        "url": {{ $logoUrl }}
       }
     }
 }
