@@ -6,8 +6,11 @@
   padding: 0.6em 0.5em;
   z-index: 1;
   box-sizing: border-box;
-  box-shadow: -1px -2px 3px 0px rgba(0, 0, 0, 0.45);
+  box-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, .45);
   background-color: $share-links-background;
+  border-radius: 10px;
+  border: 2px solid $pine-green;
+  border-style: outset;
 
   ul {
     list-style: none;

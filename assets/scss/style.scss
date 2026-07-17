@@ -351,6 +351,9 @@ table {
   display: none;
   padding: $mobile-menu-padding;
   z-index: $mobile-menu-z-index;
+  border-radius: $mobile-menu-border-radius;
+  border: $mobile-menu-border $mobile-menu-border-color;
+  border-style: $mobile-menu-border-style;
   box-sizing: $mobile-menu-box-sizing;
   box-shadow: $mobile-menu-box-shadow;
   background-color: $mobile-menu-background;
