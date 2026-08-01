@@ -1,12 +1,32 @@
-This is a human
+{{- /*
+This is default template to generate humans.txt - https://humanstxt.org/
+To modify, copy this file to `/assets/identity/humans.txt`
+To exclude humans.txt generation: set value humansTxt to false in hugo.toml
+*/ -}}
+
+Last update: {{ default (.Site.Lastmod.Format $.Site.Params.dateform.LongDate) (now.Format $.Site.Params.dateform.LongDate) }}
+
+{{ with hugo.Sites }}
+Languages:
+{{- range hugo.Sites }}
+{{ .Language.Label }}
+  - {{ .Title }} {{ .Params.homeSubtitle }}
+{{ end }}
+{{ end }}
 
 /* TEAM */
-BLZR (1BL4Z3R).
-Site: github/com/1bl4z3r
-
-/* THANKS */
-Name: Hermit - V2
+{{ with .Site.Params.author -}}
+Name : {{ .name }}
+About: {{ .about | absLangURL }}
+{{- end }}
 
 /* SITE */
-Standards: HTML5, CSS3, JS13
-Software: Hugo
+{{ .Site.BaseURL }}
+Generator : Hugo {{ hugo.Version }}
+{{- range $.Site.Params.socialLinks }}
+{{ .name | humanize }} : {{ .url | safeURL }}
+{{- end }}
+
+/* THANKS */
+All open-source maintainers
+Hugo community
