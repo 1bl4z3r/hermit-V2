@@ -1,7 +1,7 @@
 ---
 title: "Explaining Configs"
 slug : "explaining-configs"
-date: 2023-10-22T20:06:06+05:30
+date: 2023-10-22
 draft: false
 featuredImg: ""
 description : "The Hitchhiker's Guide to Hermit - V2 Configuration"
@@ -12,7 +12,7 @@ scrolltotop : true
 toc : true
 readTime : true
 ShowLastmod : true
-Lastmod : 2026-05-23T20:30:30+05:30
+Lastmod : 2026-08-01
 ---
 ## Configuation in `hugo.toml`
 
@@ -70,7 +70,8 @@ Lastmod : 2026-05-23T20:30:30+05:30
 		- `description` - To show/hide posts' description in list view
 		- `tags` - To show/hide posts' tags in list view
 		- `categories` - To show/hide posts' categories in list view
-	- `human` : Shows a badge 'BrainMade' on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: [brainmade.org](brainmade.org)
+	- `brainMade` : Shows a badge 'BrainMade' on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: [brainmade.org](brainmade.org)
+	- `humansTxt` : Configure if humans.txt is enabled for the site or not
 	- `denyRobots` : Specify what directives to follow when denying crawlers. Default is **noindex, nofollow, noarchive**
 	- `allowRobots` : Specify what directives to follow when allowing crawlers. Default is **index, follow**
 	- `siteNoIndex` : When set to true, whole site will have ___noindex, nofollow, noarchive___ (unless specified by `denyRobots`) added to robots meta tag. Else, robots tag will have ___index, follow___ (unless specified by `allowRobots`) applied to whole site
@@ -101,6 +102,24 @@ Lastmod : 2026-05-23T20:30:30+05:30
 		- `NumDateShort`: Used for a short, numerical date format (e.g., "2006-01-02"). Used for Git commit author dates in post metadata. Defaults to `"2006-01-02"`.
 		- `NumDateLong`: Used for a numerical date and time format, including timezone (e.g., "2006-01-02 15:04 -0700"). Used for the main post date/time and last modified date/time in post metadata. Defaults to `"2006-01-02 15:04 -0700"`.
 		- `CopyrightDate` : Used for configuring the date format for Copyright in footer. Defaults to format `2006`, shows year.
+	- `[params.speculation]`	: [Explanation]({{< relref "speculation-rules-api.md" >}}) 
+		- `enableSpeculation`	: Enables the Speculation script for the site. If disabled below variables are not to be considered
+		- `headerLinks`			: Enables the Speculation script for the header links with the provided type of Speculation (Options are prefetch, prerender, false). These are specified in `Menus` section in hugo.toml
+		- `headerEagerness`		: Specify the eagerness of `Menu` links. If headerLinks = false, this variable is not to be considered. (Options are immediate, eager, moderate, conservative). Default : eager
+		- `taxonomies`			: Enables the Speculation script for the site taxonomies (/tags /categories) with the provided type of Speculation (Options are prefetch, prerender, false)
+		- `taxonomyCount`		: Number of articles in each Tag or categories to be prefetched or prerendered. If taxonomies = false, this variable is not to be considered
+		- `taxonomyEagerness`	: Specify the eagerness of articles in each Tag or categories. If taxonomies = false, this variable is not to be considered. (Options are immediate, eager, moderate, conservative). Default : eager
+		- `taxonomyCAEagerness`	: Specify the catch all eagerness of articles in each Tag or categories which are beyond the taxonomyCount. If taxonomies = false, this variable is not to be considered. (Options are immediate, eager, moderate, conservative). Default : conservative
+		- `articles`			: Enables the Speculation script for the article pages with the provided type of Speculation (Options are prefetch, prerender, false)	
+		- `articleFolder`		: Specify the custom folder for article pages (default : posts). If articles = false, this variable is not to be considered
+		- `articleCount`		: Number of article pages to be prefetched or prerendered. If articles = false, this variable is not to be considered
+		- `articleEagerness`	: Specify the eagerness of article pages. If articles = false, this variable is not to be considered. (Options are immediate, eager, moderate, conservative). Default : eager
+		- `articleCAEagerness`	: Specify the catch all eagerness of articles which are beyond the articleCount. If articles = false, this variable is not to be considered. (Options are immediate, eager, moderate, conservative). Default : conservative
+		- `pinnedArticle`		: Enables the Speculation script for the pinned articles.
+		- `pinnedArticleEagerness` : Specify the eagerness of pinned articles. If pinnedArticle = false, this variable is not to be considered.
+		- `crossOrigin`			: Enables the Speculation script for the offsite links. Use Prefetch only. (Options are true, false). Default is false
+		- `crossOriginEagerness`: Specify the eagerness of Cross Origin links. If crossOrigin = false, this variable is not to be considered. (Options are immediate, eager, moderate, conservative). Default : conservative
+		- `sameOriginEagerness` : Specify the eagerness of Same Origin links. Speculation is hardcoded to prerender.
 	-  `[params.socialLinks]` Refer [README](https://github.com/1bl4z3r/hermit-V2#social-icons)
 		- `name` : Name of the social page.
 		- `url` : URL of your account.

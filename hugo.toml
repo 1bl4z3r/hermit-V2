@@ -125,7 +125,8 @@ enableEmoji = true
   pinned = "Pinned Posts"
   # pinnedSVGname = "pin"
   listLayout = ["description","tags"] # Supported : legacy, description, categories, tags
-  human = ["single","posts"]
+  brainMade = ["single","posts"]
+  humansTxt = true
   # denyRobots = "noindex, nofollow, noarchive"
   # allowRobots = "index, follow"
   # siteNoIndex = false
@@ -152,6 +153,25 @@ enableEmoji = true
     enable = true
     width = '300'
     layout = "grid"
+
+  [params.speculation]
+    enableSpeculation = true
+    headerLinks = "prefetch"
+    headerEagerness = "eager"
+    taxonomies = "prerender"
+    taxonomyCount = 3
+    taxonomyEagerness = "eager"
+    taxonomyCAEagerness = "moderate"
+    articles = "prefetch"
+    articleFolder = "posts"
+    articleCount = 3
+    articleEagerness = "eager"
+    articleCAEagerness = "moderate"
+    pinnedArticle = "prerender"
+    pinnedArticleEagerness = "immediate"
+    crossOrigin = true
+    crossOriginEagerness = "moderate"
+    sameOriginEagerness = "moderate"
 
   [[params.socialLinks]]
     name = "github"
