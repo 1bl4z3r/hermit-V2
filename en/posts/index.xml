@@ -1,4 +1,193 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Posts on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/</link><description>Recent content in Posts on Hermit - V2</description><generator>Hugo -- 0.164.0</generator><language>en</language><lastBuildDate>Mon, 11 May 2026 10:00:00 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Image Gallery Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</link><pubDate>Mon, 11 May 2026 10:00:00 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</guid><description>Learn how to use the image gallery shortcode to create responsive galleries with thumbnails, captions, and a JavaScript-powered lightbox.</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>gallery</code> shortcode lets you add a beautiful, responsive image gallery to any page on your Hugo site. You compose it using nested <code>{{&lt; figure &gt;}}</code> shortcodes — one per image — giving you full control over captions, titles, and links without any extra tooling or third-party libraries.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Posts on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/</link><description>Recent content in Posts on Hermit - V2</description><generator>Hugo -- 0.164.0</generator><language>en</language><lastBuildDate>Sat, 01 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Speculation Rules API</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/speculation-rules-api/</link><pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate><author>blzr</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/speculation-rules-api/</guid><description>Near-Instant Page Loads with the Speculation Rules API</description><content type="text/html" mode="escaped"><![CDATA[<p>Static site generators like Hugo are already incredibly fast. By serving pre-compiled HTML directly from a CDN, Time to First Byte (TTFB) is often measured in milliseconds. But what if navigating between pages could feel completely instantaneous? What if the next page was already fully rendered before the user even clicked the link?</p>
+<p>Enter the Speculation Rules API. It’s a modern browser feature that allows developers to write JSON instructions telling the browser exactly which URLs to prefetch or prerender based on precise eagerness thresholds. Today, we are going to explore how to integrate a highly configurable Speculation Rules implementation natively into Hugo.</p>
+<h3 id="prefetching-vs-prerendering">Prefetching vs. Prerendering<a href="#prefetching-vs-prerendering" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>Before diving into the configuration, it&rsquo;s crucial to understand the two core mechanisms of speculation:</p>
+<ul>
+<li><strong>Prefetch</strong>: The browser downloads the raw HTML payload of the target URL in the background. When the user navigates, the browser processes the HTML, downloads required assets (CSS/JS), and paints the page. It’s light on bandwidth and memory.</li>
+<li><strong>Prerender</strong>: The browser opens a hidden tab, downloads the HTML, executes the JavaScript, paints the CSS, and holds the fully rendered page in memory. When the user navigates, it instantly swaps the hidden tab into view. This feels like a Single Page Application (SPA) transition but requires more memory and CPU.</li>
+</ul>
+<h3 id="understanding-eagerness">Understanding Eagerness<a href="#understanding-eagerness" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>The Speculation Rules API uses &ldquo;eagerness&rdquo; to decide when to trigger the preload action. This Hugo implementation exposes these thresholds directly via configuration variables.</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Eagerness Level</th>
+					<th style="text-align: left">Trigger Condition</th>
+					<th style="text-align: left">Best Used For</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>immediate</strong></td>
+					<td style="text-align: left">Fires as soon as the speculation rule script is parsed.</td>
+					<td style="text-align: left">The absolute most critical path (e.g., the very next logical step in a funnel). Use sparingly.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>eager</strong></td>
+					<td style="text-align: left">Fires quickly, usually right after immediate rules.</td>
+					<td style="text-align: left">High-probability links like the main menu or top recent posts.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>moderate</strong></td>
+					<td style="text-align: left">Fires when the user hovers over a link for &gt;200ms.</td>
+					<td style="text-align: left">General internal navigation, catch-all rules.</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>conservative</strong></td>
+					<td style="text-align: left">Fires on pointer/mouse down (right before click release).</td>
+					<td style="text-align: left">Lower probability links or external cross-origin prefetching.</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="breaking-down-the-configuration">Breaking Down the Configuration<a href="#breaking-down-the-configuration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>This Hugo setup uses a custom <code>[params.speculation]</code> block in the hugo.toml file. Let&rsquo;s explore how these variables dictate browser behavior dynamically.</p>
+<h4 id="1-header-links-site-menus">1. Header Links (Site Menus)<a href="#1-header-links-site-menus" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h4>
+<p>The main navigation (menus) is the most heavily trafficked area of any site. Configuration allows you to explicitly preload these.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">speculation</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">headerLinks</span> = <span style="color:#e6db74">&#34;prefetch&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">headerEagerness</span> = <span style="color:#e6db74">&#34;eager&#34;</span>
+</span></span></code></pre></div><aside class="admonition success">
+    <div class="admonition-title"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+   </svg></span><b>How it works</b></div>
+    <div class="admonition-content">The Hugo partial scans <code>site.Menus.main</code>. By setting it to eager, as soon as the page loads, the browser is instructed to quietly download the HTML (prefetch) for every link in the main navigation. If you set it to prerender, those pages would be fully processed in hidden tabs.</div>
+</aside>
+<h4 id="2-article-targeting">2. Article Targeting<a href="#2-article-targeting" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h4>
+<p>When a user lands on the homepage or is reading an article, they are highly likely to read your newest content next.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>    <span style="color:#a6e22e">articles</span> = <span style="color:#e6db74">&#34;prefetch&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">articleFolder</span> = <span style="color:#e6db74">&#34;posts&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">articleCount</span> = <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">articleEagerness</span> = <span style="color:#e6db74">&#34;eager&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">articleCAEagerness</span> = <span style="color:#e6db74">&#34;moderate&#34;</span>
+</span></span></code></pre></div><aside class="admonition success">
+    <div class="admonition-title"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+   </svg></span><b>How it works</b></div>
+    <div class="admonition-content">The script dynamically fetches the latest 3 articles from the <code>posts</code> folder and explicitly lists them with an <code>eager</code> threshold. But what about the older posts linked on the page? That’s where <code>articleCAEagerness</code> (Catch-All) comes in. It generates a &ldquo;Document Rule&rdquo; telling the browser: &ldquo;If the user hovers over ANY other internal link for more than 200ms (moderate), prefetch that too.&rdquo;</div>
+</aside>
+<h4 id="3-pinned-articles">3. Pinned Articles<a href="#3-pinned-articles" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h4>
+<p>For high-priority, evergreen content pinned to the top of your lists. You can target these specifically without consuming your standard article limits.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>    <span style="color:#a6e22e">pinnedArticle</span> = <span style="color:#e6db74">&#34;prerender&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pinnedArticleEagerness</span> = <span style="color:#e6db74">&#34;immediate&#34;</span>
+</span></span></code></pre></div><aside class="admonition success">
+    <div class="admonition-title"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+   </svg></span><b>How it works</b></div>
+    <div class="admonition-content">If a page&rsquo;s frontmatter has <code>pin: true</code>, the script isolates it from the standard top-article count and applies its own dedicated rules. By default, it uses the highly aggressive <code>immediate</code> eagerness and strictly <code>prerender</code>s the page to guarantee a zero-latency load.</div>
+</aside>
+<h4 id="4-taxonomy-tuning">4. Taxonomy Tuning<a href="#4-taxonomy-tuning" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h4>
+<p>Category and Tag pages behave similarly to article lists, but require their own scoping.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>    <span style="color:#a6e22e">taxonomies</span> = <span style="color:#e6db74">&#34;prerender&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">taxonomyCount</span> = <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">taxonomyEagerness</span> = <span style="color:#e6db74">&#34;eager&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">taxonomyCAEagerness</span> = <span style="color:#e6db74">&#34;moderate&#34;</span>
+</span></span></code></pre></div><aside class="admonition success">
+    <div class="admonition-title"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+   </svg></span><b>How it works</b></div>
+    <div class="admonition-content">If a user navigates to /tags/hugo/, this block explicitly prerenders the top 3 articles listed under that specific tag immediately (<code>eager</code>). Any other links on that tag page fall back to a hover-based prefetch/prerender (<code>moderate</code>).</div>
+</aside>
+<h4 id="5-in-article-contextual-routing-same-origin">5. In-Article Contextual Routing (Same Origin)<a href="#5-in-article-contextual-routing-same-origin" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h4>
+<p>When a user is deeply engaged reading a specific post, their clicking behavior is highly predictable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>    <span style="color:#a6e22e">sameOriginEagerness</span> = <span style="color:#e6db74">&#34;eager&#34;</span>
+</span></span></code></pre></div><aside class="admonition success">
+    <div class="admonition-title"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+   </svg></span><b>How it works</b></div>
+    <div class="admonition-content">This variable only triggers when a user is actively reading a single article page. If they encounter a link to <strong>another</strong> internal page within the text, the script creates a strict document rule to explicitly <code>prerender</code> that page. It defaults to <code>eager</code> to seamlessly prepare the next piece of content before the user finishes reading.</div>
+</aside>
+<h4 id="6-safe-cross-origin-prefetching">6. Safe Cross-Origin Prefetching<a href="#6-safe-cross-origin-prefetching" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h4>
+<p>Preloading links that point away from your site is risky. You don&rsquo;t want to accidentally prerender a heavy external site in the background, consuming user bandwidth.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>    <span style="color:#a6e22e">crossOrigin</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">crossOriginEagerness</span> = <span style="color:#e6db74">&#34;moderate&#34;</span>
+</span></span></code></pre></div><aside class="admonition success">
+    <div class="admonition-title"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+   </svg></span><b>How it works</b></div>
+    <div class="admonition-content">The script safely restricts cross-origin links to prefetch only. It generates a rule matching all <code>https://*</code> links but uses a not condition dynamically bound to your <code>site.BaseURL</code> to prevent self-looping. Using a moderate or conservative eagerness ensures you are only pinging external servers if the user demonstrates real intent (like hovering or clicking).</div>
+</aside>
+<h3 id="limitations--browser-fallbacks">Limitations &amp; Browser Fallbacks<a href="#limitations--browser-fallbacks" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>Speculation rules are treated strictly as <strong>speculative hints</strong> and progressive enhancements. The browser reserves the right to ignore your rules, and in certain conditions, prerendering or prefetching will fail completely:</p>
+<ol>
+<li><strong>User Settings Disabled</strong>: Browsers like Chrome and Edge allow users to toggle off speculative loading under their privacy/performance settings (e.g., &ldquo;Preload pages for faster browsing and searching&rdquo;). If disabled, speculative loads will silently halt.</li>
+<li><strong>Ad Blockers &amp; Extensions (uBlock Origin)</strong>: Browser extensions designed for privacy or network filtering—most notably <strong>uBlock Origin</strong>, frequently block network pre-fetching to prevent unrequested background connections. When uBlock Origin is enabled with its &ldquo;Disable pre-fetching&rdquo; setting turned on, background speculation requests will fail.</li>
+<li><strong>Data/Battery Saver Mode</strong>: If a user&rsquo;s mobile device or laptop is running on Data Saver or Low Power Mode, Chromium browsers automatically suppress speculative background tasks to protect client resources.</li>
+</ol>
+<h3 id="browser-compatibility">Browser Compatibility<a href="#browser-compatibility" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" class="feather">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>The Speculation Rules API is a modern web standard currently championed heavily by Chromium-based browsers.</p>
+<ul>
+<li><strong>Supported:</strong> Google Chrome, Microsoft Edge, Opera, and Brave (version 109 and newer) fully support JSON-based speculation rules.</li>
+<li><strong>Not Yet Supported:</strong> Safari (WebKit) and Mozilla Firefox do not yet natively support the <code>&lt;script type=&quot;speculationrules&quot;&gt;</code> tag.</li>
+</ul>
+<aside class="admonition info">
+    <div class="admonition-title"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="16" x2="12" y2="12"></line>
+      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+   </svg></span><b>Progressive Enhancement</b></div>
+    <div class="admonition-content"><p>However, because this API is built entirely as a progressive enhancement, it is perfectly safe to use in production today.</p>
+<p>Browsers that do not recognize the <code>speculationrules</code> script type will completely ignore the block of code, resulting in zero console errors or broken layouts.</p>
+<p>Users on unsupported browsers will simply fall back to standard, non-speculative page navigation.</p>
+</div>
+</aside>
+]]></content></item><item><title>Image Gallery Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</link><pubDate>Mon, 11 May 2026 10:00:00 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</guid><description>Learn how to use the image gallery shortcode to create responsive galleries with thumbnails, captions, and a JavaScript-powered lightbox.</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>gallery</code> shortcode lets you add a beautiful, responsive image gallery to any page on your Hugo site. You compose it using nested <code>{{&lt; figure &gt;}}</code> shortcodes — one per image — giving you full control over captions, titles, and links without any extra tooling or third-party libraries.</p>
 <h2 id="what-you-get">What You Get<a href="#what-you-get" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -1364,7 +1553,7 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 </span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">mounts</span>]]
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">source</span> = <span style="color:#e6db74">&#39;static/images&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">target</span> = <span style="color:#e6db74">&#39;assets&#39;</span>
-</span></span></code></pre></div>]]></content></item><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Sun, 22 Oct 2023 20:06:06 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>The Hitchhiker&amp;#39;s Guide to Hermit - V2 Configuration</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="configuation-in-hugotoml">Configuation in <code>hugo.toml</code><a href="#configuation-in-hugotoml" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+</span></span></code></pre></div>]]></content></item><item><title>Explaining Configs</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</link><pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/explaining-configs/</guid><description>The Hitchhiker&amp;#39;s Guide to Hermit - V2 Configuration</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="configuation-in-hugotoml">Configuation in <code>hugo.toml</code><a href="#configuation-in-hugotoml" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
@@ -1465,7 +1654,8 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 <li><code>categories</code> - To show/hide posts&rsquo; categories in list view</li>
 </ul>
 </li>
-<li><code>human</code> : Shows a badge &lsquo;BrainMade&rsquo; on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: <a href="brainmade.org">brainmade.org</a></li>
+<li><code>brainMade</code> : Shows a badge &lsquo;BrainMade&rsquo; on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: <a href="brainmade.org">brainmade.org</a></li>
+<li><code>humansTxt</code> : Configure if humans.txt is enabled for the site or not</li>
 <li><code>denyRobots</code> : Specify what directives to follow when denying crawlers. Default is <strong>noindex, nofollow, noarchive</strong></li>
 <li><code>allowRobots</code> : Specify what directives to follow when allowing crawlers. Default is <strong>index, follow</strong></li>
 <li><code>siteNoIndex</code> : When set to true, whole site will have <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code>) added to robots meta tag. Else, robots tag will have <em><strong>index, follow</strong></em> (unless specified by <code>allowRobots</code>) applied to whole site</li>
@@ -1509,6 +1699,27 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 <li><code>NumDateShort</code>: Used for a short, numerical date format (e.g., &ldquo;2006-01-02&rdquo;). Used for Git commit author dates in post metadata. Defaults to <code>&quot;2006-01-02&quot;</code>.</li>
 <li><code>NumDateLong</code>: Used for a numerical date and time format, including timezone (e.g., &ldquo;2006-01-02 15:04 -0700&rdquo;). Used for the main post date/time and last modified date/time in post metadata. Defaults to <code>&quot;2006-01-02 15:04 -0700&quot;</code>.</li>
 <li><code>CopyrightDate</code> : Used for configuring the date format for Copyright in footer. Defaults to format <code>2006</code>, shows year.</li>
+</ul>
+</li>
+<li><code>[params.speculation]</code>	: <a href="/hermit-V2/en/posts/speculation-rules-api/">Explanation</a>
+<ul>
+<li><code>enableSpeculation</code>	: Enables the Speculation script for the site. If disabled below variables are not to be considered</li>
+<li><code>headerLinks</code>			: Enables the Speculation script for the header links with the provided type of Speculation (Options are prefetch, prerender, false). These are specified in <code>Menus</code> section in hugo.toml</li>
+<li><code>headerEagerness</code>		: Specify the eagerness of <code>Menu</code> links. If headerLinks = false, this variable is not to be considered. (Options are immediate, eager, moderate, conservative). Default : eager</li>
+<li><code>taxonomies</code>			: Enables the Speculation script for the site taxonomies (/tags /categories) with the provided type of Speculation (Options are prefetch, prerender, false)</li>
+<li><code>taxonomyCount</code>		: Number of articles in each Tag or categories to be prefetched or prerendered. If taxonomies = false, this variable is not to be considered</li>
+<li><code>taxonomyEagerness</code>	: Specify the eagerness of articles in each Tag or categories. If taxonomies = false, this variable is not to be considered. (Options are immediate, eager, moderate, conservative). Default : eager</li>
+<li><code>taxonomyCAEagerness</code>	: Specify the catch all eagerness of articles in each Tag or categories which are beyond the taxonomyCount. If taxonomies = false, this variable is not to be considered. (Options are immediate, eager, moderate, conservative). Default : conservative</li>
+<li><code>articles</code>			: Enables the Speculation script for the article pages with the provided type of Speculation (Options are prefetch, prerender, false)</li>
+<li><code>articleFolder</code>		: Specify the custom folder for article pages (default : posts). If articles = false, this variable is not to be considered</li>
+<li><code>articleCount</code>		: Number of article pages to be prefetched or prerendered. If articles = false, this variable is not to be considered</li>
+<li><code>articleEagerness</code>	: Specify the eagerness of article pages. If articles = false, this variable is not to be considered. (Options are immediate, eager, moderate, conservative). Default : eager</li>
+<li><code>articleCAEagerness</code>	: Specify the catch all eagerness of articles which are beyond the articleCount. If articles = false, this variable is not to be considered. (Options are immediate, eager, moderate, conservative). Default : conservative</li>
+<li><code>pinnedArticle</code>		: Enables the Speculation script for the pinned articles.</li>
+<li><code>pinnedArticleEagerness</code> : Specify the eagerness of pinned articles. If pinnedArticle = false, this variable is not to be considered.</li>
+<li><code>crossOrigin</code>			: Enables the Speculation script for the offsite links. Use Prefetch only. (Options are true, false). Default is false</li>
+<li><code>crossOriginEagerness</code>: Specify the eagerness of Cross Origin links. If crossOrigin = false, this variable is not to be considered. (Options are immediate, eager, moderate, conservative). Default : conservative</li>
+<li><code>sameOriginEagerness</code> : Specify the eagerness of Same Origin links. Speculation is hardcoded to prerender.</li>
 </ul>
 </li>
 <li><code>[params.socialLinks]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>

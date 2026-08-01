@@ -1,0 +1,27 @@
+Last update: Aug 1, 2026
+
+
+Languages:
+English
+  - Hermit - V2 Minimalist, production-ready Hugo theme with crisp typography, lightweight, mobile-ready, SEO-optimized and responsive design for modern bloggers & developers
+
+French
+  - Hermit - V2 (FR) Thème Hugo minimaliste, prêt pour la production, avec une typographie nette, un design léger, adapté aux mobiles, optimisé pour le référencement et réactif pour les blogueurs et développeurs modernes
+
+
+  - Hermit - V2 (IT) Tema Hugo minimalista, pronto per la produzione, con tipografia nitida, design leggero, ottimizzato per i dispositivi mobili, SEO e reattivo per blogger e sviluppatori moderni
+
+
+
+/* TEAM */
+Name : BLZR
+About: https://1bl4z3r.github.io/hermit-V2/en/about-hugo
+
+/* SITE */
+https://1bl4z3r.github.io/hermit-V2/
+Generator : Hugo 0.164.0
+Github : https://github.com/1bl4z3r/hermit-V2/tree/staging
+
+/* THANKS */
+All open-source maintainers
+Hugo community
