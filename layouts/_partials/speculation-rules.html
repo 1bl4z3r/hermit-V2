@@ -1,0 +1,195 @@
+{{- $spec := site.Params.speculation -}}
+
+{{- if and $spec $spec.enableSpeculation -}}
+
+  {{- $prerenderRules := slice -}}
+  {{- $prefetchRules  := slice -}}
+
+  {{- /* 0. Pre-compute Static Assets Exclusions */ -}}
+  {{- $extBlocks := slice -}}
+  {{- range slice "*.pdf" "*.zip" "*.png" "*.jpg" "*.jpeg" "*.gif" "*.svg" "*.webp" "*.mp4" "*.mp3" "*.xml" "*.json" -}}
+    {{- $extBlocks = $extBlocks | append (dict "not" (dict "href_matches" .)) -}}
+  {{- end -}}
+
+  {{- /* ======================================== */ -}}
+  {{- /* 1. Header Links (Site Menus)             */ -}}
+  {{- /* ======================================== */ -}}
+  {{- if in (slice "prefetch" "prerender") $spec.headerLinks -}}
+    {{- $eagerness := default "eager" $spec.headerEagerness -}}
+    {{- $urls := slice -}}
+    
+    {{- range site.Menus.main -}}
+      {{- $urls = $urls | append (.URL | relLangURL) -}}
+      {{- if .HasChildren -}}
+        {{- range .Children -}}
+          {{- $urls = $urls | append (.URL | relLangURL) -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- $urls = $urls | uniq | complement (slice .RelPermalink) -}}
+
+    {{- if gt (len $urls) 0 -}}
+      {{- $rule := dict "source" "list" "urls" $urls "eagerness" $eagerness -}}
+      {{- if eq $spec.headerLinks "prerender" -}}
+        {{- $prerenderRules = $prerenderRules | append $rule -}}
+      {{- else -}}
+        {{- $prefetchRules = $prefetchRules | append $rule -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* ======================================== */ -}}
+  {{- /* 2. Taxonomies (Tags and Categories)      */ -}}
+  {{- /* ======================================== */ -}}
+  {{- if in (slice "prefetch" "prerender") $spec.taxonomies -}}
+    {{- if or (eq .Kind "term") (eq .Kind "taxonomy") -}}
+      {{- $eagerness := default "eager" $spec.taxonomyEagerness -}}
+      {{- $caEagerness := default "conservative" $spec.taxonomyCAEagerness -}}
+      {{- $count := default 3 $spec.taxonomyCount -}}
+      
+      {{- $urls := slice -}}
+      {{- range first $count .Pages -}}
+        {{- $urls = $urls | append .RelPermalink -}}
+      {{- end -}}
+      {{- $urls = $urls | complement (slice .RelPermalink) -}}
+
+      {{- if gt (len $urls) 0 -}}
+        {{- $rule := dict "source" "list" "urls" $urls "eagerness" $eagerness -}}
+        {{- if eq $spec.taxonomies "prerender" -}}
+          {{- $prerenderRules = $prerenderRules | append $rule -}}
+        {{- else -}}
+          {{- $prefetchRules = $prefetchRules | append $rule -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- $docConditions := slice (dict "href_matches" "/*") (dict "not" (dict "href_matches" .RelPermalink)) -}}
+      {{- range $extBlocks }}{{ $docConditions = $docConditions | append . }}{{ end -}}
+      
+      {{- $caRule := dict "source" "document" "where" (dict "and" $docConditions) "eagerness" $caEagerness -}}
+      {{- if eq $spec.taxonomies "prerender" -}}
+        {{- $prerenderRules = $prerenderRules | append $caRule -}}
+      {{- else -}}
+        {{- $prefetchRules = $prefetchRules | append $caRule -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* ======================================== */ -}}
+  {{- /* 3. Article Pages (Pinned, Top N, Rest)   */ -}}
+  {{- /* ======================================== */ -}}
+  {{- $folder := default "posts" $spec.articleFolder -}}
+  {{- $folderPage := site.GetPage $folder -}}
+  
+  {{- if $folderPage -}}
+    
+    {{- /* A. Pinned Articles (With Defaults) */ -}}
+    {{- $pinnedAct := default "prerender" $spec.pinnedArticle -}}
+    {{- if in (slice "prefetch" "prerender") $pinnedAct -}}
+      {{- $pinnedEagerness := default "immediate" $spec.pinnedArticleEagerness -}}
+      {{- $pinnedUrls := slice -}}
+      
+      {{- range where $folderPage.RegularPages "Params.pin" "eq" true -}}
+        {{- $pinnedUrls = $pinnedUrls | append .RelPermalink -}}
+      {{- end -}}
+      
+      {{- $pinnedUrls = $pinnedUrls | complement (slice .RelPermalink) -}}
+
+      {{- if gt (len $pinnedUrls) 0 -}}
+        {{- $rule := dict "source" "list" "urls" $pinnedUrls "eagerness" $pinnedEagerness -}}
+        {{- if eq $pinnedAct "prerender" -}}
+          {{- $prerenderRules = $prerenderRules | append $rule -}}
+        {{- else -}}
+          {{- $prefetchRules = $prefetchRules | append $rule -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- /* B. Unpinned Articles (Top N and Catch-All) */ -}}
+    {{- if in (slice "prefetch" "prerender") $spec.articles -}}
+      {{- if or (eq .Section $folder) .IsHome -}}
+        {{- $eagerness := default "eager" $spec.articleEagerness -}}
+        {{- $caEagerness := default "conservative" $spec.articleCAEagerness -}}
+        {{- $count := default 3 $spec.articleCount -}}
+        
+        {{- $unpinned := where $folderPage.RegularPages "Params.pin" "ne" true -}}
+        {{- $urls := slice -}}
+
+        {{- range first $count $unpinned -}}
+          {{- $urls = $urls | append .RelPermalink -}}
+        {{- end -}}
+        {{- $urls = $urls | complement (slice .RelPermalink) -}}
+
+        {{- if gt (len $urls) 0 -}}
+          {{- $rule := dict "source" "list" "urls" $urls "eagerness" $eagerness -}}
+          {{- if eq $spec.articles "prerender" -}}
+            {{- $prerenderRules = $prerenderRules | append $rule -}}
+          {{- else -}}
+            {{- $prefetchRules = $prefetchRules | append $rule -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- $folderPath := printf "/%s/*" (trim $folder "/") -}}
+        {{- $docConditions := slice (dict "href_matches" $folderPath) (dict "not" (dict "href_matches" .RelPermalink)) -}}
+        {{- range $extBlocks }}{{ $docConditions = $docConditions | append . }}{{ end -}}
+        
+        {{- $caRule := dict "source" "document" "where" (dict "and" $docConditions) "eagerness" $caEagerness -}}
+        {{- if eq $spec.articles "prerender" -}}
+          {{- $prerenderRules = $prerenderRules | append $caRule -}}
+        {{- else -}}
+          {{- $prefetchRules = $prefetchRules | append $caRule -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    
+  {{- end -}}
+
+  {{- /* ======================================== */ -}}
+  {{- /* 4. Inside Specific Article Behaviors     */ -}}
+  {{- /* ======================================== */ -}}
+  {{- if and .IsPage (eq .Section $folder) -}}
+    
+    {{- /* A. Same Origin Links (With Default) */ -}}
+    {{- $soEagerness := default "eager" $spec.sameOriginEagerness -}}
+    {{- /* Allow it to be turned off if user explicitly sets it to false */ -}}
+    {{- if in (slice "immediate" "eager" "moderate" "conservative") $soEagerness -}}
+      {{- $sameOriginConditions := slice (dict "href_matches" "/*") (dict "not" (dict "href_matches" .RelPermalink)) -}}
+      {{- range $extBlocks }}{{ $sameOriginConditions = $sameOriginConditions | append . }}{{ end -}}
+      
+      {{- $sameOriginRule := dict "source" "document" "where" (dict "and" $sameOriginConditions) "eagerness" $soEagerness -}}
+      {{- $prerenderRules = $prerenderRules | append $sameOriginRule -}}
+    {{- end -}}
+
+  {{- end -}}
+
+  {{- /* B. Cross Origin Links */ -}}
+  {{- if eq $spec.crossOrigin true -}}
+    {{- $crossEagerness := default "conservative" $spec.crossOriginEagerness -}}
+    {{- $cleanBase := trim site.BaseURL "/" -}}
+    
+    {{- $crossConditions := slice (dict "href_matches" "https://*") (dict "not" (dict "href_matches" (printf "%s/*" $cleanBase))) -}}
+    {{- range $extBlocks }}{{ $crossConditions = $crossConditions | append . }}{{ end -}}
+
+    {{- $crossRule := dict "source" "document" "where" (dict "and" $crossConditions) "eagerness" $crossEagerness -}}
+    {{- $prefetchRules = $prefetchRules | append $crossRule -}}
+  {{- end -}}
+
+
+  {{- /* ======================================== */ -}}
+  {{- /* Build and Output Final JSON              */ -}}
+  {{- /* ======================================== */ -}}
+  {{- $finalJSON := dict -}}
+  {{- if gt (len $prerenderRules) 0 -}}
+    {{- $finalJSON = merge $finalJSON (dict "prerender" $prerenderRules) -}}
+  {{- end -}}
+  {{- if gt (len $prefetchRules) 0 -}}
+    {{- $finalJSON = merge $finalJSON (dict "prefetch" $prefetchRules) -}}
+  {{- end -}}
+
+  {{- if or (gt (len $prerenderRules) 0) (gt (len $prefetchRules) 0) -}}
+    {{- /* Build the entire tag as a string and declare it safeHTML to prevent quote escaping */ -}}
+    {{- $scriptContent := $finalJSON | jsonify -}}
+    {{- printf "<script type=\"speculationrules\">\n%s\n</script>" $scriptContent | safeHTML -}}
+  {{- end -}}
+
+{{- end -}}

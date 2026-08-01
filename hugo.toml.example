@@ -98,7 +98,8 @@ enableEmoji = true
   # pinnedSVGname = "pin"
   # listLayout = ["description","tags","categories","legacy"]
   # initialPublish = "Initally Posted on: "
-  # human = ["single","posts"]
+  # brainMade = ["single","posts"]
+  # humansTxt = true
   # noIndex = false
   # denyRobots = "noindex, nofollow, noarchive"
   # allowRobots = "index, follow"
@@ -126,6 +127,36 @@ enableEmoji = true
     ShortDate = "Jan 2"
     NumDateShort = "2006-01-02"
     NumDateLong = "2006-01-02 15:04 -0700"
+
+# Speculation Rules API Configuration
+# This section allows you to control how the browser pre-loads pages to achieve near-instant navigation.
+# See: https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API
+# Preloading Options: "prefetch" (downloads HTML), "prerender" (downloads HTML + renders page in background), or "false" (disable).
+# Eagerness Options: "immediate" (as soon as possible), "eager" (slight delay, default), "moderate" (on hover > 200ms), "conservative" (on mouse/pointer down).
+
+  [params.speculation]
+    enableSpeculation = true                # Master switch to enable/disable the generation of the Speculation Rules script. 
+
+    headerLinks = "prefetch"                # Controls pre-loading for internal links defined in the site's Main Menu (Menus.main).
+    headerEagerness = "eager"               # How eagerly to load the header links.
+    
+    taxonomies = "prerender"                # Controls pre-loading behavior when a user is viewing a Taxonomy or Term page (e.g., /tags/hugo/).
+    taxonomyCount = 3                       # The exact number of latest taxonomy pages to pre-load explicitly. 
+    taxonomyEagerness = "eager"             # How eagerly to explicitly pre-load the 'taxonomyCount' pages defined above.
+    taxonomyCAEagerness = "moderate"        # The Catch-All (CA) fallback eagerness for all OTHER internal links found on the taxonomy page, set lower than the main eagerness to save bandwidth.
+    
+    articles = "prefetch"                   # Controls pre-loading behavior when a user is on the Homepage OR anywhere inside the article section.
+    articleFolder = "posts"                 # The specific folder name where your main articles reside.
+    articleCount = 3                        # The exact number of latest article pages to pre-load explicitly.  
+    articleEagerness = "eager"              # How eagerly to explicitly pre-load the 'articleCount' pages defined above.
+    articleCAEagerness = "moderate"         # The Catch-All (CA) fallback eagerness for all OTHER article links found in the posts list, set lower than the main eagerness to save bandwidth.
+    
+    pinnedArticle = "prerender"             # Controls pre-loading behavior for the pinned article.
+    pinnedArticleEagerness = "immediate"    # How eagerly to pre-load the pinned article.
+
+    crossOrigin = true                      # Enables prefetching (never prerendering) for off-site external links (https://). Excludes your own domain to prevent self-looping.
+    crossOriginEagerness = "moderate"       # How eagerly to prefetch external links. Recommended to keep this "moderate" or "conservative" out of respect for external servers.
+    sameOriginEagerness = "moderate"        # How eagerly to prefetch internal links.
   
   [[params.socialLinks]]
     name = "mastodon"

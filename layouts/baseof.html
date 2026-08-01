@@ -20,6 +20,7 @@
 {{- end -}}
 {{- block "head" . -}}{{- end -}}
 {{- if templates.Exists "_partials/extra-head.html" -}}{{- partial "extra-head.html" . -}}{{- end }}
+{{ partialCached "speculation-rules.html" . .RelPermalink }}
 </head>
 
 <body id="page">
