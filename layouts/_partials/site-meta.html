@@ -23,8 +23,16 @@
 
 {{- $ctx := . -}}
 
-{{- $identityFiles := slice
-  (dict "name" "humans.txt" "action" "template" "format" `<link rel="author" type="text/plain" href="%s">`)
+{{- /* 1. Initialize an empty slice */ -}}
+{{- $identityFiles := slice -}}
+
+{{- /* 2. Conditionally append humans.txt if humansTxt is true in hugo.toml */ -}}
+{{- if site.Params.humansTxt -}}
+  {{- $identityFiles = $identityFiles | append (dict "name" "humans.txt" "action" "template" "format" `<link rel="author" type="text/plain" href="%s">`) -}}
+{{- end -}}
+
+{{- /* 3. Append the remaining identity files to the slice */ -}}
+{{- $identityFiles = $identityFiles | append
   (dict "name" "site.webmanifest" "action" "template" "format" `<link rel="manifest" href="%s">`)
   (dict "name" "favicon.ico" "action" "none" "format" `<link rel="icon" href="%s" sizes="48x48">`)
   (dict "name" "favicon-32x32.png" "action" "none" "format" `<link rel="icon" href="%s" type="image/png" sizes="32x32">`)
