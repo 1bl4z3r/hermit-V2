@@ -29,7 +29,7 @@ other = "Suivant"
 [older]
 other = "Précédent"
 
-[humanMade]
+[brainMade]
 other = "Je ne déteste pas les IA, mais j’adore les humains!"
 
 # _partials/header.html
