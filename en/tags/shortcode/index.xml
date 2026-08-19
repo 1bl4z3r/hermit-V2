@@ -76,7 +76,7 @@
    </svg></span><b>Important note on Masonry</b></div>
     <div class="admonition-content"><p>Masonry layout doesnot have a baseline browser support. This layout was created as an experimental solution and should not be used in production.
 Using grid layout is recommended, and is set as a default when using this shortcode.</p>
-<p>Browser support can be checked from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Masonry_layout">Masonry layout - MDN</a></p>
+<p>Browser support can be checked from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Masonry_layout" target="_blank" >Masonry layout - MDN</a></p>
 </div>
 </aside>
 <blockquote>
@@ -100,7 +100,7 @@ Using grid layout is recommended, and is set as a default when using this shortc
 			<tr>
 					<td><code>src</code></td>
 					<td>Yes</td>
-					<td>Path to the image. See <a href="/hermit-V2/en/posts/image-gallery-shortcode/#image-sources">Image Sources</a> below.</td>
+					<td>Path to the image. See <a href="#image-sources" >Image Sources</a> below.</td>
 			</tr>
 			<tr>
 					<td><code>title</code></td>

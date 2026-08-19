@@ -375,7 +375,7 @@
 </div>
 <p>Finally, Javacript. Mathjax has two JS.</p>
 <ul>
-<li><code>mathjax@3/es5/tex-chtml.js</code> (This is the main library downloaded from <a href="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">jsDelivr</a>)</li>
+<li><code>mathjax@3/es5/tex-chtml.js</code> (This is the main library downloaded from <a href="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" target="_blank" >jsDelivr</a>)</li>
 <li><code>/assets/js/mathjax/mathjax-assistant.js</code> (You may extend this according to your liking)</li>
 </ul>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
@@ -658,7 +658,7 @@ Partial is injected in <code>layouts/_default/baseof.html</code></p>
 			</tr>
 			<tr>
 					<td><code>[Link](https://example.com)</code></td>
-					<td><a href="https://example.com">Link</a></td>
+					<td><a href="https://example.com" target="_blank" >Link</a></td>
 			</tr>
 	</tbody>
 </table>
@@ -821,7 +821,7 @@ print(sorted_dt)
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">num2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">prompt</span>(<span style="color:#e6db74">&#34;Enter second number&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">num1</span>) <span style="color:#f92672">+</span> parseInt(<span style="color:#a6e22e">num2</span>) <span style="color:#75715e">// &#34;+&#34; means &#34;add&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Sum = &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">sum</span>)  <span style="color:#75715e">// &#34;+&#34; means combine into a string
-</span></span></span></code></pre></div><p>Syntax Highlighting with <a href="https://gohugo.io/content-management/syntax-highlighting/"><code>highlight</code> shortcode</a></p>
+</span></span></span></code></pre></div><p>Syntax Highlighting with <a href="https://gohugo.io/content-management/syntax-highlighting/" target="_blank" ><code>highlight</code> shortcode</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{<span style="color:#75715e">/*&lt; highlight css &#34;linenos=table,linenostart=5&#34; &gt;*/</span>}}
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/* LineHighlight */</span> .<span style="color:#a6e22e">chroma</span> .<span style="color:#a6e22e">hl</span> { <span style="color:#a6e22e">display</span>: <span style="color:#a6e22e">block</span>; <span style="color:#a6e22e">width</span>: <span style="color:#ae81ff">100</span><span style="color:#f92672">%</span>;<span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span>: <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">55595</span><span style="color:#a6e22e">ebb</span> }
 </span></span><span style="display:flex;"><span>{{<span style="color:#75715e">/*&lt; /highlight &gt;*/</span>}}
@@ -1009,25 +1009,25 @@ print(sorted_dt)
 <hr>
 <ol>
 <li id="fn:1">
-<p>From : <a href="https://www.markdownguide.org/extended-syntax/#footnotes">https://www.markdownguide.org/extended-syntax/#footnotes</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>From : <a href="https://www.markdownguide.org/extended-syntax/#footnotes" target="_blank" >https://www.markdownguide.org/extended-syntax/#footnotes</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>To use mentioned features. <a href="https://gohugo.io/getting-started/configuration-markup/#extras">Hugo Docs</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref3:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref4:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>To use mentioned features. <a href="https://gohugo.io/getting-started/configuration-markup/#extras" target="_blank" >Hugo Docs</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref3:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref4:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p>To enable emoji support add <code>enableEmoji = true</code> in hugo.toml. <a href="https://gohugo.io/quick-reference/emojis/">Hugo Docs</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>To enable emoji support add <code>enableEmoji = true</code> in hugo.toml. <a href="https://gohugo.io/quick-reference/emojis/" target="_blank" >Hugo Docs</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4">
 <p>Hugo&rsquo;s default renderer (Goldmark) cannot render HTML tags by default.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5">
-<p>LaTeX is supported by Mathjax, explained <a href="/hermit-V2/en/posts/mathjax-support/">in this article</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>LaTeX is supported by Mathjax, explained <a href="/hermit-V2/en/posts/mathjax-support/" >in this article</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6">
-<p>Customize Table of Contents. <a href="https://gohugo.io/methods/page/tableofcontents/">Hugo Docs</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Customize Table of Contents. <a href="https://gohugo.io/methods/page/tableofcontents/" target="_blank" >Hugo Docs</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7">
-<p><a href="https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/">the-figure-shortcode</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/" target="_blank" >the-figure-shortcode</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>

@@ -76,7 +76,7 @@
    </svg></span><b>Important note on Masonry</b></div>
     <div class="admonition-content"><p>Masonry layout doesnot have a baseline browser support. This layout was created as an experimental solution and should not be used in production.
 Using grid layout is recommended, and is set as a default when using this shortcode.</p>
-<p>Browser support can be checked from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Masonry_layout">Masonry layout - MDN</a></p>
+<p>Browser support can be checked from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Masonry_layout" target="_blank" >Masonry layout - MDN</a></p>
 </div>
 </aside>
 <blockquote>
@@ -100,7 +100,7 @@ Using grid layout is recommended, and is set as a default when using this shortc
 			<tr>
 					<td><code>src</code></td>
 					<td>Yes</td>
-					<td>Path to the image. See <a href="/hermit-V2/en/posts/image-gallery-shortcode/#image-sources">Image Sources</a> below.</td>
+					<td>Path to the image. See <a href="#image-sources" >Image Sources</a> below.</td>
 			</tr>
 			<tr>
 					<td><code>title</code></td>
@@ -1072,13 +1072,13 @@ Additionally, any <code>.svg</code> image will automatically have its box-shadow
 <li><strong>JavaScript is required for the lightbox.</strong> Thumbnails and captions are fully visible without JS; only the lightbox and navigation require it. Visitors without JS see a hover warning on each thumbnail.</li>
 <li><strong>Gallery JS is only loaded on pages that use the shortcode.</strong> It will not affect pages that have no gallery.</li>
 </ul>
-]]></content></item><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Sun, 24 Dec 2023 12:29:41 +0800</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>&amp;lt;no value&amp;gt;</description><content type="text/html" mode="escaped"><![CDATA[<p>Hugo has <code>figure</code> shortcode built in, so you can easily add captions or hyperlink rel attributes to images. Documentations can be found <a href="https://gohugo.io/content-management/shortcodes/#figure">here</a>.</p>
-<p>This theme extends upon <a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_shortcodes/figure.html">default figure shortcode</a> to implement following features :</p>
+]]></content></item><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Sun, 24 Dec 2023 12:29:41 +0800</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>&amp;lt;no value&amp;gt;</description><content type="text/html" mode="escaped"><![CDATA[<p>Hugo has <code>figure</code> shortcode built in, so you can easily add captions or hyperlink rel attributes to images. Documentations can be found <a href="https://gohugo.io/content-management/shortcodes/#figure" target="_blank" >here</a>.</p>
+<p>This theme extends upon <a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_shortcodes/figure.html" target="_blank" >default figure shortcode</a> to implement following features :</p>
 <ul>
 <li>Follow latest standard to display WEBP image and fallback to JPG if browser cannot render WEBP.
 <ul>
 <li>If provided with an image resource, it can convert to WEBP and JPG image</li>
-<li>Both WEBP and JPG are placed in <a href="https://www.w3schools.com/tags/tag_picture.asp">picture tag</a></li>
+<li>Both WEBP and JPG are placed in <a href="https://www.w3schools.com/tags/tag_picture.asp" target="_blank" >picture tag</a></li>
 <li>To use this feature, place your image in <code>assets</code> folder in root of your site</li>
 </ul>
 </li>
@@ -1356,7 +1356,7 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
-<p>This configuration allows you would want to use static directory or a subdirectory as assets. To utilize this feature, add following lines to <code>hugo.toml</code>. Assuming you put your images in <code>/static/images</code>, you can mount this folder as assets. <a href="https://discourse.gohugo.io/t/why-does-a-path-that-works-for-a-markdown-image-not-work-for-the-figure-shortcode/52631">Hugo forum - Why does a path that works for a markdown image not work for the figure shortcode?</a></p>
+<p>This configuration allows you would want to use static directory or a subdirectory as assets. To utilize this feature, add following lines to <code>hugo.toml</code>. Assuming you put your images in <code>/static/images</code>, you can mount this folder as assets. <a href="https://discourse.gohugo.io/t/why-does-a-path-that-works-for-a-markdown-image-not-work-for-the-figure-shortcode/52631" target="_blank" >Hugo forum - Why does a path that works for a markdown image not work for the figure shortcode?</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[[<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">mounts</span>]]
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">source</span> = <span style="color:#e6db74">&#39;assets&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">target</span> = <span style="color:#e6db74">&#39;assets&#39;</span>
@@ -1370,5 +1370,5 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 </span></span><span style="display:flex;"><span><span style="color:#f92672">images</span>:
 </span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">https://picsum.photos/1024/768/?random</span>
 </span></span><span style="display:flex;"><span>---
-</span></span></code></pre></div><p>This is an array, you can set multiple urls, only the first url will be used. These images is also used in <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html">Twitter Cards</a> and the <a href="http://ogp.me/">Open Graph</a> metadata.</p>
+</span></span></code></pre></div><p>This is an array, you can set multiple urls, only the first url will be used. These images is also used in <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html" target="_blank" >Twitter Cards</a> and the <a href="http://ogp.me/" target="_blank" >Open Graph</a> metadata.</p>
 ]]></content></item></channel></rss>

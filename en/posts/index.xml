@@ -265,7 +265,7 @@
    </svg></span><b>Important note on Masonry</b></div>
     <div class="admonition-content"><p>Masonry layout doesnot have a baseline browser support. This layout was created as an experimental solution and should not be used in production.
 Using grid layout is recommended, and is set as a default when using this shortcode.</p>
-<p>Browser support can be checked from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Masonry_layout">Masonry layout - MDN</a></p>
+<p>Browser support can be checked from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Masonry_layout" target="_blank" >Masonry layout - MDN</a></p>
 </div>
 </aside>
 <blockquote>
@@ -289,7 +289,7 @@ Using grid layout is recommended, and is set as a default when using this shortc
 			<tr>
 					<td><code>src</code></td>
 					<td>Yes</td>
-					<td>Path to the image. See <a href="/hermit-V2/en/posts/image-gallery-shortcode/#image-sources">Image Sources</a> below.</td>
+					<td>Path to the image. See <a href="#image-sources" >Image Sources</a> below.</td>
 			</tr>
 			<tr>
 					<td><code>title</code></td>
@@ -1261,13 +1261,13 @@ Additionally, any <code>.svg</code> image will automatically have its box-shadow
 <li><strong>JavaScript is required for the lightbox.</strong> Thumbnails and captions are fully visible without JS; only the lightbox and navigation require it. Visitors without JS see a hover warning on each thumbnail.</li>
 <li><strong>Gallery JS is only loaded on pages that use the shortcode.</strong> It will not affect pages that have no gallery.</li>
 </ul>
-]]></content></item><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Sun, 24 Dec 2023 12:29:41 +0800</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>&amp;lt;no value&amp;gt;</description><content type="text/html" mode="escaped"><![CDATA[<p>Hugo has <code>figure</code> shortcode built in, so you can easily add captions or hyperlink rel attributes to images. Documentations can be found <a href="https://gohugo.io/content-management/shortcodes/#figure">here</a>.</p>
-<p>This theme extends upon <a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_shortcodes/figure.html">default figure shortcode</a> to implement following features :</p>
+]]></content></item><item><title>The "figure" Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</link><pubDate>Sun, 24 Dec 2023 12:29:41 +0800</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/</guid><description>&amp;lt;no value&amp;gt;</description><content type="text/html" mode="escaped"><![CDATA[<p>Hugo has <code>figure</code> shortcode built in, so you can easily add captions or hyperlink rel attributes to images. Documentations can be found <a href="https://gohugo.io/content-management/shortcodes/#figure" target="_blank" >here</a>.</p>
+<p>This theme extends upon <a href="https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_shortcodes/figure.html" target="_blank" >default figure shortcode</a> to implement following features :</p>
 <ul>
 <li>Follow latest standard to display WEBP image and fallback to JPG if browser cannot render WEBP.
 <ul>
 <li>If provided with an image resource, it can convert to WEBP and JPG image</li>
-<li>Both WEBP and JPG are placed in <a href="https://www.w3schools.com/tags/tag_picture.asp">picture tag</a></li>
+<li>Both WEBP and JPG are placed in <a href="https://www.w3schools.com/tags/tag_picture.asp" target="_blank" >picture tag</a></li>
 <li>To use this feature, place your image in <code>assets</code> folder in root of your site</li>
 </ul>
 </li>
@@ -1545,7 +1545,7 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
-<p>This configuration allows you would want to use static directory or a subdirectory as assets. To utilize this feature, add following lines to <code>hugo.toml</code>. Assuming you put your images in <code>/static/images</code>, you can mount this folder as assets. <a href="https://discourse.gohugo.io/t/why-does-a-path-that-works-for-a-markdown-image-not-work-for-the-figure-shortcode/52631">Hugo forum - Why does a path that works for a markdown image not work for the figure shortcode?</a></p>
+<p>This configuration allows you would want to use static directory or a subdirectory as assets. To utilize this feature, add following lines to <code>hugo.toml</code>. Assuming you put your images in <code>/static/images</code>, you can mount this folder as assets. <a href="https://discourse.gohugo.io/t/why-does-a-path-that-works-for-a-markdown-image-not-work-for-the-figure-shortcode/52631" target="_blank" >Hugo forum - Why does a path that works for a markdown image not work for the figure shortcode?</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[[<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">mounts</span>]]
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">source</span> = <span style="color:#e6db74">&#39;assets&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">target</span> = <span style="color:#e6db74">&#39;assets&#39;</span>
@@ -1575,7 +1575,7 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 <p><code>theme</code> - Sets all layouts to be from the instaled theme (Use &ldquo;hermit-v2&rdquo; to adapt hermit-v2&rsquo;s theme)</p>
 </li>
 <li>
-<p><code>enableRobotsTXT</code> - Enables robots.txt generation using <a href="https://github.com/1bl4z3r/hermit-V2/blob/main/layouts/robots.txt">template</a>. By default, set to <code>false</code>.</p>
+<p><code>enableRobotsTXT</code> - Enables robots.txt generation using <a href="https://github.com/1bl4z3r/hermit-V2/blob/main/layouts/robots.txt" target="_blank" >template</a>. By default, set to <code>false</code>.</p>
 </li>
 <li>
 <p><code>enableGitInfo</code> : Enable .GitInfo object for each page (if the Hugo site is versioned by Git). This will then update the Lastmod parameter for each page using the last git commit date for that content file.</p>
@@ -1599,7 +1599,7 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 <p><code>copyright</code> : This message is only used by the RSS template.</p>
 </li>
 <li>
-<p><code>enableEmoji</code> : Enables shorthand emojis in content files. <a href="https://gohugo.io/functions/emojify/">Info</a></p>
+<p><code>enableEmoji</code> : Enables shorthand emojis in content files. <a href="https://gohugo.io/functions/emojify/" target="_blank" >Info</a></p>
 </li>
 <li>
 <p><code>[services]</code></p>
@@ -1641,7 +1641,7 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 <li><code>global_mathjax</code> : Enable global_mathjax to true, if you want MathJax support sitewide (if you have technical page)</li>
 <li><code>legacyLayout</code> : Enables legacy layout (where post info is below content)</li>
 <li><code>shareSocial</code> : Enables Social sharing links to share pages to social media.</li>
-<li><code>googleTagManager</code> : Enables scripts for <a href="https://tagmanager.google.com/">Google Tag Manager</a></li>
+<li><code>googleTagManager</code> : Enables scripts for <a href="https://tagmanager.google.com/" target="_blank" >Google Tag Manager</a></li>
 <li><code>tagSymbol</code> : Specify a symbol for Tags. Default is <code>#</code></li>
 <li><code>categorySymbol</code> : Specify a symbol for Categories. Default is <code>⊲</code></li>
 <li><code>pinned</code> : Display the name of &lsquo;Pinned Posts&rsquo;. If none provided, pinned posts section would be hidden</li>
@@ -1654,12 +1654,12 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 <li><code>categories</code> - To show/hide posts&rsquo; categories in list view</li>
 </ul>
 </li>
-<li><code>brainMade</code> : Shows a badge &lsquo;BrainMade&rsquo; on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: <a href="brainmade.org">brainmade.org</a></li>
+<li><code>brainMade</code> : Shows a badge &lsquo;BrainMade&rsquo; on Posts and/or Single pages. Configurable by specifying where badge is to be shown. Read more: <a href="brainmade.org" >brainmade.org</a></li>
 <li><code>humansTxt</code> : Configure if humans.txt is enabled for the site or not</li>
 <li><code>denyRobots</code> : Specify what directives to follow when denying crawlers. Default is <strong>noindex, nofollow, noarchive</strong></li>
 <li><code>allowRobots</code> : Specify what directives to follow when allowing crawlers. Default is <strong>index, follow</strong></li>
 <li><code>siteNoIndex</code> : When set to true, whole site will have <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code>) added to robots meta tag. Else, robots tag will have <em><strong>index, follow</strong></em> (unless specified by <code>allowRobots</code>) applied to whole site</li>
-<li><code>noIndexPages</code> : Specify on which pages crawlers will be denied. Pages specified will have <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code> added to robots meta tag. Use <strong>Page title</strong> to select pages. Useful for the pages generated by Hugo. (Eg. for <a href="https://1bl4z3r.github.io/hermit-V2/en/tags/">List of Tags</a>, use <em><strong>Tags</strong></em>)</li>
+<li><code>noIndexPages</code> : Specify on which pages crawlers will be denied. Pages specified will have <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code> added to robots meta tag. Use <strong>Page title</strong> to select pages. Useful for the pages generated by Hugo. (Eg. for <a href="https://1bl4z3r.github.io/hermit-V2/en/tags/" >List of Tags</a>, use <em><strong>Tags</strong></em>)</li>
 <li><code>footerHideThemeName</code> : When set to true, links to Hugo and Hermit-V2 would be removed from footer section</li>
 <li><code>usesAnimation</code> : When set to false, animations are disabled site-wide</li>
 <li><code>mathjaxLib</code> : Provides Mathjax library to the theme. If not provided, <code>https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js</code> will be used
@@ -1685,7 +1685,7 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 <li><code>relatedPosts</code> : Add a related content section to all single posts page.</li>
 </ul>
 </li>
-<li><code>[params.gallery]</code> Refer to <a href="https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/">Image Gallery Shortcode</a>
+<li><code>[params.gallery]</code> Refer to <a href="https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/" >Image Gallery Shortcode</a>
 <ul>
 <li><code>enable</code> : Set to <code>true</code> to activate the image gallery shortcode functionality site-wide.</li>
 <li><code>width</code> : Defines the width (in pixels) for automatically generated thumbnails for images; defaults to &ldquo;300&rdquo; (300px).</li>
@@ -1701,7 +1701,7 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 <li><code>CopyrightDate</code> : Used for configuring the date format for Copyright in footer. Defaults to format <code>2006</code>, shows year.</li>
 </ul>
 </li>
-<li><code>[params.speculation]</code>	: <a href="/hermit-V2/en/posts/speculation-rules-api/">Explanation</a>
+<li><code>[params.speculation]</code>	: <a href="/hermit-V2/en/posts/speculation-rules-api/" >Explanation</a>
 <ul>
 <li><code>enableSpeculation</code>	: Enables the Speculation script for the site. If disabled below variables are not to be considered</li>
 <li><code>headerLinks</code>			: Enables the Speculation script for the header links with the provided type of Speculation (Options are prefetch, prerender, false). These are specified in <code>Menus</code> section in hugo.toml</li>
@@ -1722,7 +1722,7 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 <li><code>sameOriginEagerness</code> : Specify the eagerness of Same Origin links. Speculation is hardcoded to prerender.</li>
 </ul>
 </li>
-<li><code>[params.socialLinks]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons">README</a>
+<li><code>[params.socialLinks]</code> Refer <a href="https://github.com/1bl4z3r/hermit-V2#social-icons" target="_blank" >README</a>
 <ul>
 <li><code>name</code> : Name of the social page.</li>
 <li><code>url</code> : URL of your account.</li>
@@ -1761,10 +1761,10 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 <li><code>ShowLastmod</code> : This enables Last modification date of the given Page.</li>
 <li><code>Lastmod</code> : REQUIRED (If <code>ShowLastmod=true</code>). Enter Last modified date of the Page.</li>
 <li><code>pin</code> : Specify if the post should be shown as pinned</li>
-<li><code>print</code> : Pages which has <code>print: true</code> will have additional css from print styling. The CSS file should be created by user in <code>/assets/custom_css/print.scss</code>. <a href="https://www.sitepoint.com/css-printer-friendly-pages">Learn more</a></li>
-<li><code>robots</code> : Set to <strong>false</strong> to add page Disallow entry in robots.txt. Check <a href="https://1bl4z3r.github.io/hermit-V2/robots.txt">robots.txt</a></li>
+<li><code>print</code> : Pages which has <code>print: true</code> will have additional css from print styling. The CSS file should be created by user in <code>/assets/custom_css/print.scss</code>. <a href="https://www.sitepoint.com/css-printer-friendly-pages" target="_blank" >Learn more</a></li>
+<li><code>robots</code> : Set to <strong>false</strong> to add page Disallow entry in robots.txt. Check <a href="https://1bl4z3r.github.io/hermit-V2/robots.txt" target="_blank" >robots.txt</a></li>
 <li><code>noIndex</code> : When set to true, the page has <em><strong>noindex, nofollow, noarchive</strong></em> (unless specified by <code>denyRobots</code> added to robots meta tag. Else, robots tag will have <em><strong>index, follow</strong></em> (unless specified by <code>allowRobots</code>)</li>
-<li><code>keywords</code> : Specify keywords for your article. It will be used to populate<a href="https://developers.google.com/search/docs/appearance/site-names"> Structured Data Site names schema</a></li>
+<li><code>keywords</code> : Specify keywords for your article. It will be used to populate<a href="https://developers.google.com/search/docs/appearance/site-names" target="_blank" > Structured Data Site names schema</a></li>
 <li><code>readTime</code> : Toggle Reading time for articles. <em>Note: This setting was moved from <code>hugo.toml</code> to page frontmatter to allow you to individually configure if the read time is shown on a page-by-page basis.</em></li>
 </ul>
 <h3 id="last-modified-date">Last Modified Date<a href="#last-modified-date" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -2106,7 +2106,7 @@ Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Ali
 </div>
 <p>Finally, Javacript. Mathjax has two JS.</p>
 <ul>
-<li><code>mathjax@3/es5/tex-chtml.js</code> (This is the main library downloaded from <a href="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">jsDelivr</a>)</li>
+<li><code>mathjax@3/es5/tex-chtml.js</code> (This is the main library downloaded from <a href="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" target="_blank" >jsDelivr</a>)</li>
 <li><code>/assets/js/mathjax/mathjax-assistant.js</code> (You may extend this according to your liking)</li>
 </ul>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
@@ -2389,7 +2389,7 @@ Partial is injected in <code>layouts/_default/baseof.html</code></p>
 			</tr>
 			<tr>
 					<td><code>[Link](https://example.com)</code></td>
-					<td><a href="https://example.com">Link</a></td>
+					<td><a href="https://example.com" target="_blank" >Link</a></td>
 			</tr>
 	</tbody>
 </table>
@@ -2552,7 +2552,7 @@ print(sorted_dt)
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">num2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">prompt</span>(<span style="color:#e6db74">&#34;Enter second number&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">num1</span>) <span style="color:#f92672">+</span> parseInt(<span style="color:#a6e22e">num2</span>) <span style="color:#75715e">// &#34;+&#34; means &#34;add&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Sum = &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">sum</span>)  <span style="color:#75715e">// &#34;+&#34; means combine into a string
-</span></span></span></code></pre></div><p>Syntax Highlighting with <a href="https://gohugo.io/content-management/syntax-highlighting/"><code>highlight</code> shortcode</a></p>
+</span></span></span></code></pre></div><p>Syntax Highlighting with <a href="https://gohugo.io/content-management/syntax-highlighting/" target="_blank" ><code>highlight</code> shortcode</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{<span style="color:#75715e">/*&lt; highlight css &#34;linenos=table,linenostart=5&#34; &gt;*/</span>}}
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/* LineHighlight */</span> .<span style="color:#a6e22e">chroma</span> .<span style="color:#a6e22e">hl</span> { <span style="color:#a6e22e">display</span>: <span style="color:#a6e22e">block</span>; <span style="color:#a6e22e">width</span>: <span style="color:#ae81ff">100</span><span style="color:#f92672">%</span>;<span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span>: <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#ae81ff">55595</span><span style="color:#a6e22e">ebb</span> }
 </span></span><span style="display:flex;"><span>{{<span style="color:#75715e">/*&lt; /highlight &gt;*/</span>}}
@@ -2740,25 +2740,25 @@ print(sorted_dt)
 <hr>
 <ol>
 <li id="fn:1">
-<p>From : <a href="https://www.markdownguide.org/extended-syntax/#footnotes">https://www.markdownguide.org/extended-syntax/#footnotes</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>From : <a href="https://www.markdownguide.org/extended-syntax/#footnotes" target="_blank" >https://www.markdownguide.org/extended-syntax/#footnotes</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>To use mentioned features. <a href="https://gohugo.io/getting-started/configuration-markup/#extras">Hugo Docs</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref3:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref4:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>To use mentioned features. <a href="https://gohugo.io/getting-started/configuration-markup/#extras" target="_blank" >Hugo Docs</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref3:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref4:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p>To enable emoji support add <code>enableEmoji = true</code> in hugo.toml. <a href="https://gohugo.io/quick-reference/emojis/">Hugo Docs</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>To enable emoji support add <code>enableEmoji = true</code> in hugo.toml. <a href="https://gohugo.io/quick-reference/emojis/" target="_blank" >Hugo Docs</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4">
 <p>Hugo&rsquo;s default renderer (Goldmark) cannot render HTML tags by default.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5">
-<p>LaTeX is supported by Mathjax, explained <a href="/hermit-V2/en/posts/mathjax-support/">in this article</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>LaTeX is supported by Mathjax, explained <a href="/hermit-V2/en/posts/mathjax-support/" >in this article</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6">
-<p>Customize Table of Contents. <a href="https://gohugo.io/methods/page/tableofcontents/">Hugo Docs</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Customize Table of Contents. <a href="https://gohugo.io/methods/page/tableofcontents/" target="_blank" >Hugo Docs</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7">
-<p><a href="https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/">the-figure-shortcode</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://1bl4z3r.github.io/hermit-V2/en/posts/the-figure-shortcode/" target="_blank" >the-figure-shortcode</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
@@ -2768,7 +2768,7 @@ print(sorted_dt)
 </span></span><span style="display:flex;"><span><span style="color:#f92672">images</span>:
 </span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">https://picsum.photos/1024/768/?random</span>
 </span></span><span style="display:flex;"><span>---
-</span></span></code></pre></div><p>This is an array, you can set multiple urls, only the first url will be used. These images is also used in <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html">Twitter Cards</a> and the <a href="http://ogp.me/">Open Graph</a> metadata.</p>
+</span></span></code></pre></div><p>This is an array, you can set multiple urls, only the first url will be used. These images is also used in <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html" target="_blank" >Twitter Cards</a> and the <a href="http://ogp.me/" target="_blank" >Open Graph</a> metadata.</p>
 ]]></content></item><item><title>Creating a New Theme</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/creating-a-new-theme/</link><pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate><author>Michael Henderson</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/creating-a-new-theme/</guid><description>&amp;lt;no value&amp;gt;</description><content type="text/html" mode="escaped"><![CDATA[<h2 id="introduction">Introduction<a href="#introduction" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -3754,13 +3754,13 @@ $ vi themes/zafta/layouts/_default/single.html
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>DRY is a good design goal and Hugo does a great job supporting it. Part of the art of a good template is knowing when to add a new template and when to update an existing one. While you&rsquo;re figuring that out, accept that you&rsquo;ll be doing some refactoring. Hugo makes that easy and fast, so it&rsquo;s okay to delay splitting up a template.</p>
-]]></content></item><item><title>(Hu)go Template Primer</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/goisforlovers/</link><pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/goisforlovers/</guid><description>&amp;lt;no value&amp;gt;</description><content type="text/html" mode="escaped"><![CDATA[<p>Hugo uses the excellent <a href="https://golang.org/">Go</a> <a href="https://golang.org/pkg/html/template/">html/template</a> library for
+]]></content></item><item><title>(Hu)go Template Primer</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/goisforlovers/</link><pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/goisforlovers/</guid><description>&amp;lt;no value&amp;gt;</description><content type="text/html" mode="escaped"><![CDATA[<p>Hugo uses the excellent <a href="https://golang.org/" target="_blank" >Go</a> <a href="https://golang.org/pkg/html/template/" target="_blank" >html/template</a> library for
 its template engine. It is an extremely lightweight engine that provides a very
 small amount of logic. In our experience that it is just the right amount of
 logic to be able to create a good static website. If you have used other
 template systems from different languages or frameworks you will find a lot of
 similarities in Go templates.</p>
-<p>This document is a brief primer on using Go templates. The <a href="https://golang.org/pkg/html/template/">Go docs</a>
+<p>This document is a brief primer on using Go templates. The <a href="https://golang.org/pkg/html/template/" target="_blank" >Go docs</a>
 provide more details.</p>
 <h2 id="introduction-to-go-templates">Introduction to Go Templates<a href="#introduction-to-go-templates" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
@@ -3772,7 +3772,7 @@ belief that only the most basic of logic belongs in the template or view layer.
 One consequence of this simplicity is that Go templates parse very quickly.</p>
 <p>A unique characteristic of Go templates is they are content aware. Variables and
 content will be sanitized depending on the context of where they are used. More
-details can be found in the <a href="https://golang.org/pkg/html/template/">Go docs</a>.</p>
+details can be found in the <a href="https://golang.org/pkg/html/template/" target="_blank" >Go docs</a>.</p>
 <h2 id="basic-syntax">Basic Syntax<a href="#basic-syntax" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -3803,7 +3803,7 @@ functions.</p>
 <p>Each Go template has a struct (object) made available to it. In hugo each
 template is passed either a page or a node struct depending on which type of
 page you are rendering. More details are available on the
-<a href="/layout/variables">variables</a> page.</p>
+<a href="/layout/variables" >variables</a> page.</p>
 <p>A variable is accessed by referencing the variable name.</p>
 <pre><code>&lt;title&gt;{{ .Title }}&lt;/title&gt;
 </code></pre>
@@ -3818,7 +3818,7 @@ page you are rendering. More details are available on the
    </svg></a></h2>
 <p>Go template ship with a few functions which provide basic functionality. The Go
 template system also provides a mechanism for applications to extend the
-available functions with their own. <a href="/layout/functions">Hugo template
+available functions with their own. <a href="/layout/functions" >Hugo template
 functions</a> provide some additional functionality we believe
 are useful for building websites. Functions are called by using their name
 followed by the required parameters separated by spaces. Template
@@ -3981,7 +3981,7 @@ you want to inside of your templates.</p>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <p>In each piece of content you can provide variables to be used by the
-templates. This happens in the <a href="/content/front-matter">front matter</a>.</p>
+templates. This happens in the <a href="/content/front-matter" >front matter</a>.</p>
 <p>An example of this is used in this documentation site. Most of the pages
 benefit from having the table of contents provided. Sometimes the TOC just
 doesn&rsquo;t make a lot of sense. We&rsquo;ve defined a variable in our front matter
@@ -4044,10 +4044,10 @@ so, such as in this example:</p>
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
-<p>Go to <a href="https://github.com/spf13/hugo/releases">Hugo releases</a> and download the
+<p>Go to <a href="https://github.com/spf13/hugo/releases" target="_blank" >Hugo releases</a> and download the
 appropriate version for your OS and architecture.</p>
 <p>Save it somewhere specific as we will be using it in the next step.</p>
-<p>More complete instructions are available at <a href="https://gohugo.io/getting-started/installing/">Install Hugo</a></p>
+<p>More complete instructions are available at <a href="https://gohugo.io/getting-started/installing/" target="_blank" >Install Hugo</a></p>
 <h2 id="step-2-build-the-docs">Step 2. Build the Docs<a href="#step-2-build-the-docs" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -4057,7 +4057,7 @@ appropriate version for your OS and architecture.</p>
 you are reading right now.</p>
 <p>Follow the following steps:</p>
 <ol>
-<li>Clone the <a href="http://github.com/spf13/hugo">Hugo repository</a></li>
+<li>Clone the <a href="http://github.com/spf13/hugo" target="_blank" >Hugo repository</a></li>
 <li>Go into the repo</li>
 <li>Run hugo in server mode and build the docs</li>
 <li>Open your browser to http://localhost:1313</li>
@@ -4088,7 +4088,7 @@ cd hugo
 &gt; Watching for changes in /Users/spf13/Code/hugo/docs/content
 &gt; Press ctrl+c to stop
 </code></pre>
-<p>Open your <a href="http://vim.spf13.com">favorite editor</a> and change one of the source
+<p>Open your <a href="http://vim.spf13.com" target="_blank" >favorite editor</a> and change one of the source
 content pages. How about changing this very file to <em>fix the typo</em>. How about changing this very file to <em>fix the typo</em>.</p>
 <p>Content files are found in <code>docs/content/</code>. Unless otherwise specified, files
 are located at the same relative location as the url, in our case
@@ -4132,13 +4132,13 @@ With Jekyll, something that looked like</p>
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
-<p>Hugo can read your configuration as JSON, YAML or TOML. Hugo supports parameters custom configuration too. Refer to the <a href="/overview/configuration/">Hugo configuration documentation</a> for details.</p>
+<p>Hugo can read your configuration as JSON, YAML or TOML. Hugo supports parameters custom configuration too. Refer to the <a href="/overview/configuration/" >Hugo configuration documentation</a> for details.</p>
 <h2 id="set-your-configuration-publish-folder-to-_site">Set your configuration publish folder to <code>_site</code><a href="#set-your-configuration-publish-folder-to-_site" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
-<p>The default is for Jekyll to publish to <code>_site</code> and for Hugo to publish to <code>public</code>. If, like me, you have <a href="http://blog.blindgaenger.net/generate_github_pages_in_a_submodule.html"><code>_site</code> mapped to a git submodule on the <code>gh-pages</code> branch</a>, you&rsquo;ll want to do one of two alternatives:</p>
+<p>The default is for Jekyll to publish to <code>_site</code> and for Hugo to publish to <code>public</code>. If, like me, you have <a href="http://blog.blindgaenger.net/generate_github_pages_in_a_submodule.html" target="_blank" ><code>_site</code> mapped to a git submodule on the <code>gh-pages</code> branch</a>, you&rsquo;ll want to do one of two alternatives:</p>
 <ol>
 <li>Change your submodule to point to map <code>gh-pages</code> to public instead of <code>_site</code> (recommended).</li>
 </ol>
@@ -4158,20 +4158,20 @@ With Jekyll, something that looked like</p>
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
-<p>That&rsquo;s the bulk of the work right here. The documentation is your friend. You should refer to <a href="http://jekyllrb.com/docs/templates/">Jekyll&rsquo;s template documentation</a> if you need to refresh your memory on how you built your blog and <a href="/layout/templates/">Hugo&rsquo;s template</a> to learn Hugo&rsquo;s way.</p>
-<p>As a single reference data point, converting my templates for <a href="http://heyitsalex.net/">heyitsalex.net</a> took me no more than a few hours.</p>
+<p>That&rsquo;s the bulk of the work right here. The documentation is your friend. You should refer to <a href="http://jekyllrb.com/docs/templates/" target="_blank" >Jekyll&rsquo;s template documentation</a> if you need to refresh your memory on how you built your blog and <a href="/layout/templates/" >Hugo&rsquo;s template</a> to learn Hugo&rsquo;s way.</p>
+<p>As a single reference data point, converting my templates for <a href="http://heyitsalex.net/" target="_blank" >heyitsalex.net</a> took me no more than a few hours.</p>
 <h2 id="convert-jekyll-plugins-to-hugo-shortcodes">Convert Jekyll plugins to Hugo shortcodes<a href="#convert-jekyll-plugins-to-hugo-shortcodes" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
-<p>Jekyll has <a href="http://jekyllrb.com/docs/plugins/">plugins</a>; Hugo has <a href="/doc/shortcodes/">shortcodes</a>. It&rsquo;s fairly trivial to do a port.</p>
+<p>Jekyll has <a href="http://jekyllrb.com/docs/plugins/" target="_blank" >plugins</a>; Hugo has <a href="/doc/shortcodes/" >shortcodes</a>. It&rsquo;s fairly trivial to do a port.</p>
 <h3 id="implementation">Implementation<a href="#implementation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
-<p>As an example, I was using a custom <a href="https://github.com/alexandre-normand/alexandre-normand/blob/74bb12036a71334fdb7dba84e073382fc06908ec/_plugins/image_tag.rb"><code>image_tag</code></a> plugin to generate figures with caption when running Jekyll. As I read about shortcodes, I found Hugo had a nice built-in shortcode that does exactly the same thing.</p>
+<p>As an example, I was using a custom <a href="https://github.com/alexandre-normand/alexandre-normand/blob/74bb12036a71334fdb7dba84e073382fc06908ec/_plugins/image_tag.rb" target="_blank" ><code>image_tag</code></a> plugin to generate figures with caption when running Jekyll. As I read about shortcodes, I found Hugo had a nice built-in shortcode that does exactly the same thing.</p>
 <p>Jekyll&rsquo;s plugin:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>    <span style="color:#66d9ef">module</span> Jekyll
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ImageTag</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Liquid</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Tag</span>
@@ -4277,5 +4277,5 @@ With Jekyll, something that looked like</p>
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
-<p><a href="http://heyitsalex.net/">Hey, it&rsquo;s Alex</a> was migrated in less than a <em>father-with-kids day</em> from Jekyll to Hugo. You can see all the changes (and screw-ups) by looking at this <a href="https://github.com/alexandre-normand/alexandre-normand/compare/869d69435bd2665c3fbf5b5c78d4c22759d7613a...b7f6605b1265e83b4b81495423294208cc74d610">diff</a>.</p>
+<p><a href="http://heyitsalex.net/" target="_blank" >Hey, it&rsquo;s Alex</a> was migrated in less than a <em>father-with-kids day</em> from Jekyll to Hugo. You can see all the changes (and screw-ups) by looking at this <a href="https://github.com/alexandre-normand/alexandre-normand/compare/869d69435bd2665c3fbf5b5c78d4c22759d7613a...b7f6605b1265e83b4b81495423294208cc74d610" target="_blank" >diff</a>.</p>
 ]]></content></item></channel></rss>
