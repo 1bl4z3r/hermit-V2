@@ -176,7 +176,8 @@ through for a full walkthrough with configuration snippets.
 - [Multiple authors](#multiple-authors)
 - [Footer customisation](#footer-customisation)
 - [robots.txt and per-page noIndex controls](#robotstxt--noindex-controls)
-- [humans.txt support](#humanstxt)
+- [humans.txt support](#humanstxt-and-brainmade)
+- [Speculation Rules API](#speculation-rules-api)
 
 **Customisation**
 - [Per-page custom CSS and JS](#custom-css-and-js-per-page)
@@ -479,9 +480,18 @@ To disable indexing across the entire site:
   siteNoIndex = true
 ```
 
-### humans.txt
+### humans.txt and brainMade
 
-To display a `humans.txt` link in the footer, either place a `humans.txt` file in your `/static` directory or define a `humans.txt` layout. The link is suppressed automatically if neither is present.
+To display a `humans.txt` link in the footer or configure the site attribution badge, you can expose these variables in your `hugo.toml` under `[params]`. Note that the legacy `humans` variable has been renamed to `brainMade`:
+
+```toml
+[params]
+  brainMade = ["single", "posts"] # Determines which page types display the attribution badge
+  humansTxt = true                # Enables generation of the humans.txt file
+
+```
+
+> **Important**: Site identity files, including your `humans.txt` template, should now be placed in your `assets/identity/` directory to fully utilize Hugo Pipes and correctly map localized output paths for multilingual sites.
 
 ### Footer Customisation
 
@@ -512,7 +522,46 @@ Control what metadata is shown on the post list page:
 
 Valid values include `description`, `tags`, `categories`, and `legacy` (which restores the original Hermit list style).
 
+### Speculation Rules API
+
+Hermit-V2 includes comprehensive theme-wide support for the [Speculation Rules API](https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API) to achieve near-instant navigation on modern browsers (2026 onwards). This feature allows you to control how the browser pre-loads pages.
+
+You have granular control over this behavior in your `hugo.toml` via the `[params.speculation]` section. 
+
+**Basic terminology:**
+- **Preloading Options:** `"prefetch"` (downloads HTML), `"prerender"` (downloads HTML + renders page in background), or `"false"` (disable).
+- **Eagerness Options:** `"immediate"` (as soon as possible), `"eager"` (slight delay, default), `"moderate"` (on hover > 200ms), `"conservative"` (on mouse/pointer down).
+
+**Configuration Example:**
+```toml
+[params.speculation]
+  enableSpeculation = true                # Master switch to enable/disable the generation of the Speculation Rules script.
+
+  headerLinks = "prefetch"                # Controls pre-loading for internal links defined in the site's Main Menu (Menus.main).
+  headerEagerness = "eager"               # How eagerly to load the header links.
+  
+  taxonomies = "prerender"                # Controls pre-loading behavior when a user is viewing a Taxonomy or Term page (e.g., /tags/hugo/).
+  taxonomyCount = 3                       # The exact number of latest taxonomy pages to pre-load explicitly.
+  taxonomyEagerness = "eager"             # How eagerly to explicitly pre-load the 'taxonomyCount' pages defined above.
+  taxonomyCAEagerness = "moderate"        # The Catch-All (CA) fallback eagerness for all OTHER internal links found on the taxonomy page.
+  
+  articles = "prefetch"                   # Controls pre-loading behavior when a user is on the Homepage OR anywhere inside the article section.
+  articleFolder = "posts"                 # The specific folder name where your main articles reside.
+  articleCount = 3                        # The exact number of latest article pages to pre-load explicitly.
+  articleEagerness = "eager"              # How eagerly to explicitly pre-load the 'articleCount' pages defined above.
+  articleCAEagerness = "moderate"         # The Catch-All (CA) fallback eagerness for all OTHER article links found in the posts list.
+  
+  pinnedArticle = "prerender"             # Controls pre-loading behavior for the pinned article.
+  pinnedArticleEagerness = "immediate"    # How eagerly to pre-load the pinned article.
+
+  crossOrigin = true                      # Enables prefetching (never prerendering) for off-site external links (https://).
+  crossOriginEagerness = "moderate"       # How eagerly to prefetch external links. Recommended to keep this "moderate" or "conservative".
+  sameOriginEagerness = "moderate"        # How eagerly to prefetch internal links.
+
+```
+
 ## Typography & Content Formatting
+> **External Links**: Custom render-link markup automatically detects and opens external URLs in a new tab. This is implemented vis markup partial
 
 ### Markdown Inline Styles
 
@@ -845,6 +894,7 @@ mathjax: false       # enable LaTeX rendering on this post
 - All fields except `title` and `date` are optional.
 
 ## Managing Content
+> **Enhanced Archetypes:** Default archetype templates for both article and non-article pages have been enhanced, providing you with fully populated, ready-to-use front matter right out of the box when using the `hugo new` command.
 
 ```bash
 # Create a new page
@@ -853,7 +903,6 @@ hugo new page-title.md
 # Create a new blog post
 hugo new posts/post-title.md
 ```
-
 Regular pages live in `content/`, and blog posts live in `content/posts/`.
 
 ## Translations
