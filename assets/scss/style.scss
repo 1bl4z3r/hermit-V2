@@ -43,32 +43,19 @@ $inserted-text-underline: {{.}};
 // TEXT SELECTION STYLING
 // ==========================================
 // Customize the background color of selected text across browsers
-::-moz-selection {
-  background: $text-select;
-}
-
-::selection {
-  background: $text-select;
-}
+@include selection-highlight($text-select);
 
 // ==========================================
 // WEBKIT SCROLLBAR CUSTOMIZATION
 // ==========================================
 // Style the main page scrollbar for webkit-based browsers
-::-webkit-scrollbar {
-  width: $page-scrollbar-width;
-  height: $page-scrollbar-height;
-  background: $pagescrollbar-background;
-}
-
-// Style the scrollbar thumb (draggable portion) with hover effects
-::-webkit-scrollbar-thumb {
-  background: $pagescrollbar-thumb;
-
-  &:hover {
-    background: $pagescrollbar-thumb-hover;
-  }
-}
+@include custom-scrollbar(
+  $page-scrollbar-width, 
+  $pagescrollbar-thumb, 
+  $pagescrollbar-thumb-hover, 
+  $page-scrollbar-height, 
+  $pagescrollbar-background
+);
 
 // ==========================================
 // BASE HTML AND BODY STYLING
@@ -563,12 +550,7 @@ p.img-404 {
   }
 
   // List of posts within each year group
-  .posts-list {
-    flex-grow: 1;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+  .posts-list {@include unstyled-flex-list;}
 
   // Individual post item styling with divider
   .post-item {
@@ -628,12 +610,7 @@ p.img-404 {
   line-height: normal;
   border-bottom: 2px $pinned-posts-group-border-bottom solid;
 
-  .pinned-posts-list {
-    flex-grow: 1;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+  .pinned-posts-list {@include unstyled-flex-list;}
 
   .pinned-post-item {
     display: flex;
@@ -942,15 +919,15 @@ a.footnote-ref {
     padding: 0 1em;
     margin: 0;
   }
-
-  &>::-webkit-scrollbar { width: 4px; }
-  &>::-webkit-scrollbar-track { background: $tableofcontents-scrollbar-track; }
-  &>::-webkit-scrollbar-thumb {
-    background: $tableofcontents-scrollbar-thumb;
-    &:hover { background: $tableofcontents-scrollbar-thumb-hover; }
-  }
-
-  &>ul {
+  & > ul {
+    @include custom-scrollbar(
+      4px, 
+      $tableofcontents-scrollbar-thumb, 
+      $tableofcontents-scrollbar-thumb-hover, 
+      null, 
+      null, 
+      $tableofcontents-scrollbar-track
+    );
     list-style-type: none;
     overflow-y: auto;
     height: calc(100vh - 300px);
@@ -959,7 +936,6 @@ a.footnote-ref {
 
   a:hover, :target-current { border-bottom: $tableofcontents-a-hover-border-bottom 1px solid; }
 }
-
 
 // ==========================================
 // POST NAVIGATION (PREV/NEXT LINKS)
@@ -1071,27 +1047,15 @@ a.footnote-ref {
   opacity: 1;
   color: transparent; 
 }
-#home-subtitle.ready .char:first-child::after {
-  @include cursor-block;
-  left: 0;            // Sits ON the first hidden character
-  animation: blink 1s infinite;
-}
+#home-subtitle.ready .char:first-child::after {@include cursor-state(0, blink 1s infinite);}
 
 // STATE 2: TYPING (Active)
 // Cursor is anchored to the RIGHT of the current character
-.char.cursor-active::after {
-  @include cursor-block;
-  left: 100%;         // Jumps to the right of the visible char
-  animation: none;    // Solid while typing
-}
+.char.cursor-active::after {@include cursor-state(100%, none);}
 
 // STATE 3: IDLE (Finished)
 // Cursor remains on the right of the last character
-.char.cursor-idle::after {
-  @include cursor-block;
-  left: 100%;
-  animation: blink 1s infinite;
-}
+.char.cursor-idle::after {@include cursor-state(100%, blink 1s infinite);}
 
 // Blink Animation
 @keyframes blink {
@@ -1161,7 +1125,7 @@ a.footnote-ref {
   #typewriter-container {
     width: $width-mobile;
     font-size: $font-size-mobile;
-        width: 90vw;
+    width: 90vw;
     max-width: 90vw;
     margin-left: auto;
     margin-right: auto;
@@ -1172,7 +1136,7 @@ a.footnote-ref {
     min-height: auto !important;
     width: 100%;
     max-width: 100%;
-        white-space: normal;
+    white-space: normal;
     overflow-wrap: break-word;
   }
 
@@ -1237,24 +1201,7 @@ a.footnote-ref {
   }
 
   // Extended figure positioning for wide screens
-  figure.left {
-    margin-left: -240px;
-    p {
-      text-align: left;
-    }
-  }
-
-  figure.right {
-    margin-right: -240px;
-    p {
-      text-align: right;
-    }
-  }
-
-  figure.big {
-    width: 1200px;
-    margin-left: -240px;
-  }
+  @include figure-expanded-layout(240px, 1200px, null, true);
 
   hr.post-end {
     width: 30%;
@@ -1284,20 +1231,7 @@ a.footnote-ref {
   }
 
   // Further extended figure positioning for ultra-wide displays
-  figure.left {
-    max-width: 75%;
-    margin-left: -320px;
-  }
-
-  figure.right {
-    max-width: 75%;
-    margin-right: -320px;
-  }
-
-  figure.big {
-    width: 1600px;
-    margin-left: -320px;
-  }
+  @include figure-expanded-layout(320px, 1600px, 75%);
 
   hr.post-end {
     width: 30%;
