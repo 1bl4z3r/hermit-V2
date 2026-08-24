@@ -49,13 +49,15 @@ $inserted-text-underline: {{.}};
 // WEBKIT SCROLLBAR CUSTOMIZATION
 // ==========================================
 // Style the main page scrollbar for webkit-based browsers
-@include custom-scrollbar(
-  $page-scrollbar-width, 
-  $pagescrollbar-thumb, 
-  $pagescrollbar-thumb-hover, 
-  $page-scrollbar-height, 
-  $pagescrollbar-background
-);
+html {
+  @include custom-scrollbar(
+    $page-scrollbar-width, 
+    $pagescrollbar-thumb, 
+    $pagescrollbar-thumb-hover, 
+    $page-scrollbar-height, 
+    $pagescrollbar-background
+  );
+}
 
 // ==========================================
 // BASE HTML AND BODY STYLING
