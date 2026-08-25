@@ -561,7 +561,7 @@ You have granular control over this behavior in your `hugo.toml` via the `[param
 ```
 
 ## Typography & Content Formatting
-> **External Links**: Custom render-link markup automatically detects and opens external URLs in a new tab. This is implemented vis markup partial
+> **External Links**: Custom render-link markup automatically detects and opens external URLs in a new tab. This is implemented via [markup partial](https://github.com/1bl4z3r/hermit-V2/blob/main/layouts/_markup/render-link.html)
 
 ### Markdown Inline Styles
 
@@ -965,8 +965,7 @@ For general feedback and open-ended conversations that don't fit the above, the 
 
 ## To-Do
 
-- Add support for the [Speculation Rules API](https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API)
-- Add support for the [Page Transition API](https://developer.chrome.com/docs/web-platform/view-transitions/)
+[ ] Add support for the [Page Transition API](https://developer.chrome.com/docs/web-platform/view-transitions/)
 
 ## Acknowledgements
 
