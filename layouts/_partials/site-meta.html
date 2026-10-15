@@ -1,18 +1,17 @@
 <meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
-{{ hugo.Generator }}
+<meta name="viewport" content="width=device-width, initial-scale=1">
 {{- if (or (in .Page.RelPermalink "404") (or .Site.Params.siteNoIndex .Params.noIndex) (in .Site.Params.noIndexPages .Title)) -}}
 <meta name="robots" content="{{ .Site.Params.denyRobots | default "noindex, nofollow, noarchive" }}">
 {{- else -}}
 <meta name="robots" content="{{ .Site.Params.allowRobots | default "index, follow" }}">
 {{- end -}}
 <meta name="author" content="{{ .Params.author | default .Site.Params.author.name }}">
-<meta name="description" content="{{ .Page.Params.description | default .Site.Params.description }}">
 <meta name="apple-mobile-web-app-title" content="{{ .Page.Title | default .Site.Title }}">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
+{{- $summary := cond .IsPage (.Summary | plainify | htmlUnescape | truncate 160) "" }}
+{{- with .Description | default $summary | default site.Params.description -}}<meta name="description" content="{{ . }}">{{- end }}
 
 {{- $themeColor := site.Params.themeColor | default "#494f5c" }}
 <meta name="theme-color" content="{{ $themeColor }}">
@@ -38,7 +37,7 @@
   (dict "name" "favicon-32x32.png" "action" "none" "format" `<link rel="icon" href="%s" type="image/png" sizes="32x32">`)
   (dict "name" "favicon-16x16.png" "action" "none" "format" `<link rel="icon" href="%s" type="image/png" sizes="16x16">`)
   (dict "name" "apple-touch-icon.png" "action" "none" "format" `<link rel="apple-touch-icon" href="%s" sizes="180x180">`)
-  (dict "name" "icon-monochrome.svg" "action" "minify" "format" (printf `<link rel="mask-icon" rel="icon" href="%%s" type="image/svg+xml" sizes="any" color="%s">` $themeColor))
+  (dict "name" "icon-monochrome.svg" "action" "minify" "format" (printf `<link rel="mask-icon" href="%%s" type="image/svg+xml" sizes="any" color="%s">` $themeColor))
   (dict "name" "favicon.svg" "action" "minify" "format" `<link rel="icon" href="%s" type="image/svg+xml" sizes="any">`)
 -}}
 
@@ -46,11 +45,11 @@
   {{- $file := .name -}}
   {{- $action := .action -}}
   {{- $format := .format -}}
-  
+
   {{- $assetPath := printf "identity/%s" $file -}}
   {{- $staticPath := printf "static/%s" $file -}}
   {{- $href := "" -}}
-  
+
   {{- with resources.Get $assetPath -}}
     {{- if eq $action "template" -}}
       {{- $targetPath := $file -}}
@@ -72,7 +71,7 @@
       {{- warnf "Meta Warning: %s was not found in /assets/identity/ or /static/" $file -}}
     {{- end -}}
   {{- end -}}
-  
+
   {{- if ne $href "" -}}
     {{- printf "%s\n" (printf $format $href) | safeHTML -}}
   {{- end -}}
