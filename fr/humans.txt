@@ -1,4 +1,4 @@
-Last update: Aug 25, 2026
+Last update: Oct 15, 2026
 
 
 Languages:
@@ -19,7 +19,7 @@ About: https://1bl4z3r.github.io/hermit-V2/fr/about-hugo
 
 /* SITE */
 https://1bl4z3r.github.io/hermit-V2/
-Generator : Hugo 0.165.0
+Generator : Hugo 0.168.0
 Github : https://github.com/1bl4z3r/hermit-V2/tree/staging
 
 /* THANKS */

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Image on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/image/</link><description>Recent content in Image on Hermit - V2</description><generator>Hugo -- 0.165.0</generator><language>en</language><lastBuildDate>Mon, 11 May 2026 10:00:00 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/image/index.xml" rel="self" type="application/rss+xml"/><item><title>Image Gallery Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</link><pubDate>Mon, 11 May 2026 10:00:00 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</guid><description>Learn how to use the image gallery shortcode to create responsive galleries with thumbnails, captions, and a JavaScript-powered lightbox.</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>gallery</code> shortcode lets you add a beautiful, responsive image gallery to any page on your Hugo site. You compose it using nested <code>{{&lt; figure &gt;}}</code> shortcodes — one per image — giving you full control over captions, titles, and links without any extra tooling or third-party libraries.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>Image on Hermit - V2</title><link>https://1bl4z3r.github.io/hermit-V2/en/tags/image/</link><description>Recent content in Image on Hermit - V2</description><generator>Hugo -- 0.168.0</generator><language>en</language><lastBuildDate>Mon, 11 May 2026 10:00:00 +0530</lastBuildDate><atom:link href="https://1bl4z3r.github.io/hermit-V2/en/tags/image/index.xml" rel="self" type="application/rss+xml"/><item><title>Image Gallery Shortcode</title><link>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</link><pubDate>Mon, 11 May 2026 10:00:00 +0530</pubDate><author>BLZR</author><guid>https://1bl4z3r.github.io/hermit-V2/en/posts/image-gallery-shortcode/</guid><description>Learn how to use the image gallery shortcode to create responsive galleries with thumbnails, captions, and a JavaScript-powered lightbox.</description><content type="text/html" mode="escaped"><![CDATA[<p>The <code>gallery</code> shortcode lets you add a beautiful, responsive image gallery to any page on your Hugo site. You compose it using nested <code>{{&lt; figure &gt;}}</code> shortcodes — one per image — giving you full control over captions, titles, and links without any extra tooling or third-party libraries.</p>
 <h2 id="what-you-get">What You Get<a href="#what-you-get" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -353,8 +353,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--grid"
-         id="gallery-49d47586"
-         data-gallery-id="gallery-49d47586"
+         id="gallery-8e6a2ac5"
+         data-gallery-id="gallery-8e6a2ac5"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -367,9 +367,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_3f35f1167cf55c16.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_de5784bd0ed308da.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_89982cdb6c97683d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_de5784bd0ed308da.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
@@ -380,9 +380,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_f8c02adedebe8b42.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 </div>
@@ -393,8 +393,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--grid"
-         id="gallery-0df0537f"
-         data-gallery-id="gallery-0df0537f"
+         id="gallery-485dbc21"
+         data-gallery-id="gallery-485dbc21"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -407,9 +407,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_3f35f1167cf55c16.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_de5784bd0ed308da.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_89982cdb6c97683d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_de5784bd0ed308da.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
@@ -420,9 +420,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_f8c02adedebe8b42.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 
@@ -433,9 +433,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/928-600x400.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/928-600x400.jpg"><meta itemprop="name" content="Grid Image 3"><meta itemprop="description" content="Caption for Image 3"><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_d1a7c2167f14a0a0.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_ea6255deb49ee5fe.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_d1a7c2167f14a0a0.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/928-600x400_hu_119efc2b5bb6f0cf.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_b049e86503de148c.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_119efc2b5bb6f0cf.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 3</h4><p>Caption for Image 3</p></figcaption></figure>
 </div>
@@ -446,8 +446,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--grid"
-         id="gallery-3e461169"
-         data-gallery-id="gallery-3e461169"
+         id="gallery-394534fc"
+         data-gallery-id="gallery-394534fc"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -460,9 +460,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_3f35f1167cf55c16.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_de5784bd0ed308da.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_89982cdb6c97683d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_de5784bd0ed308da.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
@@ -473,9 +473,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_f8c02adedebe8b42.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 
@@ -486,9 +486,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/928-600x400.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/928-600x400.jpg"><meta itemprop="name" content="Grid Image 3"><meta itemprop="description" content="Caption for Image 3"><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_d1a7c2167f14a0a0.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_ea6255deb49ee5fe.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_d1a7c2167f14a0a0.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/928-600x400_hu_119efc2b5bb6f0cf.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_b049e86503de148c.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_119efc2b5bb6f0cf.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 3</h4><p>Caption for Image 3</p></figcaption></figure>
 
@@ -499,9 +499,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 4"><meta itemprop="description" content="Caption for Image 4"><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="Grid Image 4" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_f8c02adedebe8b42.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" alt="Grid Image 4" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 4</h4><p>Caption for Image 4</p></figcaption></figure>
 </div>
@@ -512,8 +512,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
    </svg></a></h4>
 
 <div class="image-gallery image-gallery--grid"
-         id="gallery-b85c253c"
-         data-gallery-id="gallery-b85c253c"
+         id="gallery-c507a9d7"
+         data-gallery-id="gallery-c507a9d7"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -526,9 +526,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="Grid Image 1"><meta itemprop="description" content="Caption for Image 1"><picture>
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/10-2500x1667_hu_3f35f1167cf55c16.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_de5784bd0ed308da.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/10-2500x1667_hu_89982cdb6c97683d.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/10-2500x1667_hu_de5784bd0ed308da.webp" alt="Grid Image 1" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 1</h4><p>Caption for Image 1</p></figcaption></figure>
 
@@ -539,9 +539,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 2"><meta itemprop="description" content="Caption for Image 2"><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_f8c02adedebe8b42.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" alt="Grid Image 2" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 2</h4><p>Caption for Image 2</p></figcaption></figure>
 
@@ -552,9 +552,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/928-600x400.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/928-600x400.jpg"><meta itemprop="name" content="Grid Image 3"><meta itemprop="description" content="Caption for Image 3"><picture>
-            <source srcset="/hermit-V2/images/928-600x400_hu_d1a7c2167f14a0a0.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/928-600x400_hu_ea6255deb49ee5fe.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/928-600x400_hu_d1a7c2167f14a0a0.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/928-600x400_hu_119efc2b5bb6f0cf.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/928-600x400_hu_b049e86503de148c.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/928-600x400_hu_119efc2b5bb6f0cf.webp" alt="Grid Image 3" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 3</h4><p>Caption for Image 3</p></figcaption></figure>
 
@@ -565,9 +565,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 4"><meta itemprop="description" content="Caption for Image 4"><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="Grid Image 4" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_f8c02adedebe8b42.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" alt="Grid Image 4" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 4</h4><p>Caption for Image 4</p></figcaption></figure>
 
@@ -578,9 +578,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
     
 
 <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="Grid Image 5"><meta itemprop="description" content="Caption for Image 5"><picture>
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
-            <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
-            <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="Grid Image 5" width="300" height="300" loading="lazy"
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" type="image/webp">
+            <source srcset="/hermit-V2/images/11-2500x1667_hu_f8c02adedebe8b42.jpg"  type="image/jpeg">
+            <img src="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" alt="Grid Image 5" width="300" height="300" loading="lazy"
                 decoding="async" />
         </picture><figcaption><h4>Grid Image 5</h4><p>Caption for Image 5</p></figcaption></figure>
 </div>
@@ -851,8 +851,8 @@ Using grid layout is recommended, and is set as a default when using this shortc
 </span></span><span style="display:flex;"><span>{{&lt; <span style="color:#f92672">/</span><span style="color:#a6e22e">gallery</span> &gt;}}
 </span></span></code></pre></div>
 <div class="image-gallery image-gallery--grid"
-         id="gallery-8936914f"
-         data-gallery-id="gallery-8936914f"
+         id="gallery-34cb962c"
+         data-gallery-id="gallery-34cb962c"
          role="region"
          aria-label="Image gallery"
          itemscope
@@ -865,9 +865,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
       
   
   <figure class="" data-fullsrc="/hermit-V2/images/10-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/10-2500x1667.jpg"><meta itemprop="name" content="FOREST"><meta itemprop="description" content="Downtown forest"><picture>
-              <source srcset="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" type="image/webp">
-              <source srcset="/hermit-V2/images/10-2500x1667_hu_3f35f1167cf55c16.jpg"  type="image/jpeg">
-              <img src="/hermit-V2/images/10-2500x1667_hu_b8ff18a5b9915a8e.webp" alt="FOREST" width="300" height="300" loading="lazy"
+              <source srcset="/hermit-V2/images/10-2500x1667_hu_de5784bd0ed308da.webp" type="image/webp">
+              <source srcset="/hermit-V2/images/10-2500x1667_hu_89982cdb6c97683d.jpg"  type="image/jpeg">
+              <img src="/hermit-V2/images/10-2500x1667_hu_de5784bd0ed308da.webp" alt="FOREST" width="300" height="300" loading="lazy"
                   decoding="async" />
           </picture><figcaption><h4>FOREST</h4><p>Downtown forest - <a href="https://example.com/jane">Jane Smith</a></p></figcaption></figure>
   
@@ -878,9 +878,9 @@ Using grid layout is recommended, and is set as a default when using this shortc
       
   
   <figure class="" data-fullsrc="/hermit-V2/images/11-2500x1667.jpg" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="contentUrl" content="/hermit-V2/images/11-2500x1667.jpg"><meta itemprop="name" content="LAKE"><meta itemprop="description" content="Saturday morning"><picture>
-              <source srcset="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" type="image/webp">
-              <source srcset="/hermit-V2/images/11-2500x1667_hu_76708865e0374a55.jpg"  type="image/jpeg">
-              <img src="/hermit-V2/images/11-2500x1667_hu_31edfcdffe376031.webp" alt="LAKE" width="300" height="300" loading="lazy"
+              <source srcset="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" type="image/webp">
+              <source srcset="/hermit-V2/images/11-2500x1667_hu_f8c02adedebe8b42.jpg"  type="image/jpeg">
+              <img src="/hermit-V2/images/11-2500x1667_hu_d60563bde4590c94.webp" alt="LAKE" width="300" height="300" loading="lazy"
                   decoding="async" />
           </picture><figcaption><h4>LAKE</h4><p>Saturday morning - <a href="https://example.com/bob">Bob Jones</a></p></figcaption></figure>
 </div>
